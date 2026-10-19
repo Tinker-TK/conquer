@@ -9,7 +9,7 @@
 
 | 文件 | 用途 |
 | --- | --- |
-| [在线报告](index.html) · [GitHub Pages](https://tinker-tk.github.io/conquer/) | 主报告：单文件、离线可开，含 8 张图表、48 款对标、财务模型与结论 |
+| [在线报告](https://tinker-tk.github.io/conquer/) · [HTML 源文件](index.html) | 主报告：单文件、离线可开，含 8 张图表、48 款对标、财务模型与结论 |
 | [conquer-market-analysis.xlsx](conquer-market-analysis.xlsx) | 数据工作簿：大盘、48 款样本、140 款评论校准、可改公式的财务模型、949 款原始池 |
 
 > 注：HTML 报告需要浏览器渲染，在 GitHub 网页上直接点开只会看到源码；用上方的 Pages 链接可以直接阅读，也可以下载后用浏览器打开。
