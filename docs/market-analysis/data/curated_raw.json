@@ -1,0 +1,2263 @@
+[
+ {
+  "steamId": 646570,
+  "id": 646570,
+  "name": "Slay the Spire",
+  "copiesSold": 10583038,
+  "unreleased": false,
+  "earlyAccess": false,
+  "firstReleaseDate": 1509494400000,
+  "releaseDate": 1548219600000,
+  "earlyAccessExitDate": 1548219600000,
+  "EAReleaseDate": 1509494400000,
+  "price": 24.99,
+  "developers": [
+   "Mega Crit"
+  ],
+  "publishers": [
+   "Mega Crit"
+  ],
+  "publisherClass": "AA",
+  "reviewScore": 97,
+  "genres": [
+   "Indie",
+   "Strategy"
+  ],
+  "tags": [
+   "Roguelike Deckbuilder",
+   "Card Game",
+   "Card Battler",
+   "Roguelike",
+   "Deckbuilding",
+   "Turn-Based",
+   "Strategy",
+   "Singleplayer",
+   "Roguelite",
+   "Replay Value",
+   "Indie",
+   "Difficult",
+   "Dungeon Crawler",
+   "Mouse Only",
+   "RPG",
+   "2D",
+   "Fantasy",
+   "Procedural Generation",
+   "Great Soundtrack",
+   "Casual"
+  ]
+ },
+ {
+  "steamId": 2868840,
+  "id": 2868840,
+  "name": "Slay the Spire 2",
+  "copiesSold": 7410557,
+  "unreleased": false,
+  "earlyAccess": true,
+  "firstReleaseDate": 1772668800000,
+  "releaseDate": 1772668800000,
+  "EAReleaseDate": 1772668800000,
+  "price": 24.99,
+  "developers": [
+   "Mega Crit"
+  ],
+  "publishers": [
+   "Mega Crit"
+  ],
+  "publisherClass": "AA",
+  "reviewScore": 61,
+  "genres": [
+   "Indie",
+   "Strategy",
+   "Early Access"
+  ],
+  "tags": [
+   "Roguelike",
+   "Card Game",
+   "Deckbuilding",
+   "Co-op",
+   "Strategy",
+   "Roguelike Deckbuilder",
+   "Multiplayer",
+   "Turn-Based Combat",
+   "Card Battler",
+   "Indie",
+   "Difficult",
+   "Roguelite",
+   "Early Access",
+   "2D",
+   "Singleplayer",
+   "Replay Value",
+   "Dungeon Crawler",
+   "Fantasy",
+   "Procedural Generation",
+   "Mouse Only"
+  ]
+ },
+ {
+  "steamId": 2379780,
+  "id": 2379780,
+  "name": "Balatro",
+  "copiesSold": 6495863,
+  "unreleased": false,
+  "earlyAccess": false,
+  "firstReleaseDate": 1708405200000,
+  "releaseDate": 1708405200000,
+  "price": 14.99,
+  "developers": [
+   "LocalThunk"
+  ],
+  "publishers": [
+   "Playstack"
+  ],
+  "publisherClass": "AA",
+  "reviewScore": 98,
+  "genres": [
+   "Casual",
+   "Indie",
+   "Strategy"
+  ],
+  "tags": [
+   "Card Game",
+   "Roguelike",
+   "Roguelike Deckbuilder",
+   "Deckbuilding",
+   "Singleplayer",
+   "Strategy",
+   "Pixel Graphics",
+   "Replay Value",
+   "Roguelite",
+   "Indie",
+   "Turn-Based",
+   "Casual",
+   "Card Battler",
+   "Difficult",
+   "2D",
+   "Choices Matter",
+   "Relaxing",
+   "Turn-Based Strategy",
+   "Arcade",
+   "Procedural Generation"
+  ]
+ },
+ {
+  "steamId": 1102190,
+  "id": 1102190,
+  "name": "Monster Train",
+  "copiesSold": 1445478,
+  "unreleased": false,
+  "earlyAccess": false,
+  "firstReleaseDate": 1590033600000,
+  "releaseDate": 1590033600000,
+  "price": 24.99,
+  "developers": [
+   "Shiny Shoe"
+  ],
+  "publishers": [
+   "Good Shepherd Entertainment"
+  ],
+  "publisherClass": "AA",
+  "reviewScore": 96,
+  "genres": [
+   "Strategy"
+  ],
+  "tags": [
+   "Card Battler",
+   "Roguelite",
+   "Card Game",
+   "Deckbuilding",
+   "Turn-Based Tactics",
+   "Roguelike",
+   "Turn-Based Strategy",
+   "Difficult",
+   "PvP",
+   "Strategy",
+   "Roguelike Deckbuilder",
+   "Turn-Based Combat",
+   "RPG",
+   "Choices Matter",
+   "Procedural Generation",
+   "Colorful",
+   "Fantasy",
+   "Demons",
+   "Magic",
+   "Trains"
+  ]
+ },
+ {
+  "steamId": 2742830,
+  "id": 2742830,
+  "name": "Monster Train 2",
+  "copiesSold": 537235,
+  "unreleased": false,
+  "earlyAccess": false,
+  "firstReleaseDate": 1747785600000,
+  "releaseDate": 1747785600000,
+  "price": 24.99,
+  "developers": [
+   "Shiny Shoe"
+  ],
+  "publishers": [
+   "Big Fan Games"
+  ],
+  "publisherClass": "Indie",
+  "reviewScore": 95,
+  "genres": [
+   "Indie",
+   "Strategy"
+  ],
+  "tags": [
+   "Roguelike Deckbuilder",
+   "Card Game",
+   "Roguelike",
+   "Deckbuilding",
+   "Turn-Based Strategy",
+   "Strategy",
+   "Turn-Based Tactics",
+   "Singleplayer",
+   "Demons",
+   "Fantasy",
+   "Trains",
+   "Multiplayer",
+   "PvP",
+   "Colorful",
+   "Choices Matter",
+   "Difficult",
+   "Magic",
+   "Replay Value",
+   "Procedural Generation",
+   "Indie"
+  ]
+ },
+ {
+  "steamId": 2427700,
+  "id": 2427700,
+  "name": "Backpack Battles",
+  "copiesSold": 1556886,
+  "unreleased": false,
+  "earlyAccess": false,
+  "firstReleaseDate": 1709874000000,
+  "releaseDate": 1749772800000,
+  "earlyAccessExitDate": 1749772800000,
+  "EAReleaseDate": 1709874000000,
+  "price": 14.99,
+  "developers": [
+   "PlayWithFurcifer"
+  ],
+  "publishers": [
+   "IndieArk",
+   "Shochiku (Japan)"
+  ],
+  "publisherClass": "AA",
+  "reviewScore": 91,
+  "genres": [
+   "Strategy"
+  ],
+  "tags": [
+   "Auto Battler",
+   "Inventory Management",
+   "Strategy",
+   "PvP",
+   "Roguelike Deckbuilder",
+   "Asynchronous Multiplayer",
+   "Multiplayer",
+   "Roguelike",
+   "Indie",
+   "Tactical",
+   "Card Battler",
+   "Turn-Based",
+   "Loot",
+   "Replay Value",
+   "Combat",
+   "2D",
+   "Female Protagonist",
+   "Cute",
+   "Hand-drawn",
+   "Fantasy"
+  ]
+ },
+ {
+  "steamId": 1617400,
+  "id": 1617400,
+  "name": "The Bazaar",
+  "copiesSold": 536578,
+  "unreleased": false,
+  "earlyAccess": false,
+  "firstReleaseDate": 1755043200000,
+  "releaseDate": 1755043200000,
+  "price": 19.99,
+  "developers": [
+   "Tempo"
+  ],
+  "publishers": [
+   "Tempo"
+  ],
+  "publisherClass": "Indie",
+  "reviewScore": 69,
+  "genres": [
+   "Strategy"
+  ],
+  "tags": [
+   "Strategy",
+   "Auto Battler",
+   "Deckbuilding",
+   "Card Battler",
+   "Card Game",
+   "Asynchronous Multiplayer",
+   "PvP",
+   "PvE",
+   "Multiplayer",
+   "Fantasy",
+   "Sci-fi",
+   "Capitalism",
+   "Economy",
+   "Adventure",
+   "Family Friendly",
+   "Tactical",
+   "Futuristic",
+   "Combat",
+   "Choose Your Own Adventure",
+   "Colorful"
+  ]
+ },
+ {
+  "steamId": 2784470,
+  "id": 2784470,
+  "name": "9 Kings",
+  "copiesSold": 1127310,
+  "unreleased": false,
+  "earlyAccess": true,
+  "firstReleaseDate": 1747958400000,
+  "releaseDate": 1747958400000,
+  "EAReleaseDate": 1747958400000,
+  "price": 19.99,
+  "developers": [
+   "Sad Socket"
+  ],
+  "publishers": [
+   "Hooded Horse",
+   "Sidekick Publishing"
+  ],
+  "publisherClass": "AA",
+  "reviewScore": 92,
+  "genres": [
+   "RPG",
+   "Strategy",
+   "Early Access"
+  ],
+  "tags": [
+   "Strategy",
+   "RPG",
+   "Auto Battler",
+   "Roguelike",
+   "Card Game",
+   "Deckbuilding",
+   "Roguelike Deckbuilder",
+   "Multiplayer",
+   "Roguelite",
+   "Turn-Based Combat",
+   "Card Battler",
+   "Difficult",
+   "2D",
+   "Indie",
+   "Singleplayer",
+   "Replay Value",
+   "Fantasy",
+   "Dungeon Crawler",
+   "Procedural Generation",
+   "Early Access"
+  ]
+ },
+ {
+  "steamId": 2753900,
+  "id": 2753900,
+  "name": "The King is Watching",
+  "copiesSold": 819149,
+  "unreleased": false,
+  "earlyAccess": false,
+  "firstReleaseDate": 1753056000000,
+  "releaseDate": 1753056000000,
+  "price": 14.99,
+  "developers": [
+   "Hypnohead"
+  ],
+  "publishers": [
+   "tinyBuild"
+  ],
+  "publisherClass": "AA",
+  "reviewScore": 89,
+  "genres": [
+   "Indie",
+   "Strategy"
+  ],
+  "tags": [
+   "Roguelike",
+   "Base Building",
+   "Tower Defense",
+   "RTS",
+   "Dark Fantasy",
+   "Fantasy",
+   "Strategy",
+   "Resource Management",
+   "City Builder",
+   "Roguelite",
+   "Pixel Graphics",
+   "Medieval",
+   "Tactical",
+   "Real Time Tactics",
+   "Time Management",
+   "Auto Battler",
+   "Replay Value",
+   "Deckbuilding",
+   "Combat",
+   "Automation"
+  ]
+ },
+ {
+  "steamId": 1830970,
+  "id": 1830970,
+  "name": "The Last Flame",
+  "copiesSold": 180495,
+  "unreleased": false,
+  "earlyAccess": false,
+  "firstReleaseDate": 1705467600000,
+  "releaseDate": 1736380800000,
+  "earlyAccessExitDate": 1736380800000,
+  "EAReleaseDate": 1705467600000,
+  "price": 19.99,
+  "developers": [
+   "Hotloop"
+  ],
+  "publishers": [
+   "Hotloop",
+   "Surefire.Games"
+  ],
+  "publisherClass": "Indie",
+  "reviewScore": 85,
+  "genres": [
+   "Adventure",
+   "Indie",
+   "RPG",
+   "Strategy"
+  ],
+  "tags": [
+   "Auto Battler",
+   "Roguelike",
+   "Strategy",
+   "Tactical",
+   "Turn-Based Strategy",
+   "Hex Grid",
+   "Adventure",
+   "RPG",
+   "Singleplayer",
+   "Turn-Based Tactics",
+   "Party-Based RPG",
+   "Procedural Generation",
+   "Fantasy",
+   "3D",
+   "Indie",
+   "Strategy RPG",
+   "Early Access",
+   "Turn-Based",
+   "Management",
+   "Survival"
+  ]
+ },
+ {
+  "steamId": 1260590,
+  "id": 1260590,
+  "name": "Hadean Tactics",
+  "copiesSold": 99480,
+  "unreleased": false,
+  "earlyAccess": false,
+  "firstReleaseDate": 1614229200000,
+  "releaseDate": 1692849600000,
+  "earlyAccessExitDate": 1692849600000,
+  "EAReleaseDate": 1614229200000,
+  "price": 19.99,
+  "developers": [
+   "Emberfish Games"
+  ],
+  "publishers": [
+   "Emberfish Games"
+  ],
+  "publisherClass": "Indie",
+  "reviewScore": 89,
+  "genres": [
+   "Indie",
+   "Strategy"
+  ],
+  "tags": [
+   "Roguelike Deckbuilder",
+   "Auto Battler",
+   "Card Battler",
+   "Roguelike",
+   "Card Game",
+   "Deckbuilding",
+   "Dungeon Crawler",
+   "Roguelite",
+   "Turn-Based Strategy",
+   "Strategy RPG",
+   "Strategy",
+   "Choices Matter",
+   "Procedural Generation",
+   "Turn-Based Combat",
+   "Stylized",
+   "Dark Fantasy",
+   "Fantasy",
+   "Singleplayer",
+   "Indie",
+   "Real Time Tactics"
+  ]
+ },
+ {
+  "steamId": 1188930,
+  "id": 1188930,
+  "name": "Chrono Ark",
+  "copiesSold": 490331,
+  "unreleased": false,
+  "earlyAccess": false,
+  "firstReleaseDate": 1573534800000,
+  "releaseDate": 1714622400000,
+  "earlyAccessExitDate": 1714622400000,
+  "EAReleaseDate": 1573534800000,
+  "price": 24.99,
+  "developers": [
+   "Al Fine"
+  ],
+  "publishers": [
+   "Al Fine"
+  ],
+  "publisherClass": "Indie",
+  "reviewScore": 91,
+  "genres": [
+   "Adventure",
+   "Indie",
+   "RPG",
+   "Strategy"
+  ],
+  "tags": [
+   "Roguelike Deckbuilder",
+   "Anime",
+   "RPG",
+   "Strategy",
+   "Indie",
+   "Adventure",
+   "Roguelite",
+   "Card Game",
+   "Female Protagonist",
+   "Party-Based RPG",
+   "Story Rich",
+   "Turn-Based Combat",
+   "Roguelike",
+   "Difficult",
+   "Card Battler",
+   "Cute",
+   "Turn-Based",
+   "Singleplayer",
+   "Deckbuilding",
+   "Great Soundtrack"
+  ]
+ },
+ {
+  "steamId": 1385380,
+  "id": 1385380,
+  "name": "Across the Obelisk",
+  "copiesSold": 711232,
+  "unreleased": false,
+  "earlyAccess": false,
+  "firstReleaseDate": 1617854400000,
+  "releaseDate": 1660622400000,
+  "earlyAccessExitDate": 1660622400000,
+  "EAReleaseDate": 1617854400000,
+  "price": 19.99,
+  "developers": [
+   "Dreamsite Games"
+  ],
+  "publishers": [
+   "Paradox Interactive",
+   "Paradox Arc"
+  ],
+  "publisherClass": "AAA",
+  "reviewScore": 80,
+  "genres": [
+   "Adventure",
+   "Indie",
+   "RPG",
+   "Strategy"
+  ],
+  "tags": [
+   "Casual",
+   "Adventure",
+   "Tactical",
+   "Turn-Based Strategy",
+   "Roguelike Deckbuilder",
+   "Card Game",
+   "Roguelike",
+   "Deckbuilding",
+   "Card Battler",
+   "Procedural Generation",
+   "Indie",
+   "Turn-Based",
+   "Co-op",
+   "Strategy",
+   "Tactical RPG",
+   "Singleplayer",
+   "Roguelite",
+   "Online Co-Op",
+   "Replay Value",
+   "Dungeon Crawler"
+  ]
+ },
+ {
+  "steamId": 981430,
+  "id": 981430,
+  "name": "Gordian Quest",
+  "copiesSold": 248027,
+  "unreleased": false,
+  "earlyAccess": false,
+  "firstReleaseDate": 1585281600000,
+  "releaseDate": 1655956800000,
+  "earlyAccessExitDate": 1655956800000,
+  "EAReleaseDate": 1585281600000,
+  "price": 19.99,
+  "developers": [
+   "Mixed Realms",
+   "SwagSoft Studios"
+  ],
+  "publishers": [
+   "Mixed Realms",
+   "Spiral Up Games"
+  ],
+  "publisherClass": "Indie",
+  "reviewScore": 89,
+  "genres": [
+   "Adventure",
+   "Indie",
+   "RPG",
+   "Strategy"
+  ],
+  "tags": [
+   "RPG",
+   "Card Game",
+   "Card Battler",
+   "Strategy",
+   "Adventure",
+   "Replay Value",
+   "Turn-Based",
+   "Tactical",
+   "Indie",
+   "Roguelike Deckbuilder",
+   "PvP",
+   "Fantasy",
+   "Deckbuilding",
+   "Turn-Based Combat",
+   "Roguelike",
+   "Turn-Based Strategy",
+   "Turn-Based Tactics",
+   "Party-Based RPG",
+   "Procedural Generation",
+   "Dice"
+  ]
+ },
+ {
+  "steamId": 1811990,
+  "id": 1811990,
+  "name": "Wildfrost",
+  "copiesSold": 270553,
+  "unreleased": false,
+  "earlyAccess": false,
+  "firstReleaseDate": 1681272000000,
+  "releaseDate": 1681272000000,
+  "price": 19.99,
+  "developers": [
+   "Deadpan Games",
+   "Gaziter"
+  ],
+  "publishers": [
+   "Chucklefish"
+  ],
+  "publisherClass": "AA",
+  "reviewScore": 83,
+  "genres": [
+   "Indie",
+   "Strategy"
+  ],
+  "tags": [
+   "Card Battler",
+   "Roguelike Deckbuilder",
+   "Card Game",
+   "Difficult",
+   "Turn-Based Tactics",
+   "Roguelite",
+   "Deckbuilding",
+   "Roguelike",
+   "Singleplayer",
+   "Turn-Based",
+   "Perma Death",
+   "Turn-Based Strategy",
+   "Replay Value",
+   "Strategy",
+   "Procedural Generation",
+   "Colorful",
+   "Controller",
+   "Fantasy",
+   "Base Building",
+   "2D"
+  ]
+ },
+ {
+  "steamId": 2097570,
+  "id": 2097570,
+  "name": "StarVaders",
+  "copiesSold": 186861,
+  "unreleased": false,
+  "earlyAccess": false,
+  "firstReleaseDate": 1745971200000,
+  "releaseDate": 1745971200000,
+  "price": 24.99,
+  "developers": [
+   "Pengonauts"
+  ],
+  "publishers": [
+   "Joystick Ventures",
+   "Beep Japan"
+  ],
+  "publisherClass": "Indie",
+  "reviewScore": 97,
+  "genres": [
+   "Adventure",
+   "Indie",
+   "Strategy"
+  ],
+  "tags": [
+   "Roguelike Deckbuilder",
+   "Deckbuilding",
+   "Turn-Based Tactics",
+   "Roguelite",
+   "Difficult",
+   "Visual Novel",
+   "Card Game",
+   "Turn-Based Strategy",
+   "Roguelike",
+   "Board Game",
+   "Female Protagonist",
+   "Card Battler",
+   "Strategy",
+   "2D",
+   "Mechs",
+   "Retro",
+   "Cute",
+   "Turn-Based Combat",
+   "Anime",
+   "Colorful"
+  ]
+ },
+ {
+  "steamId": 1668690,
+  "id": 1668690,
+  "name": "Alina of the Arena",
+  "copiesSold": 140526,
+  "unreleased": false,
+  "earlyAccess": false,
+  "firstReleaseDate": 1642568400000,
+  "releaseDate": 1665633600000,
+  "earlyAccessExitDate": 1665633600000,
+  "EAReleaseDate": 1642568400000,
+  "price": 14.99,
+  "developers": [
+   "PINIX"
+  ],
+  "publishers": [
+   "PINIX",
+   "IndieArk"
+  ],
+  "publisherClass": "Indie",
+  "reviewScore": 92,
+  "genres": [
+   "Indie",
+   "Strategy"
+  ],
+  "tags": [
+   "Roguelike Deckbuilder",
+   "Roguelike",
+   "Turn-Based Tactics",
+   "Hex Grid",
+   "Card Game",
+   "Roguelite",
+   "Strategy",
+   "Pixel Graphics",
+   "Difficult",
+   "Female Protagonist",
+   "Turn-Based Strategy",
+   "Deckbuilding",
+   "Dark Fantasy",
+   "Indie",
+   "Singleplayer",
+   "Card Battler",
+   "RPG",
+   "Early Access",
+   "Anime"
+  ]
+ },
+ {
+  "steamId": 1265820,
+  "id": 1265820,
+  "name": "Fights in Tight Spaces",
+  "copiesSold": 336269,
+  "unreleased": false,
+  "earlyAccess": false,
+  "firstReleaseDate": 1614142800000,
+  "releaseDate": 1638421200000,
+  "earlyAccessExitDate": 1638421200000,
+  "EAReleaseDate": 1614142800000,
+  "price": 24.99,
+  "developers": [
+   "Ground Shatter"
+  ],
+  "publishers": [
+   "Balor Games"
+  ],
+  "publisherClass": "AA",
+  "reviewScore": 90,
+  "genres": [
+   "Action",
+   "Strategy"
+  ],
+  "tags": [
+   "Strategy",
+   "Action",
+   "Turn-Based Tactics",
+   "Deckbuilding",
+   "Turn-Based Combat",
+   "Martial Arts",
+   "Roguelike Deckbuilder",
+   "Turn-Based",
+   "Card Game",
+   "Roguelike",
+   "Turn-Based Strategy",
+   "Indie",
+   "Replay Value",
+   "Tactical",
+   "Violent",
+   "Isometric",
+   "Roguelite",
+   "Singleplayer",
+   "Beat 'em up",
+   "Great Soundtrack"
+  ]
+ },
+ {
+  "steamId": 2179850,
+  "id": 2179850,
+  "name": "Cobalt Core",
+  "copiesSold": 155304,
+  "unreleased": false,
+  "earlyAccess": false,
+  "firstReleaseDate": 1699419600000,
+  "releaseDate": 1699419600000,
+  "price": 19.99,
+  "developers": [
+   "Rocket Rat Games"
+  ],
+  "publishers": [
+   "Brace Yourself Games"
+  ],
+  "publisherClass": "Indie",
+  "reviewScore": 96,
+  "genres": [
+   "Indie",
+   "Strategy"
+  ],
+  "tags": [
+   "Roguelike Deckbuilder",
+   "Card Game",
+   "Strategy",
+   "Roguelike",
+   "Turn-Based Strategy",
+   "Sci-fi",
+   "Pixel Graphics",
+   "Turn-Based Tactics",
+   "Tactical RPG",
+   "Funny",
+   "Space",
+   "Logic",
+   "Tactical",
+   "Deckbuilding",
+   "Grid-Based Movement",
+   "Singleplayer",
+   "Combat",
+   "PvE",
+   "Turn-Based Combat",
+   "Story Rich"
+  ]
+ },
+ {
+  "steamId": 2289750,
+  "id": 2289750,
+  "name": "Super Fantasy Kingdom",
+  "copiesSold": 391377,
+  "unreleased": false,
+  "earlyAccess": true,
+  "firstReleaseDate": 1761264000000,
+  "releaseDate": 1761264000000,
+  "EAReleaseDate": 1761264000000,
+  "price": 19.99,
+  "developers": [
+   "Super Fantasy Games"
+  ],
+  "publishers": [
+   "Hooded Horse"
+  ],
+  "publisherClass": "AA",
+  "reviewScore": 87,
+  "genres": [
+   "RPG",
+   "Simulation",
+   "Strategy",
+   "Early Access"
+  ],
+  "tags": [
+   "Strategy",
+   "RPG",
+   "Roguelike",
+   "Auto Battler",
+   "Roguelite",
+   "Fantasy",
+   "Card Game",
+   "Deckbuilding",
+   "Roguelike Deckbuilder",
+   "Turn-Based Combat",
+   "Card Battler",
+   "2D",
+   "Difficult",
+   "Indie",
+   "Singleplayer",
+   "Replay Value",
+   "Dungeon Crawler",
+   "Procedural Generation",
+   "Mouse Only",
+   "Early Access"
+  ]
+ },
+ {
+  "steamId": 2824490,
+  "id": 2824490,
+  "name": "He is Coming",
+  "copiesSold": 275559,
+  "unreleased": false,
+  "earlyAccess": true,
+  "firstReleaseDate": 1752710400000,
+  "releaseDate": 1752710400000,
+  "EAReleaseDate": 1752710400000,
+  "price": 19.99,
+  "developers": [
+   "Chronocle"
+  ],
+  "publishers": [
+   "Hooded Horse"
+  ],
+  "publisherClass": "AA",
+  "reviewScore": 85,
+  "genres": [
+   "RPG",
+   "Strategy",
+   "Early Access"
+  ],
+  "tags": [
+   "Strategy",
+   "Roguelike",
+   "Auto Battler",
+   "RPG",
+   "Roguelite",
+   "Dungeon Crawler",
+   "Fantasy",
+   "Card Game",
+   "Deckbuilding",
+   "Roguelike Deckbuilder",
+   "Multiplayer",
+   "Turn-Based Combat",
+   "Card Battler",
+   "Difficult",
+   "Singleplayer",
+   "2D",
+   "Indie",
+   "Replay Value",
+   "Procedural Generation",
+   "Early Access"
+  ]
+ },
+ {
+  "steamId": 1652250,
+  "id": 1652250,
+  "name": "Tales & Tactics",
+  "copiesSold": 128749,
+  "unreleased": false,
+  "earlyAccess": false,
+  "firstReleaseDate": 1691640000000,
+  "releaseDate": 1723680000000,
+  "earlyAccessExitDate": 1723680000000,
+  "EAReleaseDate": 1691640000000,
+  "price": 17.99,
+  "developers": [
+   "Table 9 Studio"
+  ],
+  "publishers": [
+   "Yogscast Games",
+   "Gamersky Games"
+  ],
+  "publisherClass": "Indie",
+  "reviewScore": 78,
+  "genres": [
+   "Adventure",
+   "RPG",
+   "Strategy"
+  ],
+  "tags": [
+   "Hex Grid",
+   "Auto Battler",
+   "Strategy",
+   "Tactical",
+   "Turn-Based Tactics",
+   "Tactical RPG",
+   "RPG",
+   "3D",
+   "Singleplayer",
+   "Tabletop",
+   "Adventure",
+   "Loot",
+   "Card Battler",
+   "Fantasy",
+   "Resource Management",
+   "Roguelike",
+   "Atmospheric",
+   "Board Game",
+   "Strategy RPG",
+   "PvE"
+  ]
+ },
+ {
+  "steamId": 1488200,
+  "id": 1488200,
+  "name": "Symphony of War: The Nephilim Saga",
+  "copiesSold": 582089,
+  "unreleased": false,
+  "earlyAccess": false,
+  "firstReleaseDate": 1654833600000,
+  "releaseDate": 1654833600000,
+  "price": 19.99,
+  "developers": [
+   "Dancing Dragon Games"
+  ],
+  "publishers": [
+   "Dancing Dragon Games"
+  ],
+  "publisherClass": "Indie",
+  "reviewScore": 94,
+  "genres": [
+   "Adventure",
+   "Indie",
+   "RPG",
+   "Strategy"
+  ],
+  "tags": [
+   "Tactical RPG",
+   "RPG",
+   "Story Rich",
+   "Turn-Based Strategy",
+   "Fantasy",
+   "Adventure",
+   "Female Protagonist",
+   "Strategy RPG",
+   "Pixel Graphics",
+   "Romance",
+   "Lore-Rich",
+   "Strategy",
+   "2D",
+   "JRPG",
+   "Auto Battler",
+   "Party-Based RPG",
+   "Singleplayer",
+   "Indie",
+   "Tactical",
+   "Turn-Based Tactics"
+  ]
+ },
+ {
+  "steamId": 1656780,
+  "id": 1656780,
+  "name": "Hero's Hour",
+  "copiesSold": 485261,
+  "unreleased": false,
+  "earlyAccess": false,
+  "firstReleaseDate": 1646110800000,
+  "releaseDate": 1646110800000,
+  "price": 17.99,
+  "developers": [
+   "Benjamin \"ThingOnItsOwn\" Hauer"
+  ],
+  "publishers": [
+   "Goblinz Publishing",
+   "Maple Whispering Limited"
+  ],
+  "publisherClass": "Indie",
+  "reviewScore": 79,
+  "genres": [
+   "RPG",
+   "Strategy"
+  ],
+  "tags": [
+   "Turn-Based",
+   "Pixel Graphics",
+   "Strategy",
+   "Auto Battler",
+   "Turn-Based Strategy",
+   "Singleplayer",
+   "Fantasy",
+   "Strategy RPG",
+   "Turn-Based Tactics",
+   "Level Editor",
+   "Multiplayer",
+   "RPG",
+   "Procedural Generation",
+   "Old School",
+   "2D",
+   "Tactical",
+   "PvP",
+   "Local Co-Op",
+   "Atmospheric",
+   "4X"
+  ]
+ },
+ {
+  "steamId": 1227280,
+  "id": 1227280,
+  "name": "Despot's Game: Dystopian Battle Simulator",
+  "copiesSold": 328329,
+  "unreleased": false,
+  "earlyAccess": false,
+  "firstReleaseDate": 1634184000000,
+  "releaseDate": 1664424000000,
+  "earlyAccessExitDate": 1664424000000,
+  "EAReleaseDate": 1634184000000,
+  "price": 19.99,
+  "developers": [
+   "Konfa Games"
+  ],
+  "publishers": [
+   "tinyBuild"
+  ],
+  "publisherClass": "AA",
+  "reviewScore": 84,
+  "genres": [
+   "Indie",
+   "RPG",
+   "Strategy"
+  ],
+  "tags": [
+   "Auto Battler",
+   "Pixel Graphics",
+   "Roguelike",
+   "Tactical",
+   "Indie",
+   "Turn-Based Tactics",
+   "RPG",
+   "2D",
+   "Dark Humor",
+   "Roguelite",
+   "Singleplayer",
+   "Strategy",
+   "Adventure",
+   "Survival",
+   "Asynchronous Multiplayer",
+   "Atmospheric",
+   "Dungeon Crawler",
+   "Procedural Generation",
+   "Replay Value",
+   "Turn-Based"
+  ]
+ },
+ {
+  "steamId": 1359120,
+  "id": 1359120,
+  "name": "The Dungeon Beneath",
+  "copiesSold": 69494,
+  "unreleased": false,
+  "earlyAccess": false,
+  "firstReleaseDate": 1603425600000,
+  "releaseDate": 1603425600000,
+  "price": 14.99,
+  "developers": [
+   "Puzzle Box Games"
+  ],
+  "publishers": [
+   "Puzzle Box Games"
+  ],
+  "publisherClass": "Indie",
+  "reviewScore": 89,
+  "genres": [
+   "Indie",
+   "Strategy"
+  ],
+  "tags": [
+   "Turn-Based Tactics",
+   "Auto Battler",
+   "Roguelite",
+   "Tactical RPG",
+   "Perma Death",
+   "Turn-Based Strategy",
+   "Roguelike",
+   "Strategy",
+   "2D",
+   "Turn-Based Combat",
+   "Pixel Graphics",
+   "Tactical",
+   "Retro",
+   "Fantasy",
+   "Dungeon Crawler",
+   "Procedural Generation",
+   "Indie",
+   "Singleplayer",
+   "Combat",
+   "PvE"
+  ]
+ },
+ {
+  "steamId": 1569090,
+  "id": 1569090,
+  "name": "Vivid Knight",
+  "copiesSold": 88909,
+  "unreleased": false,
+  "earlyAccess": false,
+  "firstReleaseDate": 1622001600000,
+  "releaseDate": 1622001600000,
+  "price": 14.99,
+  "developers": [
+   "Asobism.Co.,Ltd"
+  ],
+  "publishers": [
+   "Asobism.Co.,Ltd"
+  ],
+  "publisherClass": "Indie",
+  "reviewScore": 90,
+  "genres": [
+   "Simulation",
+   "Strategy"
+  ],
+  "tags": [
+   "Roguelike",
+   "Inventory Management",
+   "Roguelike Deckbuilder",
+   "Choices Matter",
+   "Difficult",
+   "Roguelite",
+   "2D",
+   "Dungeon Crawler",
+   "Strategy",
+   "Simulation",
+   "Cute",
+   "Auto Battler",
+   "Replay Value",
+   "Fantasy",
+   "Medieval",
+   "Procedural Generation",
+   "Turn-Based Tactics",
+   "Anime",
+   "Singleplayer",
+   "Mystery Dungeon"
+  ]
+ },
+ {
+  "steamId": 3093400,
+  "id": 3093400,
+  "name": "Knightica",
+  "copiesSold": 58669,
+  "unreleased": false,
+  "earlyAccess": false,
+  "firstReleaseDate": 1755734400000,
+  "releaseDate": 1755734400000,
+  "price": 14.99,
+  "developers": [
+   "Mad Mango Games"
+  ],
+  "publishers": [
+   "Goblinz Publishing",
+   "WR game"
+  ],
+  "publisherClass": "Indie",
+  "reviewScore": 75,
+  "genres": [
+   "Indie",
+   "Strategy"
+  ],
+  "tags": [
+   "Auto Battler",
+   "Tower Defense",
+   "Deckbuilding",
+   "Turn-Based",
+   "Roguelike",
+   "Card Battler",
+   "Inventory Management",
+   "Turn-Based Strategy",
+   "Strategy",
+   "2D",
+   "Fantasy",
+   "Loot",
+   "Management",
+   "Tactical",
+   "Combat",
+   "Singleplayer",
+   "Indie",
+   "Turn-Based Tactics",
+   "RTS",
+   "Roguelite"
+  ]
+ },
+ {
+  "steamId": 1404850,
+  "id": 1404850,
+  "name": "Luck be a Landlord",
+  "copiesSold": 818789,
+  "unreleased": false,
+  "earlyAccess": false,
+  "firstReleaseDate": 1610082000000,
+  "releaseDate": 1672981200000,
+  "earlyAccessExitDate": 1672981200000,
+  "EAReleaseDate": 1610082000000,
+  "price": 9.99,
+  "developers": [
+   "TrampolineTales"
+  ],
+  "publishers": [
+   "TrampolineTales"
+  ],
+  "publisherClass": "Indie",
+  "reviewScore": 93,
+  "genres": [
+   "Indie",
+   "Simulation",
+   "Strategy"
+  ],
+  "tags": [
+   "Roguelike Deckbuilder",
+   "Deckbuilding",
+   "Roguelite",
+   "Strategy",
+   "Procedural Generation",
+   "Pixel Graphics",
+   "Simulation",
+   "Roguelike",
+   "Capitalism",
+   "Resource Management",
+   "Casual",
+   "Auto Battler",
+   "Management",
+   "Singleplayer",
+   "Indie",
+   "2D",
+   "Retro",
+   "Villain Protagonist",
+   "Mouse Only",
+   "Early Access"
+  ]
+ },
+ {
+  "steamId": 2667120,
+  "id": 2667120,
+  "name": "Ballionaire",
+  "copiesSold": 395571,
+  "unreleased": false,
+  "earlyAccess": false,
+  "firstReleaseDate": 1733788800000,
+  "releaseDate": 1733788800000,
+  "price": 12.34,
+  "developers": [
+   "newobject"
+  ],
+  "publishers": [
+   "Raw Fury"
+  ],
+  "publisherClass": "AA",
+  "reviewScore": 84,
+  "genres": [
+   "Casual",
+   "Indie",
+   "Strategy"
+  ],
+  "tags": [
+   "Singleplayer",
+   "2D",
+   "Casual",
+   "Roguelike",
+   "Deckbuilding",
+   "Strategy",
+   "Roguelite",
+   "Pinball",
+   "Physics",
+   "Cute",
+   "Pixel Graphics",
+   "Card Game",
+   "Relaxing",
+   "Card Battler",
+   "Turn-Based Strategy",
+   "Choices Matter",
+   "Simulation",
+   "Sandbox",
+   "Funny",
+   "Auto Battler"
+  ]
+ },
+ {
+  "steamId": 1970580,
+  "id": 1970580,
+  "name": "Backpack Hero",
+  "copiesSold": 586133,
+  "unreleased": false,
+  "earlyAccess": false,
+  "firstReleaseDate": 1660536000000,
+  "releaseDate": 1699938000000,
+  "earlyAccessExitDate": 1699938000000,
+  "EAReleaseDate": 1660536000000,
+  "price": 19.99,
+  "developers": [
+   "Jaspel"
+  ],
+  "publishers": [
+   "Pretty Soon",
+   "IndieArk"
+  ],
+  "publisherClass": "Indie",
+  "reviewScore": 86,
+  "genres": [
+   "Adventure",
+   "Casual",
+   "Indie",
+   "RPG",
+   "Strategy"
+  ],
+  "tags": [
+   "Replay Value",
+   "Inventory Management",
+   "Turn-Based",
+   "Roguelike Deckbuilder",
+   "Deckbuilding",
+   "2D",
+   "Roguelike",
+   "Fantasy",
+   "Strategy",
+   "Building",
+   "Choices Matter",
+   "Turn-Based Strategy",
+   "Roguelite",
+   "Casual",
+   "Procedural Generation",
+   "Singleplayer",
+   "Female Protagonist",
+   "Card Battler",
+   "Controller",
+   "Moddable"
+  ]
+ },
+ {
+  "steamId": 2356780,
+  "id": 2356780,
+  "name": "Dungeon Clawler",
+  "copiesSold": 385291,
+  "unreleased": false,
+  "earlyAccess": false,
+  "firstReleaseDate": 1732147200000,
+  "releaseDate": 1777561234000,
+  "earlyAccessExitDate": 1777561234000,
+  "EAReleaseDate": 1732147200000,
+  "price": 14.99,
+  "developers": [
+   "Stray Fawn Studio"
+  ],
+  "publishers": [
+   "Stray Fawn Publishing"
+  ],
+  "publisherClass": "Indie",
+  "reviewScore": 89,
+  "genres": [
+   "Action",
+   "Casual",
+   "RPG",
+   "Simulation",
+   "Strategy"
+  ],
+  "tags": [
+   "Roguelike Deckbuilder",
+   "Replay Value",
+   "Arcade",
+   "Strategy",
+   "Roguelite",
+   "Gambling",
+   "Turn-Based Strategy",
+   "Singleplayer",
+   "Physics",
+   "Roguelike",
+   "2D",
+   "Deckbuilding",
+   "Cute",
+   "Casual",
+   "RPG",
+   "Retro",
+   "Turn-Based Combat",
+   "Dungeon Crawler",
+   "Procedural Generation",
+   "Action"
+  ]
+ },
+ {
+  "steamId": 2084000,
+  "id": 2084000,
+  "name": "Shogun Showdown",
+  "copiesSold": 367362,
+  "unreleased": false,
+  "earlyAccess": false,
+  "firstReleaseDate": 1687838400000,
+  "releaseDate": 1725494400000,
+  "earlyAccessExitDate": 1725494400000,
+  "EAReleaseDate": 1687838400000,
+  "price": 14.99,
+  "developers": [
+   "Roboatino"
+  ],
+  "publishers": [
+   "Goblinz Publishing",
+   "Gamirror Games"
+  ],
+  "publisherClass": "Indie",
+  "reviewScore": 95,
+  "genres": [
+   "Indie",
+   "RPG",
+   "Strategy"
+  ],
+  "tags": [
+   "Replay Value",
+   "Strategy RPG",
+   "Roguelike",
+   "Turn-Based",
+   "Pixel Graphics",
+   "Turn-Based Strategy",
+   "Roguelike Deckbuilder",
+   "Strategy",
+   "Turn-Based Combat",
+   "Turn-Based Tactics",
+   "Deckbuilding",
+   "Singleplayer",
+   "Ninja",
+   "Roguelite",
+   "Procedural Generation",
+   "Card Game",
+   "Difficult",
+   "2D",
+   "Tactical RPG",
+   "RPG"
+  ]
+ },
+ {
+  "steamId": 2459550,
+  "id": 2459550,
+  "name": "Emberward",
+  "copiesSold": 237831,
+  "unreleased": false,
+  "earlyAccess": false,
+  "firstReleaseDate": 1719288000000,
+  "releaseDate": 1789657219000,
+  "earlyAccessExitDate": 1789657219000,
+  "EAReleaseDate": 1719288000000,
+  "price": 19.99,
+  "developers": [
+   "Refic Games"
+  ],
+  "publishers": [
+   "Refic Games"
+  ],
+  "publisherClass": "Indie",
+  "reviewScore": 97,
+  "genres": [
+   "Indie",
+   "Strategy",
+   "Free To Play"
+  ],
+  "tags": [
+   "Tower Defense",
+   "Falling Blocks",
+   "Strategy",
+   "Roguelite",
+   "Deckbuilding",
+   "Base Building",
+   "3D",
+   "Indie",
+   "Singleplayer",
+   "Roguelike",
+   "Roguelike Deckbuilder",
+   "Tactical",
+   "Colorful",
+   "Cartoony",
+   "Building",
+   "Fantasy",
+   "Resource Management",
+   "Top-Down",
+   "Procedural Generation",
+   "Stylized"
+  ]
+ },
+ {
+  "steamId": 1038370,
+  "id": 1038370,
+  "name": "Trials of Fire",
+  "copiesSold": 108539,
+  "unreleased": false,
+  "earlyAccess": false,
+  "firstReleaseDate": 1557201600000,
+  "releaseDate": 1617940800000,
+  "earlyAccessExitDate": 1617940800000,
+  "EAReleaseDate": 1557201600000,
+  "price": 19.99,
+  "developers": [
+   "Whatboy Games"
+  ],
+  "publishers": [
+   "Whatboy Games"
+  ],
+  "publisherClass": "Indie",
+  "reviewScore": 86,
+  "genres": [
+   "Indie",
+   "RPG",
+   "Strategy"
+  ],
+  "tags": [
+   "Card Battler",
+   "Turn-Based Tactics",
+   "Tactical RPG",
+   "Roguelite",
+   "Dungeon Crawler",
+   "Turn-Based",
+   "Perma Death",
+   "Roguelike Deckbuilder",
+   "Turn-Based Strategy",
+   "Card Game",
+   "Board Game",
+   "Roguelike",
+   "RPG",
+   "Strategy",
+   "2D",
+   "3D",
+   "Story Rich",
+   "Deckbuilding",
+   "Procedural Generation",
+   "Turn-Based Combat"
+  ]
+ },
+ {
+  "steamId": 1076200,
+  "id": 1076200,
+  "name": "Roguebook",
+  "copiesSold": 303981,
+  "unreleased": false,
+  "earlyAccess": false,
+  "firstReleaseDate": 1623902400000,
+  "releaseDate": 1623902400000,
+  "price": 24.99,
+  "developers": [
+   "Abrakam Entertainment SA"
+  ],
+  "publishers": [
+   "Nacon"
+  ],
+  "publisherClass": "AA",
+  "reviewScore": 84,
+  "genres": [
+   "Adventure",
+   "Indie",
+   "RPG",
+   "Strategy"
+  ],
+  "tags": [
+   "RPG",
+   "Indie",
+   "Card Game",
+   "Deckbuilding",
+   "Singleplayer",
+   "Strategy",
+   "Roguelite",
+   "Turn-Based",
+   "Roguelike",
+   "Turn-Based Tactics",
+   "Card Battler",
+   "Turn-Based Combat",
+   "Roguelike Deckbuilder",
+   "2D",
+   "Difficult",
+   "Fantasy",
+   "Turn-Based Strategy",
+   "Replay Value",
+   "Adventure",
+   "Magic"
+  ]
+ },
+ {
+  "steamId": 601840,
+  "id": 601840,
+  "name": "Griftlands",
+  "copiesSold": 857962,
+  "unreleased": false,
+  "earlyAccess": false,
+  "firstReleaseDate": 1592107200000,
+  "releaseDate": 1622520000000,
+  "earlyAccessExitDate": 1622520000000,
+  "EAReleaseDate": 1592107200000,
+  "price": 19.99,
+  "developers": [
+   "Klei Entertainment"
+  ],
+  "publishers": [
+   "Klei Entertainment"
+  ],
+  "publisherClass": "AA",
+  "reviewScore": 94,
+  "genres": [
+   "Indie"
+  ],
+  "tags": [
+   "Card Battler",
+   "Roguelite",
+   "Deckbuilding",
+   "Choices Matter",
+   "RPG",
+   "Turn-Based",
+   "Card Game",
+   "Story Rich",
+   "Strategy",
+   "Dark Humor",
+   "Roguelike",
+   "Turn-Based Combat",
+   "2D",
+   "Comic Book",
+   "Choose Your Own Adventure",
+   "Multiple Endings",
+   "Singleplayer",
+   "Sci-fi",
+   "Hand-drawn",
+   "Roguelike Deckbuilder"
+  ]
+ },
+ {
+  "steamId": 1948800,
+  "id": 1948800,
+  "name": "Yi Xian: The Cultivation Card Game",
+  "copiesSold": 346021,
+  "unreleased": false,
+  "earlyAccess": false,
+  "firstReleaseDate": 1670302800000,
+  "releaseDate": 1705813200000,
+  "earlyAccessExitDate": 1705813200000,
+  "EAReleaseDate": 1670302800000,
+  "price": 0,
+  "developers": [
+   "Darksun Studio"
+  ],
+  "publishers": [
+   "Darksun Studio"
+  ],
+  "publisherClass": "Indie",
+  "reviewScore": 74,
+  "genres": [
+   "Casual",
+   "Indie",
+   "Strategy",
+   "Free To Play"
+  ],
+  "tags": [
+   "Free to Play",
+   "Card Battler",
+   "Strategy",
+   "Turn-Based Tactics",
+   "Casual",
+   "Card Game",
+   "Solitaire",
+   "Turn-Based Strategy",
+   "Auto Battler",
+   "2D",
+   "Turn-Based Combat",
+   "Relaxing",
+   "Indie",
+   "Singleplayer",
+   "Pixel Graphics",
+   "PvP",
+   "Xianxia",
+   "Multiplayer",
+   "Martial Arts",
+   "Wuxia"
+  ]
+ },
+ {
+  "steamId": 1638390,
+  "id": 1638390,
+  "name": "Indies' Lies",
+  "copiesSold": 39890,
+  "unreleased": false,
+  "earlyAccess": false,
+  "firstReleaseDate": 1648612800000,
+  "releaseDate": 1673758800000,
+  "earlyAccessExitDate": 1673758800000,
+  "EAReleaseDate": 1648612800000,
+  "price": 14.99,
+  "developers": [
+   "Fun Square Games"
+  ],
+  "publishers": [
+   "Erabit"
+  ],
+  "publisherClass": "Indie",
+  "reviewScore": 76,
+  "genres": [
+   "RPG",
+   "Strategy"
+  ],
+  "tags": [
+   "Roguelike Deckbuilder",
+   "Card Game",
+   "Card Battler",
+   "Deckbuilding",
+   "Roguelike",
+   "Turn-Based",
+   "Strategy",
+   "Singleplayer",
+   "Roguelite",
+   "Replay Value",
+   "Indie",
+   "Dungeon Crawler",
+   "RPG",
+   "Fantasy",
+   "Turn-Based Combat",
+   "2D",
+   "Procedural Generation",
+   "Dark Fantasy",
+   "Turn-Based Strategy",
+   "Casual"
+  ]
+ },
+ {
+  "steamId": 1915510,
+  "id": 1915510,
+  "name": "Yao-Guai Hunter",
+  "copiesSold": 107130,
+  "unreleased": false,
+  "earlyAccess": false,
+  "firstReleaseDate": 1680494400000,
+  "releaseDate": 1744848000000,
+  "earlyAccessExitDate": 1744848000000,
+  "EAReleaseDate": 1680494400000,
+  "price": 16.99,
+  "developers": [
+   "MyACG Studio"
+  ],
+  "publishers": [
+   "MyACG Studio"
+  ],
+  "publisherClass": "Indie",
+  "reviewScore": 83,
+  "genres": [
+   "Indie",
+   "RPG",
+   "Strategy"
+  ],
+  "tags": [
+   "Roguelike Deckbuilder",
+   "Card Game",
+   "Replay Value",
+   "Roguelike",
+   "Card Battler",
+   "Cartoony",
+   "Turn-Based",
+   "Deckbuilding",
+   "Singleplayer",
+   "Strategy",
+   "Roguelite",
+   "Indie",
+   "RPG",
+   "2D",
+   "Dungeon Crawler",
+   "Fantasy",
+   "Anime",
+   "Turn-Based Tactics",
+   "Magic",
+   "Procedural Generation"
+  ]
+ },
+ {
+  "steamId": 1140150,
+  "id": 1140150,
+  "name": "Touhou: Lost Branch of Legend",
+  "copiesSold": 81114,
+  "unreleased": false,
+  "earlyAccess": true,
+  "firstReleaseDate": 1660708800000,
+  "releaseDate": 1660708800000,
+  "EAReleaseDate": 1660708800000,
+  "price": 29.99,
+  "developers": [
+   "Alioth Studio"
+  ],
+  "publishers": [
+   "Alioth Studio"
+  ],
+  "publisherClass": "Indie",
+  "reviewScore": 93,
+  "genres": [
+   "Adventure",
+   "Indie",
+   "RPG",
+   "Strategy",
+   "Early Access"
+  ],
+  "tags": [
+   "Roguelike Deckbuilder",
+   "Anime",
+   "Strategy",
+   "Card Battler",
+   "Roguelike",
+   "Card Game",
+   "Deckbuilding",
+   "Singleplayer",
+   "Turn-Based Tactics",
+   "Roguelite",
+   "Turn-Based Strategy",
+   "RPG",
+   "JRPG",
+   "Strategy RPG",
+   "Cute",
+   "2D",
+   "Faith",
+   "Procedural Generation",
+   "Early Access",
+   "Indie"
+  ]
+ },
+ {
+  "steamId": 3444020,
+  "id": 3444020,
+  "name": "Demonic Mahjong",
+  "copiesSold": 300013,
+  "unreleased": false,
+  "earlyAccess": false,
+  "firstReleaseDate": 1752537600000,
+  "releaseDate": 1752537600000,
+  "price": 16.99,
+  "developers": [
+   "Boxed Lighting Games"
+  ],
+  "publishers": [
+   "Omegames Studio",
+   "NPC Entertainment"
+  ],
+  "publisherClass": "Indie",
+  "reviewScore": 96,
+  "genres": [
+   "Casual",
+   "Strategy"
+  ],
+  "tags": [
+   "Strategy",
+   "Card Game",
+   "Roguelike",
+   "Tabletop",
+   "Casual",
+   "3D",
+   "Mahjong",
+   "Deckbuilding",
+   "Relaxing",
+   "Funny",
+   "Sexual Content",
+   "Cartoony",
+   "Anime",
+   "Fantasy",
+   "Singleplayer",
+   "Comedy",
+   "Cartoon",
+   "Roguelike Deckbuilder",
+   "Artificial Intelligence",
+   "Nudity"
+  ]
+ },
+ {
+  "steamId": 2797340,
+  "id": 2797340,
+  "name": "Cat God Ranch",
+  "copiesSold": 226696,
+  "unreleased": false,
+  "earlyAccess": false,
+  "firstReleaseDate": 1726099200000,
+  "releaseDate": 1726099200000,
+  "price": 9.99,
+  "developers": [
+   "CrazyPotato Studio"
+  ],
+  "publishers": [
+   "CrazyPotato Studio"
+  ],
+  "publisherClass": "Indie",
+  "reviewScore": 93,
+  "genres": [
+   "Casual",
+   "Indie",
+   "RPG",
+   "Simulation",
+   "Strategy"
+  ],
+  "tags": [
+   "Management",
+   "Farming Sim",
+   "Simulation",
+   "Resource Management",
+   "Roguelike Deckbuilder",
+   "Deckbuilding",
+   "Casual",
+   "Card Battler",
+   "Roguelike",
+   "Replay Value",
+   "Farming",
+   "Roguelite",
+   "Strategy",
+   "Auto Battler",
+   "Creature Collector",
+   "Card Game",
+   "Turn-Based Tactics",
+   "Cats",
+   "Choices Matter",
+   "RPG"
+  ]
+ },
+ {
+  "steamId": 2870340,
+  "id": 2870340,
+  "name": "Decktamer",
+  "copiesSold": 167224,
+  "unreleased": false,
+  "earlyAccess": false,
+  "firstReleaseDate": 1761523200000,
+  "releaseDate": 1761523200000,
+  "price": 15.99,
+  "developers": [
+   "Horizon Edge"
+  ],
+  "publishers": [
+   "Assemble Entertainment"
+  ],
+  "publisherClass": "Indie",
+  "reviewScore": 86,
+  "genres": [
+   "Strategy"
+  ],
+  "tags": [
+   "Roguelike Deckbuilder",
+   "Creature Collector",
+   "Card Game",
+   "Card Battler",
+   "Turn-Based Combat",
+   "Deckbuilding",
+   "Strategy",
+   "Turn-Based Strategy",
+   "Difficult",
+   "2D",
+   "Fantasy",
+   "Hand-drawn",
+   "Controller",
+   "Singleplayer",
+   "Horror",
+   "Roguelike",
+   "Lovecraftian",
+   "Indie",
+   "Cartoony",
+   "Colorful"
+  ]
+ },
+ {
+  "steamId": 3400960,
+  "id": 3400960,
+  "name": "Oaken Tower",
+  "copiesSold": 148064,
+  "unreleased": false,
+  "earlyAccess": true,
+  "firstReleaseDate": 1777334400000,
+  "releaseDate": 1777334400000,
+  "EAReleaseDate": 1777334400000,
+  "price": 9.99,
+  "developers": [
+   "Bocary Studios"
+  ],
+  "publishers": [
+   "Alibi Games"
+  ],
+  "publisherClass": "Indie",
+  "reviewScore": 90,
+  "genres": [
+   "Strategy",
+   "Early Access"
+  ],
+  "tags": [
+   "Strategy",
+   "Auto Battler",
+   "Asynchronous Multiplayer",
+   "2D",
+   "Pixel Graphics",
+   "PvP",
+   "Card Battler",
+   "Tactical RPG",
+   "Tactical",
+   "Fantasy",
+   "Medieval",
+   "Early Access",
+   "Magic",
+   "Colorful",
+   "Deckbuilding",
+   "Choices Matter"
+  ]
+ },
+ {
+  "steamId": 3410180,
+  "id": 3410180,
+  "name": "Overlooting",
+  "copiesSold": 134671,
+  "unreleased": false,
+  "earlyAccess": false,
+  "firstReleaseDate": 1756684800000,
+  "releaseDate": 1756684800000,
+  "price": 9.99,
+  "developers": [
+   "Posing Possums"
+  ],
+  "publishers": [
+   "Posing Possums"
+  ],
+  "publisherClass": "Indie",
+  "reviewScore": 79,
+  "genres": [
+   "Adventure",
+   "RPG",
+   "Strategy"
+  ],
+  "tags": [
+   "Inventory Management",
+   "Loot",
+   "Roguelite",
+   "Dungeon Crawler",
+   "Pixel Graphics",
+   "Roguelike",
+   "RPG",
+   "Character Customization",
+   "Replay Value",
+   "Turn-Based Combat",
+   "Turn-Based Strategy",
+   "Strategy",
+   "Medieval",
+   "Strategy RPG",
+   "Auto Battler",
+   "Fantasy",
+   "Deckbuilding",
+   "Roguelike Deckbuilder",
+   "Turn-Based",
+   "Singleplayer"
+  ]
+ },
+ {
+  "steamId": 2697930,
+  "id": 2697930,
+  "name": "Commander Quest",
+  "copiesSold": 90624,
+  "unreleased": false,
+  "earlyAccess": false,
+  "firstReleaseDate": 1743724800000,
+  "releaseDate": 1743724800000,
+  "price": 11.99,
+  "developers": [
+   "Flyway Games, Inc."
+  ],
+  "publishers": [
+   "Flyway Games, Inc.",
+   "KRAFTON, Inc."
+  ],
+  "publisherClass": "Indie",
+  "reviewScore": 75,
+  "genres": [
+   "Indie",
+   "Simulation",
+   "Strategy"
+  ],
+  "tags": [
+   "War",
+   "Roguelike Deckbuilder",
+   "Card Game",
+   "Strategy",
+   "Replay Value",
+   "Deckbuilding",
+   "Roguelike",
+   "Card Battler",
+   "Roguelite",
+   "Auto Battler",
+   "Choices Matter",
+   "Mouse Only",
+   "Minimalist",
+   "Fantasy",
+   "Casual",
+   "Simulation",
+   "Singleplayer",
+   "3D",
+   "Turn-Based Strategy",
+   "Tactical"
+  ]
+ },
+ {
+  "steamId": 2389040,
+  "id": 2389040,
+  "name": "ShapeHero Factory",
+  "copiesSold": 70840,
+  "unreleased": false,
+  "earlyAccess": false,
+  "firstReleaseDate": 1730764800000,
+  "releaseDate": 1758067200000,
+  "earlyAccessExitDate": 1758067200000,
+  "EAReleaseDate": 1730764800000,
+  "price": 23.99,
+  "developers": [
+   "Asobism.Co.,Ltd"
+  ],
+  "publishers": [
+   "Asobism.Co.,Ltd"
+  ],
+  "publisherClass": "Indie",
+  "reviewScore": 89,
+  "genres": [
+   "Casual",
+   "Indie",
+   "Simulation",
+   "Strategy"
+  ],
+  "tags": [
+   "Automation",
+   "Base Building",
+   "Tower Defense",
+   "Roguelite",
+   "Resource Management",
+   "2.5D",
+   "Cute",
+   "Strategy",
+   "Building",
+   "Simulation",
+   "Fantasy",
+   "Bullet Hell",
+   "Auto Battler",
+   "Roguelike",
+   "Puzzle",
+   "Crafting",
+   "Atmospheric",
+   "Top-Down",
+   "Inventory Management",
+   "Deckbuilding"
+  ]
+ }
+]

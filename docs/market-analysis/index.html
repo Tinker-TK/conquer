@@ -1,0 +1,790 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>conquer 立项数据分析 · 同类游戏与市场盘子</title>
+<meta name="description" content="conquer（卡牌构筑 × 小队自走棋）的同类游戏、市场分位、回本模型与立项结论。">
+<style>
+:root{
+  --paper:#f5efe2; --card:#fcf8ef; --card2:#f8f2e4; --ink:#1b2a24; --muted:#64736b;
+  --line:#d8cdb8; --line2:#e7ddc9; --green:#1f5c48; --green2:#3d8669; --gold:#b3863c;
+  --red:#a34332; --shadow:rgba(31,92,72,.07);
+  --serif:"Source Han Serif SC","Noto Serif SC","Songti SC","SimSun",serif;
+}
+*{box-sizing:border-box}
+html{scroll-behavior:smooth}
+body{
+  margin:0; color:var(--ink); background:var(--paper);
+  font-family:"Source Han Sans SC","Noto Sans SC","PingFang SC","Microsoft YaHei",sans-serif;
+  font-size:15px; line-height:1.78; -webkit-font-smoothing:antialiased; text-rendering:optimizeLegibility;
+}
+body::before{
+  content:""; position:fixed; inset:0; pointer-events:none; z-index:0; opacity:.55;
+  background:
+    radial-gradient(1200px 700px at 8% -10%, rgba(255,255,255,.75), transparent 60%),
+    radial-gradient(900px 600px at 105% 15%, rgba(179,134,60,.06), transparent 60%),
+    repeating-linear-gradient(0deg, rgba(120,100,70,.018) 0 1px, transparent 1px 3px);
+}
+.wrap{max-width:1180px; margin:0 auto; padding:0 30px; position:relative; z-index:1}
+a{color:var(--green); text-decoration:none; border-bottom:1px solid rgba(31,92,72,.28)}
+a:hover{border-bottom-color:var(--green)}
+p{margin:0 0 14px}
+strong{font-weight:700}
+em{font-style:normal; background:linear-gradient(transparent 62%, rgba(179,134,60,.25) 62%); padding:0 1px}
+.serif{font-family:"Source Han Serif SC","Noto Serif SC","Songti SC","SimSun",serif}
+.kicker{font-size:11px; letter-spacing:.24em; text-transform:uppercase; color:var(--green); font-weight:700}
+.mono{font-variant-numeric:tabular-nums; font-feature-settings:"tnum"}
+
+/* progress + nav */
+.progress{position:fixed; top:0; left:0; right:0; height:3px; background:transparent; z-index:60}
+.progress i{display:block; height:100%; width:0; background:linear-gradient(90deg,var(--green),var(--gold)); transition:width .15s linear}
+.toc{position:sticky; top:0; z-index:50; background:rgba(245,239,226,.93); backdrop-filter:blur(10px); border-bottom:1px solid var(--line)}
+.toc .wrap{display:flex; align-items:center; gap:6px; padding:0 30px; height:46px; overflow-x:auto; scrollbar-width:none}
+.toc .brand{font-size:11px; letter-spacing:.12em; color:var(--muted); white-space:nowrap; margin-right:14px; font-weight:700}
+.toc a{font-size:12px; color:var(--muted); border:0; padding:6px 9px; white-space:nowrap; border-radius:2px}
+.toc a:hover{color:var(--ink); background:rgba(31,92,72,.06)}
+.toc a.active{color:var(--green); background:rgba(31,92,72,.10); font-weight:700}
+
+/* cover */
+.cover{min-height:min(calc(100vh - 46px),880px); display:flex; align-items:center; padding:56px 0 44px; position:relative; overflow:hidden}
+.cover::after{content:""; position:absolute; right:-140px; top:60px; width:520px; height:520px; border:1px solid rgba(31,92,72,.13); border-radius:50%; box-shadow:0 0 0 40px rgba(31,92,72,.025),0 0 0 110px rgba(179,134,60,.03)}
+.cover h1{font-family:"Source Han Serif SC","Noto Serif SC","Songti SC","SimSun",serif; font-size:clamp(46px,6.6vw,82px); line-height:1.04; letter-spacing:-.02em; margin:20px 0 12px; font-weight:700}
+.cover .lede{font-size:clamp(17px,2vw,23px); color:var(--muted); margin:0 0 26px; max-width:900px}
+.cover .meta{display:flex; flex-wrap:wrap; gap:8px 26px; font-size:12px; color:var(--muted); margin-top:26px}
+.cover .meta b{color:var(--ink); font-weight:600}
+.verdict{display:inline-flex; align-items:center; gap:12px; margin-top:10px; border:1px solid var(--green); background:rgba(31,92,72,.06); padding:10px 18px; border-radius:2px}
+.verdict .dot{width:9px; height:9px; background:var(--green); border-radius:50%; box-shadow:0 0 0 4px rgba(31,92,72,.14)}
+.verdict b{font-size:17px; letter-spacing:.08em}
+.verdict span{font-size:12px; color:var(--muted)}
+.cover-stats{display:grid; grid-template-columns:repeat(3,1fr); gap:0; margin-top:46px; border-top:1px solid var(--line); border-bottom:1px solid var(--line)}
+.cover-stats > div{padding:20px 22px 18px 0; border-right:1px solid var(--line)}
+.cover-stats > div:last-child{border-right:0}
+.cover-stats b{display:block; font-family:var(--serif); font-size:clamp(30px,3.6vw,44px); line-height:1.1; color:var(--green); font-weight:700}
+.cover-stats span{display:block; font-size:11.5px; color:var(--muted); margin-top:6px; letter-spacing:.02em}
+
+/* sections */
+section{padding:82px 0 74px; border-bottom:1px solid var(--line); position:relative}
+section:last-of-type{border-bottom:0}
+.sec-head{display:grid; grid-template-columns:86px 1fr; gap:22px; align-items:start; margin-bottom:34px}
+.sec-num{font-family:var(--serif); font-size:62px; line-height:.85; color:rgba(31,92,72,.16); font-weight:700; letter-spacing:-.04em; padding-top:2px}
+.sec-head h2{font-family:var(--serif); font-size:clamp(27px,3.4vw,38px); line-height:1.2; margin:2px 0 8px; letter-spacing:-.01em}
+.sec-sub{color:var(--muted); font-size:13.5px; max-width:850px; margin:0}
+.sec-head .kicker{margin-bottom:4px}
+h3{font-family:var(--serif); font-size:21px; margin:34px 0 12px; letter-spacing:-.01em}
+h4{font-size:13px; letter-spacing:.06em; text-transform:uppercase; color:var(--green); margin:24px 0 10px}
+.lead{font-size:17px; line-height:1.8; color:#2c3a33; max-width:900px}
+
+/* layout */
+.grid2{display:grid; grid-template-columns:1fr 1fr; gap:22px}
+.grid3{display:grid; grid-template-columns:repeat(3,1fr); gap:18px}
+.grid4{display:grid; grid-template-columns:repeat(4,1fr); gap:14px}
+.split{display:grid; grid-template-columns:1.25fr .75fr; gap:26px}
+.card{background:var(--card); border:1px solid var(--line); border-radius:2px; padding:22px 24px; box-shadow:4px 4px 0 var(--shadow)}
+.card.tight{padding:18px 18px}
+.card h3{margin-top:0}
+.card p:last-child{margin-bottom:0}
+
+/* callouts */
+.callout{border-left:4px solid var(--green); background:rgba(31,92,72,.055); padding:16px 20px; margin:20px 0; font-size:14px}
+.callout b{color:var(--green)}
+.callout.warn{border-left-color:var(--red); background:rgba(163,67,50,.055)}
+.callout.warn b{color:var(--red)}
+.callout.gold{border-left-color:var(--gold); background:rgba(179,134,60,.07)}
+.callout p:last-child{margin-bottom:0}
+.note{font-size:11.5px; color:var(--muted); line-height:1.6}
+.note b{color:var(--ink)}
+
+/* stats */
+.stat{background:var(--card); border:1px solid var(--line); padding:18px 18px 16px; box-shadow:3px 3px 0 var(--shadow)}
+.stat b{display:block; font-family:var(--serif); font-size:34px; line-height:1.05; color:var(--green); font-weight:700; letter-spacing:-.02em}
+.stat .unit{font-size:15px; color:var(--muted); font-family:inherit; font-weight:500; letter-spacing:0}
+.stat span{display:block; font-size:11.5px; color:var(--muted); margin-top:7px; line-height:1.55}
+.stat.red b{color:var(--red)}
+.stat.gold b{color:var(--gold)}
+
+/* findings */
+.findings{counter-reset:f}
+.finding{display:grid; grid-template-columns:42px 1fr; gap:14px; padding:18px 0; border-top:1px solid var(--line2)}
+.finding:last-child{border-bottom:1px solid var(--line2)}
+.finding::before{counter-increment:f; content:counter(f,decimal-leading-zero); font-family:var(--serif); font-size:15px; color:var(--gold); font-weight:700; padding-top:2px}
+.finding h4{margin:0 0 5px; text-transform:none; letter-spacing:0; font-size:15px; color:var(--ink); font-family:inherit; font-weight:700}
+.finding p{font-size:13.5px; color:#3b4a42; margin:0}
+
+/* verdict box */
+.verdict-box{border:1px solid var(--green); background:linear-gradient(180deg,rgba(31,92,72,.07),rgba(31,92,72,.02)); padding:24px}
+.verdict-box .tag{display:inline-block; font-size:10px; letter-spacing:.18em; color:var(--paper); background:var(--green); padding:4px 9px; margin-bottom:12px}
+.verdict-box h3{margin:0 0 10px; font-size:26px}
+.verdict-box ol{margin:0; padding-left:18px; font-size:13px}
+.verdict-box li{margin-bottom:8px}
+.gates{display:grid; grid-template-columns:repeat(3,1fr); gap:12px; margin-top:18px}
+.gate{border-top:2px solid var(--gold); padding-top:10px; font-size:11.5px; color:var(--muted)}
+.gate b{display:block; color:var(--ink); font-size:12.5px; margin-bottom:3px}
+.verdict-box .gates{grid-template-columns:1fr; gap:0; margin-top:16px}
+.verdict-box .gate{border-top:1px solid var(--line2); padding:8px 0; display:grid; grid-template-columns:100px 1fr; gap:10px; align-items:start}
+.verdict-box .gate b{margin:0; padding-top:1px; white-space:nowrap}
+
+/* charts */
+figure.chart{margin:26px 0; background:var(--card); border:1px solid var(--line); padding:20px 20px 12px; box-shadow:4px 4px 0 var(--shadow)}
+figure.chart figcaption{font-size:11.5px; color:var(--muted); margin-top:10px; padding-top:10px; border-top:1px solid var(--line2); line-height:1.6}
+figure.chart figcaption b{color:var(--ink)}
+.chart-svg{width:100%; height:auto; display:block; overflow:visible}
+.chart-svg text{font-family:"Source Han Sans SC","Noto Sans SC","Microsoft YaHei",sans-serif}
+.two-charts{display:grid; grid-template-columns:1fr 1fr; gap:22px}
+.two-charts figure.chart{margin:0}
+
+/* tables */
+.table-wrap{overflow:auto; border:1px solid var(--line); background:var(--card); box-shadow:4px 4px 0 var(--shadow); max-height:640px}
+#comps-table{max-height:none}
+#comps-table table{min-width:980px; font-size:11.8px}
+#comps-table th, #comps-table td{padding:8px 7px}
+table{border-collapse:collapse; width:100%; font-size:12.5px; line-height:1.55}
+thead th{position:sticky; top:0; z-index:2; background:#efe5d0; color:#2b3a33; text-align:left; font-weight:700; font-size:11px; letter-spacing:.05em; padding:10px 10px; border-bottom:1px solid var(--line); white-space:nowrap}
+tbody td{padding:9px 10px; border-bottom:1px solid var(--line2); vertical-align:top}
+tbody tr:hover{background:#f6eedc}
+tbody tr:last-child td{border-bottom:0}
+.num{text-align:right; font-variant-numeric:tabular-nums; white-space:nowrap}
+.mini{font-size:10.5px; color:var(--muted)}
+.badge{display:inline-block; min-width:22px; text-align:center; font-size:10px; font-weight:700; letter-spacing:.08em; padding:2px 6px; border-radius:2px; color:#fff}
+.badge.S{background:var(--gold)}
+.badge.A{background:var(--green)}
+.badge.B{background:#8fa89b}
+.badge.n{background:transparent; color:var(--muted); border:1px solid var(--line)}
+.tbl-title{display:flex; align-items:baseline; justify-content:space-between; gap:14px; margin:18px 0 10px}
+.tbl-title h4{margin:0}
+.filters{display:flex; gap:6px; flex-wrap:wrap}
+.filters button{font:inherit; font-size:11px; color:var(--muted); background:transparent; border:1px solid var(--line); padding:4px 9px; cursor:pointer; border-radius:2px}
+.filters button:hover{color:var(--ink); border-color:var(--muted)}
+.filters button.on{background:var(--green); color:var(--paper); border-color:var(--green)}
+th.sortable{cursor:pointer; user-select:none}
+th.sortable::after{content:"↕"; font-size:9px; color:var(--muted); margin-left:5px}
+th.sortable.asc::after{content:"↑"; color:var(--green)}
+th.sortable.desc::after{content:"↓"; color:var(--green)}
+
+/* misc */
+.pill{display:inline-block; font-size:10.5px; padding:2px 7px; border:1px solid var(--line); color:var(--muted); border-radius:99px; margin:0 4px 4px 0}
+.pill.green{border-color:rgba(31,92,72,.3); color:var(--green); background:rgba(31,92,72,.05)}
+.pill.red{border-color:rgba(163,67,50,.3); color:var(--red); background:rgba(163,67,50,.05)}
+.hr{height:1px; background:var(--line); margin:34px 0}
+.kv{display:grid; grid-template-columns:120px 1fr; gap:10px; font-size:13px; padding:8px 0; border-bottom:1px dashed var(--line2)}
+.kv:last-child{border-bottom:0}
+.kv b{font-size:11px; color:var(--muted); font-weight:600; letter-spacing:.04em; padding-top:2px}
+blockquote{margin:24px 0; padding:18px 22px; border-left:3px solid var(--gold); background:rgba(179,134,60,.06); font-family:var(--serif); font-size:19px; line-height:1.65}
+blockquote cite{display:block; font-family:inherit; font-size:11px; color:var(--muted); margin-top:8px; font-style:normal}
+ul.clean{list-style:none; padding:0; margin:0}
+ul.clean li{padding:7px 0 7px 18px; position:relative; border-bottom:1px dashed var(--line2); font-size:13.5px}
+ul.clean li:last-child{border-bottom:0}
+ul.clean li::before{content:"—"; position:absolute; left:0; color:var(--gold)}
+.timeline{display:grid; grid-template-columns:repeat(4,1fr); gap:0; border-top:1px solid var(--line)}
+.timeline > div{padding:16px 16px 16px 0; border-right:1px solid var(--line2)}
+.timeline > div:last-child{border-right:0}
+.timeline b{display:block; font-size:11px; color:var(--gold); letter-spacing:.08em; margin-bottom:6px}
+.timeline strong{display:block; font-size:13.5px; margin-bottom:4px}
+.timeline span{font-size:11.5px; color:var(--muted); line-height:1.55}
+
+footer{padding:50px 0 70px; color:var(--muted); font-size:11.5px}
+footer .wrap{display:flex; justify-content:space-between; gap:30px; border-top:1px solid var(--line); padding-top:22px}
+
+@media (max-width:900px){
+  .grid2,.grid3,.grid4,.split,.two-charts{grid-template-columns:1fr}
+  .cover-stats{grid-template-columns:1fr}
+  .cover-stats > div{border-right:0; border-bottom:1px solid var(--line); padding:14px 0}
+  .sec-head{grid-template-columns:1fr; gap:6px}
+  .sec-num{font-size:40px}
+  .toc .brand{display:none}
+  .timeline{grid-template-columns:1fr 1fr}
+}
+@media print{
+  body{background:#fff; font-size:11px}
+  body::before,.progress,.toc,.filters{display:none}
+  .cover{min-height:auto; page-break-after:always; padding:40px 0}
+  section{page-break-before:always; border:0; padding:20px 0}
+  .card,figure.chart,.table-wrap,.stat{box-shadow:none}
+  .table-wrap{max-height:none; overflow:visible}
+  a{color:inherit; border:0}
+  .chart-svg{max-height:520px}
+}
+</style>
+</head>
+<body>
+<div class="progress"><i></i></div>
+<nav class="toc"><div class="wrap">
+  <span class="brand">CONQUER / GREENLIGHT 2026</span>
+  <a href="#summary">摘要</a><a href="#project">项目</a><a href="#method">方法</a>
+  <a href="#market">大盘</a><a href="#comps">对标</a><a href="#position">定位</a>
+  <a href="#money">财务</a><a href="#risk">风险</a><a href="#verdict">结论</a><a href="#appendix">附录</a>
+</div></nav>
+
+<header class="cover"><div class="wrap">
+  <div class="kicker">Greenlight Dossier · 2026-10</div>
+  <h1>同类游戏<br>与市场盘子</h1>
+  <p class="lede">conquer（暂定名）立项数据分析：卡牌构筑 × 小队自走棋</p>
+  <div class="verdict"><span class="dot"></span><b>有条件立项</b><span>Conditional GO · 先验证，再加码</span></div>
+  <div class="meta">
+    <span>数据截止 <b>2026-10-19</b></span>
+    <span>品类样本 <b>949 款</b></span>
+    <span>深度对标 <b>48 款</b></span>
+    <span>随机评论校准 <b>140 款</b></span>
+    <span>方法参考 <a href="https://www.bilibili.com/video/BV1MjpX6QEVY" target="_blank" rel="noopener">BV1MjpX6QEVY</a></span>
+  </div>
+  <div class="cover-stats">
+    <div><b>3.4×</b><span>Auto Battler 标签的销量中位数倍数（对比同期大盘）</span></div>
+    <div><b>P66</b><span>标准预算回本线 14,866 份，在成熟样本中的位置</span></div>
+    <div><b>68.0%</b><span>2024–2026 新周期里，Top 1% 拿走的净收入份额</span></div>
+  </div>
+</div></header>
+<main>
+<section id="summary"><div class="wrap">
+  <div class="sec-head">
+    <div class="sec-num">00</div>
+    <div><div class="kicker">Executive Summary</div><h2>一页结论</h2>
+    <p class="sec-sub">先给判断，再给证据。所有金额为“净收入”估算，口径见方法章。</p></div>
+  </div>
+  <p class="lead">这个品类还能做，但已经不是“做完就有人买”的市场。2026 年的供给量是 2021 年的 10 倍，玩家注意力和收入都集中在头部；<b>能活下来的项目，要么有一个 10 秒能讲清的钩子，要么有一个已经验证过的受众</b>。conquer 的核心是“卡牌构筑 + 小队自走棋”——这个组合并不新鲜，真正要证明的是<b>卡牌对战场的干预深度</b>和<b>Build 的复玩性</b>。</p>
+  <div class="split" style="margin-top:26px">
+    
+<div class="findings">
+  <div class="finding"><div><h4>赛道还在长，但已经非常挤</h4>
+  <p>949 款 Roguelike Deckbuilder；2021 年新增 29 款，2026 年 1–10 月已新增 <b>296</b> 款。成熟样本（2021–2024）销量中位数 <b>3,884</b> 份，只有 <b>18.0%</b> 过 5 万份。</p></div></div>
+  <div class="finding"><div><h4>钱高度集中在头部</h4>
+  <p>成熟样本 Top 1% 拿走 <b>38.4%</b> 的净收入，Top 10% 拿走 <b>85.1%</b>；2024–2026 新周期更极端，Top 1% 已到 <b>68.0%</b>。这不是一个“平均市场”。</p></div></div>
+  <div class="finding"><div><h4>标签比题材更值钱</h4>
+  <p><b>Auto Battler</b> 标签的销量中位数是同期大盘的 <b>3.42×</b>，5 万份命中率 22.0%；而 <b>Turn-Based Tactics</b> 只有 0.93×。你该主打“自走棋”，不是“战棋”。</p></div></div>
+  <div class="finding"><div><h4>价格是质量信号，低价换不来量</h4>
+  <p>$15–19.99 价格带有 <b>36.6%</b> 的游戏过 5 万份；$5–9.99 只有 <b>7.6%</b>。把价格压到 $9.99 不会让你更好卖，只会让商店页看起来更小。</p></div></div>
+  <div class="finding"><div><h4>核心组合不稀缺，稀缺的是耦合深度</h4>
+  <p>48 款对标里，The Last Flame、Hadean Tactics、9 Kings 都在做“卡牌/单位 + 自动战斗”。四层地形是战术层，不是品类差异；真正要比的是<b>卡牌能否直接改变单位与战场</b>，以及一副牌能否撑出多种 Build。</p></div></div>
+</div>
+
+    
+<div class="verdict-box">
+  <div class="tag">VERDICT</div>
+  <h3>有条件立项：先验证，再加码</h3>
+  <p style="font-size:13px;color:#3b4a42;margin-bottom:14px">按 <b>$19.99 / ¥58</b>、<b>24 个月 / ¥388,000</b> 预算推进；标准预算的回本线是 <b>14,866 份</b>，位于成熟样本的 <b>P66</b>。</p>
+  <ol>
+    <li><b>内容：</b>首发卡池从 61 扩到 90+；遗物从 67 收敛到 45–50，先保证每件都能改变决策。</li>
+    <li><b>价格：</b>$19.99 为默认；若首发卡池 < 70 张，降到 $14.99，不要用 $19.99 卖 $9.99 的内容。</li>
+    <li><b>营销：</b>Next Fest 后愿望单 ≥ 8,000，发售前 ≥ 15,000；达不到就延期，不要“先发了再说”。</li>
+  </ol>
+  <div class="gates">
+    <div class="gate"><b>Gate 1 · M3</b>100 人测试，≥60% 能说出“这副牌为什么赢”</div>
+    <div class="gate"><b>Gate 2 · M9</b>Next Fest 后愿望单 ≥ 8,000</div>
+    <div class="gate"><b>Gate 3 · M12</b>发售前愿望单 ≥ 15,000</div>
+  </div>
+</div>
+
+  </div>
+  <div class="grid3" style="margin-top:30px">
+    <div class="stat"><b>3,884</b><span>成熟样本销量中位数（2021–2024，N=250）</span></div>
+    <div class="stat"><b>296</b><span>2026 年 1–10 月新增同类（2025 全年 190）</span></div>
+    <div class="stat gold"><b>14,866</b><span>¥388,000 预算的回本销量（$19.99 / ¥58）</span></div>
+  </div>
+  <div class="callout gold" style="margin-top:26px">
+    <b>一句话：</b>如果你能把“出牌 → 单位上场 → 自动战斗”做成商店页第一张 GIF，并在 12 个月内拿出 30 分钟可玩的垂直切片，这个项目值得做；如果做不到，2026 年的市场不会给你第二次被看见的机会。
+  </div>
+</div></section>
+
+<section id="project"><div class="wrap">
+  <div class="sec-head">
+    <div class="sec-num">01</div>
+    <div><div class="kicker">The Project</div><h2>你做的到底是什么</h2>
+    <p class="sec-sub">先把项目翻译成市场听得懂的语言：它不是“又一个卡牌 Roguelike”，而是“用卡牌指挥小队、单位自动交锋的自走棋 Roguelike”。</p></div>
+  </div>
+  <div class="split">
+    <div>
+      <p class="lead">玩家选一条路线，经历战斗、事件、商店、篝火；用征召牌把单位放上战场，用强化牌和能力牌改变战局；单位自动交锋，玩家在准备期布阵、在交锋中出牌；三幕之后打 Boss。单局 35–50 分钟，死亡后重开。</p>
+      <div class="kv"><b>核心循环</b><span>选路线 → 战斗 / 事件 / 商店 / 篝火 → 征召与强化 → 三幕 Boss</span></div>
+      <div class="kv"><b>战场（战术层）</b><span>四层地形、楼梯、飞行、跨层攻击；高地 +10% 伤害是战术变量，不是核心卖点</span></div>
+      <div class="kv"><b>构筑</b><span>征召牌 11 张 + 效果/能力牌 50 张 = 61 张；遗物 67 件、药水 41 瓶</span></div>
+      <div class="kv"><b>内容</b><span>11 个己方单位、33 个敌方单位、24 个路线事件、95 个技能、3 幕 / 16 条路线</span></div>
+      <div class="kv"><b>技术</b><span>Godot 4.6，1920×1080，Windows / macOS 一键打包</span></div>
+      <div class="kv"><b>美术</b><span>像素单位 + 手绘事件插画</span></div>
+      <blockquote>“卡牌决定谁上场，战场决定怎么赢。”<cite>—— 商店页第一句话应该让玩家听懂：这是一副牌指挥一支队伍。</cite></blockquote>
+    </div>
+    <div>
+      <div class="stat" style="margin-bottom:14px"><b>61</b><span>张卡（11 征召 + 50 效果/能力）</span></div>
+      <div class="grid2">
+        <div class="stat"><b>11</b><span>个己方单位</span></div>
+        <div class="stat"><b>33</b><span>个敌方单位</span></div>
+        <div class="stat"><b>67</b><span>件遗物</span></div>
+        <div class="stat"><b>41</b><span>瓶药水</span></div>
+        <div class="stat"><b>24</b><span>个路线事件</span></div>
+        <div class="stat"><b>16</b><span>条路线</span></div>
+      </div>
+      <div class="callout" style="margin-top:18px"><b>完成度是优势：</b>这些不是纸面设计，而是已经接进 Godot 的资源。对一个 12 周 demo 来说，你不需要从零开始，只需要把“最好玩的 30 分钟”剪出来。</div>
+    </div>
+  </div>
+  <h3>三个必须证明的能力</h3>
+  <div class="grid3">
+    <div class="card"><h4 style="margin-top:0">01 / 卡牌对战场有直接干预</h4><p>征召、强化、能力牌不是“加数值”，而是直接改变单位、站位与战场规则。卡牌与自走棋必须是同一套决策，而不是两个系统拼在一起。</p></div>
+    <div class="card"><h4 style="margin-top:0">02 / 小队自动战斗</h4><p>不是单角色打牌，也不是纯自走棋。玩家在准备期布阵、在交锋中出牌，<b>操作上限低、决策密度高</b>，适合喜欢“想”而不是“搓”的玩家。</p></div>
+    <div class="card"><h4 style="margin-top:0">03 / 内容完成度</h4><p>61 卡、67 遗物、41 药水、24 事件已经落地；<b>缺的不是系统，是取舍和打磨</b>。</p></div>
+  </div>
+  <div class="callout warn" style="margin-top:22px"><b>但“卡牌 + 自走棋”不等于卖点。</b>它已经是红海里的主航道；商店页必须回答“你的卡牌到底怎样改变战场”，而不是只放一张四层地图。这是本报告后面所有建议的起点。</div>
+</div></section>
+
+<section id="method"><div class="wrap">
+  <div class="sec-head">
+    <div class="sec-num">02</div>
+    <div><div class="kicker">Method</div><h2>数据是怎么来的</h2>
+    <p class="sec-sub">参考 BV1MjpX6QEVY 后半段的立项分析流程，拆成 6 步；每一步的口径都写死，方便你复算或换样本。</p></div>
+  </div>
+  <div class="grid3">
+    <div class="card tight"><div class="kicker">Step 01</div><h4>定义同类</h4><p class="mini">三个条件同时满足：卡组构筑、单位上场、单局 Roguelike。先按 Steam 标签取全集，再人工筛掉“只是卡牌”或“只是自走棋”的产品。</p></div>
+    <div class="card tight"><div class="kicker">Step 02</div><h4>建大盘</h4><p class="mini">Steam 标签 <b>Roguelike Deckbuilder</b> 共 949 款；剔除免费、未发售、价格 < $4.99，得到 766 款付费样本。</p></div>
+    <div class="card tight"><div class="kicker">Step 03</div><h4>统一口径</h4><p class="mini">销量用 Gamalytic 估算；评论/价格/发售日来自 Steam；净收入按“售价 × 0.75 平均实收 × 0.60 开发者分成”折算。</p></div>
+    <div class="card tight"><div class="kicker">Step 04</div><h4>看分布</h4><p class="mini">不看平均值，看分位数、命中率、集中度。成熟样本取 2021–2024 年发售的产品，避免新游戏“还没卖完”造成的偏差。</p></div>
+    <div class="card tight"><div class="kicker">Step 05</div><h4>做对标</h4><p class="mini">48 款分三圈：天花板 6 款、直接对标 20 款、机制邻近 22 款。用它们定价格、内容量和评论目标。</p></div>
+    <div class="card tight"><div class="kicker">Step 06</div><h4>回到项目</h4><p class="mini">把预算、价格、销量、评论串成一条回本曲线；用分位数回答“要卖多少、概率多大、什么时候该停”。</p></div>
+  </div>
+
+  <div class="split" style="margin-top:28px">
+    <div class="card">
+      <h3 style="margin-top:0">四个公式</h3>
+      <div class="kv"><b>净收入</b><span class="mono">销量 × 售价 × 0.75 × 0.60</span></div>
+      <div class="kv"><b>评论倍数</b><span class="mono">销量 ÷ 评论数（随机样本中位 28.8×；P25 17.2× / P75 43.2×）</span></div>
+      <div class="kv"><b>销量预测</b><span class="mono">10^(0.914 + 1.265 × log10(评论数))，R² = 0.94</span></div>
+      <div class="kv"><b>回本销量</b><span class="mono">预算 ÷（售价 × 0.45）</span></div>
+      <p class="note" style="margin-top:12px">0.75 是平均实收（折扣、区域定价、Key）；0.60 是扣掉 Steam 30%、退款/税/支付后的开发者份额。二者相乘为 0.45。</p>
+    </div>
+    <div class="card">
+      <h3 style="margin-top:0">样本结构</h3>
+      <div class="kv"><b>U0 全集</b><span>949 款（标签全集）</span></div>
+      <div class="kv"><b>U1 付费</b><span>766 款（$4.99+，已发售）</span></div>
+      <div class="kv"><b>U2 近六年</b><span>736 款（2021–2026）</span></div>
+      <div class="kv"><b>U3 成熟样本</b><span>250 款（2021–2024，用于分位与回本判断）</span></div>
+      <div class="kv"><b>C 深度对标</b><span>48 款（人工筛选，含幸存者偏差）</span></div>
+      <div class="kv"><b>R 评论校准</b><span>140 款（随机抽样，用于评论→销量回归）</span></div>
+    </div>
+  </div>
+
+  <div class="callout warn" style="margin-top:26px"><b>三个必须知道的局限：</b>① 销量是 Gamalytic 的模型估算，单款误差可能有 ±30–50%；② 48 款深度对标是“跑出来的产品”，中位数天然高于大盘，不能拿来当成功率；③ 2026 年样本上架时间短，年度中位数会被压低，供给量才是硬数据。</div>
+  <div class="callout" style="margin-top:14px"><b>方法来源：</b><a href="https://www.bilibili.com/video/BV1MjpX6QEVY" target="_blank" rel="noopener">BV1MjpX6QEVY《独立游戏立项前必须要看！否则就白做了》</a>后半段演示的“找同类 → 拉数据 → 看分位 → 判断能不能做”。本报告把流程固定成上述 6 步，所有数据可复算。</div>
+</div></section>
+
+<section id="market"><div class="wrap">
+  <div class="sec-head">
+    <div class="sec-num">03</div>
+    <div><div class="kicker">Market</div><h2>大盘：供给爆炸，收入集中</h2>
+    <p class="sec-sub">先看整个品类的水位，再看你的项目要站在哪个位置。</p></div>
+  </div>
+  <figure class="chart"><svg viewBox="0 0 820 360" role="img" aria-label="2021 至 2026 年同类游戏新增数量与销量中位数" xmlns="http://www.w3.org/2000/svg" class="chart-svg"><defs><pattern id="hatch" width="7" height="7" patternTransform="rotate(45)" patternUnits="userSpaceOnUse"><rect width="7" height="7" fill="#3d8669" opacity=".30"/><line x1="0" y1="0" x2="0" y2="7" stroke="#1f5c48" stroke-width="2"/></pattern></defs><line x1="58" y1="308.0" x2="750" y2="308.0" stroke="#d9d0be" stroke-width="1" opacity=".55"/><text x="50.0" y="312.0" font-size="10" fill="#6b7a72" text-anchor="end" font-weight="400" >0</text><line x1="58" y1="242.5" x2="750" y2="242.5" stroke="#d9d0be" stroke-width="1" opacity=".55"/><text x="50.0" y="246.5" font-size="10" fill="#6b7a72" text-anchor="end" font-weight="400" >80</text><line x1="58" y1="177.0" x2="750" y2="177.0" stroke="#d9d0be" stroke-width="1" opacity=".55"/><text x="50.0" y="181.0" font-size="10" fill="#6b7a72" text-anchor="end" font-weight="400" >160</text><line x1="58" y1="111.5" x2="750" y2="111.5" stroke="#d9d0be" stroke-width="1" opacity=".55"/><text x="50.0" y="115.5" font-size="10" fill="#6b7a72" text-anchor="end" font-weight="400" >240</text><line x1="58" y1="46.0" x2="750" y2="46.0" stroke="#d9d0be" stroke-width="1" opacity=".55"/><text x="50.0" y="50.0" font-size="10" fill="#6b7a72" text-anchor="end" font-weight="400" >320</text><rect x="85.7" y="284.3" width="60.0" height="23.7" fill="#1f5c48" rx="2"><title>2021 年新增 29 款</title></rect><text x="115.7" y="276.3" font-size="11" fill="#1b2a24" text-anchor="middle" font-weight="600" >29</text><text x="115.7" y="328.0" font-size="11" fill="#6b7a72" text-anchor="middle" font-weight="400" >2021</text><rect x="201.0" y="273.6" width="60.0" height="34.4" fill="#1f5c48" rx="2"><title>2022 年新增 42 款</title></rect><text x="231.0" y="265.6" font-size="11" fill="#1b2a24" text-anchor="middle" font-weight="600" >42</text><text x="231.0" y="328.0" font-size="11" fill="#6b7a72" text-anchor="middle" font-weight="400" >2022</text><rect x="316.3" y="257.2" width="60.0" height="50.8" fill="#1f5c48" rx="2"><title>2023 年新增 62 款</title></rect><text x="346.3" y="249.2" font-size="11" fill="#1b2a24" text-anchor="middle" font-weight="600" >62</text><text x="346.3" y="328.0" font-size="11" fill="#6b7a72" text-anchor="middle" font-weight="400" >2023</text><rect x="431.7" y="212.2" width="60.0" height="95.8" fill="#1f5c48" rx="2"><title>2024 年新增 117 款</title></rect><text x="461.7" y="204.2" font-size="11" fill="#1b2a24" text-anchor="middle" font-weight="600" >117</text><text x="461.7" y="328.0" font-size="11" fill="#6b7a72" text-anchor="middle" font-weight="400" >2024</text><rect x="547.0" y="152.4" width="60.0" height="155.6" fill="#1f5c48" rx="2"><title>2025 年新增 190 款</title></rect><text x="577.0" y="144.4" font-size="11" fill="#1b2a24" text-anchor="middle" font-weight="600" >190</text><text x="577.0" y="328.0" font-size="11" fill="#6b7a72" text-anchor="middle" font-weight="400" >2025</text><rect x="662.3" y="65.6" width="60.0" height="242.4" fill="url(#hatch)" rx="2"><title>2026 年新增 296 款</title></rect><text x="692.3" y="57.6" font-size="11" fill="#1b2a24" text-anchor="middle" font-weight="600" >296</text><text x="692.3" y="328.0" font-size="11" fill="#6b7a72" text-anchor="middle" font-weight="400" >2026*</text><text x="760.0" y="299.7" font-size="9" fill="#b3863c" text-anchor="start" font-weight="400" >300</text><text x="760.0" y="218.2" font-size="9" fill="#b3863c" text-anchor="start" font-weight="400" >1,000</text><text x="760.0" y="143.8" font-size="9" fill="#b3863c" text-anchor="start" font-weight="400" >3,000</text><text x="760.0" y="62.3" font-size="9" fill="#b3863c" text-anchor="start" font-weight="400" >10,000</text><polyline points="115.7,107.9 231.0,91.5 346.3,61.2 461.7,142.0 577.0,200.9 692.3,287.8" fill="none" stroke="#b3863c" stroke-width="2.4" stroke-linejoin="round"/><circle cx="115.7" cy="107.9" r="4.2" fill="#fbf7ee" stroke="#b3863c" stroke-width="2.2"><title>2021 年销量中位数 4,810 份</title></circle><circle cx="231.0" cy="91.5" r="4.2" fill="#fbf7ee" stroke="#b3863c" stroke-width="2.2"><title>2022 年销量中位数 6,129 份</title></circle><circle cx="346.3" cy="61.2" r="4.2" fill="#fbf7ee" stroke="#b3863c" stroke-width="2.2"><title>2023 年销量中位数 9,591 份</title></circle><circle cx="461.7" cy="142.0" r="4.2" fill="#fbf7ee" stroke="#b3863c" stroke-width="2.2"><title>2024 年销量中位数 2,904 份</title></circle><circle cx="577.0" cy="200.9" r="4.2" fill="#fbf7ee" stroke="#b3863c" stroke-width="2.2"><title>2025 年销量中位数 1,217 份</title></circle><circle cx="692.3" cy="287.8" r="4.2" fill="#fbf7ee" stroke="#b3863c" stroke-width="2.2"><title>2026 年销量中位数 337 份</title></circle><text x="115.7" y="127.9" font-size="10" fill="#b3863c" text-anchor="middle" font-weight="600" >4,810</text><text x="692.3" y="305.8" font-size="10" fill="#b3863c" text-anchor="middle" font-weight="600" >337</text><rect x="58" y="18" width="11" height="11" fill="#1f5c48" rx="2"/><text x="75.0" y="28.0" font-size="11" fill="#6b7a72" text-anchor="start" font-weight="400" >新增数量（款）</text><line x1="188" y1="24" x2="214" y2="24" stroke="#b3863c" stroke-width="2.4"/><circle cx="201" cy="24" r="3.6" fill="#fbf7ee" stroke="#b3863c" stroke-width="2"/><text x="221.0" y="28.0" font-size="11" fill="#6b7a72" text-anchor="start" font-weight="400" >销量中位数（份，右轴）</text><text x="58.0" y="348.0" font-size="9.5" fill="#6b7a72" text-anchor="start" font-weight="400" >* 2026 为 1–10 月；当年样本上架时间短，销量尚未跑完。</text></svg>
+    <figcaption><b>图 1｜供给与中位销量。</b>2021 年 29 款 → 2026 年 1–10 月 296 款，供给量约为 2021 年的 10.2 倍；销量中位数从 4,810 份降到 337 份。2026 年的下滑含“上架时间短”的影响，但供给端的膨胀是确定的。</figcaption>
+  </figure>
+  <div>
+    <figure class="chart"><svg viewBox="0 0 820 330" role="img" aria-label="成熟样本达到各销量门槛的比例" xmlns="http://www.w3.org/2000/svg" class="chart-svg"><text x="96.0" y="41.0" font-size="11" fill="#1b2a24" text-anchor="end" font-weight="500" >1,000</text><rect x="108" y="29" width="580.5" height="17" fill="#3d8669" rx="2" opacity="0.82"><title>≥ 1,000 份：70.0%（175 款）</title></rect><text x="696.5" y="42.0" font-size="11" fill="#1b2a24" text-anchor="start" font-weight="600" >70.0%</text><text x="808.0" y="42.0" font-size="9.5" fill="#6b7a72" text-anchor="end" font-weight="400" >175 款</text><text x="96.0" y="69.0" font-size="11" fill="#1b2a24" text-anchor="end" font-weight="500" >5,000</text><rect x="108" y="57" width="374.9" height="17" fill="#3d8669" rx="2" opacity="0.82"><title>≥ 5,000 份：45.2%（113 款）</title></rect><text x="490.9" y="70.0" font-size="11" fill="#1b2a24" text-anchor="start" font-weight="600" >45.2%</text><text x="808.0" y="70.0" font-size="9.5" fill="#6b7a72" text-anchor="end" font-weight="400" >113 款</text><text x="96.0" y="97.0" font-size="11" fill="#1b2a24" text-anchor="end" font-weight="500" >1 万</text><rect x="108" y="85" width="321.8" height="17" fill="#3d8669" rx="2" opacity="0.82"><title>≥ 1 万 份：38.8%（97 款）</title></rect><text x="437.8" y="98.0" font-size="11" fill="#1b2a24" text-anchor="start" font-weight="600" >38.8%</text><text x="808.0" y="98.0" font-size="9.5" fill="#6b7a72" text-anchor="end" font-weight="400" >97 款</text><text x="96.0" y="125.0" font-size="11" fill="#1b2a24" text-anchor="end" font-weight="500" >3 万</text><rect x="108" y="113" width="189.1" height="17" fill="#3d8669" rx="2" opacity="0.82"><title>≥ 3 万 份：22.8%（57 款）</title></rect><text x="305.1" y="126.0" font-size="11" fill="#1b2a24" text-anchor="start" font-weight="600" >22.8%</text><text x="808.0" y="126.0" font-size="9.5" fill="#6b7a72" text-anchor="end" font-weight="400" >57 款</text><text x="96.0" y="153.0" font-size="11" fill="#1b2a24" text-anchor="end" font-weight="500" >5 万</text><rect x="108" y="141" width="149.3" height="17" fill="#b3863c" rx="2" opacity="0.95"><title>≥ 5 万 份：18.0%（45 款）</title></rect><text x="265.3" y="154.0" font-size="11" fill="#1b2a24" text-anchor="start" font-weight="600" >18.0%</text><text x="808.0" y="154.0" font-size="9.5" fill="#6b7a72" text-anchor="end" font-weight="400" >45 款</text><text x="96.0" y="181.0" font-size="11" fill="#1b2a24" text-anchor="end" font-weight="500" >10 万</text><rect x="108" y="169" width="92.9" height="17" fill="#b3863c" rx="2" opacity="0.95"><title>≥ 10 万 份：11.2%（28 款）</title></rect><text x="208.9" y="182.0" font-size="11" fill="#1b2a24" text-anchor="start" font-weight="600" >11.2%</text><text x="808.0" y="182.0" font-size="9.5" fill="#6b7a72" text-anchor="end" font-weight="400" >28 款</text><text x="96.0" y="209.0" font-size="11" fill="#1b2a24" text-anchor="end" font-weight="500" >30 万</text><rect x="108" y="197" width="39.8" height="17" fill="#b3863c" rx="2" opacity="0.95"><title>≥ 30 万 份：4.8%（12 款）</title></rect><text x="155.8" y="210.0" font-size="11" fill="#1b2a24" text-anchor="start" font-weight="600" >4.8%</text><text x="808.0" y="210.0" font-size="9.5" fill="#6b7a72" text-anchor="end" font-weight="400" >12 款</text><text x="96.0" y="237.0" font-size="11" fill="#1b2a24" text-anchor="end" font-weight="500" >100 万</text><rect x="108" y="225" width="6.6" height="17" fill="#b3863c" rx="2" opacity="0.95"><title>≥ 100 万 份：0.8%（2 款）</title></rect><text x="122.6" y="238.0" font-size="11" fill="#1b2a24" text-anchor="start" font-weight="600" >0.8%</text><text x="808.0" y="238.0" font-size="9.5" fill="#6b7a72" text-anchor="end" font-weight="400" >2 款</text><text x="108.0" y="318.0" font-size="9.5" fill="#6b7a72" text-anchor="start" font-weight="400" >样本：2021–2024 年发售、$4.99 以上的 250 款 Roguelike Deckbuilder（已跑完大部分长尾）。</text></svg>
+      <figcaption><b>图 2｜销量门槛。</b>成熟样本里，只有 18.0% 的游戏过 5 万份，11.2% 过 10 万份。5 万份大约是“能覆盖一个精简预算”的量级。</figcaption>
+    </figure>
+    <figure class="chart"><svg viewBox="0 0 820 250" role="img" aria-label="净收入集中度" xmlns="http://www.w3.org/2000/svg" class="chart-svg"><text x="8.0" y="40.0" font-size="10.5" fill="#6b7a72" text-anchor="start" font-weight="500" >2021–2024 成熟</text><text x="8.0" y="57.0" font-size="9.5" fill="#6b7a72" text-anchor="start" font-weight="400" >N=250  Gini 0.901</text><rect x="150.0" y="34" width="248.1" height="34" fill="#b3863c"><title>Top 1%：38.4%</title></rect><text x="274.0" y="55.0" font-size="11" fill="#fff" text-anchor="middle" font-weight="700" >38.4%</text><rect x="398.1" y="34" width="204.8" height="34" fill="#8a6a35"><title>2–5%：31.7%</title></rect><text x="500.5" y="55.0" font-size="11" fill="#fff" text-anchor="middle" font-weight="700" >31.7%</text><rect x="602.8" y="34" width="96.9" height="34" fill="#5b7f6c"><title>6–10%：15.0%</title></rect><text x="651.3" y="55.0" font-size="11" fill="#1b2a24" text-anchor="middle" font-weight="700" >15.0%</text><rect x="699.7" y="34" width="72.4" height="34" fill="#83a595"><title>11–25%：11.2%</title></rect><text x="735.9" y="55.0" font-size="11" fill="#1b2a24" text-anchor="middle" font-weight="700" >11.2%</text><rect x="772.1" y="34" width="20.7" height="34" fill="#b9c9bf"><title>26–50%：3.2%</title></rect><rect x="792.8" y="34" width="3.2" height="34" fill="#e2e5df"><title>后 50%：0.5%</title></rect><text x="150.0" y="89.0" font-size="10.5" fill="#1b2a24" text-anchor="start" font-weight="600" >Top 1% 拿走 38.4% 的净收入</text><text x="8.0" y="124.0" font-size="10.5" fill="#6b7a72" text-anchor="start" font-weight="500" >2024–2026 当前</text><text x="8.0" y="141.0" font-size="9.5" fill="#6b7a72" text-anchor="start" font-weight="400" >N=603  Gini 0.958</text><rect x="150.0" y="118" width="439.3" height="34" fill="#b3863c"><title>Top 1%：68.0%</title></rect><text x="369.6" y="139.0" font-size="11" fill="#fff" text-anchor="middle" font-weight="700" >68.0%</text><rect x="589.3" y="118" width="133.7" height="34" fill="#8a6a35"><title>2–5%：20.7%</title></rect><text x="656.1" y="139.0" font-size="11" fill="#fff" text-anchor="middle" font-weight="700" >20.7%</text><rect x="723.0" y="118" width="38.8" height="34" fill="#5b7f6c"><title>6–10%：6.0%</title></rect><rect x="761.8" y="118" width="27.1" height="34" fill="#83a595"><title>11–25%：4.2%</title></rect><rect x="788.9" y="118" width="6.5" height="34" fill="#b9c9bf"><title>26–50%：1.0%</title></rect><rect x="795.4" y="118" width="0.6" height="34" fill="#e2e5df"><title>后 50%：0.1%</title></rect><text x="150.0" y="173.0" font-size="10.5" fill="#1b2a24" text-anchor="start" font-weight="600" >Top 1% 拿走 68.0% 的净收入</text><rect x="150" y="226" width="9" height="9" fill="#b3863c" rx="1"/><text x="163.0" y="234.0" font-size="9.5" fill="#6b7a72" text-anchor="start" font-weight="400" >Top 1%</text><rect x="260" y="226" width="9" height="9" fill="#8a6a35" rx="1"/><text x="273.0" y="234.0" font-size="9.5" fill="#6b7a72" text-anchor="start" font-weight="400" >2–5%</text><rect x="370" y="226" width="9" height="9" fill="#5b7f6c" rx="1"/><text x="383.0" y="234.0" font-size="9.5" fill="#6b7a72" text-anchor="start" font-weight="400" >6–10%</text><rect x="480" y="226" width="9" height="9" fill="#83a595" rx="1"/><text x="493.0" y="234.0" font-size="9.5" fill="#6b7a72" text-anchor="start" font-weight="400" >11–25%</text><rect x="590" y="226" width="9" height="9" fill="#b9c9bf" rx="1"/><text x="603.0" y="234.0" font-size="9.5" fill="#6b7a72" text-anchor="start" font-weight="400" >26–50%</text><rect x="700" y="226" width="9" height="9" fill="#e2e5df" rx="1"/><text x="713.0" y="234.0" font-size="9.5" fill="#6b7a72" text-anchor="start" font-weight="400" >后 50%</text></svg>
+      <figcaption><b>图 3｜净收入集中度。</b>成熟样本 Top 1% 拿 38.4%，Top 10% 拿 85.1%；2024–2026 新周期 Top 1% 已到 68.0%。品类越新，头部越集中。</figcaption>
+    </figure>
+  </div>
+  <div style="margin-top:26px">
+    <figure class="chart"><svg viewBox="0 0 820 320" role="img" aria-label="价格带与 5 万份命中率" xmlns="http://www.w3.org/2000/svg" class="chart-svg"><line x1="54" y1="254.0" x2="796" y2="254.0" stroke="#d9d0be" opacity=".6"/><text x="46.0" y="258.0" font-size="10" fill="#6b7a72" text-anchor="end" font-weight="400" >0</text><line x1="54" y1="199.0" x2="796" y2="199.0" stroke="#d9d0be" opacity=".6"/><text x="46.0" y="203.0" font-size="10" fill="#6b7a72" text-anchor="end" font-weight="400" >20</text><line x1="54" y1="144.0" x2="796" y2="144.0" stroke="#d9d0be" opacity=".6"/><text x="46.0" y="148.0" font-size="10" fill="#6b7a72" text-anchor="end" font-weight="400" >40</text><line x1="54" y1="89.0" x2="796" y2="89.0" stroke="#d9d0be" opacity=".6"/><text x="46.0" y="93.0" font-size="10" fill="#6b7a72" text-anchor="end" font-weight="400" >60</text><line x1="54" y1="34.0" x2="796" y2="34.0" stroke="#d9d0be" opacity=".6"/><text x="46.0" y="38.0" font-size="10" fill="#6b7a72" text-anchor="end" font-weight="400" >80</text><rect x="104.1" y="233.1" width="85.3" height="20.9" rx="2" fill="#3d8669" opacity="0.82"><title>≤ $9.99：7.6% 达到 5 万份（N=119）</title></rect><text x="146.8" y="225.1" font-size="11" fill="#1b2a24" text-anchor="middle" font-weight="700" >7.6%</text><text x="146.8" y="272.0" font-size="10.5" fill="#1b2a24" text-anchor="middle" font-weight="500" >≤ $9.99</text><text x="146.8" y="288.0" font-size="9.5" fill="#6b7a72" text-anchor="middle" font-weight="400" >N=119</text><rect x="289.6" y="207.5" width="85.3" height="46.5" rx="2" fill="#3d8669" opacity="0.82"><title>$10–14.99：16.9% 达到 5 万份（N=77）</title></rect><text x="332.2" y="199.5" font-size="11" fill="#1b2a24" text-anchor="middle" font-weight="700" >16.9%</text><text x="332.2" y="272.0" font-size="10.5" fill="#1b2a24" text-anchor="middle" font-weight="500" >$10–14.99</text><text x="332.2" y="288.0" font-size="9.5" fill="#6b7a72" text-anchor="middle" font-weight="400" >N=77</text><rect x="475.1" y="153.3" width="85.3" height="100.7" rx="2" fill="#b3863c" opacity="1"><title>$15–19.99：36.6% 达到 5 万份（N=41）</title></rect><text x="517.8" y="145.3" font-size="11" fill="#1b2a24" text-anchor="middle" font-weight="700" >36.6%</text><text x="517.8" y="272.0" font-size="10.5" fill="#1b2a24" text-anchor="middle" font-weight="500" >$15–19.99</text><text x="517.8" y="288.0" font-size="9.5" fill="#6b7a72" text-anchor="middle" font-weight="400" >N=41</text><text x="517.8" y="304.0" font-size="9.5" fill="#b3863c" text-anchor="middle" font-weight="700" >推荐带</text><rect x="660.6" y="61.5" width="85.3" height="192.5" rx="2" fill="#3d8669" opacity="0.82"><title>$20–24.99：70.0% 达到 5 万份（N=10）</title></rect><text x="703.2" y="53.5" font-size="11" fill="#1b2a24" text-anchor="middle" font-weight="700" >70.0%</text><text x="703.2" y="272.0" font-size="10.5" fill="#1b2a24" text-anchor="middle" font-weight="500" >$20–24.99</text><text x="703.2" y="288.0" font-size="9.5" fill="#6b7a72" text-anchor="middle" font-weight="400" >N=10</text><text x="54.0" y="310.0" font-size="9.5" fill="#6b7a72" text-anchor="start" font-weight="400" >指标：该价格带中，估算销量 ≥ 5 万份的游戏占比。样本为 2021–2024 年成熟产品。</text></svg>
+      <figcaption><b>图 4｜价格带。</b>$15–19.99 有 36.6% 过 5 万份，是性价比最高的“质量信号带”；$5–9.99 只有 7.6%。$20+ 样本仅 10 款，70% 的命中率被头部产品拉高，不宜直接外推。</figcaption>
+    </figure>
+    <figure class="chart"><svg viewBox="0 0 820 360" role="img" aria-label="Steam 标签与销量中位数倍数" xmlns="http://www.w3.org/2000/svg" class="chart-svg"><line x1="318.5" y1="18" x2="318.5" y2="330" stroke="#6b7a72" stroke-dasharray="4 4" opacity=".7"/><text x="318.5" y="14.0" font-size="9.5" fill="#6b7a72" text-anchor="middle" font-weight="400" >大盘中位 1.0×</text><text x="164.0" y="41.0" font-size="10.5" fill="#1b2a24" text-anchor="end" font-weight="500" >Auto Battler</text><rect x="176" y="29" width="487.3" height="17" fill="#1f5c48" rx="2" opacity=".88"><title>Auto Battler：中位 8,942 份，3.42×（N=59）</title></rect><text x="671.3" y="42.0" font-size="11" fill="#1f5c48" text-anchor="start" font-weight="700" >3.42×</text><text x="810.0" y="42.0" font-size="9" fill="#6b7a72" text-anchor="end" font-weight="400" >N=59</text><text x="164.0" y="75.0" font-size="10.5" fill="#1b2a24" text-anchor="end" font-weight="500" >Dungeon Crawler</text><rect x="176" y="63" width="319.2" height="17" fill="#1f5c48" rx="2" opacity=".88"><title>Dungeon Crawler：中位 5,859 份，2.24×（N=84）</title></rect><text x="503.2" y="76.0" font-size="11" fill="#1f5c48" text-anchor="start" font-weight="700" >2.24×</text><text x="810.0" y="76.0" font-size="9" fill="#6b7a72" text-anchor="end" font-weight="400" >N=84</text><text x="164.0" y="109.0" font-size="10.5" fill="#1b2a24" text-anchor="end" font-weight="500" >Turn-Based Strategy</text><rect x="176" y="97" width="253.7" height="17" fill="#1f5c48" rx="2" opacity=".88"><title>Turn-Based Strategy：中位 4,647 份，1.78×（N=179）</title></rect><text x="437.6" y="110.0" font-size="11" fill="#1f5c48" text-anchor="start" font-weight="700" >1.78×</text><text x="810.0" y="110.0" font-size="9" fill="#6b7a72" text-anchor="end" font-weight="400" >N=179</text><text x="164.0" y="143.0" font-size="10.5" fill="#1b2a24" text-anchor="end" font-weight="500" >RPG</text><rect x="176" y="131" width="245.1" height="17" fill="#1f5c48" rx="2" opacity=".88"><title>RPG：中位 4,498 份，1.72×（N=146）</title></rect><text x="429.1" y="144.0" font-size="11" fill="#1f5c48" text-anchor="start" font-weight="700" >1.72×</text><text x="810.0" y="144.0" font-size="9" fill="#6b7a72" text-anchor="end" font-weight="400" >N=146</text><text x="164.0" y="177.0" font-size="10.5" fill="#1b2a24" text-anchor="end" font-weight="500" >Turn-Based</text><rect x="176" y="165" width="203.8" height="17" fill="#1f5c48" rx="2" opacity=".88"><title>Turn-Based：中位 3,736 份，1.43×（N=123）</title></rect><text x="387.8" y="178.0" font-size="11" fill="#1f5c48" text-anchor="start" font-weight="700" >1.43×</text><text x="810.0" y="178.0" font-size="9" fill="#6b7a72" text-anchor="end" font-weight="400" >N=123</text><text x="164.0" y="211.0" font-size="10.5" fill="#1b2a24" text-anchor="end" font-weight="500" >Roguelite</text><rect x="176" y="199" width="171.0" height="17" fill="#1f5c48" rx="2" opacity=".88"><title>Roguelite：中位 3,131 份，1.2×（N=309）</title></rect><text x="355.0" y="212.0" font-size="11" fill="#1f5c48" text-anchor="start" font-weight="700" >1.20×</text><text x="810.0" y="212.0" font-size="9" fill="#6b7a72" text-anchor="end" font-weight="400" >N=309</text><text x="164.0" y="245.0" font-size="10.5" fill="#1b2a24" text-anchor="end" font-weight="500" >Pixel Graphics</text><rect x="176" y="233" width="133.9" height="17" fill="#a34332" rx="2" opacity=".88"><title>Pixel Graphics：中位 2,466 份，0.94×（N=100）</title></rect><text x="317.9" y="246.0" font-size="11" fill="#a34332" text-anchor="start" font-weight="700" >0.94×</text><text x="810.0" y="246.0" font-size="9" fill="#6b7a72" text-anchor="end" font-weight="400" >N=100</text><text x="164.0" y="279.0" font-size="10.5" fill="#1b2a24" text-anchor="end" font-weight="500" >Turn-Based Tactics</text><rect x="176" y="267" width="132.5" height="17" fill="#a34332" rx="2" opacity=".88"><title>Turn-Based Tactics：中位 2,420 份，0.93×（N=137）</title></rect><text x="316.5" y="280.0" font-size="11" fill="#a34332" text-anchor="start" font-weight="700" >0.93×</text><text x="810.0" y="280.0" font-size="9" fill="#6b7a72" text-anchor="end" font-weight="400" >N=137</text><text x="164.0" y="313.0" font-size="10.5" fill="#1b2a24" text-anchor="end" font-weight="500" >Early Access</text><rect x="176" y="301" width="74.1" height="17" fill="#a34332" rx="2" opacity=".88"><title>Early Access：中位 1,360 份，0.52×（N=76）</title></rect><text x="258.1" y="314.0" font-size="11" fill="#a34332" text-anchor="start" font-weight="700" >0.52×</text><text x="810.0" y="314.0" font-size="9" fill="#6b7a72" text-anchor="end" font-weight="400" >N=76</text><text x="176.0" y="350.0" font-size="9.5" fill="#6b7a72" text-anchor="start" font-weight="400" >倍数 = 该标签游戏销量中位数 ÷ 同期大盘中位数；相关不等于因果，标签只是需求信号。</text></svg>
+      <figcaption><b>图 5｜标签倍数。</b>Auto Battler 3.42×、Dungeon Crawler 2.24×；Turn-Based Tactics 只有 0.93×，Early Access 0.52×。相关不等于因果，但它是玩家需求的直接信号。</figcaption>
+    </figure>
+  </div>
+  <h3>三个读数</h3>
+  <div class="grid3">
+    <div class="stat"><b>117 → 190 → 296</b><span>2024 / 2025 / 2026（1–10 月）新增数量，连续两年 +50% 以上</span></div>
+    <div class="stat red"><b>18.0%</b><span>成熟样本中销量 ≥ 5 万份的比例；≥ 10 万份只有 11.2%</span></div>
+    <div class="stat gold"><b>94.7%</b><span>2024–2026 周期 Top 10% 的净收入份额，Gini 0.958</span></div>
+  </div>
+  <div class="callout warn" style="margin-top:24px"><b>标签红利的边界：</b>Auto Battler 的 3.42× 中位里，包含 Backpack Battles（156 万份）、The Bazaar（54 万份）这类 PvP / 异步产品；纯 PvE 对标的 The Last Flame（18.0 万份）、Hadean Tactics（9.9 万份）都高于成熟大盘中位（3,884 份），但远低于 Backpack Battles / The Bazaar 的头部量级。你的“PvE 小队自走棋”应该拿它们做更贴近的参照，不要用 156 万份做预期。</div>
+  <div class="callout" style="margin-top:24px"><b>这意味着什么：</b>品类没有“自然流量”。上新时 Steam 会给你一波曝光，但 38.8% 的游戏连 1 万份都到不了。你要么在曝光窗口里把转化率做到头部，要么在窗口之前就攒够了愿望单。</div>
+  <div class="callout warn" style="margin-top:12px"><b>不要被“中位数”吓退，也不要被“对标组”骗了：</b>成熟样本中位 3,884 份是“随机一款”的命运；48 款对标中位 273,056 份是“跑出来的产品”的命运。你的任务不是成为中位数，而是进入前 34%。</div>
+</div></section>
+
+<section id="comps"><div class="wrap">
+  <div class="sec-head">
+    <div class="sec-num">04</div>
+    <div><div class="kicker">Comparables</div><h2>48 款同类：谁在赚钱，怎么赚</h2>
+    <p class="sec-sub">分三圈看：天花板定预期，直接对标定做法，机制邻近定边界。所有数据可在表内排序、筛选。</p></div>
+  </div>
+  <div class="table-wrap" style="max-height:none">
+    <table>
+      <thead><tr><th>圈层</th><th>样本</th><th class="num">中位销量</th><th class="num">中位评论</th><th class="num">中位价格</th><th class="num">中位净收入</th><th class="num">≥10 万份</th><th>用途</th></tr></thead>
+      <tbody><tr><td><span class="badge S">S</span> <b>品类天花板</b></td><td class="num">6</td><td class="num">4,026,374</td><td class="num">111,576</td><td class="num">$24.99</td><td class="num">$30.0M</td><td class="num">100%</td><td class="mini">品类定义者，决定天花板与玩家预期</td></tr>
+<tr><td><span class="badge A">A</span> <b>直接对标</b></td><td class="num">20</td><td class="num">273,056</td><td class="num">4,436</td><td class="num">$19.99</td><td class="num">$2.5M</td><td class="num">85%</td><td class="mini">同类核心循环，定价/内容/评论的主要参照</td></tr>
+<tr><td><span class="badge B">B</span> <b>机制邻近</b></td><td class="num">22</td><td class="num">232,263</td><td class="num">3,340</td><td class="num">$15.49</td><td class="num">$1.1M</td><td class="num">77%</td><td class="mini">机制相邻，用来判断边界与融合机会</td></tr></tbody>
+    </table>
+  </div>
+  <p class="note" style="margin-top:10px">净收入为按各游戏美元定价折算的估算值；中位净收入受头部产品影响，仅用于量级判断。</p>
+
+  <h3>最像的 10 款：结构对照</h3>
+  <div class="table-wrap">
+    <table>
+      <thead><tr><th>游戏</th><th class="num">价格</th><th class="num">估算销量</th><th class="num">评论</th><th>战场形态</th><th>核心构筑</th><th>与 conquer 的关系</th></tr></thead>
+      <tbody><tr><td><b>Monster Train</b></td><td class="num">$24.99</td><td class="num">1,445,478</td><td class="num">22,997</td><td>3 层车厢战线</td><td>单位 + 卡组 + 氏族</td><td class="mini">最接近的“单位站位 × 卡组”结构；它用 3 层战线，你的差异要落在卡牌对战场的干预</td></tr>
+<tr><td><b>The Last Flame</b></td><td class="num">$19.99</td><td class="num">180,495</td><td class="num">2,949</td><td>六边形棋盘 / 自动战斗</td><td>队伍 + 装备 + 遗物</td><td class="mini">最接近的 PvE 自走棋构筑；但没有卡组厚度与出牌</td></tr>
+<tr><td><b>Hadean Tactics</b></td><td class="num">$19.99</td><td class="num">99,480</td><td class="num">1,947</td><td>六边形 / 自动战斗</td><td>卡组 + 单位</td><td class="mini">自动战斗 + 卡组，节奏偏慢；证明小体量也能回本</td></tr>
+<tr><td><b>Chrono Ark</b></td><td class="num">$24.99</td><td class="num">490,331</td><td class="num">13,827</td><td>4 人小队 / 回合</td><td>卡组 + 角色 Build</td><td class="mini">二次元小队卡组，重剧情；内容量与价格锚点</td></tr>
+<tr><td><b>Across the Obelisk</b></td><td class="num">$19.99</td><td class="num">711,232</td><td class="num">13,127</td><td>4 人小队 / 回合</td><td>卡组 + 装备 + 联机</td><td class="mini">联机合作放大内容量；单人 PvE 的你需用别的方式补耐玩</td></tr>
+<tr><td><b>Wildfrost</b></td><td class="num">$19.99</td><td class="num">270,553</td><td class="num">8,876</td><td>伙伴站位 / 回合</td><td>卡组 + 计数机制</td><td class="mini">站位与计数是它的钩子；你的钩子应是卡牌与单位/战场的耦合</td></tr>
+<tr><td><b>StarVaders</b></td><td class="num">$24.99</td><td class="num">186,861</td><td class="num">4,448</td><td>网格走位 / 射击</td><td>卡组 + 机甲</td><td class="mini">网格战术 + 卡组，动作感强；$24.99 的内容基线</td></tr>
+<tr><td><b>9 Kings</b></td><td class="num">$19.99</td><td class="num">1,127,310</td><td class="num">23,618</td><td>王国自走棋</td><td>卡牌 + 自动战斗</td><td class="mini">2025 爆款；轻操作、重构筑，验证 Auto Battler 标签红利</td></tr>
+<tr><td><b>The King is Watching</b></td><td class="num">$14.99</td><td class="num">819,149</td><td class="num">10,741</td><td>领地自走棋</td><td>卡组 + 资源管理</td><td class="mini">$14.99 也能卖爆；关键是规则一眼可懂</td></tr>
+<tr><td><b>Backpack Battles</b></td><td class="num">$14.99</td><td class="num">1,556,886</td><td class="num">20,810</td><td>背包 / 异步 PvP</td><td>物品 + 构筑</td><td class="mini">异步 PvP 是另一个赛道；它的“整理即构筑”值得借鉴</td></tr></tbody>
+    </table>
+  </div>
+
+  <figure class="chart" style="margin-top:28px"><svg viewBox="0 0 820 430" role="img" aria-label="评论数与估算销量散点图" xmlns="http://www.w3.org/2000/svg" class="chart-svg"><line x1="153.0" y1="34" x2="153.0" y2="374" stroke="#d9d0be" opacity=".5"/><text x="153.0" y="392.0" font-size="9.5" fill="#6b7a72" text-anchor="middle" font-weight="400" >100</text><line x1="346.6" y1="34" x2="346.6" y2="374" stroke="#d9d0be" opacity=".5"/><text x="346.6" y="392.0" font-size="9.5" fill="#6b7a72" text-anchor="middle" font-weight="400" >1,000</text><line x1="540.2" y1="34" x2="540.2" y2="374" stroke="#d9d0be" opacity=".5"/><text x="540.2" y="392.0" font-size="9.5" fill="#6b7a72" text-anchor="middle" font-weight="400" >10,000</text><line x1="733.7" y1="34" x2="733.7" y2="374" stroke="#d9d0be" opacity=".5"/><text x="733.7" y="392.0" font-size="9.5" fill="#6b7a72" text-anchor="middle" font-weight="400" >100,000</text><line x1="76" y1="335.4" x2="792" y2="335.4" stroke="#d9d0be" opacity=".5"/><text x="68.0" y="339.4" font-size="9" fill="#6b7a72" text-anchor="end" font-weight="400" >1,000</text><line x1="76" y1="261.5" x2="792" y2="261.5" stroke="#d9d0be" opacity=".5"/><text x="68.0" y="265.5" font-size="9" fill="#6b7a72" text-anchor="end" font-weight="400" >10,000</text><line x1="76" y1="187.6" x2="792" y2="187.6" stroke="#d9d0be" opacity=".5"/><text x="68.0" y="191.6" font-size="9" fill="#6b7a72" text-anchor="end" font-weight="400" >100,000</text><line x1="76" y1="113.7" x2="792" y2="113.7" stroke="#d9d0be" opacity=".5"/><text x="68.0" y="117.7" font-size="9" fill="#6b7a72" text-anchor="end" font-weight="400" >1,000,000</text><line x1="76" y1="39.8" x2="792" y2="39.8" stroke="#d9d0be" opacity=".5"/><text x="68.0" y="43.8" font-size="9" fill="#6b7a72" text-anchor="end" font-weight="400" >10,000,000</text><line x1="76" y1="271.0" x2="792" y2="271.0" stroke="#9a8f79" stroke-dasharray="5 4" stroke-width="1.2" opacity=".9"/><line x1="76" y1="248.8" x2="792" y2="248.8" stroke="#b3863c" stroke-dasharray="5 4" stroke-width="1.2" opacity=".9"/><line x1="76" y1="234.8" x2="792" y2="234.8" stroke="#9a8f79" stroke-dasharray="5 4" stroke-width="1.2" opacity=".9"/><text x="84.0" y="362.0" font-size="9.5" fill="#6b7a72" text-anchor="start" font-weight="400" >虚线：精简 7,433 / 标准 14,866 / 充裕 22,989 份</text><line x1="110.1" y1="323.3" x2="497.2" y2="136.4" stroke="#6b7a72" stroke-width="1.4" opacity=".55" stroke-dasharray="2 4"/><text x="491.2" y="128.4" font-size="9" fill="#6b7a72" text-anchor="end" font-weight="400" >随机样本回归线</text><circle cx="799.8" cy="38.0" r="5.2" fill="#b3863c" opacity=".85" stroke="#fbf7ee" stroke-width="1"><title>Slay the Spire｜219,554 评论｜10,583,038 份</title></circle><circle cx="794.3" cy="49.5" r="5.2" fill="#b3863c" opacity=".85" stroke="#fbf7ee" stroke-width="1"><title>Slay the Spire 2｜205,590 评论｜7,410,557 份</title></circle><circle cx="792.1" cy="53.7" r="5.2" fill="#b3863c" opacity=".85" stroke="#fbf7ee" stroke-width="1"><title>Balatro｜200,156 评论｜6,495,863 份</title></circle><circle cx="601.8" cy="99.5" r="5.2" fill="#b3863c" opacity=".85" stroke="#fbf7ee" stroke-width="1"><title>Backpack Battles｜20,810 评论｜1,556,886 份</title></circle><circle cx="610.2" cy="101.9" r="5.2" fill="#b3863c" opacity=".85" stroke="#fbf7ee" stroke-width="1"><title>Monster Train｜22,997 评论｜1,445,478 份</title></circle><circle cx="542.7" cy="133.7" r="5.2" fill="#b3863c" opacity=".85" stroke="#fbf7ee" stroke-width="1"><title>Monster Train 2｜10,303 评论｜537,235 份</title></circle><circle cx="612.4" cy="109.9" r="4.2" fill="#1f5c48" opacity=".85" stroke="#fbf7ee" stroke-width="1"><title>9 Kings｜23,618 评论｜1,127,310 份</title></circle><circle cx="546.2" cy="120.1" r="4.2" fill="#1f5c48" opacity=".85" stroke="#fbf7ee" stroke-width="1"><title>The King is Watching｜10,741 评论｜819,149 份</title></circle><circle cx="563.0" cy="124.7" r="4.2" fill="#1f5c48" opacity=".85" stroke="#fbf7ee" stroke-width="1"><title>Across the Obelisk｜13,127 评论｜711,232 份</title></circle><circle cx="573.9" cy="131.1" r="4.2" fill="#1f5c48" opacity=".85" stroke="#fbf7ee" stroke-width="1"><title>Symphony of War: The Nephilim Saga｜14,937 评论｜582,089 份</title></circle><circle cx="567.4" cy="136.6" r="4.2" fill="#1f5c48" opacity=".85" stroke="#fbf7ee" stroke-width="1"><title>Chrono Ark｜13,827 评论｜490,331 份</title></circle><circle cx="493.8" cy="136.9" r="4.2" fill="#1f5c48" opacity=".85" stroke="#fbf7ee" stroke-width="1"><title>Hero's Hour｜5,761 评论｜485,261 份</title></circle><circle cx="498.1" cy="143.8" r="4.2" fill="#1f5c48" opacity=".85" stroke="#fbf7ee" stroke-width="1"><title>Super Fantasy Kingdom｜6,065 评论｜391,377 份</title></circle><circle cx="462.4" cy="148.7" r="4.2" fill="#1f5c48" opacity=".85" stroke="#fbf7ee" stroke-width="1"><title>Fights in Tight Spaces｜3,966 评论｜336,269 份</title></circle><circle cx="448.6" cy="149.5" r="4.2" fill="#1f5c48" opacity=".85" stroke="#fbf7ee" stroke-width="1"><title>Despot's Game: Dystopian Battle Simulator｜3,366 评论｜328,329 份</title></circle><circle cx="467.6" cy="155.1" r="4.2" fill="#1f5c48" opacity=".85" stroke="#fbf7ee" stroke-width="1"><title>He is Coming｜4,220 评论｜275,559 份</title></circle><circle cx="530.1" cy="155.7" r="4.2" fill="#1f5c48" opacity=".85" stroke="#fbf7ee" stroke-width="1"><title>Wildfrost｜8,876 评论｜270,553 份</title></circle><circle cx="498.1" cy="158.5" r="4.2" fill="#1f5c48" opacity=".85" stroke="#fbf7ee" stroke-width="1"><title>Gordian Quest｜6,063 评论｜248,027 份</title></circle><circle cx="472.1" cy="167.6" r="4.2" fill="#1f5c48" opacity=".85" stroke="#fbf7ee" stroke-width="1"><title>StarVaders｜4,448 评论｜186,861 份</title></circle><circle cx="437.5" cy="168.7" r="4.2" fill="#1f5c48" opacity=".85" stroke="#fbf7ee" stroke-width="1"><title>The Last Flame｜2,949 评论｜180,495 份</title></circle><circle cx="471.6" cy="173.5" r="4.2" fill="#1f5c48" opacity=".85" stroke="#fbf7ee" stroke-width="1"><title>Cobalt Core｜4,424 评论｜155,304 份</title></circle><circle cx="462.6" cy="176.7" r="4.2" fill="#1f5c48" opacity=".85" stroke="#fbf7ee" stroke-width="1"><title>Alina of the Arena｜3,975 评论｜140,526 份</title></circle><circle cx="415.5" cy="179.5" r="4.2" fill="#1f5c48" opacity=".85" stroke="#fbf7ee" stroke-width="1"><title>Tales & Tactics｜2,270 评论｜128,749 份</title></circle><circle cx="402.6" cy="187.8" r="4.2" fill="#1f5c48" opacity=".85" stroke="#fbf7ee" stroke-width="1"><title>Hadean Tactics｜1,947 评论｜99,480 份</title></circle><circle cx="391.6" cy="191.4" r="4.2" fill="#1f5c48" opacity=".85" stroke="#fbf7ee" stroke-width="1"><title>Vivid Knight｜1,709 评论｜88,909 份</title></circle><circle cx="337.6" cy="199.3" r="4.2" fill="#1f5c48" opacity=".85" stroke="#fbf7ee" stroke-width="1"><title>The Dungeon Beneath｜898 评论｜69,494 份</title></circle><circle cx="571.5" cy="118.6" r="4.2" fill="#8fa89b" opacity=".85" stroke="#fbf7ee" stroke-width="1"><title>Griftlands｜14,522 评论｜857,962 份</title></circle><circle cx="552.5" cy="120.1" r="4.2" fill="#8fa89b" opacity=".85" stroke="#fbf7ee" stroke-width="1"><title>Luck be a Landlord｜11,574 评论｜818,789 份</title></circle><circle cx="527.0" cy="130.9" r="4.2" fill="#8fa89b" opacity=".85" stroke="#fbf7ee" stroke-width="1"><title>Backpack Hero｜8,554 评论｜586,133 份</title></circle><circle cx="581.3" cy="133.7" r="4.2" fill="#8fa89b" opacity=".85" stroke="#fbf7ee" stroke-width="1"><title>The Bazaar｜16,308 评论｜536,578 份</title></circle><circle cx="431.8" cy="143.5" r="4.2" fill="#8fa89b" opacity=".85" stroke="#fbf7ee" stroke-width="1"><title>Ballionaire｜2,756 评论｜395,571 份</title></circle><circle cx="464.2" cy="144.3" r="4.2" fill="#8fa89b" opacity=".85" stroke="#fbf7ee" stroke-width="1"><title>Dungeon Clawler｜4,051 评论｜385,291 份</title></circle><circle cx="512.0" cy="145.9" r="4.2" fill="#8fa89b" opacity=".85" stroke="#fbf7ee" stroke-width="1"><title>Shogun Showdown｜7,151 评论｜367,362 份</title></circle><circle cx="509.2" cy="147.8" r="4.2" fill="#8fa89b" opacity=".85" stroke="#fbf7ee" stroke-width="1"><title>Yi Xian: The Cultivation Card Game｜6,919 评论｜346,021 份</title></circle><circle cx="475.3" cy="151.9" r="4.2" fill="#8fa89b" opacity=".85" stroke="#fbf7ee" stroke-width="1"><title>Roguebook｜4,622 评论｜303,981 份</title></circle><circle cx="492.4" cy="152.4" r="4.2" fill="#8fa89b" opacity=".85" stroke="#fbf7ee" stroke-width="1"><title>Demonic Mahjong｜5,668 评论｜300,013 份</title></circle><circle cx="473.1" cy="159.8" r="4.2" fill="#8fa89b" opacity=".85" stroke="#fbf7ee" stroke-width="1"><title>Emberward｜4,503 评论｜237,831 份</title></circle><circle cx="413.0" cy="161.3" r="4.2" fill="#8fa89b" opacity=".85" stroke="#fbf7ee" stroke-width="1"><title>Cat God Ranch｜2,204 评论｜226,696 份</title></circle><circle cx="422.6" cy="171.1" r="4.2" fill="#8fa89b" opacity=".85" stroke="#fbf7ee" stroke-width="1"><title>Decktamer｜2,470 评论｜167,224 份</title></circle><circle cx="449.9" cy="175.0" r="4.2" fill="#8fa89b" opacity=".85" stroke="#fbf7ee" stroke-width="1"><title>Oaken Tower｜3,417 评论｜148,064 份</title></circle><circle cx="396.7" cy="178.1" r="4.2" fill="#8fa89b" opacity=".85" stroke="#fbf7ee" stroke-width="1"><title>Overlooting｜1,815 评论｜134,671 份</title></circle><circle cx="446.0" cy="185.0" r="4.2" fill="#8fa89b" opacity=".85" stroke="#fbf7ee" stroke-width="1"><title>Trials of Fire｜3,263 评论｜108,539 份</title></circle><circle cx="417.9" cy="185.4" r="4.2" fill="#8fa89b" opacity=".85" stroke="#fbf7ee" stroke-width="1"><title>Yao-Guai Hunter｜2,336 评论｜107,130 份</title></circle><circle cx="435.8" cy="190.8" r="4.2" fill="#8fa89b" opacity=".85" stroke="#fbf7ee" stroke-width="1"><title>Commander Quest｜2,890 评论｜90,624 份</title></circle><circle cx="412.2" cy="194.3" r="4.2" fill="#8fa89b" opacity=".85" stroke="#fbf7ee" stroke-width="1"><title>Touhou: Lost Branch of Legend｜2,182 评论｜81,114 份</title></circle><circle cx="348.0" cy="198.7" r="4.2" fill="#8fa89b" opacity=".85" stroke="#fbf7ee" stroke-width="1"><title>ShapeHero Factory｜1,017 评论｜70,840 份</title></circle><circle cx="362.6" cy="204.7" r="4.2" fill="#8fa89b" opacity=".85" stroke="#fbf7ee" stroke-width="1"><title>Knightica｜1,209 评论｜58,669 份</title></circle><circle cx="327.1" cy="217.1" r="4.2" fill="#8fa89b" opacity=".85" stroke="#fbf7ee" stroke-width="1"><title>Indies' Lies｜793 评论｜39,890 份</title></circle><circle cx="288.3" cy="237.3" r="12" fill="none" stroke="#a34332" stroke-width="1.6" stroke-dasharray="3 3"/><circle cx="288.3" cy="237.3" r="3.2" fill="#a34332"/><text x="304.3" y="241.3" font-size="10" fill="#a34332" text-anchor="start" font-weight="700" >目标：500 评论 ≈ 2.1 万份</text><text x="434.0" y="418.0" font-size="10.5" fill="#6b7a72" text-anchor="middle" font-weight="400" >Steam 评论数（对数轴）</text><text x="20" y="204.0" font-size="10.5" fill="#6b7a72" text-anchor="middle" transform="rotate(-90 20 204.0)">估算销量（对数轴）</text><circle cx="86" cy="42" r="4" fill="#b3863c"/><text x="95.0" y="46.0" font-size="9.5" fill="#6b7a72" text-anchor="start" font-weight="400" >天花板</text><circle cx="164" cy="42" r="4" fill="#1f5c48"/><text x="173.0" y="46.0" font-size="9.5" fill="#6b7a72" text-anchor="start" font-weight="400" >直接对标</text><circle cx="242" cy="42" r="4" fill="#8fa89b"/><text x="251.0" y="46.0" font-size="9.5" fill="#6b7a72" text-anchor="start" font-weight="400" >机制邻近</text></svg>
+    <figcaption><b>图 6｜评论 × 销量。</b>横轴评论数、纵轴估算销量，均为对数轴；灰虚线是 140 款随机样本的回归线（R²=0.94）。金色 / 绿色 / 灰色分别为 S / A / B 圈。红色虚线是三条回本线，红圈是建议目标：<b>500 条评论 ≈ 2.1 万份</b>。</figcaption>
+  </figure>
+
+  <h3>四个对标结论</h3>
+  <div class="grid2">
+    <div class="card"><h4 style="margin-top:0">01 / 评论是最诚实的先行指标</h4><p>随机样本的“销量 / 评论”中位数是 <b>28.8×</b>，但逐年下降：2021 年 42.0×，2026 年只有 20.4×。做预算时用 <b>30×</b>，不要用头部产品的 50–70×。</p></div>
+    <div class="card"><h4 style="margin-top:0">02 / 定价集中在 $19.99</h4><p>20 款直接对标中，中位价格 <b>$19.99</b>；$24.99 是 Monster Train / Chrono Ark / StarVaders 的“内容旗舰价”，$14.99 是 The King is Watching / Backpack Battles 的“轻量价”。你更接近前者，但内容量还没到。</p></div>
+    <div class="card"><h4 style="margin-top:0">03 / 直接对标中位 27 万份，但是幸存者</h4><p>这 20 款的中位销量 <b>273,056</b>、中位评论 <b>4,436</b>，全部是“已经跑出来”的产品。用它们定“做到什么程度”，不要用来估“成功率”。</p></div>
+    <div class="card"><h4 style="margin-top:0">04 / 地形不是护城河，耦合才是</h4><p>四层地形能增加战术纵深，但玩家不会只为“多一层高地”买单；他们会为“这张牌让我的队伍打出了另一种战斗”买单。把地形当成 Build 的放大器，而不是品类标签。</p></div>
+  </div>
+
+  <h3 style="margin-top:38px">完整样本（48 款）</h3>
+  <div class="tbl-title">
+    <h4 style="margin:0">按圈层筛选，点击表头排序</h4>
+    <div class="filters">
+      <button class="on" data-filter="all">全部 48</button>
+      <button data-filter="S">天花板 6</button>
+      <button data-filter="A">直接对标 20</button>
+      <button data-filter="B">机制邻近 22</button>
+    </div>
+  </div>
+  <div class="table-wrap" id="comps-table">
+    <table>
+      <thead><tr>
+        <th class="sortable">圈层</th><th class="sortable">游戏 / 开发商</th><th class="sortable num">年份</th>
+        <th class="sortable num">价格</th><th class="sortable num">评论数</th><th class="sortable num">好评率</th>
+        <th class="sortable num">估算销量</th><th class="sortable num">评论倍数</th><th class="sortable num">净收入</th>
+      </tr></thead>
+      <tbody><tr data-ring="S"><td data-sort="S"><span class="badge S">S</span></td><td><a href="https://store.steampowered.com/app/646570/" target="_blank" rel="noopener">Slay the Spire</a><div class="mini">Mega Crit</div><div class="mini">Roguelike Deckbuilder · Card Game</div></td><td class="num" data-sort="2019">2019</td><td class="num" data-sort="24.99">$24.99<div class="mini">¥88</div></td><td class="num" data-sort="219554">219,554</td><td class="num" data-sort="97.5">97.5%</td><td class="num" data-sort="10583038"><b>10,583,038</b></td><td class="num" data-sort="48.2">48.2×</td><td class="num" data-sort="119011553">$119.0M</td></tr>
+<tr data-ring="S"><td data-sort="S"><span class="badge S">S</span></td><td><a href="https://store.steampowered.com/app/2868840/" target="_blank" rel="noopener">Slay the Spire 2</a><div class="mini">Mega Crit</div><div class="mini">Roguelike · Card Game</div></td><td class="num" data-sort="2026">2026</td><td class="num" data-sort="24.99">$24.99<div class="mini">¥88</div></td><td class="num" data-sort="205590">205,590</td><td class="num" data-sort="61.4">61.4%</td><td class="num" data-sort="7410557"><b>7,410,557</b></td><td class="num" data-sort="36.0">36.0×</td><td class="num" data-sort="83335418">$83.3M</td></tr>
+<tr data-ring="S"><td data-sort="S"><span class="badge S">S</span></td><td><a href="https://store.steampowered.com/app/2379780/" target="_blank" rel="noopener">Balatro</a><div class="mini">LocalThunk</div><div class="mini">Card Game · Roguelike</div></td><td class="num" data-sort="2024">2024</td><td class="num" data-sort="14.99">$14.99<div class="mini">¥54</div></td><td class="num" data-sort="200156">200,156</td><td class="num" data-sort="97.8">97.8%</td><td class="num" data-sort="6495863"><b>6,495,863</b></td><td class="num" data-sort="32.5">32.5×</td><td class="num" data-sort="43817843">$43.8M</td></tr>
+<tr data-ring="S"><td data-sort="S"><span class="badge S">S</span></td><td><a href="https://store.steampowered.com/app/2427700/" target="_blank" rel="noopener">Backpack Battles</a><div class="mini">PlayWithFurcifer</div><div class="mini">Auto Battler · Inventory Management</div></td><td class="num" data-sort="2025">2025</td><td class="num" data-sort="14.99">$14.99<div class="mini">¥52</div></td><td class="num" data-sort="20810">20,810</td><td class="num" data-sort="91.2">91.2%</td><td class="num" data-sort="1556886"><b>1,556,886</b></td><td class="num" data-sort="74.8">74.8×</td><td class="num" data-sort="10501974">$10.5M</td></tr>
+<tr data-ring="S"><td data-sort="S"><span class="badge S">S</span></td><td><a href="https://store.steampowered.com/app/1102190/" target="_blank" rel="noopener">Monster Train</a><div class="mini">Shiny Shoe</div><div class="mini">Card Battler · Roguelite</div></td><td class="num" data-sort="2020">2020</td><td class="num" data-sort="24.99">$24.99<div class="mini">¥88</div></td><td class="num" data-sort="22997">22,997</td><td class="num" data-sort="95.8">95.8%</td><td class="num" data-sort="1445478"><b>1,445,478</b></td><td class="num" data-sort="62.9">62.9×</td><td class="num" data-sort="16255122">$16.3M</td></tr>
+<tr data-ring="S"><td data-sort="S"><span class="badge S">S</span></td><td><a href="https://store.steampowered.com/app/2742830/" target="_blank" rel="noopener">Monster Train 2</a><div class="mini">Shiny Shoe</div><div class="mini">Roguelike Deckbuilder · Card Game</div></td><td class="num" data-sort="2025">2025</td><td class="num" data-sort="24.99">$24.99<div class="mini">¥92</div></td><td class="num" data-sort="10303">10,303</td><td class="num" data-sort="95.3">95.3%</td><td class="num" data-sort="537235"><b>537,235</b></td><td class="num" data-sort="52.1">52.1×</td><td class="num" data-sort="6041476">$6.0M</td></tr>
+<tr data-ring="A"><td data-sort="A"><span class="badge A">A</span></td><td><a href="https://store.steampowered.com/app/2784470/" target="_blank" rel="noopener">9 Kings</a><div class="mini">Sad Socket</div><div class="mini">Strategy · RPG</div></td><td class="num" data-sort="2025">2025</td><td class="num" data-sort="19.99">$19.99<div class="mini">¥59</div></td><td class="num" data-sort="23618">23,618</td><td class="num" data-sort="92.4">92.4%</td><td class="num" data-sort="1127310"><b>1,127,310</b></td><td class="num" data-sort="47.7">47.7×</td><td class="num" data-sort="10140717">$10.1M</td></tr>
+<tr data-ring="A"><td data-sort="A"><span class="badge A">A</span></td><td><a href="https://store.steampowered.com/app/2753900/" target="_blank" rel="noopener">The King is Watching</a><div class="mini">Hypnohead</div><div class="mini">Roguelike · Base Building</div></td><td class="num" data-sort="2025">2025</td><td class="num" data-sort="14.99">$14.99<div class="mini">¥49</div></td><td class="num" data-sort="10741">10,741</td><td class="num" data-sort="88.7">88.7%</td><td class="num" data-sort="819149"><b>819,149</b></td><td class="num" data-sort="76.3">76.3×</td><td class="num" data-sort="5525569">$5.5M</td></tr>
+<tr data-ring="A"><td data-sort="A"><span class="badge A">A</span></td><td><a href="https://store.steampowered.com/app/1385380/" target="_blank" rel="noopener">Across the Obelisk</a><div class="mini">Dreamsite Games</div><div class="mini">Casual · Adventure</div></td><td class="num" data-sort="2022">2022</td><td class="num" data-sort="19.99">$19.99<div class="mini">¥98</div></td><td class="num" data-sort="13127">13,127</td><td class="num" data-sort="80.2">80.2%</td><td class="num" data-sort="711232"><b>711,232</b></td><td class="num" data-sort="54.2">54.2×</td><td class="num" data-sort="6397887">$6.4M</td></tr>
+<tr data-ring="A"><td data-sort="A"><span class="badge A">A</span></td><td><a href="https://store.steampowered.com/app/1488200/" target="_blank" rel="noopener">Symphony of War: The Nephilim Saga</a><div class="mini">Dancing Dragon Games</div><div class="mini">Tactical RPG · RPG</div></td><td class="num" data-sort="2022">2022</td><td class="num" data-sort="19.99">$19.99<div class="mini">¥70</div></td><td class="num" data-sort="14937">14,937</td><td class="num" data-sort="94.5">94.5%</td><td class="num" data-sort="582089"><b>582,089</b></td><td class="num" data-sort="39.0">39.0×</td><td class="num" data-sort="5236181">$5.2M</td></tr>
+<tr data-ring="A"><td data-sort="A"><span class="badge A">A</span></td><td><a href="https://store.steampowered.com/app/1188930/" target="_blank" rel="noopener">Chrono Ark</a><div class="mini">Al Fine</div><div class="mini">Roguelike Deckbuilder · Anime</div></td><td class="num" data-sort="2024">2024</td><td class="num" data-sort="24.99">$24.99<div class="mini">¥88</div></td><td class="num" data-sort="13827">13,827</td><td class="num" data-sort="90.7">90.7%</td><td class="num" data-sort="490331"><b>490,331</b></td><td class="num" data-sort="35.5">35.5×</td><td class="num" data-sort="5514017">$5.5M</td></tr>
+<tr data-ring="A"><td data-sort="A"><span class="badge A">A</span></td><td><a href="https://store.steampowered.com/app/1656780/" target="_blank" rel="noopener">Hero&#x27;s Hour</a><div class="mini">Benjamin &quot;ThingOnItsOwn&quot; Hauer</div><div class="mini">Turn-Based · Pixel Graphics</div></td><td class="num" data-sort="2022">2022</td><td class="num" data-sort="17.99">$17.99<div class="mini">¥68</div></td><td class="num" data-sort="5761">5,761</td><td class="num" data-sort="79.4">79.4%</td><td class="num" data-sort="485261"><b>485,261</b></td><td class="num" data-sort="84.2">84.2×</td><td class="num" data-sort="3928430">$3.9M</td></tr>
+<tr data-ring="A"><td data-sort="A"><span class="badge A">A</span></td><td><a href="https://store.steampowered.com/app/2289750/" target="_blank" rel="noopener">Super Fantasy Kingdom</a><div class="mini">Super Fantasy Games</div><div class="mini">Strategy · RPG</div></td><td class="num" data-sort="2025">2025</td><td class="num" data-sort="19.99">$19.99<div class="mini">¥59</div></td><td class="num" data-sort="6065">6,065</td><td class="num" data-sort="86.6">86.6%</td><td class="num" data-sort="391377"><b>391,377</b></td><td class="num" data-sort="64.5">64.5×</td><td class="num" data-sort="3520631">$3.5M</td></tr>
+<tr data-ring="A"><td data-sort="A"><span class="badge A">A</span></td><td><a href="https://store.steampowered.com/app/1265820/" target="_blank" rel="noopener">Fights in Tight Spaces</a><div class="mini">Ground Shatter</div><div class="mini">Strategy · Action</div></td><td class="num" data-sort="2021">2021</td><td class="num" data-sort="24.99">$24.99<div class="mini">¥80</div></td><td class="num" data-sort="3966">3,966</td><td class="num" data-sort="89.9">89.9%</td><td class="num" data-sort="336269"><b>336,269</b></td><td class="num" data-sort="84.8">84.8×</td><td class="num" data-sort="3781513">$3.8M</td></tr>
+<tr data-ring="A"><td data-sort="A"><span class="badge A">A</span></td><td><a href="https://store.steampowered.com/app/1227280/" target="_blank" rel="noopener">Despot&#x27;s Game: Dystopian Battle Simulator</a><div class="mini">Konfa Games</div><div class="mini">Auto Battler · Pixel Graphics</div></td><td class="num" data-sort="2022">2022</td><td class="num" data-sort="19.99">$19.99<div class="mini">¥79</div></td><td class="num" data-sort="3366">3,366</td><td class="num" data-sort="84.0">84.0%</td><td class="num" data-sort="328329"><b>328,329</b></td><td class="num" data-sort="97.5">97.5×</td><td class="num" data-sort="2953483">$3.0M</td></tr>
+<tr data-ring="A"><td data-sort="A"><span class="badge A">A</span></td><td><a href="https://store.steampowered.com/app/2824490/" target="_blank" rel="noopener">He is Coming</a><div class="mini">Chronocle</div><div class="mini">Strategy · Roguelike</div></td><td class="num" data-sort="2025">2025</td><td class="num" data-sort="19.99">$19.99<div class="mini">¥59</div></td><td class="num" data-sort="4220">4,220</td><td class="num" data-sort="84.9">84.9%</td><td class="num" data-sort="275559"><b>275,559</b></td><td class="num" data-sort="65.3">65.3×</td><td class="num" data-sort="2478790">$2.5M</td></tr>
+<tr data-ring="A"><td data-sort="A"><span class="badge A">A</span></td><td><a href="https://store.steampowered.com/app/1811990/" target="_blank" rel="noopener">Wildfrost</a><div class="mini">Deadpan Games</div><div class="mini">Card Battler · Roguelike Deckbuilder</div></td><td class="num" data-sort="2023">2023</td><td class="num" data-sort="19.99">$19.99<div class="mini">¥73</div></td><td class="num" data-sort="8876">8,876</td><td class="num" data-sort="82.9">82.9%</td><td class="num" data-sort="270553"><b>270,553</b></td><td class="num" data-sort="30.5">30.5×</td><td class="num" data-sort="2433759">$2.4M</td></tr>
+<tr data-ring="A"><td data-sort="A"><span class="badge A">A</span></td><td><a href="https://store.steampowered.com/app/981430/" target="_blank" rel="noopener">Gordian Quest</a><div class="mini">Mixed Realms</div><div class="mini">RPG · Card Game</div></td><td class="num" data-sort="2022">2022</td><td class="num" data-sort="19.99">$19.99<div class="mini">¥58</div></td><td class="num" data-sort="6063">6,063</td><td class="num" data-sort="88.6">88.6%</td><td class="num" data-sort="248027"><b>248,027</b></td><td class="num" data-sort="40.9">40.9×</td><td class="num" data-sort="2231126">$2.2M</td></tr>
+<tr data-ring="A"><td data-sort="A"><span class="badge A">A</span></td><td><a href="https://store.steampowered.com/app/2097570/" target="_blank" rel="noopener">StarVaders</a><div class="mini">Pengonauts</div><div class="mini">Roguelike Deckbuilder · Deckbuilding</div></td><td class="num" data-sort="2025">2025</td><td class="num" data-sort="24.99">$24.99<div class="mini">¥93</div></td><td class="num" data-sort="4448">4,448</td><td class="num" data-sort="97.0">97.0%</td><td class="num" data-sort="186861"><b>186,861</b></td><td class="num" data-sort="42.0">42.0×</td><td class="num" data-sort="2101345">$2.1M</td></tr>
+<tr data-ring="A"><td data-sort="A"><span class="badge A">A</span></td><td><a href="https://store.steampowered.com/app/1830970/" target="_blank" rel="noopener">The Last Flame</a><div class="mini">Hotloop</div><div class="mini">Auto Battler · Roguelike</div></td><td class="num" data-sort="2025">2025</td><td class="num" data-sort="19.99">$19.99<div class="mini">¥55</div></td><td class="num" data-sort="2949">2,949</td><td class="num" data-sort="84.9">84.9%</td><td class="num" data-sort="180495"><b>180,495</b></td><td class="num" data-sort="61.2">61.2×</td><td class="num" data-sort="1623642">$1.6M</td></tr>
+<tr data-ring="A"><td data-sort="A"><span class="badge A">A</span></td><td><a href="https://store.steampowered.com/app/2179850/" target="_blank" rel="noopener">Cobalt Core</a><div class="mini">Rocket Rat Games</div><div class="mini">Roguelike Deckbuilder · Card Game</div></td><td class="num" data-sort="2023">2023</td><td class="num" data-sort="19.99">$19.99<div class="mini">¥76</div></td><td class="num" data-sort="4424">4,424</td><td class="num" data-sort="96.0">96.0%</td><td class="num" data-sort="155304"><b>155,304</b></td><td class="num" data-sort="35.1">35.1×</td><td class="num" data-sort="1397037">$1.4M</td></tr>
+<tr data-ring="A"><td data-sort="A"><span class="badge A">A</span></td><td><a href="https://store.steampowered.com/app/1668690/" target="_blank" rel="noopener">Alina of the Arena</a><div class="mini">PINIX</div><div class="mini">Roguelike Deckbuilder · Roguelike</div></td><td class="num" data-sort="2022">2022</td><td class="num" data-sort="14.99">$14.99<div class="mini">¥52</div></td><td class="num" data-sort="3975">3,975</td><td class="num" data-sort="91.5">91.5%</td><td class="num" data-sort="140526"><b>140,526</b></td><td class="num" data-sort="35.4">35.4×</td><td class="num" data-sort="947918">$948K</td></tr>
+<tr data-ring="A"><td data-sort="A"><span class="badge A">A</span></td><td><a href="https://store.steampowered.com/app/1652250/" target="_blank" rel="noopener">Tales &amp; Tactics</a><div class="mini">Table 9 Studio</div><div class="mini">Hex Grid · Auto Battler</div></td><td class="num" data-sort="2024">2024</td><td class="num" data-sort="17.99">$17.99<div class="mini">¥58</div></td><td class="num" data-sort="2270">2,270</td><td class="num" data-sort="78.0">78.0%</td><td class="num" data-sort="128749"><b>128,749</b></td><td class="num" data-sort="56.7">56.7×</td><td class="num" data-sort="1042287">$1.0M</td></tr>
+<tr data-ring="A"><td data-sort="A"><span class="badge A">A</span></td><td><a href="https://store.steampowered.com/app/1260590/" target="_blank" rel="noopener">Hadean Tactics</a><div class="mini">Emberfish Games</div><div class="mini">Roguelike Deckbuilder · Auto Battler</div></td><td class="num" data-sort="2023">2023</td><td class="num" data-sort="19.99">$19.99<div class="mini">¥76</div></td><td class="num" data-sort="1947">1,947</td><td class="num" data-sort="89.1">89.1%</td><td class="num" data-sort="99480"><b>99,480</b></td><td class="num" data-sort="51.1">51.1×</td><td class="num" data-sort="894872">$895K</td></tr>
+<tr data-ring="A"><td data-sort="A"><span class="badge A">A</span></td><td><a href="https://store.steampowered.com/app/1569090/" target="_blank" rel="noopener">Vivid Knight</a><div class="mini">Asobism.Co.,Ltd</div><div class="mini">Roguelike · Inventory Management</div></td><td class="num" data-sort="2021">2021</td><td class="num" data-sort="14.99">$14.99<div class="mini">¥50</div></td><td class="num" data-sort="1709">1,709</td><td class="num" data-sort="89.9">89.9%</td><td class="num" data-sort="88909"><b>88,909</b></td><td class="num" data-sort="52.0">52.0×</td><td class="num" data-sort="599735">$600K</td></tr>
+<tr data-ring="A"><td data-sort="A"><span class="badge A">A</span></td><td><a href="https://store.steampowered.com/app/1359120/" target="_blank" rel="noopener">The Dungeon Beneath</a><div class="mini">Puzzle Box Games</div><div class="mini">Turn-Based Tactics · Auto Battler</div></td><td class="num" data-sort="2020">2020</td><td class="num" data-sort="14.99">$14.99<div class="mini">¥58</div></td><td class="num" data-sort="898">898</td><td class="num" data-sort="88.8">88.8%</td><td class="num" data-sort="69494"><b>69,494</b></td><td class="num" data-sort="77.4">77.4×</td><td class="num" data-sort="468771">$469K</td></tr>
+<tr data-ring="B"><td data-sort="B"><span class="badge B">B</span></td><td><a href="https://store.steampowered.com/app/601840/" target="_blank" rel="noopener">Griftlands</a><div class="mini">Klei Entertainment</div><div class="mini">Card Battler · Roguelite</div></td><td class="num" data-sort="2021">2021</td><td class="num" data-sort="19.99">$19.99<div class="mini">¥48</div></td><td class="num" data-sort="14522">14,522</td><td class="num" data-sort="93.5">93.5%</td><td class="num" data-sort="857962"><b>857,962</b></td><td class="num" data-sort="59.1">59.1×</td><td class="num" data-sort="7717797">$7.7M</td></tr>
+<tr data-ring="B"><td data-sort="B"><span class="badge B">B</span></td><td><a href="https://store.steampowered.com/app/1404850/" target="_blank" rel="noopener">Luck be a Landlord</a><div class="mini">TrampolineTales</div><div class="mini">Roguelike Deckbuilder · Deckbuilding</div></td><td class="num" data-sort="2023">2023</td><td class="num" data-sort="9.99">$9.99<div class="mini">¥42</div></td><td class="num" data-sort="11574">11,574</td><td class="num" data-sort="93.2">93.2%</td><td class="num" data-sort="818789"><b>818,789</b></td><td class="num" data-sort="70.7">70.7×</td><td class="num" data-sort="3680865">$3.7M</td></tr>
+<tr data-ring="B"><td data-sort="B"><span class="badge B">B</span></td><td><a href="https://store.steampowered.com/app/1970580/" target="_blank" rel="noopener">Backpack Hero</a><div class="mini">Jaspel</div><div class="mini">Replay Value · Inventory Management</div></td><td class="num" data-sort="2023">2023</td><td class="num" data-sort="19.99">$19.99<div class="mini">¥65</div></td><td class="num" data-sort="8554">8,554</td><td class="num" data-sort="86.3">86.3%</td><td class="num" data-sort="586133"><b>586,133</b></td><td class="num" data-sort="68.5">68.5×</td><td class="num" data-sort="5272559">$5.3M</td></tr>
+<tr data-ring="B"><td data-sort="B"><span class="badge B">B</span></td><td><a href="https://store.steampowered.com/app/1617400/" target="_blank" rel="noopener">The Bazaar</a><div class="mini">Tempo</div><div class="mini">Strategy · Auto Battler</div></td><td class="num" data-sort="2025">2025</td><td class="num" data-sort="19.99">$19.99<div class="mini">¥76</div></td><td class="num" data-sort="16308">16,308</td><td class="num" data-sort="69.2">69.2%</td><td class="num" data-sort="536578"><b>536,578</b></td><td class="num" data-sort="32.9">32.9×</td><td class="num" data-sort="4826787">$4.8M</td></tr>
+<tr data-ring="B"><td data-sort="B"><span class="badge B">B</span></td><td><a href="https://store.steampowered.com/app/2667120/" target="_blank" rel="noopener">Ballionaire</a><div class="mini">newobject</div><div class="mini">Singleplayer · 2D</div></td><td class="num" data-sort="2024">2024</td><td class="num" data-sort="12.34">$12.34<div class="mini">¥52</div></td><td class="num" data-sort="2756">2,756</td><td class="num" data-sort="83.9">83.9%</td><td class="num" data-sort="395571"><b>395,571</b></td><td class="num" data-sort="143.5">143.5×</td><td class="num" data-sort="2196605">$2.2M</td></tr>
+<tr data-ring="B"><td data-sort="B"><span class="badge B">B</span></td><td><a href="https://store.steampowered.com/app/2356780/" target="_blank" rel="noopener">Dungeon Clawler</a><div class="mini">Stray Fawn Studio</div><div class="mini">Roguelike Deckbuilder · Replay Value</div></td><td class="num" data-sort="2026">2026</td><td class="num" data-sort="14.99">$14.99<div class="mini">¥52</div></td><td class="num" data-sort="4051">4,051</td><td class="num" data-sort="88.8">88.8%</td><td class="num" data-sort="385291"><b>385,291</b></td><td class="num" data-sort="95.1">95.1×</td><td class="num" data-sort="2598980">$2.6M</td></tr>
+<tr data-ring="B"><td data-sort="B"><span class="badge B">B</span></td><td><a href="https://store.steampowered.com/app/2084000/" target="_blank" rel="noopener">Shogun Showdown</a><div class="mini">Roboatino</div><div class="mini">Replay Value · Strategy RPG</div></td><td class="num" data-sort="2024">2024</td><td class="num" data-sort="14.99">$14.99<div class="mini">¥58</div></td><td class="num" data-sort="7151">7,151</td><td class="num" data-sort="95.1">95.1%</td><td class="num" data-sort="367362"><b>367,362</b></td><td class="num" data-sort="51.4">51.4×</td><td class="num" data-sort="2478040">$2.5M</td></tr>
+<tr data-ring="B"><td data-sort="B"><span class="badge B">B</span></td><td><a href="https://store.steampowered.com/app/1948800/" target="_blank" rel="noopener">Yi Xian: The Cultivation Card Game</a><div class="mini">Darksun Studio</div><div class="mini">Free to Play · Card Battler</div></td><td class="num" data-sort="2024">2024</td><td class="num" data-sort="0.0">$0.00<div class="mini">¥0</div></td><td class="num" data-sort="6919">6,919</td><td class="num" data-sort="73.8">73.8%</td><td class="num" data-sort="346021"><b>346,021</b></td><td class="num" data-sort="50.0">50.0×</td><td class="num" data-sort="0">$0</td></tr>
+<tr data-ring="B"><td data-sort="B"><span class="badge B">B</span></td><td><a href="https://store.steampowered.com/app/1076200/" target="_blank" rel="noopener">Roguebook</a><div class="mini">Abrakam Entertainment SA</div><div class="mini">RPG · Indie</div></td><td class="num" data-sort="2021">2021</td><td class="num" data-sort="24.99">$24.99<div class="mini">¥80</div></td><td class="num" data-sort="4622">4,622</td><td class="num" data-sort="83.8">83.8%</td><td class="num" data-sort="303981"><b>303,981</b></td><td class="num" data-sort="65.8">65.8×</td><td class="num" data-sort="3418418">$3.4M</td></tr>
+<tr data-ring="B"><td data-sort="B"><span class="badge B">B</span></td><td><a href="https://store.steampowered.com/app/3444020/" target="_blank" rel="noopener">Demonic Mahjong</a><div class="mini">Boxed Lighting Games</div><div class="mini">Strategy · Card Game</div></td><td class="num" data-sort="2025">2025</td><td class="num" data-sort="16.99">$16.99<div class="mini">¥58</div></td><td class="num" data-sort="5668">5,668</td><td class="num" data-sort="95.8">95.8%</td><td class="num" data-sort="300013"><b>300,013</b></td><td class="num" data-sort="52.9">52.9×</td><td class="num" data-sort="2293749">$2.3M</td></tr>
+<tr data-ring="B"><td data-sort="B"><span class="badge B">B</span></td><td><a href="https://store.steampowered.com/app/2459550/" target="_blank" rel="noopener">Emberward</a><div class="mini">Refic Games</div><div class="mini">Tower Defense · Falling Blocks</div></td><td class="num" data-sort="2026">2026</td><td class="num" data-sort="19.99">$19.99<div class="mini">¥68</div></td><td class="num" data-sort="4503">4,503</td><td class="num" data-sort="96.7">96.7%</td><td class="num" data-sort="237831"><b>237,831</b></td><td class="num" data-sort="52.8">52.8×</td><td class="num" data-sort="2139408">$2.1M</td></tr>
+<tr data-ring="B"><td data-sort="B"><span class="badge B">B</span></td><td><a href="https://store.steampowered.com/app/2797340/" target="_blank" rel="noopener">Cat God Ranch</a><div class="mini">CrazyPotato Studio</div><div class="mini">Management · Farming Sim</div></td><td class="num" data-sort="2024">2024</td><td class="num" data-sort="9.99">$9.99<div class="mini">¥42</div></td><td class="num" data-sort="2204">2,204</td><td class="num" data-sort="93.2">93.2%</td><td class="num" data-sort="226696"><b>226,696</b></td><td class="num" data-sort="102.9">102.9×</td><td class="num" data-sort="1019111">$1.0M</td></tr>
+<tr data-ring="B"><td data-sort="B"><span class="badge B">B</span></td><td><a href="https://store.steampowered.com/app/2870340/" target="_blank" rel="noopener">Decktamer</a><div class="mini">Horizon Edge</div><div class="mini">Roguelike Deckbuilder · Creature Collector</div></td><td class="num" data-sort="2025">2025</td><td class="num" data-sort="15.99">$15.99<div class="mini">¥50</div></td><td class="num" data-sort="2470">2,470</td><td class="num" data-sort="86.2">86.2%</td><td class="num" data-sort="167224"><b>167,224</b></td><td class="num" data-sort="67.7">67.7×</td><td class="num" data-sort="1203260">$1.2M</td></tr>
+<tr data-ring="B"><td data-sort="B"><span class="badge B">B</span></td><td><a href="https://store.steampowered.com/app/3400960/" target="_blank" rel="noopener">Oaken Tower</a><div class="mini">Bocary Studios</div><div class="mini">Strategy · Auto Battler</div></td><td class="num" data-sort="2026">2026</td><td class="num" data-sort="9.99">$9.99<div class="mini">¥32</div></td><td class="num" data-sort="3417">3,417</td><td class="num" data-sort="90.1">90.1%</td><td class="num" data-sort="148064"><b>148,064</b></td><td class="num" data-sort="43.3">43.3×</td><td class="num" data-sort="665621">$666K</td></tr>
+<tr data-ring="B"><td data-sort="B"><span class="badge B">B</span></td><td><a href="https://store.steampowered.com/app/3410180/" target="_blank" rel="noopener">Overlooting</a><div class="mini">Posing Possums</div><div class="mini">Inventory Management · Loot</div></td><td class="num" data-sort="2025">2025</td><td class="num" data-sort="9.99">$9.99<div class="mini">¥42</div></td><td class="num" data-sort="1815">1,815</td><td class="num" data-sort="79.2">79.2%</td><td class="num" data-sort="134671"><b>134,671</b></td><td class="num" data-sort="74.2">74.2×</td><td class="num" data-sort="605413">$605K</td></tr>
+<tr data-ring="B"><td data-sort="B"><span class="badge B">B</span></td><td><a href="https://store.steampowered.com/app/1038370/" target="_blank" rel="noopener">Trials of Fire</a><div class="mini">Whatboy Games</div><div class="mini">Card Battler · Turn-Based Tactics</div></td><td class="num" data-sort="2021">2021</td><td class="num" data-sort="19.99">$19.99<div class="mini">¥70</div></td><td class="num" data-sort="3263">3,263</td><td class="num" data-sort="86.0">86.0%</td><td class="num" data-sort="108539"><b>108,539</b></td><td class="num" data-sort="33.3">33.3×</td><td class="num" data-sort="976362">$976K</td></tr>
+<tr data-ring="B"><td data-sort="B"><span class="badge B">B</span></td><td><a href="https://store.steampowered.com/app/1915510/" target="_blank" rel="noopener">Yao-Guai Hunter</a><div class="mini">MyACG Studio</div><div class="mini">Roguelike Deckbuilder · Card Game</div></td><td class="num" data-sort="2025">2025</td><td class="num" data-sort="16.99">$16.99<div class="mini">¥58</div></td><td class="num" data-sort="2336">2,336</td><td class="num" data-sort="83.5">83.5%</td><td class="num" data-sort="107130"><b>107,130</b></td><td class="num" data-sort="45.9">45.9×</td><td class="num" data-sort="819062">$819K</td></tr>
+<tr data-ring="B"><td data-sort="B"><span class="badge B">B</span></td><td><a href="https://store.steampowered.com/app/2697930/" target="_blank" rel="noopener">Commander Quest</a><div class="mini">Flyway Games, Inc.</div><div class="mini">War · Roguelike Deckbuilder</div></td><td class="num" data-sort="2025">2025</td><td class="num" data-sort="11.99">$11.99<div class="mini">¥48</div></td><td class="num" data-sort="2890">2,890</td><td class="num" data-sort="75.1">75.1%</td><td class="num" data-sort="90624"><b>90,624</b></td><td class="num" data-sort="31.4">31.4×</td><td class="num" data-sort="488961">$489K</td></tr>
+<tr data-ring="B"><td data-sort="B"><span class="badge B">B</span></td><td><a href="https://store.steampowered.com/app/1140150/" target="_blank" rel="noopener">Touhou: Lost Branch of Legend</a><div class="mini">Alioth Studio</div><div class="mini">Roguelike Deckbuilder · Anime</div></td><td class="num" data-sort="2022">2022</td><td class="num" data-sort="29.99">$29.99<div class="mini">¥98</div></td><td class="num" data-sort="2182">2,182</td><td class="num" data-sort="92.8">92.8%</td><td class="num" data-sort="81114"><b>81,114</b></td><td class="num" data-sort="37.2">37.2×</td><td class="num" data-sort="1094673">$1.1M</td></tr>
+<tr data-ring="B"><td data-sort="B"><span class="badge B">B</span></td><td><a href="https://store.steampowered.com/app/2389040/" target="_blank" rel="noopener">ShapeHero Factory</a><div class="mini">Asobism.Co.,Ltd</div><div class="mini">Automation · Base Building</div></td><td class="num" data-sort="2025">2025</td><td class="num" data-sort="23.99">$23.99<div class="mini">¥80</div></td><td class="num" data-sort="1017">1,017</td><td class="num" data-sort="88.7">88.7%</td><td class="num" data-sort="70840"><b>70,840</b></td><td class="num" data-sort="69.7">69.7×</td><td class="num" data-sort="764753">$765K</td></tr>
+<tr data-ring="B"><td data-sort="B"><span class="badge B">B</span></td><td><a href="https://store.steampowered.com/app/3093400/" target="_blank" rel="noopener">Knightica</a><div class="mini">Mad Mango Games</div><div class="mini">Auto Battler · Tower Defense</div></td><td class="num" data-sort="2025">2025</td><td class="num" data-sort="14.99">$14.99<div class="mini">¥49</div></td><td class="num" data-sort="1209">1,209</td><td class="num" data-sort="74.6">74.6%</td><td class="num" data-sort="58669"><b>58,669</b></td><td class="num" data-sort="48.5">48.5×</td><td class="num" data-sort="395751">$396K</td></tr>
+<tr data-ring="B"><td data-sort="B"><span class="badge B">B</span></td><td><a href="https://store.steampowered.com/app/1638390/" target="_blank" rel="noopener">Indies&#x27; Lies</a><div class="mini">Fun Square Games</div><div class="mini">Roguelike Deckbuilder · Card Game</div></td><td class="num" data-sort="2023">2023</td><td class="num" data-sort="14.99">$14.99<div class="mini">¥48</div></td><td class="num" data-sort="793">793</td><td class="num" data-sort="75.7">75.7%</td><td class="num" data-sort="39890"><b>39,890</b></td><td class="num" data-sort="50.3">50.3×</td><td class="num" data-sort="269077">$269K</td></tr></tbody>
+    </table>
+  </div>
+  <p class="note" style="margin-top:10px">价格取 Steam 中国区原价（¥）；净收入按美元价折算，单位 $；评论数为全部语言、全部购买类型。数据抓取日 2026-10-19。Yi Xian 当前为免费游玩，价格与净收入按 0 计，不参与价格带分析。</p>
+</div></section>
+
+<section id="position"><div class="wrap">
+  <div class="sec-head">
+    <div class="sec-num">05</div>
+    <div><div class="kicker">Positioning</div><h2>你该站在哪个位置</h2>
+    <p class="sec-sub">定位不是“我有什么”，而是“玩家为什么选你而不是 Monster Train”。</p></div>
+  </div>
+  <figure class="chart"><svg viewBox="0 0 820 470" role="img" aria-label="竞品定位矩阵" xmlns="http://www.w3.org/2000/svg" class="chart-svg"><rect x="92" y="34" width="688" height="370" fill="#f7f1e4"/><line x1="436.0" y1="34" x2="436.0" y2="404" stroke="#d9d0be" stroke-dasharray="4 4"/><line x1="92" y1="263.4" x2="780" y2="263.4" stroke="#d9d0be" stroke-dasharray="4 4"/><text x="119.5" y="53.2" font-size="9.5" fill="#6b7a72" text-anchor="start" font-weight="400" >纯手牌 / 无棋盘</text><text x="752.5" y="53.2" font-size="9.5" fill="#6b7a72" text-anchor="end" font-weight="400" >重棋盘 / 自走棋</text><text x="119.5" y="387.7" font-size="9.5" fill="#6b7a72" text-anchor="start" font-weight="400" >轻构筑</text><circle cx="218.1" cy="41.4" r="4.6" fill="#b3863c" stroke="#fbf7ee" stroke-width="1.2"/><text x="226.1" y="35.4" font-size="9" fill="#1b2a24" text-anchor="start" font-weight="400" >Slay the Spire</text><circle cx="119.5" cy="137.6" r="4.6" fill="#b3863c" stroke="#fbf7ee" stroke-width="1.2"/><text x="127.5" y="143.6" font-size="9" fill="#1b2a24" text-anchor="start" font-weight="400" >Balatro</text><circle cx="527.7" cy="108.0" r="4.6" fill="#b3863c" stroke="#fbf7ee" stroke-width="1.2"/><text x="537.7" y="98.0" font-size="9" fill="#1b2a24" text-anchor="start" font-weight="400" >Monster Train</text><circle cx="562.1" cy="182.0" r="4.6" fill="#1f5c48" stroke="#fbf7ee" stroke-width="1.2"/><text x="553.1" y="196.0" font-size="9" fill="#1b2a24" text-anchor="end" font-weight="400" >The Last Flame</text><circle cx="585.1" cy="219.0" r="4.6" fill="#1f5c48" stroke="#fbf7ee" stroke-width="1.2"/><text x="594.1" y="231.0" font-size="9" fill="#1b2a24" text-anchor="start" font-weight="400" >Hadean Tactics</text><circle cx="401.6" cy="108.0" r="4.6" fill="#1f5c48" stroke="#fbf7ee" stroke-width="1.2"/><text x="410.6" y="102.0" font-size="9" fill="#1b2a24" text-anchor="start" font-weight="400" >Chrono Ark</text><circle cx="367.2" cy="85.8" r="4.6" fill="#1f5c48" stroke="#fbf7ee" stroke-width="1.2"/><text x="359.2" y="76.8" font-size="9" fill="#1b2a24" text-anchor="end" font-weight="400" >Across the Obelisk</text><circle cx="481.9" cy="167.2" r="4.6" fill="#1f5c48" stroke="#fbf7ee" stroke-width="1.2"/><text x="471.9" y="172.2" font-size="9" fill="#1b2a24" text-anchor="end" font-weight="400" >Wildfrost</text><circle cx="653.9" cy="137.6" r="4.6" fill="#1f5c48" stroke="#fbf7ee" stroke-width="1.2"/><text x="662.9" y="127.6" font-size="9" fill="#1b2a24" text-anchor="start" font-weight="400" >StarVaders</text><circle cx="447.5" cy="241.2" r="4.6" fill="#1f5c48" stroke="#fbf7ee" stroke-width="1.2"/><text x="456.5" y="254.2" font-size="9" fill="#1b2a24" text-anchor="start" font-weight="400" >9 Kings</text><circle cx="309.9" cy="167.2" r="4.6" fill="#b3863c" stroke="#fbf7ee" stroke-width="1.2"/><text x="301.9" y="157.2" font-size="9" fill="#1b2a24" text-anchor="end" font-weight="400" >Backpack Battles</text><circle cx="298.4" cy="189.4" r="4.6" fill="#8fa89b" stroke="#fbf7ee" stroke-width="1.2"/><text x="306.4" y="201.4" font-size="9" fill="#1b2a24" text-anchor="start" font-weight="400" >The Bazaar</text><circle cx="527.7" cy="285.6" r="4.6" fill="#1f5c48" stroke="#fbf7ee" stroke-width="1.2"/><text x="535.7" y="295.6" font-size="9" fill="#1b2a24" text-anchor="start" font-weight="400" >Symphony of War</text><circle cx="149.3" cy="256.0" r="4.6" fill="#8fa89b" stroke="#fbf7ee" stroke-width="1.2"/><text x="157.3" y="266.0" font-size="9" fill="#1b2a24" text-anchor="start" font-weight="400" >Luck be a Landlord</text><circle cx="252.5" cy="307.8" r="4.6" fill="#8fa89b" stroke="#fbf7ee" stroke-width="1.2"/><text x="260.5" y="319.8" font-size="9" fill="#1b2a24" text-anchor="start" font-weight="400" >Dungeon Clawler</text><circle cx="481.9" cy="300.4" r="4.6" fill="#8fa89b" stroke="#fbf7ee" stroke-width="1.2"/><text x="489.9" y="312.4" font-size="9" fill="#1b2a24" text-anchor="start" font-weight="400" >Emberward</text><circle cx="761.7" cy="122.8" r="13" fill="none" stroke="#a34332" stroke-width="1.5" stroke-dasharray="3 3"/><path d="M 761.6533333333333 114.80000000000001 L 764.2533333333333 120.20000000000002 L 769.6533333333333 122.80000000000001 L 764.2533333333333 125.4 L 761.6533333333333 130.8 L 759.0533333333333 125.4 L 753.6533333333333 122.80000000000001 L 759.0533333333333 120.20000000000002 Z" fill="#a34332"/><text x="743.7" y="150.8" font-size="10.5" fill="#a34332" text-anchor="end" font-weight="700" >conquer</text><text x="436.0" y="454" font-size="10.5" fill="#6b7a72" text-anchor="middle">自走棋战场权重 →</text><text x="22" y="219.0" font-size="10.5" fill="#6b7a72" text-anchor="middle" transform="rotate(-90 22 219.0)">构筑权重 →</text><text x="92.0" y="468.0" font-size="8.8" fill="#6b7a72" text-anchor="start" font-weight="400" >定性评估：横轴＝单位上场/自动战斗的权重；纵轴＝卡组/遗物构筑的深度。</text></svg>
+    <figcaption><b>图 7｜定性定位图。</b>横轴是自走棋战场权重（单位上场/自动战斗），纵轴是卡组构筑权重。右上角是“重构筑 + 重战场”：Monster Train、The Last Flame、9 Kings 都在这里，conquer 也在——差异不在坐标，而在卡牌与战场的耦合深度。坐标为依据玩法描述的定性评估，不是销量数据。</figcaption>
+  </figure>
+  <div class="split">
+    <div>
+      <blockquote>“《杀戮尖塔》的卡组构筑 × 自走棋的战场：用一副牌决定谁上场、怎么打。”<cite>—— 建议的商店页一句话（英文：A deckbuilder where your cards command the board.）</cite></blockquote>
+      <p>这句话里有三个关键词：<b>deckbuilder</b>（受众）、<b>auto-battler</b>（标签红利）、<b>command the board</b>（差异点）。顺序不能反：先说玩家熟悉的品类，再说你的卡牌如何改变战场。</p>
+      <h4>60 秒教学关怎么写</h4>
+      <ul class="clean">
+        <li>开局给 3 张征召牌，玩家放下 2 个单位；第 1 轮自动交锋。</li>
+        <li>第 2 轮打出一张强化牌，让同一单位多打一次；伤害数字用金色跳字。</li>
+        <li>第 3 轮敌人增援，玩家用一张能力牌改变战场；教学结束。</li>
+        <li>全程不超过 3 次出牌、60 秒、0 段文字说明；结束时玩家能说出“我的牌改变了战斗”。</li>
+      </ul>
+    </div>
+    <div>
+      <div class="card">
+        <h3 style="margin-top:0">标签策略</h3>
+        <p class="mini" style="margin-bottom:10px">按“需求信号”排序，不按“描述准确”排序。</p>
+        <div class="kv"><b>主标签</b><span><span class="pill green">Roguelike Deckbuilder</span><span class="pill green">Auto Battler</span><span class="pill green">Deckbuilding</span><span class="pill green">Roguelike</span></span></div>
+        <div class="kv"><b>次标签</b><span><span class="pill">Turn-Based Strategy</span><span class="pill">RPG</span><span class="pill">Pixel Graphics</span><span class="pill">Singleplayer</span><span class="pill">Roguelite</span></span></div>
+        <div class="kv"><b>慎用</b><span><span class="pill red">Turn-Based Tactics</span><span class="pill red">Early Access</span></span></div>
+        <p class="note" style="margin-top:10px">Turn-Based Tactics 的销量倍数只有 0.93×，且会给玩家“战棋”预期；Early Access 在成熟样本里只有 0.52×，除非你需要现金流，否则不建议。</p>
+      </div>
+      <div class="card" style="margin-top:16px">
+        <h3 style="margin-top:0">定价决策</h3>
+        <div class="kv"><b>90+ 卡</b><span><b>$19.99 / ¥58</b>；内容量对得上，直接对标 The Last Flame / Wildfrost / 9 Kings。</span></div>
+        <div class="kv"><b>70–90 卡</b><span><b>$17.99 / ¥52</b>；比对标低一档，换取“内容不少”的评价。</span></div>
+        <div class="kv"><b>&lt; 70 卡</b><span><b>$14.99 / ¥42</b>；不要用 $19.99 卖 $9.99 的内容，差评会放大内容缺口。</span></div>
+        <p class="note" style="margin-top:8px">价格带数据：$15–19.99 的 5 万份命中率 36.6%，显著高于 $10–14.99 的 16.9%。</p>
+      </div>
+    </div>
+  </div>
+  <div class="callout warn" style="margin-top:26px"><b>最大的定位风险：</b>把“四层地形”当卖点。它是战术层，不是品类差异；商店页第一张图应该让玩家看懂“出牌 → 单位上场 → 自动战斗”，而不是一张四层地图的俯视图。</div>
+</div></section>
+
+<section id="money"><div class="wrap">
+  <div class="sec-head">
+    <div class="sec-num">06</div>
+    <div><div class="kicker">Unit Economics</div><h2>要卖多少，才能回本</h2>
+    <p class="sec-sub">按 $19.99 / ¥58、45% 净收入率计算；预算可以替换成你自己的数字。</p></div>
+  </div>
+  <div class="card">
+    <h3 style="margin-top:0">预算假设</h3>
+    <p class="mini">以下不是你的真实账本，而是三种常见的独立开发配置。月成本按“机会成本 + 生活成本”估，外包含音频、美术、本地化。</p>
+    <div class="table-wrap" style="max-height:none;margin-top:12px">
+      <table><thead><tr><th>方案</th><th class="num">总预算</th><th class="num">回本销量</th><th class="num">成熟样本分位</th><th>配置</th></tr></thead>
+      <tbody><tr><td><b>精简</b></td><td class="num"><b>¥194,000</b></td><td class="num"><b>7,433</b></td><td class="num">P58</td><td class="mini">18 个月 × ¥8,000 + ¥50,000 外包</td></tr>
+<tr><td><b>标准</b></td><td class="num"><b>¥388,000</b></td><td class="num"><b>14,866</b></td><td class="num">P66</td><td class="mini">24 个月 × ¥12,000 + ¥100,000 外包</td></tr>
+<tr><td><b>充裕</b></td><td class="num"><b>¥600,000</b></td><td class="num"><b>22,989</b></td><td class="num">P72</td><td class="mini">30 个月 × ¥15,000 + ¥150,000 外包</td></tr></tbody></table>
+    </div>
+    <p class="note" style="margin-top:10px">回本销量 = 总预算 ÷ ¥26.1（¥58 × 45%）；分位为成熟样本中低于该销量的比例。</p>
+  </div>
+
+  <div class="grid3" style="margin-top:22px">
+    <div class="stat"><b>P50</b><span>3,884 份 → 净收入约 ¥10 万；覆盖不了标准预算。</span></div>
+    <div class="stat gold"><b>P66</b><span>14,866 份 → 净收入约 ¥39 万；刚好回本。</span></div>
+    <div class="stat"><b>P90</b><span>135,689 份 → 净收入约 ¥354 万；能支撑下一款。</span></div>
+  </div>
+  <div class="callout gold" style="margin-top:18px"><b>这就是品类的真实形状：</b>一半的项目连 10 万都收不回，前 10% 拿走 85% 的收入。你不是在选“做不做游戏”，而是在选“要不要用 24 个月去赌自己进前 34%”。<b>目标设定：</b>2 万份 / 500 条评论 / 净收入 ¥52 万；它对应成熟样本 P66，比“中位数”高，但比“对标组中位数”低得多，是一个够得着、又不自欺的目标。</div>
+
+  <figure class="chart" style="margin-top:28px"><svg viewBox="0 0 820 340" role="img" aria-label="不同销量情景下的净收入" xmlns="http://www.w3.org/2000/svg" class="chart-svg"><line x1="62" y1="284.0" x2="796" y2="284.0" stroke="#d9d0be" opacity=".55"/><text x="54.0" y="288.0" font-size="9.5" fill="#6b7a72" text-anchor="end" font-weight="400" >0</text><line x1="62" y1="243.4" x2="796" y2="243.4" stroke="#d9d0be" opacity=".55"/><text x="54.0" y="247.4" font-size="9.5" fill="#6b7a72" text-anchor="end" font-weight="400" >50</text><line x1="62" y1="202.7" x2="796" y2="202.7" stroke="#d9d0be" opacity=".55"/><text x="54.0" y="206.7" font-size="9.5" fill="#6b7a72" text-anchor="end" font-weight="400" >100</text><line x1="62" y1="162.1" x2="796" y2="162.1" stroke="#d9d0be" opacity=".55"/><text x="54.0" y="166.1" font-size="9.5" fill="#6b7a72" text-anchor="end" font-weight="400" >150</text><line x1="62" y1="121.4" x2="796" y2="121.4" stroke="#d9d0be" opacity=".55"/><text x="54.0" y="125.4" font-size="9.5" fill="#6b7a72" text-anchor="end" font-weight="400" >200</text><line x1="62" y1="80.8" x2="796" y2="80.8" stroke="#d9d0be" opacity=".55"/><text x="54.0" y="84.8" font-size="9.5" fill="#6b7a72" text-anchor="end" font-weight="400" >250</text><line x1="62" y1="40.1" x2="796" y2="40.1" stroke="#d9d0be" opacity=".55"/><text x="54.0" y="44.1" font-size="9.5" fill="#6b7a72" text-anchor="end" font-weight="400" >300</text><rect x="101.6" y="273.4" width="67.5" height="10.6" rx="2" fill="#1f5c48" opacity="0.82"><title>5,000 份 → 净收入 13 万元</title></rect><text x="135.4" y="266.4" font-size="10" fill="#1b2a24" text-anchor="middle" font-weight="700" >13 万</text><text x="135.4" y="302.0" font-size="10" fill="#1b2a24" text-anchor="middle" font-weight="500" >5千</text><text x="135.4" y="317.0" font-size="9" fill="#6b7a72" text-anchor="middle" font-weight="400" >P55</text><rect x="248.4" y="262.8" width="67.5" height="21.2" rx="2" fill="#1f5c48" opacity="0.82"><title>10,000 份 → 净收入 26 万元</title></rect><text x="282.2" y="255.8" font-size="10" fill="#1b2a24" text-anchor="middle" font-weight="700" >26 万</text><text x="282.2" y="302.0" font-size="10" fill="#1b2a24" text-anchor="middle" font-weight="500" >1万</text><text x="282.2" y="317.0" font-size="9" fill="#6b7a72" text-anchor="middle" font-weight="400" >P61</text><rect x="395.2" y="241.6" width="67.5" height="42.4" rx="2" fill="#b3863c" opacity="1"><title>20,000 份 → 净收入 52 万元</title></rect><text x="429.0" y="234.6" font-size="10" fill="#1b2a24" text-anchor="middle" font-weight="700" >52 万</text><text x="429.0" y="302.0" font-size="10" fill="#1b2a24" text-anchor="middle" font-weight="500" >2万</text><text x="429.0" y="317.0" font-size="9" fill="#6b7a72" text-anchor="middle" font-weight="400" >P71</text><rect x="542.0" y="177.9" width="67.5" height="106.1" rx="2" fill="#1f5c48" opacity="0.82"><title>50,000 份 → 净收入 130 万元</title></rect><text x="575.8" y="170.9" font-size="10" fill="#1b2a24" text-anchor="middle" font-weight="700" >130 万</text><text x="575.8" y="302.0" font-size="10" fill="#1b2a24" text-anchor="middle" font-weight="500" >5万</text><text x="575.8" y="317.0" font-size="9" fill="#6b7a72" text-anchor="middle" font-weight="400" >P82</text><rect x="688.8" y="71.8" width="67.5" height="212.2" rx="2" fill="#1f5c48" opacity="0.82"><title>100,000 份 → 净收入 261 万元</title></rect><text x="722.6" y="64.8" font-size="10" fill="#1b2a24" text-anchor="middle" font-weight="700" >261 万</text><text x="722.6" y="302.0" font-size="10" fill="#1b2a24" text-anchor="middle" font-weight="500" >10万</text><text x="722.6" y="317.0" font-size="9" fill="#6b7a72" text-anchor="middle" font-weight="400" >P89</text><line x1="62" y1="268.2" x2="796" y2="268.2" stroke="#9a8f79" stroke-width="1.2" stroke-dasharray="5 4" opacity=".85"/><line x1="62" y1="252.5" x2="796" y2="252.5" stroke="#b3863c" stroke-width="1.2" stroke-dasharray="5 4" opacity=".85"/><line x1="62" y1="235.2" x2="796" y2="235.2" stroke="#9a8f79" stroke-width="1.2" stroke-dasharray="5 4" opacity=".85"/><text x="68.0" y="52.0" font-size="9.5" fill="#6b7a72" text-anchor="start" font-weight="400" >虚线：精简 19.4 万 / 标准 38.8 万 / 充裕 60.0 万</text><text x="429.0" y="328.0" font-size="10" fill="#6b7a72" text-anchor="middle" font-weight="400" >估算销量（份）｜下排 P 为该销量在成熟样本中的分位</text></svg>
+    <figcaption><b>图 8｜销量情景与预算线。</b>金色柱为建议目标 2 万份；三条虚线是精简 / 标准 / 充裕预算。即使卖到 5 万份，净收入约 ¥130 万，仍只是一个“能继续做下一款”的量级。</figcaption>
+  </figure>
+
+  <h3>情景与评论目标</h3>
+  <div class="table-wrap" style="max-height:none">
+    <table><thead><tr><th class="num">销量</th><th class="num">净收入（¥58）</th><th class="num">成熟样本分位</th><th class="num">约需评论</th><th>含义</th></tr></thead>
+    <tbody><tr><td class="num"><b>5,000</b></td><td class="num">¥130,499</td><td class="num">P55</td><td class="num">≈ 159</td><td class="mini"></td></tr>
+<tr><td class="num"><b>10,000</b></td><td class="num">¥260,999</td><td class="num">P61</td><td class="num">≈ 275</td><td class="mini">覆盖精简预算</td></tr>
+<tr><td class="num"><b>20,000</b></td><td class="num">¥521,999</td><td class="num">P71</td><td class="num">≈ 475</td><td class="mini">回本线附近</td></tr>
+<tr><td class="num"><b>50,000</b></td><td class="num">¥1,304,999</td><td class="num">P82</td><td class="num">≈ 981</td><td class="mini"></td></tr>
+<tr><td class="num"><b>100,000</b></td><td class="num">¥2,609,999</td><td class="num">P89</td><td class="num">≈ 1,698</td><td class="mini">小爆</td></tr>
+<tr><td class="num"><b>300,000</b></td><td class="num">¥7,829,999</td><td class="num">P95</td><td class="num">≈ 4,047</td><td class="mini"></td></tr></tbody></table>
+  </div>
+  <p class="note" style="margin-top:10px">“约需评论”由随机样本回归式反推，仅用于设定评论 KPI；实际评论率受价格、品类、语言影响。</p>
+
+  <h3>价格敏感性</h3>
+  <div class="table-wrap" style="max-height:none">
+    <table><thead><tr><th class="num">定价（¥）</th><th class="num">每份净收入</th><th class="num">5,000 份</th><th class="num">10,000 份</th><th class="num">20,000 份</th><th class="num">50,000 份</th></tr></thead>
+    <tbody><tr><td class="num">¥52</td><td class="num">¥23.40</td><td class="num">¥12 万</td><td class="num">¥23 万</td><td class="num">¥47 万</td><td class="num">¥117 万</td></tr>
+<tr><td class="num">¥58</td><td class="num">¥26.10</td><td class="num">¥13 万</td><td class="num">¥26 万</td><td class="num">¥52 万</td><td class="num">¥130 万</td></tr>
+<tr><td class="num">¥68</td><td class="num">¥30.60</td><td class="num">¥15 万</td><td class="num">¥31 万</td><td class="num">¥61 万</td><td class="num">¥153 万</td></tr></tbody></table>
+  </div>
+  <p class="note" style="margin-top:10px">降价 10% 不会带来 10% 的销量增长；在 Steam 的展示逻辑里，价格更多是“内容量信号”。</p>
+</div></section>
+
+<section id="risk"><div class="wrap">
+  <div class="sec-head">
+    <div class="sec-num">07</div>
+    <div><div class="kicker">Risk</div><h2>六个会杀死项目的风险</h2>
+    <p class="sec-sub">按“概率 × 影响”排序；每条都给一个可观测的预警信号，不要等发售才知道。</p></div>
+  </div>
+  <div class="table-wrap" style="max-height:none">
+    <table><thead><tr><th>风险</th><th class="num">概率</th><th class="num">影响</th><th>证据</th><th>对策</th><th>预警信号</th></tr></thead>
+    <tbody><tr><td><b>供给爆炸 / 发现成本</b></td><td class="num">高</td><td class="num">高</td><td class="mini">2026 年 1–10 月新增 296 款；Top 10% 拿走 94.7% 净收入</td><td class="mini">差异化钩子、提前 9 个月上 Steam 页、Next Fest + 两次新品节</td><td class="mini">愿望单周增 < 100</td></tr>
+<tr><td><b>自动战斗的可读性 / 决策感</b></td><td class="num">中</td><td class="num">高</td><td class="mini">自走棋容易变成“看着打”；纯自动战斗产品的差评常集中在“操作感弱、决策少”</td><td class="mini">每轮至少 1 个可感知的卡牌决策；战斗中加入暂停/加速/关键事件提示；demo 让玩家说清“这轮为什么赢”</td><td class="mini">测试者说“我没什么可做的”</td></tr>
+<tr><td><b>内容量不足以支撑 $19.99</b></td><td class="num">中</td><td class="num">高</td><td class="mini">当前 61 张卡 / 67 件遗物；对标 $19.99 产品普遍更厚</td><td class="mini">首发扩到 90+ 卡；遗物收敛到 45–50 件；或定价 $14.99</td><td class="mini">测试 3 局后出现明显重复感</td></tr>
+<tr><td><b>美术风格割裂</b></td><td class="num">高</td><td class="num">中</td><td class="mini">像素单位 + 手绘事件插画，商店页缩略图容易被误判</td><td class="mini">先统一 key art 与事件插画风格；所有截图同一调色；如含 AI 生成素材，按 Steam 2026 规则披露</td><td class="mini">商店页点击率 < 5%</td></tr>
+<tr><td><b>单人 PvE、无联机</b></td><td class="num">中</td><td class="num">中</td><td class="mini">头部对标中 Backpack Battles / The Bazaar / Across the Obelisk 都有多人/异步</td><td class="mini">日挑战、种子分享、排行榜；先把单人 40 小时做扎实</td><td class="mini">demo 7 日留存 < 15%</td></tr>
+<tr><td><b>本地化与市场</b></td><td class="num">中</td><td class="num">中</td><td class="mini">英语评论占多数；同类头部均首发多语言</td><td class="mini">首发 CN/EN；3 个月内 JP；商店页文案母语审校</td><td class="mini">英文愿望单占比 < 40%</td></tr></tbody></table>
+  </div>
+  <div class="callout warn" style="margin-top:26px"><b>最大的风险不是竞争，是“做完才发现没人知道”。</b>2026 年有 296 款同类新品，Steam 的曝光窗口只有几天；如果发售前愿望单不到 1.5 万，首发就会沉底，之后很难再捞起来。</div>
+  <div class="callout" style="margin-top:12px"><b>第二大的风险是“内容量错觉”。</b>61 张卡听起来不少，但其中 11 张是征召牌；真正能改变 Build 的效果牌只有 50 张。对标产品在 $19.99 价位通常有 100+ 张可收集卡。要么扩，要么降价，不要两头都想要。</div>
+</div></section>
+
+<section id="verdict"><div class="wrap">
+  <div class="sec-head">
+    <div class="sec-num">08</div>
+    <div><div class="kicker">Decision</div><h2>立项结论与 12 个月动作</h2>
+    <p class="sec-sub">不是“做/不做”，而是“先做什么、做到什么程度、什么情况下停”。</p></div>
+  </div>
+  <div class="split">
+    <div>
+<div class="verdict-box">
+  <div class="tag">VERDICT</div>
+  <h3>有条件立项：先验证，再加码</h3>
+  <p style="font-size:13px;color:#3b4a42;margin-bottom:14px">按 <b>$19.99 / ¥58</b>、<b>24 个月 / ¥388,000</b> 预算推进；标准预算的回本线是 <b>14,866 份</b>，位于成熟样本的 <b>P66</b>。</p>
+  <ol>
+    <li><b>内容：</b>首发卡池从 61 扩到 90+；遗物从 67 收敛到 45–50，先保证每件都能改变决策。</li>
+    <li><b>价格：</b>$19.99 为默认；若首发卡池 < 70 张，降到 $14.99，不要用 $19.99 卖 $9.99 的内容。</li>
+    <li><b>营销：</b>Next Fest 后愿望单 ≥ 8,000，发售前 ≥ 15,000；达不到就延期，不要“先发了再说”。</li>
+  </ol>
+  <div class="gates">
+    <div class="gate"><b>Gate 1 · M3</b>100 人测试，≥60% 能说出“这副牌为什么赢”</div>
+    <div class="gate"><b>Gate 2 · M9</b>Next Fest 后愿望单 ≥ 8,000</div>
+    <div class="gate"><b>Gate 3 · M12</b>发售前愿望单 ≥ 15,000</div>
+  </div>
+</div>
+</div>
+    <div class="card">
+      <h3 style="margin-top:0">如果今天只做三件事</h3>
+      <ul class="clean">
+        <li><b>把“出牌 → 单位上场 → 自动战斗”做成一张 3 秒可读的 GIF</b>，放在商店页第一张；不要先讲四层地形。</li>
+        <li><b>把卡池从 61 扩到 90</b>，同时把遗物从 67 砍到 45–50；内容量要“看起来厚”，不是“系统很多”。</li>
+        <li><b>现在就开 Steam 页</b>，哪怕只有 4 张截图；愿望单是唯一能在发售前救你的指标。</li>
+      </ul>
+      <div class="callout" style="margin-top:16px"><b>止损线：</b>如果两次新品节之后愿望单仍 < 5,000，停止全职投入，把项目压缩成 $9.99 的小体量版本，或者先回去做外包攒下一款的钱。</div>
+    </div>
+  </div>
+
+  <h3>12 个月节奏</h3>
+  <div class="timeline">
+    <div><b>NOW – M3</b><strong>垂直切片</strong><span>1 幕、3 场战斗、2 条 Build 分支、30 分钟可玩；100 人测试；商店页草稿 + 3 张 GIF。</span></div>
+    <div><b>M4 – M6</b><strong>内容扩充</strong><span>90 卡、45 遗物、25 药水；Steam 页上线；每周 devlog；CN/EN 文案。</span></div>
+    <div><b>M7 – M9</b><strong>Demo + Next Fest</strong><span>30–45 分钟 demo；两次新品节；愿望单 Gate 8,000；主播/媒体名单。</span></div>
+    <div><b>M10 – M12</b><strong>发售准备</strong><span>定价/本地化/成就/Steam Deck；愿望单 Gate 15,000；发售日与折扣节奏。</span></div>
+  </div>
+
+  <h3 style="margin-top:34px">Gate 与 Kill 标准</h3>
+  <div class="table-wrap" style="max-height:none">
+    <table><thead><tr><th>节点</th><th>通过标准</th><th>不通过怎么办</th></tr></thead><tbody>
+      <tr><td><b>M3 · 可玩性</b></td><td>100 人中 ≥60% 能说出“这副牌为什么赢”；demo 中位时长 ≥30 分钟</td><td>重做卡牌与战场的耦合，不加内容</td></tr>
+      <tr><td><b>M6 · 内容量</b></td><td>90+ 卡、45+ 遗物；3 局内不出现重复 Build</td><td>推迟发售，或定价降到 $14.99</td></tr>
+      <tr><td><b>M9 · 愿望单</b></td><td>Next Fest 后 ≥8,000，且周增 ≥300</td><td>延期 3–6 个月，补宣发</td></tr>
+      <tr><td><b>M12 · 发售</b></td><td>≥15,000 愿望单；demo 好评率 ≥85%</td><td>延期；或压到 $14.99 先回一部分现金</td></tr>
+      <tr><td><b>两次新品节后</b></td><td>愿望单 ≥5,000</td><td><b>Kill：</b>停止全职，转小体量或外包</td></tr>
+    </tbody></table>
+  </div>
+
+  <div class="callout gold" style="margin-top:26px"><b>最后一句话：</b>这个项目的核心组合、内容量、完成度都够“做”；真正决定生死的是<b>能不能在 12 个月内把“卡牌改变战场”做成可传播的素材，并把愿望单攒到 1.5 万</b>。数据说前 34% 能回本——你要做的，是让自己成为那 34%，而不是证明自己比中位数努力。</div>
+</div></section>
+
+<section id="appendix"><div class="wrap">
+  <div class="sec-head">
+    <div class="sec-num">09</div>
+    <div><div class="kicker">Appendix</div><h2>口径、来源与复算</h2>
+    <p class="sec-sub">所有原始数据、公式与中间表都在配套 XLSX 中；这里是阅读报告时需要知道的最小集合。</p></div>
+  </div>
+  <div class="grid2">
+    <div class="card">
+      <h3 style="margin-top:0">数据来源</h3>
+      <div class="kv"><b>样本池</b><span><a href="https://gamalytic.com/" target="_blank" rel="noopener">Gamalytic</a> Steam 游戏库 API：标签 Roguelike Deckbuilder 全集 949 款，抓取日 2026-10-19。</span></div>
+      <div class="kv"><b>价格 / 发售</b><span>Steam Store API（cc=cn，简中），取中国区原价与发售日。</span></div>
+      <div class="kv"><b>评论</b><span>Steam appreviews API，全部语言、全部购买类型；140 款随机样本用于校准。</span></div>
+      <div class="kv"><b>交叉校验</b><span>SteamSpy owners 区间；仅作量级校验，不进入计算。</span></div>
+      <div class="kv"><b>项目数据</b><span>conquer 仓库 <span class="mono">data/</span> 资源计数与 <span class="mono">docs/</span> 设计文档（2026-10-19）。</span></div>
+      <div class="kv"><b>方法参考</b><span><a href="https://www.bilibili.com/video/BV1MjpX6QEVY" target="_blank" rel="noopener">BV1MjpX6QEVY</a>《独立游戏立项前必须要看！否则就白做了》</span></div>
+    </div>
+    <div class="card">
+      <h3 style="margin-top:0">口径与局限</h3>
+      <ul class="clean">
+        <li><b>销量：</b>Gamalytic 模型估算，非官方数字；单款误差可能 ±30–50%，但用于分位与量级判断足够。</li>
+        <li><b>净收入：</b>售价 × 0.75 × 0.60；未计发行分成、本地化成本、退款之外的税。用于横向比较，不作为财务承诺。</li>
+        <li><b>成熟样本：</b>2021–2024 年发售，至少 21 个月销售窗口；2025–2026 样本只用于观察供给与竞争。</li>
+        <li><b>幸存者偏差：</b>48 款对标为人工挑选的成功产品，中位数显著高于大盘；成功率一律以 U3 成熟样本为准。</li>
+        <li><b>评论倍数：</b>随年份下降（2021 42.0× → 2026 20.4×），预算建议用 30× 而非样本中位 28.8×。</li>
+        <li><b>标签：</b>相关不等于因果；Auto Battler 的高倍数可能同时反映“该标签产品平均质量更高”。</li>
+      </ul>
+    </div>
+  </div>
+  <h3>复算清单</h3>
+  <div class="table-wrap" style="max-height:none">
+    <table><thead><tr><th>指标</th><th>公式 / 取数</th><th>本报告值</th></tr></thead><tbody>
+      <tr><td>付费样本</td><td>标签全集剔免费、未发售、价格 &lt; $4.99</td><td>766 款</td></tr>
+      <tr><td>成熟样本</td><td>2021–2024 年发售的付费样本</td><td>250 款</td></tr>
+      <tr><td>中位销量</td><td>成熟样本 copiesSold 的 50 分位</td><td>3,884 份</td></tr>
+      <tr><td>5 万份命中率</td><td>copiesSold ≥ 50,000 的占比</td><td>18.0%</td></tr>
+      <tr><td>净收入</td><td>copiesSold × price × 0.75 × 0.60</td><td>见图 3 / 表 2</td></tr>
+      <tr><td>评论倍数</td><td>copiesSold ÷ total_reviews</td><td>中位 28.8×</td></tr>
+      <tr><td>销量预测</td><td>10^(0.914 + 1.265 × log10(reviews))</td><td>R² = 0.94</td></tr>
+      <tr><td>标准回本线</td><td>¥388,000 ÷ (¥58 × 0.45)</td><td>14,866 份</td></tr>
+    </tbody></table>
+  </div>
+  <p class="note" style="margin-top:18px">配套文件：<a href="conquer_立项数据分析.xlsx"><b>conquer_立项数据分析.xlsx</b></a>（大盘、48 款样本、140 款评论校准、财务模型，含可改公式）。报告与数据均为立项决策辅助，不构成发行或投资建议。</p>
+</div></section>
+</main>
+<footer><div class="wrap">
+  <div>conquer · 立项数据分析 · 数据截至 2026-10-19<br>Generated with DeepSeek Harness · 单文件 HTML，可离线打开</div>
+  <div style="text-align:right">样本 949 款 · 深挖 48 款 · 校准 140 款<br>方法参考 BV1MjpX6QEVY</div>
+</div></footer>
+<script>
+(function(){
+  var bar=document.querySelector('.progress i');
+  function onScroll(){
+    var h=document.documentElement;
+    var max=h.scrollHeight-h.clientHeight;
+    bar.style.width=(max>0? (h.scrollTop/max*100):0)+'%';
+  }
+  window.addEventListener('scroll',onScroll,{passive:true}); onScroll();
+
+  var links=[].slice.call(document.querySelectorAll('.toc a[href^="#"]'));
+  var secs=links.map(function(a){return document.querySelector(a.getAttribute('href'));}).filter(Boolean);
+  var io=new IntersectionObserver(function(es){
+    es.forEach(function(e){
+      if(e.isIntersecting){
+        links.forEach(function(a){a.classList.toggle('active',a.getAttribute('href')==='#'+e.target.id);});
+      }
+    });
+  },{rootMargin:'-45% 0px -50% 0px',threshold:0});
+  secs.forEach(function(s){io.observe(s);});
+
+  // comps table filter
+  var buttons=[].slice.call(document.querySelectorAll('.filters button'));
+  var rows=[].slice.call(document.querySelectorAll('#comps-table tbody tr'));
+  buttons.forEach(function(b){
+    b.addEventListener('click',function(){
+      buttons.forEach(function(x){x.classList.remove('on');});
+      b.classList.add('on');
+      var f=b.getAttribute('data-filter');
+      rows.forEach(function(r){
+        r.style.display=(f==='all'||r.getAttribute('data-ring')===f)?'':'none';
+      });
+    });
+  });
+
+  // sortable
+  [].slice.call(document.querySelectorAll('th.sortable')).forEach(function(th){
+    th.addEventListener('click',function(){
+      var table=th.closest('table');
+      var idx=[].slice.call(th.parentNode.children).indexOf(th);
+      var tbody=table.tBodies[0];
+      var rs=[].slice.call(tbody.rows).filter(function(r){return r.style.display!=='none';});
+      var dir=th.classList.contains('asc')?'desc':'asc';
+      [].slice.call(table.querySelectorAll('th.sortable')).forEach(function(x){x.classList.remove('asc','desc');});
+      th.classList.add(dir);
+      rs.sort(function(a,b){
+        var av=a.cells[idx].getAttribute('data-sort'); var bv=b.cells[idx].getAttribute('data-sort');
+        if(av===null){av=a.cells[idx].textContent;} if(bv===null){bv=b.cells[idx].textContent;}
+        var an=parseFloat(av), bn=parseFloat(bv);
+        if(!isNaN(an)&&!isNaN(bn)){return dir==='asc'?an-bn:bn-an;}
+        return dir==='asc'?String(av).localeCompare(String(bv),'zh'):String(bv).localeCompare(String(av),'zh');
+      });
+      rs.forEach(function(r){tbody.appendChild(r);});
+    });
+  });
+})();
+</script>
+</body></html>

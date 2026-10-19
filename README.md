@@ -67,6 +67,19 @@
 
 ---
 
+## 立项数据分析
+
+玩法之外，还要回答「这个品类还容得下新作品吗」。基于 Gamalytic / Steam 的公开数据做了一份可复算的立项报告：
+
+- **样本池**：`Roguelike Deckbuilder` 标签 949 款 → 清洗后 766 款；人工深度对标 48 款
+- **大盘**：年度供给、销量门槛、净收入集中度、价格带、标签倍数
+- **校准**：140 款随机样本拟合「评论 → 销量」，R² = 0.940
+- **结论**：**有条件立项** —— 回本线 14,866 份（成熟样本 P66），目标 2 万份；给出 M3 / M9 / M12 三个 Gate 与对应验证指标
+
+[在线报告](https://tinker-tk.github.io/conquer/) · [Excel 工作簿](docs/market-analysis/conquer-market-analysis.xlsx) · [数据口径与原始数据](docs/market-analysis/README.md)
+
+---
+
 ## 怎么运行
 
 **方式一：直接玩**
@@ -91,7 +104,7 @@
 ├── addons/                # 7 个自研编辑器插件
 ├── assets/                # 美术、音效、字体（第三方来源见 THIRD-PARTY-NOTICES）
 ├── shaders/ themes/       # 着色器与 UI 主题
-├── docs/                  # 配置说明、架构导航、数值设计
+├── docs/                  # 配置说明、架构导航、数值设计、立项分析
 ├── examples/              # 可单独运行的功能演示场景（F6）
 ├── tests/ tools/          # 校验、回归与维护脚本
 ├── screenshots/           # 本文用图
