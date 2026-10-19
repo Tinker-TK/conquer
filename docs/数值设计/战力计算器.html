@@ -1,0 +1,1455 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>ballsprite 战力计算器 · 单位 / 卡牌 / 遗物 / 药水</title>
+<style>
+:root{
+  --bg:#0d1218; --bg2:#111923; --panel:#16202b; --panel2:#1b2836;
+  --line:#2a3a4a; --line2:#3a4f63; --text:#e8eef5; --muted:#93a4b5;
+  --gold:#e8b45a; --gold2:#f6d08a; --teal:#54d6c8; --blue:#6aa9ff;
+  --red:#f16a6a; --green:#6ed49a; --purple:#b48cff; --orange:#ff9f5a;
+  --common:#9aa7b4; --rare:#6aa9ff; --boss:#e8b45a; --legendary:#e8b45a;
+  --shadow:0 10px 30px rgba(0,0,0,.35);
+  --radius:14px;
+}
+*{box-sizing:border-box}
+html,body{margin:0;padding:0;background:
+  radial-gradient(900px 500px at 15% -10%, rgba(84,214,200,.08), transparent 60%),
+  radial-gradient(700px 400px at 100% 0%, rgba(232,180,90,.07), transparent 55%),
+  var(--bg);
+  color:var(--text);font-family:"Microsoft YaHei","PingFang SC","Noto Sans SC",system-ui,sans-serif;
+  font-size:14px;line-height:1.55;}
+body{min-height:100vh}
+a{color:var(--teal);text-decoration:none}
+button{font-family:inherit}
+.topbar{position:sticky;top:0;z-index:20;background:rgba(13,18,24,.88);backdrop-filter:blur(12px);
+  border-bottom:1px solid var(--line);}
+.topbar-inner{max-width:1500px;margin:0 auto;padding:14px 22px;display:flex;align-items:center;gap:18px;flex-wrap:wrap}
+.brand{display:flex;align-items:center;gap:12px;min-width:260px}
+.logo{width:38px;height:38px;border-radius:11px;background:linear-gradient(145deg,var(--gold),#8a5a1f);
+  display:grid;place-items:center;color:#1a1206;font-weight:900;font-size:18px;box-shadow:0 4px 14px rgba(232,180,90,.25)}
+.brand h1{font-size:17px;margin:0;letter-spacing:.4px}
+.brand p{margin:2px 0 0;color:var(--muted);font-size:11.5px}
+.actions{display:flex;gap:8px;flex-wrap:wrap;margin-left:auto}
+.btn{background:var(--panel);border:1px solid var(--line);color:var(--text);border-radius:9px;
+  padding:8px 12px;cursor:pointer;font-size:12.5px;transition:.15s;white-space:nowrap}
+.btn:hover{border-color:var(--line2);background:var(--panel2);transform:translateY(-1px)}
+.btn.primary{background:linear-gradient(145deg,#2a6b64,#1c4a46);border-color:#3b8f85;color:#dffaf6}
+.btn.gold{background:linear-gradient(145deg,#6b4e22,#433016);border-color:#8a6a2e;color:var(--gold2)}
+.btn.danger{color:#ffb3b3;border-color:#5a2d2d}
+.btn.small{padding:5px 9px;font-size:11.5px;border-radius:7px}
+.btn.icon{padding:6px 9px}
+.wrap{max-width:1500px;margin:0 auto;padding:18px 22px 70px}
+.summary{display:grid;grid-template-columns:repeat(auto-fit,minmax(170px,1fr));gap:12px;margin:16px 0 18px}
+.stat{position:relative;background:linear-gradient(160deg,var(--panel),var(--bg2));border:1px solid var(--line);
+  border-radius:var(--radius);padding:14px 15px;overflow:hidden;box-shadow:var(--shadow)}
+.stat:before{content:"";position:absolute;inset:0 0 auto 0;height:2px;background:linear-gradient(90deg,var(--teal),transparent 70%);opacity:.7}
+.stat.gold:before{background:linear-gradient(90deg,var(--gold),transparent 70%)}
+.stat.blue:before{background:linear-gradient(90deg,var(--blue),transparent 70%)}
+.stat.purple:before{background:linear-gradient(90deg,var(--purple),transparent 70%)}
+.stat .label{color:var(--muted);font-size:11.5px;letter-spacing:.3px}
+.stat .value{font-size:25px;font-weight:800;margin:3px 0 1px;letter-spacing:.3px}
+.stat .sub{color:var(--muted);font-size:11px}
+.stat .delta{font-size:11px;font-weight:700;margin-left:6px}
+.delta.up{color:var(--green)} .delta.down{color:var(--red)}
+.tabs{display:flex;gap:6px;flex-wrap:wrap;margin:6px 0 16px;border-bottom:1px solid var(--line);padding-bottom:10px}
+.tab{background:transparent;border:1px solid transparent;color:var(--muted);padding:9px 14px;border-radius:9px;
+  cursor:pointer;font-size:13px;transition:.15s;flex:0 0 auto;}
+.tab:hover{color:var(--text);background:var(--panel)}
+.tab.active{color:#0d1218;background:linear-gradient(145deg,var(--gold2),var(--gold));font-weight:800;
+  box-shadow:0 4px 14px rgba(232,180,90,.2)}
+.panel{background:linear-gradient(160deg,rgba(22,32,43,.96),rgba(17,25,35,.96));border:1px solid var(--line);
+  border-radius:var(--radius);padding:16px;box-shadow:var(--shadow);margin-bottom:16px}
+.panel h2{font-size:15px;margin:0 0 4px;letter-spacing:.3px}
+.panel h3{font-size:13.5px;margin:16px 0 8px;color:var(--gold2)}
+.panel .hint{color:var(--muted);font-size:11.5px;margin:0 0 12px}
+.grid2{display:grid;grid-template-columns:1.2fr .8fr;gap:16px}
+.grid3{display:grid;grid-template-columns:repeat(3,1fr);gap:16px}
+@media(max-width:1050px){.grid2,.grid3{grid-template-columns:1fr}}
+.toolbar{display:flex;gap:8px;flex-wrap:wrap;align-items:center;margin:0 0 12px}
+.toolbar input,.toolbar select{background:var(--bg2);border:1px solid var(--line);color:var(--text);
+  border-radius:8px;padding:7px 10px;font-size:12.5px;outline:none}
+.toolbar input:focus,.toolbar select:focus{border-color:var(--teal)}
+.toolbar input{min-width:200px}
+.tablewrap{overflow:auto;border:1px solid var(--line);border-radius:11px;max-height:68vh}
+table{width:100%;border-collapse:collapse;font-size:12.5px;min-width:760px}
+th{position:sticky;top:0;background:#1a2633;color:var(--muted);font-weight:700;text-align:left;
+  padding:9px 10px;border-bottom:1px solid var(--line);white-space:nowrap;z-index:2;font-size:11.5px}
+td{padding:8px 10px;border-bottom:1px solid rgba(42,58,74,.6);vertical-align:middle}
+tr:last-child td{border-bottom:0}
+tbody tr{cursor:pointer;transition:.12s}
+tbody tr:hover{background:rgba(84,214,200,.06)}
+.num{font-variant-numeric:tabular-nums;text-align:right;white-space:nowrap}
+.name{font-weight:700;white-space:nowrap}
+.sub{color:var(--muted);font-size:11px}
+.pill{display:inline-flex;align-items:center;gap:4px;border:1px solid var(--line);border-radius:999px;
+  padding:2px 8px;font-size:10.5px;color:var(--muted);white-space:nowrap}
+.pill.common{color:var(--common);border-color:#3a4654}
+.pill.rare{color:var(--rare);border-color:#2f4f7a;background:rgba(106,169,255,.08)}
+.pill.boss{color:var(--boss);border-color:#6a5124;background:rgba(232,180,90,.08)}
+.pill.good{color:var(--green);border-color:#2f5a40;background:rgba(110,212,154,.07)}
+.pill.warn{color:var(--orange);border-color:#6a4a24;background:rgba(255,159,90,.08)}
+.pill.bad{color:var(--red);border-color:#6a2d2d;background:rgba(241,106,106,.08)}
+.bar{height:7px;border-radius:99px;background:#0b1117;overflow:hidden;min-width:70px}
+.bar > i{display:block;height:100%;border-radius:99px;background:linear-gradient(90deg,var(--teal),var(--blue))}
+.bar.gold > i{background:linear-gradient(90deg,var(--gold),var(--orange))}
+.bar.red > i{background:linear-gradient(90deg,var(--red),var(--orange))}
+.ratio{display:flex;align-items:center;gap:7px;min-width:130px}
+.ratio span{font-variant-numeric:tabular-nums;font-size:11px;color:var(--muted);min-width:36px}
+.chartbox{min-height:200px}
+.donut-wrap{max-width:300px;margin:0 auto}
+.svg{width:100%;height:auto;display:block;overflow:visible}
+.legend{display:flex;gap:14px;flex-wrap:wrap;margin-top:10px;color:var(--muted);font-size:11.5px}
+.legend i{display:inline-block;width:9px;height:9px;border-radius:3px;margin-right:5px}
+.empty{color:var(--muted);text-align:center;padding:34px 10px;font-size:12.5px}
+.warnlist{display:flex;flex-direction:column;gap:8px}
+.warn{display:flex;gap:9px;align-items:flex-start;border:1px solid var(--line);border-radius:9px;
+  padding:9px 11px;background:rgba(255,159,90,.04);font-size:12px}
+.warn b{color:var(--orange)}
+.warn.ok{background:rgba(110,212,154,.04)}
+.warn.ok b{color:var(--green)}
+.warn.bad{background:rgba(241,106,106,.05)}
+.warn.bad b{color:var(--red)}
+.deckrow{display:flex;align-items:center;gap:10px;padding:7px 0;border-bottom:1px solid rgba(42,58,74,.55)}
+.deckrow:last-child{border-bottom:0}
+.deckrow .grow{flex:1;min-width:0}
+.deckrow .nm{font-weight:700;font-size:12.5px;white-space:nowrap;overflow:hidden;text-overflow:ellipsis}
+.deckrow .meta{color:var(--muted);font-size:11px}
+.count{display:inline-flex;align-items:center;gap:6px}
+.count button{width:24px;height:24px;border-radius:7px;border:1px solid var(--line);background:var(--bg2);
+  color:var(--text);cursor:pointer;font-weight:800}
+.count input{width:38px;text-align:center;background:var(--bg2);border:1px solid var(--line);color:var(--text);
+  border-radius:6px;padding:3px 0;font-size:12px}
+.belt{display:flex;gap:8px;flex-wrap:wrap}
+.belt .slot{width:96px;height:70px;border:1px dashed var(--line2);border-radius:10px;display:grid;place-items:center;
+  color:var(--muted);font-size:11px;text-align:center;padding:6px;cursor:pointer}
+.belt .slot.filled{border-style:solid;background:var(--panel2);color:var(--text);cursor:default}
+.drawer{position:fixed;top:0;right:0;height:100vh;width:min(520px,96vw);background:#101821;border-left:1px solid var(--line2);
+  box-shadow:-20px 0 60px rgba(0,0,0,.45);transform:translateX(105%);transition:.2s;z-index:50;
+  display:flex;flex-direction:column}
+.drawer.open{transform:translateX(0)}
+.drawer-head{display:flex;align-items:center;gap:10px;padding:16px 18px;border-bottom:1px solid var(--line)}
+.drawer-head .grow{flex:1;min-width:0}
+.drawer-head h2{margin:0;font-size:16px}
+.drawer-head p{margin:2px 0 0;color:var(--muted);font-size:11.5px}
+.drawer-body{padding:16px 18px;overflow:auto;flex:1}
+.field{display:grid;grid-template-columns:100px 1fr;gap:8px;align-items:center;margin:7px 0}
+.field label{color:var(--muted);font-size:12px}
+.field input,.field select{width:100%;background:var(--bg2);border:1px solid var(--line);color:var(--text);
+  border-radius:7px;padding:6px 8px;font-size:12.5px}
+.field input:focus{border-color:var(--teal)}
+.skillrow{display:grid;grid-template-columns:1.2fr .6fr .6fr .6fr;gap:6px;padding:5px 0;border-bottom:1px solid rgba(42,58,74,.5);font-size:11.5px}
+.formula{background:#0b1117;border:1px solid var(--line);border-radius:9px;padding:11px;font-family:Consolas,monospace;
+  font-size:11.5px;color:#b9c9d8;white-space:pre-wrap;word-break:break-word}
+.kv{display:flex;justify-content:space-between;gap:10px;padding:5px 0;border-bottom:1px solid rgba(42,58,74,.5);font-size:12px}
+.kv:last-child{border-bottom:0}
+.kv span:first-child{color:var(--muted)}
+.kv span:last-child{font-variant-numeric:tabular-nums;font-weight:700}
+.toast{position:fixed;left:50%;bottom:24px;transform:translateX(-50%) translateY(20px);opacity:0;
+  background:#1d2a38;border:1px solid var(--line2);color:var(--text);padding:9px 16px;border-radius:9px;
+  font-size:12px;z-index:80;transition:.2s;pointer-events:none;box-shadow:var(--shadow)}
+.toast.show{opacity:1;transform:translateX(-50%) translateY(0)}
+.footer{color:var(--muted);font-size:11px;text-align:center;padding:20px 0 0}
+.mono{font-family:Consolas,monospace;font-variant-numeric:tabular-nums}
+.tip{color:var(--muted);font-size:11px}
+.hr{height:1px;background:var(--line);margin:14px 0}
+.toggle{display:inline-flex;align-items:center;gap:7px;color:var(--muted);font-size:12px;cursor:pointer;user-select:none}
+.toggle input{accent-color:var(--teal)}
+@media(max-width:760px){
+  .topbar-inner{padding:12px 14px;gap:10px}
+  .brand{min-width:0;flex:1 1 100%}
+  .brand h1{font-size:15px}
+  .actions{width:100%;margin-left:0;gap:6px}
+  .actions .btn{padding:6px 9px;font-size:11px}
+  .wrap{padding:12px 14px 60px}
+  .summary{grid-template-columns:repeat(2,minmax(0,1fr));gap:8px}
+  .stat{padding:11px 12px}
+  .stat .value{font-size:21px}
+  .panel{padding:12px}
+  .tab{padding:7px 10px;font-size:12px}
+  .drawer{width:100vw}
+  .donut-wrap{max-width:240px}
+}
+</style>
+</head>
+<body>
+<header class="topbar">
+  <div class="topbar-inner">
+    <div class="brand">
+      <div class="logo">P</div>
+      <div>
+        <h1>ballsprite 战力计算器</h1>
+        <p>单位 · 卡牌 · 遗物 · 药水｜设计估价，不是实战胜率</p>
+      </div>
+    </div>
+    <div class="actions">
+      <button class="btn" id="btnPreset">起始牌组</button>
+      <button class="btn" id="btnCompareA">存为 A</button>
+      <button class="btn" id="btnCompareB">存为 B</button>
+      <button class="btn" id="btnExport">导出</button>
+      <button class="btn" id="btnImport">导入</button>
+      <button class="btn danger" id="btnReset">清空</button>
+      <input type="file" id="fileImport" accept="application/json" style="display:none">
+    </div>
+  </div>
+</header>
+<div class="wrap">
+  <div class="summary" id="summary"></div>
+  <nav class="tabs" id="tabs">
+    <button class="tab active" data-tab="overview">总览</button>
+    <button class="tab" data-tab="units">单位战力</button>
+    <button class="tab" data-tab="cards">卡牌战力</button>
+    <button class="tab" data-tab="relics">遗物战力</button>
+    <button class="tab" data-tab="potions">药水战力</button>
+    <button class="tab" data-tab="build">构筑模拟</button>
+    <button class="tab" data-tab="calibration">校准</button>
+  </nav>
+  <main id="view"></main>
+  <div class="footer" id="footer"></div>
+</div>
+<aside class="drawer" id="drawer">
+  <div class="drawer-head">
+    <div class="grow"><h2 id="drawerTitle">详情</h2><p id="drawerSub"></p></div>
+    <button class="btn small" id="drawerClose">关闭</button>
+  </div>
+  <div class="drawer-body" id="drawerBody"></div>
+</aside>
+<div class="toast" id="toast"></div>
+<script>
+const DATA = {"meta":{"title":"ballsprite 商业级数值框架与全量数值","version":"NUM-DESIGN-v1.0","date":"2026-10-19","scope":"第一章翠绿原野 / 三幕结构 / 单位、卡牌、遗物、药水、路线、经济","soldier_power":100,"note":"已接入NUM-DESIGN-v1.0；每段扣ceil(防御/段数)。P为估价，胜率与时长仍需试玩校准。"},"model":{"version":"NUM-DESIGN-v1.0-IMPLEMENTED","date":"2026-10-19","window":12.0,"cast":0.55,"target_def":5,"area_targets":1.4,"melee_uptime":0.8,"ranged_uptime":1.0,"heal_weight":0.5,"reference_hp":150.0,"reference_output":4.0,"reference_power":100.0,"energy_value":100.0,"draw_value":40.0,"hp_value":2.5,"gold_value":1.0,"cardCoef":{"ATTACK_UP":25.0,"DEFENCE_UP":30.0,"HEAL_PERCENT":1.5,"POISON_ON_HIT":20.0,"DEATH_EXPLOSION":1.5,"COPY_ALLY":100.0,"DAMAGE_ZONE":16.9,"MUD_ZONE":65.0,"DRAW":40.0,"LOCK_DRAW":-30.0,"PAY_HP":-2.5,"ENERGY_EACH_ROUND":50.0,"DEATH_ATTACK_AURA":50.0,"RANDOM_PLAY":50.0,"RECALL_ALLY":55.0,"GAIN_ENERGY":65.0,"MAX_HP_UP":3.0,"RETAIN_ALLIES":130.0,"WEAKNESS":25.0,"VULNERABILITY":3.0,"DEFENCE_DOWN":25.0,"PARALYSIS":60.0,"CONVERT_ENEMY":120.0,"FRENZY":100.0,"RETREAT_DRAW":60.0,"DIVERSE_ARMY":70.0,"KEEP_DISTANCE":60.0,"JUDGER":80.0,"COMRADE":100.0,"TEMPORARY_UPGRADE":85.0,"BLEED":1.0,"HEALING_BAN":50.0,"ARMOR_SHRED":55.0,"SLEEP":50.0,"SHIELD":1.2,"OVERFLOW_SHIELD":55.0,"MISSING_HEALTH_SHIELD":0.8,"KNOCKBACK_IMMUNITY":40.0,"TUTOR_UNIT":65.0,"DISCARD_DRAW":40.0,"SACRIFICE":80.0,"RESURRECT":120.0,"DEATH_DRAW":60.0,"ARMY_ATTACK":50.0,"ARMY_DEFENCE":50.0,"ARMY_SPEED":1.2,"BATTLE_STANDARD":80.0,"SPIKE_TRAP":1.4,"TRANSCRIBE":90.0,"REFORMATION":75.0,"HAND_DISCOUNT":35.0,"OVERDRAFT":75.0,"THRIFT":100.0},"kindNames":["ATTACK_UP","HEAL_PERCENT","DEFENCE_UP","POISON_ON_HIT","DEATH_EXPLOSION","?","COPY_ALLY","DAMAGE_ZONE","MUD_ZONE","DRAW","LOCK_DRAW","PAY_HP","ENERGY_EACH_ROUND","DEATH_ATTACK_AURA","RANDOM_PLAY","RECALL_ALLY","CUSTOM","GAIN_ENERGY","MAX_HP_UP","RETAIN_ALLIES","WEAKNESS","VULNERABILITY","DEFENCE_DOWN","PARALYSIS","CONVERT_ENEMY","FRENZY","RETREAT_DRAW","DIVERSE_ARMY","KEEP_DISTANCE","JUDGER","COMRADE","TEMPORARY_UPGRADE","BLEED","HEALING_BAN","ARMOR_SHRED","SLEEP","SHIELD","OVERFLOW_SHIELD","MISSING_HEALTH_SHIELD","KNOCKBACK_IMMUNITY","TUTOR_UNIT","DISCARD_DRAW","SACRIFICE","RESURRECT","DEATH_DRAW","ARMY_ATTACK","ARMY_DEFENCE","ARMY_SPEED","BATTLE_STANDARD","SPIKE_TRAP","TRANSCRIBE","REFORMATION","HAND_DISCOUNT","OVERDRAFT","THRIFT"],"kindCn":{"ATTACK_UP":"攻击","DEFENCE_UP":"防御","HEAL_PERCENT":"治疗","POISON_ON_HIT":"附毒","DEATH_EXPLOSION":"死亡爆炸","COPY_ALLY":"复制","DAMAGE_ZONE":"区域伤害","MUD_ZONE":"泥潭","DRAW":"抽牌","LOCK_DRAW":"禁抽","PAY_HP":"支付生命","ENERGY_EACH_ROUND":"每回合能量","DEATH_ATTACK_AURA":"阵亡加攻","RANDOM_PLAY":"随机出牌","RECALL_ALLY":"回撤","GAIN_ENERGY":"获得能量","MAX_HP_UP":"最大生命","RETAIN_ALLIES":"留存友军","WEAKNESS":"虚弱","VULNERABILITY":"易伤","DEFENCE_DOWN":"减防","PARALYSIS":"麻痹","CONVERT_ENEMY":"策反","FRENZY":"狂化","RETREAT_DRAW":"鸣金","DIVERSE_ARMY":"合理搭配","KEEP_DISTANCE":"保持距离","JUDGER":"审判者","COMRADE":"战友","TEMPORARY_UPGRADE":"临时强化","BLEED":"流血","HEALING_BAN":"禁疗","ARMOR_SHRED":"破甲","SLEEP":"睡眠","SHIELD":"护盾","OVERFLOW_SHIELD":"溢出转盾","MISSING_HEALTH_SHIELD":"损失生命转盾","KNOCKBACK_IMMUNITY":"免击退","TUTOR_UNIT":"检索单位","DISCARD_DRAW":"弃牌抽牌","SACRIFICE":"献祭","RESURRECT":"复活","DEATH_DRAW":"阵亡抽牌","ARMY_ATTACK":"全体攻击","ARMY_DEFENCE":"全体防御","ARMY_SPEED":"全体移速","BATTLE_STANDARD":"战旗","SPIKE_TRAP":"地刺","TRANSCRIBE":"誊抄","REFORMATION":"变阵","HAND_DISCOUNT":"手牌减费","OVERDRAFT":"透支","THRIFT":"节流"}},"baseline":{"soldier_ehp":150.0,"soldier_output":4.0,"start_hp":80,"start_gold":99,"start_cards":12,"start_deck":{"运筹帷幄":2,"士兵":3,"弓箭手":2,"护甲加固":2,"力量强化":3},"start_deck_ids":[["master_strategy",2],["unit_soldier",3],["unit_archer",2],["defend",2],["power_enhance",3]],"energy_round_1":3,"energy_growth":1,"energy_cap":10,"draw_per_round":5,"enemy_max_hp":45,"battle_reward_gold":35,"boss_reward_gold":120,"normal_potion_chance":35,"normal_relic_chance":12,"boss_potion_chance":100,"boss_relic_chance":100},"prices":{"card":{"common":"55–80","rare":"90–120"},"relic":{"common":"140–160","rare":"180–220","boss":"不出售"},"potion":{"common":"40–55","rare":"65–90","legendary":"110–150"},"recruit":"60–170","remove":"75 + 25×已删次数"},"drops":{"normal":{"gold":35,"potion":35,"relic":12},"elite":{"gold":60,"potion":60,"relic":35},"boss":{"gold":120,"potion":100,"relic":100,"relic_choice":3},"treasure":{"gold":0,"relic_choice":3}},"units":[{"id":"archer","name":"弓箭手","team":"ally","english":"archer","role":"远程输出","tier":null,"hp":75,"attack":9,"defence":2,"dodge":0.0,"cost":1,"upgrade_points":2,"max_upgrade":1,"card_name":"弓箭手征召","skills":[{"id":"skill_base","name":"普通攻击","script":"?","kind":"normal","rate":1.0,"cooldown":1.0,"priority":0,"range":80.0,"hits":1,"branch":"","unlock":[0,1]},{"id":"archer_arrow_attack","name":"射击","script":"arrow_attack.gd","kind":"projectile","rate":1.0,"cooldown":1.0,"priority":0,"range":600.0,"hits":1,"branch":"","unlock":[0,1]},{"id":"archer_power_shoot","name":"穿刺射击","script":"arrow_attack.gd","kind":"projectile","rate":1.0,"cooldown":4.0,"priority":1,"range":600.0,"hits":1,"branch":"","unlock":[0]},{"id":"archer_power_shoot_upgraded","name":"穿刺射击","script":"arrow_attack.gd","kind":"projectile","rate":1.2,"cooldown":4.0,"priority":1,"range":600.0,"hits":1,"branch":"","unlock":[1]}],"current":{"ehp":86.5,"dps":7.0,"hps":0.0,"output":7.0,"power":100.5,"per_cost":100.5,"trained_power":126.0,"trained_gain":25.5,"trained_gain_pct":25.4,"trained_note":""},"target":{"hp":75,"attack":9,"defence":2,"cost":1,"ehp":86.5,"dps":7.0,"power":100.5,"per_cost":100.5}},{"id":"armored_axeman","name":"装甲斧手","team":"ally","english":"armored_axeman","role":"前排/守护","tier":null,"hp":160,"attack":8,"defence":7,"dodge":0.0,"cost":1,"upgrade_points":2,"max_upgrade":1,"card_name":"装甲斧手召唤","skills":[{"id":"skill_base","name":"普通攻击","script":"?","kind":"normal","rate":1.0,"cooldown":1.0,"priority":0,"range":80.0,"hits":1,"branch":"","unlock":[0,1]},{"id":"armored_examan_round_attack","name":"旋转攻击","script":"area_attack.gd","kind":"area","rate":0.8,"cooldown":3.0,"priority":1,"range":80.0,"hits":1,"branch":"","unlock":[0]},{"id":"armored_examan_chop_attack","name":"劈砍攻击","script":"shield_chop.gd","kind":"normal","rate":1.2,"cooldown":8.0,"priority":2,"range":80.0,"hits":2,"branch":"","unlock":[0]}],"current":{"ehp":300.0,"dps":3.97,"hps":0.0,"output":3.97,"power":140.9,"per_cost":140.9,"trained_power":141.4,"trained_gain":0.5,"trained_gain_pct":0.3,"trained_note":""},"target":{"hp":160,"attack":8,"defence":7,"cost":1,"ehp":300.0,"dps":3.97,"power":140.9,"per_cost":140.9}},{"id":"armored_orc","name":"武装哥布林","team":"enemy","english":"armored_orc","role":"enemy","tier":"T2","hp":145,"attack":10,"defence":4,"dodge":0.2,"cost":1,"upgrade_points":2,"max_upgrade":1,"card_name":"","skills":[{"id":"skill_base","name":"普通攻击","script":"?","kind":"normal","rate":1.0,"cooldown":1.0,"priority":0,"range":80.0,"hits":1,"branch":"","unlock":[0,1]},{"id":"armored_orc_power_attack","name":"撼地","script":"area_attack.gd","kind":"area","rate":1.2,"cooldown":8.0,"priority":1,"range":80.0,"hits":1,"branch":"","unlock":[0,1]}],"current":{"ehp":229.9,"dps":4.97,"hps":0.0,"output":4.97,"power":138.0,"per_cost":138.0,"trained_power":161.6,"trained_gain":23.5,"trained_gain_pct":17.0,"trained_note":""},"target":null},{"id":"bat","name":"蝙蝠","team":"enemy","english":"bat","role":"enemy","tier":"T1","hp":60,"attack":10,"defence":3,"dodge":0.0,"cost":1,"upgrade_points":2,"max_upgrade":1,"card_name":"","skills":[{"id":"skill_base","name":"普通攻击","script":"?","kind":"normal","rate":1.0,"cooldown":1.0,"priority":0,"range":80.0,"hits":1,"branch":"","unlock":[0,1]},{"id":"bat_power_attack","name":"嗜血攻击","script":"bloodthirst_attack.gd","kind":"lifesteal","rate":1.2,"cooldown":6.0,"priority":1,"range":80.0,"hits":1,"branch":"","unlock":[0,1]}],"current":{"ehp":75.0,"dps":4.6,"hps":0.0,"output":4.6,"power":75.8,"per_cost":75.8,"trained_power":89.0,"trained_gain":13.1,"trained_gain_pct":17.3,"trained_note":""},"target":null},{"id":"bear","name":"棕熊","team":"enemy","english":"bear","role":"enemy","tier":"T4","hp":180,"attack":16,"defence":4,"dodge":0.0,"cost":1,"upgrade_points":2,"max_upgrade":0,"card_name":"","skills":[{"id":"skill_base","name":"普通攻击","script":"?","kind":"normal","rate":1.0,"cooldown":1.0,"priority":0,"range":80.0,"hits":1,"branch":"","unlock":[0,1]},{"id":"bear_attack","name":"普通攻击","script":"normal_attack.gd","kind":"normal","rate":1.0,"cooldown":1.3,"priority":0,"range":100.0,"hits":1,"branch":"","unlock":[0,1]}],"current":{"ehp":245.5,"dps":13.2,"hps":0.0,"output":13.2,"power":232.4,"per_cost":232.4,"trained_power":232.4,"trained_gain":0.0,"trained_gain_pct":0.0,"trained_note":""},"target":null},{"id":"bomb_fish","name":"炸弹鱼","team":"enemy","english":"bomb_fish","role":"enemy","tier":"T2","hp":75,"attack":14,"defence":2,"dodge":0.0,"cost":1,"upgrade_points":2,"max_upgrade":0,"card_name":"","skills":[{"id":"skill_base","name":"普通攻击","script":"?","kind":"normal","rate":1.0,"cooldown":1.0,"priority":0,"range":80.0,"hits":1,"branch":"","unlock":[0,1]},{"id":"bomb_fish_attack","name":"远程攻击","script":"arrow_attack.gd","kind":"projectile","rate":1.0,"cooldown":1.8,"priority":0,"range":420.0,"hits":1,"branch":"","unlock":[0,1]}],"current":{"ehp":86.5,"dps":12.75,"hps":0.0,"output":12.75,"power":135.6,"per_cost":135.6,"trained_power":135.6,"trained_gain":0.0,"trained_gain_pct":0.0,"trained_note":""},"target":null},{"id":"bumblebee","name":"大黄蜂","team":"enemy","english":"bumblebee","role":"enemy","tier":"T1","hp":60,"attack":10,"defence":1,"dodge":0.0,"cost":1,"upgrade_points":2,"max_upgrade":0,"card_name":"","skills":[{"id":"skill_base","name":"普通攻击","script":"?","kind":"normal","rate":1.0,"cooldown":1.0,"priority":0,"range":80.0,"hits":1,"branch":"","unlock":[0,1]},{"id":"bumblebee_attack","name":"普通攻击","script":"normal_attack.gd","kind":"normal","rate":1.0,"cooldown":1.4,"priority":0,"range":80.0,"hits":1,"branch":"","unlock":[0,1]}],"current":{"ehp":64.3,"dps":5.67,"hps":0.0,"output":5.67,"power":77.9,"per_cost":77.9,"trained_power":77.9,"trained_gain":0.0,"trained_gain_pct":0.0,"trained_note":""},"target":null},{"id":"elite_orc","name":"精英哥布林","team":"enemy","english":"elite_orc","role":"enemy","tier":"T3","hp":220,"attack":13,"defence":4,"dodge":0.0,"cost":1,"upgrade_points":2,"max_upgrade":1,"card_name":"","skills":[{"id":"skill_base","name":"普通攻击","script":"?","kind":"normal","rate":1.0,"cooldown":1.0,"priority":0,"range":80.0,"hits":1,"branch":"","unlock":[0,1]},{"id":"elite_orc_power_attack","name":"强力攻击","script":"normal_attack.gd","kind":"normal","rate":2.0,"cooldown":10.0,"priority":1,"range":80.0,"hits":1,"branch":"","unlock":[0,1]},{"id":"elite_orc_round_attack","name":"旋转攻击","script":"normal_attack.gd","kind":"normal","rate":0.8,"cooldown":8.0,"priority":2,"range":80.0,"hits":4,"branch":"","unlock":[0,1]}],"current":{"ehp":300.0,"dps":12.4,"hps":0.0,"output":12.4,"power":249.0,"per_cost":249.0,"trained_power":276.9,"trained_gain":27.9,"trained_gain_pct":11.2,"trained_note":""},"target":null},{"id":"giant_bat","name":"巨型蝙蝠","team":"enemy","english":"giant_bat","role":"enemy","tier":"T2","hp":90,"attack":12,"defence":2,"dodge":0.0,"cost":1,"upgrade_points":2,"max_upgrade":0,"card_name":"","skills":[{"id":"skill_base","name":"普通攻击","script":"?","kind":"normal","rate":1.0,"cooldown":1.0,"priority":0,"range":80.0,"hits":1,"branch":"","unlock":[0,1]},{"id":"giant_bat_attack","name":"普通攻击","script":"normal_attack.gd","kind":"normal","rate":1.0,"cooldown":1.1,"priority":0,"range":85.0,"hits":1,"branch":"","unlock":[0,1]}],"current":{"ehp":103.8,"dps":9.8,"hps":0.0,"output":9.8,"power":130.2,"per_cost":130.2,"trained_power":130.2,"trained_gain":0.0,"trained_gain_pct":0.0,"trained_note":""},"target":null},{"id":"gnoll","name":"豺狼人","team":"enemy","english":"gnoll","role":"enemy","tier":"T2","hp":100,"attack":11,"defence":3,"dodge":0.0,"cost":1,"upgrade_points":2,"max_upgrade":0,"card_name":"","skills":[{"id":"skill_base","name":"普通攻击","script":"?","kind":"normal","rate":1.0,"cooldown":1.0,"priority":0,"range":80.0,"hits":1,"branch":"","unlock":[0,1]},{"id":"gnoll_attack","name":"远程攻击","script":"arrow_attack.gd","kind":"projectile","rate":1.0,"cooldown":1.3,"priority":0,"range":360.0,"hits":1,"branch":"","unlock":[0,1]}],"current":{"ehp":125.0,"dps":9.0,"hps":0.0,"output":9.0,"power":136.9,"per_cost":136.9,"trained_power":136.9,"trained_gain":0.0,"trained_gain_pct":0.0,"trained_note":""},"target":null},{"id":"gnome","name":"地精","team":"enemy","english":"gnome","role":"enemy","tier":"T1","hp":70,"attack":10,"defence":2,"dodge":0.0,"cost":1,"upgrade_points":2,"max_upgrade":0,"card_name":"","skills":[{"id":"skill_base","name":"普通攻击","script":"?","kind":"normal","rate":1.0,"cooldown":1.0,"priority":0,"range":80.0,"hits":1,"branch":"","unlock":[0,1]}],"current":{"ehp":80.8,"dps":4.0,"hps":0.0,"output":4.0,"power":73.4,"per_cost":73.4,"trained_power":73.4,"trained_gain":0.0,"trained_gain_pct":0.0,"trained_note":""},"target":null},{"id":"greatsword_skeleton","name":"骷髅剑士（巨剑）","team":"enemy","english":"greatsword_skeleton","role":"enemy","tier":"T2","hp":80,"attack":13,"defence":4,"dodge":0.0,"cost":1,"upgrade_points":2,"max_upgrade":1,"card_name":"","skills":[{"id":"skill_base","name":"普通攻击","script":"?","kind":"normal","rate":1.0,"cooldown":1.0,"priority":0,"range":80.0,"hits":1,"branch":"","unlock":[0,1]},{"id":"greatswords_skeleton_power_attack","name":"下扫","script":"normal_attack.gd","kind":"normal","rate":1.2,"cooldown":4.0,"priority":1,"range":80.0,"hits":1,"branch":"","unlock":[0,1]},{"id":"greatswords_skeleton_stick_attack","name":"刺击","script":"normal_attack.gd","kind":"normal","rate":1.4,"cooldown":6.0,"priority":0,"range":80.0,"hits":1,"branch":"","unlock":[0,1]}],"current":{"ehp":109.1,"dps":8.53,"hps":0.0,"output":8.53,"power":124.6,"per_cost":124.6,"trained_power":139.7,"trained_gain":15.1,"trained_gain_pct":12.2,"trained_note":""},"target":null},{"id":"harpoon_shark","name":"鱼叉鲨鱼","team":"enemy","english":"harpoon_shark","role":"enemy","tier":"T3","hp":110,"attack":14,"defence":4,"dodge":0.0,"cost":1,"upgrade_points":2,"max_upgrade":0,"card_name":"","skills":[{"id":"skill_base","name":"普通攻击","script":"?","kind":"normal","rate":1.0,"cooldown":1.0,"priority":0,"range":80.0,"hits":1,"branch":"","unlock":[0,1]},{"id":"harpoon_shark_attack","name":"远程攻击","script":"arrow_attack.gd","kind":"projectile","rate":1.0,"cooldown":1.5,"priority":0,"range":420.0,"hits":1,"branch":"","unlock":[0,1]}],"current":{"ehp":150.0,"dps":12.0,"hps":0.0,"output":12.0,"power":173.2,"per_cost":173.2,"trained_power":173.2,"trained_gain":0.0,"trained_gain_pct":0.0,"trained_note":""},"target":null},{"id":"hex_shaman","name":"咒术萨满","team":"enemy","english":"hex_shaman","role":"enemy","tier":"T2","hp":85,"attack":13,"defence":2,"dodge":0.0,"cost":1,"upgrade_points":2,"max_upgrade":0,"card_name":"","skills":[{"id":"skill_base","name":"普通攻击","script":"?","kind":"normal","rate":1.0,"cooldown":1.0,"priority":0,"range":80.0,"hits":1,"branch":"","unlock":[0,1]},{"id":"hex_shaman_attack","name":"远程攻击","script":"arrow_attack.gd","kind":"projectile","rate":1.0,"cooldown":1.6,"priority":0,"range":380.0,"hits":1,"branch":"","unlock":[0,1]}],"current":{"ehp":98.1,"dps":11.33,"hps":0.0,"output":11.33,"power":136.1,"per_cost":136.1,"trained_power":136.1,"trained_gain":0.0,"trained_gain_pct":0.0,"trained_note":""},"target":null},{"id":"imp","name":"小恶魔","team":"enemy","english":"imp","role":"enemy","tier":"T1","hp":85,"attack":12,"defence":2,"dodge":0.0,"cost":1,"upgrade_points":2,"max_upgrade":0,"card_name":"","skills":[{"id":"skill_base","name":"普通攻击","script":"?","kind":"normal","rate":1.0,"cooldown":1.0,"priority":0,"range":80.0,"hits":1,"branch":"","unlock":[0,1]},{"id":"imp_attack","name":"喷火","script":"normal_attack.gd","kind":"normal","rate":0.5,"cooldown":2.4,"priority":0,"range":110.0,"hits":3,"branch":"","unlock":[0,1]}],"current":{"ehp":98.1,"dps":8.67,"hps":0.0,"output":8.67,"power":119.0,"per_cost":119.0,"trained_power":119.0,"trained_gain":0.0,"trained_gain_pct":0.0,"trained_note":""},"target":null},{"id":"knight","name":"骑士","team":"ally","english":"knight","role":"前排/守护","tier":null,"hp":150,"attack":15,"defence":5,"dodge":0.2,"cost":2,"upgrade_points":2,"max_upgrade":1,"card_name":"骑士召唤","skills":[{"id":"skill_base","name":"普通攻击","script":"?","kind":"normal","rate":1.0,"cooldown":1.0,"priority":0,"range":80.0,"hits":1,"branch":"","unlock":[0,1]},{"id":"knight_power_attack","name":"血影斩击","script":"blood_shadow_slash.gd","kind":"normal","rate":1.5,"cooldown":10.0,"priority":1,"range":80.0,"hits":1,"branch":"","unlock":[0]},{"id":"knight_blood_slash_upgraded","name":"血影斩击","script":"blood_shadow_slash.gd","kind":"normal","rate":1.5,"cooldown":8.0,"priority":1,"range":80.0,"hits":1,"branch":"","unlock":[1]}],"current":{"ehp":261.6,"dps":9.6,"hps":0.0,"output":9.6,"power":204.6,"per_cost":102.3,"trained_power":223.6,"trained_gain":19.0,"trained_gain_pct":9.3,"trained_note":""},"target":{"hp":150,"attack":15,"defence":5,"cost":2,"ehp":261.6,"dps":9.6,"power":204.6,"per_cost":102.3}},{"id":"knight_templar","name":"圣殿骑士","team":"ally","english":"knight_templar","role":"前排/守护","tier":null,"hp":160,"attack":14,"defence":6,"dodge":0.2,"cost":2,"upgrade_points":2,"max_upgrade":1,"card_name":"圣殿骑士征召","skills":[{"id":"skill_base","name":"普通攻击","script":"?","kind":"normal","rate":1.0,"cooldown":1.0,"priority":0,"range":80.0,"hits":1,"branch":"","unlock":[0,1]},{"id":"knight_templar_power_attack","name":"嘲讽攻击","script":"taunt_attack.gd","kind":"normal","rate":0.0,"cooldown":10.0,"priority":1,"range":200.0,"hits":1,"branch":"","unlock":[0]}],"current":{"ehp":310.1,"dps":7.2,"hps":0.0,"output":7.2,"power":192.9,"per_cost":96.4,"trained_power":213.3,"trained_gain":20.4,"trained_gain_pct":10.6,"trained_note":""},"target":{"hp":160,"attack":14,"defence":6,"cost":2,"ehp":310.1,"dps":7.2,"power":192.9,"per_cost":96.4}},{"id":"lancer","name":"骑兵","team":"ally","english":"lancer","role":"突进/刺客","tier":null,"hp":160,"attack":17,"defence":6,"dodge":0.0,"cost":3,"upgrade_points":2,"max_upgrade":1,"card_name":"骑兵征召","skills":[{"id":"skill_base","name":"普通攻击","script":"?","kind":"normal","rate":1.0,"cooldown":1.0,"priority":0,"range":80.0,"hits":1,"branch":"","unlock":[0,1]},{"id":"lancer_dash_attack","name":"冲刺攻击","script":"dash_attack.gd","kind":"dash","rate":1.0,"cooldown":6.0,"priority":2,"range":300.0,"hits":1,"branch":"","unlock":[0]},{"id":"lancer_power_attack","name":"强力刺击","script":"normal_attack.gd","kind":"normal","rate":1.5,"cooldown":6.0,"priority":1,"range":80.0,"hits":1,"branch":"","unlock":[1]},{"id":"lancer_dash_attack_enhance","name":"冲刺攻击","script":"dash_attack.gd","kind":"dash","rate":1.0,"cooldown":5.0,"priority":2,"range":450.0,"hits":1,"branch":"","unlock":[1]}],"current":{"ehp":266.7,"dps":13.8,"hps":0.0,"output":13.8,"power":247.7,"per_cost":82.6,"trained_power":292.4,"trained_gain":44.7,"trained_gain_pct":18.1,"trained_note":""},"target":{"hp":160,"attack":17,"defence":6,"cost":3,"ehp":266.7,"dps":13.8,"power":247.7,"per_cost":82.6}},{"id":"lizard","name":"伞蜥","team":"enemy","english":"lizard","role":"enemy","tier":"T2","hp":90,"attack":11,"defence":2,"dodge":0.0,"cost":1,"upgrade_points":2,"max_upgrade":0,"card_name":"","skills":[{"id":"skill_base","name":"普通攻击","script":"?","kind":"normal","rate":1.0,"cooldown":1.0,"priority":0,"range":80.0,"hits":1,"branch":"","unlock":[0,1]},{"id":"lizard_attack","name":"普通攻击","script":"normal_attack.gd","kind":"normal","rate":1.0,"cooldown":1.2,"priority":0,"range":100.0,"hits":1,"branch":"","unlock":[0,1]}],"current":{"ehp":103.8,"dps":8.0,"hps":0.0,"output":8.0,"power":117.7,"per_cost":117.7,"trained_power":117.7,"trained_gain":0.0,"trained_gain_pct":0.0,"trained_note":""},"target":null},{"id":"minotaur","name":"牛头人","team":"enemy","english":"minotaur","role":"enemy","tier":"T5","hp":260,"attack":22,"defence":6,"dodge":0.0,"cost":1,"upgrade_points":2,"max_upgrade":0,"card_name":"","skills":[{"id":"skill_base","name":"普通攻击","script":"?","kind":"normal","rate":1.0,"cooldown":1.0,"priority":0,"range":80.0,"hits":1,"branch":"","unlock":[0,1]},{"id":"minotaur_attack","name":"普通攻击","script":"normal_attack.gd","kind":"normal","rate":1.0,"cooldown":1.6,"priority":0,"range":130.0,"hits":1,"branch":"","unlock":[0,1]}],"current":{"ehp":433.3,"dps":19.27,"hps":0.0,"output":19.27,"power":373.0,"per_cost":373.0,"trained_power":373.0,"trained_gain":0.0,"trained_gain_pct":0.0,"trained_note":""},"target":null},{"id":"necromancer","name":"死灵法师","team":"enemy","english":"necromancer","role":"enemy","tier":"T2","hp":100,"attack":10,"defence":5,"dodge":0.0,"cost":1,"upgrade_points":2,"max_upgrade":1,"card_name":"","skills":[{"id":"skill_base","name":"普通攻击","script":"?","kind":"normal","rate":1.0,"cooldown":1.0,"priority":0,"range":80.0,"hits":1,"branch":"","unlock":[0,1]},{"id":"necromancer_summon","name":"蝙蝠召唤","script":"summon_unit.gd","kind":"summon","rate":1.0,"cooldown":8.0,"priority":2,"range":80.0,"hits":1,"branch":"","unlock":[0,1]},{"id":"necromancer_power_attack","name":"远程攻击","script":"normal_attack.gd","kind":"normal","rate":1.0,"cooldown":4.0,"priority":1,"range":1000.0,"hits":1,"branch":"","unlock":[0,1]}],"current":{"ehp":150.0,"dps":5.83,"hps":0.0,"output":5.83,"power":170.8,"per_cost":170.8,"trained_power":192.9,"trained_gain":22.1,"trained_gain_pct":13.0,"trained_note":""},"target":null},{"id":"orc","name":"哥布林","team":"enemy","english":"orc","role":"enemy","tier":"T2","hp":100,"attack":11,"defence":3,"dodge":0.0,"cost":1,"upgrade_points":2,"max_upgrade":1,"card_name":"","skills":[{"id":"skill_base","name":"普通攻击","script":"?","kind":"normal","rate":1.0,"cooldown":1.0,"priority":0,"range":80.0,"hits":1,"branch":"","unlock":[0,1]},{"id":"orc_power_attack","name":"强力攻击","script":"normal_attack.gd","kind":"normal","rate":1.5,"cooldown":4.0,"priority":0,"range":80.0,"hits":1,"branch":"","unlock":[0,1]}],"current":{"ehp":125.0,"dps":6.6,"hps":0.0,"output":6.6,"power":117.3,"per_cost":117.3,"trained_power":134.4,"trained_gain":17.1,"trained_gain_pct":14.6,"trained_note":""},"target":null},{"id":"orc_rider","name":"哥布林骑手","team":"enemy","english":"orc_rider","role":"enemy","tier":"T4","hp":100,"attack":15,"defence":10,"dodge":0.2,"cost":1,"upgrade_points":2,"max_upgrade":1,"card_name":"","skills":[{"id":"skill_base","name":"普通攻击","script":"?","kind":"normal","rate":1.0,"cooldown":1.0,"priority":0,"range":80.0,"hits":1,"branch":"","unlock":[0,1]},{"id":"orc_rider_power_attack","name":"强力攻击","script":"area_attack.gd","kind":"area","rate":1.2,"cooldown":4.0,"priority":1,"range":80.0,"hits":1,"branch":"","unlock":[0,1]}],"current":{"ehp":348.8,"dps":10.97,"hps":0.0,"output":10.97,"power":252.6,"per_cost":252.6,"trained_power":274.9,"trained_gain":22.3,"trained_gain_pct":8.8,"trained_note":""},"target":null},{"id":"paddle_shark","name":"船桨鲨鱼","team":"enemy","english":"paddle_shark","role":"enemy","tier":"T3","hp":120,"attack":13,"defence":4,"dodge":0.0,"cost":1,"upgrade_points":2,"max_upgrade":0,"card_name":"","skills":[{"id":"skill_base","name":"普通攻击","script":"?","kind":"normal","rate":1.0,"cooldown":1.0,"priority":0,"range":80.0,"hits":1,"branch":"","unlock":[0,1]},{"id":"paddle_shark_attack","name":"普通攻击","script":"normal_attack.gd","kind":"normal","rate":1.0,"cooldown":1.1,"priority":0,"range":95.0,"hits":1,"branch":"","unlock":[0,1]}],"current":{"ehp":163.6,"dps":11.2,"hps":0.0,"output":11.2,"power":174.8,"per_cost":174.8,"trained_power":174.8,"trained_gain":0.0,"trained_gain_pct":0.0,"trained_note":""},"target":null},{"id":"panda","name":"熊猫武僧","team":"enemy","english":"panda","role":"enemy","tier":"T4","hp":170,"attack":17,"defence":5,"dodge":0.0,"cost":1,"upgrade_points":2,"max_upgrade":0,"card_name":"","skills":[{"id":"skill_base","name":"普通攻击","script":"?","kind":"normal","rate":1.0,"cooldown":1.0,"priority":0,"range":80.0,"hits":1,"branch":"","unlock":[0,1]},{"id":"panda_attack","name":"普通攻击","script":"normal_attack.gd","kind":"normal","rate":1.0,"cooldown":1.6,"priority":0,"range":115.0,"hits":3,"branch":"","unlock":[0,1]}],"current":{"ehp":255.0,"dps":26.8,"hps":0.0,"output":26.8,"power":337.5,"per_cost":337.5,"trained_power":337.5,"trained_gain":0.0,"trained_gain_pct":0.0,"trained_note":""},"target":null},{"id":"pig_rider","name":"骑猪哥布林","team":"enemy","english":"pig_rider","role":"enemy","tier":"T3","hp":140,"attack":14,"defence":4,"dodge":0.0,"cost":1,"upgrade_points":2,"max_upgrade":0,"card_name":"","skills":[{"id":"skill_base","name":"普通攻击","script":"?","kind":"normal","rate":1.0,"cooldown":1.0,"priority":0,"range":80.0,"hits":1,"branch":"","unlock":[0,1]}],"current":{"ehp":190.9,"dps":7.2,"hps":0.0,"output":7.2,"power":151.4,"per_cost":151.4,"trained_power":151.4,"trained_gain":0.0,"trained_gain_pct":0.0,"trained_note":""},"target":null},{"id":"priest","name":"牧师","team":"ally","english":"priest","role":"治疗/辅助","tier":null,"hp":100,"attack":10,"defence":4,"dodge":0.0,"cost":1,"upgrade_points":2,"max_upgrade":1,"card_name":"牧师征召","skills":[{"id":"skill_base","name":"普通攻击","script":"?","kind":"normal","rate":1.0,"cooldown":1.0,"priority":0,"range":80.0,"hits":1,"branch":"","unlock":[0,1]},{"id":"priest_healer","name":"治疗","script":"ally_heal.gd","kind":"heal","rate":0.6,"cooldown":3.0,"priority":1,"range":400.0,"hits":1,"branch":"","unlock":[0]},{"id":"priest_healer_upgraded","name":"治疗","script":"ally_heal.gd","kind":"heal","rate":1.4,"cooldown":3.0,"priority":1,"range":400.0,"hits":1,"branch":"","unlock":[1]}],"current":{"ehp":136.4,"dps":3.67,"hps":1.6,"output":4.47,"power":100.8,"per_cost":100.8,"trained_power":129.5,"trained_gain":28.7,"trained_gain_pct":28.5,"trained_note":""},"target":{"hp":100,"attack":10,"defence":4,"cost":1,"ehp":136.4,"dps":3.67,"power":100.8,"per_cost":100.8}},{"id":"skeleton","name":"骷髅兵","team":"enemy","english":"skeleton","role":"enemy","tier":"T1","hp":70,"attack":9,"defence":2,"dodge":0.0,"cost":1,"upgrade_points":2,"max_upgrade":1,"card_name":"","skills":[{"id":"skill_base","name":"普通攻击","script":"?","kind":"normal","rate":1.0,"cooldown":1.0,"priority":0,"range":80.0,"hits":1,"branch":"","unlock":[0,1]},{"id":"skeleton_power_attack","name":"普通攻击","script":"normal_attack.gd","kind":"normal","rate":1.2,"cooldown":6.0,"priority":1,"range":80.0,"hits":1,"branch":"","unlock":[0,1]}],"current":{"ehp":80.8,"dps":3.6,"hps":0.0,"output":3.6,"power":69.6,"per_cost":69.6,"trained_power":85.8,"trained_gain":16.2,"trained_gain_pct":23.2,"trained_note":""},"target":null},{"id":"skeleton_archer","name":"骷髅弓箭手","team":"enemy","english":"skeleton_archer","role":"enemy","tier":"T1","hp":55,"attack":10,"defence":1,"dodge":0.0,"cost":1,"upgrade_points":2,"max_upgrade":1,"card_name":"","skills":[{"id":"skill_base","name":"普通攻击","script":"?","kind":"normal","rate":1.0,"cooldown":1.0,"priority":0,"range":80.0,"hits":1,"branch":"","unlock":[0,1]}],"current":{"ehp":58.9,"dps":4.0,"hps":0.0,"output":4.0,"power":62.7,"per_cost":62.7,"trained_power":74.2,"trained_gain":11.5,"trained_gain_pct":18.3,"trained_note":""},"target":null},{"id":"skull","name":"骷髅剑士（骨刃）","team":"enemy","english":"skull","role":"enemy","tier":"T2","hp":85,"attack":11,"defence":4,"dodge":0.0,"cost":1,"upgrade_points":2,"max_upgrade":0,"card_name":"","skills":[{"id":"skill_base","name":"普通攻击","script":"?","kind":"normal","rate":1.0,"cooldown":1.0,"priority":0,"range":80.0,"hits":1,"branch":"","unlock":[0,1]}],"current":{"ehp":115.9,"dps":4.8,"hps":0.0,"output":4.8,"power":96.3,"per_cost":96.3,"trained_power":96.3,"trained_gain":0.0,"trained_gain_pct":0.0,"trained_note":""},"target":null},{"id":"slime","name":"史莱姆","team":"enemy","english":"slime","role":"enemy","tier":"T3","hp":100,"attack":15,"defence":5,"dodge":0.0,"cost":1,"upgrade_points":2,"max_upgrade":1,"card_name":"","skills":[{"id":"skill_base","name":"普通攻击","script":"?","kind":"normal","rate":1.0,"cooldown":1.0,"priority":0,"range":80.0,"hits":1,"branch":"","unlock":[0,1]},{"id":"slime_power_attack","name":"普通攻击","script":"normal_attack.gd","kind":"normal","rate":1.4,"cooldown":6.0,"priority":1,"range":80.0,"hits":1,"branch":"","unlock":[0,1]}],"current":{"ehp":150.0,"dps":9.47,"hps":0.0,"output":9.47,"power":153.8,"per_cost":153.8,"trained_power":167.3,"trained_gain":13.5,"trained_gain_pct":8.8,"trained_note":""},"target":null},{"id":"slingshot_gnome","name":"弹弓地精","team":"enemy","english":"slingshot_gnome","role":"enemy","tier":"T2","hp":65,"attack":10,"defence":2,"dodge":0.0,"cost":1,"upgrade_points":2,"max_upgrade":0,"card_name":"","skills":[{"id":"skill_base","name":"普通攻击","script":"?","kind":"normal","rate":1.0,"cooldown":1.0,"priority":0,"range":80.0,"hits":1,"branch":"","unlock":[0,1]},{"id":"slingshot_gnome_attack","name":"远程攻击","script":"arrow_attack.gd","kind":"projectile","rate":1.0,"cooldown":1.3,"priority":0,"range":380.0,"hits":1,"branch":"","unlock":[0,1]}],"current":{"ehp":75.0,"dps":7.5,"hps":0.0,"output":7.5,"power":96.8,"per_cost":96.8,"trained_power":96.8,"trained_gain":0.0,"trained_gain_pct":0.0,"trained_note":""},"target":null},{"id":"snake","name":"毒蛇","team":"enemy","english":"snake","role":"enemy","tier":"T1","hp":75,"attack":11,"defence":2,"dodge":0.0,"cost":1,"upgrade_points":2,"max_upgrade":0,"card_name":"","skills":[{"id":"skill_base","name":"普通攻击","script":"?","kind":"normal","rate":1.0,"cooldown":1.0,"priority":0,"range":80.0,"hits":1,"branch":"","unlock":[0,1]}],"current":{"ehp":86.5,"dps":4.8,"hps":0.0,"output":4.8,"power":83.2,"per_cost":83.2,"trained_power":83.2,"trained_gain":0.0,"trained_gain_pct":0.0,"trained_note":""},"target":null},{"id":"soldier","name":"士兵","team":"ally","english":"soldier","role":"通用前排","tier":null,"hp":100,"attack":10,"defence":5,"dodge":0.0,"cost":1,"upgrade_points":2,"max_upgrade":1,"card_name":"战士召唤","skills":[{"id":"skill_base","name":"普通攻击","script":"?","kind":"normal","rate":1.0,"cooldown":1.0,"priority":0,"range":80.0,"hits":1,"branch":"","unlock":[0,1]},{"id":"soldier_power_attack","name":"斩击","script":"soldier_slash.gd","kind":"normal","rate":1.3,"cooldown":2.0,"priority":2,"range":350.0,"hits":1,"branch":"slash","unlock":[1]},{"id":"soldier_missile","name":"飞弹","script":"soldier_missile.gd","kind":"projectile","rate":0.8,"cooldown":2.0,"priority":2,"range":300.0,"hits":1,"branch":"missile","unlock":[1]}],"current":{"ehp":150.0,"dps":4.0,"hps":0.0,"output":4.0,"power":100.0,"per_cost":100.0,"trained_power":145.1,"trained_gain":45.1,"trained_gain_pct":45.1,"trained_note":""},"target":{"hp":100,"attack":10,"defence":5,"cost":1,"ehp":150.0,"dps":4.0,"power":100.0,"per_cost":100.0}},{"id":"spear_goblin","name":"长矛哥布林","team":"enemy","english":"spear_goblin","role":"enemy","tier":"T2","hp":100,"attack":12,"defence":3,"dodge":0.0,"cost":1,"upgrade_points":2,"max_upgrade":0,"card_name":"","skills":[{"id":"skill_base","name":"普通攻击","script":"?","kind":"normal","rate":1.0,"cooldown":1.0,"priority":0,"range":80.0,"hits":1,"branch":"","unlock":[0,1]}],"current":{"ehp":125.0,"dps":5.6,"hps":0.0,"output":5.6,"power":108.0,"per_cost":108.0,"trained_power":108.0,"trained_gain":0.0,"trained_gain_pct":0.0,"trained_note":""},"target":null},{"id":"spider","name":"巨型蜘蛛","team":"enemy","english":"spider","role":"enemy","tier":"T2","hp":95,"attack":12,"defence":3,"dodge":0.0,"cost":1,"upgrade_points":2,"max_upgrade":0,"card_name":"","skills":[{"id":"skill_base","name":"普通攻击","script":"?","kind":"normal","rate":1.0,"cooldown":1.0,"priority":0,"range":80.0,"hits":1,"branch":"","unlock":[0,1]},{"id":"spider_attack","name":"普通攻击","script":"normal_attack.gd","kind":"normal","rate":1.0,"cooldown":1.1,"priority":0,"range":85.0,"hits":1,"branch":"","unlock":[0,1]}],"current":{"ehp":118.8,"dps":9.8,"hps":0.0,"output":9.8,"power":139.3,"per_cost":139.3,"trained_power":139.3,"trained_gain":0.0,"trained_gain_pct":0.0,"trained_note":""},"target":null},{"id":"swords_man","name":"剑士","team":"ally","english":"swords_man","role":"突进/刺客","tier":null,"hp":180,"attack":18,"defence":5,"dodge":0.0,"cost":3,"upgrade_points":2,"max_upgrade":1,"card_name":"剑士征召","skills":[{"id":"skill_base","name":"普通攻击","script":"?","kind":"normal","rate":1.0,"cooldown":1.0,"priority":0,"range":80.0,"hits":1,"branch":"","unlock":[0,1]},{"id":"swords_man_muti_attack","name":"三连击","script":"sword_wind_combo.gd","kind":"normal","rate":0.7,"cooldown":3.0,"priority":1,"range":80.0,"hits":3,"branch":"","unlock":[0]},{"id":"swords_man_stick_muti_attack","name":"六连刺","script":"normal_attack.gd","kind":"normal","rate":0.4,"cooldown":5.0,"priority":2,"range":80.0,"hits":7,"branch":"","unlock":[0,1]},{"id":"swords_man_seventh_strike","name":"七伤","script":"seventh_strike.gd","kind":"normal","rate":1.0,"cooldown":1.0,"priority":0,"range":80.0,"hits":1,"branch":"","unlock":[0]}],"current":{"ehp":270.0,"dps":28.53,"hps":0.0,"output":28.53,"power":358.3,"per_cost":119.4,"trained_power":387.7,"trained_gain":29.4,"trained_gain_pct":8.2,"trained_note":"模型下限：只计训练点，未计强化技能的特殊效果"},"target":{"hp":180,"attack":18,"defence":5,"cost":3,"ehp":270.0,"dps":28.53,"power":358.3,"per_cost":119.4}},{"id":"thief","name":"盗贼","team":"enemy","english":"thief","role":"enemy","tier":"T2","hp":80,"attack":13,"defence":2,"dodge":0.0,"cost":1,"upgrade_points":2,"max_upgrade":0,"card_name":"","skills":[{"id":"skill_base","name":"普通攻击","script":"?","kind":"normal","rate":1.0,"cooldown":1.0,"priority":0,"range":80.0,"hits":1,"branch":"","unlock":[0,1]},{"id":"thief_attack","name":"普通攻击","script":"normal_attack.gd","kind":"normal","rate":1.0,"cooldown":0.9,"priority":0,"range":80.0,"hits":1,"branch":"","unlock":[0,1]}],"current":{"ehp":92.3,"dps":11.2,"hps":0.0,"output":11.2,"power":131.3,"per_cost":131.3,"trained_power":131.3,"trained_gain":0.0,"trained_gain_pct":0.0,"trained_note":""},"target":null},{"id":"torch_goblin","name":"火把哥布林","team":"enemy","english":"torch_goblin","role":"enemy","tier":"T2","hp":90,"attack":12,"defence":2,"dodge":0.0,"cost":1,"upgrade_points":2,"max_upgrade":0,"card_name":"","skills":[{"id":"skill_base","name":"普通攻击","script":"?","kind":"normal","rate":1.0,"cooldown":1.0,"priority":0,"range":80.0,"hits":1,"branch":"","unlock":[0,1]},{"id":"torch_goblin_attack","name":"普通攻击","script":"normal_attack.gd","kind":"normal","rate":1.0,"cooldown":1.1,"priority":0,"range":90.0,"hits":2,"branch":"","unlock":[0,1]}],"current":{"ehp":103.8,"dps":17.13,"hps":0.0,"output":17.13,"power":172.2,"per_cost":172.2,"trained_power":172.2,"trained_gain":0.0,"trained_gain_pct":0.0,"trained_note":""},"target":null},{"id":"troll","name":"巨魔","team":"enemy","english":"troll","role":"enemy","tier":"T5","hp":360,"attack":26,"defence":7,"dodge":0.0,"cost":1,"upgrade_points":2,"max_upgrade":0,"card_name":"","skills":[{"id":"skill_base","name":"普通攻击","script":"?","kind":"normal","rate":1.0,"cooldown":1.0,"priority":0,"range":80.0,"hits":1,"branch":"","unlock":[0,1]},{"id":"troll_attack","name":"普通攻击","script":"normal_attack.gd","kind":"normal","rate":1.0,"cooldown":4.8,"priority":0,"range":150.0,"hits":6,"branch":"","unlock":[0,1]}],"current":{"ehp":675.0,"dps":46.8,"hps":0.0,"output":46.8,"power":725.6,"per_cost":725.6,"trained_power":725.6,"trained_gain":0.0,"trained_gain_pct":0.0,"trained_note":""},"target":null},{"id":"turtle","name":"巨龟","team":"enemy","english":"turtle","role":"enemy","tier":"T4","hp":240,"attack":15,"defence":9,"dodge":0.0,"cost":1,"upgrade_points":2,"max_upgrade":0,"card_name":"","skills":[{"id":"skill_base","name":"普通攻击","script":"?","kind":"normal","rate":1.0,"cooldown":1.0,"priority":0,"range":80.0,"hits":1,"branch":"","unlock":[0,1]},{"id":"turtle_attack","name":"普通攻击","script":"normal_attack.gd","kind":"normal","rate":1.0,"cooldown":1.5,"priority":0,"range":145.0,"hits":1,"branch":"","unlock":[0,1]}],"current":{"ehp":600.0,"dps":10.67,"hps":0.0,"output":10.67,"power":326.6,"per_cost":326.6,"trained_power":326.6,"trained_gain":0.0,"trained_gain_pct":0.0,"trained_note":""},"target":null},{"id":"were_bear","name":"熊人","team":"ally","english":"were_bear","role":"前排/守护","tier":null,"hp":100,"attack":15,"defence":5,"dodge":0.0,"cost":2,"upgrade_points":2,"max_upgrade":1,"card_name":"暗影熊召唤","skills":[{"id":"skill_base","name":"普通攻击","script":"?","kind":"normal","rate":1.0,"cooldown":1.0,"priority":0,"range":80.0,"hits":1,"branch":"","unlock":[0,1]},{"id":"were_bear_double_attack","name":"二连爪","script":"bear_chain_claw.gd","kind":"normal","rate":0.8,"cooldown":3.0,"priority":1,"range":80.0,"hits":2,"branch":"","unlock":[0]},{"id":"were_bear_smash","name":"撼地","script":"bear_earth_shake.gd","kind":"area","rate":0.8,"cooldown":1.0,"priority":0,"range":350.0,"hits":1,"branch":"","unlock":[0]}],"current":{"ehp":150.0,"dps":20.05,"hps":0.0,"output":20.05,"power":223.9,"per_cost":111.9,"trained_power":240.8,"trained_gain":16.9,"trained_gain_pct":7.6,"trained_note":"模型下限：只计训练点，未计强化技能的特殊效果"},"target":{"hp":100,"attack":15,"defence":5,"cost":2,"ehp":150.0,"dps":20.05,"power":223.9,"per_cost":111.9}},{"id":"were_wolf","name":"狼人","team":"ally","english":"were_wolf","role":"突进/刺客","tier":null,"hp":100,"attack":15,"defence":5,"dodge":0.0,"cost":2,"upgrade_points":2,"max_upgrade":1,"card_name":"召唤狼人","skills":[{"id":"skill_base","name":"普通攻击","script":"?","kind":"normal","rate":1.0,"cooldown":1.0,"priority":0,"range":80.0,"hits":1,"branch":"","unlock":[0,1]},{"id":"were_wolf_five_attack","name":"五连斩击","script":"wolf_pounce_combo.gd","kind":"normal","rate":0.8,"cooldown":7.0,"priority":1,"range":350.0,"hits":5,"branch":"","unlock":[0]},{"id":"were_wolf_low_health_stealth","name":"月影潜行","script":"low_health_stealth.gd","kind":"normal","rate":1.0,"cooldown":1.0,"priority":0,"range":80.0,"hits":1,"branch":"","unlock":[0,1]}],"current":{"ehp":150.0,"dps":25.0,"hps":0.0,"output":25.0,"power":250.0,"per_cost":125.0,"trained_power":269.3,"trained_gain":19.3,"trained_gain_pct":7.7,"trained_note":"模型下限：只计训练点，未计强化技能的特殊效果"},"target":{"hp":100,"attack":15,"defence":5,"cost":2,"ehp":150.0,"dps":25.0,"power":250.0,"per_cost":125.0}},{"id":"wizard","name":"巫师","team":"ally","english":"wizard","role":"远程输出","tier":null,"hp":115,"attack":23,"defence":3,"dodge":0.0,"cost":3,"upgrade_points":2,"max_upgrade":1,"card_name":"巫师征召","skills":[{"id":"skill_base","name":"普通攻击","script":"?","kind":"normal","rate":1.0,"cooldown":1.0,"priority":0,"range":80.0,"hits":1,"branch":"","unlock":[0,1]},{"id":"wizard_fire_ball","name":"火球","script":"arrow_attack.gd","kind":"projectile","rate":1.2,"cooldown":2.5,"priority":0,"range":650.0,"hits":1,"branch":"","unlock":[0,1]},{"id":"wizard_ice_crash","name":"霜暴","script":"frost_storm.gd","kind":"area","rate":1.0,"cooldown":8.0,"priority":1,"range":650.0,"hits":1,"branch":"","unlock":[0]}],"current":{"ehp":143.8,"dps":26.53,"hps":0.0,"output":26.53,"power":252.1,"per_cost":84.0,"trained_power":254.7,"trained_gain":2.6,"trained_gain_pct":1.0,"trained_note":""},"target":{"hp":115,"attack":23,"defence":3,"cost":3,"ehp":143.8,"dps":26.53,"power":252.1,"per_cost":84.0}}],"cards":[{"id":"armor_shred","name":"破甲","cost":1,"target_cost":1,"rarity":"common","category":"effect","role":"support","target":2,"after":0,"retain":false,"starts":false,"max_upgrade":1,"upgrade_cost":0,"upgraded_cost":1,"effects":[{"kind":34,"amount":1.0,"upgrade_amount":1.0}],"desc":"1费。\n本场，使1名敌方单位每次受到攻击命中时防御-1，减防可叠加。","upgrade_desc":"1费。\n本场，使1名敌方单位每次受到攻击命中时防御-2，减防可叠加。","power":55.0,"upgrade_power":70.0,"upgrade_delta":15.0,"upgrade_delta_pct":27.3,"upgraded_budget":100.0,"upgraded_ratio":0.7,"upgrade_note":"破甲 1→2","budget":100.0,"current_budget":100.0,"ratio":0.55,"target_ratio":0.55,"tags":["输出"]},{"id":"battle_standard","name":"战旗","cost":2,"target_cost":2,"rarity":"common","category":"effect","role":"support","target":4,"after":0,"retain":false,"starts":false,"max_upgrade":1,"upgrade_cost":0,"upgraded_cost":2,"effects":[{"kind":48,"amount":2.0,"upgrade_amount":1.0,"radius":200.0}],"desc":"2费。\n在指定位置放置不可移动的战旗；本场半径200内友军攻击+2，离开后失效。","upgrade_desc":"2费。\n在指定位置放置不可移动的战旗；本场半径200内友军攻击+3，离开后失效。","power":80.0,"upgrade_power":120.0,"upgrade_delta":40.0,"upgrade_delta_pct":50.0,"upgraded_budget":174.1,"upgraded_ratio":0.69,"upgrade_note":"战旗 2→3","budget":174.1,"current_budget":174.1,"ratio":0.46,"target_ratio":0.46,"tags":["成长"]},{"id":"comrade","name":"战友","cost":2,"target_cost":2,"rarity":"rare","category":"effect","role":"support","target":0,"after":2,"retain":false,"starts":false,"max_upgrade":1,"upgrade_cost":0,"upgraded_cost":2,"effects":[{"kind":30,"amount":6.0,"upgrade_amount":-1.0}],"desc":"3费。\n本场每打出费用≥6的牌，下张单位牌0费。\n该单位牌回弃牌堆时恢复原费用，按普通规则加费。","upgrade_desc":"3费。\n本场每打出费用≥5的牌，下张单位牌0费。\n该单位牌回弃牌堆时恢复原费用，按普通规则加费。","power":100.0,"upgrade_power":100.0,"upgrade_delta":0.0,"upgrade_delta_pct":0.0,"upgraded_budget":174.1,"upgraded_ratio":0.57,"upgrade_note":"战友 6→5","budget":174.1,"current_budget":174.1,"ratio":0.57,"target_ratio":0.57,"tags":["成长"]},{"id":"convert_enemy","name":"策反","cost":2,"target_cost":2,"rarity":"common","category":"effect","role":"core","target":2,"after":0,"retain":false,"starts":false,"max_upgrade":1,"upgrade_cost":0,"upgraded_cost":2,"effects":[{"kind":24,"amount":1.0,"upgrade_can_convert_elite":true}],"desc":"2费。\n将1名普通敌方单位转为己方，保留当前生命。","upgrade_desc":"2费。\n将1名普通或精英敌方单位转为己方，保留当前生命。","power":120.0,"upgrade_power":120.0,"upgrade_delta":0.0,"upgrade_delta_pct":0.0,"upgraded_budget":174.1,"upgraded_ratio":0.69,"upgrade_note":"可策反精英","budget":174.1,"current_budget":174.1,"ratio":0.69,"target_ratio":0.69,"tags":["控制"]},{"id":"copy_ally","name":"镜像","cost":2,"target_cost":2,"rarity":"common","category":"effect","role":"core","target":1,"after":1,"retain":false,"starts":false,"max_upgrade":1,"upgrade_cost":-1,"upgraded_cost":1,"effects":[{"kind":6,"lasting_rounds":1,"affected_team":1}],"desc":"2费。\n复制1名己方单位，保留当前生命。\n消耗。","upgrade_desc":"1费。\n复制1名己方单位，保留当前生命。\n消耗。","power":100.0,"upgrade_power":100.0,"upgrade_delta":0.0,"upgrade_delta_pct":0.0,"upgraded_budget":100.0,"upgraded_ratio":1.0,"upgrade_note":"费用 2→1","budget":174.1,"current_budget":174.1,"ratio":0.57,"target_ratio":0.57,"tags":["功能"]},{"id":"death_attack","name":"悼亡战意","cost":1,"target_cost":1,"rarity":"common","category":"effect","role":"support","target":0,"after":1,"retain":false,"starts":false,"max_upgrade":1,"upgrade_cost":0,"upgraded_cost":1,"effects":[{"kind":13,"amount":1.0,"upgrade_amount":1.0,"lasting_rounds":1,"radius":250.0,"affected_team":1}],"desc":"1费。\n本场战斗每有1名己方单位阵亡，全体己方单位攻击力+1（计入此前阵亡）。\n消耗。","upgrade_desc":"1费。\n本场战斗每有1名己方单位阵亡，全体己方单位攻击力+2（计入此前阵亡）。\n消耗。","power":50.0,"upgrade_power":100.0,"upgrade_delta":50.0,"upgrade_delta_pct":100.0,"upgraded_budget":100.0,"upgraded_ratio":1.0,"upgrade_note":"阵亡加攻 1→2","budget":100.0,"current_budget":100.0,"ratio":0.5,"target_ratio":0.5,"tags":["成长"]},{"id":"death_explosion","name":"同生共死","cost":1,"target_cost":1,"rarity":"common","category":"effect","role":"support","target":1,"after":0,"retain":false,"starts":false,"max_upgrade":1,"upgrade_cost":0,"upgraded_cost":1,"effects":[{"kind":4,"amount":30.0,"upgrade_amount":15.0,"lasting_rounds":1,"radius":160.0,"affected_team":1}],"desc":"2费。\n使1名己方单位死亡时爆炸，对半径160内的所有单位造成30点伤害，无视防御。持续本场战斗。","upgrade_desc":"2费。\n使1名己方单位死亡时爆炸，对半径160内的所有单位造成45点伤害，无视防御。持续本场战斗。","power":49.5,"upgrade_power":74.2,"upgrade_delta":24.7,"upgrade_delta_pct":50.0,"upgraded_budget":100.0,"upgraded_ratio":0.74,"upgrade_note":"死亡爆炸 30→45","budget":100.0,"current_budget":100.0,"ratio":0.5,"target_ratio":0.5,"tags":["输出"]},{"id":"defend","name":"护甲加固","cost":1,"target_cost":1,"rarity":"common","category":"effect","role":"support","target":1,"after":0,"retain":false,"starts":false,"max_upgrade":1,"upgrade_cost":0,"upgraded_cost":1,"effects":[{"kind":2,"amount":2.0,"upgrade_amount":1.0,"lasting_rounds":1,"affected_team":1}],"desc":"1费。\n使1名己方单位防御力+2，持续本场战斗。","upgrade_desc":"1费。\n使1名己方单位防御力+3，持续本场战斗。","power":60.0,"upgrade_power":90.0,"upgrade_delta":30.0,"upgrade_delta_pct":50.0,"upgraded_budget":100.0,"upgraded_ratio":0.9,"upgrade_note":"防御 2→3","budget":100.0,"current_budget":100.0,"ratio":0.6,"target_ratio":0.6,"tags":["增益"]},{"id":"diverse_army","name":"合理搭配","cost":2,"target_cost":2,"rarity":"rare","category":"effect","role":"support","target":0,"after":2,"retain":false,"starts":false,"max_upgrade":1,"upgrade_cost":0,"upgraded_cost":2,"effects":[{"kind":27,"amount":2.0,"upgrade_amount":1.0}],"desc":"3费。\n本场战斗，己方存活兵种至少3种时，全体己方单位攻击力+2。","upgrade_desc":"3费。\n本场战斗，己方存活兵种至少3种时，全体己方单位攻击力+3。","power":110.0,"upgrade_power":130.0,"upgrade_delta":20.0,"upgrade_delta_pct":18.2,"upgraded_budget":174.1,"upgraded_ratio":0.75,"upgrade_note":"合理搭配 2→3","budget":174.1,"current_budget":174.1,"ratio":0.63,"target_ratio":0.63,"tags":["成长"]},{"id":"draw_four","name":"孤注一掷","cost":0,"target_cost":0,"rarity":"common","category":"effect","role":"resource","target":0,"after":1,"retain":false,"starts":false,"max_upgrade":1,"upgrade_cost":0,"upgraded_cost":0,"effects":[{"kind":9,"amount":3.0,"upgrade_amount":1.0,"lasting_rounds":1,"radius":250.0,"affected_team":1},{"kind":10,"lasting_rounds":1,"affected_team":1}],"desc":"0费。\n抽3张牌。\n本回合无法再抽牌。\n消耗。","upgrade_desc":"0费。\n抽4张牌。\n本回合无法再抽牌。\n消耗。","power":90.0,"upgrade_power":130.0,"upgrade_delta":40.0,"upgrade_delta_pct":44.4,"upgraded_budget":100.0,"upgraded_ratio":1.3,"upgrade_note":"抽牌 3→4","budget":100.0,"current_budget":100.0,"ratio":0.9,"target_ratio":0.9,"tags":["资源"]},{"id":"draw_hp","name":"血契补给","cost":0,"target_cost":0,"rarity":"common","category":"effect","role":"resource","target":0,"after":0,"retain":false,"starts":false,"max_upgrade":1,"upgrade_cost":0,"upgraded_cost":0,"effects":[{"kind":11,"amount":4.0,"upgrade_amount":-1.0,"lasting_rounds":1,"radius":250.0,"affected_team":2},{"kind":17,"amount":3.0,"upgrade_amount":1.0,"lasting_rounds":1,"affected_team":2}],"desc":"0费。\n消耗4点玩家生命。\n获得3点能量，可超过上限。","upgrade_desc":"0费。\n消耗3点玩家生命。\n获得4点能量，可超过上限。","power":185.0,"upgrade_power":252.5,"upgrade_delta":67.5,"upgrade_delta_pct":36.5,"upgraded_budget":100.0,"upgraded_ratio":2.52,"upgrade_note":"支付生命 4→3；获得能量 3→4","budget":100.0,"current_budget":100.0,"ratio":1.85,"target_ratio":1.85,"tags":["资源"]},{"id":"evolution","name":"进化","cost":1,"target_cost":1,"rarity":"common","category":"effect","role":"resource","target":5,"after":0,"retain":false,"starts":false,"max_upgrade":1,"upgrade_cost":-1,"upgraded_cost":0,"effects":[{"kind":31,"amount":1.0}],"desc":"1费。\n升级1张其它手牌，单位牌可分配攻击与防御点。目标下次使用后恢复升级前原状。","upgrade_desc":"0费。\n升级1张其它手牌，单位牌可分配攻击与防御点。目标下次使用后恢复升级前原状。","power":85.0,"upgrade_power":85.0,"upgrade_delta":0.0,"upgrade_delta_pct":0.0,"upgraded_budget":100.0,"upgraded_ratio":0.85,"upgrade_note":"费用 1→0","budget":100.0,"current_budget":100.0,"ratio":0.85,"target_ratio":0.85,"tags":["资源"]},{"id":"fire_zone","name":"烈焰灼烧","cost":2,"target_cost":2,"rarity":"common","category":"effect","role":"core","target":4,"after":1,"retain":false,"starts":false,"max_upgrade":1,"upgrade_cost":0,"upgraded_cost":2,"effects":[{"kind":7,"amount":5.0,"upgrade_amount":3.0,"lifetime":1,"radius":200.0,"affected_team":2}],"desc":"2费。\n在指定位置生成半径200的火焰区域，每1秒对其中的所有单位造成5点伤害，持续2回合。\n消耗。","upgrade_desc":"2费。\n在指定位置生成半径200的火焰区域，每1秒对其中的所有单位造成8点伤害，持续2回合。\n消耗。","power":84.5,"upgrade_power":135.2,"upgrade_delta":50.7,"upgrade_delta_pct":60.0,"upgraded_budget":174.1,"upgraded_ratio":0.78,"upgrade_note":"区域伤害 5→8","budget":174.1,"current_budget":174.1,"ratio":0.49,"target_ratio":0.49,"tags":["输出"]},{"id":"fortify","name":"坚守","cost":2,"target_cost":2,"rarity":"common","category":"effect","role":"support","target":0,"after":2,"retain":false,"starts":false,"max_upgrade":1,"upgrade_cost":0,"upgraded_cost":2,"effects":[{"kind":46,"amount":1.0,"upgrade_amount":1.0}],"desc":"3费。\n常驻：本场全体己方单位防御+1，包含之后入场的友军。","upgrade_desc":"3费。\n常驻：本场全体己方单位防御+2，包含之后入场的友军。","power":50.0,"upgrade_power":100.0,"upgrade_delta":50.0,"upgrade_delta_pct":100.0,"upgraded_budget":174.1,"upgraded_ratio":0.57,"upgrade_note":"全体防御 1→2","budget":174.1,"current_budget":174.1,"ratio":0.29,"target_ratio":0.29,"tags":["成长"]},{"id":"frenzy","name":"狂化","cost":2,"target_cost":2,"rarity":"rare","category":"effect","role":"core","target":1,"after":0,"retain":false,"starts":false,"max_upgrade":1,"upgrade_cost":0,"upgraded_cost":2,"effects":[{"kind":25,"amount":20.0,"upgrade_amount":10.0}],"desc":"2费。\n使1名己方单位在本场战斗中：\n己方存活≥3名时，攻防降至70%；仅剩自身时，攻击+50%、防御+30%、技能冷却-20%，攻击回复实际伤害20%的生命。","upgrade_desc":"2费。\n使1名己方单位在本场战斗中：\n己方存活≥3名时，攻防降至70%；仅剩自身时，攻击+50%、防御+30%、技能冷却-20%，攻击回复实际伤害30%的生命。","power":100.0,"upgrade_power":100.0,"upgrade_delta":0.0,"upgrade_delta_pct":0.0,"upgraded_budget":174.1,"upgraded_ratio":0.57,"upgrade_note":"狂化 20→30","budget":174.1,"current_budget":174.1,"ratio":0.57,"target_ratio":0.57,"tags":["成长"]},{"id":"haste","name":"疾行","cost":1,"target_cost":1,"rarity":"common","category":"effect","role":"support","target":0,"after":2,"retain":false,"starts":false,"max_upgrade":1,"upgrade_cost":0,"upgraded_cost":1,"effects":[{"kind":47,"amount":30.0,"upgrade_amount":15.0}],"desc":"1费。\n常驻：本场全体己方单位移动速度+20%，包含之后入场的友军。","upgrade_desc":"1费。\n常驻：本场全体己方单位移动速度+30%，包含之后入场的友军。","power":36.0,"upgrade_power":54.0,"upgrade_delta":18.0,"upgrade_delta_pct":50.0,"upgraded_budget":100.0,"upgraded_ratio":0.54,"upgrade_note":"全体移速 30→45","budget":100.0,"current_budget":100.0,"ratio":0.36,"target_ratio":0.36,"tags":["成长"]},{"id":"heal","name":"战地治疗","cost":1,"target_cost":1,"rarity":"common","category":"effect","role":"support","target":1,"after":0,"retain":false,"starts":false,"max_upgrade":1,"upgrade_cost":0,"upgraded_cost":1,"effects":[{"kind":1,"amount":30.0,"upgrade_amount":15.0,"lasting_rounds":1,"affected_team":1}],"desc":"1费。\n为1名己方单位回复最大生命值的25%。","upgrade_desc":"1费。\n为1名己方单位回复最大生命值的35%。","power":45.0,"upgrade_power":67.5,"upgrade_delta":22.5,"upgrade_delta_pct":50.0,"upgraded_budget":100.0,"upgraded_ratio":0.68,"upgrade_note":"治疗 30→45","budget":100.0,"current_budget":100.0,"ratio":0.45,"target_ratio":0.45,"tags":["增益"]},{"id":"healing_ban","name":"禁疗","cost":1,"target_cost":1,"rarity":"common","category":"effect","role":"support","target":2,"after":0,"retain":false,"starts":false,"max_upgrade":1,"upgrade_cost":0,"upgraded_cost":1,"effects":[{"kind":33,"amount":1.0,"status_seconds":8.0,"upgrade_status_seconds":4.0}],"desc":"1费。\n使1名敌方单位在8秒内无法回复生命（包括治疗与吸血）。","upgrade_desc":"1费。\n使1名敌方单位在12秒内无法回复生命（包括治疗与吸血）。","power":70.0,"upgrade_power":80.0,"upgrade_delta":10.0,"upgrade_delta_pct":14.3,"upgraded_budget":100.0,"upgraded_ratio":0.8,"upgrade_note":"持续 8→12 秒","budget":100.0,"current_budget":100.0,"ratio":0.7,"target_ratio":0.7,"tags":["控制"]},{"id":"hold_ground","name":"坚守阵地","cost":1,"target_cost":1,"rarity":"common","category":"effect","role":"support","target":1,"after":0,"retain":false,"starts":false,"max_upgrade":1,"upgrade_cost":-1,"upgraded_cost":0,"effects":[{"kind":39,"amount":1.0}],"desc":"1费。\n本场，使1名己方单位不再被击退。","upgrade_desc":"0费。\n本场，使1名己方单位不再被击退。","power":40.0,"upgrade_power":40.0,"upgrade_delta":0.0,"upgrade_delta_pct":0.0,"upgraded_budget":100.0,"upgraded_ratio":0.4,"upgrade_note":"费用 1→0","budget":100.0,"current_budget":100.0,"ratio":0.4,"target_ratio":0.4,"tags":["控制"]},{"id":"holy_bulwark","name":"圣光壁垒","cost":1,"target_cost":1,"rarity":"common","category":"effect","role":"support","target":1,"after":0,"retain":false,"starts":false,"max_upgrade":1,"upgrade_cost":0,"upgraded_cost":1,"effects":[{"kind":36,"amount":30.0,"upgrade_amount":15.0}],"desc":"1费。\n使1名己方单位获得25护盾，先于生命抵扣伤害，交锋结束清除。","upgrade_desc":"1费。\n使1名己方单位获得40护盾，先于生命抵扣伤害，交锋结束清除。","power":36.0,"upgrade_power":54.0,"upgrade_delta":18.0,"upgrade_delta_pct":50.0,"upgraded_budget":100.0,"upgraded_ratio":0.54,"upgrade_note":"护盾 30→45","budget":100.0,"current_budget":100.0,"ratio":0.36,"target_ratio":0.36,"tags":["增益"]},{"id":"intimidation","name":"恐吓","cost":1,"target_cost":1,"rarity":"common","category":"effect","role":"support","target":2,"after":0,"retain":false,"starts":false,"max_upgrade":1,"upgrade_cost":0,"upgraded_cost":1,"effects":[{"kind":22,"amount":2.0,"upgrade_amount":1.0,"lifetime":1,"lasting_rounds":1}],"desc":"1费。\n本回合，使1名敌方单位防御力-2，可叠加。","upgrade_desc":"1费。\n本回合，使1名敌方单位防御力-3，可叠加。","power":50.0,"upgrade_power":75.0,"upgrade_delta":25.0,"upgrade_delta_pct":50.0,"upgraded_budget":100.0,"upgraded_ratio":0.75,"upgrade_note":"减防 2→3","budget":100.0,"current_budget":100.0,"ratio":0.5,"target_ratio":0.5,"tags":["控制"]},{"id":"judger","name":"审判者","cost":2,"target_cost":2,"rarity":"rare","category":"effect","role":"core","target":1,"after":0,"retain":false,"starts":false,"max_upgrade":1,"upgrade_cost":0,"upgraded_cost":2,"effects":[{"kind":29,"amount":2.0,"upgrade_amount":1.0}],"desc":"3费。\n使1名己方单位每击杀1名敌人，攻击力+2，持续本场战斗。","upgrade_desc":"3费。\n使1名己方单位每击杀1名敌人，攻击力+3，持续本场战斗。","power":100.0,"upgrade_power":110.0,"upgrade_delta":10.0,"upgrade_delta_pct":10.0,"upgraded_budget":174.1,"upgraded_ratio":0.63,"upgrade_note":"审判者 2→3","budget":174.1,"current_budget":174.1,"ratio":0.57,"target_ratio":0.57,"tags":["成长"]},{"id":"keep_distance","name":"保持距离","cost":2,"target_cost":2,"rarity":"rare","category":"effect","role":"support","target":0,"after":2,"retain":false,"starts":false,"max_upgrade":1,"upgrade_cost":0,"upgraded_cost":2,"effects":[{"kind":28,"amount":130.0,"upgrade_amount":15.0}],"desc":"3费。\n本场战斗，己方攻击随目标距离提高：贴身为80%，距离600及以上为130%。","upgrade_desc":"3费。\n本场战斗，己方攻击随目标距离提高：贴身为80%，距离600及以上为145%。","power":105.0,"upgrade_power":127.5,"upgrade_delta":22.5,"upgrade_delta_pct":21.4,"upgraded_budget":174.1,"upgraded_ratio":0.73,"upgrade_note":"保持距离 130→145","budget":174.1,"current_budget":174.1,"ratio":0.6,"target_ratio":0.6,"tags":["成长"]},{"id":"last_stand","name":"背水","cost":1,"target_cost":1,"rarity":"common","category":"effect","role":"support","target":1,"after":0,"retain":false,"starts":false,"max_upgrade":1,"upgrade_cost":0,"upgraded_cost":1,"effects":[{"kind":38,"amount":45.0,"upgrade_amount":20.0}],"desc":"2费。\n使1名己方单位获得相当于已损失生命值30%的护盾，向下取整，交锋结束清除。","upgrade_desc":"2费。\n使1名己方单位获得相当于已损失生命值45%的护盾，向下取整，交锋结束清除。","power":36.0,"upgrade_power":52.0,"upgrade_delta":16.0,"upgrade_delta_pct":44.4,"upgraded_budget":100.0,"upgraded_ratio":0.52,"upgrade_note":"损失生命转盾 45→65","budget":100.0,"current_budget":100.0,"ratio":0.36,"target_ratio":0.36,"tags":["增益"]},{"id":"letting_go","name":"断舍离","cost":0,"target_cost":0,"rarity":"common","category":"effect","role":"resource","target":5,"after":0,"retain":false,"starts":false,"max_upgrade":1,"upgrade_cost":0,"upgraded_cost":0,"effects":[{"kind":41,"amount":2.0,"upgrade_amount":1.0}],"desc":"0费。\n选择并弃置1张其它手牌，然后抽2张牌。","upgrade_desc":"0费。\n选择并弃置1张其它手牌，然后抽3张牌。","power":80.0,"upgrade_power":120.0,"upgrade_delta":40.0,"upgrade_delta_pct":50.0,"upgraded_budget":100.0,"upgraded_ratio":1.2,"upgrade_note":"弃牌抽牌 2→3","budget":100.0,"current_budget":100.0,"ratio":0.8,"target_ratio":0.8,"tags":["资源"]},{"id":"martyrdom","name":"殉道","cost":1,"target_cost":1,"rarity":"common","category":"effect","role":"support","target":0,"after":2,"retain":false,"starts":false,"max_upgrade":1,"upgrade_cost":0,"upgraded_cost":1,"effects":[{"kind":44,"amount":1.0,"upgrade_amount":1.0}],"desc":"1费。\n常驻：本场每有1名己方单位阵亡，抽1张牌。","upgrade_desc":"1费。\n常驻：本场每有1名己方单位阵亡，抽2张牌。","power":60.0,"upgrade_power":60.0,"upgrade_delta":0.0,"upgrade_delta_pct":0.0,"upgraded_budget":100.0,"upgraded_ratio":0.6,"upgrade_note":"阵亡抽牌 1→2","budget":100.0,"current_budget":100.0,"ratio":0.6,"target_ratio":0.6,"tags":["成长"]},{"id":"master_strategy","name":"运筹帷幄","cost":0,"target_cost":0,"rarity":"common","category":"effect","role":"resource","target":0,"after":1,"retain":true,"starts":true,"max_upgrade":1,"upgrade_cost":0,"upgraded_cost":0,"effects":[{"kind":9,"amount":2.0,"upgrade_amount":1.0}],"desc":"0费。\n抽2张牌。\n消耗。\n固有：回合结束保留在手牌。","upgrade_desc":"0费。\n抽3张牌。\n消耗。\n固有：回合结束保留在手牌。","power":80.0,"upgrade_power":120.0,"upgrade_delta":40.0,"upgrade_delta_pct":50.0,"upgraded_budget":100.0,"upgraded_ratio":1.2,"upgrade_note":"抽牌 2→3","budget":100.0,"current_budget":100.0,"ratio":0.8,"target_ratio":0.8,"tags":["资源"]},{"id":"mobilization","name":"紧急动员","cost":1,"target_cost":1,"rarity":"common","category":"effect","role":"resource","target":0,"after":0,"retain":false,"starts":false,"max_upgrade":1,"upgrade_cost":0,"upgraded_cost":1,"effects":[{"kind":40,"amount":1.0,"upgrade_amount":1.0}],"desc":"1费。\n从抽牌堆选择最多1张单位牌加入手牌，不算抽牌。","upgrade_desc":"1费。\n从抽牌堆选择最多2张单位牌加入手牌，不算抽牌。","power":65.0,"upgrade_power":65.0,"upgrade_delta":0.0,"upgrade_delta_pct":0.0,"upgraded_budget":100.0,"upgraded_ratio":0.65,"upgrade_note":"检索单位 1→2","budget":100.0,"current_budget":100.0,"ratio":0.65,"target_ratio":0.65,"tags":["资源"]},{"id":"mud_zone","name":"泥潭","cost":1,"target_cost":1,"rarity":"common","category":"effect","role":"support","target":4,"after":1,"retain":false,"starts":false,"max_upgrade":1,"upgrade_cost":0,"upgraded_cost":1,"effects":[{"kind":8,"amount":100.0,"lifetime":1,"upgrade_lasting_rounds":1,"radius":250.0,"affected_team":2}],"desc":"1费。\n在指定位置生成半径250的泥潭，其中所有单位移动速度降低100%，持续2回合。\n消耗。","upgrade_desc":"1费。\n在指定位置生成半径250的泥潭，其中所有单位移动速度降低100%，持续3回合。\n消耗。","power":65.0,"upgrade_power":80.0,"upgrade_delta":15.0,"upgrade_delta_pct":23.1,"upgraded_budget":100.0,"upgraded_ratio":0.8,"upgrade_note":"持续 2.0→3.0 回合","budget":100.0,"current_budget":100.0,"ratio":0.65,"target_ratio":0.65,"tags":["控制"]},{"id":"overdraft","name":"透支","cost":0,"target_cost":0,"rarity":"common","category":"effect","role":"resource","target":0,"after":0,"retain":false,"starts":false,"max_upgrade":1,"upgrade_cost":0,"upgraded_cost":0,"effects":[{"kind":53,"amount":3.0,"upgrade_amount":1.0,"next_round_penalty":3}],"desc":"0费。\n本回合能量上限+3，并获得3能量；下回合能量上限-3，之后恢复。","upgrade_desc":"0费。\n本回合能量上限+4，并获得4能量；下回合能量上限-3，之后恢复。","power":180.0,"upgrade_power":255.0,"upgrade_delta":75.0,"upgrade_delta_pct":41.7,"upgraded_budget":100.0,"upgraded_ratio":2.55,"upgrade_note":"透支 3→4","budget":100.0,"current_budget":100.0,"ratio":1.8,"target_ratio":1.8,"tags":["资源"]},{"id":"overflow_prayer","name":"溢流祷言","cost":1,"target_cost":1,"rarity":"common","category":"effect","role":"support","target":1,"after":0,"retain":false,"starts":false,"max_upgrade":1,"upgrade_cost":-1,"upgraded_cost":0,"effects":[{"kind":37,"amount":1.0}],"desc":"2费。\n本场，使1名己方单位治疗溢出按1:1转为护盾；护盾在交锋结束清除。","upgrade_desc":"1费。\n本场，使1名己方单位治疗溢出按1:1转为护盾；护盾在交锋结束清除。","power":55.0,"upgrade_power":55.0,"upgrade_delta":0.0,"upgrade_delta_pct":0.0,"upgraded_budget":100.0,"upgraded_ratio":0.55,"upgrade_note":"费用 1→0","budget":100.0,"current_budget":100.0,"ratio":0.55,"target_ratio":0.55,"tags":["增益"]},{"id":"paralysis","name":"麻痹","cost":1,"target_cost":1,"rarity":"common","category":"effect","role":"support","target":2,"after":0,"retain":false,"starts":false,"max_upgrade":1,"upgrade_cost":0,"upgraded_cost":1,"effects":[{"kind":23,"amount":0.75,"upgrade_amount":0.5,"lifetime":1,"lasting_rounds":1,"interval":3.0}],"desc":"1费。\n本回合，使1名敌方单位每3秒眩晕0.5秒，不可叠加。","upgrade_desc":"1费。\n本回合，使1名敌方单位每3秒眩晕1秒，不可叠加。","power":45.0,"upgrade_power":75.0,"upgrade_delta":30.0,"upgrade_delta_pct":66.7,"upgraded_budget":100.0,"upgraded_ratio":0.75,"upgrade_note":"麻痹 0.8→1.2","budget":100.0,"current_budget":100.0,"ratio":0.45,"target_ratio":0.45,"tags":["控制"]},{"id":"poison_on_hit","name":"淬毒武器","cost":1,"target_cost":1,"rarity":"common","category":"effect","role":"support","target":1,"after":0,"retain":false,"starts":false,"max_upgrade":1,"upgrade_cost":0,"upgraded_cost":1,"effects":[{"kind":3,"amount":2.0,"upgrade_amount":1.0,"affected_team":1}],"desc":"1费。\n使1名己方单位每次攻击命中附加2层中毒，持续本场战斗。","upgrade_desc":"1费。\n使1名己方单位每次攻击命中附加3层中毒，持续本场战斗。","power":40.0,"upgrade_power":60.0,"upgrade_delta":20.0,"upgrade_delta_pct":50.0,"upgraded_budget":100.0,"upgraded_ratio":0.6,"upgrade_note":"附毒 2→3","budget":100.0,"current_budget":100.0,"ratio":0.4,"target_ratio":0.4,"tags":["输出"]},{"id":"power_enhance","name":"力量强化","cost":1,"target_cost":1,"rarity":"common","category":"effect","role":"support","target":1,"after":0,"retain":false,"starts":false,"max_upgrade":1,"upgrade_cost":0,"upgraded_cost":1,"effects":[{"amount":3.0,"upgrade_amount":2.0,"affected_team":1}],"desc":"1费。\n使1名己方单位攻击力+3，持续本场战斗。","upgrade_desc":"1费。\n使1名己方单位攻击力+5，持续本场战斗。","power":75.0,"upgrade_power":125.0,"upgrade_delta":50.0,"upgrade_delta_pct":66.7,"upgraded_budget":100.0,"upgraded_ratio":1.25,"upgrade_note":"攻击 3→5","budget":100.0,"current_budget":100.0,"ratio":0.75,"target_ratio":0.75,"tags":["增益"]},{"id":"random_play","name":"战术涌现","cost":1,"target_cost":1,"rarity":"common","category":"effect","role":"resource","target":0,"after":0,"retain":false,"starts":false,"max_upgrade":1,"upgrade_cost":0,"upgraded_cost":1,"effects":[{"kind":14,"amount":2.0,"upgrade_amount":1.0,"radius":250.0,"affected_team":2}],"desc":"1费。\n从抽牌堆随机打出2张牌，不消耗能量。","upgrade_desc":"1费。\n从抽牌堆随机打出3张牌，不消耗能量。","power":100.0,"upgrade_power":150.0,"upgrade_delta":50.0,"upgrade_delta_pct":50.0,"upgraded_budget":100.0,"upgraded_ratio":1.5,"upgrade_note":"随机出牌 2→3","budget":100.0,"current_budget":100.0,"ratio":1.0,"target_ratio":1.0,"tags":["资源"]},{"id":"recall_ally","name":"部队回撤","cost":1,"target_cost":1,"rarity":"common","category":"effect","role":"support","target":1,"after":0,"retain":false,"starts":false,"max_upgrade":1,"upgrade_cost":-1,"upgraded_cost":0,"effects":[{"kind":15,"amount":1.0,"radius":250.0,"affected_team":1}],"desc":"1费。\n撤回1名己方单位，将其征召牌返回手牌。","upgrade_desc":"0费。\n撤回1名己方单位，将其征召牌返回手牌。","power":55.0,"upgrade_power":55.0,"upgrade_delta":0.0,"upgrade_delta_pct":0.0,"upgraded_budget":100.0,"upgraded_ratio":0.55,"upgrade_note":"费用 1→0","budget":100.0,"current_budget":100.0,"ratio":0.55,"target_ratio":0.55,"tags":["功能"]},{"id":"reformation","name":"变阵","cost":2,"target_cost":2,"rarity":"common","category":"effect","role":"resource","target":0,"after":0,"retain":false,"starts":false,"max_upgrade":1,"upgrade_cost":-1,"upgraded_cost":1,"effects":[{"kind":51,"amount":3.0}],"desc":"2费。\n将3张随机其它手牌变为同当前费用的其它牌，持续本场。","upgrade_desc":"1费。\n将3张随机其它手牌变为同当前费用的其它牌，持续本场。","power":75.0,"upgrade_power":75.0,"upgrade_delta":0.0,"upgrade_delta_pct":0.0,"upgraded_budget":100.0,"upgraded_ratio":0.75,"upgrade_note":"费用 2→1","budget":174.1,"current_budget":174.1,"ratio":0.43,"target_ratio":0.43,"tags":["资源"]},{"id":"rend","name":"割裂","cost":1,"target_cost":1,"rarity":"common","category":"effect","role":"core","target":2,"after":0,"retain":false,"starts":false,"max_upgrade":1,"upgrade_cost":0,"upgraded_cost":1,"effects":[{"kind":32,"amount":6.0,"upgrade_amount":3.0,"status_seconds":8.0}],"desc":"1费。\n使1名敌方单位流血，每秒受到6点伤害，无视防御，持续8秒。","upgrade_desc":"1费。\n使1名敌方单位流血，每秒受到9点伤害，无视防御，持续8秒。","power":48.0,"upgrade_power":72.0,"upgrade_delta":24.0,"upgrade_delta_pct":50.0,"upgraded_budget":100.0,"upgraded_ratio":0.72,"upgrade_note":"流血 6→9","budget":100.0,"current_budget":100.0,"ratio":0.48,"target_ratio":0.48,"tags":["输出"]},{"id":"retreat_draw","name":"鸣金收兵","cost":1,"target_cost":1,"rarity":"common","category":"effect","role":"resource","target":0,"after":0,"retain":false,"starts":false,"max_upgrade":1,"upgrade_cost":0,"upgraded_cost":1,"effects":[{"kind":26,"amount":1.0,"upgrade_amount":1.0}],"desc":"1费。\n本回合结束时，每有1名己方单位存活，下回合额外抽1张牌。","upgrade_desc":"1费。\n本回合结束时，每有1名己方单位存活，下回合额外抽2张牌。","power":75.0,"upgrade_power":90.0,"upgrade_delta":15.0,"upgrade_delta_pct":20.0,"upgraded_budget":100.0,"upgraded_ratio":0.9,"upgrade_note":"鸣金 1→2","budget":100.0,"current_budget":100.0,"ratio":0.75,"target_ratio":0.75,"tags":["功能"]},{"id":"return_dead","name":"亡者归来","cost":2,"target_cost":2,"rarity":"common","category":"effect","role":"finisher","target":0,"after":1,"retain":false,"starts":false,"max_upgrade":1,"upgrade_cost":0,"upgraded_cost":2,"effects":[{"kind":43,"amount":50.0,"upgrade_amount":25.0}],"desc":"3费。\n以50%最大生命复活本场最早阵亡的1名己方单位。\n消耗。","upgrade_desc":"3费。\n以75%最大生命复活本场最早阵亡的1名己方单位。\n消耗。","power":120.0,"upgrade_power":120.0,"upgrade_delta":0.0,"upgrade_delta_pct":0.0,"upgraded_budget":174.1,"upgraded_ratio":0.69,"upgrade_note":"复活 50→75","budget":174.1,"current_budget":174.1,"ratio":0.69,"target_ratio":0.69,"tags":["成长"]},{"id":"sacrifice","name":"献祭","cost":2,"target_cost":2,"rarity":"common","category":"effect","role":"resource","target":0,"after":2,"retain":false,"starts":false,"max_upgrade":1,"upgrade_cost":0,"upgraded_cost":2,"effects":[{"kind":42,"amount":3.0,"upgrade_amount":-1.0}],"desc":"3费。\n常驻：本场每有3名敌方单位阵亡，获得1能量，跨回合累计。","upgrade_desc":"3费。\n常驻：本场每有2名敌方单位阵亡，获得1能量，跨回合累计。","power":140.0,"upgrade_power":170.0,"upgrade_delta":30.0,"upgrade_delta_pct":21.4,"upgraded_budget":174.1,"upgraded_ratio":0.98,"upgrade_note":"每 3→2 名敌方阵亡得1能量","budget":174.1,"current_budget":174.1,"ratio":0.8,"target_ratio":0.8,"tags":["成长"]},{"id":"slumber","name":"沉睡","cost":1,"target_cost":1,"rarity":"common","category":"effect","role":"support","target":2,"after":0,"retain":false,"starts":false,"max_upgrade":1,"upgrade_cost":0,"upgraded_cost":1,"effects":[{"kind":35,"amount":1.0,"status_seconds":5.0,"upgrade_status_seconds":3.0}],"desc":"2费。\n使1名敌方单位睡眠5秒，受到攻击命中立即醒来。","upgrade_desc":"2费。\n使1名敌方单位睡眠8秒，受到攻击命中立即醒来。","power":70.0,"upgrade_power":82.0,"upgrade_delta":12.0,"upgrade_delta_pct":17.1,"upgraded_budget":100.0,"upgraded_ratio":0.82,"upgrade_note":"持续 5→8 秒","budget":100.0,"current_budget":100.0,"ratio":0.7,"target_ratio":0.7,"tags":["控制"]},{"id":"spike_trap","name":"地刺","cost":1,"target_cost":1,"rarity":"common","category":"effect","role":"support","target":4,"after":0,"retain":false,"starts":false,"max_upgrade":1,"upgrade_cost":0,"upgraded_cost":1,"effects":[{"kind":49,"amount":15.0,"upgrade_amount":10.0,"radius":40.0,"status_seconds":1.0}],"desc":"1费。\n在指定位置放置地刺；敌人进入时受到15点伤害并眩晕1秒，触发后消失。","upgrade_desc":"1费。\n在指定位置放置地刺；敌人进入时受到25点伤害并眩晕1秒，触发后消失。","power":51.0,"upgrade_power":65.0,"upgrade_delta":14.0,"upgrade_delta_pct":27.5,"upgraded_budget":100.0,"upgraded_ratio":0.65,"upgrade_note":"地刺 15→25","budget":100.0,"current_budget":100.0,"ratio":0.51,"target_ratio":0.51,"tags":["输出"]},{"id":"stratagem","name":"运筹","cost":1,"target_cost":1,"rarity":"common","category":"effect","role":"resource","target":0,"after":0,"retain":false,"starts":false,"max_upgrade":1,"upgrade_cost":0,"upgraded_cost":1,"effects":[{"kind":52,"amount":1.0,"upgrade_amount":1.0}],"desc":"2费。\n当前其它手牌本回合费用-1，最低0费。","upgrade_desc":"2费。\n当前其它手牌本回合费用-2，最低0费。","power":35.0,"upgrade_power":70.0,"upgrade_delta":35.0,"upgrade_delta_pct":100.0,"upgraded_budget":100.0,"upgraded_ratio":0.7,"upgrade_note":"手牌减费 1→2","budget":100.0,"current_budget":100.0,"ratio":0.35,"target_ratio":0.35,"tags":["资源"]},{"id":"thrift","name":"节流","cost":1,"target_cost":1,"rarity":"common","category":"effect","role":"resource","target":0,"after":2,"retain":false,"starts":false,"max_upgrade":1,"upgrade_cost":-1,"upgraded_cost":0,"effects":[{"kind":54,"amount":1.0}],"desc":"1费。\n常驻：本场能量上限-1，从下回合起每回合额外抽1张牌。","upgrade_desc":"0费。\n常驻：本场能量上限-1，从下回合起每回合额外抽1张牌。","power":100.0,"upgrade_power":100.0,"upgrade_delta":0.0,"upgrade_delta_pct":0.0,"upgraded_budget":100.0,"upgraded_ratio":1.0,"upgrade_note":"费用 1→0","budget":100.0,"current_budget":100.0,"ratio":1.0,"target_ratio":1.0,"tags":["资源"]},{"id":"transcription","name":"誊抄","cost":2,"target_cost":2,"rarity":"common","category":"effect","role":"resource","target":0,"after":0,"retain":false,"starts":false,"max_upgrade":1,"upgrade_cost":0,"upgraded_cost":2,"effects":[{"kind":50,"amount":1.0,"upgrade_upgrades_drawn_cards":true}],"desc":"3费。\n将所有其它手牌直接放入消耗牌堆，再抽等量的牌。","upgrade_desc":"3费。\n消耗所有其它手牌，再抽等量的牌。抽到的牌临时强化，下次成功使用后还原；单位训练点加攻击，士兵选飞弹。","power":90.0,"upgrade_power":110.0,"upgrade_delta":20.0,"upgrade_delta_pct":22.2,"upgraded_budget":174.1,"upgraded_ratio":0.63,"upgrade_note":"抽到的牌临时强化","budget":174.1,"current_budget":174.1,"ratio":0.52,"target_ratio":0.52,"tags":["资源"]},{"id":"undying_army","name":"不灭军势","cost":4,"target_cost":4,"rarity":"rare","category":"effect","role":"finisher","target":0,"after":2,"retain":false,"starts":false,"max_upgrade":1,"upgrade_cost":0,"upgraded_cost":4,"effects":[{"kind":19,"amount":2.0,"upgrade_amount":-1.0}],"desc":"5费。\n本场战斗，己方存活单位保留至下回合；己方单位阵亡时，其征召牌费用+2。","upgrade_desc":"5费。\n本场战斗，己方存活单位保留至下回合；己方单位阵亡时，其征召牌费用+1。","power":100.0,"upgrade_power":115.0,"upgrade_delta":15.0,"upgrade_delta_pct":15.0,"upgraded_budget":303.1,"upgraded_ratio":0.38,"upgrade_note":"留存友军 2→1","budget":303.1,"current_budget":303.1,"ratio":0.33,"target_ratio":0.33,"tags":["成长"]},{"id":"vulnerability","name":"易伤","cost":1,"target_cost":1,"rarity":"common","category":"effect","role":"support","target":2,"after":0,"retain":false,"starts":false,"max_upgrade":1,"upgrade_cost":0,"upgraded_cost":1,"effects":[{"kind":21,"amount":20.0,"upgrade_amount":10.0,"lifetime":1,"lasting_rounds":1}],"desc":"2费。\n本回合，使1名敌方单位受到的攻击伤害提高20%，不可叠加。","upgrade_desc":"2费。\n本回合，使1名敌方单位受到的攻击伤害提高30%，不可叠加。","power":60.0,"upgrade_power":90.0,"upgrade_delta":30.0,"upgrade_delta_pct":50.0,"upgraded_budget":100.0,"upgraded_ratio":0.9,"upgrade_note":"易伤 20→30","budget":100.0,"current_budget":100.0,"ratio":0.6,"target_ratio":0.6,"tags":["控制"]},{"id":"war_cry","name":"战吼","cost":2,"target_cost":2,"rarity":"common","category":"effect","role":"support","target":0,"after":2,"retain":false,"starts":false,"max_upgrade":1,"upgrade_cost":0,"upgraded_cost":2,"effects":[{"kind":45,"amount":1.0,"upgrade_amount":1.0}],"desc":"3费。\n常驻：本场全体己方单位攻击+1，包含之后入场的友军。","upgrade_desc":"3费。\n常驻：本场全体己方单位攻击+2，包含之后入场的友军。","power":50.0,"upgrade_power":100.0,"upgrade_delta":50.0,"upgrade_delta_pct":100.0,"upgraded_budget":174.1,"upgraded_ratio":0.57,"upgrade_note":"全体攻击 1→2","budget":174.1,"current_budget":174.1,"ratio":0.29,"target_ratio":0.29,"tags":["成长"]},{"id":"weakness","name":"虚弱","cost":1,"target_cost":1,"rarity":"common","category":"effect","role":"support","target":2,"after":0,"retain":false,"starts":false,"max_upgrade":1,"upgrade_cost":0,"upgraded_cost":1,"effects":[{"kind":20,"amount":2.0,"upgrade_amount":1.0,"lifetime":1,"lasting_rounds":1}],"desc":"1费。\n本回合，使1名敌方单位攻击力-2，可叠加。","upgrade_desc":"1费。\n本回合，使1名敌方单位攻击力-3，可叠加。","power":50.0,"upgrade_power":75.0,"upgrade_delta":25.0,"upgrade_delta_pct":50.0,"upgraded_budget":100.0,"upgraded_ratio":0.75,"upgrade_note":"虚弱 2→3","budget":100.0,"current_budget":100.0,"ratio":0.5,"target_ratio":0.5,"tags":["控制"]},{"id":"unit_archer","name":"弓箭手征召","cost":1,"target_cost":1,"rarity":"common","category":"recruit","role":"recruit","target":1,"after":0,"retain":false,"starts":false,"max_upgrade":1,"upgrade_cost":0,"upgraded_cost":1,"effects":[],"desc":"征召1名弓箭手。","upgrade_desc":"训练后提升攻击/防御，并解锁强化技能。","power":100.5,"upgrade_power":126.0,"upgrade_delta":25.5,"upgrade_delta_pct":25.4,"upgraded_budget":100.0,"upgraded_ratio":1.26,"upgrade_note":"训练 +2 点（默认全加攻击）","budget":100.0,"current_budget":100.0,"ratio":1.0,"target_ratio":1.0,"tags":["征召"],"unit_id":"archer"},{"id":"unit_armored_axeman","name":"装甲斧手召唤","cost":1,"target_cost":1,"rarity":"common","category":"recruit","role":"recruit","target":1,"after":0,"retain":false,"starts":false,"max_upgrade":1,"upgrade_cost":0,"upgraded_cost":1,"effects":[],"desc":"征召1名装甲斧手。","upgrade_desc":"训练后提升攻击/防御，并解锁强化技能。","power":140.9,"upgrade_power":141.4,"upgrade_delta":0.5,"upgrade_delta_pct":0.3,"upgraded_budget":100.0,"upgraded_ratio":1.41,"upgrade_note":"训练 +2 点（默认全加攻击）","budget":100.0,"current_budget":100.0,"ratio":1.41,"target_ratio":1.41,"tags":["征召"],"unit_id":"armored_axeman"},{"id":"unit_knight","name":"骑士召唤","cost":2,"target_cost":2,"rarity":"common","category":"recruit","role":"recruit","target":1,"after":0,"retain":false,"starts":false,"max_upgrade":1,"upgrade_cost":0,"upgraded_cost":2,"effects":[],"desc":"征召1名骑士。","upgrade_desc":"训练后提升攻击/防御，并解锁强化技能。","power":204.6,"upgrade_power":223.6,"upgrade_delta":19.0,"upgrade_delta_pct":9.3,"upgraded_budget":174.1,"upgraded_ratio":1.28,"upgrade_note":"训练 +2 点（默认全加攻击）","budget":174.1,"current_budget":174.1,"ratio":1.18,"target_ratio":1.18,"tags":["征召"],"unit_id":"knight"},{"id":"unit_knight_templar","name":"圣殿骑士征召","cost":2,"target_cost":2,"rarity":"common","category":"recruit","role":"recruit","target":1,"after":0,"retain":false,"starts":false,"max_upgrade":1,"upgrade_cost":0,"upgraded_cost":2,"effects":[],"desc":"征召1名圣殿骑士。","upgrade_desc":"训练后提升攻击/防御，并解锁强化技能。","power":192.9,"upgrade_power":213.3,"upgrade_delta":20.4,"upgrade_delta_pct":10.6,"upgraded_budget":174.1,"upgraded_ratio":1.23,"upgrade_note":"训练 +2 点（默认全加攻击）","budget":174.1,"current_budget":174.1,"ratio":1.11,"target_ratio":1.11,"tags":["征召"],"unit_id":"knight_templar"},{"id":"unit_lancer","name":"骑兵征召","cost":3,"target_cost":3,"rarity":"common","category":"recruit","role":"recruit","target":1,"after":0,"retain":false,"starts":false,"max_upgrade":1,"upgrade_cost":0,"upgraded_cost":3,"effects":[],"desc":"征召1名骑兵。","upgrade_desc":"训练后提升攻击/防御，并解锁强化技能。","power":247.7,"upgrade_power":292.4,"upgrade_delta":44.7,"upgrade_delta_pct":18.1,"upgraded_budget":240.8,"upgraded_ratio":1.21,"upgrade_note":"训练 +2 点（默认全加攻击）","budget":240.8,"current_budget":240.8,"ratio":1.03,"target_ratio":1.03,"tags":["征召"],"unit_id":"lancer"},{"id":"unit_priest","name":"牧师征召","cost":1,"target_cost":1,"rarity":"common","category":"recruit","role":"recruit","target":1,"after":0,"retain":false,"starts":false,"max_upgrade":1,"upgrade_cost":0,"upgraded_cost":1,"effects":[],"desc":"征召1名牧师。","upgrade_desc":"训练后提升攻击/防御，并解锁强化技能。","power":100.8,"upgrade_power":129.5,"upgrade_delta":28.7,"upgrade_delta_pct":28.5,"upgraded_budget":100.0,"upgraded_ratio":1.29,"upgrade_note":"训练 +2 点（默认全加攻击）","budget":100.0,"current_budget":100.0,"ratio":1.01,"target_ratio":1.01,"tags":["征召"],"unit_id":"priest"},{"id":"unit_soldier","name":"战士召唤","cost":1,"target_cost":1,"rarity":"common","category":"recruit","role":"recruit","target":1,"after":0,"retain":false,"starts":false,"max_upgrade":1,"upgrade_cost":0,"upgraded_cost":1,"effects":[],"desc":"征召1名士兵。","upgrade_desc":"训练后提升攻击/防御，并解锁强化技能。","power":100.0,"upgrade_power":145.1,"upgrade_delta":45.1,"upgrade_delta_pct":45.1,"upgraded_budget":100.0,"upgraded_ratio":1.45,"upgrade_note":"训练 +2 点（默认全加攻击）","budget":100.0,"current_budget":100.0,"ratio":1.0,"target_ratio":1.0,"tags":["征召"],"unit_id":"soldier"},{"id":"unit_swords_man","name":"剑士征召","cost":3,"target_cost":3,"rarity":"common","category":"recruit","role":"recruit","target":1,"after":0,"retain":false,"starts":false,"max_upgrade":1,"upgrade_cost":0,"upgraded_cost":3,"effects":[],"desc":"征召1名剑士。","upgrade_desc":"训练后提升攻击/防御，并解锁强化技能。","power":358.3,"upgrade_power":387.7,"upgrade_delta":29.4,"upgrade_delta_pct":8.2,"upgraded_budget":240.8,"upgraded_ratio":1.61,"upgrade_note":"训练 +2 点（默认全加攻击）；模型下限：只计训练点，未计强化技能的特殊效果","budget":240.8,"current_budget":240.8,"ratio":1.49,"target_ratio":1.49,"tags":["征召"],"unit_id":"swords_man"},{"id":"unit_were_bear","name":"暗影熊召唤","cost":2,"target_cost":2,"rarity":"common","category":"recruit","role":"recruit","target":1,"after":0,"retain":false,"starts":false,"max_upgrade":1,"upgrade_cost":0,"upgraded_cost":2,"effects":[],"desc":"征召1名熊人。","upgrade_desc":"训练后提升攻击/防御，并解锁强化技能。","power":223.9,"upgrade_power":240.8,"upgrade_delta":16.9,"upgrade_delta_pct":7.6,"upgraded_budget":174.1,"upgraded_ratio":1.38,"upgrade_note":"训练 +2 点（默认全加攻击）；模型下限：只计训练点，未计强化技能的特殊效果","budget":174.1,"current_budget":174.1,"ratio":1.29,"target_ratio":1.29,"tags":["征召"],"unit_id":"were_bear"},{"id":"unit_were_wolf","name":"召唤狼人","cost":2,"target_cost":2,"rarity":"common","category":"recruit","role":"recruit","target":1,"after":0,"retain":false,"starts":false,"max_upgrade":1,"upgrade_cost":0,"upgraded_cost":2,"effects":[],"desc":"征召1名狼人。","upgrade_desc":"训练后提升攻击/防御，并解锁强化技能。","power":250.0,"upgrade_power":269.3,"upgrade_delta":19.3,"upgrade_delta_pct":7.7,"upgraded_budget":174.1,"upgraded_ratio":1.55,"upgrade_note":"训练 +2 点（默认全加攻击）；模型下限：只计训练点，未计强化技能的特殊效果","budget":174.1,"current_budget":174.1,"ratio":1.44,"target_ratio":1.44,"tags":["征召"],"unit_id":"were_wolf"},{"id":"unit_wizard","name":"巫师征召","cost":3,"target_cost":3,"rarity":"common","category":"recruit","role":"recruit","target":1,"after":0,"retain":false,"starts":false,"max_upgrade":1,"upgrade_cost":0,"upgraded_cost":3,"effects":[],"desc":"征召1名巫师。","upgrade_desc":"训练后提升攻击/防御，并解锁强化技能。","power":252.1,"upgrade_power":254.7,"upgrade_delta":2.6,"upgrade_delta_pct":1.0,"upgraded_budget":240.8,"upgraded_ratio":1.06,"upgrade_note":"训练 +2 点（默认全加攻击）","budget":240.8,"current_budget":240.8,"ratio":1.05,"target_ratio":1.05,"tags":["征召"],"unit_id":"wizard"}],"relics":[{"id":"scout_horn","name":"侦察号角","rarity":"common","rarity_cn":"普通","trigger":"BATTLE_START","effect":"第 1 轮全体己方 +1 攻 / +1 防","link":"前期","tags":["neutral"],"section":"中立通用","power":70,"price":150,"source":"current"},{"id":"base_heart","name":"坚城之心","rarity":"common","rarity_cn":"普通","trigger":"PASSIVE","effect":"本局玩家生命上限增加20，获得时回复20点生命，剩余生命跨节点保留。","link":"","tags":["neutral"],"section":"中立通用","power":70,"price":150,"source":"current"},{"id":"spare_quiver","name":"备用箭袋","rarity":"common","rarity_cn":"普通","trigger":"SHUFFLE","effect":"每场首次洗牌时抽 2 张并 +1 能量；不递归触发","link":"循环牌组","tags":["neutral"],"section":"中立通用","power":75,"price":150,"source":"current"},{"id":"tactical_map","name":"战术沙盘","rarity":"common","rarity_cn":"普通","trigger":"BATTLE_START","effect":"首轮额外抽 2 张","link":"起手","tags":["neutral"],"section":"中立通用","power":80,"price":160,"source":"current"},{"id":"traveler_amulet","name":"旅人护符","rarity":"common","rarity_cn":"普通","trigger":"PASSIVE","effect":"本局生命上限增加12，获得时回复12点生命。","link":"","tags":["neutral"],"section":"中立通用","power":50,"price":140,"source":"current"},{"id":"veteran_medal","name":"老兵勋章","rarity":"common","rarity_cn":"普通","trigger":"CARD_PLAYED","effect":"每场第 1 张牌费用 −1","link":"高费起手","tags":["neutral"],"section":"中立通用","power":70,"price":150,"source":"current"},{"id":"sacrificial_dagger","name":"献祭匕首","rarity":"common","rarity_cn":"普通","trigger":"CARD_PLAYED（支付生命）","effect":"支付生命 −2（最低 1），获得 1 能量","link":"血契补给","tags":["death"],"section":"亡语献祭","power":72,"price":150,"source":"current"},{"id":"mourner","name":"送葬人","rarity":"common","rarity_cn":"普通","trigger":"UNIT_DIED","effect":"抽 1 张牌；每回合 1 次","link":"死亡换牌","tags":["death"],"section":"亡语献祭","power":76,"price":150,"source":"current"},{"id":"urn","name":"骨灰之瓮","rarity":"common","rarity_cn":"普通","trigger":"UNIT_DIED","effect":"对最近的敌人造成 5 点真实伤害","link":"悼亡战意、同生共死","tags":["death"],"section":"亡语献祭","power":70,"price":150,"source":"current"},{"id":"war_banner","name":"军团旗幡","rarity":"common","rarity_cn":"普通","trigger":"ROUND_START","effect":"手牌中征召牌 ≥2 时，本回合第一张征召牌费用 −1（最低 0），每轮 1 次","link":"铺场启动、战友","tags":["wide"],"section":"军团铺场","power":78,"price":150,"source":"current"},{"id":"opening_armour","name":"出征护甲","rarity":"common","rarity_cn":"普通","trigger":"BATTLE_START","effect":"每场首次开启自动战斗时，己方士兵防御增加2，持续3个战斗回合。","link":"","tags":["wide"],"section":"军团铺场","power":65,"price":140,"source":"current"},{"id":"muster_roll","name":"征兵名册","rarity":"common","rarity_cn":"普通","trigger":"UNIT_DEPLOYED","effect":"本场每部署 3 名单位，全体己方攻击 +1，最多 +3","link":"合理搭配、镜像","tags":["wide"],"section":"军团铺场","power":82,"price":160,"source":"current"},{"id":"fallen_roster","name":"阵亡抚恤","rarity":"common","rarity_cn":"普通","trigger":"UNIT_DIED","effect":"该单位原征召牌本场首次回弃牌堆不加费，每场 3 次","link":"对抗阵亡 +1 费","tags":["wide"],"section":"军团铺场","power":72,"price":150,"source":"current"},{"id":"anvil","name":"淬火铁砧","rarity":"common","rarity_cn":"普通","trigger":"CARD_PLAYED","effect":"每场首次对己方单位使用强化牌，数值 +50%（向上取整）","link":"力量强化、护甲加固","tags":["tall"],"section":"单核养成","power":88,"price":160,"source":"current"},{"id":"bloodstone","name":"血契之石","rarity":"common","rarity_cn":"普通","trigger":"UNIT_KILL","effect":"击杀者回复 5 生命，满血时转 5 护盾；每回合 1 次","link":"续航、牧师","tags":["tall"],"section":"单核养成","power":76,"price":150,"source":"current"},{"id":"fate_coin","name":"命运硬币","rarity":"common","rarity_cn":"普通","trigger":"BATTLE_START","effect":"随机 1 张手牌费用 −2（最低 0，本回合）","link":"高费牌","tags":["cycle"],"section":"循环连招","power":75,"price":150,"source":"current"},{"id":"steady_hands","name":"沉稳之手","rarity":"common","rarity_cn":"普通","trigger":"ROUND_END","effect":"随机保留 1 张手牌（固有之外）","link":"借来的时间","tags":["cycle"],"section":"循环连招","power":64,"price":140,"source":"current"},{"id":"gloves","name":"魔术手套","rarity":"common","rarity_cn":"普通","trigger":"CARD_PLAYED（0 费）","effect":"每回合首次打出 0 费牌后抽 1；每回合 1 次","link":"运筹帷幄、进化","tags":["cycle"],"section":"循环连招","power":80,"price":160,"source":"current"},{"id":"executioner","name":"处刑人","rarity":"common","rarity_cn":"普通","trigger":"被动","effect":"对生命 <30% 的敌人伤害 +25%","link":"斩杀","tags":["control"],"section":"控制压制","power":75,"price":150,"source":"current"},{"id":"fear_totem","name":"恐惧图腾","rarity":"common","rarity_cn":"普通","trigger":"ROUND_START","effect":"随机 1 名敌人虚弱 2（攻击 −2），持续本回合","link":"虚弱叠加","tags":["control"],"section":"控制压制","power":70,"price":150,"source":"current"},{"id":"chains","name":"缚魂锁链","rarity":"common","rarity_cn":"普通","trigger":"被动","effect":"被眩晕的敌人受到伤害 +15%","link":"麻痹、狼人眩晕","tags":["control"],"section":"控制压制","power":76,"price":150,"source":"current"},{"id":"ember","name":"余烬之核","rarity":"common","rarity_cn":"普通","trigger":"被动","effect":"己方火焰区域伤害 +2、半径 +30","link":"烈焰灼烧、火焰药水","tags":["dot"],"section":"毒火持续","power":80,"price":160,"source":"current"},{"id":"corrosive_vial","name":"腐蚀之瓶","rarity":"common","rarity_cn":"普通","trigger":"UNIT_HIT","effect":"己方攻击命中附加 1 层中毒；同一单位每秒最多 1 层","link":"淬毒武器","tags":["dot"],"section":"毒火持续","power":86,"price":160,"source":"current"},{"id":"field_kit","name":"战地急救","rarity":"common","rarity_cn":"普通","trigger":"BATTLE_WON","effect":"回复 3 生命","link":"续航","tags":["economy"],"section":"经济补给","power":65,"price":140,"source":"current"},{"id":"coin_purse","name":"旅者钱袋","rarity":"common","rarity_cn":"普通","trigger":"BATTLE_WON","effect":"+10 金币","link":"商店","tags":["economy"],"section":"经济补给","power":60,"price":140,"source":"current"},{"id":"alchemy_pack","name":"炼金行囊","rarity":"common","rarity_cn":"普通","trigger":"被动","effect":"药水伤害与持续时间 +25%","link":"药水流","tags":["economy"],"section":"经济补给","power":80,"price":160,"source":"current"},{"id":"longbow_string","name":"长弓之弦","rarity":"common","rarity_cn":"普通","trigger":"被动","effect":"与目标距离 ≥300 的己方单位攻击 +15%","link":"保持距离、弓箭手","tags":["ranged"],"section":"远程风筝","power":75,"price":150,"source":"current"},{"id":"kite_boots","name":"风筝之靴","rarity":"common","rarity_cn":"普通","trigger":"被动","effect":"远程单位移速 +20%；距离 ≥400 时闪避 +10%","link":"风筝走位","tags":["ranged"],"section":"远程风筝","power":70,"price":150,"source":"current"},{"id":"last_stand","name":"背水一战","rarity":"common","rarity_cn":"普通","trigger":"被动","effect":"生命 <30% 的己方单位防御 +3、攻击 +2","link":"狼人隐身、狂化","tags":["guard"],"section":"防守续航","power":70,"price":150,"source":"current"},{"id":"thorn_mail","name":"荆棘之甲","rarity":"common","rarity_cn":"普通","trigger":"UNIT_HURT","effect":"攻击者受 3 点真实伤害；同一敌人每秒 1 次","link":"嘲讽、反击","tags":["guard"],"section":"防守续航","power":75,"price":150,"source":"current"},{"id":"reserve_crystal","name":"储能水晶","rarity":"rare","rarity_cn":"稀有","trigger":"PASSIVE","effect":"本局每回合最大能量增加1。","link":"","tags":["neutral"],"section":"中立通用","power":200,"price":220,"source":"current"},{"id":"hourglass","name":"时间沙漏","rarity":"rare","rarity_cn":"稀有","trigger":"ROUND_START","effect":"第 1 轮能量 +2","link":"爆发开局","tags":["neutral"],"section":"中立通用","power":165,"price":200,"source":"current"},{"id":"death_echo","name":"死亡回响","rarity":"rare","rarity_cn":"稀有","trigger":"UNIT_DIED","effect":"每场 2 次：原征召牌立即回手，费用 −2","link":"快速再部署","tags":["death"],"section":"亡语献祭","power":175,"price":200,"source":"current"},{"id":"martyr_crown","name":"殉道之冠","rarity":"rare","rarity_cn":"稀有","trigger":"UNIT_DIED","effect":"随机 1 名己方单位 +2 攻（本场，最多 +6）","link":"亡语成长","tags":["death"],"section":"亡语献祭","power":180,"price":220,"source":"current"},{"id":"diverse_codex","name":"万国兵书","rarity":"rare","rarity_cn":"稀有","trigger":"被动","effect":"己方存活兵种每有 1 种，全体防御 +1（最多 +3）；≥3 种时额外 +1 攻","link":"合理搭配","tags":["wide"],"section":"军团铺场","power":170,"price":200,"source":"current"},{"id":"beacon","name":"集结烽火","rarity":"rare","rarity_cn":"稀有","trigger":"UNIT_DEPLOYED","effect":"本场第 3 名单位部署时，全体己方 +2 攻、技能冷却 −15%，持续本场；每场 1 次","link":"铺场中期爆发","tags":["wide"],"section":"军团铺场","power":180,"price":220,"source":"current"},{"id":"legacy_seal","name":"传承之证","rarity":"rare","rarity_cn":"稀有","trigger":"UNIT_DIED","effect":"每场 2 次：其 50% 攻 / 防转移给场上攻击最高的己方单位","link":"献祭喂大哥","tags":["tall"],"section":"单核养成","power":175,"price":200,"source":"current"},{"id":"duel_pact","name":"决斗契约","rarity":"rare","rarity_cn":"稀有","trigger":"UNIT_DEPLOYED","effect":"每场第 1 名部署的单位：最大生命 +30%、攻击 +15%，持续本场","link":"单核定向","tags":["tall"],"section":"单核养成","power":185,"price":220,"source":"current"},{"id":"lone_wolf","name":"独狼徽记","rarity":"rare","rarity_cn":"稀有","trigger":"被动","effect":"己方场上仅 1 名单位时，其攻 / 防 +25%、技能冷却 −15%","link":"狂化、单核","tags":["tall"],"section":"单核养成","power":180,"price":220,"source":"current"},{"id":"borrowed_time","name":"借来的时间","rarity":"rare","rarity_cn":"稀有","trigger":"ROUND_END","effect":"手牌 ≥3 时，下回合能量 +1；每场 3 次","link":"手牌保留","tags":["cycle"],"section":"循环连招","power":170,"price":200,"source":"current"},{"id":"draw_engine","name":"十抽引擎","rarity":"rare","rarity_cn":"稀有","trigger":"DRAW_ENERGY","effect":"每实际抽到10张牌获得1点能量，计数跨回合、跨战斗保留。","link":"","tags":["cycle"],"section":"循环连招","power":170,"price":200,"source":"current"},{"id":"echo_crystal","name":"回响水晶","rarity":"rare","rarity_cn":"稀有","trigger":"CARD_PLAYED（消耗）","effect":"每场第 1 张消耗牌额外结算 1 次；区域 / 召唤不重复","link":"孤注一掷、烈焰灼烧","tags":["cycle"],"section":"循环连招","power":180,"price":220,"source":"current"},{"id":"draw_ring","name":"行军戒指","rarity":"rare","rarity_cn":"稀有","trigger":"DRAW_ENERGY","effect":"每实际抽到8张牌获得1点能量，计数跨回合、跨战斗保留。","link":"","tags":["cycle"],"section":"循环连招","power":150,"price":180,"source":"current"},{"id":"inquisitor","name":"审讯之印","rarity":"rare","rarity_cn":"稀有","trigger":"被动","effect":"敌人每有 1 个减益状态，其受到伤害 +1，最多 +4","link":"多减益覆盖","tags":["control"],"section":"控制压制","power":180,"price":220,"source":"current"},{"id":"sunder","name":"破碎之刃","rarity":"rare","rarity_cn":"稀有","trigger":"被动","effect":"攻击防御 ≤0 的敌人时，伤害 +3","link":"恐吓、破甲","tags":["control"],"section":"控制压制","power":165,"price":200,"source":"current"},{"id":"slow_death","name":"慢性死亡","rarity":"rare","rarity_cn":"稀有","trigger":"DOT_TICK","effect":"25% 概率将本次伤害复制给 150 内另一敌人；每回合 2 次","link":"群毒扩散","tags":["dot"],"section":"毒火持续","power":180,"price":220,"source":"current"},{"id":"plague_mask","name":"疫医面具","rarity":"rare","rarity_cn":"稀有","trigger":"被动","effect":"敌人每有 1 层中毒，其受到攻击伤害 +2%，上限 +20%","link":"毒层放大","tags":["dot"],"section":"毒火持续","power":185,"price":220,"source":"current"},{"id":"sulfur_heart","name":"硫磺之心","rarity":"rare","rarity_cn":"稀有","trigger":"ROUND_START","effect":"对所有敌人施加 1 层中毒，本场累计","link":"无卡起毒","tags":["dot"],"section":"毒火持续","power":175,"price":200,"source":"current"},{"id":"merchant_seal","name":"商人印记","rarity":"rare","rarity_cn":"稀有","trigger":"SHOP_OPEN","effect":"商店价格 −20%（最低 1）","link":"商店","tags":["economy"],"section":"经济补给","power":160,"price":200,"source":"current"},{"id":"greedy_cup","name":"贪婪之杯","rarity":"rare","rarity_cn":"稀有","trigger":"BATTLE_WON","effect":"回复 3 生命；金币 ≥200 时改为 +5","link":"经济滚动","tags":["economy"],"section":"经济补给","power":165,"price":200,"source":"current"},{"id":"spell_focus","name":"法术焦点","rarity":"rare","rarity_cn":"稀有","trigger":"被动","effect":"己方远程技能伤害 +10%，技能冷却 −10%","link":"巫师、弓箭手","tags":["ranged"],"section":"远程风筝","power":180,"price":220,"source":"current"},{"id":"hunter_mark","name":"猎手标记","rarity":"rare","rarity_cn":"稀有","trigger":"UNIT_HIT（远程）","effect":"同一敌人被远程命中 3 次后，其受到伤害 +15%（本场）","link":"集火","tags":["ranged"],"section":"远程风筝","power":175,"price":200,"source":"current"},{"id":"counter_stance","name":"反击姿态","rarity":"rare","rarity_cn":"稀有","trigger":"COUNTER","effect":"反击伤害 +50%，并回复 2 生命","link":"骑士 / 圣殿骑士","tags":["guard"],"section":"防守续航","power":170,"price":200,"source":"current"},{"id":"holy_symbol","name":"圣徽之戒","rarity":"rare","rarity_cn":"稀有","trigger":"ROUND_END","effect":"生命比例最低的己方单位回复 5 生命","link":"牧师、续航","tags":["guard"],"section":"防守续航","power":165,"price":200,"source":"current"},{"id":"guardian_oath","name":"守护誓约","rarity":"rare","rarity_cn":"稀有","trigger":"被动","effect":"嘲讽单位受到伤害 −20%，嘲讽期间每秒回复 1% 最大生命","link":"圣殿骑士","tags":["guard"],"section":"防守续航","power":180,"price":220,"source":"current"},{"id":"blood_bank","name":"血库","rarity":"rare","rarity_cn":"稀有","trigger":"UNIT_HEALED","effect":"己方治疗量 +25%；满血治疗的溢出量按 1:1 转护盾（已有溢出转盾时取较高值，不叠加）","link":"牧师、护盾","tags":["guard"],"section":"防守续航","power":175,"price":200,"source":"current"},{"id":"iron_wall","name":"铁壁之誓","rarity":"rare","rarity_cn":"稀有","trigger":"被动","effect":"交锋阶段己方全体防御 +1；存活 ≥3 时改为 +2","link":"人海防御","tags":["guard"],"section":"防守续航","power":175,"price":200,"source":"current"},{"id":"undying_throne","name":"不朽王座","rarity":"boss","rarity_cn":"首领","trigger":"UNIT_DIED","effect":"每场第 1 名死亡的己方单位以 50% 生命复活；复活不触发死亡遗物","link":"亡语体系核心","tags":["death"],"section":"亡语献祭","power":400,"price":0,"source":"current"},{"id":"earth_altar","name":"大地祭坛","rarity":"boss","rarity_cn":"首领","trigger":"ROUND_SETTLED","effect":"己方存活 ≥4 时，敌方战斗 HP 额外 −4，玩家回复 2 生命","link":"宽阵容终结","tags":["wide"],"section":"军团铺场","power":340,"price":0,"source":"current"},{"id":"kings_blade","name":"王者之剑","rarity":"boss","rarity_cn":"首领","trigger":"UNIT_KILL","effect":"每场 3 次：击杀者 +3 攻（本场），玩家 +1 能量","link":"审判者、滚雪球","tags":["tall"],"section":"单核养成","power":380,"price":0,"source":"current"},{"id":"perpetual_gear","name":"永动齿轮","rarity":"boss","rarity_cn":"首领","trigger":"CARD_PLAYED","effect":"每回合第 3 张牌后 +2 能量；每回合 1 次","link":"低费连招","tags":["cycle"],"section":"循环连招","power":380,"price":0,"source":"current"},{"id":"stasis_field","name":"静滞领域","rarity":"boss","rarity_cn":"首领","trigger":"ROUND_START（第 3 轮）","effect":"全体敌人眩晕 2 秒；其首次受击伤害 +50%","link":"控制爆发窗口","tags":["control"],"section":"控制压制","power":350,"price":0,"source":"current"},{"id":"burning_city","name":"焚城之焰","rarity":"boss","rarity_cn":"首领","trigger":"UNIT_DIED（敌方）","effect":"每场首个敌人死亡时，尸体处生成半径 180 火焰区域，每 0.5 秒 6 点，持续 2 回合","link":"尸爆连锁","tags":["dot"],"section":"毒火持续","power":360,"price":0,"source":"current"},{"id":"relic_hunter","name":"遗物猎人","rarity":"boss","rarity_cn":"首领","trigger":"RELIC_GAINED","effect":"遗物掉落概率 +15%；每次获得遗物回复 10 生命","link":"遗物滚雪球","tags":["economy"],"section":"经济补给","power":330,"price":0,"source":"current"},{"id":"volley_horn","name":"齐射号角","rarity":"boss","rarity_cn":"首领","trigger":"ROUND_START","effect":"己方远程 ≥2 时，对随机敌人造成 6 点无视防御伤害","link":"远程群","tags":["ranged"],"section":"远程风筝","power":350,"price":0,"source":"current"},{"id":"unfallen_fortress","name":"不落堡垒","rarity":"boss","rarity_cn":"首领","trigger":"ROUND_SETTLED","effect":"本回合无己方单位死亡：玩家 +2 生命，敌方 HP −2","link":"防守终结","tags":["guard"],"section":"防守续航","power":360,"price":0,"source":"current"}],"potions":[{"id":"fire","name":"火焰药水","rarity":"common","rarity_cn":"普通","target":"落点","effect":"落地 6 伤，之后每 0.5 秒 6 伤，半径 85，持续到本轮结束","role":"区域压制","note":"与泥沼、重力井配合；敌群越密越强","power":110,"price":45,"min_act":1,"tier":"A","source":"current"},{"id":"blast","name":"爆裂药剂","rarity":"common","rarity_cn":"普通","target":"落点","effect":"50 直接伤害，半径 75，击退 120","role":"即时爆发 / 拆阵","note":"打断咏唱；把敌人推出火区或毒雾","power":100,"price":45,"min_act":1,"tier":"A","source":"current"},{"id":"frost_flask","name":"寒霜瓶","rarity":"common","rarity_cn":"普通","target":"落点","effect":"25 伤害，半径 90，移速 -60（约 40%），3 秒","role":"软控","note":"拖住冲锋和骑兵；为后排争取输出时间","power":95,"price":45,"min_act":1,"tier":"A","source":"current"},{"id":"poison_flask","name":"毒雾瓶","rarity":"common","rarity_cn":"普通","target":"落点","effect":"25 伤害，半径 90，10 层中毒","role":"回合末爆发","note":"毒无视防御；与淬毒、亡语联动","power":105,"price":45,"min_act":1,"tier":"B","source":"current"},{"id":"mud_flask","name":"泥沼瓶","rarity":"common","rarity_cn":"普通","target":"落点区域","effect":"半径 110，移速 -50%，持续 3 回合","role":"地形控制","note":"与火焰、陨石、重力井叠加；限制走位","power":90,"price":45,"min_act":1,"tier":"B","source":"current"},{"id":"weaken_gas","name":"虚弱毒气","rarity":"common","rarity_cn":"普通","target":"落点","effect":"半径 120，虚弱 3 点（攻击 -3），8 秒","role":"降攻","note":"对高攻慢速单位收益最高；可叠加到 6 点","power":95,"price":40,"min_act":1,"tier":"A","source":"current"},{"id":"sunder_acid","name":"破甲酸液","rarity":"common","rarity_cn":"普通","target":"落点","effect":"半径 100，破甲 4 点（防御 -4），8 秒","role":"破防","note":"配合多段攻击和弓箭手；对高防前排","power":95,"price":45,"min_act":1,"tier":"A","source":"current"},{"id":"strength_brew","name":"力量药剂","rarity":"common","rarity_cn":"普通","target":"全体友军","effect":"攻击 +2，持续 3 回合","role":"增伤","note":"多单位、多段攻击时收益线性放大；与召唤流","power":110,"price":50,"min_act":1,"tier":"B","source":"current"},{"id":"iron_brew","name":"铁壁药剂","rarity":"common","rarity_cn":"普通","target":"全体友军","effect":"防御 +3，持续 3 回合","role":"减伤","note":"对抗多波小怪；与护盾叠加","power":105,"price":50,"min_act":1,"tier":"B","source":"current"},{"id":"cleanse_water","name":"净化圣水","rarity":"common","rarity_cn":"普通","target":"全体友军","effect":"清除流血、虚弱、减速、破甲、中毒、混乱、睡眠，回复 15","role":"解场","note":"对抗毒、萨满、女巫关卡；也能当小治疗","power":95,"price":45,"min_act":1,"tier":"B","source":"current"},{"id":"healing_potion","name":"治疗药水","rarity":"common","rarity_cn":"普通","target":"玩家","effect":"回复 25 点玩家生命","role":"续航","note":"Boss 前保留；与最大生命遗物配合","power":100,"price":50,"min_act":1,"tier":"A","source":"current"},{"id":"gambler_brew","name":"赌徒之酿","rarity":"common","rarity_cn":"普通","target":"自身","effect":"弃掉全部手牌，抽等量 +2 张","role":"换手","note":"卡手时救场；与低费、连击牌配合","power":90,"price":40,"min_act":1,"tier":"A","source":"current"},{"id":"decoy_totem","name":"诱饵图腾","rarity":"common","rarity_cn":"普通","target":"落点","effect":"召唤 60 生命诱饵，持续 2 回合，强制附近敌人攻击它","role":"拆火","note":"保护后排；让敌人聚团后接 AoE","power":115,"price":50,"min_act":1,"tier":"C","source":"current"},{"id":"lightning","name":"闪电药水","rarity":"rare","rarity_cn":"稀有","target":"连续落点","effect":"4 次，每次 20 伤害，半径 65，间隔 0.4 秒","role":"点杀 / 补刀","note":"可以拆开打不同目标；优先点后排弓手和法师","power":190,"price":60,"min_act":1,"tier":"A","source":"current"},{"id":"tornado","name":"龙卷风药水","rarity":"rare","rarity_cn":"稀有","target":"落点","effect":"移动风柱，每 0.5 秒 8 伤害，半径 70，持续 6 秒","role":"移动区域","note":"沿路径切割阵型；与减速、重力井配合","power":210,"price":75,"min_act":1,"tier":"A","source":"current"},{"id":"chain_lightning","name":"链式闪电","rarity":"rare","rarity_cn":"稀有","target":"落点","effect":"5 次跳跃，每次 22 伤害，跳跃半径 190，不重复目标","role":"多目标爆发","note":"对 3 个以上敌群；优先锁后排","power":220,"price":75,"min_act":1,"tier":"A","source":"current"},{"id":"corrosive_flask","name":"腐蚀酸瓶","rarity":"rare","rarity_cn":"稀有","target":"落点","effect":"30 伤害，半径 100，破甲 4 点 8 秒，附加 8 层中毒","role":"破防 + 毒","note":"物理队核心；对高防 Boss 和精英","power":210,"price":70,"min_act":2,"tier":"B","source":"current"},{"id":"frost_nova","name":"冰霜新星","rarity":"rare","rarity_cn":"稀有","target":"落点","effect":"25 伤害，半径 110，眩晕 1.5 秒","role":"硬控","note":"打断冲锋和咏唱；接陨石需要更长的控制","power":200,"price":75,"min_act":1,"tier":"A","source":"current"},{"id":"sleep_dust","name":"催眠粉尘","rarity":"rare","rarity_cn":"稀有","target":"落点","effect":"半径 120，睡眠直到受击或本轮结束","role":"软控 / 拖时间","note":"先睡再布阵；不要接伤害，毒和火会打醒","power":190,"price":70,"min_act":2,"tier":"A","source":"current"},{"id":"confusion_gas","name":"混乱药剂","rarity":"rare","rarity_cn":"稀有","target":"落点","effect":"半径 120，混乱 4 秒","role":"内耗","note":"让敌群互殴；对远程和法师收益高","power":195,"price":70,"min_act":2,"tier":"A","source":"current"},{"id":"gravity_well","name":"重力井","rarity":"rare","rarity_cn":"稀有","target":"落点","effect":"半径 180，把敌人拉向中心，移速 -60，2 秒","role":"聚怪","note":"接陨石、火焰、链电；改变敌方阵型","power":185,"price":70,"min_act":2,"tier":"B","source":"current"},{"id":"aegis_brew","name":"圣盾药剂","rarity":"rare","rarity_cn":"稀有","target":"全体友军","effect":"护盾 50，先于生命抵扣，阶段切换时清除","role":"防爆发","note":"对抗 Boss 大招和箭雨；与治疗溢出盾叠加","power":210,"price":80,"min_act":1,"tier":"A","source":"current"},{"id":"envenom_brew","name":"淬毒药剂","rarity":"rare","rarity_cn":"稀有","target":"全体友军","effect":"攻击附毒 3 层，持续 3 回合","role":"毒 build","note":"多段攻击、召唤物收益高；与毒雾、腐蚀联动","power":215,"price":80,"min_act":2,"tier":"B","source":"current"},{"id":"deathrattle_brew","name":"亡语药剂","rarity":"rare","rarity_cn":"稀有","target":"全体友军","effect":"死亡爆炸 40 伤害，半径 120，持续本场","role":"召唤 / 送死","note":"配合骷髅、增援；与复活形成循环","power":210,"price":85,"min_act":2,"tier":"B","source":"current"},{"id":"energy_potion","name":"能量药剂","rarity":"rare","rarity_cn":"稀有","target":"自身","effect":"立即 +2 能量","role":"节奏爆发","note":"关键回合多打一张高费牌；交锋中可用","power":190,"price":75,"min_act":1,"tier":"A","source":"current"},{"id":"tactics_brew","name":"战术药剂","rarity":"rare","rarity_cn":"稀有","target":"自身","effect":"手牌中接下来 2 张牌费用变为 0，本回合有效","role":"连招","note":"与高费卡、抽牌配合；先抽后喝","power":220,"price":85,"min_act":1,"tier":"A","source":"current"},{"id":"insight_brew","name":"智慧药剂","rarity":"rare","rarity_cn":"稀有","target":"自身","effect":"抽 3 张牌","role":"手牌补充","note":"与低费连击、能量药水配合；牌堆快空时喝","power":185,"price":70,"min_act":1,"tier":"A","source":"current"},{"id":"reinforcement_horn","name":"增援号角","rarity":"rare","rarity_cn":"稀有","target":"落点","effect":"召唤 2 名士兵，持续到本轮结束","role":"场面","note":"挡刀、补输出；与力量、亡语联动","power":210,"price":85,"min_act":2,"tier":"B","source":"current"},{"id":"forge_oil","name":"锻造之油","rarity":"rare","rarity_cn":"稀有","target":"自身","effect":"随机强化一张可强化的效果牌，等同篝火强化","role":"成长","note":"越早喝越好；与训练、强化流","power":200,"price":80,"min_act":2,"tier":"B","source":"current"},{"id":"smoke_bomb","name":"烟雾弹","rarity":"rare","rarity_cn":"稀有","target":"自身","effect":"立即结束本轮，双方存活单位不结算扣血；Boss 波无效","role":"撤退","note":"跳过高伤害波次；不产出奖励，慎用","power":180,"price":75,"min_act":1,"tier":"B","source":"current"},{"id":"thunder_cloud","name":"雷云药水","rarity":"legendary","rarity_cn":"传说","target":"落点","effect":"固定雷云，每 0.4 秒锁定 1 名敌人 6 伤，半径 85，持续 3 回合","role":"持续压制","note":"覆盖敌群；与减速、聚怪配合","power":360,"price":110,"min_act":2,"tier":"A","source":"current"},{"id":"meteor","name":"陨石药剂","rarity":"legendary","rarity_cn":"传说","target":"落点","effect":"2 秒后 160 伤害，半径 150，留下燃烧地面 3 秒，每 0.5 秒 10 伤","role":"清场","note":"先重力井、泥沼或眩晕；空放会浪费","power":450,"price":140,"min_act":2,"tier":"B","source":"current"},{"id":"time_stop","name":"时之静滞","rarity":"legendary","rarity_cn":"传说","target":"全场敌人","effect":"眩晕 2.5 秒","role":"硬控","note":"接陨石、爆发；Boss 战开团","power":380,"price":130,"min_act":2,"tier":"A","source":"current"},{"id":"revive_potion","name":"复活药剂","rarity":"legendary","rarity_cn":"传说","target":"阵亡友军","effect":"以 50% 生命复活一名阵亡友军，临时单位，本轮结束消失，不返还原牌；优先选择有原征召牌的友军","role":"翻盘","note":"与亡语、召唤配合；原牌仍按死亡规则加费","power":360,"price":120,"min_act":3,"tier":"C","source":"current"},{"id":"fairy_tear","name":"仙女之泪","rarity":"legendary","rarity_cn":"传说","target":"被动","effect":"玩家受致命伤时自动消耗，回复至 30% 最大生命；每局最多 1 瓶","role":"免死","note":"无需手动；进 Boss 前保留","power":420,"price":150,"min_act":2,"tier":"C","source":"current"},{"id":"undead_legion","name":"亡者军团","rarity":"legendary","rarity_cn":"传说","target":"落点","effect":"召唤 3 名骷髅，持续到本轮结束","role":"场面","note":"与亡语、力量、肉盾配合","power":400,"price":130,"min_act":3,"tier":"C","source":"current"},{"id":"duplication_potion","name":"复制药剂","rarity":"legendary","rarity_cn":"传说","target":"随机友军","effect":"复制一名随机友军，继承当前生命与强化，临时单位；优先选择有原征召牌的友军，不复制临时召唤物","role":"滚雪球","note":"复制核心单位；与永久强化配合","power":380,"price":120,"min_act":3,"tier":"B","source":"current"},{"id":"convert_potion","name":"策反药剂","rarity":"legendary","rarity_cn":"传说","target":"敌方单位","effect":"策反一名普通敌人；精英、首领、传说无效","role":"以战养战","note":"对人海和召唤流；直接改变波次","power":370,"price":110,"min_act":2,"tier":"B","source":"current"},{"id":"life_fruit","name":"生命果实","rarity":"legendary","rarity_cn":"传说","target":"玩家","effect":"最大生命 +10，并回复 10；每局最多 2 瓶","role":"永久成长","note":"越早喝越好；与治疗、防御流","power":400,"price":110,"min_act":1,"tier":"A","source":"current"},{"id":"blood_offering","name":"血契药剂","rarity":"legendary","rarity_cn":"传说","target":"自身","effect":"支付 15% 最大生命，至少 5 点且不致死，+3 能量并抽 3 张","role":"风险爆发","note":"低血时慎用；与治疗、护盾配合","power":360,"price":100,"min_act":2,"tier":"A","source":"current"}],"events":[{"num":1,"title":"折断的军旗","tier":"T2","rarity":"稀有","floors":"3–8","options":[{"option":"接过军旗","cost":"最大生命 -8","reward":"从 3 张精锐征召牌中选 1 张。"},{"option":"取下狮鹫徽记","cost":"获得 55 金币。","reward":""},{"option":"为他立一块石头","cost":"回复 12 生命，获得 1 瓶随机药水。","reward":""}]},{"num":2,"title":"退役教官","tier":"T1","rarity":"普通","floors":"2–6","options":[{"option":"请他操练","cost":"支付 35 金币","reward":"训练 1 张兵种卡。"},{"option":"陪他喝酒","cost":"支付 20 金币","reward":"回复 18 生命。"},{"option":"买下木人","cost":"支付 45 金币","reward":"从 3 张战术牌中选 1 张。"}]},{"num":3,"title":"兽穴","tier":"T1","rarity":"普通","floors":"2–6","options":[{"option":"抱走幼兽","cost":"最大生命 -8","reward":"从 3 张野兽征召牌中选 1 张。"},{"option":"拆开捕兽夹","cost":"获得 35 金币，回复 8 生命。","reward":""},{"option":"采集洞口的药草","cost":"获得 1 瓶随机药水。","reward":""}]},{"num":4,"title":"双子兵营","tier":"T2","rarity":"稀有","floors":"5–9","options":[{"option":"走进镜像军帐","cost":"最大生命 -8","reward":"复制 1 张征召牌。"},{"option":"搬走双份补给","cost":"获得 45 金币。","reward":""},{"option":"让两个士兵互换装备","cost":"失去 8 生命","reward":"训练 1 张兵种卡。"}]},{"num":5,"title":"铁匠的最后一炉","tier":"T2","rarity":"稀有","floors":"4–8","options":[{"option":"熔掉一张牌，强化另一张","cost":"移除 1 张牌，强化 1 张牌。","reward":""},{"option":"只强化一张牌","cost":"支付 50 金币","reward":"强化 1 张牌。"},{"option":"帮他拉风箱","cost":"失去 8 生命","reward":"获得 45 金币。"}]},{"num":6,"title":"沉默的祭坛","tier":"T2","rarity":"普通","floors":"3–8","options":[{"option":"献上一段记忆","cost":"最大生命 -6","reward":"移除 1 张牌。"},{"option":"献上金币","cost":"支付 70 金币","reward":"移除 1 张牌。"},{"option":"在坛前祈祷","cost":"回复 12 生命。","reward":""}]},{"num":7,"title":"镜湖","tier":"T2","rarity":"稀有","floors":"5–9","options":[{"option":"触碰倒影","cost":"最大生命 -12","reward":"复制 1 张任意牌。"},{"option":"饮下湖水","cost":"回复 20 生命。","reward":""},{"option":"打捞湖底","cost":"失去 6 生命","reward":"获得 55 金币。"}]},{"num":8,"title":"沙盘推演","tier":"T2","rarity":"普通","floors":"4–8","options":[{"option":"推演到天亮","cost":"最大生命 -8","reward":"随机强化 2 张牌。"},{"option":"只复盘一局","cost":"支付 35 金币","reward":"强化 1 张牌。"},{"option":"拿走棋子","cost":"获得 40 金币。","reward":""}]},{"num":9,"title":"镀金神像","tier":"T1","rarity":"普通","floors":"3–7","options":[{"option":"搬走神像","cost":"最大生命 -8","reward":"获得 1 件随机遗物。"},{"option":"只取供品","cost":"获得 65 金币。","reward":""},{"option":"合十行礼","cost":"回复 12 生命。","reward":""}]},{"num":10,"title":"商队残骸","tier":"T1","rarity":"普通","floors":"2–6","options":[{"option":"搜刮货物","cost":"失去 12 生命","reward":"获得 65 金币。"},{"option":"救出车底的人","cost":"支付 35 金币","reward":"最大生命 +4，回复 10 生命。"},{"option":"追查车辙","cost":"获得 1 瓶随机药水。","reward":""}]},{"num":11,"title":"血契","tier":"T3","rarity":"稀有","floors":"6–9","options":[{"option":"签下名字","cost":"最大生命 -12","reward":"从征召牌与战术牌中各选 1 张。"},{"option":"割破手掌","cost":"失去 8 生命","reward":"获得 55 金币。"},{"option":"撕毁契约","cost":"回复 8 生命。","reward":""}]},{"num":12,"title":"古树之心","tier":"T3","rarity":"稀有","floors":"6–9","options":[{"option":"取走树心","cost":"最大生命 -8","reward":"获得 1 件随机遗物。"},{"option":"在树荫下休息","cost":"回复 22 生命。","reward":""},{"option":"刻下自己的名字","cost":"支付 30 金币","reward":"最大生命 +4。"}]},{"num":13,"title":"泥沼之手","tier":"T2","rarity":"稀有","floors":"4–8","options":[{"option":"伸手去够","cost":"失去 10 生命","reward":"60% 获得 1 件随机遗物，40% 获得 35 金币。"},{"option":"用长杆打捞","cost":"支付 25 金币","reward":"获得 1 瓶随机药水。"},{"option":"在泥沼边采药","cost":"回复 12 生命。","reward":""}]},{"num":14,"title":"骰子赌局","tier":"T2","rarity":"普通","floors":"3–8","options":[{"option":"押 30 金币","cost":"50% 获得 90 金币，50% 失去 30 金币。","reward":""},{"option":"押 60 金币","cost":"50% 获得 150 金币，50% 失去 60 金币。","reward":""},{"option":"拆穿他的骰子","cost":"获得 25 金币。","reward":""}]},{"num":15,"title":"哥布林角斗场","tier":"T3","rarity":"稀有","floors":"6–9","options":[{"option":"下场角斗","cost":"失去 15 生命","reward":"获得 1 件随机遗物。"},{"option":"押 25 金币","cost":"50% 获得 75 金币，50% 失去 25 金币。","reward":""},{"option":"买下坑底的失败者","cost":"支付 40 金币","reward":"从 3 张征召牌中选 1 张。"}]},{"num":16,"title":"坠星","tier":"T3","rarity":"稀有","floors":"7–9","options":[{"option":"握住星核","cost":"失去 12 生命","reward":"随机强化 2 张牌。"},{"option":"收集星尘","cost":"获得 70 金币。","reward":""},{"option":"在坑边过夜","cost":"回复 18 生命。","reward":""}]},{"num":17,"title":"难民队伍","tier":"T1","rarity":"普通","floors":"2–6","options":[{"option":"分出补给","cost":"支付 40 金币","reward":"最大生命 +5，回复 10 生命。"},{"option":"招募青壮","cost":"支付 20 金币","reward":"从 3 张征召牌中选 1 张。"},{"option":"拿走他们遗落的钱袋","cost":"获得 40 金币。","reward":""}]},{"num":18,"title":"被俘的骑士","tier":"T2","rarity":"稀有","floors":"4–8","options":[{"option":"放他下来","cost":"失去 12 生命","reward":"从 3 张骑士系征召牌中选 1 张。"},{"option":"交给赏金猎人","cost":"获得 80 金币。","reward":""},{"option":"问出情报","cost":"获得 1 瓶随机药水，回复 10 生命。","reward":""}]},{"num":19,"title":"亡灵低语","tier":"T3","rarity":"稀有","floors":"6–9","options":[{"option":"聆听低语","cost":"最大生命 -8","reward":"从 3 张亡灵征召牌中选 1 张。"},{"option":"焚烧遗骨","cost":"支付 25 金币","reward":"回复 20 生命。"},{"option":"掩埋遗骨","cost":"支付 20 金币","reward":"最大生命 +3。"}]},{"num":20,"title":"老兵之墓","tier":"T2","rarity":"稀有","floors":"5–9","options":[{"option":"敬礼","cost":"支付 10 金币","reward":"回复 12 生命，强化 1 张牌。"},{"option":"挖开坟墓","cost":"获得 85 金币，失去 8 生命。","reward":""},{"option":"修缮墓碑","cost":"支付 25 金币","reward":"最大生命 +3。"}]}],"routes":{"floors":10,"nodes":27,"battle":9,"event":10,"campfire":3,"boss":1,"shop":1,"treasure":3,"routes":16,"route_stats":[{"nodes":["旅途奇遇","战斗","商店","战斗","旅途奇遇","宝箱","旅途奇遇","战斗","篝火","Boss"],"battles":3,"events":3,"campfires":1,"shop":1,"treasure":1,"boss":1},{"nodes":["旅途奇遇","战斗","商店","战斗","旅途奇遇","宝箱","旅途奇遇","战斗","篝火","Boss"],"battles":3,"events":3,"campfires":1,"shop":1,"treasure":1,"boss":1},{"nodes":["旅途奇遇","战斗","旅途奇遇","篝火","战斗","旅途奇遇","战斗","旅途奇遇","篝火","Boss"],"battles":3,"events":4,"campfires":2,"shop":0,"treasure":0,"boss":1},{"nodes":["旅途奇遇","战斗","旅途奇遇","篝火","战斗","旅途奇遇","战斗","战斗","篝火","Boss"],"battles":4,"events":3,"campfires":2,"shop":0,"treasure":0,"boss":1},{"nodes":["旅途奇遇","战斗","旅途奇遇","篝火","战斗","旅途奇遇","商店","战斗","篝火","Boss"],"battles":3,"events":3,"campfires":2,"shop":0,"treasure":1,"boss":1},{"nodes":["旅途奇遇","战斗","旅途奇遇","篝火","战斗","旅途奇遇","战斗","旅途奇遇","篝火","Boss"],"battles":3,"events":4,"campfires":2,"shop":0,"treasure":0,"boss":1},{"nodes":["旅途奇遇","战斗","旅途奇遇","篝火","战斗","旅途奇遇","战斗","战斗","篝火","Boss"],"battles":4,"events":3,"campfires":2,"shop":0,"treasure":0,"boss":1},{"nodes":["旅途奇遇","战斗","旅途奇遇","篝火","战斗","宝箱","旅途奇遇","战斗","篝火","Boss"],"battles":3,"events":3,"campfires":2,"shop":1,"treasure":0,"boss":1},{"nodes":["旅途奇遇","战斗","旅途奇遇","篝火","战斗","宝箱","旅途奇遇","战斗","篝火","Boss"],"battles":3,"events":3,"campfires":2,"shop":1,"treasure":0,"boss":1},{"nodes":["旅途奇遇","战斗","旅途奇遇","商店","战斗","旅途奇遇","战斗","旅途奇遇","篝火","Boss"],"battles":3,"events":4,"campfires":1,"shop":0,"treasure":1,"boss":1},{"nodes":["旅途奇遇","战斗","旅途奇遇","商店","战斗","旅途奇遇","战斗","战斗","篝火","Boss"],"battles":4,"events":3,"campfires":1,"shop":0,"treasure":1,"boss":1},{"nodes":["旅途奇遇","战斗","旅途奇遇","商店","战斗","旅途奇遇","商店","战斗","篝火","Boss"],"battles":3,"events":3,"campfires":1,"shop":0,"treasure":2,"boss":1},{"nodes":["旅途奇遇","战斗","旅途奇遇","商店","战斗","旅途奇遇","战斗","旅途奇遇","篝火","Boss"],"battles":3,"events":4,"campfires":1,"shop":0,"treasure":1,"boss":1},{"nodes":["旅途奇遇","战斗","旅途奇遇","商店","战斗","旅途奇遇","战斗","战斗","篝火","Boss"],"battles":4,"events":3,"campfires":1,"shop":0,"treasure":1,"boss":1},{"nodes":["旅途奇遇","战斗","旅途奇遇","战斗","旅途奇遇","宝箱","旅途奇遇","战斗","篝火","Boss"],"battles":3,"events":4,"campfires":1,"shop":1,"treasure":0,"boss":1},{"nodes":["旅途奇遇","战斗","旅途奇遇","战斗","旅途奇遇","宝箱","旅途奇遇","战斗","篝火","Boss"],"battles":3,"events":4,"campfires":1,"shop":1,"treasure":0,"boss":1}],"min_battles":3,"max_battles":4,"min_events":3,"max_events":4},"waves":[{"id":"A","name":"原野初遇","hp":22,"target_rounds":"4–6","target_loss":"0–8","waves":[{"round":1,"enemies":["skeleton","skeleton"],"names":["骷髅兵","骷髅兵"],"power":139.2,"count":2,"pressure":0.52},{"round":2,"enemies":["skeleton","skeleton"],"names":["骷髅兵","骷髅兵"],"power":139.2,"count":2,"pressure":0.42},{"round":3,"enemies":["skeleton","skeleton_archer"],"names":["骷髅兵","骷髅弓箭手"],"power":132.3,"count":2,"pressure":0.4},{"round":4,"enemies":[],"names":[],"power":0,"count":0,"pressure":0.0},{"round":5,"enemies":["skeleton","skeleton"],"names":["骷髅兵","骷髅兵"],"power":139.2,"count":2,"pressure":0.42},{"round":6,"enemies":["skeleton"],"names":["骷髅兵"],"power":69.6,"count":1,"pressure":0.21}],"peak_power":139.2,"peak_pressure":0.52,"avg_power":103.2},{"id":"B","name":"边境混编","hp":30,"target_rounds":"5–7","target_loss":"6–14","waves":[{"round":1,"enemies":["skeleton","skeleton"],"names":["骷髅兵","骷髅兵"],"power":139.2,"count":2,"pressure":0.52},{"round":2,"enemies":["skeleton","skeleton_archer"],"names":["骷髅兵","骷髅弓箭手"],"power":132.3,"count":2,"pressure":0.4},{"round":3,"enemies":["skeleton","skeleton","skeleton_archer"],"names":["骷髅兵","骷髅兵","骷髅弓箭手"],"power":201.9,"count":3,"pressure":0.61},{"round":4,"enemies":[],"names":[],"power":0,"count":0,"pressure":0.0},{"round":5,"enemies":["skeleton","orc"],"names":["骷髅兵","哥布林"],"power":186.9,"count":2,"pressure":0.56},{"round":6,"enemies":["skeleton","skeleton_archer"],"names":["骷髅兵","骷髅弓箭手"],"power":132.3,"count":2,"pressure":0.4},{"round":7,"enemies":["skeleton"],"names":["骷髅兵"],"power":69.6,"count":1,"pressure":0.21}],"peak_power":201.9,"peak_pressure":0.61,"avg_power":123.2},{"id":"C","name":"补给线阻击","hp":34,"target_rounds":"6–8","target_loss":"8–16","waves":[{"round":1,"enemies":["skeleton","skeleton"],"names":["骷髅兵","骷髅兵"],"power":139.2,"count":2,"pressure":0.52},{"round":2,"enemies":["skeleton","orc"],"names":["骷髅兵","哥布林"],"power":186.9,"count":2,"pressure":0.56},{"round":3,"enemies":["skeleton","skeleton_archer","skeleton_archer"],"names":["骷髅兵","骷髅弓箭手","骷髅弓箭手"],"power":195.0,"count":3,"pressure":0.59},{"round":4,"enemies":[],"names":[],"power":0,"count":0,"pressure":0.0},{"round":5,"enemies":["skeleton","skeleton_archer","orc"],"names":["骷髅兵","骷髅弓箭手","哥布林"],"power":249.6,"count":3,"pressure":0.75},{"round":6,"enemies":["skeleton","skeleton_archer"],"names":["骷髅兵","骷髅弓箭手"],"power":132.3,"count":2,"pressure":0.4},{"round":7,"enemies":["skeleton"],"names":["骷髅兵"],"power":69.6,"count":1,"pressure":0.21}],"peak_power":249.6,"peak_pressure":0.75,"avg_power":138.9},{"id":"D","name":"原野守军","hp":38,"target_rounds":"6–8","target_loss":"8–18","waves":[{"round":1,"enemies":["skeleton","orc"],"names":["骷髅兵","哥布林"],"power":186.9,"count":2,"pressure":0.7},{"round":2,"enemies":["skeleton_archer","orc"],"names":["骷髅弓箭手","哥布林"],"power":180.0,"count":2,"pressure":0.54},{"round":3,"enemies":["skeleton","skeleton","skeleton_archer","skeleton_archer"],"names":["骷髅兵","骷髅兵","骷髅弓箭手","骷髅弓箭手"],"power":264.6,"count":4,"pressure":0.79},{"round":4,"enemies":[],"names":[],"power":0,"count":0,"pressure":0.0},{"round":5,"enemies":["skeleton","skeleton_archer","orc"],"names":["骷髅兵","骷髅弓箭手","哥布林"],"power":249.6,"count":3,"pressure":0.75},{"round":6,"enemies":["skeleton","skeleton_archer"],"names":["骷髅兵","骷髅弓箭手"],"power":132.3,"count":2,"pressure":0.4},{"round":7,"enemies":["skeleton"],"names":["骷髅兵"],"power":69.6,"count":1,"pressure":0.21}],"peak_power":264.6,"peak_pressure":0.79,"avg_power":154.7},{"id":"E","name":"督军前哨","hp":42,"target_rounds":"7–9","target_loss":"10–22","waves":[{"round":1,"enemies":["skeleton","orc"],"names":["骷髅兵","哥布林"],"power":186.9,"count":2,"pressure":0.7},{"round":2,"enemies":["skeleton_archer","armored_orc"],"names":["骷髅弓箭手","武装哥布林"],"power":200.7,"count":2,"pressure":0.6},{"round":3,"enemies":["skeleton","skeleton_archer","skeleton_archer","orc"],"names":["骷髅兵","骷髅弓箭手","骷髅弓箭手","哥布林"],"power":312.3,"count":4,"pressure":0.94},{"round":4,"enemies":[],"names":[],"power":0,"count":0,"pressure":0.0},{"round":5,"enemies":["skeleton","skeleton_archer","armored_orc"],"names":["骷髅兵","骷髅弓箭手","武装哥布林"],"power":270.3,"count":3,"pressure":0.81},{"round":6,"enemies":["skeleton_archer","orc"],"names":["骷髅弓箭手","哥布林"],"power":180.0,"count":2,"pressure":0.54},{"round":7,"enemies":["skeleton"],"names":["骷髅兵"],"power":69.6,"count":1,"pressure":0.21}],"peak_power":312.3,"peak_pressure":0.94,"avg_power":174.3},{"id":"F","name":"原野督军","hp":52,"target_rounds":"8–11","target_loss":"16–34","waves":[{"round":1,"enemies":["skeleton","orc"],"names":["骷髅兵","哥布林"],"power":186.9,"count":2,"pressure":0.7},{"round":2,"enemies":["skeleton_archer","skeleton_archer","orc"],"names":["骷髅弓箭手","骷髅弓箭手","哥布林"],"power":242.7,"count":3,"pressure":0.73},{"round":3,"enemies":["skeleton_archer","armored_orc"],"names":["骷髅弓箭手","武装哥布林"],"power":200.7,"count":2,"pressure":0.6},{"round":4,"enemies":[],"names":[],"power":0,"count":0,"pressure":0.0},{"round":5,"enemies":["skeleton","elite_orc"],"names":["骷髅兵","精英哥布林"],"power":318.6,"count":2,"pressure":0.96},{"round":6,"enemies":["skeleton_archer","orc"],"names":["骷髅弓箭手","哥布林"],"power":180.0,"count":2,"pressure":0.54},{"round":7,"enemies":["skeleton","skeleton_archer","armored_orc"],"names":["骷髅兵","骷髅弓箭手","武装哥布林"],"power":270.3,"count":3,"pressure":0.81},{"round":8,"enemies":[],"names":[],"power":0,"count":0,"pressure":0.0},{"round":9,"enemies":["elite_orc","armored_orc"],"names":["精英哥布林","武装哥布林"],"power":387.0,"count":2,"pressure":1.16},{"round":10,"enemies":["skeleton","skeleton_archer"],"names":["骷髅兵","骷髅弓箭手"],"power":132.3,"count":2,"pressure":0.4}],"peak_power":387.0,"peak_pressure":1.16,"avg_power":191.8}]};
+/* ballsprite power calculator — vanilla JS, no build step, no network. */
+'use strict';
+
+const $ = (s, root = document) => root.querySelector(s);
+const $$ = (s, root = document) => Array.from(root.querySelectorAll(s));
+const esc = (s) => String(s == null ? '' : s)
+  .replace(/&/g, '&amp;').replace(/</g, '&lt;').replace(/>/g, '&gt;')
+  .replace(/"/g, '&quot;').replace(/'/g, '&#39;');
+const fmt = (n, d = 1) => {
+  if (n == null || Number.isNaN(Number(n))) return '—';
+  const v = Number(n);
+  if (Math.abs(v - Math.round(v)) < 1e-9) return String(Math.round(v));
+  return v.toFixed(d);
+};
+const signed = (n, d = 1) => (n > 0 ? '+' : '') + fmt(n, d);
+const clamp = (n, a, b) => Math.max(a, Math.min(b, n));
+const sum = (arr) => arr.reduce((a, b) => a + b, 0);
+
+const STORAGE_KEY = 'ballsprite_power_calc_balance_v1';
+const MODEL_KEYS = ['window', 'cast', 'target_def', 'area_targets', 'melee_uptime',
+  'ranged_uptime', 'heal_weight', 'reference_hp', 'reference_output', 'reference_power',
+  'energy_value', 'draw_value', 'hp_value'];
+
+const UNIT_BY_ID = Object.fromEntries(DATA.units.map(u => [u.id, u]));
+const CARD_BY_ID = Object.fromEntries(DATA.cards.map(c => [c.id, c]));
+const RELIC_BY_ID = Object.fromEntries(DATA.relics.map(r => [r.id, r]));
+const POTION_BY_ID = Object.fromEntries(DATA.potions.map(p => [p.id, p]));
+const KIND_NAMES = DATA.model.kindNames || [];
+const KIND_CN = DATA.model.kindCn || {};
+const RARITY_CN = { common: '普通', rare: '稀有', boss: '首领', legendary: '传说' };
+const ROLE_CN = { core: '核心', support: '辅助', resource: '资源', finisher: '终结', recruit: '征召' };
+
+function kindName(k) { return KIND_NAMES[k] || ('KIND_' + k); }
+function kindCn(k) { return KIND_CN[kindName(k)] || kindName(k); }
+function rarityPill(r) { return `<span class="pill ${r}">${RARITY_CN[r] || r}</span>`; }
+function cardType(c) { return c.category === 'recruit' ? '征召' : (ROLE_CN[c.role] || '效果'); }
+
+function starterDeck() {
+  return (DATA.baseline.start_deck_ids || []).map(([id, count]) => ({ id, count }));
+}
+
+let state = {
+  tab: 'overview', deck: starterDeck(), relics: [], potions: [],
+  edits: { units: {}, cards: {}, relics: {}, potions: {} },
+  model: JSON.parse(JSON.stringify(DATA.model)),
+  compare: { A: null, B: null }, search: '',
+  filter: { units: 'all', cards: 'all', relics: 'all', potions: 'all', cost: 'all', act: 'all' },
+  sort: { units: 'power', cards: 'power', relics: 'power', potions: 'power' },
+  showTarget: true,
+};
+
+function save() {
+  try {
+    localStorage.setItem(STORAGE_KEY, JSON.stringify({
+      version: DATA.meta.version, deck: state.deck, relics: state.relics,
+      potions: state.potions, edits: state.edits, model: state.model,
+      compare: state.compare, showTarget: state.showTarget,
+    }));
+  } catch (e) { /* ignore quota */ }
+}
+function load() {
+  try {
+    const raw = localStorage.getItem(STORAGE_KEY);
+    if (!raw) return;
+    const s = JSON.parse(raw);
+    if (!s || s.version !== DATA.meta.version) return;
+    if (Array.isArray(s.deck)) state.deck = s.deck;
+    if (Array.isArray(s.relics)) state.relics = s.relics;
+    if (Array.isArray(s.potions)) state.potions = s.potions;
+    if (s.edits) state.edits = s.edits;
+    if (s.model) {
+      for (const k of MODEL_KEYS) if (Number.isFinite(s.model[k])) state.model[k] = s.model[k];
+      if (s.model.cardCoef) Object.assign(state.model.cardCoef, s.model.cardCoef);
+    }
+    if (s.compare) state.compare = s.compare;
+    if (typeof s.showTarget === 'boolean') state.showTarget = s.showTarget;
+  } catch (e) { /* ignore broken save */ }
+}
+
+/* ---------------- unit model ---------------- */
+function unitView(u) {
+  const e = state.edits.units[u.id] || {};
+  return {
+    ...u,
+    hp: e.hp != null ? Number(e.hp) : u.hp,
+    attack: e.attack != null ? Number(e.attack) : u.attack,
+    defence: e.defence != null ? Number(e.defence) : u.defence,
+    cost: e.cost != null ? Number(e.cost) : u.cost,
+    dodge: e.dodge != null ? Number(e.dodge) : u.dodge,
+  };
+}
+
+function simulateUnit(u, level = 0, model = state.model) {
+  const attack = u.attack + (level > 0 ? (u.upgrade_points || 0) : 0);
+  const branch = u.id === 'soldier' && level > 0 ? 'missile' : null;
+  const skills = (u.skills || []).filter(s => !branch || !s.branch || s.branch === branch)
+    .filter(s => Array.isArray(s.unlock) ? s.unlock.includes(level) : level >= (s.unlock || 0));
+  const active = skills.filter(s => !['passive', 'aura_passive', 'combo_passive', 'stealth_passive'].includes(s.kind)
+    && (s.rate > 0 || s.kind === 'heal' || s.kind === 'summon'));
+  const ranged = active.some(s => s.kind !== 'heal' && s.range >= 250);
+  const uptime = ranged ? model.ranged_uptime : model.melee_uptime;
+  let t = 0, dmg = 0, heal = 0, summonBonus = 0, casts = 0;
+  const ready = {};
+  for (const s of active) ready[s.id || s.name] = 0;
+  while (t < model.window - 1e-9 && casts < 200) {
+    const avail = active.filter(s => (ready[s.id || s.name] || 0) <= t + 1e-9);
+    if (!avail.length) {
+      const next = Math.min(...active.map(s => ready[s.id || s.name] || 0));
+      t = Number.isFinite(next) ? next : model.window;
+      continue;
+    }
+    avail.sort((a, b) => (b.priority - a.priority) || String(a.id || a.name).localeCompare(String(b.id || b.name)));
+    const s = avail[0];
+    const start = t;
+    const end = start + model.cast;
+    ready[s.id || s.name] = start + Math.max(s.cooldown || 1, model.cast);
+    casts++;
+    if (end <= model.window) {
+      if (s.kind === 'heal') heal += attack * (s.rate || 1);
+      else if (s.kind === 'summon') { if (!summonBonus) summonBonus = 50; }
+      else {
+        const perHit = Math.max(Math.floor(attack * (s.rate || 1)) - Math.ceil(model.target_def / Math.max(1, s.hits || 1)), 1);
+        const targets = (s.kind === 'area' || s.kind === 'dash') ? model.area_targets : 1;
+        dmg += perHit * (s.hits || 1) * targets;
+      }
+    }
+    t = end;
+  }
+  const dps = dmg / model.window * uptime;
+  const hps = heal / model.window * uptime;
+  const output = dps + model.heal_weight * hps;
+  const ehp = u.hp * 15 / Math.max(15 - u.defence, 1) / (1 - u.dodge * 0.7);
+  const bodyPower = model.reference_power * Math.sqrt((ehp / model.reference_hp) * (output / model.reference_output));
+  const power = bodyPower + summonBonus;
+  return { ehp, dps, hps, output, power, bodyPower, uptime, casts, summonBonus };
+}
+
+function soldierBaseline() { return simulateUnit(unitView(UNIT_BY_ID.soldier), 0); }
+function unitPower(u, level = 0) { return simulateUnit(unitView(u), level).power; }
+function trainedPower(u) {
+  const v = unitView(u);
+  const l1 = simulateUnit(v, 1).power;
+  const l0 = simulateUnit(v, 0).power;
+  if (l1 >= l0) return l1;
+  // Conservative floor: some upgraded skills carry special effects this model
+  // does not price (chain lightning, frost slow, ...). Price the points only.
+  return simulateUnit({ ...v, attack: v.attack + (u.upgrade_points || 0) }, 0).power;
+}
+function unitTargetPower(u) {
+  if (!u.target) return null;
+  const v = { ...unitView(u), hp: u.target.hp, attack: u.target.attack, defence: u.target.defence, cost: u.target.cost };
+  return simulateUnit(v, 0).power;
+}
+
+/* ---------------- card model ---------------- */
+function cardBudget(cost) { return cost <= 0 ? 100 : 100 * Math.pow(cost, 0.8); }
+
+function effectValue(e, upgraded = false, model = state.model) {
+  const k = kindName(e.kind == null ? 0 : e.kind);
+  const coef = model.cardCoef || {};
+  let a = Number(e.amount || 0) + (upgraded ? Number(e.upgrade_amount || 0) : 0);
+  let sec = Number(e.status_seconds || 0) + (upgraded ? Number(e.upgrade_status_seconds || 0) : 0);
+  let rounds = Number(e.lasting_rounds == null ? 2 : e.lasting_rounds) + (upgraded ? Number(e.upgrade_lasting_rounds || 0) : 0);
+  const radius = Number(e.radius || 0);
+  switch (k) {
+    case 'ATTACK_UP': return a * coef.ATTACK_UP;
+    case 'DEFENCE_UP': return a * coef.DEFENCE_UP;
+    case 'HEAL_PERCENT': return a * coef.HEAL_PERCENT;
+    case 'POISON_ON_HIT': return a * coef.POISON_ON_HIT;
+    case 'DEATH_EXPLOSION': return a * coef.DEATH_EXPLOSION * (1 + Math.max(0, radius - 120) / 400);
+    case 'COPY_ALLY': return coef.COPY_ALLY;
+    case 'DAMAGE_ZONE': return a * coef.DAMAGE_ZONE;
+    case 'MUD_ZONE': return coef.MUD_ZONE + 15 * Math.max(0, rounds - 2);
+    case 'DRAW': return a * coef.DRAW;
+    case 'LOCK_DRAW': return coef.LOCK_DRAW;
+    case 'PAY_HP': return a * coef.PAY_HP;
+    case 'ENERGY_EACH_ROUND': return a * coef.ENERGY_EACH_ROUND;
+    case 'DEATH_ATTACK_AURA': return a * coef.DEATH_ATTACK_AURA;
+    case 'RANDOM_PLAY': return a * coef.RANDOM_PLAY;
+    case 'RECALL_ALLY': return coef.RECALL_ALLY;
+    case 'GAIN_ENERGY': return a * coef.GAIN_ENERGY;
+    case 'MAX_HP_UP': return a * coef.MAX_HP_UP;
+    case 'RETAIN_ALLIES': return coef.RETAIN_ALLIES - 15 * a;
+    case 'WEAKNESS': return a * coef.WEAKNESS;
+    case 'VULNERABILITY': return a * coef.VULNERABILITY;
+    case 'DEFENCE_DOWN': return a * coef.DEFENCE_DOWN;
+    case 'PARALYSIS': return a * coef.PARALYSIS;
+    case 'CONVERT_ENEMY': return coef.CONVERT_ENEMY;
+    case 'FRENZY': return coef.FRENZY;
+    case 'RETREAT_DRAW': return coef.RETREAT_DRAW + 15 * a;
+    case 'DIVERSE_ARMY': return coef.DIVERSE_ARMY + 20 * a;
+    case 'KEEP_DISTANCE': return coef.KEEP_DISTANCE + 1.5 * (a - 100);
+    case 'JUDGER': return coef.JUDGER + 10 * a;
+    case 'COMRADE': return coef.COMRADE;
+    case 'TEMPORARY_UPGRADE': return coef.TEMPORARY_UPGRADE;
+    case 'BLEED': return a * Math.max(1, sec) * coef.BLEED;
+    case 'HEALING_BAN': return coef.HEALING_BAN + 2.5 * Math.max(1, sec);
+    case 'ARMOR_SHRED': return coef.ARMOR_SHRED + 15 * Math.max(0, a - 1);
+    case 'SLEEP': return coef.SLEEP + 4 * Math.max(1, sec);
+    case 'SHIELD': return a * coef.SHIELD;
+    case 'OVERFLOW_SHIELD': return coef.OVERFLOW_SHIELD;
+    case 'MISSING_HEALTH_SHIELD': return a * coef.MISSING_HEALTH_SHIELD;
+    case 'KNOCKBACK_IMMUNITY': return coef.KNOCKBACK_IMMUNITY;
+    case 'TUTOR_UNIT': return coef.TUTOR_UNIT;
+    case 'DISCARD_DRAW': return a * coef.DISCARD_DRAW;
+    case 'SACRIFICE': return coef.SACRIFICE + 45 * (4 / Math.max(1, a));
+    case 'RESURRECT': return coef.RESURRECT;
+    case 'DEATH_DRAW': return coef.DEATH_DRAW;
+    case 'ARMY_ATTACK': return a * coef.ARMY_ATTACK;
+    case 'ARMY_DEFENCE': return a * coef.ARMY_DEFENCE;
+    case 'ARMY_SPEED': return a * coef.ARMY_SPEED;
+    case 'BATTLE_STANDARD': return 40 * a;
+    case 'SPIKE_TRAP': return 30 + a * coef.SPIKE_TRAP;
+    case 'TRANSCRIBE': return coef.TRANSCRIBE + (upgraded && e.upgrade_upgrades_drawn_cards ? 20 : 0);
+    case 'REFORMATION': return coef.REFORMATION;
+    case 'HAND_DISCOUNT': return a * coef.HAND_DISCOUNT;
+    case 'OVERDRAFT': return a * coef.OVERDRAFT - 15 * Number(e.next_round_penalty || 3);
+    case 'THRIFT': return coef.THRIFT;
+    default: return 0;
+  }
+}
+
+function cardView(c) {
+  const e = state.edits.cards[c.id] || {};
+  return { ...c, cost: e.cost != null ? Number(e.cost) : c.cost, effects: e.effects || c.effects };
+}
+function cardPower(c) {
+  if (c.category === 'recruit') {
+    const u = UNIT_BY_ID[c.unit_id];
+    return u ? unitPower(u) : 0;
+  }
+  return sum((c.effects || []).map(e => effectValue(e, false)));
+}
+function cardUpgradePower(c) {
+  if (c.category === 'recruit') {
+    const u = UNIT_BY_ID[c.unit_id];
+    return u ? trainedPower(u) : 0;
+  }
+  return sum((c.effects || []).map(e => effectValue(e, true)));
+}
+function cardStats(c) {
+  const v = cardView(c);
+  const p = cardPower(v), up = cardUpgradePower(v);
+  const cost = Math.max(0, v.cost), budget = cardBudget(cost);
+  const upgradedCost = Math.max(0, cost + (v.upgrade_cost || 0));
+  const upgradedBudget = cardBudget(upgradedCost);
+  const targetCost = v.target_cost == null ? cost : Math.max(0, v.target_cost);
+  const targetBudget = cardBudget(targetCost);
+  return {
+    power: p, upgradePower: up, upgradeDelta: up - p, cost, targetCost: v.target_cost, budget,
+    ratio: budget ? p / budget : null, targetRatio: targetBudget ? p / targetBudget : null,
+    upgradedCost, upgradedBudget,
+    upgradedRatio: upgradedBudget ? up / upgradedBudget : null,
+    perCost: cost ? p / cost : null,
+  };
+}
+
+function relicPower(r) {
+  const e = state.edits.relics[r.id];
+  return e && e.power != null ? Number(e.power) : Number(r.power || 0);
+}
+function potionPower(p) {
+  const e = state.edits.potions[p.id];
+  return e && e.power != null ? Number(e.power) : Number(p.power || 0);
+}
+
+/* ---------------- build summary ---------------- */
+function deckEntries() {
+  const map = new Map();
+  for (const d of state.deck) {
+    if (!CARD_BY_ID[d.id] || d.count <= 0) continue;
+    map.set(d.id, (map.get(d.id) || 0) + Number(d.count));
+  }
+  return Array.from(map.entries()).map(([id, count]) => ({ id, count, card: CARD_BY_ID[id] }));
+}
+function deckCards() {
+  const out = [];
+  for (const e of deckEntries()) for (let i = 0; i < e.count; i++) out.push(cardView(e.card));
+  return out;
+}
+function buildSummary() {
+  const cards = deckCards();
+  const recruits = cards.filter(c => c.category === 'recruit');
+  const effects = cards.filter(c => c.category === 'effect');
+  const deckPower = sum(cards.map(cardPower));
+  const unitPowerSum = sum(recruits.map(cardPower));
+  const effectPower = sum(effects.map(cardPower));
+  const relicPowerSum = sum(state.relics.map(id => RELIC_BY_ID[id]).filter(Boolean).map(relicPower));
+  const potionPowerSum = sum(state.potions.map(id => POTION_BY_ID[id]).filter(Boolean).map(potionPower));
+  const total = deckPower + relicPowerSum + potionPowerSum;
+  const totalCost = sum(cards.map(c => cardView(c).cost));
+  const tags = {};
+  for (const c of cards) for (const t of (c.tags || [])) tags[t] = (tags[t] || 0) + 1;
+  return {
+    cards, recruits, effects, deckPower, unitPowerSum, effectPower,
+    relicPowerSum, potionPowerSum, total, totalCost,
+    avgCost: cards.length ? totalCost / cards.length : 0,
+    efficiency: totalCost ? deckPower / totalCost : 0,
+    tags, recruitRatio: cards.length ? recruits.length / cards.length : 0,
+    over: effects.filter(c => { const s = cardStats(c); return s.ratio != null && s.ratio > 1.3; }),
+    under: effects.filter(c => { const s = cardStats(c); return s.ratio != null && s.ratio < 0.45 && c.role !== 'support'; }),
+  };
+}
+function warnings(s) {
+  const out = [];
+  if (!s.recruits.length) out.push(['bad', '没有征召牌', '卡组无法召唤单位。至少放 3 张征召牌。']);
+  else if (s.recruitRatio < 0.3) out.push(['warn', '征召牌比例偏低', `当前 ${(s.recruitRatio * 100).toFixed(0)}%，建议 35–50%。`]);
+  if (s.avgCost > 2.2) out.push(['warn', '平均费用偏高', `当前 ${s.avgCost.toFixed(2)}，建议 1.6–2.0；高费牌容易卡手。`]);
+  if (s.cards.length > 30) out.push(['warn', '卡组过厚', `${s.cards.length} 张，关键牌上手率会下降。`]);
+  if (s.cards.length < 10) out.push(['warn', '卡组过薄', `${s.cards.length} 张，抽牌/消耗后容易断档。`]);
+  if (s.over.length) out.push(['warn', `有 ${s.over.length} 张牌超出预算`, s.over.map(c => c.name).join('、') + '。优先实测，不要直接砍。']);
+  if (s.under.length) out.push(['warn', `有 ${s.under.length} 张牌低于预算`, s.under.map(c => c.name).join('、') + '。检查是否费用过高。']);
+  if (state.relics.length > 10) out.push(['warn', '遗物过多', '一局目标 8–10 件；超过 10 件会让触发提示刷屏。']);
+  if (state.potions.length > 3) out.push(['warn', '药水超过 3 格', '需要替换或扩展腰带。']);
+  if (!out.length) out.push(['ok', '构筑看起来健康', '没有触发明显的预算/比例警告。']);
+  return out;
+}
+function snapshot() {
+  return {
+    at: new Date().toISOString(), summary: buildSummary(),
+    deck: JSON.parse(JSON.stringify(state.deck)), relics: [...state.relics], potions: [...state.potions],
+    edits: JSON.parse(JSON.stringify(state.edits)), model: JSON.parse(JSON.stringify(state.model)),
+  };
+}
+
+/* ---------------- SVG helpers ---------------- */
+function svgDonut(segments, size = 190) {
+  const total = sum(segments.map(s => s.value));
+  if (!total) return '<div class="empty">还没有加入内容</div>';
+  const r = 68, c = 2 * Math.PI * r, cx = size / 2, cy = size / 2;
+  let offset = 0;
+  const arcs = segments.filter(s => s.value > 0).map(s => {
+    const len = c * s.value / total;
+    const el = `<circle cx="${cx}" cy="${cy}" r="${r}" fill="none" stroke="${s.color}" stroke-width="18"
+      stroke-dasharray="${len} ${c - len}" stroke-dashoffset="${-offset}" transform="rotate(-90 ${cx} ${cy})"
+      stroke-linecap="butt"></circle>`;
+    offset += len;
+    return el;
+  }).join('');
+  return `<svg class="svg" viewBox="0 0 ${size} ${size}" role="img">
+    <circle cx="${cx}" cy="${cy}" r="${r}" fill="none" stroke="#0b1117" stroke-width="18"></circle>
+    ${arcs}
+    <text x="${cx}" y="${cy - 4}" text-anchor="middle" fill="#e8eef5" font-size="22" font-weight="800">${fmt(total, 0)}</text>
+    <text x="${cx}" y="${cy + 15}" text-anchor="middle" fill="#93a4b5" font-size="10">总战力 P</text>
+  </svg>`;
+}
+function svgBars(items, opts = {}) {
+  const width = 440, rowH = 26, padL = 96, padR = 56;
+  const max = Math.max(1, ...items.map(i => i.value));
+  const height = Math.max(40, items.length * rowH + 16);
+  const rows = items.map((it, i) => {
+    const y = 10 + i * rowH;
+    const w = Math.max(2, (width - padL - padR) * it.value / max);
+    return `<text x="0" y="${y + 11}" fill="#b9c9d8" font-size="10.5">${esc(it.label)}</text>
+      <rect x="${padL}" y="${y}" width="${width - padL - padR}" height="14" rx="5" fill="#0b1117"></rect>
+      <rect x="${padL}" y="${y}" width="${w}" height="14" rx="5" fill="${it.color || '#54d6c8'}"></rect>
+      <text x="${width - 2}" y="${y + 11}" text-anchor="end" fill="#93a4b5" font-size="10">${fmt(it.value, 0)}</text>`;
+  }).join('');
+  return `<svg class="svg" viewBox="0 0 ${width} ${height}" role="img">${rows}</svg>`;
+}
+function svgRadar(axes, values, size = 230) {
+  const cx = size / 2, cy = size / 2 + 4, r = 78, n = axes.length;
+  const pt = (i, v) => {
+    const a = -Math.PI / 2 + i * 2 * Math.PI / n;
+    return [cx + Math.cos(a) * r * v / 100, cy + Math.sin(a) * r * v / 100];
+  };
+  const grid = [25, 50, 75, 100].map(level => {
+    const pts = axes.map((_, i) => pt(i, level).map(x => x.toFixed(1)).join(',')).join(' ');
+    return `<polygon points="${pts}" fill="none" stroke="#2a3a4a" stroke-width="1"></polygon>`;
+  }).join('');
+  const spokes = axes.map((_, i) => {
+    const [x, y] = pt(i, 100);
+    return `<line x1="${cx}" y1="${cy}" x2="${x}" y2="${y}" stroke="#2a3a4a" stroke-width="1"></line>`;
+  }).join('');
+  const poly = axes.map((_, i) => pt(i, values[i]).map(x => x.toFixed(1)).join(',')).join(' ');
+  const labels = axes.map((a, i) => {
+    const [x, y] = pt(i, 118);
+    return `<text x="${x}" y="${y + 3}" text-anchor="middle" fill="#93a4b5" font-size="10">${esc(a)}</text>`;
+  }).join('');
+  return `<svg class="svg" viewBox="0 0 ${size} ${size}" role="img">${grid}${spokes}
+    <polygon points="${poly}" fill="rgba(84,214,200,.18)" stroke="#54d6c8" stroke-width="2"></polygon>${labels}</svg>`;
+}
+
+/* ---------------- summary ---------------- */
+function renderSummary() {
+  const s = buildSummary();
+  const cmp = state.compare.A ? snapshotSummaryDelta(s, state.compare.A.summary) : null;
+  const delta = cmp;
+  const item = (label, value, sub, cls = '', d = null) => `<div class="stat ${cls}">
+    <div class="label">${label}</div>
+    <div class="value">${value}${d != null ? `<span class="delta ${d >= 0 ? 'up' : 'down'}">${signed(d, 0)}</span>` : ''}</div>
+    <div class="sub">${sub}</div></div>`;
+  $('#summary').innerHTML = [
+    item('总战力', fmt(s.total, 0), `${s.cards.length} 张牌 + ${state.relics.length} 遗物 + ${state.potions.length} 药水`, 'gold', delta ? delta.total : null),
+    item('卡组战力', fmt(s.deckPower, 0), `单位 ${fmt(s.unitPowerSum, 0)} / 效果 ${fmt(s.effectPower, 0)}`, 'blue', delta ? delta.deckPower : null),
+    item('单位战力', fmt(s.unitPowerSum, 0), `${s.recruits.length} 张征召牌`, '', delta ? delta.unitPowerSum : null),
+    item('遗物战力', fmt(s.relicPowerSum, 0), `${state.relics.length} 件`, 'purple', delta ? delta.relicPowerSum : null),
+    item('药水战力', fmt(s.potionPowerSum, 0), `${state.potions.length} 瓶`, '', delta ? delta.potionPowerSum : null),
+    item('每费战力', fmt(s.efficiency, 1), `平均费用 ${fmt(s.avgCost, 2)}`, 'gold', delta ? delta.efficiency : null),
+  ].join('');
+}
+function snapshotSummaryDelta(now, old) {
+  if (!old) return null;
+  return {
+    total: now.total - old.total, deckPower: now.deckPower - old.deckPower,
+    unitPowerSum: now.unitPowerSum - old.unitPowerSum,
+    relicPowerSum: now.relicPowerSum - old.relicPowerSum,
+    potionPowerSum: now.potionPowerSum - old.potionPowerSum,
+    efficiency: now.efficiency - old.efficiency,
+  };
+}
+function renderFooter() {
+  $('#footer').innerHTML = `模型 ${esc(DATA.meta.version)} · 士兵 = 100 P · 数据版本 ${esc(DATA.meta.date)} · 设计估价，不是实战胜率`;
+}
+
+/* ---------------- overview ---------------- */
+function renderOverview() {
+  const s = buildSummary(), w = warnings(s);
+  const comp = [
+    { label: '卡组', value: s.deckPower, color: '#54d6c8' },
+    { label: '遗物', value: s.relicPowerSum, color: '#b48cff' },
+    { label: '药水', value: s.potionPowerSum, color: '#e8b45a' },
+  ];
+  const costMap = {};
+  for (const c of s.cards) {
+    const cost = Math.max(0, cardView(c).cost);
+    costMap[cost] = costMap[cost] || { count: 0, power: 0 };
+    costMap[cost].count++;
+    costMap[cost].power += cardPower(c);
+  }
+  const costBars = Object.keys(costMap).sort((a, b) => a - b).map(k => ({
+    label: `${k} 费`, value: costMap[k].power, color: Number(k) >= 3 ? '#e8b45a' : '#54d6c8',
+  }));
+  const top = [...s.effects].sort((a, b) => cardPower(b) - cardPower(a)).slice(0, 8)
+    .map(c => ({ label: c.name, value: cardPower(c), color: c.role === 'core' ? '#e8b45a' : '#6aa9ff' }));
+  $('#view').innerHTML = `<div class="grid2">
+      <div class="panel"><h2>战力构成</h2>
+        <p class="hint">卡组、遗物、药水三类来源。总战力是设计估价，不是胜率。</p>
+        ${'<div class="donut-wrap">'}${svgDonut(comp)}${'</div>'}
+        <div class="legend">${comp.map(x => `<span><i style="background:${x.color}"></i>${x.label} ${fmt(x.value, 0)}</span>`).join('')}</div>
+      </div>
+      <div class="panel"><h2>六维评估</h2>
+        <p class="hint">按卡牌标签与征召比例估算，用来发现“全是输出/没有资源”这类结构问题。</p>
+        ${svgRadar(['输出', '生存', '资源', '控制', '成长', '稳定'], radarValues(s))}
+      </div>
+    </div>
+    <div class="grid2">
+      <div class="panel"><h2>费用曲线</h2>
+        <p class="hint">每费卡组的战力分布。高费牌应明显高于低费牌，否则就是“贵而弱”。</p>
+        ${costBars.length ? svgBars(costBars) : '<div class="empty">还没有卡牌</div>'}
+      </div>
+      <div class="panel"><h2>诊断</h2>
+        <p class="hint">先看红色/橙色，再决定改什么。</p>
+        <div class="warnlist">${w.map(([cls, title, body]) => `<div class="warn ${cls}"><b>${esc(title)}</b><span>${esc(body)}</span></div>`).join('')}</div>
+      </div>
+    </div>
+    <div class="panel"><h2>卡组 Top 8</h2>
+      <p class="hint">按单卡 P 排序。数值高不一定该削，先看它是否兑现条件太容易。</p>
+      ${top.length ? svgBars(top) : '<div class="empty">还没有效果牌</div>'}
+    </div>
+    <div class="panel"><h2>A/B 对比</h2>
+      <p class="hint">调参前存 A，改完存 B，再看差值是来自单位、卡牌、遗物还是药水。</p>
+      ${renderCompareTable()}
+    </div>`;
+}
+function radarValues(s) {
+  const total = Math.max(1, s.deckPower);
+  const share = (tag) => {
+    const p = sum(s.cards.filter(c => (c.tags || []).includes(tag)).map(cardPower));
+    return clamp(p / total * 100 * 2.2, 0, 100);
+  };
+  return [
+    share('输出'), share('增益'), share('资源'), share('控制'),
+    clamp(state.relics.length * 9 + s.cards.filter(c => c.max_upgrade > 0).length * 1.5, 0, 100),
+    clamp(s.recruitRatio * 150, 0, 100),
+  ];
+}
+function renderCompareTable() {
+  const A = state.compare.A, B = state.compare.B;
+  if (!A && !B) return '<div class="empty">还没有快照。点顶部“存为 A”，改构筑后再“存为 B”。</div>';
+  const rows = [
+    ['总战力', A ? A.summary.total : null, B ? B.summary.total : null, 'total'],
+    ['卡组', A ? A.summary.deckPower : null, B ? B.summary.deckPower : null, 'deckPower'],
+    ['单位', A ? A.summary.unitPowerSum : null, B ? B.summary.unitPowerSum : null, 'unitPowerSum'],
+    ['效果牌', A ? A.summary.effectPower : null, B ? B.summary.effectPower : null, 'effectPower'],
+    ['遗物', A ? A.summary.relicPowerSum : null, B ? B.summary.relicPowerSum : null, 'relicPowerSum'],
+    ['药水', A ? A.summary.potionPowerSum : null, B ? B.summary.potionPowerSum : null, 'potionPowerSum'],
+    ['每费战力', A ? A.summary.efficiency : null, B ? B.summary.efficiency : null, 'efficiency'],
+    ['卡牌数', A ? A.summary.cards.length : null, B ? B.summary.cards.length : null, 'count'],
+    ['平均费用', A ? A.summary.avgCost : null, B ? B.summary.avgCost : null, 'avgCost'],
+  ];
+  return `<div class="tablewrap" style="max-height:none"><table style="min-width:520px">
+    <thead><tr><th>指标</th><th class="num">A</th><th class="num">B</th><th class="num">B − A</th></tr></thead>
+    <tbody>${rows.map(([label, a, b, key]) => {
+      const d = a != null && b != null ? b - a : null;
+      const digits = key === 'efficiency' || key === 'avgCost' ? 2 : 0;
+      return `<tr><td class="name">${label}</td><td class="num">${a == null ? '—' : fmt(a, digits)}</td>
+        <td class="num">${b == null ? '—' : fmt(b, digits)}</td>
+        <td class="num" style="color:${d == null ? '#93a4b5' : d >= 0 ? '#6ed49a' : '#f16a6a'}">${d == null ? '—' : signed(d, digits)}</td></tr>`;
+    }).join('')}</tbody></table></div>
+    <div class="toolbar" style="margin-top:10px"><button class="btn small" onclick="clearCompare()">清空对比</button>
+      <span class="tip">A / B 只保存快照，不覆盖当前构筑。</span></div>`;
+}
+
+/* ---------------- units table ---------------- */
+function renderUnits() {
+  const search = state.search.toLowerCase(), faction = state.filter.units, sort = state.sort.units;
+  let list = DATA.units.filter(u => {
+    if (faction !== 'all' && u.team !== faction) return false;
+    if (search && !(u.name + ' ' + (u.role || '') + ' ' + (u.tier || '')).toLowerCase().includes(search)) return false;
+    return true;
+  }).map(u => {
+    const v = unitView(u);
+    return { u, v, sim: simulateUnit(v, 0), target: unitTargetPower(u) };
+  });
+  list.sort((a, b) => {
+    if (sort === 'name') return a.u.name.localeCompare(b.u.name);
+    if (sort === 'cost') return a.v.cost - b.v.cost || b.sim.power - a.sim.power;
+    if (sort === 'perCost') return (b.sim.power / Math.max(1, b.v.cost)) - (a.sim.power / Math.max(1, a.v.cost));
+    return b.sim.power - a.sim.power;
+  });
+  const rows = list.map(({ u, v, sim, target }) => {
+    const status = target == null ? '' : (() => {
+      const p = target ? (sim.power - target) / target : 0;
+      if (Math.abs(p) <= 0.1) return `<span class="pill good">达标</span>`;
+      if (p > 0.15) return `<span class="pill warn">+${(p * 100).toFixed(0)}%</span>`;
+      if (p < -0.15) return `<span class="pill bad">${(p * 100).toFixed(0)}%</span>`;
+      return `<span class="pill">接近</span>`;
+    })();
+    return `<tr data-unit="${esc(u.id)}">
+      <td class="name">${esc(u.name)}</td>
+      <td>${u.team === 'ally' ? '<span class="pill good">己方</span>' : `<span class="pill">${esc(u.tier || '敌方')}</span>`}</td>
+      <td class="num">${v.hp}</td><td class="num">${v.attack}</td><td class="num">${v.defence}</td>
+      <td class="num">${v.cost}</td><td class="num"><b>${fmt(sim.power, 1)}</b></td>
+      <td class="num">${fmt(sim.power / Math.max(1, v.cost), 1)}</td>
+      <td class="num">${target == null ? '—' : fmt(target, 1)}</td><td>${status}</td>
+      <td>${u.team === 'ally' ? `<button class="btn small" data-add-unit="${esc(u.id)}">加入</button>` : ''}</td></tr>`;
+  }).join('');
+  $('#view').innerHTML = `<div class="panel"><h2>单位战力</h2>
+    <p class="hint">点击行查看技能与公式；己方单位可加入卡组。P = 100 × √(有效生命/150 × 等效输出/4.0)。</p>
+    <div class="toolbar"><input id="uSearch" placeholder="搜索单位 / 定位 / 威胁级" value="${esc(state.search)}">
+      <select id="uFaction"><option value="all" ${faction === 'all' ? 'selected' : ''}>全部阵营</option>
+        <option value="ally" ${faction === 'ally' ? 'selected' : ''}>己方</option>
+        <option value="enemy" ${faction === 'enemy' ? 'selected' : ''}>敌方</option></select>
+      <select id="uSort"><option value="power" ${sort === 'power' ? 'selected' : ''}>按战力</option>
+        <option value="perCost" ${sort === 'perCost' ? 'selected' : ''}>按每费战力</option>
+        <option value="cost" ${sort === 'cost' ? 'selected' : ''}>按费用</option>
+        <option value="name" ${sort === 'name' ? 'selected' : ''}>按名称</option></select>
+      <button class="btn small" id="applyTargetUnits">套用目标三围</button>
+      <button class="btn small" id="resetUnitEdits">恢复当前</button>
+      <span class="tip">共 ${list.length} 个单位</span></div>
+    <div class="tablewrap"><table><thead><tr><th>单位</th><th>阵营</th><th class="num">生命</th><th class="num">攻击</th>
+      <th class="num">防御</th><th class="num">费</th><th class="num">P</th><th class="num">P/费</th>
+      <th class="num">目标 P</th><th>状态</th><th></th></tr></thead>
+      <tbody>${rows || '<tr><td colspan="11" class="empty">没有匹配的单位</td></tr>'}</tbody></table></div></div>`;
+  $('#uSearch').oninput = (e) => { state.search = e.target.value; renderUnits(); };
+  $('#uFaction').onchange = (e) => { state.filter.units = e.target.value; renderUnits(); };
+  $('#uSort').onchange = (e) => { state.sort.units = e.target.value; renderUnits(); };
+  $('#applyTargetUnits').onclick = applyTargetUnits;
+  $('#resetUnitEdits').onclick = resetUnitEdits;
+  $$('[data-unit]').forEach(tr => tr.onclick = () => openUnit(tr.dataset.unit));
+  $$('[data-add-unit]').forEach(b => b.onclick = (e) => { e.stopPropagation(); addUnit(b.dataset.addUnit); });
+}
+
+/* ---------------- cards table ---------------- */
+function ratioCell(ratio, targetRatio = null, showTarget = false) {
+  if (ratio == null) return '<span class="tip">—</span>';
+  const text = showTarget && targetRatio != null ? `${ratio.toFixed(2)} → ${targetRatio.toFixed(2)}` : ratio.toFixed(2);
+  const barRatio = showTarget && targetRatio != null ? targetRatio : ratio;
+  return `<div class="ratio"><div class="bar"><i style="width:${clamp(barRatio / 1.5 * 100, 0, 100)}%"></i></div><span>${text}</span></div>`;
+}
+function renderCards() {
+  const search = state.search.toLowerCase(), cat = state.filter.cards, cost = state.filter.cost;
+  const rarity = state.filter.rarity || 'all', sort = state.sort.cards;
+  let list = DATA.cards.filter(c => {
+    if (cat !== 'all' && c.category !== cat) return false;
+    if (cost !== 'all' && String(cardView(c).cost) !== String(cost)) return false;
+    if (rarity !== 'all' && c.rarity !== rarity) return false;
+    if (search && !(c.name + ' ' + (c.desc || '') + ' ' + (c.tags || []).join(' ')).toLowerCase().includes(search)) return false;
+    return true;
+  }).map(c => ({ c, s: cardStats(c) }));
+  list.sort((a, b) => {
+    if (sort === 'name') return a.c.name.localeCompare(b.c.name);
+    if (sort === 'cost') return a.s.cost - b.s.cost || b.s.power - a.s.power;
+    if (sort === 'ratio') return (b.s.ratio || 0) - (a.s.ratio || 0);
+    if (sort === 'upgrade') return b.s.upgradeDelta - a.s.upgradeDelta;
+    return b.s.power - a.s.power;
+  });
+  const rows = list.map(({ c, s }) => {
+    const effRatio = (s.targetCost != null && s.targetCost !== s.cost) ? s.targetRatio : s.ratio;
+    const status = effRatio == null ? '' : effRatio > 1.3 ? '<span class="pill warn">超预算</span>'
+      : effRatio < 0.45 ? '<span class="pill bad">偏低</span>' : '<span class="pill good">正常</span>';
+    return `<tr data-card="${esc(c.id)}"><td class="name">${esc(c.name)}</td>
+      <td class="num">${s.cost}${s.targetCost != null && s.targetCost !== s.cost ? ` <span class="sub">→${s.targetCost}</span>` : ''}</td>
+      <td>${c.category === 'recruit' ? '<span class="pill good">征召</span>' : `<span class="pill">${esc(ROLE_CN[c.role] || '效果')}</span>`}</td>
+      <td>${rarityPill(c.rarity)}</td><td class="num"><b>${fmt(s.power, 1)}</b></td>
+      <td class="num">${fmt(s.upgradePower, 1)}</td><td>${ratioCell(s.ratio, s.targetRatio, s.targetCost != null && s.targetCost !== s.cost)}</td><td>${status}</td>
+      <td>${(c.tags || []).map(t => `<span class="pill">${esc(t)}</span>`).join(' ')}</td>
+      <td><button class="btn small" data-add-card="${esc(c.id)}">加入</button></td></tr>`;
+  }).join('');
+  $('#view').innerHTML = `<div class="panel"><h2>卡牌战力</h2>
+    <p class="hint">效率 = 单卡 P / 费用预算。治疗/护盾/控制会被单体估价低估，低效率不一定弱。</p>
+    <div class="toolbar"><input id="cSearch" placeholder="搜索卡牌 / 效果 / 标签" value="${esc(state.search)}">
+      <select id="cCat"><option value="all" ${cat === 'all' ? 'selected' : ''}>全部类型</option>
+        <option value="effect" ${cat === 'effect' ? 'selected' : ''}>效果/能力</option>
+        <option value="recruit" ${cat === 'recruit' ? 'selected' : ''}>征召</option></select>
+      <select id="cCost"><option value="all" ${cost === 'all' ? 'selected' : ''}>全部费用</option>
+        ${[0,1,2,3,4,5].map(x => `<option value="${x}" ${String(cost) === String(x) ? 'selected' : ''}>${x} 费</option>`).join('')}</select>
+      <select id="cRarity"><option value="all" ${rarity === 'all' ? 'selected' : ''}>全部稀有度</option>
+        <option value="common" ${rarity === 'common' ? 'selected' : ''}>普通</option>
+        <option value="rare" ${rarity === 'rare' ? 'selected' : ''}>稀有</option></select>
+      <select id="cSort"><option value="power" ${sort === 'power' ? 'selected' : ''}>按战力</option>
+        <option value="ratio" ${sort === 'ratio' ? 'selected' : ''}>按效率</option>
+        <option value="upgrade" ${sort === 'upgrade' ? 'selected' : ''}>按强化提升</option>
+        <option value="cost" ${sort === 'cost' ? 'selected' : ''}>按费用</option>
+        <option value="name" ${sort === 'name' ? 'selected' : ''}>按名称</option></select>
+      <button class="btn small" id="applyTargetCosts">套用建议费用</button>
+      <button class="btn small" id="resetCardEdits">恢复当前</button>
+      <span class="tip">共 ${list.length} 张</span></div>
+    <div class="tablewrap"><table><thead><tr><th>卡牌</th><th class="num">费</th><th>类型</th><th>稀有</th>
+      <th class="num">基础 P</th><th class="num">强化 P</th><th>效率</th><th>状态</th><th>标签</th><th></th></tr></thead>
+      <tbody>${rows || '<tr><td colspan="10" class="empty">没有匹配的卡牌</td></tr>'}</tbody></table></div></div>`;
+  $('#cSearch').oninput = (e) => { state.search = e.target.value; renderCards(); };
+  $('#cCat').onchange = (e) => { state.filter.cards = e.target.value; renderCards(); };
+  $('#cCost').onchange = (e) => { state.filter.cost = e.target.value; renderCards(); };
+  $('#cRarity').onchange = (e) => { state.filter.rarity = e.target.value; renderCards(); };
+  $('#cSort').onchange = (e) => { state.sort.cards = e.target.value; renderCards(); };
+  $('#applyTargetCosts').onclick = applyTargetCosts;
+  $('#resetCardEdits').onclick = resetCardEdits;
+  $$('[data-card]').forEach(tr => tr.onclick = () => openCard(tr.dataset.card));
+  $$('[data-add-card]').forEach(b => b.onclick = (e) => { e.stopPropagation(); addCard(b.dataset.addCard); });
+}
+
+/* ---------------- relics table ---------------- */
+function renderRelics() {
+  const search = state.search.toLowerCase(), rarity = state.filter.relics;
+  const section = state.filter.section || 'all', sort = state.sort.relics;
+  let list = DATA.relics.filter(r => {
+    if (rarity !== 'all' && r.rarity !== rarity) return false;
+    if (section !== 'all' && r.section !== section) return false;
+    if (search && !(r.name + ' ' + r.effect + ' ' + r.section).toLowerCase().includes(search)) return false;
+    return true;
+  });
+  list.sort((a, b) => sort === 'name' ? a.name.localeCompare(b.name) : sort === 'price' ? b.price - a.price : relicPower(b) - relicPower(a));
+  const rows = list.map(r => `<tr data-relic="${esc(r.id)}"><td class="name">${esc(r.name)}</td>
+    <td>${rarityPill(r.rarity)}</td><td><span class="pill">${esc(r.trigger)}</span></td>
+    <td class="num"><b>${fmt(relicPower(r), 0)}</b></td><td class="num">${r.price || '不出售'}</td>
+    <td>${esc(r.section)}</td><td class="sub">${esc((r.effect || '').slice(0, 90))}${(r.effect || '').length > 90 ? '…' : ''}</td>
+    <td><button class="btn small" data-add-relic="${esc(r.id)}">加入</button></td></tr>`).join('');
+  const sections = [...new Set(DATA.relics.map(r => r.section))].sort();
+  $('#view').innerHTML = `<div class="panel"><h2>遗物战力</h2>
+    <p class="hint">P 是每场战斗的等效价值。普通 60–90，稀有 140–200，首领 300–420。</p>
+    <div class="toolbar"><input id="rSearch" placeholder="搜索遗物 / 效果 / 流派" value="${esc(state.search)}">
+      <select id="rRarity"><option value="all" ${rarity === 'all' ? 'selected' : ''}>全部稀有度</option>
+        <option value="common" ${rarity === 'common' ? 'selected' : ''}>普通</option>
+        <option value="rare" ${rarity === 'rare' ? 'selected' : ''}>稀有</option>
+        <option value="boss" ${rarity === 'boss' ? 'selected' : ''}>首领</option></select>
+      <select id="rSection"><option value="all" ${section === 'all' ? 'selected' : ''}>全部流派</option>
+        ${sections.map(s => `<option value="${esc(s)}" ${section === s ? 'selected' : ''}>${esc(s)}</option>`).join('')}</select>
+      <select id="rSort"><option value="power" ${sort === 'power' ? 'selected' : ''}>按战力</option>
+        <option value="price" ${sort === 'price' ? 'selected' : ''}>按价格</option>
+        <option value="name" ${sort === 'name' ? 'selected' : ''}>按名称</option></select>
+      <span class="tip">共 ${list.length} 件</span></div>
+    <div class="tablewrap"><table><thead><tr><th>遗物</th><th>稀有</th><th>触发</th><th class="num">P/场</th>
+      <th class="num">价格</th><th>流派</th><th>效果</th><th></th></tr></thead>
+      <tbody>${rows || '<tr><td colspan="8" class="empty">没有匹配的遗物</td></tr>'}</tbody></table></div></div>`;
+  $('#rSearch').oninput = (e) => { state.search = e.target.value; renderRelics(); };
+  $('#rRarity').onchange = (e) => { state.filter.relics = e.target.value; renderRelics(); };
+  $('#rSection').onchange = (e) => { state.filter.section = e.target.value; renderRelics(); };
+  $('#rSort').onchange = (e) => { state.sort.relics = e.target.value; renderRelics(); };
+  $$('[data-relic]').forEach(tr => tr.onclick = () => openRelic(tr.dataset.relic));
+  $$('[data-add-relic]').forEach(b => b.onclick = (e) => { e.stopPropagation(); addRelic(b.dataset.addRelic); });
+}
+
+/* ---------------- potions table ---------------- */
+function renderPotions() {
+  const search = state.search.toLowerCase(), rarity = state.filter.potions;
+  const act = state.filter.act || 'all', sort = state.sort.potions;
+  let list = DATA.potions.filter(p => {
+    if (rarity !== 'all' && p.rarity !== rarity) return false;
+    if (act !== 'all' && String(p.min_act) !== String(act)) return false;
+    if (search && !(p.name + ' ' + p.effect + ' ' + p.role).toLowerCase().includes(search)) return false;
+    return true;
+  });
+  list.sort((a, b) => sort === 'name' ? a.name.localeCompare(b.name) : sort === 'price' ? b.price - a.price : potionPower(b) - potionPower(a));
+  const rows = list.map(p => `<tr data-potion="${esc(p.id)}"><td class="name">${esc(p.name)}</td>
+    <td>${rarityPill(p.rarity)}</td><td class="num">${p.price}</td><td class="num"><b>${fmt(potionPower(p), 0)}</b></td>
+    <td class="num">${p.min_act}</td><td>${esc(p.target)}</td>
+    <td class="sub">${esc((p.effect || '').slice(0, 100))}${(p.effect || '').length > 100 ? '…' : ''}</td>
+    <td><button class="btn small" data-add-potion="${esc(p.id)}">加入</button></td></tr>`).join('');
+  $('#view').innerHTML = `<div class="panel"><h2>药水战力</h2>
+    <p class="hint">P 是一次使用的等效价值。普通 90–130，稀有 180–260，传说 350–500。</p>
+    <div class="toolbar"><input id="pSearch" placeholder="搜索药水 / 效果 / 定位" value="${esc(state.search)}">
+      <select id="pRarity"><option value="all" ${rarity === 'all' ? 'selected' : ''}>全部稀有度</option>
+        <option value="common" ${rarity === 'common' ? 'selected' : ''}>普通</option>
+        <option value="rare" ${rarity === 'rare' ? 'selected' : ''}>稀有</option>
+        <option value="legendary" ${rarity === 'legendary' ? 'selected' : ''}>传说</option></select>
+      <select id="pAct"><option value="all" ${act === 'all' ? 'selected' : ''}>全部幕</option>
+        ${[1,2,3].map(x => `<option value="${x}" ${String(act) === String(x) ? 'selected' : ''}>第 ${x} 幕起</option>`).join('')}</select>
+      <select id="pSort"><option value="power" ${sort === 'power' ? 'selected' : ''}>按战力</option>
+        <option value="price" ${sort === 'price' ? 'selected' : ''}>按价格</option>
+        <option value="name" ${sort === 'name' ? 'selected' : ''}>按名称</option></select>
+      <span class="tip">共 ${list.length} 瓶</span></div>
+    <div class="tablewrap"><table><thead><tr><th>药水</th><th>稀有</th><th class="num">价格</th><th class="num">P</th>
+      <th class="num">幕</th><th>目标</th><th>效果</th><th></th></tr></thead>
+      <tbody>${rows || '<tr><td colspan="8" class="empty">没有匹配的药水</td></tr>'}</tbody></table></div></div>`;
+  $('#pSearch').oninput = (e) => { state.search = e.target.value; renderPotions(); };
+  $('#pRarity').onchange = (e) => { state.filter.potions = e.target.value; renderPotions(); };
+  $('#pAct').onchange = (e) => { state.filter.act = e.target.value; renderPotions(); };
+  $('#pSort').onchange = (e) => { state.sort.potions = e.target.value; renderPotions(); };
+  $$('[data-potion]').forEach(tr => tr.onclick = () => openPotion(tr.dataset.potion));
+  $$('[data-add-potion]').forEach(b => b.onclick = (e) => { e.stopPropagation(); addPotion(b.dataset.addPotion); });
+}
+
+/* ---------------- deck / build actions ---------------- */
+function addCard(id, count = 1) {
+  if (!CARD_BY_ID[id]) return;
+  const found = state.deck.find(d => d.id === id);
+  if (found) found.count += count;
+  else state.deck.push({ id, count });
+  save(); render(); toast(`已加入 ${CARD_BY_ID[id].name}`);
+}
+function addUnit(id) { if (UNIT_BY_ID[id]) addCard('unit_' + id); }
+function removeCard(id) { state.deck = state.deck.filter(d => d.id !== id); save(); render(); }
+function setCount(id, count) {
+  const n = Math.max(0, Math.min(99, Math.floor(Number(count) || 0)));
+  const found = state.deck.find(d => d.id === id);
+  if (!found) return;
+  if (n <= 0) removeCard(id);
+  else { found.count = n; save(); render(); }
+}
+function addRelic(id) {
+  if (!RELIC_BY_ID[id]) return;
+  if (state.relics.includes(id)) { toast('同一件遗物不能重复携带'); return; }
+  state.relics.push(id); save(); render(); toast(`已加入 ${RELIC_BY_ID[id].name}`);
+}
+function removeRelic(id) { state.relics = state.relics.filter(x => x !== id); save(); render(); }
+function addPotion(id) {
+  if (!POTION_BY_ID[id]) return;
+  if (state.potions.length >= 3) { toast('药水带 3 格已满；先移除一瓶。'); return; }
+  state.potions.push(id); save(); render(); toast(`已加入 ${POTION_BY_ID[id].name}`);
+}
+function removePotion(index) { state.potions.splice(index, 1); save(); render(); }
+
+function applyTargetUnits() {
+  for (const u of DATA.units) {
+    if (u.team === 'ally' && u.target) {
+      state.edits.units[u.id] = {
+        hp: u.target.hp, attack: u.target.attack, defence: u.target.defence, cost: u.target.cost,
+      };
+    }
+  }
+  save(); render(); toast('已套用 11 个己方单位的目标三围');
+}
+function resetUnitEdits() {
+  state.edits.units = {};
+  save(); render(); toast('已恢复当前单位三围');
+}
+function applyTargetCosts() {
+  for (const c of DATA.cards) {
+    if (c.target_cost != null && c.target_cost !== c.cost) {
+      state.edits.cards[c.id] = { ...(state.edits.cards[c.id] || {}), cost: c.target_cost };
+    }
+  }
+  save(); render(); toast('已套用建议费用（16 张）');
+}
+function resetCardEdits() {
+  state.edits.cards = {};
+  save(); render(); toast('已恢复当前卡牌费用/效果');
+}
+
+function renderBuild() {
+  const s = buildSummary(), entries = deckEntries();
+  const recruitRows = entries.filter(e => e.card.category === 'recruit');
+  const effectRows = entries.filter(e => e.card.category === 'effect');
+  const deckRow = (e) => {
+    const c = cardView(e.card), st = cardStats(c);
+    return `<div class="deckrow"><div class="grow"><div class="nm">${esc(c.name)}</div>
+      <div class="meta">${c.category === 'recruit' ? '征召' : (ROLE_CN[c.role] || '效果')} · ${c.cost} 费 · ${fmt(st.power, 0)} P</div></div>
+      <div class="count"><button data-dec="${esc(c.id)}">−</button>
+        <input value="${e.count}" data-count="${esc(c.id)}"><button data-inc="${esc(c.id)}">+</button></div>
+      <button class="btn small danger" data-remove="${esc(c.id)}">移除</button></div>`;
+  };
+  const relics = state.relics.map(id => RELIC_BY_ID[id]).filter(Boolean);
+  const potionRows = state.potions.map((id, i) => {
+    const p = POTION_BY_ID[id];
+    return p ? `<div class="deckrow"><div class="grow"><div class="nm">${esc(p.name)}</div>
+      <div class="meta">${RARITY_CN[p.rarity]} · ${fmt(potionPower(p), 0)} P</div></div>
+      <button class="btn small danger" data-remove-potion="${i}">移除</button></div>` : '';
+  }).join('');
+  const w = warnings(s);
+  $('#view').innerHTML = `<div class="grid2">
+    <div class="panel"><h2>卡组构筑</h2>
+      <p class="hint">当前 ${s.cards.length} 张，平均 ${fmt(s.avgCost, 2)} 费，每费 ${fmt(s.efficiency, 1)} P。</p>
+      <div class="toolbar"><select id="quickCard" style="min-width:220px"><option value="">选择卡牌加入…</option>
+        ${DATA.cards.map(c => `<option value="${esc(c.id)}">${esc(c.name)} · ${c.cost}费 · ${fmt(cardPower(c), 0)}P</option>`).join('')}</select>
+        <button class="btn small" id="quickCardAdd">加入</button>
+        <button class="btn small" id="starterBtn">起始牌组</button>
+        <button class="btn small danger" id="clearDeck">清空卡组</button></div>
+      <h3>征召牌（${recruitRows.length} 种 / ${sum(recruitRows.map(x => x.count))} 张）</h3>
+      ${recruitRows.length ? recruitRows.map(deckRow).join('') : '<div class="empty">没有征召牌</div>'}
+      <h3>效果/能力牌（${effectRows.length} 种 / ${sum(effectRows.map(x => x.count))} 张）</h3>
+      ${effectRows.length ? effectRows.map(deckRow).join('') : '<div class="empty">没有效果牌</div>'}
+    </div>
+    <div class="panel"><h2>遗物与药水</h2>
+      <p class="hint">遗物不重复；药水 3 格。</p>
+      <h3>遗物（${relics.length} 件 · ${fmt(s.relicPowerSum, 0)} P）</h3>
+      <div class="toolbar"><select id="quickRelic" style="min-width:220px"><option value="">选择遗物加入…</option>
+        ${DATA.relics.map(r => `<option value="${esc(r.id)}">${esc(r.name)} · ${RARITY_CN[r.rarity]} · ${fmt(relicPower(r), 0)}P</option>`).join('')}</select>
+        <button class="btn small" id="quickRelicAdd">加入</button></div>
+      ${relics.length ? relics.map(r => `<div class="deckrow"><div class="grow"><div class="nm">${esc(r.name)}</div>
+        <div class="meta">${RARITY_CN[r.rarity]} · ${esc(r.section)} · ${fmt(relicPower(r), 0)} P</div></div>
+        <button class="btn small danger" data-remove-relic="${esc(r.id)}">移除</button></div>`).join('') : '<div class="empty">还没有遗物</div>'}
+      <h3>药水带（${state.potions.length}/3 · ${fmt(s.potionPowerSum, 0)} P）</h3>
+      <div class="belt">${[0,1,2].map(i => {
+        const id = state.potions[i], p = id ? POTION_BY_ID[id] : null;
+        return p ? `<div class="slot filled"><div><b>${esc(p.name)}</b><br><span class="sub">${fmt(potionPower(p), 0)} P</span></div></div>`
+          : `<div class="slot">空<br><span class="sub">第 ${i + 1} 格</span></div>`;
+      }).join('')}</div>
+      <div class="toolbar" style="margin-top:10px"><select id="quickPotion" style="min-width:220px"><option value="">选择药水加入…</option>
+        ${DATA.potions.map(p => `<option value="${esc(p.id)}">${esc(p.name)} · ${RARITY_CN[p.rarity]} · ${fmt(potionPower(p), 0)}P</option>`).join('')}</select>
+        <button class="btn small" id="quickPotionAdd">加入</button></div>
+      ${potionRows || '<div class="empty">还没有药水</div>'}
+      <div class="hr"></div><h3>诊断</h3>
+      <div class="warnlist">${w.map(([cls, title, body]) => `<div class="warn ${cls}"><b>${esc(title)}</b><span>${esc(body)}</span></div>`).join('')}</div>
+    </div>
+  </div>
+  <div class="panel"><h2>构筑总览</h2>
+    <div class="grid3">
+      <div><div class="kv"><span>卡组战力</span><span>${fmt(s.deckPower, 0)} P</span></div>
+        <div class="kv"><span>单位战力</span><span>${fmt(s.unitPowerSum, 0)} P</span></div>
+        <div class="kv"><span>效果牌战力</span><span>${fmt(s.effectPower, 0)} P</span></div></div>
+      <div><div class="kv"><span>遗物战力</span><span>${fmt(s.relicPowerSum, 0)} P</span></div>
+        <div class="kv"><span>药水战力</span><span>${fmt(s.potionPowerSum, 0)} P</span></div>
+        <div class="kv"><span>总战力</span><span>${fmt(s.total, 0)} P</span></div></div>
+      <div><div class="kv"><span>平均费用</span><span>${fmt(s.avgCost, 2)}</span></div>
+        <div class="kv"><span>每费战力</span><span>${fmt(s.efficiency, 1)}</span></div>
+        <div class="kv"><span>征召比例</span><span>${(s.recruitRatio * 100).toFixed(0)}%</span></div></div>
+    </div>
+    <div class="toolbar" style="margin-top:12px"><button class="btn" onclick="setCompare('A')">存为 A</button>
+      <button class="btn" onclick="setCompare('B')">存为 B</button>
+      <button class="btn small" onclick="clearCompare()">清空对比</button>
+      <span class="tip">A/B 快照只存在浏览器本地，不会改游戏。</span></div>
+    ${renderCompareTable()}</div>`;
+  $('#quickCardAdd').onclick = () => { const v = $('#quickCard').value; if (v) addCard(v); };
+  $('#quickRelicAdd').onclick = () => { const v = $('#quickRelic').value; if (v) addRelic(v); };
+  $('#quickPotionAdd').onclick = () => { const v = $('#quickPotion').value; if (v) addPotion(v); };
+  $('#starterBtn').onclick = () => { state.deck = starterDeck(); save(); render(); toast('已恢复起始牌组'); };
+  $('#clearDeck').onclick = () => { state.deck = []; save(); render(); };
+  $$('[data-dec]').forEach(b => b.onclick = () => { const id = b.dataset.dec; const e = state.deck.find(d => d.id === id); if (e) setCount(id, e.count - 1); });
+  $$('[data-inc]').forEach(b => b.onclick = () => { const id = b.dataset.inc; const e = state.deck.find(d => d.id === id); if (e) setCount(id, e.count + 1); });
+  $$('[data-count]').forEach(inp => inp.onchange = () => setCount(inp.dataset.count, inp.value));
+  $$('[data-remove]').forEach(b => b.onclick = () => removeCard(b.dataset.remove));
+  $$('[data-remove-relic]').forEach(b => b.onclick = () => removeRelic(b.dataset.removeRelic));
+  $$('[data-remove-potion]').forEach(b => b.onclick = () => removePotion(Number(b.dataset.removePotion)));
+}
+
+/* ---------------- calibration ---------------- */
+const MODEL_FIELDS = [
+  ['window', '观察窗口（秒）', 0.5, 1, 120, '单位战力按这个窗口估 DPS'],
+  ['cast', '单次施法占用（秒）', 0.05, 0.1, 5, '技能动画/施法时间'],
+  ['target_def', '参考目标防御', 1, 0, 999, '所有伤害按这个防御算'],
+  ['area_targets', '范围平均目标数', 0.1, 1, 10, '区域/冲刺平均命中'],
+  ['melee_uptime', '近战输出在线率', 0.01, 0, 1, '走路/被拉扯的折损'],
+  ['ranged_uptime', '远程输出在线率', 0.01, 0, 1, '远程通常接近 1'],
+  ['heal_weight', '治疗权重', 0.05, 0, 5, 'HPS 折算成输出的比例'],
+  ['reference_hp', '基准有效生命', 1, 1, 9999, '士兵默认 150'],
+  ['reference_output', '基准等效输出', 0.1, 0.1, 999, '士兵默认 4.0'],
+  ['reference_power', '基准战力', 1, 1, 9999, '士兵 = 100'],
+  ['energy_value', '1 能量 = ? P', 5, 10, 500, '费用/资源比较'],
+  ['draw_value', '1 抽牌 = ? P', 1, 5, 200, '抽牌/检索比较'],
+  ['hp_value', '1 玩家生命 = ? P', 0.5, 0.5, 50, '血契/事件付血'],
+];
+const COEF_FIELDS = [
+  ['ATTACK_UP', '+1 攻击'], ['DEFENCE_UP', '+1 防御'], ['HEAL_PERCENT', '回复 1% 生命'],
+  ['POISON_ON_HIT', '1 层中毒'], ['SHIELD', '1 点护盾'], ['DRAW', '抽 1 张'],
+  ['GAIN_ENERGY', '+1 能量'], ['PARALYSIS', '1 秒眩晕'], ['WEAKNESS', '1 点虚弱'],
+  ['VULNERABILITY', '+1% 易伤'], ['DAMAGE_ZONE', '区域 1 点/跳'], ['BLEED', '流血 1 点/秒'],
+  ['SACRIFICE', '献祭基础'], ['KEEP_DISTANCE', '保持距离基础'], ['FRENZY', '狂化基础'],
+];
+function renderCalibration() {
+  const m = state.model, base = soldierBaseline();
+  const field = ([key, label, step, min, max, help]) => `<div class="field">
+    <label title="${esc(help)}">${esc(label)}</label>
+    <input type="number" step="${step}" min="${min}" max="${max}" value="${m[key]}" data-model="${key}"></div>`;
+  const coef = ([key, label]) => `<div class="field"><label>${esc(label)}</label>
+    <input type="number" step="0.5" value="${m.cardCoef[key]}" data-coef="${key}"></div>`;
+  $('#view').innerHTML = `<div class="grid2">
+    <div class="panel"><h2>模型校准</h2>
+      <p class="hint">改这里会立刻重算全部单位/卡牌。建议先保持默认，等试玩有数据再校准。</p>
+      <div class="grid3" style="gap:0 14px">${MODEL_FIELDS.map(field).join('')}</div>
+      <div class="hr"></div><div class="kv"><span>当前士兵基准</span>
+        <span>${fmt(base.power, 1)} P · EHP ${fmt(base.ehp, 1)} · 输出 ${fmt(base.output, 2)}</span></div>
+      <div class="toolbar" style="margin-top:12px"><button class="btn small" id="resetModel">恢复默认</button>
+        <button class="btn small" id="exportBtn">导出方案</button>
+        <button class="btn small" id="importBtn">导入方案</button></div>
+      <div class="formula">单位 P = reference_power × √(有效生命 / reference_hp × 等效输出 / reference_output)
+有效生命 = 生命 × 15 / max(15 − 防御, 1) / (1 − 闪避 × 0.7)
+等效输出 = DPS × 在线率 + heal_weight × HPS + 召唤贡献</div>
+    </div>
+    <div class="panel"><h2>卡牌效果系数</h2>
+      <p class="hint">这些系数决定单卡 P。改完看卡牌页的效率排序有没有变化。</p>
+      <div class="grid2" style="gap:0 12px">${COEF_FIELDS.map(coef).join('')}</div>
+      <div class="hr"></div><h3>公式</h3>
+      <div class="formula">卡牌 P = Σ 效果数值 × 系数 × 条件折损
+费用预算 = 100 × 费用^0.8（0 费固定 100）
+效率 = 卡牌 P / 费用预算</div>
+      <p class="tip">治疗/护盾/控制的单体估价天然偏低；看效率时先看它是否属于“组合件”。</p>
+    </div>
+  </div>
+  <div class="panel"><h2>数据与版本</h2>
+    <div class="grid3">
+      <div><div class="kv"><span>数据版本</span><span>${esc(DATA.meta.version)}</span></div>
+        <div class="kv"><span>日期</span><span>${esc(DATA.meta.date)}</span></div></div>
+      <div><div class="kv"><span>单位</span><span>${DATA.units.length}</span></div>
+        <div class="kv"><span>卡牌</span><span>${DATA.cards.length}</span></div></div>
+      <div><div class="kv"><span>遗物</span><span>${DATA.relics.length}</span></div>
+        <div class="kv"><span>药水</span><span>${DATA.potions.length}</span></div></div>
+    </div>
+    <p class="tip" style="margin-top:10px">导出会把当前卡组、遗物、药水、手动改过的数值和模型参数一起保存为 JSON；导入会覆盖当前状态。</p>
+  </div>`;
+  $$('[data-model]').forEach(inp => inp.onchange = () => {
+    const k = inp.dataset.model, v = Number(inp.value);
+    if (Number.isFinite(v)) { state.model[k] = v; save(); render(); }
+  });
+  $$('[data-coef]').forEach(inp => inp.onchange = () => {
+    const k = inp.dataset.coef, v = Number(inp.value);
+    if (Number.isFinite(v)) { state.model.cardCoef[k] = v; save(); render(); }
+  });
+  $('#resetModel').onclick = () => { state.model = JSON.parse(JSON.stringify(DATA.model)); save(); render(); toast('模型已恢复默认'); };
+  $('#exportBtn').onclick = exportState;
+  $('#importBtn').onclick = () => $('#fileImport').click();
+}
+
+/* ---------------- drawer ---------------- */
+function openDrawer(title, sub, html, after) {
+  $('#drawerTitle').textContent = title;
+  $('#drawerSub').textContent = sub;
+  $('#drawerBody').innerHTML = html;
+  $('#drawer').classList.add('open');
+  if (after) after();
+}
+function closeDrawer() { $('#drawer').classList.remove('open'); }
+
+function openUnit(id) {
+  const u = UNIT_BY_ID[id];
+  if (!u) return;
+  const v = unitView(u);
+  const sim = simulateUnit(v, 0);
+  const trainedP = trainedPower(u);
+  const target = unitTargetPower(u);
+  const skillRows = (u.skills || []).map(s => `<div class="skillrow">
+    <div><b>${esc(s.name)}</b><div class="sub">${esc(s.kind)} · ${esc((s.unlock || []).join(','))}</div></div>
+    <div class="num">${fmt(s.rate, 2)}×</div>
+    <div class="num">${fmt(s.cooldown, 1)}s</div>
+    <div class="num">${fmt(s.range, 0)}</div>
+  </div>`).join('');
+  const html = `<div class="field"><label>生命</label><input type="number" data-unit-field="hp" value="${v.hp}" min="1"></div>
+    <div class="field"><label>攻击</label><input type="number" data-unit-field="attack" value="${v.attack}" min="0"></div>
+    <div class="field"><label>防御</label><input type="number" data-unit-field="defence" value="${v.defence}" min="0"></div>
+    <div class="field"><label>费用</label><input type="number" data-unit-field="cost" value="${v.cost}" min="0" max="10"></div>
+    <div class="field"><label>闪避</label><input type="number" data-unit-field="dodge" value="${v.dodge}" step="0.05" min="0" max="1"></div>
+    <div class="hr"></div>
+    <div class="kv"><span>当前战力</span><span>${fmt(sim.power, 1)} P</span></div>
+    <div class="kv"><span>每费战力</span><span>${fmt(sim.power / Math.max(1, v.cost), 1)}</span></div>
+    ${target != null ? `<div class="kv"><span>目标战力</span><span>${fmt(target, 1)} P（${signed(sim.power - target, 1)}）</span></div>` : ''}
+    <div class="kv"><span>有效生命</span><span>${fmt(sim.ehp, 1)}</span></div>
+    <div class="kv"><span>DPS / HPS</span><span>${fmt(sim.dps, 2)} / ${fmt(sim.hps, 2)}</span></div>
+    <div class="kv"><span>等效输出</span><span>${fmt(sim.output, 2)}</span></div>
+    <div class="kv"><span>训练后战力</span><span>${fmt(trainedP, 1)} P（${signed(trainedP - sim.power, 1)}）</span></div>
+    <div class="hr"></div>
+    <h3>技能</h3>
+    <div class="skillrow" style="color:#93a4b5"><div>技能</div><div class="num">倍率</div><div class="num">冷却</div><div class="num">射程</div></div>
+    ${skillRows || '<div class="empty">没有配置技能</div>'}
+    <div class="hr"></div>
+    <h3>计算分解</h3>
+    <div class="formula">有效生命 = ${v.hp} × 15 / max(15 − ${v.defence}, 1) / (1 − ${fmt(v.dodge, 2)} × 0.7) = ${fmt(sim.ehp, 1)}
+DPS = 伤害 / ${fmt(state.model.window, 0)}s × 在线率 = ${fmt(sim.dps, 2)}
+等效输出 = ${fmt(sim.dps, 2)} + ${fmt(state.model.heal_weight, 2)} × ${fmt(sim.hps, 2)} = ${fmt(sim.output, 2)}
+本体战力 = 100 × √(${fmt(sim.ehp, 1)}/150 × ${fmt(sim.output, 2)}/4.0) = ${fmt(sim.bodyPower, 1)} P
+总战力 = 本体 ${fmt(sim.bodyPower, 1)} + 召唤 ${fmt(sim.summonBonus, 1)} = ${fmt(sim.power, 1)} P</div>
+    <div class="toolbar" style="margin-top:12px">
+      ${u.team === 'ally' ? `<button class="btn gold" id="drawerAddUnit">加入卡组</button>` : ''}
+      <button class="btn small" id="drawerResetUnit">重置本单位</button>
+    </div>`;
+  openDrawer(u.name, `${u.team === 'ally' ? '己方' : '敌方'} · ${u.role || ''} ${u.tier || ''}`, html, () => {
+    $$('[data-unit-field]').forEach(inp => inp.onchange = () => {
+      const f = inp.dataset.unitField;
+      state.edits.units[id] = state.edits.units[id] || {};
+      state.edits.units[id][f] = Number(inp.value);
+      save(); render(); openUnit(id);
+    });
+    if ($('#drawerAddUnit')) $('#drawerAddUnit').onclick = () => addUnit(id);
+    $('#drawerResetUnit').onclick = () => {
+      delete state.edits.units[id]; save(); render(); openUnit(id);
+    };
+  });
+}
+
+function openCard(id) {
+  const c = CARD_BY_ID[id];
+  if (!c) return;
+  const v = cardView(c);
+  const st = cardStats(v);
+  const effects = (v.effects || []).map((e, i) => `<div class="skillrow" style="grid-template-columns:1.4fr .6fr .6fr .6fr">
+    <div><b>${esc(kindCn(e.kind || 0))}</b><div class="sub">${esc(kindName(e.kind || 0))}</div></div>
+    <div><input type="number" step="0.1" style="width:100%" data-eff="${i}" data-eff-field="amount" value="${e.amount == null ? 0 : e.amount}"></div>
+    <div class="num">+${fmt(e.upgrade_amount || 0, 1)}</div>
+    <div class="num">${e.status_seconds ? fmt(e.status_seconds, 1) + 's' : e.lasting_rounds ? fmt(e.lasting_rounds, 0) + '轮' : ''}</div>
+  </div>`).join('');
+  const html = `<div class="field"><label>费用</label><input type="number" data-card-cost="1" value="${v.cost}" min="0" max="10"></div>
+    <div class="field"><label>稀有度</label><div>${rarityPill(c.rarity)} <span class="sub">${c.rarity === 'rare' ? '商店 90–120' : '商店 55–80'}</span></div></div>
+    <div class="field"><label>类型</label><div>${c.category === 'recruit' ? '征召牌' : '效果/能力牌'} · ${esc(ROLE_CN[c.role] || '')}</div></div>
+    <div class="hr"></div>
+    <h3>基础说明</h3><p style="font-size:12.5px">${esc(c.desc || '（待补文案）')}</p>
+    <h3>强化后</h3><p style="font-size:12.5px">${esc(c.upgrade_desc || '（待补文案）')}</p>
+    <div class="kv"><span>强化方式</span><span>${esc(c.upgrade_note || '—')}</span></div>
+    <div class="hr"></div>
+    <div class="kv"><span>基础 P</span><span>${fmt(st.power, 1)}</span></div>
+    <div class="kv"><span>强化 P</span><span>${fmt(st.upgradePower, 1)}（${signed(st.upgradeDelta, 1)}）</span></div>
+    <div class="kv"><span>费用预算</span><span>${fmt(st.budget, 1)} P</span></div>
+    <div class="kv"><span>效率</span><span>${st.ratio == null ? '—' : st.ratio.toFixed(2)}${st.targetCost != null && st.targetCost !== st.cost && st.targetRatio != null ? ` → 建议 ${st.targetRatio.toFixed(2)}` : ''}</span></div>
+    <div class="kv"><span>每费战力</span><span>${st.perCost == null ? '—' : fmt(st.perCost, 1)}</span></div>
+    ${st.upgradedCost !== st.cost ? `<div class="kv"><span>强化后费用</span><span>${st.upgradedCost}（效率 ${st.upgradedRatio == null ? '—' : st.upgradedRatio.toFixed(2)}）</span></div>` : ''}
+    <div class="hr"></div>
+    <h3>效果明细</h3>
+    ${effects || '<div class="empty">征召牌不在这里改效果；到单位页调整。</div>'}
+    <div class="formula">卡牌 P = Σ 效果价值
+效果价值 = 数值 × 系数（可在“校准”页改）</div>
+    <div class="toolbar" style="margin-top:12px">
+      <button class="btn gold" id="drawerAddCard">加入卡组</button>
+      <button class="btn small" id="drawerResetCard">重置本牌</button>
+    </div>`;
+  openDrawer(c.name, `${cardType(c)} · ${c.cost} 费 · ${fmt(st.power, 0)} P`, html, () => {
+    $('[data-card-cost]').onchange = (e) => {
+      state.edits.cards[id] = state.edits.cards[id] || {};
+      state.edits.cards[id].cost = Number(e.target.value);
+      save(); render(); openCard(id);
+    };
+    $$('[data-eff]').forEach(inp => inp.onchange = () => {
+      const idx = Number(inp.dataset.eff);
+      const field = inp.dataset.effField;
+      const effects = JSON.parse(JSON.stringify(c.effects || []));
+      effects[idx][field] = Number(inp.value);
+      state.edits.cards[id] = state.edits.cards[id] || {};
+      state.edits.cards[id].effects = effects;
+      save(); render(); openCard(id);
+    });
+    $('#drawerAddCard').onclick = () => addCard(id);
+    $('#drawerResetCard').onclick = () => { delete state.edits.cards[id]; save(); render(); openCard(id); };
+  });
+}
+
+function openRelic(id) {
+  const r = RELIC_BY_ID[id];
+  if (!r) return;
+  const html = `<div class="kv"><span>稀有度</span><span>${RARITY_CN[r.rarity]}</span></div>
+    <div class="kv"><span>触发</span><span>${esc(r.trigger)}</span></div>
+    <div class="kv"><span>流派</span><span>${esc(r.section)}</span></div>
+    <div class="kv"><span>价格</span><span>${r.price || '不出售'}</span></div>
+    <div class="hr"></div>
+    <h3>效果</h3><p style="font-size:12.5px">${esc(r.effect)}</p>
+    <div class="field"><label>P 覆盖</label><input type="number" data-relic-power value="${fmt(relicPower(r), 0)}" min="0"></div>
+    <div class="formula">遗物 P = 每场触发次数 × 单次价值 × 兑现率
+当前是设计估价；覆盖值会写进本地方案，不改游戏。</div>
+    <div class="toolbar" style="margin-top:12px">
+      <button class="btn gold" id="drawerAddRelic">加入构筑</button>
+      <button class="btn small" id="drawerResetRelic">重置</button>
+    </div>`;
+  openDrawer(r.name, `${RARITY_CN[r.rarity]} · ${r.section} · ${fmt(relicPower(r), 0)} P`, html, () => {
+    $('[data-relic-power]').onchange = (e) => {
+      state.edits.relics[id] = state.edits.relics[id] || {};
+      state.edits.relics[id].power = Number(e.target.value);
+      save(); render(); openRelic(id);
+    };
+    $('#drawerAddRelic').onclick = () => addRelic(id);
+    $('#drawerResetRelic').onclick = () => { delete state.edits.relics[id]; save(); render(); openRelic(id); };
+  });
+}
+
+function openPotion(id) {
+  const p = POTION_BY_ID[id];
+  if (!p) return;
+  const html = `<div class="kv"><span>稀有度</span><span>${RARITY_CN[p.rarity]}</span></div>
+    <div class="kv"><span>价格</span><span>${p.price}</span></div>
+    <div class="kv"><span>起始幕</span><span>第 ${p.min_act} 幕</span></div>
+    <div class="kv"><span>目标</span><span>${esc(p.target)}</span></div>
+    <div class="hr"></div>
+    <h3>效果</h3><p style="font-size:12.5px">${esc(p.effect)}</p>
+    <div class="field"><label>P 覆盖</label><input type="number" data-potion-power value="${fmt(potionPower(p), 0)}" min="0"></div>
+    <div class="formula">药水 P = 命中次数 × 每次伤害 × 目标数 × 1.2 + 功能价值
+当前是设计估价；覆盖值会写进本地方案，不改游戏。</div>
+    <div class="toolbar" style="margin-top:12px">
+      <button class="btn gold" id="drawerAddPotion">加入药水带</button>
+      <button class="btn small" id="drawerResetPotion">重置</button>
+    </div>`;
+  openDrawer(p.name, `${RARITY_CN[p.rarity]} · ${p.target} · ${fmt(potionPower(p), 0)} P`, html, () => {
+    $('[data-potion-power]').onchange = (e) => {
+      state.edits.potions[id] = state.edits.potions[id] || {};
+      state.edits.potions[id].power = Number(e.target.value);
+      save(); render(); openPotion(id);
+    };
+    $('#drawerAddPotion').onclick = () => addPotion(id);
+    $('#drawerResetPotion').onclick = () => { delete state.edits.potions[id]; save(); render(); openPotion(id); };
+  });
+}
+
+/* ---------------- export / import / compare ---------------- */
+function exportState() {
+  const payload = {
+    app: 'ballsprite-power-calculator', version: DATA.meta.version,
+    exportedAt: new Date().toISOString(),
+    deck: state.deck, relics: state.relics, potions: state.potions,
+    edits: state.edits, model: state.model, compare: state.compare,
+  };
+  const blob = new Blob([JSON.stringify(payload, null, 2)], { type: 'application/json' });
+  const a = document.createElement('a');
+  a.href = URL.createObjectURL(blob);
+  a.download = 'ballsprite-战力方案.json';
+  a.click();
+  setTimeout(() => URL.revokeObjectURL(a.href), 1000);
+  toast('已导出方案 JSON');
+}
+
+function importState(file) {
+  const reader = new FileReader();
+  reader.onload = () => {
+    try {
+      const s = JSON.parse(reader.result);
+      if (!s || s.app !== 'ballsprite-power-calculator') throw new Error('不是本计算器的方案文件');
+      state.deck = Array.isArray(s.deck) ? s.deck : state.deck;
+      state.relics = Array.isArray(s.relics) ? s.relics : state.relics;
+      state.potions = Array.isArray(s.potions) ? s.potions : state.potions;
+      state.edits = s.edits || state.edits;
+      if (s.model) {
+        for (const k of MODEL_KEYS) if (Number.isFinite(s.model[k])) state.model[k] = s.model[k];
+        if (s.model.cardCoef) Object.assign(state.model.cardCoef, s.model.cardCoef);
+      }
+      if (s.compare) state.compare = s.compare;
+      save(); render(); toast('方案已导入');
+    } catch (e) { toast('导入失败：' + e.message); }
+  };
+  reader.readAsText(file);
+}
+
+function setCompare(which) {
+  state.compare[which] = snapshot();
+  save(); render();
+  toast(`已存为 ${which}`);
+}
+function clearCompare() {
+  state.compare = { A: null, B: null };
+  save(); render();
+  toast('已清空对比');
+}
+window.setCompare = setCompare;
+window.clearCompare = clearCompare;
+
+/* ---------------- toast / tabs / init ---------------- */
+let toastTimer = null;
+function toast(msg) {
+  const el = $('#toast');
+  el.textContent = msg;
+  el.classList.add('show');
+  clearTimeout(toastTimer);
+  toastTimer = setTimeout(() => el.classList.remove('show'), 2200);
+}
+
+function render() {
+  renderSummary();
+  renderFooter();
+  $$('#tabs .tab').forEach(b => b.classList.toggle('active', b.dataset.tab === state.tab));
+  if (state.tab === 'overview') renderOverview();
+  else if (state.tab === 'units') renderUnits();
+  else if (state.tab === 'cards') renderCards();
+  else if (state.tab === 'relics') renderRelics();
+  else if (state.tab === 'potions') renderPotions();
+  else if (state.tab === 'build') renderBuild();
+  else if (state.tab === 'calibration') renderCalibration();
+}
+
+function init() {
+  load();
+  const hashRaw = (location.hash || '').replace('#', '');
+  const hashParts = hashRaw.split('/');
+  const hashTab = hashParts[0];
+  if (['overview', 'units', 'cards', 'relics', 'potions', 'build', 'calibration'].includes(hashTab)) state.tab = hashTab;
+  $('#btnPreset').onclick = () => {
+    state.deck = starterDeck(); state.relics = []; state.potions = [];
+    save(); render(); toast('已恢复起始牌组（不含遗物/药水）');
+  };
+  $('#btnCompareA').onclick = () => setCompare('A');
+  $('#btnCompareB').onclick = () => setCompare('B');
+  $('#btnExport').onclick = exportState;
+  $('#btnImport').onclick = () => $('#fileImport').click();
+  $('#btnReset').onclick = () => {
+    if (!confirm('清空当前构筑、手动修改和 A/B 快照？')) return;
+    state = {
+      tab: 'overview', deck: starterDeck(), relics: [], potions: [],
+      edits: { units: {}, cards: {}, relics: {}, potions: {} },
+      model: JSON.parse(JSON.stringify(DATA.model)),
+      compare: { A: null, B: null }, search: '',
+      filter: { units: 'all', cards: 'all', relics: 'all', potions: 'all', cost: 'all', act: 'all' },
+      sort: { units: 'power', cards: 'power', relics: 'power', potions: 'power' },
+      showTarget: true,
+    };
+    try { localStorage.removeItem(STORAGE_KEY); } catch (e) { /* ignore */ }
+    render(); toast('已重置');
+  };
+  $('#fileImport').onchange = (e) => { const f = e.target.files[0]; if (f) importState(f); e.target.value = ''; };
+  $$('#tabs .tab').forEach(b => b.onclick = () => { state.tab = b.dataset.tab; state.search = ''; location.hash = state.tab; render(); });
+  $('#drawerClose').onclick = closeDrawer;
+  window.addEventListener('keydown', (e) => { if (e.key === 'Escape') closeDrawer(); });
+  window.onerror = (msg) => {
+    document.title = 'ERROR · ' + msg;
+    toast('计算器出错：' + msg);
+  };
+  render();
+  if (hashParts.length > 1 && hashParts[1]) {
+    const kind = hashParts[0], id = hashParts[1];
+    setTimeout(() => {
+      if (kind === 'unit') openUnit(id);
+      else if (kind === 'card') openCard(id);
+      else if (kind === 'relic') openRelic(id);
+      else if (kind === 'potion') openPotion(id);
+    }, 0);
+  }
+}
+
+init();
+
+</script>
+</body>
+</html>

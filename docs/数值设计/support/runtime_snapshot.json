@@ -1,0 +1,7746 @@
+{
+	"cards": [
+		{
+			"after_use": 1,
+			"card_cost": 1,
+			"card_discription": "复制场上一个单位(不继承该单位的光环或属性)",
+			"card_image": "res://assets/ui_redrawn/UI/cardUI/artsource/01.png",
+			"card_image_2": null,
+			"card_name": "镜像",
+			"category": 1,
+			"effects": [
+				{
+					"affected_team": 1,
+					"amount": 5.0,
+					"interval": 1.0,
+					"kind": 6,
+					"lasting_rounds": 2,
+					"lifetime": 0,
+					"path": "res://data/cards/copy_ally.tres::Resource_27uql",
+					"radius": 150.0,
+					"script_path": "res://data/card_effects/card_effect.gd"
+				}
+			],
+			"path": "res://data/cards/copy_ally.tres",
+			"script_path": "res://data/cards/card_definition.gd",
+			"summon_unit": null,
+			"target": 1
+		},
+		{
+			"after_use": 1,
+			"card_cost": 1,
+			"card_discription": "场上每随时一名己方士兵，场上全体士兵的攻击力提升1点",
+			"card_image": "res://assets/ui_redrawn/UI/cardUI/artsource/01.png",
+			"card_image_2": null,
+			"card_name": "悼亡战意",
+			"category": 2,
+			"effects": [
+				{
+					"affected_team": 2,
+					"amount": 1.0,
+					"interval": 1.0,
+					"kind": 13,
+					"lasting_rounds": 2,
+					"lifetime": 0,
+					"path": "res://data/cards/death_attack.tres::Resource_27uql",
+					"radius": 250.0,
+					"script_path": "res://data/card_effects/card_effect.gd"
+				}
+			],
+			"path": "res://data/cards/death_attack.tres",
+			"script_path": "res://data/cards/card_definition.gd",
+			"summon_unit": null,
+			"target": 0
+		},
+		{
+			"after_use": 0,
+			"card_cost": 1,
+			"card_discription": "单位死亡自爆，对150范围内的敌人造成20点伤害",
+			"card_image": "res://assets/ui_redrawn/UI/cardUI/artsource/01.png",
+			"card_image_2": null,
+			"card_name": "同生共死",
+			"category": 1,
+			"effects": [
+				{
+					"affected_team": 1,
+					"amount": 20.0,
+					"interval": 1.0,
+					"kind": 4,
+					"lasting_rounds": 2,
+					"lifetime": 0,
+					"path": "res://data/cards/death_explosion.tres::Resource_27uql",
+					"radius": 160.0,
+					"script_path": "res://data/card_effects/card_effect.gd"
+				}
+			],
+			"path": "res://data/cards/death_explosion.tres",
+			"script_path": "res://data/cards/card_definition.gd",
+			"summon_unit": null,
+			"target": 1
+		},
+		{
+			"after_use": 0,
+			"card_cost": 1,
+			"card_discription": "增加防御力3点",
+			"card_image": "res://assets/ui_redrawn/UI/cardUI/artsource/01.png",
+			"card_image_2": null,
+			"card_name": "护甲加固",
+			"category": 1,
+			"effects": [
+				{
+					"affected_team": 1,
+					"amount": 3.0,
+					"interval": 1.0,
+					"kind": 2,
+					"lasting_rounds": 2,
+					"lifetime": 0,
+					"path": "res://data/cards/defend.tres::Resource_27uql",
+					"radius": 150.0,
+					"script_path": "res://data/card_effects/card_effect.gd"
+				}
+			],
+			"path": "res://data/cards/defend.tres",
+			"script_path": "res://data/cards/card_definition.gd",
+			"summon_unit": null,
+			"target": 1
+		},
+		{
+			"after_use": 1,
+			"card_cost": 1,
+			"card_discription": "抽取3张牌，本回合无法再次抽牌",
+			"card_image": "res://assets/ui_redrawn/UI/cardUI/artsource/01.png",
+			"card_image_2": null,
+			"card_name": "孤注一掷",
+			"category": 2,
+			"effects": [
+				{
+					"affected_team": 2,
+					"amount": 3.0,
+					"interval": 1.0,
+					"kind": 9,
+					"lasting_rounds": 2,
+					"lifetime": 0,
+					"path": "res://data/cards/draw_four.tres::Resource_27uql",
+					"radius": 250.0,
+					"script_path": "res://data/card_effects/card_effect.gd"
+				},
+				{
+					"affected_team": 0,
+					"amount": 5.0,
+					"interval": 1.0,
+					"kind": 10,
+					"lasting_rounds": 2,
+					"lifetime": 0,
+					"path": "res://data/cards/draw_four.tres::Resource_3psm4",
+					"radius": 150.0,
+					"script_path": "res://data/card_effects/card_effect.gd"
+				}
+			],
+			"path": "res://data/cards/draw_four.tres",
+			"script_path": "res://data/cards/card_definition.gd",
+			"summon_unit": null,
+			"target": 0
+		},
+		{
+			"after_use": 0,
+			"card_cost": 0,
+			"card_discription": "消耗3点生命，立即获得3点能量，可超过能量上限。",
+			"card_image": "res://assets/ui_redrawn/UI/cardUI/artsource/01.png",
+			"card_image_2": null,
+			"card_name": "血契补给",
+			"category": 2,
+			"effects": [
+				{
+					"affected_team": 2,
+					"amount": 3.0,
+					"interval": 1.0,
+					"kind": 11,
+					"lasting_rounds": 2,
+					"lifetime": 0,
+					"path": "res://data/cards/draw_hp.tres::Resource_27uql",
+					"radius": 250.0,
+					"script_path": "res://data/card_effects/card_effect.gd"
+				},
+				{
+					"affected_team": 2,
+					"amount": 3.0,
+					"interval": 1.0,
+					"kind": 17,
+					"lasting_rounds": 2,
+					"lifetime": 0,
+					"path": "res://data/cards/draw_hp.tres::Resource_3psm4",
+					"radius": 150.0,
+					"script_path": "res://data/card_effects/card_effect.gd"
+				}
+			],
+			"path": "res://data/cards/draw_hp.tres",
+			"script_path": "res://data/cards/card_definition.gd",
+			"summon_unit": null,
+			"target": 0
+		},
+		{
+			"after_use": 1,
+			"card_cost": 1,
+			"card_discription": "在场上放置一个火焰区域，持续对场上单位造成伤害",
+			"card_image": "res://assets/ui_redrawn/UI/cardUI/artsource/01.png",
+			"card_image_2": null,
+			"card_name": "烈焰灼烧",
+			"category": 1,
+			"effects": [
+				{
+					"affected_team": 0,
+					"amount": 5.0,
+					"interval": 1.0,
+					"kind": 7,
+					"lasting_rounds": 2,
+					"lifetime": 0,
+					"path": "res://data/cards/fire_zone.tres::Resource_27uql",
+					"radius": 200.0,
+					"script_path": "res://data/card_effects/card_effect.gd"
+				}
+			],
+			"path": "res://data/cards/fire_zone.tres",
+			"script_path": "res://data/cards/card_definition.gd",
+			"summon_unit": null,
+			"target": 4
+		},
+		{
+			"after_use": 0,
+			"card_cost": 1,
+			"card_discription": "回复对象",
+			"card_image": "res://assets/ui_redrawn/UI/cardUI/artsource/01.png",
+			"card_image_2": null,
+			"card_name": "战地治疗",
+			"category": 1,
+			"effects": [
+				{
+					"affected_team": 1,
+					"amount": 35.0,
+					"interval": 1.0,
+					"kind": 1,
+					"lasting_rounds": 1,
+					"lifetime": 0,
+					"path": "res://data/cards/heal.tres::Resource_3r2a7",
+					"radius": 150.0,
+					"script_path": "res://data/card_effects/card_effect.gd"
+				}
+			],
+			"path": "res://data/cards/heal.tres",
+			"script_path": "res://data/cards/card_definition.gd",
+			"summon_unit": null,
+			"target": 1
+		},
+		{
+			"after_use": 1,
+			"card_cost": 1,
+			"card_discription": "在场上放置一个泥潭区域，泥潭会减速路过的单位",
+			"card_image": "res://assets/ui_redrawn/UI/cardUI/artsource/01.png",
+			"card_image_2": null,
+			"card_name": "泥潭",
+			"category": 1,
+			"effects": [
+				{
+					"affected_team": 2,
+					"amount": 80.0,
+					"interval": 1.0,
+					"kind": 8,
+					"lasting_rounds": 2,
+					"lifetime": 0,
+					"path": "res://data/cards/mud_zone.tres::Resource_27uql",
+					"radius": 250.0,
+					"script_path": "res://data/card_effects/card_effect.gd"
+				}
+			],
+			"path": "res://data/cards/mud_zone.tres",
+			"script_path": "res://data/cards/card_definition.gd",
+			"summon_unit": null,
+			"target": 4
+		},
+		{
+			"after_use": 0,
+			"card_cost": 1,
+			"card_discription": "每次攻击为敌方单位附加1层中毒",
+			"card_image": "res://assets/ui_redrawn/UI/cardUI/artsource/01.png",
+			"card_image_2": null,
+			"card_name": "淬毒武器",
+			"category": 1,
+			"effects": [
+				{
+					"affected_team": 1,
+					"amount": 2.0,
+					"interval": 1.0,
+					"kind": 3,
+					"lasting_rounds": 2,
+					"lifetime": 0,
+					"path": "res://data/cards/poison_on_hit.tres::Resource_27uql",
+					"radius": 150.0,
+					"script_path": "res://data/card_effects/card_effect.gd"
+				}
+			],
+			"path": "res://data/cards/poison_on_hit.tres",
+			"script_path": "res://data/cards/card_definition.gd",
+			"summon_unit": null,
+			"target": 1
+		},
+		{
+			"after_use": 0,
+			"card_cost": 1,
+			"card_discription": "给对象添加5点攻击力",
+			"card_image": "res://assets/ui_redrawn/UI/cardUI/artsource/01.png",
+			"card_image_2": null,
+			"card_name": "力量强化",
+			"category": 1,
+			"effects": [
+				{
+					"affected_team": 1,
+					"amount": 5.0,
+					"interval": 1.0,
+					"kind": 0,
+					"lasting_rounds": 2,
+					"lifetime": 1,
+					"path": "res://data/cards/power_enhance.tres::Resource_iv1i1",
+					"radius": 150.0,
+					"script_path": "res://data/card_effects/card_effect.gd"
+				}
+			],
+			"path": "res://data/cards/power_enhance.tres",
+			"script_path": "res://data/cards/card_definition.gd",
+			"summon_unit": null,
+			"target": 1
+		},
+		{
+			"after_use": 0,
+			"card_cost": 1,
+			"card_discription": "在抽牌堆中随机打出两张牌，不消耗能量",
+			"card_image": "res://assets/ui_redrawn/UI/cardUI/artsource/01.png",
+			"card_image_2": null,
+			"card_name": "战术涌现",
+			"category": 2,
+			"effects": [
+				{
+					"affected_team": 2,
+					"amount": 2.0,
+					"interval": 1.0,
+					"kind": 14,
+					"lasting_rounds": 2,
+					"lifetime": 0,
+					"path": "res://data/cards/random_play.tres::Resource_27uql",
+					"radius": 250.0,
+					"script_path": "res://data/card_effects/card_effect.gd"
+				}
+			],
+			"path": "res://data/cards/random_play.tres",
+			"script_path": "res://data/cards/card_definition.gd",
+			"summon_unit": null,
+			"target": 0
+		},
+		{
+			"after_use": 0,
+			"card_cost": 1,
+			"card_discription": "将场上一名单位撤回放到弃牌堆",
+			"card_image": "res://assets/ui_redrawn/UI/cardUI/artsource/01.png",
+			"card_image_2": null,
+			"card_name": "部队回撤",
+			"category": 2,
+			"effects": [
+				{
+					"affected_team": 1,
+					"amount": 1.0,
+					"interval": 1.0,
+					"kind": 15,
+					"lasting_rounds": 2,
+					"lifetime": 0,
+					"path": "res://data/cards/recall_ally.tres::Resource_27uql",
+					"radius": 250.0,
+					"script_path": "res://data/card_effects/card_effect.gd"
+				}
+			],
+			"path": "res://data/cards/recall_ally.tres",
+			"script_path": "res://data/cards/card_definition.gd",
+			"summon_unit": null,
+			"target": 1
+		},
+		{
+			"after_use": 1,
+			"card_cost": 1,
+			"card_discription": "延长每回合的战斗交战时长2s",
+			"card_image": "res://assets/ui_redrawn/UI/cardUI/artsource/01.png",
+			"card_image_2": null,
+			"card_name": "延长交锋",
+			"category": 1,
+			"effects": [
+				{
+					"affected_team": 1,
+					"amount": 2.0,
+					"interval": 1.0,
+					"kind": 5,
+					"lasting_rounds": 2,
+					"lifetime": 0,
+					"path": "res://data/cards/round_add.tres::Resource_27uql",
+					"radius": 160.0,
+					"script_path": "res://data/card_effects/card_effect.gd"
+				}
+			],
+			"path": "res://data/cards/round_add.tres",
+			"script_path": "res://data/cards/card_definition.gd",
+			"summon_unit": null,
+			"target": 0
+		},
+		{
+			"after_use": 1,
+			"card_cost": 1,
+			"card_discription": "减少每回合的战斗交战时长2s",
+			"card_image": "res://assets/ui_redrawn/UI/cardUI/artsource/01.png",
+			"card_image_2": null,
+			"card_name": "短兵速决",
+			"category": 1,
+			"effects": [
+				{
+					"affected_team": 1,
+					"amount": -2.0,
+					"interval": 1.0,
+					"kind": 5,
+					"lasting_rounds": 2,
+					"lifetime": 0,
+					"path": "res://data/cards/round_reduce.tres::Resource_27uql",
+					"radius": 160.0,
+					"script_path": "res://data/card_effects/card_effect.gd"
+				}
+			],
+			"path": "res://data/cards/round_reduce.tres",
+			"script_path": "res://data/cards/card_definition.gd",
+			"summon_unit": null,
+			"target": 0
+		}
+	],
+	"date": "2026-10-08",
+	"levels": [
+		{
+			"base_energy_cap": 10,
+			"battle_duration": 10.0,
+			"battle_scene": "res://scenes/levels/battles/battle_001.tscn",
+			"cards_per_round": 5,
+			"enemy_max_hp": 45,
+			"energy_growth": 1,
+			"energy_per_round": 3,
+			"level_name": "关卡模板：双兽人",
+			"notes": "复制此资源后配置自己的波次和地形。",
+			"path": "res://data/levels/level_001.tres",
+			"repeat_end": 0,
+			"repeat_start": 1,
+			"repeat_waves": false,
+			"script_path": "res://data/levels/battle_level_config.gd",
+			"waves": [
+				{
+					"units": [
+						{
+							"animations": {
+								"attack_01": {
+									"duration": 0.6,
+									"frames": 6,
+									"loop": false
+								},
+								"attack_02": {
+									"duration": 0.7,
+									"frames": 7,
+									"loop": false
+								},
+								"death": {
+									"duration": 0.4,
+									"frames": 4,
+									"loop": false
+								},
+								"defend": {
+									"duration": 0.4,
+									"frames": 4,
+									"loop": false
+								},
+								"hurt": {
+									"duration": 0.4,
+									"frames": 4,
+									"loop": false
+								},
+								"idle": {
+									"duration": 0.6,
+									"frames": 6,
+									"loop": true
+								},
+								"reborn": {
+									"duration": 0.5,
+									"frames": 5,
+									"loop": false
+								},
+								"walk": {
+									"duration": 0.8,
+									"frames": 8,
+									"loop": true
+								}
+							},
+							"growth": {
+
+							},
+							"name": "Skeleton",
+							"position": [
+								-222.0,
+								-287.0
+							],
+							"unit": {
+								"attack": 15,
+								"card_cost": 1,
+								"card_discription": "",
+								"card_image": null,
+								"card_image_2": null,
+								"card_name": "",
+								"defence": 5,
+								"dodge_rate": 0.0,
+								"dodge_skill": null,
+								"hp_damage_value": 1,
+								"max_hp": 100,
+								"path": "res://data/units/skeleton.tres",
+								"script_path": "res://data/units/unit_data.gd",
+								"skills": [
+									"res://data/skills/skeleton_attack.tres",
+									"res://data/skills/skeleton_power_attack.tres"
+								],
+								"speed": 150.0,
+								"unit_english_name": "skeleton",
+								"unit_name": "骷髅兵",
+								"unit_team": "team_b",
+								"unit_type": 18
+							}
+						},
+						{
+							"animations": {
+								"attack_01": {
+									"duration": 0.6,
+									"frames": 6,
+									"loop": false
+								},
+								"attack_02": {
+									"duration": 0.7,
+									"frames": 7,
+									"loop": false
+								},
+								"death": {
+									"duration": 0.4,
+									"frames": 4,
+									"loop": false
+								},
+								"defend": {
+									"duration": 0.4,
+									"frames": 4,
+									"loop": false
+								},
+								"hurt": {
+									"duration": 0.4,
+									"frames": 4,
+									"loop": false
+								},
+								"idle": {
+									"duration": 0.6,
+									"frames": 6,
+									"loop": true
+								},
+								"reborn": {
+									"duration": 0.5,
+									"frames": 5,
+									"loop": false
+								},
+								"walk": {
+									"duration": 0.8,
+									"frames": 8,
+									"loop": true
+								}
+							},
+							"growth": {
+
+							},
+							"name": "Skeleton2",
+							"position": [
+								-191.0,
+								318.0
+							],
+							"unit": {
+								"attack": 15,
+								"card_cost": 1,
+								"card_discription": "",
+								"card_image": null,
+								"card_image_2": null,
+								"card_name": "",
+								"defence": 5,
+								"dodge_rate": 0.0,
+								"dodge_skill": null,
+								"hp_damage_value": 1,
+								"max_hp": 100,
+								"path": "res://data/units/skeleton.tres",
+								"script_path": "res://data/units/unit_data.gd",
+								"skills": [
+									"res://data/skills/skeleton_attack.tres",
+									"res://data/skills/skeleton_power_attack.tres"
+								],
+								"speed": 150.0,
+								"unit_english_name": "skeleton",
+								"unit_name": "骷髅兵",
+								"unit_team": "team_b",
+								"unit_type": 18
+							}
+						}
+					]
+				},
+				{
+					"units": [
+						{
+							"animations": {
+								"attack_01": {
+									"duration": 0.6,
+									"frames": 6,
+									"loop": false
+								},
+								"attack_02": {
+									"duration": 0.7,
+									"frames": 7,
+									"loop": false
+								},
+								"death": {
+									"duration": 0.4,
+									"frames": 4,
+									"loop": false
+								},
+								"defend": {
+									"duration": 0.4,
+									"frames": 4,
+									"loop": false
+								},
+								"hurt": {
+									"duration": 0.4,
+									"frames": 4,
+									"loop": false
+								},
+								"idle": {
+									"duration": 0.6,
+									"frames": 6,
+									"loop": true
+								},
+								"reborn": {
+									"duration": 0.5,
+									"frames": 5,
+									"loop": false
+								},
+								"walk": {
+									"duration": 0.8,
+									"frames": 8,
+									"loop": true
+								}
+							},
+							"growth": {
+
+							},
+							"name": "Skeleton",
+							"position": [
+								-573.0,
+								5.0
+							],
+							"unit": {
+								"attack": 15,
+								"card_cost": 1,
+								"card_discription": "",
+								"card_image": null,
+								"card_image_2": null,
+								"card_name": "",
+								"defence": 5,
+								"dodge_rate": 0.0,
+								"dodge_skill": null,
+								"hp_damage_value": 1,
+								"max_hp": 100,
+								"path": "res://data/units/skeleton.tres",
+								"script_path": "res://data/units/unit_data.gd",
+								"skills": [
+									"res://data/skills/skeleton_attack.tres",
+									"res://data/skills/skeleton_power_attack.tres"
+								],
+								"speed": 150.0,
+								"unit_english_name": "skeleton",
+								"unit_name": "骷髅兵",
+								"unit_team": "team_b",
+								"unit_type": 18
+							}
+						},
+						{
+							"animations": {
+								"attack_01": {
+									"duration": 0.6,
+									"frames": 6,
+									"loop": false
+								},
+								"attack_02": {
+									"duration": 0.7,
+									"frames": 7,
+									"loop": false
+								},
+								"death": {
+									"duration": 0.4,
+									"frames": 4,
+									"loop": false
+								},
+								"defend": {
+									"duration": 0.4,
+									"frames": 4,
+									"loop": false
+								},
+								"hurt": {
+									"duration": 0.4,
+									"frames": 4,
+									"loop": false
+								},
+								"idle": {
+									"duration": 0.6,
+									"frames": 6,
+									"loop": true
+								},
+								"reborn": {
+									"duration": 0.5,
+									"frames": 5,
+									"loop": false
+								},
+								"walk": {
+									"duration": 0.8,
+									"frames": 8,
+									"loop": true
+								}
+							},
+							"growth": {
+
+							},
+							"name": "Skeleton2",
+							"position": [
+								-293.0,
+								149.0
+							],
+							"unit": {
+								"attack": 15,
+								"card_cost": 1,
+								"card_discription": "",
+								"card_image": null,
+								"card_image_2": null,
+								"card_name": "",
+								"defence": 5,
+								"dodge_rate": 0.0,
+								"dodge_skill": null,
+								"hp_damage_value": 1,
+								"max_hp": 100,
+								"path": "res://data/units/skeleton.tres",
+								"script_path": "res://data/units/unit_data.gd",
+								"skills": [
+									"res://data/skills/skeleton_attack.tres",
+									"res://data/skills/skeleton_power_attack.tres"
+								],
+								"speed": 150.0,
+								"unit_english_name": "skeleton",
+								"unit_name": "骷髅兵",
+								"unit_team": "team_b",
+								"unit_type": 18
+							}
+						}
+					]
+				},
+				{
+					"units": [
+						{
+							"animations": {
+								"attack_01": {
+									"duration": 0.6,
+									"frames": 6,
+									"loop": false
+								},
+								"attack_02": {
+									"duration": 0.7,
+									"frames": 7,
+									"loop": false
+								},
+								"death": {
+									"duration": 0.4,
+									"frames": 4,
+									"loop": false
+								},
+								"defend": {
+									"duration": 0.4,
+									"frames": 4,
+									"loop": false
+								},
+								"hurt": {
+									"duration": 0.4,
+									"frames": 4,
+									"loop": false
+								},
+								"idle": {
+									"duration": 0.6,
+									"frames": 6,
+									"loop": true
+								},
+								"reborn": {
+									"duration": 0.5,
+									"frames": 5,
+									"loop": false
+								},
+								"walk": {
+									"duration": 0.8,
+									"frames": 8,
+									"loop": true
+								}
+							},
+							"growth": {
+
+							},
+							"name": "Skeleton",
+							"position": [
+								-269.0,
+								18.0
+							],
+							"unit": {
+								"attack": 15,
+								"card_cost": 1,
+								"card_discription": "",
+								"card_image": null,
+								"card_image_2": null,
+								"card_name": "",
+								"defence": 5,
+								"dodge_rate": 0.0,
+								"dodge_skill": null,
+								"hp_damage_value": 1,
+								"max_hp": 100,
+								"path": "res://data/units/skeleton.tres",
+								"script_path": "res://data/units/unit_data.gd",
+								"skills": [
+									"res://data/skills/skeleton_attack.tres",
+									"res://data/skills/skeleton_power_attack.tres"
+								],
+								"speed": 150.0,
+								"unit_english_name": "skeleton",
+								"unit_name": "骷髅兵",
+								"unit_team": "team_b",
+								"unit_type": 18
+							}
+						},
+						{
+							"animations": {
+								"attack_01": {
+									"duration": 0.9,
+									"frames": 9,
+									"loop": false
+								},
+								"death": {
+									"duration": 0.4,
+									"frames": 4,
+									"loop": false
+								},
+								"hurt": {
+									"duration": 0.4,
+									"frames": 4,
+									"loop": false
+								},
+								"idle": {
+									"duration": 0.6,
+									"frames": 6,
+									"loop": true
+								},
+								"reborn": {
+									"duration": 0.5,
+									"frames": 5,
+									"loop": false
+								},
+								"walk": {
+									"duration": 0.8,
+									"frames": 8,
+									"loop": true
+								}
+							},
+							"growth": {
+
+							},
+							"name": "SkeletonArcher",
+							"position": [
+								-136.0,
+								-81.0
+							],
+							"unit": {
+								"attack": 15,
+								"card_cost": 1,
+								"card_discription": "",
+								"card_image": null,
+								"card_image_2": null,
+								"card_name": "",
+								"defence": 5,
+								"dodge_rate": 0.0,
+								"dodge_skill": null,
+								"hp_damage_value": 2,
+								"max_hp": 100,
+								"path": "res://data/units/skeleton_archer.tres",
+								"script_path": "res://data/units/unit_data.gd",
+								"skills": [
+									"res://data/skills/skeleton_archer_attack.tres"
+								],
+								"speed": 150.0,
+								"unit_english_name": "skeleton_archer",
+								"unit_name": "弓箭手哥布林",
+								"unit_team": "team_b",
+								"unit_type": 19
+							}
+						},
+						{
+							"animations": {
+								"attack_01": {
+									"duration": 0.9,
+									"frames": 9,
+									"loop": false
+								},
+								"death": {
+									"duration": 0.4,
+									"frames": 4,
+									"loop": false
+								},
+								"hurt": {
+									"duration": 0.4,
+									"frames": 4,
+									"loop": false
+								},
+								"idle": {
+									"duration": 0.6,
+									"frames": 6,
+									"loop": true
+								},
+								"reborn": {
+									"duration": 0.5,
+									"frames": 5,
+									"loop": false
+								},
+								"walk": {
+									"duration": 0.8,
+									"frames": 8,
+									"loop": true
+								}
+							},
+							"growth": {
+
+							},
+							"name": "SkeletonArcher2",
+							"position": [
+								-137.0,
+								154.0
+							],
+							"unit": {
+								"attack": 15,
+								"card_cost": 1,
+								"card_discription": "",
+								"card_image": null,
+								"card_image_2": null,
+								"card_name": "",
+								"defence": 5,
+								"dodge_rate": 0.0,
+								"dodge_skill": null,
+								"hp_damage_value": 2,
+								"max_hp": 100,
+								"path": "res://data/units/skeleton_archer.tres",
+								"script_path": "res://data/units/unit_data.gd",
+								"skills": [
+									"res://data/skills/skeleton_archer_attack.tres"
+								],
+								"speed": 150.0,
+								"unit_english_name": "skeleton_archer",
+								"unit_name": "弓箭手哥布林",
+								"unit_team": "team_b",
+								"unit_type": 19
+							}
+						}
+					]
+				},
+				{
+					"units": []
+				},
+				{
+					"units": [
+						{
+							"animations": {
+								"attack_01": {
+									"duration": 0.6,
+									"frames": 6,
+									"loop": false
+								},
+								"attack_02": {
+									"duration": 0.7,
+									"frames": 7,
+									"loop": false
+								},
+								"death": {
+									"duration": 0.4,
+									"frames": 4,
+									"loop": false
+								},
+								"defend": {
+									"duration": 0.4,
+									"frames": 4,
+									"loop": false
+								},
+								"hurt": {
+									"duration": 0.4,
+									"frames": 4,
+									"loop": false
+								},
+								"idle": {
+									"duration": 0.6,
+									"frames": 6,
+									"loop": true
+								},
+								"reborn": {
+									"duration": 0.5,
+									"frames": 5,
+									"loop": false
+								},
+								"walk": {
+									"duration": 0.8,
+									"frames": 8,
+									"loop": true
+								}
+							},
+							"growth": {
+
+							},
+							"name": "Skeleton",
+							"position": [
+								-200.0,
+								-77.0
+							],
+							"unit": {
+								"attack": 15,
+								"card_cost": 1,
+								"card_discription": "",
+								"card_image": null,
+								"card_image_2": null,
+								"card_name": "",
+								"defence": 5,
+								"dodge_rate": 0.0,
+								"dodge_skill": null,
+								"hp_damage_value": 1,
+								"max_hp": 100,
+								"path": "res://data/units/skeleton.tres",
+								"script_path": "res://data/units/unit_data.gd",
+								"skills": [
+									"res://data/skills/skeleton_attack.tres",
+									"res://data/skills/skeleton_power_attack.tres"
+								],
+								"speed": 150.0,
+								"unit_english_name": "skeleton",
+								"unit_name": "骷髅兵",
+								"unit_team": "team_b",
+								"unit_type": 18
+							}
+						},
+						{
+							"animations": {
+								"attack_01": {
+									"duration": 0.6,
+									"frames": 6,
+									"loop": false
+								},
+								"attack_02": {
+									"duration": 0.7,
+									"frames": 7,
+									"loop": false
+								},
+								"death": {
+									"duration": 0.4,
+									"frames": 4,
+									"loop": false
+								},
+								"defend": {
+									"duration": 0.4,
+									"frames": 4,
+									"loop": false
+								},
+								"hurt": {
+									"duration": 0.4,
+									"frames": 4,
+									"loop": false
+								},
+								"idle": {
+									"duration": 0.6,
+									"frames": 6,
+									"loop": true
+								},
+								"reborn": {
+									"duration": 0.5,
+									"frames": 5,
+									"loop": false
+								},
+								"walk": {
+									"duration": 0.8,
+									"frames": 8,
+									"loop": true
+								}
+							},
+							"growth": {
+
+							},
+							"name": "Skeleton2",
+							"position": [
+								-168.0,
+								179.0
+							],
+							"unit": {
+								"attack": 15,
+								"card_cost": 1,
+								"card_discription": "",
+								"card_image": null,
+								"card_image_2": null,
+								"card_name": "",
+								"defence": 5,
+								"dodge_rate": 0.0,
+								"dodge_skill": null,
+								"hp_damage_value": 1,
+								"max_hp": 100,
+								"path": "res://data/units/skeleton.tres",
+								"script_path": "res://data/units/unit_data.gd",
+								"skills": [
+									"res://data/skills/skeleton_attack.tres",
+									"res://data/skills/skeleton_power_attack.tres"
+								],
+								"speed": 150.0,
+								"unit_english_name": "skeleton",
+								"unit_name": "骷髅兵",
+								"unit_team": "team_b",
+								"unit_type": 18
+							}
+						},
+						{
+							"animations": {
+								"attack_01": {
+									"duration": 0.6,
+									"frames": 6,
+									"loop": false
+								},
+								"attack_02": {
+									"duration": 0.7,
+									"frames": 7,
+									"loop": false
+								},
+								"death": {
+									"duration": 0.4,
+									"frames": 4,
+									"loop": false
+								},
+								"defend": {
+									"duration": 0.4,
+									"frames": 4,
+									"loop": false
+								},
+								"hurt": {
+									"duration": 0.4,
+									"frames": 4,
+									"loop": false
+								},
+								"idle": {
+									"duration": 0.6,
+									"frames": 6,
+									"loop": true
+								},
+								"reborn": {
+									"duration": 0.5,
+									"frames": 5,
+									"loop": false
+								},
+								"walk": {
+									"duration": 0.8,
+									"frames": 8,
+									"loop": true
+								}
+							},
+							"growth": {
+
+							},
+							"name": "Skeleton3",
+							"position": [
+								-168.0,
+								275.0
+							],
+							"unit": {
+								"attack": 15,
+								"card_cost": 1,
+								"card_discription": "",
+								"card_image": null,
+								"card_image_2": null,
+								"card_name": "",
+								"defence": 5,
+								"dodge_rate": 0.0,
+								"dodge_skill": null,
+								"hp_damage_value": 1,
+								"max_hp": 100,
+								"path": "res://data/units/skeleton.tres",
+								"script_path": "res://data/units/unit_data.gd",
+								"skills": [
+									"res://data/skills/skeleton_attack.tres",
+									"res://data/skills/skeleton_power_attack.tres"
+								],
+								"speed": 150.0,
+								"unit_english_name": "skeleton",
+								"unit_name": "骷髅兵",
+								"unit_team": "team_b",
+								"unit_type": 18
+							}
+						},
+						{
+							"animations": {
+								"attack_01": {
+									"duration": 0.6,
+									"frames": 6,
+									"loop": false
+								},
+								"attack_02": {
+									"duration": 0.7,
+									"frames": 7,
+									"loop": false
+								},
+								"death": {
+									"duration": 0.4,
+									"frames": 4,
+									"loop": false
+								},
+								"defend": {
+									"duration": 0.4,
+									"frames": 4,
+									"loop": false
+								},
+								"hurt": {
+									"duration": 0.4,
+									"frames": 4,
+									"loop": false
+								},
+								"idle": {
+									"duration": 0.6,
+									"frames": 6,
+									"loop": true
+								},
+								"reborn": {
+									"duration": 0.5,
+									"frames": 5,
+									"loop": false
+								},
+								"walk": {
+									"duration": 0.8,
+									"frames": 8,
+									"loop": true
+								}
+							},
+							"growth": {
+
+							},
+							"name": "Skeleton4",
+							"position": [
+								-200.0,
+								-13.0
+							],
+							"unit": {
+								"attack": 15,
+								"card_cost": 1,
+								"card_discription": "",
+								"card_image": null,
+								"card_image_2": null,
+								"card_name": "",
+								"defence": 5,
+								"dodge_rate": 0.0,
+								"dodge_skill": null,
+								"hp_damage_value": 1,
+								"max_hp": 100,
+								"path": "res://data/units/skeleton.tres",
+								"script_path": "res://data/units/unit_data.gd",
+								"skills": [
+									"res://data/skills/skeleton_attack.tres",
+									"res://data/skills/skeleton_power_attack.tres"
+								],
+								"speed": 150.0,
+								"unit_english_name": "skeleton",
+								"unit_name": "骷髅兵",
+								"unit_team": "team_b",
+								"unit_type": 18
+							}
+						}
+					]
+				}
+			]
+		},
+		{
+			"base_energy_cap": 10,
+			"battle_duration": 10.0,
+			"battle_scene": "res://scenes/levels/battles/battle_001.tscn",
+			"cards_per_round": 5,
+			"enemy_max_hp": 45,
+			"energy_growth": 1,
+			"energy_per_round": 3,
+			"level_name": "关卡模板：双兽人",
+			"notes": "复制此资源后配置自己的波次和地形。",
+			"path": "res://data/levels/level_001_1.tres",
+			"repeat_end": 0,
+			"repeat_start": 1,
+			"repeat_waves": false,
+			"script_path": "res://data/levels/battle_level_config.gd",
+			"waves": [
+				{
+					"units": [
+						{
+							"animations": {
+								"attack_01": {
+									"duration": 0.6,
+									"frames": 6,
+									"loop": false
+								},
+								"attack_02": {
+									"duration": 0.7,
+									"frames": 7,
+									"loop": false
+								},
+								"death": {
+									"duration": 0.4,
+									"frames": 4,
+									"loop": false
+								},
+								"defend": {
+									"duration": 0.4,
+									"frames": 4,
+									"loop": false
+								},
+								"hurt": {
+									"duration": 0.4,
+									"frames": 4,
+									"loop": false
+								},
+								"idle": {
+									"duration": 0.6,
+									"frames": 6,
+									"loop": true
+								},
+								"reborn": {
+									"duration": 0.5,
+									"frames": 5,
+									"loop": false
+								},
+								"walk": {
+									"duration": 0.8,
+									"frames": 8,
+									"loop": true
+								}
+							},
+							"growth": {
+
+							},
+							"name": "Skeleton",
+							"position": [
+								-222.0,
+								-287.0
+							],
+							"unit": {
+								"attack": 15,
+								"card_cost": 1,
+								"card_discription": "",
+								"card_image": null,
+								"card_image_2": null,
+								"card_name": "",
+								"defence": 5,
+								"dodge_rate": 0.0,
+								"dodge_skill": null,
+								"hp_damage_value": 1,
+								"max_hp": 100,
+								"path": "res://data/units/skeleton.tres",
+								"script_path": "res://data/units/unit_data.gd",
+								"skills": [
+									"res://data/skills/skeleton_attack.tres",
+									"res://data/skills/skeleton_power_attack.tres"
+								],
+								"speed": 150.0,
+								"unit_english_name": "skeleton",
+								"unit_name": "骷髅兵",
+								"unit_team": "team_b",
+								"unit_type": 18
+							}
+						},
+						{
+							"animations": {
+								"attack_01": {
+									"duration": 0.6,
+									"frames": 6,
+									"loop": false
+								},
+								"attack_02": {
+									"duration": 0.7,
+									"frames": 7,
+									"loop": false
+								},
+								"death": {
+									"duration": 0.4,
+									"frames": 4,
+									"loop": false
+								},
+								"defend": {
+									"duration": 0.4,
+									"frames": 4,
+									"loop": false
+								},
+								"hurt": {
+									"duration": 0.4,
+									"frames": 4,
+									"loop": false
+								},
+								"idle": {
+									"duration": 0.6,
+									"frames": 6,
+									"loop": true
+								},
+								"reborn": {
+									"duration": 0.5,
+									"frames": 5,
+									"loop": false
+								},
+								"walk": {
+									"duration": 0.8,
+									"frames": 8,
+									"loop": true
+								}
+							},
+							"growth": {
+
+							},
+							"name": "Skeleton2",
+							"position": [
+								-191.0,
+								318.0
+							],
+							"unit": {
+								"attack": 15,
+								"card_cost": 1,
+								"card_discription": "",
+								"card_image": null,
+								"card_image_2": null,
+								"card_name": "",
+								"defence": 5,
+								"dodge_rate": 0.0,
+								"dodge_skill": null,
+								"hp_damage_value": 1,
+								"max_hp": 100,
+								"path": "res://data/units/skeleton.tres",
+								"script_path": "res://data/units/unit_data.gd",
+								"skills": [
+									"res://data/skills/skeleton_attack.tres",
+									"res://data/skills/skeleton_power_attack.tres"
+								],
+								"speed": 150.0,
+								"unit_english_name": "skeleton",
+								"unit_name": "骷髅兵",
+								"unit_team": "team_b",
+								"unit_type": 18
+							}
+						}
+					]
+				},
+				{
+					"units": [
+						{
+							"animations": {
+								"attack_01": {
+									"duration": 0.6,
+									"frames": 6,
+									"loop": false
+								},
+								"attack_02": {
+									"duration": 0.7,
+									"frames": 7,
+									"loop": false
+								},
+								"death": {
+									"duration": 0.4,
+									"frames": 4,
+									"loop": false
+								},
+								"defend": {
+									"duration": 0.4,
+									"frames": 4,
+									"loop": false
+								},
+								"hurt": {
+									"duration": 0.4,
+									"frames": 4,
+									"loop": false
+								},
+								"idle": {
+									"duration": 0.6,
+									"frames": 6,
+									"loop": true
+								},
+								"reborn": {
+									"duration": 0.5,
+									"frames": 5,
+									"loop": false
+								},
+								"walk": {
+									"duration": 0.8,
+									"frames": 8,
+									"loop": true
+								}
+							},
+							"growth": {
+
+							},
+							"name": "Skeleton",
+							"position": [
+								-573.0,
+								5.0
+							],
+							"unit": {
+								"attack": 15,
+								"card_cost": 1,
+								"card_discription": "",
+								"card_image": null,
+								"card_image_2": null,
+								"card_name": "",
+								"defence": 5,
+								"dodge_rate": 0.0,
+								"dodge_skill": null,
+								"hp_damage_value": 1,
+								"max_hp": 100,
+								"path": "res://data/units/skeleton.tres",
+								"script_path": "res://data/units/unit_data.gd",
+								"skills": [
+									"res://data/skills/skeleton_attack.tres",
+									"res://data/skills/skeleton_power_attack.tres"
+								],
+								"speed": 150.0,
+								"unit_english_name": "skeleton",
+								"unit_name": "骷髅兵",
+								"unit_team": "team_b",
+								"unit_type": 18
+							}
+						},
+						{
+							"animations": {
+								"attack_01": {
+									"duration": 0.6,
+									"frames": 6,
+									"loop": false
+								},
+								"attack_02": {
+									"duration": 0.7,
+									"frames": 7,
+									"loop": false
+								},
+								"death": {
+									"duration": 0.4,
+									"frames": 4,
+									"loop": false
+								},
+								"defend": {
+									"duration": 0.4,
+									"frames": 4,
+									"loop": false
+								},
+								"hurt": {
+									"duration": 0.4,
+									"frames": 4,
+									"loop": false
+								},
+								"idle": {
+									"duration": 0.6,
+									"frames": 6,
+									"loop": true
+								},
+								"reborn": {
+									"duration": 0.5,
+									"frames": 5,
+									"loop": false
+								},
+								"walk": {
+									"duration": 0.8,
+									"frames": 8,
+									"loop": true
+								}
+							},
+							"growth": {
+
+							},
+							"name": "Skeleton2",
+							"position": [
+								-293.0,
+								149.0
+							],
+							"unit": {
+								"attack": 15,
+								"card_cost": 1,
+								"card_discription": "",
+								"card_image": null,
+								"card_image_2": null,
+								"card_name": "",
+								"defence": 5,
+								"dodge_rate": 0.0,
+								"dodge_skill": null,
+								"hp_damage_value": 1,
+								"max_hp": 100,
+								"path": "res://data/units/skeleton.tres",
+								"script_path": "res://data/units/unit_data.gd",
+								"skills": [
+									"res://data/skills/skeleton_attack.tres",
+									"res://data/skills/skeleton_power_attack.tres"
+								],
+								"speed": 150.0,
+								"unit_english_name": "skeleton",
+								"unit_name": "骷髅兵",
+								"unit_team": "team_b",
+								"unit_type": 18
+							}
+						}
+					]
+				},
+				{
+					"units": [
+						{
+							"animations": {
+								"attack_01": {
+									"duration": 0.6,
+									"frames": 6,
+									"loop": false
+								},
+								"attack_02": {
+									"duration": 0.7,
+									"frames": 7,
+									"loop": false
+								},
+								"death": {
+									"duration": 0.4,
+									"frames": 4,
+									"loop": false
+								},
+								"defend": {
+									"duration": 0.4,
+									"frames": 4,
+									"loop": false
+								},
+								"hurt": {
+									"duration": 0.4,
+									"frames": 4,
+									"loop": false
+								},
+								"idle": {
+									"duration": 0.6,
+									"frames": 6,
+									"loop": true
+								},
+								"reborn": {
+									"duration": 0.5,
+									"frames": 5,
+									"loop": false
+								},
+								"walk": {
+									"duration": 0.8,
+									"frames": 8,
+									"loop": true
+								}
+							},
+							"growth": {
+
+							},
+							"name": "Skeleton",
+							"position": [
+								-269.0,
+								18.0
+							],
+							"unit": {
+								"attack": 15,
+								"card_cost": 1,
+								"card_discription": "",
+								"card_image": null,
+								"card_image_2": null,
+								"card_name": "",
+								"defence": 5,
+								"dodge_rate": 0.0,
+								"dodge_skill": null,
+								"hp_damage_value": 1,
+								"max_hp": 100,
+								"path": "res://data/units/skeleton.tres",
+								"script_path": "res://data/units/unit_data.gd",
+								"skills": [
+									"res://data/skills/skeleton_attack.tres",
+									"res://data/skills/skeleton_power_attack.tres"
+								],
+								"speed": 150.0,
+								"unit_english_name": "skeleton",
+								"unit_name": "骷髅兵",
+								"unit_team": "team_b",
+								"unit_type": 18
+							}
+						},
+						{
+							"animations": {
+								"attack_01": {
+									"duration": 0.9,
+									"frames": 9,
+									"loop": false
+								},
+								"death": {
+									"duration": 0.4,
+									"frames": 4,
+									"loop": false
+								},
+								"hurt": {
+									"duration": 0.4,
+									"frames": 4,
+									"loop": false
+								},
+								"idle": {
+									"duration": 0.6,
+									"frames": 6,
+									"loop": true
+								},
+								"reborn": {
+									"duration": 0.5,
+									"frames": 5,
+									"loop": false
+								},
+								"walk": {
+									"duration": 0.8,
+									"frames": 8,
+									"loop": true
+								}
+							},
+							"growth": {
+
+							},
+							"name": "SkeletonArcher",
+							"position": [
+								-136.0,
+								-81.0
+							],
+							"unit": {
+								"attack": 15,
+								"card_cost": 1,
+								"card_discription": "",
+								"card_image": null,
+								"card_image_2": null,
+								"card_name": "",
+								"defence": 5,
+								"dodge_rate": 0.0,
+								"dodge_skill": null,
+								"hp_damage_value": 2,
+								"max_hp": 100,
+								"path": "res://data/units/skeleton_archer.tres",
+								"script_path": "res://data/units/unit_data.gd",
+								"skills": [
+									"res://data/skills/skeleton_archer_attack.tres"
+								],
+								"speed": 150.0,
+								"unit_english_name": "skeleton_archer",
+								"unit_name": "弓箭手哥布林",
+								"unit_team": "team_b",
+								"unit_type": 19
+							}
+						},
+						{
+							"animations": {
+								"attack_01": {
+									"duration": 0.9,
+									"frames": 9,
+									"loop": false
+								},
+								"death": {
+									"duration": 0.4,
+									"frames": 4,
+									"loop": false
+								},
+								"hurt": {
+									"duration": 0.4,
+									"frames": 4,
+									"loop": false
+								},
+								"idle": {
+									"duration": 0.6,
+									"frames": 6,
+									"loop": true
+								},
+								"reborn": {
+									"duration": 0.5,
+									"frames": 5,
+									"loop": false
+								},
+								"walk": {
+									"duration": 0.8,
+									"frames": 8,
+									"loop": true
+								}
+							},
+							"growth": {
+
+							},
+							"name": "SkeletonArcher2",
+							"position": [
+								-137.0,
+								154.0
+							],
+							"unit": {
+								"attack": 15,
+								"card_cost": 1,
+								"card_discription": "",
+								"card_image": null,
+								"card_image_2": null,
+								"card_name": "",
+								"defence": 5,
+								"dodge_rate": 0.0,
+								"dodge_skill": null,
+								"hp_damage_value": 2,
+								"max_hp": 100,
+								"path": "res://data/units/skeleton_archer.tres",
+								"script_path": "res://data/units/unit_data.gd",
+								"skills": [
+									"res://data/skills/skeleton_archer_attack.tres"
+								],
+								"speed": 150.0,
+								"unit_english_name": "skeleton_archer",
+								"unit_name": "弓箭手哥布林",
+								"unit_team": "team_b",
+								"unit_type": 19
+							}
+						}
+					]
+				},
+				{
+					"units": []
+				},
+				{
+					"units": [
+						{
+							"animations": {
+								"attack_01": {
+									"duration": 0.6,
+									"frames": 6,
+									"loop": false
+								},
+								"attack_02": {
+									"duration": 0.7,
+									"frames": 7,
+									"loop": false
+								},
+								"death": {
+									"duration": 0.4,
+									"frames": 4,
+									"loop": false
+								},
+								"defend": {
+									"duration": 0.4,
+									"frames": 4,
+									"loop": false
+								},
+								"hurt": {
+									"duration": 0.4,
+									"frames": 4,
+									"loop": false
+								},
+								"idle": {
+									"duration": 0.6,
+									"frames": 6,
+									"loop": true
+								},
+								"reborn": {
+									"duration": 0.5,
+									"frames": 5,
+									"loop": false
+								},
+								"walk": {
+									"duration": 0.8,
+									"frames": 8,
+									"loop": true
+								}
+							},
+							"growth": {
+
+							},
+							"name": "Skeleton",
+							"position": [
+								-200.0,
+								-77.0
+							],
+							"unit": {
+								"attack": 15,
+								"card_cost": 1,
+								"card_discription": "",
+								"card_image": null,
+								"card_image_2": null,
+								"card_name": "",
+								"defence": 5,
+								"dodge_rate": 0.0,
+								"dodge_skill": null,
+								"hp_damage_value": 1,
+								"max_hp": 100,
+								"path": "res://data/units/skeleton.tres",
+								"script_path": "res://data/units/unit_data.gd",
+								"skills": [
+									"res://data/skills/skeleton_attack.tres",
+									"res://data/skills/skeleton_power_attack.tres"
+								],
+								"speed": 150.0,
+								"unit_english_name": "skeleton",
+								"unit_name": "骷髅兵",
+								"unit_team": "team_b",
+								"unit_type": 18
+							}
+						},
+						{
+							"animations": {
+								"attack_01": {
+									"duration": 0.6,
+									"frames": 6,
+									"loop": false
+								},
+								"attack_02": {
+									"duration": 0.7,
+									"frames": 7,
+									"loop": false
+								},
+								"death": {
+									"duration": 0.4,
+									"frames": 4,
+									"loop": false
+								},
+								"defend": {
+									"duration": 0.4,
+									"frames": 4,
+									"loop": false
+								},
+								"hurt": {
+									"duration": 0.4,
+									"frames": 4,
+									"loop": false
+								},
+								"idle": {
+									"duration": 0.6,
+									"frames": 6,
+									"loop": true
+								},
+								"reborn": {
+									"duration": 0.5,
+									"frames": 5,
+									"loop": false
+								},
+								"walk": {
+									"duration": 0.8,
+									"frames": 8,
+									"loop": true
+								}
+							},
+							"growth": {
+
+							},
+							"name": "Skeleton2",
+							"position": [
+								-168.0,
+								179.0
+							],
+							"unit": {
+								"attack": 15,
+								"card_cost": 1,
+								"card_discription": "",
+								"card_image": null,
+								"card_image_2": null,
+								"card_name": "",
+								"defence": 5,
+								"dodge_rate": 0.0,
+								"dodge_skill": null,
+								"hp_damage_value": 1,
+								"max_hp": 100,
+								"path": "res://data/units/skeleton.tres",
+								"script_path": "res://data/units/unit_data.gd",
+								"skills": [
+									"res://data/skills/skeleton_attack.tres",
+									"res://data/skills/skeleton_power_attack.tres"
+								],
+								"speed": 150.0,
+								"unit_english_name": "skeleton",
+								"unit_name": "骷髅兵",
+								"unit_team": "team_b",
+								"unit_type": 18
+							}
+						},
+						{
+							"animations": {
+								"attack_01": {
+									"duration": 0.6,
+									"frames": 6,
+									"loop": false
+								},
+								"attack_02": {
+									"duration": 0.7,
+									"frames": 7,
+									"loop": false
+								},
+								"death": {
+									"duration": 0.4,
+									"frames": 4,
+									"loop": false
+								},
+								"defend": {
+									"duration": 0.4,
+									"frames": 4,
+									"loop": false
+								},
+								"hurt": {
+									"duration": 0.4,
+									"frames": 4,
+									"loop": false
+								},
+								"idle": {
+									"duration": 0.6,
+									"frames": 6,
+									"loop": true
+								},
+								"reborn": {
+									"duration": 0.5,
+									"frames": 5,
+									"loop": false
+								},
+								"walk": {
+									"duration": 0.8,
+									"frames": 8,
+									"loop": true
+								}
+							},
+							"growth": {
+
+							},
+							"name": "Skeleton3",
+							"position": [
+								-168.0,
+								275.0
+							],
+							"unit": {
+								"attack": 15,
+								"card_cost": 1,
+								"card_discription": "",
+								"card_image": null,
+								"card_image_2": null,
+								"card_name": "",
+								"defence": 5,
+								"dodge_rate": 0.0,
+								"dodge_skill": null,
+								"hp_damage_value": 1,
+								"max_hp": 100,
+								"path": "res://data/units/skeleton.tres",
+								"script_path": "res://data/units/unit_data.gd",
+								"skills": [
+									"res://data/skills/skeleton_attack.tres",
+									"res://data/skills/skeleton_power_attack.tres"
+								],
+								"speed": 150.0,
+								"unit_english_name": "skeleton",
+								"unit_name": "骷髅兵",
+								"unit_team": "team_b",
+								"unit_type": 18
+							}
+						},
+						{
+							"animations": {
+								"attack_01": {
+									"duration": 0.6,
+									"frames": 6,
+									"loop": false
+								},
+								"attack_02": {
+									"duration": 0.7,
+									"frames": 7,
+									"loop": false
+								},
+								"death": {
+									"duration": 0.4,
+									"frames": 4,
+									"loop": false
+								},
+								"defend": {
+									"duration": 0.4,
+									"frames": 4,
+									"loop": false
+								},
+								"hurt": {
+									"duration": 0.4,
+									"frames": 4,
+									"loop": false
+								},
+								"idle": {
+									"duration": 0.6,
+									"frames": 6,
+									"loop": true
+								},
+								"reborn": {
+									"duration": 0.5,
+									"frames": 5,
+									"loop": false
+								},
+								"walk": {
+									"duration": 0.8,
+									"frames": 8,
+									"loop": true
+								}
+							},
+							"growth": {
+
+							},
+							"name": "Skeleton4",
+							"position": [
+								-200.0,
+								-13.0
+							],
+							"unit": {
+								"attack": 15,
+								"card_cost": 1,
+								"card_discription": "",
+								"card_image": null,
+								"card_image_2": null,
+								"card_name": "",
+								"defence": 5,
+								"dodge_rate": 0.0,
+								"dodge_skill": null,
+								"hp_damage_value": 1,
+								"max_hp": 100,
+								"path": "res://data/units/skeleton.tres",
+								"script_path": "res://data/units/unit_data.gd",
+								"skills": [
+									"res://data/skills/skeleton_attack.tres",
+									"res://data/skills/skeleton_power_attack.tres"
+								],
+								"speed": 150.0,
+								"unit_english_name": "skeleton",
+								"unit_name": "骷髅兵",
+								"unit_team": "team_b",
+								"unit_type": 18
+							}
+						}
+					]
+				}
+			]
+		},
+		{
+			"base_energy_cap": 10,
+			"battle_duration": 10.0,
+			"battle_scene": "res://scenes/levels/battles/battle_002.tscn",
+			"cards_per_round": 5,
+			"enemy_max_hp": 45,
+			"energy_growth": 1,
+			"energy_per_round": 3,
+			"level_name": "关卡模板：双兽人",
+			"notes": "复制此资源后配置自己的波次和地形。",
+			"path": "res://data/levels/level_002.tres",
+			"repeat_end": 0,
+			"repeat_start": 1,
+			"repeat_waves": true,
+			"script_path": "res://data/levels/battle_level_config.gd",
+			"waves": [
+				{
+					"units": [
+						{
+							"animations": {
+								"attack_01": {
+									"duration": 0.6,
+									"frames": 6,
+									"loop": false
+								},
+								"attack_02": {
+									"duration": 0.7,
+									"frames": 7,
+									"loop": false
+								},
+								"death": {
+									"duration": 0.4,
+									"frames": 4,
+									"loop": false
+								},
+								"defend": {
+									"duration": 0.4,
+									"frames": 4,
+									"loop": false
+								},
+								"hurt": {
+									"duration": 0.4,
+									"frames": 4,
+									"loop": false
+								},
+								"idle": {
+									"duration": 0.6,
+									"frames": 6,
+									"loop": true
+								},
+								"reborn": {
+									"duration": 0.5,
+									"frames": 5,
+									"loop": false
+								},
+								"walk": {
+									"duration": 0.8,
+									"frames": 8,
+									"loop": true
+								}
+							},
+							"growth": {
+
+							},
+							"name": "Skeleton",
+							"position": [
+								0.0,
+								0.0
+							],
+							"unit": {
+								"attack": 15,
+								"card_cost": 1,
+								"card_discription": "",
+								"card_image": null,
+								"card_image_2": null,
+								"card_name": "",
+								"defence": 5,
+								"dodge_rate": 0.0,
+								"dodge_skill": null,
+								"hp_damage_value": 1,
+								"max_hp": 100,
+								"path": "res://data/units/skeleton.tres",
+								"script_path": "res://data/units/unit_data.gd",
+								"skills": [
+									"res://data/skills/skeleton_attack.tres",
+									"res://data/skills/skeleton_power_attack.tres"
+								],
+								"speed": 150.0,
+								"unit_english_name": "skeleton",
+								"unit_name": "骷髅兵",
+								"unit_team": "team_b",
+								"unit_type": 18
+							}
+						},
+						{
+							"animations": {
+								"attack_01": {
+									"duration": 0.6,
+									"frames": 6,
+									"loop": false
+								},
+								"attack_02": {
+									"duration": 0.7,
+									"frames": 7,
+									"loop": false
+								},
+								"death": {
+									"duration": 0.4,
+									"frames": 4,
+									"loop": false
+								},
+								"defend": {
+									"duration": 0.4,
+									"frames": 4,
+									"loop": false
+								},
+								"hurt": {
+									"duration": 0.4,
+									"frames": 4,
+									"loop": false
+								},
+								"idle": {
+									"duration": 0.6,
+									"frames": 6,
+									"loop": true
+								},
+								"reborn": {
+									"duration": 0.5,
+									"frames": 5,
+									"loop": false
+								},
+								"walk": {
+									"duration": 0.8,
+									"frames": 8,
+									"loop": true
+								}
+							},
+							"growth": {
+
+							},
+							"name": "Skeleton2",
+							"position": [
+								-60.0,
+								0.0
+							],
+							"unit": {
+								"attack": 15,
+								"card_cost": 1,
+								"card_discription": "",
+								"card_image": null,
+								"card_image_2": null,
+								"card_name": "",
+								"defence": 5,
+								"dodge_rate": 0.0,
+								"dodge_skill": null,
+								"hp_damage_value": 1,
+								"max_hp": 100,
+								"path": "res://data/units/skeleton.tres",
+								"script_path": "res://data/units/unit_data.gd",
+								"skills": [
+									"res://data/skills/skeleton_attack.tres",
+									"res://data/skills/skeleton_power_attack.tres"
+								],
+								"speed": 150.0,
+								"unit_english_name": "skeleton",
+								"unit_name": "骷髅兵",
+								"unit_team": "team_b",
+								"unit_type": 18
+							}
+						},
+						{
+							"animations": {
+								"attack_01": {
+									"duration": 0.6,
+									"frames": 6,
+									"loop": false
+								},
+								"attack_02": {
+									"duration": 0.7,
+									"frames": 7,
+									"loop": false
+								},
+								"death": {
+									"duration": 0.4,
+									"frames": 4,
+									"loop": false
+								},
+								"defend": {
+									"duration": 0.4,
+									"frames": 4,
+									"loop": false
+								},
+								"hurt": {
+									"duration": 0.4,
+									"frames": 4,
+									"loop": false
+								},
+								"idle": {
+									"duration": 0.6,
+									"frames": 6,
+									"loop": true
+								},
+								"reborn": {
+									"duration": 0.5,
+									"frames": 5,
+									"loop": false
+								},
+								"walk": {
+									"duration": 0.8,
+									"frames": 8,
+									"loop": true
+								}
+							},
+							"growth": {
+
+							},
+							"name": "Skeleton3",
+							"position": [
+								-120.0,
+								0.0
+							],
+							"unit": {
+								"attack": 15,
+								"card_cost": 1,
+								"card_discription": "",
+								"card_image": null,
+								"card_image_2": null,
+								"card_name": "",
+								"defence": 5,
+								"dodge_rate": 0.0,
+								"dodge_skill": null,
+								"hp_damage_value": 1,
+								"max_hp": 100,
+								"path": "res://data/units/skeleton.tres",
+								"script_path": "res://data/units/unit_data.gd",
+								"skills": [
+									"res://data/skills/skeleton_attack.tres",
+									"res://data/skills/skeleton_power_attack.tres"
+								],
+								"speed": 150.0,
+								"unit_english_name": "skeleton",
+								"unit_name": "骷髅兵",
+								"unit_team": "team_b",
+								"unit_type": 18
+							}
+						},
+						{
+							"animations": {
+								"attack_01": {
+									"duration": 0.6,
+									"frames": 6,
+									"loop": false
+								},
+								"attack_02": {
+									"duration": 0.7,
+									"frames": 7,
+									"loop": false
+								},
+								"death": {
+									"duration": 0.4,
+									"frames": 4,
+									"loop": false
+								},
+								"defend": {
+									"duration": 0.4,
+									"frames": 4,
+									"loop": false
+								},
+								"hurt": {
+									"duration": 0.4,
+									"frames": 4,
+									"loop": false
+								},
+								"idle": {
+									"duration": 0.6,
+									"frames": 6,
+									"loop": true
+								},
+								"reborn": {
+									"duration": 0.5,
+									"frames": 5,
+									"loop": false
+								},
+								"walk": {
+									"duration": 0.8,
+									"frames": 8,
+									"loop": true
+								}
+							},
+							"growth": {
+
+							},
+							"name": "Skeleton4",
+							"position": [
+								-180.0,
+								0.0
+							],
+							"unit": {
+								"attack": 15,
+								"card_cost": 1,
+								"card_discription": "",
+								"card_image": null,
+								"card_image_2": null,
+								"card_name": "",
+								"defence": 5,
+								"dodge_rate": 0.0,
+								"dodge_skill": null,
+								"hp_damage_value": 1,
+								"max_hp": 100,
+								"path": "res://data/units/skeleton.tres",
+								"script_path": "res://data/units/unit_data.gd",
+								"skills": [
+									"res://data/skills/skeleton_attack.tres",
+									"res://data/skills/skeleton_power_attack.tres"
+								],
+								"speed": 150.0,
+								"unit_english_name": "skeleton",
+								"unit_name": "骷髅兵",
+								"unit_team": "team_b",
+								"unit_type": 18
+							}
+						},
+						{
+							"animations": {
+								"attack_01": {
+									"duration": 0.6,
+									"frames": 6,
+									"loop": false
+								},
+								"attack_02": {
+									"duration": 0.7,
+									"frames": 7,
+									"loop": false
+								},
+								"death": {
+									"duration": 0.4,
+									"frames": 4,
+									"loop": false
+								},
+								"defend": {
+									"duration": 0.4,
+									"frames": 4,
+									"loop": false
+								},
+								"hurt": {
+									"duration": 0.4,
+									"frames": 4,
+									"loop": false
+								},
+								"idle": {
+									"duration": 0.6,
+									"frames": 6,
+									"loop": true
+								},
+								"reborn": {
+									"duration": 0.5,
+									"frames": 5,
+									"loop": false
+								},
+								"walk": {
+									"duration": 0.8,
+									"frames": 8,
+									"loop": true
+								}
+							},
+							"growth": {
+
+							},
+							"name": "Skeleton5",
+							"position": [
+								-240.0,
+								0.0
+							],
+							"unit": {
+								"attack": 15,
+								"card_cost": 1,
+								"card_discription": "",
+								"card_image": null,
+								"card_image_2": null,
+								"card_name": "",
+								"defence": 5,
+								"dodge_rate": 0.0,
+								"dodge_skill": null,
+								"hp_damage_value": 1,
+								"max_hp": 100,
+								"path": "res://data/units/skeleton.tres",
+								"script_path": "res://data/units/unit_data.gd",
+								"skills": [
+									"res://data/skills/skeleton_attack.tres",
+									"res://data/skills/skeleton_power_attack.tres"
+								],
+								"speed": 150.0,
+								"unit_english_name": "skeleton",
+								"unit_name": "骷髅兵",
+								"unit_team": "team_b",
+								"unit_type": 18
+							}
+						}
+					]
+				},
+				{
+					"units": [
+						{
+							"animations": {
+								"attack_01": {
+									"duration": 0.9,
+									"frames": 9,
+									"loop": false
+								},
+								"death": {
+									"duration": 0.4,
+									"frames": 4,
+									"loop": false
+								},
+								"hurt": {
+									"duration": 0.4,
+									"frames": 4,
+									"loop": false
+								},
+								"idle": {
+									"duration": 0.6,
+									"frames": 6,
+									"loop": true
+								},
+								"reborn": {
+									"duration": 0.5,
+									"frames": 5,
+									"loop": false
+								},
+								"walk": {
+									"duration": 0.8,
+									"frames": 8,
+									"loop": true
+								}
+							},
+							"growth": {
+
+							},
+							"name": "SkeletonArcher",
+							"position": [
+								0.0,
+								0.0
+							],
+							"unit": {
+								"attack": 15,
+								"card_cost": 1,
+								"card_discription": "",
+								"card_image": null,
+								"card_image_2": null,
+								"card_name": "",
+								"defence": 5,
+								"dodge_rate": 0.0,
+								"dodge_skill": null,
+								"hp_damage_value": 2,
+								"max_hp": 100,
+								"path": "res://data/units/skeleton_archer.tres",
+								"script_path": "res://data/units/unit_data.gd",
+								"skills": [
+									"res://data/skills/skeleton_archer_attack.tres"
+								],
+								"speed": 150.0,
+								"unit_english_name": "skeleton_archer",
+								"unit_name": "弓箭手哥布林",
+								"unit_team": "team_b",
+								"unit_type": 19
+							}
+						},
+						{
+							"animations": {
+								"attack_01": {
+									"duration": 0.9,
+									"frames": 9,
+									"loop": false
+								},
+								"death": {
+									"duration": 0.4,
+									"frames": 4,
+									"loop": false
+								},
+								"hurt": {
+									"duration": 0.4,
+									"frames": 4,
+									"loop": false
+								},
+								"idle": {
+									"duration": 0.6,
+									"frames": 6,
+									"loop": true
+								},
+								"reborn": {
+									"duration": 0.5,
+									"frames": 5,
+									"loop": false
+								},
+								"walk": {
+									"duration": 0.8,
+									"frames": 8,
+									"loop": true
+								}
+							},
+							"growth": {
+
+							},
+							"name": "SkeletonArcher2",
+							"position": [
+								-60.0,
+								0.0
+							],
+							"unit": {
+								"attack": 15,
+								"card_cost": 1,
+								"card_discription": "",
+								"card_image": null,
+								"card_image_2": null,
+								"card_name": "",
+								"defence": 5,
+								"dodge_rate": 0.0,
+								"dodge_skill": null,
+								"hp_damage_value": 2,
+								"max_hp": 100,
+								"path": "res://data/units/skeleton_archer.tres",
+								"script_path": "res://data/units/unit_data.gd",
+								"skills": [
+									"res://data/skills/skeleton_archer_attack.tres"
+								],
+								"speed": 150.0,
+								"unit_english_name": "skeleton_archer",
+								"unit_name": "弓箭手哥布林",
+								"unit_team": "team_b",
+								"unit_type": 19
+							}
+						},
+						{
+							"animations": {
+								"attack_01": {
+									"duration": 0.9,
+									"frames": 9,
+									"loop": false
+								},
+								"death": {
+									"duration": 0.4,
+									"frames": 4,
+									"loop": false
+								},
+								"hurt": {
+									"duration": 0.4,
+									"frames": 4,
+									"loop": false
+								},
+								"idle": {
+									"duration": 0.6,
+									"frames": 6,
+									"loop": true
+								},
+								"reborn": {
+									"duration": 0.5,
+									"frames": 5,
+									"loop": false
+								},
+								"walk": {
+									"duration": 0.8,
+									"frames": 8,
+									"loop": true
+								}
+							},
+							"growth": {
+
+							},
+							"name": "SkeletonArcher3",
+							"position": [
+								-120.0,
+								0.0
+							],
+							"unit": {
+								"attack": 15,
+								"card_cost": 1,
+								"card_discription": "",
+								"card_image": null,
+								"card_image_2": null,
+								"card_name": "",
+								"defence": 5,
+								"dodge_rate": 0.0,
+								"dodge_skill": null,
+								"hp_damage_value": 2,
+								"max_hp": 100,
+								"path": "res://data/units/skeleton_archer.tres",
+								"script_path": "res://data/units/unit_data.gd",
+								"skills": [
+									"res://data/skills/skeleton_archer_attack.tres"
+								],
+								"speed": 150.0,
+								"unit_english_name": "skeleton_archer",
+								"unit_name": "弓箭手哥布林",
+								"unit_team": "team_b",
+								"unit_type": 19
+							}
+						},
+						{
+							"animations": {
+								"attack_01": {
+									"duration": 0.9,
+									"frames": 9,
+									"loop": false
+								},
+								"death": {
+									"duration": 0.4,
+									"frames": 4,
+									"loop": false
+								},
+								"hurt": {
+									"duration": 0.4,
+									"frames": 4,
+									"loop": false
+								},
+								"idle": {
+									"duration": 0.6,
+									"frames": 6,
+									"loop": true
+								},
+								"reborn": {
+									"duration": 0.5,
+									"frames": 5,
+									"loop": false
+								},
+								"walk": {
+									"duration": 0.8,
+									"frames": 8,
+									"loop": true
+								}
+							},
+							"growth": {
+
+							},
+							"name": "SkeletonArcher4",
+							"position": [
+								-180.0,
+								0.0
+							],
+							"unit": {
+								"attack": 15,
+								"card_cost": 1,
+								"card_discription": "",
+								"card_image": null,
+								"card_image_2": null,
+								"card_name": "",
+								"defence": 5,
+								"dodge_rate": 0.0,
+								"dodge_skill": null,
+								"hp_damage_value": 2,
+								"max_hp": 100,
+								"path": "res://data/units/skeleton_archer.tres",
+								"script_path": "res://data/units/unit_data.gd",
+								"skills": [
+									"res://data/skills/skeleton_archer_attack.tres"
+								],
+								"speed": 150.0,
+								"unit_english_name": "skeleton_archer",
+								"unit_name": "弓箭手哥布林",
+								"unit_team": "team_b",
+								"unit_type": 19
+							}
+						},
+						{
+							"animations": {
+								"attack_01": {
+									"duration": 0.9,
+									"frames": 9,
+									"loop": false
+								},
+								"death": {
+									"duration": 0.4,
+									"frames": 4,
+									"loop": false
+								},
+								"hurt": {
+									"duration": 0.4,
+									"frames": 4,
+									"loop": false
+								},
+								"idle": {
+									"duration": 0.6,
+									"frames": 6,
+									"loop": true
+								},
+								"reborn": {
+									"duration": 0.5,
+									"frames": 5,
+									"loop": false
+								},
+								"walk": {
+									"duration": 0.8,
+									"frames": 8,
+									"loop": true
+								}
+							},
+							"growth": {
+
+							},
+							"name": "SkeletonArcher5",
+							"position": [
+								-240.0,
+								0.0
+							],
+							"unit": {
+								"attack": 15,
+								"card_cost": 1,
+								"card_discription": "",
+								"card_image": null,
+								"card_image_2": null,
+								"card_name": "",
+								"defence": 5,
+								"dodge_rate": 0.0,
+								"dodge_skill": null,
+								"hp_damage_value": 2,
+								"max_hp": 100,
+								"path": "res://data/units/skeleton_archer.tres",
+								"script_path": "res://data/units/unit_data.gd",
+								"skills": [
+									"res://data/skills/skeleton_archer_attack.tres"
+								],
+								"speed": 150.0,
+								"unit_english_name": "skeleton_archer",
+								"unit_name": "弓箭手哥布林",
+								"unit_team": "team_b",
+								"unit_type": 19
+							}
+						}
+					]
+				},
+				{
+					"units": []
+				}
+			]
+		},
+		{
+			"base_energy_cap": 10,
+			"battle_duration": 10.0,
+			"battle_scene": "res://scenes/levels/battles/battle_002.tscn",
+			"cards_per_round": 5,
+			"enemy_max_hp": 45,
+			"energy_growth": 1,
+			"energy_per_round": 3,
+			"level_name": "关卡模板：双兽人",
+			"notes": "复制此资源后配置自己的波次和地形。",
+			"path": "res://data/levels/level_003.tres",
+			"repeat_end": 0,
+			"repeat_start": 3,
+			"repeat_waves": true,
+			"script_path": "res://data/levels/battle_level_config.gd",
+			"waves": [
+				{
+					"units": [
+						{
+							"animations": {
+								"attack_01": {
+									"duration": 0.6,
+									"frames": 6,
+									"loop": false
+								},
+								"attack_02": {
+									"duration": 0.7,
+									"frames": 7,
+									"loop": false
+								},
+								"death": {
+									"duration": 0.4,
+									"frames": 4,
+									"loop": false
+								},
+								"defend": {
+									"duration": 0.4,
+									"frames": 4,
+									"loop": false
+								},
+								"hurt": {
+									"duration": 0.4,
+									"frames": 4,
+									"loop": false
+								},
+								"idle": {
+									"duration": 0.6,
+									"frames": 6,
+									"loop": true
+								},
+								"reborn": {
+									"duration": 0.5,
+									"frames": 5,
+									"loop": false
+								},
+								"walk": {
+									"duration": 0.8,
+									"frames": 8,
+									"loop": true
+								}
+							},
+							"growth": {
+
+							},
+							"name": "Skeleton5",
+							"position": [
+								-342.0,
+								-9.0
+							],
+							"unit": {
+								"attack": 15,
+								"card_cost": 1,
+								"card_discription": "",
+								"card_image": null,
+								"card_image_2": null,
+								"card_name": "",
+								"defence": 5,
+								"dodge_rate": 0.0,
+								"dodge_skill": null,
+								"hp_damage_value": 1,
+								"max_hp": 100,
+								"path": "res://data/units/skeleton.tres",
+								"script_path": "res://data/units/unit_data.gd",
+								"skills": [
+									"res://data/skills/skeleton_attack.tres",
+									"res://data/skills/skeleton_power_attack.tres"
+								],
+								"speed": 150.0,
+								"unit_english_name": "skeleton",
+								"unit_name": "骷髅兵",
+								"unit_team": "team_b",
+								"unit_type": 18
+							}
+						}
+					]
+				},
+				{
+					"units": [
+						{
+							"animations": {
+								"attack_01": {
+									"duration": 0.9,
+									"frames": 9,
+									"loop": false
+								},
+								"death": {
+									"duration": 0.4,
+									"frames": 4,
+									"loop": false
+								},
+								"hurt": {
+									"duration": 0.4,
+									"frames": 4,
+									"loop": false
+								},
+								"idle": {
+									"duration": 0.6,
+									"frames": 6,
+									"loop": true
+								},
+								"reborn": {
+									"duration": 0.5,
+									"frames": 5,
+									"loop": false
+								},
+								"walk": {
+									"duration": 0.8,
+									"frames": 8,
+									"loop": true
+								}
+							},
+							"growth": {
+								"attack": 2
+							},
+							"name": "SkeletonArcher5",
+							"position": [
+								-240.0,
+								0.0
+							],
+							"unit": {
+								"attack": 15,
+								"card_cost": 1,
+								"card_discription": "",
+								"card_image": null,
+								"card_image_2": null,
+								"card_name": "",
+								"defence": 5,
+								"dodge_rate": 0.0,
+								"dodge_skill": null,
+								"hp_damage_value": 2,
+								"max_hp": 100,
+								"path": "res://data/units/skeleton_archer.tres",
+								"script_path": "res://data/units/unit_data.gd",
+								"skills": [
+									"res://data/skills/skeleton_archer_attack.tres"
+								],
+								"speed": 150.0,
+								"unit_english_name": "skeleton_archer",
+								"unit_name": "弓箭手哥布林",
+								"unit_team": "team_b",
+								"unit_type": 19
+							}
+						}
+					]
+				},
+				{
+					"units": [
+						{
+							"animations": {
+								"attack_01": {
+									"duration": 0.6,
+									"frames": 6,
+									"loop": false
+								},
+								"attack_02": {
+									"duration": 0.7,
+									"frames": 7,
+									"loop": false
+								},
+								"death": {
+									"duration": 0.4,
+									"frames": 4,
+									"loop": false
+								},
+								"defend": {
+									"duration": 0.4,
+									"frames": 4,
+									"loop": false
+								},
+								"hurt": {
+									"duration": 0.4,
+									"frames": 4,
+									"loop": false
+								},
+								"idle": {
+									"duration": 0.6,
+									"frames": 6,
+									"loop": true
+								},
+								"reborn": {
+									"duration": 0.5,
+									"frames": 5,
+									"loop": false
+								},
+								"walk": {
+									"duration": 0.8,
+									"frames": 8,
+									"loop": true
+								}
+							},
+							"growth": {
+								"attack": 2
+							},
+							"name": "Skeleton",
+							"position": [
+								-324.0,
+								9.0
+							],
+							"unit": {
+								"attack": 15,
+								"card_cost": 1,
+								"card_discription": "",
+								"card_image": null,
+								"card_image_2": null,
+								"card_name": "",
+								"defence": 5,
+								"dodge_rate": 0.0,
+								"dodge_skill": null,
+								"hp_damage_value": 1,
+								"max_hp": 100,
+								"path": "res://data/units/skeleton.tres",
+								"script_path": "res://data/units/unit_data.gd",
+								"skills": [
+									"res://data/skills/skeleton_attack.tres",
+									"res://data/skills/skeleton_power_attack.tres"
+								],
+								"speed": 150.0,
+								"unit_english_name": "skeleton",
+								"unit_name": "骷髅兵",
+								"unit_team": "team_b",
+								"unit_type": 18
+							}
+						},
+						{
+							"animations": {
+								"attack_01": {
+									"duration": 0.9,
+									"frames": 9,
+									"loop": false
+								},
+								"death": {
+									"duration": 0.4,
+									"frames": 4,
+									"loop": false
+								},
+								"hurt": {
+									"duration": 0.4,
+									"frames": 4,
+									"loop": false
+								},
+								"idle": {
+									"duration": 0.6,
+									"frames": 6,
+									"loop": true
+								},
+								"reborn": {
+									"duration": 0.5,
+									"frames": 5,
+									"loop": false
+								},
+								"walk": {
+									"duration": 0.8,
+									"frames": 8,
+									"loop": true
+								}
+							},
+							"growth": {
+								"attack": 2
+							},
+							"name": "SkeletonArcher",
+							"position": [
+								-96.0,
+								10.0
+							],
+							"unit": {
+								"attack": 15,
+								"card_cost": 1,
+								"card_discription": "",
+								"card_image": null,
+								"card_image_2": null,
+								"card_name": "",
+								"defence": 5,
+								"dodge_rate": 0.0,
+								"dodge_skill": null,
+								"hp_damage_value": 2,
+								"max_hp": 100,
+								"path": "res://data/units/skeleton_archer.tres",
+								"script_path": "res://data/units/unit_data.gd",
+								"skills": [
+									"res://data/skills/skeleton_archer_attack.tres"
+								],
+								"speed": 150.0,
+								"unit_english_name": "skeleton_archer",
+								"unit_name": "弓箭手哥布林",
+								"unit_team": "team_b",
+								"unit_type": 19
+							}
+						}
+					]
+				},
+				{
+					"units": [
+						{
+							"animations": {
+								"attack_01": {
+									"duration": 0.6,
+									"frames": 6,
+									"loop": false
+								},
+								"attack_02": {
+									"duration": 0.7,
+									"frames": 7,
+									"loop": false
+								},
+								"death": {
+									"duration": 0.4,
+									"frames": 4,
+									"loop": false
+								},
+								"defend": {
+									"duration": 0.4,
+									"frames": 4,
+									"loop": false
+								},
+								"hurt": {
+									"duration": 0.4,
+									"frames": 4,
+									"loop": false
+								},
+								"idle": {
+									"duration": 0.6,
+									"frames": 6,
+									"loop": true
+								},
+								"reborn": {
+									"duration": 0.5,
+									"frames": 5,
+									"loop": false
+								},
+								"walk": {
+									"duration": 0.8,
+									"frames": 8,
+									"loop": true
+								}
+							},
+							"growth": {
+								"attack": 2
+							},
+							"name": "Skeleton",
+							"position": [
+								-292.0,
+								66.0
+							],
+							"unit": {
+								"attack": 15,
+								"card_cost": 1,
+								"card_discription": "",
+								"card_image": null,
+								"card_image_2": null,
+								"card_name": "",
+								"defence": 5,
+								"dodge_rate": 0.0,
+								"dodge_skill": null,
+								"hp_damage_value": 1,
+								"max_hp": 100,
+								"path": "res://data/units/skeleton.tres",
+								"script_path": "res://data/units/unit_data.gd",
+								"skills": [
+									"res://data/skills/skeleton_attack.tres",
+									"res://data/skills/skeleton_power_attack.tres"
+								],
+								"speed": 150.0,
+								"unit_english_name": "skeleton",
+								"unit_name": "骷髅兵",
+								"unit_team": "team_b",
+								"unit_type": 18
+							}
+						},
+						{
+							"animations": {
+								"attack_01": {
+									"duration": 0.6,
+									"frames": 6,
+									"loop": false
+								},
+								"attack_02": {
+									"duration": 0.7,
+									"frames": 7,
+									"loop": false
+								},
+								"death": {
+									"duration": 0.4,
+									"frames": 4,
+									"loop": false
+								},
+								"defend": {
+									"duration": 0.4,
+									"frames": 4,
+									"loop": false
+								},
+								"hurt": {
+									"duration": 0.4,
+									"frames": 4,
+									"loop": false
+								},
+								"idle": {
+									"duration": 0.6,
+									"frames": 6,
+									"loop": true
+								},
+								"reborn": {
+									"duration": 0.5,
+									"frames": 5,
+									"loop": false
+								},
+								"walk": {
+									"duration": 0.8,
+									"frames": 8,
+									"loop": true
+								}
+							},
+							"growth": {
+								"attack": 2
+							},
+							"name": "Skeleton2",
+							"position": [
+								-293.0,
+								-92.0
+							],
+							"unit": {
+								"attack": 15,
+								"card_cost": 1,
+								"card_discription": "",
+								"card_image": null,
+								"card_image_2": null,
+								"card_name": "",
+								"defence": 5,
+								"dodge_rate": 0.0,
+								"dodge_skill": null,
+								"hp_damage_value": 1,
+								"max_hp": 100,
+								"path": "res://data/units/skeleton.tres",
+								"script_path": "res://data/units/unit_data.gd",
+								"skills": [
+									"res://data/skills/skeleton_attack.tres",
+									"res://data/skills/skeleton_power_attack.tres"
+								],
+								"speed": 150.0,
+								"unit_english_name": "skeleton",
+								"unit_name": "骷髅兵",
+								"unit_team": "team_b",
+								"unit_type": 18
+							}
+						}
+					]
+				},
+				{
+					"units": [
+						{
+							"animations": {
+								"attack_01": {
+									"duration": 0.6,
+									"frames": 6,
+									"loop": false
+								},
+								"attack_02": {
+									"duration": 0.7,
+									"frames": 7,
+									"loop": false
+								},
+								"death": {
+									"duration": 0.4,
+									"frames": 4,
+									"loop": false
+								},
+								"defend": {
+									"duration": 0.4,
+									"frames": 4,
+									"loop": false
+								},
+								"hurt": {
+									"duration": 0.4,
+									"frames": 4,
+									"loop": false
+								},
+								"idle": {
+									"duration": 0.6,
+									"frames": 6,
+									"loop": true
+								},
+								"reborn": {
+									"duration": 0.5,
+									"frames": 5,
+									"loop": false
+								},
+								"walk": {
+									"duration": 0.8,
+									"frames": 8,
+									"loop": true
+								}
+							},
+							"growth": {
+								"attack": 2
+							},
+							"name": "Skeleton",
+							"position": [
+								-367.0,
+								-98.0
+							],
+							"unit": {
+								"attack": 15,
+								"card_cost": 1,
+								"card_discription": "",
+								"card_image": null,
+								"card_image_2": null,
+								"card_name": "",
+								"defence": 5,
+								"dodge_rate": 0.0,
+								"dodge_skill": null,
+								"hp_damage_value": 1,
+								"max_hp": 100,
+								"path": "res://data/units/skeleton.tres",
+								"script_path": "res://data/units/unit_data.gd",
+								"skills": [
+									"res://data/skills/skeleton_attack.tres",
+									"res://data/skills/skeleton_power_attack.tres"
+								],
+								"speed": 150.0,
+								"unit_english_name": "skeleton",
+								"unit_name": "骷髅兵",
+								"unit_team": "team_b",
+								"unit_type": 18
+							}
+						},
+						{
+							"animations": {
+								"attack_01": {
+									"duration": 0.6,
+									"frames": 6,
+									"loop": false
+								},
+								"attack_02": {
+									"duration": 0.7,
+									"frames": 7,
+									"loop": false
+								},
+								"death": {
+									"duration": 0.4,
+									"frames": 4,
+									"loop": false
+								},
+								"defend": {
+									"duration": 0.4,
+									"frames": 4,
+									"loop": false
+								},
+								"hurt": {
+									"duration": 0.4,
+									"frames": 4,
+									"loop": false
+								},
+								"idle": {
+									"duration": 0.6,
+									"frames": 6,
+									"loop": true
+								},
+								"reborn": {
+									"duration": 0.5,
+									"frames": 5,
+									"loop": false
+								},
+								"walk": {
+									"duration": 0.8,
+									"frames": 8,
+									"loop": true
+								}
+							},
+							"growth": {
+								"attack": 2
+							},
+							"name": "Skeleton2",
+							"position": [
+								-357.0,
+								37.0
+							],
+							"unit": {
+								"attack": 15,
+								"card_cost": 1,
+								"card_discription": "",
+								"card_image": null,
+								"card_image_2": null,
+								"card_name": "",
+								"defence": 5,
+								"dodge_rate": 0.0,
+								"dodge_skill": null,
+								"hp_damage_value": 1,
+								"max_hp": 100,
+								"path": "res://data/units/skeleton.tres",
+								"script_path": "res://data/units/unit_data.gd",
+								"skills": [
+									"res://data/skills/skeleton_attack.tres",
+									"res://data/skills/skeleton_power_attack.tres"
+								],
+								"speed": 150.0,
+								"unit_english_name": "skeleton",
+								"unit_name": "骷髅兵",
+								"unit_team": "team_b",
+								"unit_type": 18
+							}
+						},
+						{
+							"animations": {
+								"attack_01": {
+									"duration": 0.9,
+									"frames": 9,
+									"loop": false
+								},
+								"death": {
+									"duration": 0.4,
+									"frames": 4,
+									"loop": false
+								},
+								"hurt": {
+									"duration": 0.4,
+									"frames": 4,
+									"loop": false
+								},
+								"idle": {
+									"duration": 0.6,
+									"frames": 6,
+									"loop": true
+								},
+								"reborn": {
+									"duration": 0.5,
+									"frames": 5,
+									"loop": false
+								},
+								"walk": {
+									"duration": 0.8,
+									"frames": 8,
+									"loop": true
+								}
+							},
+							"growth": {
+								"attack": 2
+							},
+							"name": "SkeletonArcher",
+							"position": [
+								-227.0,
+								-29.0
+							],
+							"unit": {
+								"attack": 15,
+								"card_cost": 1,
+								"card_discription": "",
+								"card_image": null,
+								"card_image_2": null,
+								"card_name": "",
+								"defence": 5,
+								"dodge_rate": 0.0,
+								"dodge_skill": null,
+								"hp_damage_value": 2,
+								"max_hp": 100,
+								"path": "res://data/units/skeleton_archer.tres",
+								"script_path": "res://data/units/unit_data.gd",
+								"skills": [
+									"res://data/skills/skeleton_archer_attack.tres"
+								],
+								"speed": 150.0,
+								"unit_english_name": "skeleton_archer",
+								"unit_name": "弓箭手哥布林",
+								"unit_team": "team_b",
+								"unit_type": 19
+							}
+						}
+					]
+				}
+			]
+		},
+		{
+			"base_energy_cap": 10,
+			"battle_duration": 10.0,
+			"battle_scene": "res://scenes/levels/battles/battle_001.tscn",
+			"cards_per_round": 5,
+			"enemy_max_hp": 45,
+			"energy_growth": 1,
+			"energy_per_round": 3,
+			"level_name": "关卡模板：双兽人",
+			"notes": "复制此资源后配置自己的波次和地形。",
+			"path": "res://data/levels/level_template.tres",
+			"repeat_end": 0,
+			"repeat_start": 1,
+			"repeat_waves": false,
+			"script_path": "res://data/levels/battle_level_config.gd",
+			"waves": [
+				{
+					"units": [
+						{
+							"animations": {
+								"attack_01": {
+									"duration": 0.6,
+									"frames": 6,
+									"loop": false
+								},
+								"attack_02": {
+									"duration": 0.6,
+									"frames": 6,
+									"loop": false
+								},
+								"death": {
+									"duration": 0.8,
+									"frames": 4,
+									"loop": false
+								},
+								"hurt": {
+									"duration": 0.8,
+									"frames": 4,
+									"loop": false
+								},
+								"idle": {
+									"duration": 0.6,
+									"frames": 6,
+									"loop": true
+								},
+								"walk": {
+									"duration": 1.6,
+									"frames": 8,
+									"loop": true
+								}
+							},
+							"growth": {
+
+							},
+							"name": "Enemy",
+							"position": [
+								-21.0,
+								-125.0
+							],
+							"unit": {
+								"attack": 15,
+								"card_cost": 1,
+								"card_discription": "",
+								"card_image": null,
+								"card_image_2": null,
+								"card_name": "",
+								"defence": 5,
+								"dodge_rate": 0.0,
+								"dodge_skill": null,
+								"hp_damage_value": 1,
+								"max_hp": 100,
+								"path": "res://data/units/orc.tres",
+								"script_path": "res://data/units/unit_data.gd",
+								"skills": [
+									"res://data/skills/orc_attack.tres",
+									"res://data/skills/orc_power_attack.tres"
+								],
+								"speed": 150.0,
+								"unit_english_name": "orc",
+								"unit_name": "哥布林",
+								"unit_team": "team_b",
+								"unit_type": 2
+							}
+						},
+						{
+							"animations": {
+								"attack_01": {
+									"duration": 0.6,
+									"frames": 6,
+									"loop": false
+								},
+								"attack_02": {
+									"duration": 0.6,
+									"frames": 6,
+									"loop": false
+								},
+								"death": {
+									"duration": 0.8,
+									"frames": 4,
+									"loop": false
+								},
+								"hurt": {
+									"duration": 0.8,
+									"frames": 4,
+									"loop": false
+								},
+								"idle": {
+									"duration": 0.6,
+									"frames": 6,
+									"loop": true
+								},
+								"walk": {
+									"duration": 1.6,
+									"frames": 8,
+									"loop": true
+								}
+							},
+							"growth": {
+
+							},
+							"name": "Enemy2",
+							"position": [
+								108.0,
+								-3.0
+							],
+							"unit": {
+								"attack": 15,
+								"card_cost": 1,
+								"card_discription": "",
+								"card_image": null,
+								"card_image_2": null,
+								"card_name": "",
+								"defence": 5,
+								"dodge_rate": 0.0,
+								"dodge_skill": null,
+								"hp_damage_value": 1,
+								"max_hp": 100,
+								"path": "res://data/units/orc.tres",
+								"script_path": "res://data/units/unit_data.gd",
+								"skills": [
+									"res://data/skills/orc_attack.tres",
+									"res://data/skills/orc_power_attack.tres"
+								],
+								"speed": 150.0,
+								"unit_english_name": "orc",
+								"unit_name": "哥布林",
+								"unit_team": "team_b",
+								"unit_type": 2
+							}
+						},
+						{
+							"animations": {
+								"attack_01": {
+									"duration": 0.6,
+									"frames": 6,
+									"loop": false
+								},
+								"attack_02": {
+									"duration": 0.6,
+									"frames": 6,
+									"loop": false
+								},
+								"death": {
+									"duration": 0.8,
+									"frames": 4,
+									"loop": false
+								},
+								"hurt": {
+									"duration": 0.8,
+									"frames": 4,
+									"loop": false
+								},
+								"idle": {
+									"duration": 0.6,
+									"frames": 6,
+									"loop": true
+								},
+								"walk": {
+									"duration": 1.6,
+									"frames": 8,
+									"loop": true
+								}
+							},
+							"growth": {
+
+							},
+							"name": "Enemy3",
+							"position": [
+								-92.0,
+								101.0
+							],
+							"unit": {
+								"attack": 15,
+								"card_cost": 1,
+								"card_discription": "",
+								"card_image": null,
+								"card_image_2": null,
+								"card_name": "",
+								"defence": 5,
+								"dodge_rate": 0.0,
+								"dodge_skill": null,
+								"hp_damage_value": 1,
+								"max_hp": 100,
+								"path": "res://data/units/orc.tres",
+								"script_path": "res://data/units/unit_data.gd",
+								"skills": [
+									"res://data/skills/orc_attack.tres",
+									"res://data/skills/orc_power_attack.tres"
+								],
+								"speed": 150.0,
+								"unit_english_name": "orc",
+								"unit_name": "哥布林",
+								"unit_team": "team_b",
+								"unit_type": 2
+							}
+						},
+						{
+							"animations": {
+								"attack_01": {
+									"duration": 0.6,
+									"frames": 6,
+									"loop": false
+								},
+								"attack_02": {
+									"duration": 0.6,
+									"frames": 6,
+									"loop": false
+								},
+								"death": {
+									"duration": 0.8,
+									"frames": 4,
+									"loop": false
+								},
+								"hurt": {
+									"duration": 0.8,
+									"frames": 4,
+									"loop": false
+								},
+								"idle": {
+									"duration": 0.6,
+									"frames": 6,
+									"loop": true
+								},
+								"walk": {
+									"duration": 1.6,
+									"frames": 8,
+									"loop": true
+								}
+							},
+							"growth": {
+
+							},
+							"name": "Enemy4",
+							"position": [
+								-48.0,
+								-3.0
+							],
+							"unit": {
+								"attack": 15,
+								"card_cost": 1,
+								"card_discription": "",
+								"card_image": null,
+								"card_image_2": null,
+								"card_name": "",
+								"defence": 5,
+								"dodge_rate": 0.0,
+								"dodge_skill": null,
+								"hp_damage_value": 1,
+								"max_hp": 100,
+								"path": "res://data/units/orc.tres",
+								"script_path": "res://data/units/unit_data.gd",
+								"skills": [
+									"res://data/skills/orc_attack.tres",
+									"res://data/skills/orc_power_attack.tres"
+								],
+								"speed": 150.0,
+								"unit_english_name": "orc",
+								"unit_name": "哥布林",
+								"unit_team": "team_b",
+								"unit_type": 2
+							}
+						},
+						{
+							"animations": {
+								"attack_01": {
+									"duration": 0.6,
+									"frames": 6,
+									"loop": false
+								},
+								"attack_02": {
+									"duration": 0.6,
+									"frames": 6,
+									"loop": false
+								},
+								"death": {
+									"duration": 0.8,
+									"frames": 4,
+									"loop": false
+								},
+								"hurt": {
+									"duration": 0.8,
+									"frames": 4,
+									"loop": false
+								},
+								"idle": {
+									"duration": 0.6,
+									"frames": 6,
+									"loop": true
+								},
+								"walk": {
+									"duration": 1.6,
+									"frames": 8,
+									"loop": true
+								}
+							},
+							"growth": {
+
+							},
+							"name": "Enemy5",
+							"position": [
+								30.0,
+								157.0
+							],
+							"unit": {
+								"attack": 15,
+								"card_cost": 1,
+								"card_discription": "",
+								"card_image": null,
+								"card_image_2": null,
+								"card_name": "",
+								"defence": 5,
+								"dodge_rate": 0.0,
+								"dodge_skill": null,
+								"hp_damage_value": 1,
+								"max_hp": 100,
+								"path": "res://data/units/orc.tres",
+								"script_path": "res://data/units/unit_data.gd",
+								"skills": [
+									"res://data/skills/orc_attack.tres",
+									"res://data/skills/orc_power_attack.tres"
+								],
+								"speed": 150.0,
+								"unit_english_name": "orc",
+								"unit_name": "哥布林",
+								"unit_team": "team_b",
+								"unit_type": 2
+							}
+						}
+					]
+				},
+				{
+					"units": [
+						{
+							"animations": {
+								"attack_01": {
+									"duration": 0.6,
+									"frames": 6,
+									"loop": false
+								},
+								"attack_02": {
+									"duration": 0.6,
+									"frames": 6,
+									"loop": false
+								},
+								"death": {
+									"duration": 0.8,
+									"frames": 4,
+									"loop": false
+								},
+								"hurt": {
+									"duration": 0.8,
+									"frames": 4,
+									"loop": false
+								},
+								"idle": {
+									"duration": 0.6,
+									"frames": 6,
+									"loop": true
+								},
+								"walk": {
+									"duration": 1.6,
+									"frames": 8,
+									"loop": true
+								}
+							},
+							"growth": {
+
+							},
+							"name": "Enemy",
+							"position": [
+								-21.0,
+								-125.0
+							],
+							"unit": {
+								"attack": 15,
+								"card_cost": 1,
+								"card_discription": "",
+								"card_image": null,
+								"card_image_2": null,
+								"card_name": "",
+								"defence": 5,
+								"dodge_rate": 0.0,
+								"dodge_skill": null,
+								"hp_damage_value": 1,
+								"max_hp": 100,
+								"path": "res://data/units/orc.tres",
+								"script_path": "res://data/units/unit_data.gd",
+								"skills": [
+									"res://data/skills/orc_attack.tres",
+									"res://data/skills/orc_power_attack.tres"
+								],
+								"speed": 150.0,
+								"unit_english_name": "orc",
+								"unit_name": "哥布林",
+								"unit_team": "team_b",
+								"unit_type": 2
+							}
+						},
+						{
+							"animations": {
+								"attack_01": {
+									"duration": 0.6,
+									"frames": 6,
+									"loop": false
+								},
+								"attack_02": {
+									"duration": 0.6,
+									"frames": 6,
+									"loop": false
+								},
+								"death": {
+									"duration": 0.8,
+									"frames": 4,
+									"loop": false
+								},
+								"hurt": {
+									"duration": 0.8,
+									"frames": 4,
+									"loop": false
+								},
+								"idle": {
+									"duration": 0.6,
+									"frames": 6,
+									"loop": true
+								},
+								"walk": {
+									"duration": 1.6,
+									"frames": 8,
+									"loop": true
+								}
+							},
+							"growth": {
+
+							},
+							"name": "Enemy2",
+							"position": [
+								108.0,
+								-3.0
+							],
+							"unit": {
+								"attack": 15,
+								"card_cost": 1,
+								"card_discription": "",
+								"card_image": null,
+								"card_image_2": null,
+								"card_name": "",
+								"defence": 5,
+								"dodge_rate": 0.0,
+								"dodge_skill": null,
+								"hp_damage_value": 1,
+								"max_hp": 100,
+								"path": "res://data/units/orc.tres",
+								"script_path": "res://data/units/unit_data.gd",
+								"skills": [
+									"res://data/skills/orc_attack.tres",
+									"res://data/skills/orc_power_attack.tres"
+								],
+								"speed": 150.0,
+								"unit_english_name": "orc",
+								"unit_name": "哥布林",
+								"unit_team": "team_b",
+								"unit_type": 2
+							}
+						},
+						{
+							"animations": {
+								"attack_01": {
+									"duration": 0.6,
+									"frames": 6,
+									"loop": false
+								},
+								"attack_02": {
+									"duration": 0.6,
+									"frames": 6,
+									"loop": false
+								},
+								"death": {
+									"duration": 0.8,
+									"frames": 4,
+									"loop": false
+								},
+								"hurt": {
+									"duration": 0.8,
+									"frames": 4,
+									"loop": false
+								},
+								"idle": {
+									"duration": 0.6,
+									"frames": 6,
+									"loop": true
+								},
+								"walk": {
+									"duration": 1.6,
+									"frames": 8,
+									"loop": true
+								}
+							},
+							"growth": {
+
+							},
+							"name": "Enemy3",
+							"position": [
+								-92.0,
+								101.0
+							],
+							"unit": {
+								"attack": 15,
+								"card_cost": 1,
+								"card_discription": "",
+								"card_image": null,
+								"card_image_2": null,
+								"card_name": "",
+								"defence": 5,
+								"dodge_rate": 0.0,
+								"dodge_skill": null,
+								"hp_damage_value": 1,
+								"max_hp": 100,
+								"path": "res://data/units/orc.tres",
+								"script_path": "res://data/units/unit_data.gd",
+								"skills": [
+									"res://data/skills/orc_attack.tres",
+									"res://data/skills/orc_power_attack.tres"
+								],
+								"speed": 150.0,
+								"unit_english_name": "orc",
+								"unit_name": "哥布林",
+								"unit_team": "team_b",
+								"unit_type": 2
+							}
+						},
+						{
+							"animations": {
+								"attack_01": {
+									"duration": 0.6,
+									"frames": 6,
+									"loop": false
+								},
+								"attack_02": {
+									"duration": 0.6,
+									"frames": 6,
+									"loop": false
+								},
+								"death": {
+									"duration": 0.8,
+									"frames": 4,
+									"loop": false
+								},
+								"hurt": {
+									"duration": 0.8,
+									"frames": 4,
+									"loop": false
+								},
+								"idle": {
+									"duration": 0.6,
+									"frames": 6,
+									"loop": true
+								},
+								"walk": {
+									"duration": 1.6,
+									"frames": 8,
+									"loop": true
+								}
+							},
+							"growth": {
+
+							},
+							"name": "Enemy4",
+							"position": [
+								-48.0,
+								-3.0
+							],
+							"unit": {
+								"attack": 15,
+								"card_cost": 1,
+								"card_discription": "",
+								"card_image": null,
+								"card_image_2": null,
+								"card_name": "",
+								"defence": 5,
+								"dodge_rate": 0.0,
+								"dodge_skill": null,
+								"hp_damage_value": 1,
+								"max_hp": 100,
+								"path": "res://data/units/orc.tres",
+								"script_path": "res://data/units/unit_data.gd",
+								"skills": [
+									"res://data/skills/orc_attack.tres",
+									"res://data/skills/orc_power_attack.tres"
+								],
+								"speed": 150.0,
+								"unit_english_name": "orc",
+								"unit_name": "哥布林",
+								"unit_team": "team_b",
+								"unit_type": 2
+							}
+						},
+						{
+							"animations": {
+								"attack_01": {
+									"duration": 0.6,
+									"frames": 6,
+									"loop": false
+								},
+								"attack_02": {
+									"duration": 0.6,
+									"frames": 6,
+									"loop": false
+								},
+								"death": {
+									"duration": 0.8,
+									"frames": 4,
+									"loop": false
+								},
+								"hurt": {
+									"duration": 0.8,
+									"frames": 4,
+									"loop": false
+								},
+								"idle": {
+									"duration": 0.6,
+									"frames": 6,
+									"loop": true
+								},
+								"walk": {
+									"duration": 1.6,
+									"frames": 8,
+									"loop": true
+								}
+							},
+							"growth": {
+
+							},
+							"name": "Enemy5",
+							"position": [
+								30.0,
+								157.0
+							],
+							"unit": {
+								"attack": 15,
+								"card_cost": 1,
+								"card_discription": "",
+								"card_image": null,
+								"card_image_2": null,
+								"card_name": "",
+								"defence": 5,
+								"dodge_rate": 0.0,
+								"dodge_skill": null,
+								"hp_damage_value": 1,
+								"max_hp": 100,
+								"path": "res://data/units/orc.tres",
+								"script_path": "res://data/units/unit_data.gd",
+								"skills": [
+									"res://data/skills/orc_attack.tres",
+									"res://data/skills/orc_power_attack.tres"
+								],
+								"speed": 150.0,
+								"unit_english_name": "orc",
+								"unit_name": "哥布林",
+								"unit_team": "team_b",
+								"unit_type": 2
+							}
+						}
+					]
+				},
+				{
+					"units": [
+						{
+							"animations": {
+								"attack_01": {
+									"duration": 0.6,
+									"frames": 6,
+									"loop": false
+								},
+								"attack_02": {
+									"duration": 0.6,
+									"frames": 6,
+									"loop": false
+								},
+								"death": {
+									"duration": 0.8,
+									"frames": 4,
+									"loop": false
+								},
+								"hurt": {
+									"duration": 0.8,
+									"frames": 4,
+									"loop": false
+								},
+								"idle": {
+									"duration": 0.6,
+									"frames": 6,
+									"loop": true
+								},
+								"walk": {
+									"duration": 1.6,
+									"frames": 8,
+									"loop": true
+								}
+							},
+							"growth": {
+
+							},
+							"name": "Enemy",
+							"position": [
+								-21.0,
+								-125.0
+							],
+							"unit": {
+								"attack": 15,
+								"card_cost": 1,
+								"card_discription": "",
+								"card_image": null,
+								"card_image_2": null,
+								"card_name": "",
+								"defence": 5,
+								"dodge_rate": 0.0,
+								"dodge_skill": null,
+								"hp_damage_value": 1,
+								"max_hp": 100,
+								"path": "res://data/units/orc.tres",
+								"script_path": "res://data/units/unit_data.gd",
+								"skills": [
+									"res://data/skills/orc_attack.tres",
+									"res://data/skills/orc_power_attack.tres"
+								],
+								"speed": 150.0,
+								"unit_english_name": "orc",
+								"unit_name": "哥布林",
+								"unit_team": "team_b",
+								"unit_type": 2
+							}
+						},
+						{
+							"animations": {
+								"attack_01": {
+									"duration": 0.6,
+									"frames": 6,
+									"loop": false
+								},
+								"attack_02": {
+									"duration": 0.6,
+									"frames": 6,
+									"loop": false
+								},
+								"death": {
+									"duration": 0.8,
+									"frames": 4,
+									"loop": false
+								},
+								"hurt": {
+									"duration": 0.8,
+									"frames": 4,
+									"loop": false
+								},
+								"idle": {
+									"duration": 0.6,
+									"frames": 6,
+									"loop": true
+								},
+								"walk": {
+									"duration": 1.6,
+									"frames": 8,
+									"loop": true
+								}
+							},
+							"growth": {
+
+							},
+							"name": "Enemy2",
+							"position": [
+								108.0,
+								-3.0
+							],
+							"unit": {
+								"attack": 15,
+								"card_cost": 1,
+								"card_discription": "",
+								"card_image": null,
+								"card_image_2": null,
+								"card_name": "",
+								"defence": 5,
+								"dodge_rate": 0.0,
+								"dodge_skill": null,
+								"hp_damage_value": 1,
+								"max_hp": 100,
+								"path": "res://data/units/orc.tres",
+								"script_path": "res://data/units/unit_data.gd",
+								"skills": [
+									"res://data/skills/orc_attack.tres",
+									"res://data/skills/orc_power_attack.tres"
+								],
+								"speed": 150.0,
+								"unit_english_name": "orc",
+								"unit_name": "哥布林",
+								"unit_team": "team_b",
+								"unit_type": 2
+							}
+						},
+						{
+							"animations": {
+								"attack_01": {
+									"duration": 0.6,
+									"frames": 6,
+									"loop": false
+								},
+								"attack_02": {
+									"duration": 0.6,
+									"frames": 6,
+									"loop": false
+								},
+								"death": {
+									"duration": 0.8,
+									"frames": 4,
+									"loop": false
+								},
+								"hurt": {
+									"duration": 0.8,
+									"frames": 4,
+									"loop": false
+								},
+								"idle": {
+									"duration": 0.6,
+									"frames": 6,
+									"loop": true
+								},
+								"walk": {
+									"duration": 1.6,
+									"frames": 8,
+									"loop": true
+								}
+							},
+							"growth": {
+
+							},
+							"name": "Enemy3",
+							"position": [
+								-92.0,
+								101.0
+							],
+							"unit": {
+								"attack": 15,
+								"card_cost": 1,
+								"card_discription": "",
+								"card_image": null,
+								"card_image_2": null,
+								"card_name": "",
+								"defence": 5,
+								"dodge_rate": 0.0,
+								"dodge_skill": null,
+								"hp_damage_value": 1,
+								"max_hp": 100,
+								"path": "res://data/units/orc.tres",
+								"script_path": "res://data/units/unit_data.gd",
+								"skills": [
+									"res://data/skills/orc_attack.tres",
+									"res://data/skills/orc_power_attack.tres"
+								],
+								"speed": 150.0,
+								"unit_english_name": "orc",
+								"unit_name": "哥布林",
+								"unit_team": "team_b",
+								"unit_type": 2
+							}
+						},
+						{
+							"animations": {
+								"attack_01": {
+									"duration": 0.6,
+									"frames": 6,
+									"loop": false
+								},
+								"attack_02": {
+									"duration": 0.6,
+									"frames": 6,
+									"loop": false
+								},
+								"death": {
+									"duration": 0.8,
+									"frames": 4,
+									"loop": false
+								},
+								"hurt": {
+									"duration": 0.8,
+									"frames": 4,
+									"loop": false
+								},
+								"idle": {
+									"duration": 0.6,
+									"frames": 6,
+									"loop": true
+								},
+								"walk": {
+									"duration": 1.6,
+									"frames": 8,
+									"loop": true
+								}
+							},
+							"growth": {
+
+							},
+							"name": "Enemy4",
+							"position": [
+								-48.0,
+								-3.0
+							],
+							"unit": {
+								"attack": 15,
+								"card_cost": 1,
+								"card_discription": "",
+								"card_image": null,
+								"card_image_2": null,
+								"card_name": "",
+								"defence": 5,
+								"dodge_rate": 0.0,
+								"dodge_skill": null,
+								"hp_damage_value": 1,
+								"max_hp": 100,
+								"path": "res://data/units/orc.tres",
+								"script_path": "res://data/units/unit_data.gd",
+								"skills": [
+									"res://data/skills/orc_attack.tres",
+									"res://data/skills/orc_power_attack.tres"
+								],
+								"speed": 150.0,
+								"unit_english_name": "orc",
+								"unit_name": "哥布林",
+								"unit_team": "team_b",
+								"unit_type": 2
+							}
+						},
+						{
+							"animations": {
+								"attack_01": {
+									"duration": 0.6,
+									"frames": 6,
+									"loop": false
+								},
+								"attack_02": {
+									"duration": 0.6,
+									"frames": 6,
+									"loop": false
+								},
+								"death": {
+									"duration": 0.8,
+									"frames": 4,
+									"loop": false
+								},
+								"hurt": {
+									"duration": 0.8,
+									"frames": 4,
+									"loop": false
+								},
+								"idle": {
+									"duration": 0.6,
+									"frames": 6,
+									"loop": true
+								},
+								"walk": {
+									"duration": 1.6,
+									"frames": 8,
+									"loop": true
+								}
+							},
+							"growth": {
+
+							},
+							"name": "Enemy5",
+							"position": [
+								30.0,
+								157.0
+							],
+							"unit": {
+								"attack": 15,
+								"card_cost": 1,
+								"card_discription": "",
+								"card_image": null,
+								"card_image_2": null,
+								"card_name": "",
+								"defence": 5,
+								"dodge_rate": 0.0,
+								"dodge_skill": null,
+								"hp_damage_value": 1,
+								"max_hp": 100,
+								"path": "res://data/units/orc.tres",
+								"script_path": "res://data/units/unit_data.gd",
+								"skills": [
+									"res://data/skills/orc_attack.tres",
+									"res://data/skills/orc_power_attack.tres"
+								],
+								"speed": 150.0,
+								"unit_english_name": "orc",
+								"unit_name": "哥布林",
+								"unit_team": "team_b",
+								"unit_type": 2
+							}
+						}
+					]
+				}
+			]
+		}
+	],
+	"potions": [
+		{
+			"cast_delay": 0.4,
+			"casts": 4,
+			"damage": 6,
+			"description": "选择落点，每0.5秒对范围内敌军造成6点伤害，持续到本轮结束。",
+			"display_name": "火焰药水",
+			"duration": 6.0,
+			"icon": null,
+			"id": "fire",
+			"interval": 0.5,
+			"kind": 2,
+			"path": "res://data/potions/fire.tres",
+			"radius": 85.0,
+			"script_path": "res://data/potions/potion_definition.gd",
+			"speed": 90.0,
+			"targets": 0
+		},
+		{
+			"cast_delay": 0.4,
+			"casts": 4,
+			"damage": 20,
+			"description": "依次点击4个落点，每次对小范围敌军造成20点伤害。每次间隔0.4秒。",
+			"display_name": "闪电药水",
+			"duration": 6.0,
+			"icon": null,
+			"id": "lightning",
+			"interval": 0.5,
+			"kind": 1,
+			"path": "res://data/potions/lightning.tres",
+			"radius": 65.0,
+			"script_path": "res://data/potions/potion_definition.gd",
+			"speed": 90.0,
+			"targets": 0
+		},
+		{
+			"cast_delay": 0.4,
+			"casts": 4,
+			"damage": 8,
+			"description": "选择落点，龙卷风背离基地移动6秒，每0.5秒对范围内敌军造成8点伤害。",
+			"display_name": "龙卷风药水",
+			"duration": 6.0,
+			"icon": null,
+			"id": "tornado",
+			"interval": 0.5,
+			"kind": 0,
+			"path": "res://data/potions/tornado.tres",
+			"radius": 70.0,
+			"script_path": "res://data/potions/potion_definition.gd",
+			"speed": 90.0,
+			"targets": 0
+		}
+	],
+	"relics": [
+		{
+			"amount": 2,
+			"description": "已停用：主堡移除后不再提供基地防御，无法获得此旧版遗物。",
+			"display_name": "城防铁壁",
+			"draw_threshold": 10,
+			"icon": null,
+			"id": "base_armour",
+			"kind": 2,
+			"path": "res://data/relics/base_armour.tres",
+			"rounds": 3,
+			"script_path": "res://data/relics/relic_definition.gd"
+		},
+		{
+			"amount": 20,
+			"description": "本局玩家生命上限增加20，获得时回复20点生命，剩余生命跨节点保留。",
+			"display_name": "坚城之心",
+			"draw_threshold": 10,
+			"icon": null,
+			"id": "base_heart",
+			"kind": 1,
+			"path": "res://data/relics/base_heart.tres",
+			"rounds": 3,
+			"script_path": "res://data/relics/relic_definition.gd"
+		},
+		{
+			"amount": 1,
+			"description": "每实际抽到10张牌获得1点能量，计数跨回合、跨战斗保留。",
+			"display_name": "十抽引擎",
+			"draw_threshold": 10,
+			"icon": null,
+			"id": "draw_engine",
+			"kind": 0,
+			"path": "res://data/relics/draw_engine.tres",
+			"rounds": 3,
+			"script_path": "res://data/relics/relic_definition.gd"
+		},
+		{
+			"amount": 1,
+			"description": "每实际抽到8张牌获得1点能量，计数跨回合、跨战斗保留。",
+			"display_name": "行军戒指",
+			"draw_threshold": 8,
+			"icon": "res://assets/ui_extracted/icons/relic_ring.png",
+			"id": "draw_ring",
+			"kind": 0,
+			"path": "res://data/relics/draw_ring.tres",
+			"rounds": 3,
+			"script_path": "res://data/relics/relic_definition.gd"
+		},
+		{
+			"amount": 2,
+			"description": "每场首次开启自动战斗时，己方士兵防御增加2，持续3个战斗回合。",
+			"display_name": "出征护甲",
+			"draw_threshold": 10,
+			"icon": null,
+			"id": "opening_armour",
+			"kind": 3,
+			"path": "res://data/relics/opening_armour.tres",
+			"rounds": 3,
+			"script_path": "res://data/relics/relic_definition.gd"
+		},
+		{
+			"amount": 1,
+			"description": "本局每回合最大能量增加1。",
+			"display_name": "储能水晶",
+			"draw_threshold": 10,
+			"icon": "res://assets/ui_extracted/icons/relic_crystal.png",
+			"id": "reserve_crystal",
+			"kind": 4,
+			"path": "res://data/relics/reserve_crystal.tres",
+			"rounds": 3,
+			"script_path": "res://data/relics/relic_definition.gd"
+		},
+		{
+			"amount": 12,
+			"description": "本局生命上限增加12，获得时回复12点生命。",
+			"display_name": "旅人护符",
+			"draw_threshold": 10,
+			"icon": "res://assets/ui_extracted/icons/heart.png",
+			"id": "traveler_amulet",
+			"kind": 1,
+			"path": "res://data/relics/traveler_amulet.tres",
+			"rounds": 3,
+			"script_path": "res://data/relics/relic_definition.gd"
+		}
+	],
+	"run_effective": {
+		"gold": 99,
+		"hp": 100,
+		"max_hp": 100,
+		"potions": 3,
+		"relic_count": 3
+	},
+	"run_start": {
+		"bonus_energy_max": 0,
+		"cards": [
+			"res://data/units/soldier.tres",
+			"res://data/units/soldier.tres",
+			"res://data/units/soldier.tres",
+			"res://data/units/archer.tres",
+			"res://data/units/archer.tres",
+			"res://data/cards/defend.tres",
+			"res://data/cards/defend.tres",
+			"res://data/cards/power_enhance.tres",
+			"res://data/cards/power_enhance.tres",
+			"res://data/cards/power_enhance.tres"
+		],
+		"max_hp": 80,
+		"path": "res://data/run/run_start_data.tres",
+		"script_path": "res://data/run/run_start_data.gd",
+		"starting_gold": 99,
+		"starting_hp": 80,
+		"starting_potions": [
+			"res://data/potions/fire.tres",
+			"res://data/potions/lightning.tres",
+			"res://data/potions/tornado.tres"
+		],
+		"starting_relics": [
+			"res://data/relics/base_armour.tres",
+			"res://data/relics/base_heart.tres",
+			"res://data/relics/draw_engine.tres",
+			"res://data/relics/opening_armour.tres"
+		]
+	},
+	"skills": [
+		{
+			"attack_rate": 1.0,
+			"cast_animation": "attack_01",
+			"cast_range": 600.0,
+			"cooldown": 1.0,
+			"description": "",
+			"hit_frame": [
+				6
+			],
+			"manual_finish": false,
+			"on_hit_effect": null,
+			"path": "res://data/skills/archer_arrow_attack.tres",
+			"pierce_count": 1,
+			"priority": 0,
+			"projectile_scene": "res://scenes/projectiles/projectile.tscn",
+			"projectile_trajectory": 1,
+			"script_path": "res://scripts/skills/arrow_attack.gd",
+			"skill_name": "普通射击",
+			"target_type": 0
+		},
+		{
+			"attack_rate": 0.8,
+			"cast_animation": "attack_02",
+			"cast_range": 600.0,
+			"cooldown": 3.0,
+			"description": "",
+			"hit_frame": [
+				9
+			],
+			"manual_finish": false,
+			"on_hit_effect": null,
+			"path": "res://data/skills/archer_power_shoot.tres",
+			"pierce_count": 2,
+			"priority": 2,
+			"projectile_scene": "res://scenes/projectiles/power_arrow.tscn",
+			"projectile_trajectory": 0,
+			"script_path": "res://scripts/skills/arrow_attack.gd",
+			"skill_name": "强力射击",
+			"target_type": 0
+		},
+		{
+			"attack_rate": 1.0,
+			"cast_animation": "attack_01",
+			"cast_range": 80.0,
+			"cooldown": 1.0,
+			"description": "",
+			"hit_frame": [
+				4
+			],
+			"manual_finish": false,
+			"on_hit_effect": null,
+			"path": "res://data/skills/armored_examan_attack.tres",
+			"priority": 0,
+			"script_path": "res://scripts/skills/normal_attack.gd",
+			"skill_name": "普通攻击",
+			"target_type": 0
+		},
+		{
+			"attack_rate": 1.2,
+			"cast_animation": "attack_03",
+			"cast_range": 80.0,
+			"cooldown": 8.0,
+			"description": "",
+			"hit_frame": [
+				4,
+				7
+			],
+			"manual_finish": false,
+			"on_hit_effect": null,
+			"path": "res://data/skills/armored_examan_chop_attack.tres",
+			"priority": 2,
+			"script_path": "res://scripts/skills/normal_attack.gd",
+			"skill_name": "劈砍攻击",
+			"target_type": 0
+		},
+		{
+			"attack_rate": 0.4,
+			"cast_animation": "attack_02",
+			"cast_range": 80.0,
+			"cooldown": 5.0,
+			"description": "",
+			"hit_frame": [
+				5
+			],
+			"manual_finish": false,
+			"on_hit_effect": null,
+			"path": "res://data/skills/armored_examan_round_attack.tres",
+			"priority": 1,
+			"script_path": "res://scripts/skills/area_attack.gd",
+			"skill_name": "旋转攻击",
+			"target_type": 0
+		},
+		{
+			"attack_rate": 1.0,
+			"cast_animation": "attack_01",
+			"cast_range": 80.0,
+			"cooldown": 1.0,
+			"description": "武装哥布林发动普通攻击",
+			"hit_frame": [
+				4
+			],
+			"manual_finish": false,
+			"on_hit_effect": null,
+			"path": "res://data/skills/armored_orc_attack.tres",
+			"priority": 0,
+			"script_path": "res://scripts/skills/normal_attack.gd",
+			"skill_name": "普通攻击",
+			"target_type": 0
+		},
+		{
+			"attack_rate": 1.0,
+			"cast_animation": "attack_02",
+			"cast_range": 80.0,
+			"cooldown": 1.0,
+			"description": "武装哥布林成功防守，并对攻击的敌人发动一次强力反击",
+			"hit_frame": [
+				5
+			],
+			"manual_finish": false,
+			"on_hit_effect": null,
+			"path": "res://data/skills/armored_orc_dodge_attack.tres",
+			"priority": 0,
+			"script_path": "res://scripts/skills/normal_attack.gd",
+			"skill_name": "防守反击",
+			"target_type": 0
+		},
+		{
+			"attack_rate": 1.2,
+			"cast_animation": "attack_03",
+			"cast_range": 80.0,
+			"cooldown": 8.0,
+			"description": "武装哥布林举起盾牌砸地，对两边的敌方单位造成伤害",
+			"hit_frame": [
+				4
+			],
+			"manual_finish": false,
+			"on_hit_effect": null,
+			"path": "res://data/skills/armored_orc_power_attack.tres",
+			"priority": 1,
+			"script_path": "res://scripts/skills/area_attack.gd",
+			"skill_name": "撼地",
+			"target_type": 0
+		},
+		{
+			"attack_rate": 1.0,
+			"cast_animation": "attack_01",
+			"cast_range": 80.0,
+			"cooldown": 1.0,
+			"description": "",
+			"hit_frame": [
+				3
+			],
+			"manual_finish": false,
+			"on_hit_effect": null,
+			"path": "res://data/skills/arrow_attack.tres",
+			"pierce_count": 1,
+			"priority": 0,
+			"projectile_scene": "res://scenes/projectiles/projectile.tscn",
+			"projectile_trajectory": 1,
+			"script_path": "res://scripts/skills/arrow_attack.gd",
+			"skill_name": "普通射击",
+			"target_type": 0
+		},
+		{
+			"attack_rate": 1.0,
+			"cast_animation": "attack_01",
+			"cast_range": 80.0,
+			"cooldown": 1.0,
+			"description": "蝙蝠会追踪敌方当前血量最少的单位发动一次普通攻击",
+			"hit_frame": [
+				3
+			],
+			"manual_finish": false,
+			"on_hit_effect": null,
+			"path": "res://data/skills/bat_attack.tres",
+			"priority": 0,
+			"script_path": "res://scripts/skills/normal_attack.gd",
+			"skill_name": "普通攻击",
+			"target_type": 3
+		},
+		{
+			"attack_rate": 1.2,
+			"cast_animation": "attack_02",
+			"cast_range": 80.0,
+			"cooldown": 6.0,
+			"description": "蝙蝠对当前单位发动一次嗜血攻击，并回复攻击造成伤害的血量",
+			"hit_frame": [
+				4
+			],
+			"manual_finish": false,
+			"on_hit_effect": null,
+			"path": "res://data/skills/bat_power_attack.tres",
+			"priority": 1,
+			"script_path": "res://scripts/skills/bloodthirst_attack.gd",
+			"skill_name": "嗜血攻击",
+			"target_type": 3
+		},
+		{
+			"attack_rate": 1.0,
+			"cast_animation": "attack_01",
+			"cast_range": 80.0,
+			"cooldown": 1.0,
+			"description": "攻击命中后，按目标实际损失的生命值等量回复自身生命。闪避不回复，溢出伤害不计入，回复不超过生命上限。",
+			"hit_frame": [
+				3
+			],
+			"manual_finish": false,
+			"on_hit_effect": null,
+			"path": "res://data/skills/bloodthirst_attack.tres",
+			"priority": 1,
+			"script_path": "res://scripts/skills/bloodthirst_attack.gd",
+			"skill_name": "嗜血攻击",
+			"target_type": 0
+		},
+		{
+			"attack_rate": 1.0,
+			"cast_animation": "attack_01",
+			"cast_range": 80.0,
+			"cooldown": 1.0,
+			"description": "精英哥布林发动普通攻击",
+			"hit_frame": [
+				3
+			],
+			"manual_finish": false,
+			"on_hit_effect": null,
+			"path": "res://data/skills/elite_orc_attack.tres",
+			"priority": 0,
+			"script_path": "res://scripts/skills/normal_attack.gd",
+			"skill_name": "普通攻击",
+			"target_type": 0
+		},
+		{
+			"attack_rate": 2.0,
+			"cast_animation": "attack_03",
+			"cast_range": 80.0,
+			"cooldown": 10.0,
+			"description": "精英哥布林发动强力攻击",
+			"hit_frame": [
+				4
+			],
+			"manual_finish": false,
+			"on_hit_effect": null,
+			"path": "res://data/skills/elite_orc_power_attack.tres",
+			"priority": 1,
+			"script_path": "res://scripts/skills/normal_attack.gd",
+			"skill_name": "强力攻击",
+			"target_type": 0
+		},
+		{
+			"attack_rate": 0.8,
+			"cast_animation": "attack_02",
+			"cast_range": 80.0,
+			"cooldown": 8.0,
+			"description": "精英哥布林发动旋转攻击，对周围一圈的敌人造成伤害",
+			"hit_frame": [
+				1,
+				3,
+				5,
+				8
+			],
+			"manual_finish": false,
+			"on_hit_effect": null,
+			"path": "res://data/skills/elite_orc_round_attack.tres",
+			"priority": 2,
+			"script_path": "res://scripts/skills/normal_attack.gd",
+			"skill_name": "旋转攻击",
+			"target_type": 0
+		},
+		{
+			"attack_rate": 1.0,
+			"cast_animation": "attack_01",
+			"cast_range": 80.0,
+			"cooldown": 1.0,
+			"description": "",
+			"hit_frame": [
+				5
+			],
+			"manual_finish": false,
+			"on_hit_effect": null,
+			"path": "res://data/skills/greatswords_skeleton_attack.tres",
+			"priority": 0,
+			"script_path": "res://scripts/skills/normal_attack.gd",
+			"skill_name": "普通攻击",
+			"target_type": 0
+		},
+		{
+			"attack_rate": 1.2,
+			"cast_animation": "attack_02",
+			"cast_range": 80.0,
+			"cooldown": 4.0,
+			"description": "",
+			"hit_frame": [
+				7
+			],
+			"manual_finish": false,
+			"on_hit_effect": null,
+			"path": "res://data/skills/greatswords_skeleton_power_attack.tres",
+			"priority": 1,
+			"script_path": "res://scripts/skills/normal_attack.gd",
+			"skill_name": "下扫",
+			"target_type": 0
+		},
+		{
+			"attack_rate": 1.4,
+			"cast_animation": "attack_03",
+			"cast_range": 80.0,
+			"cooldown": 6.0,
+			"description": "",
+			"hit_frame": [
+				4
+			],
+			"manual_finish": false,
+			"on_hit_effect": null,
+			"path": "res://data/skills/greatswords_skeleton_stick_attack.tres",
+			"priority": 0,
+			"script_path": "res://scripts/skills/normal_attack.gd",
+			"skill_name": "刺击",
+			"target_type": 0
+		},
+		{
+			"attack_rate": 1.0,
+			"cast_animation": "attack_01",
+			"cast_range": 80.0,
+			"cooldown": 1.0,
+			"description": "",
+			"hit_frame": [
+				4
+			],
+			"manual_finish": false,
+			"on_hit_effect": null,
+			"path": "res://data/skills/knight_attack.tres",
+			"priority": 0,
+			"script_path": "res://scripts/skills/normal_attack.gd",
+			"skill_name": "普通攻击",
+			"target_type": 0
+		},
+		{
+			"attack_rate": 1.2,
+			"cast_animation": "attack_02",
+			"cast_range": 80.0,
+			"cooldown": 1.0,
+			"description": "",
+			"hit_frame": [
+				3,
+				7
+			],
+			"manual_finish": false,
+			"on_hit_effect": null,
+			"path": "res://data/skills/knight_dodge_attack.tres",
+			"priority": 2,
+			"script_path": "res://scripts/skills/dodge_attack.gd",
+			"skill_name": "防守反击",
+			"target_type": 0
+		},
+		{
+			"attack_rate": 3.0,
+			"cast_animation": "attack_03",
+			"cast_range": 80.0,
+			"cooldown": 10.0,
+			"description": "",
+			"hit_frame": [
+				7
+			],
+			"manual_finish": false,
+			"on_hit_effect": null,
+			"path": "res://data/skills/knight_power_attack.tres",
+			"priority": 1,
+			"script_path": "res://scripts/skills/normal_attack.gd",
+			"skill_name": "强力攻击",
+			"target_type": 0
+		},
+		{
+			"attack_rate": 1.0,
+			"cast_animation": "attack_01",
+			"cast_range": 80.0,
+			"cooldown": 1.0,
+			"description": "",
+			"hit_frame": [
+				4
+			],
+			"manual_finish": false,
+			"on_hit_effect": null,
+			"path": "res://data/skills/knight_templar_attack.tres",
+			"priority": 0,
+			"script_path": "res://scripts/skills/normal_attack.gd",
+			"skill_name": "普通攻击",
+			"target_type": 0
+		},
+		{
+			"attack_rate": 1.5,
+			"cast_animation": "attack_02",
+			"cast_range": 80.0,
+			"cooldown": 1.0,
+			"description": "",
+			"hit_frame": [
+				5
+			],
+			"manual_finish": false,
+			"on_hit_effect": null,
+			"path": "res://data/skills/knight_templar_dodge_attack.tres",
+			"priority": 0,
+			"script_path": "res://scripts/skills/dodge_attack.gd",
+			"skill_name": "防守反击",
+			"target_type": 0
+		},
+		{
+			"attack_rate": 0.8,
+			"cast_animation": "attack_03",
+			"cast_range": 80.0,
+			"cooldown": 5.0,
+			"description": "",
+			"hit_frame": [
+				3,
+				7
+			],
+			"manual_finish": false,
+			"on_hit_effect": null,
+			"path": "res://data/skills/knight_templar_power_attack.tres",
+			"priority": 1,
+			"script_path": "res://scripts/skills/normal_attack.gd",
+			"skill_name": "连续攻击",
+			"target_type": 0
+		},
+		{
+			"attack_rate": 1.0,
+			"cast_animation": "attack_01",
+			"cast_range": 80.0,
+			"cooldown": 1.0,
+			"description": "",
+			"hit_frame": [
+				3
+			],
+			"manual_finish": false,
+			"on_hit_effect": null,
+			"path": "res://data/skills/lancer_attack.tres",
+			"priority": 0,
+			"script_path": "res://scripts/skills/normal_attack.gd",
+			"skill_name": "普通攻击",
+			"target_type": 0
+		},
+		{
+			"attack_rate": 1.0,
+			"cast_animation": "attack_03",
+			"cast_range": 600.0,
+			"cooldown": 10.0,
+			"dash_distance": 600.0,
+			"dash_speed": 300.0,
+			"description": "",
+			"hit_frame": [
+				0
+			],
+			"manual_finish": true,
+			"on_hit_effect": null,
+			"path": "res://data/skills/lancer_dash_attack.tres",
+			"priority": 2,
+			"script_path": "res://scripts/skills/dash_attack.gd",
+			"skill_name": "冲刺攻击",
+			"target_type": 0
+		},
+		{
+			"attack_rate": 1.5,
+			"cast_animation": "attack_02",
+			"cast_range": 80.0,
+			"cooldown": 8.0,
+			"description": "",
+			"hit_frame": [
+				4
+			],
+			"manual_finish": false,
+			"on_hit_effect": null,
+			"path": "res://data/skills/lancer_power_attack.tres",
+			"priority": 1,
+			"script_path": "res://scripts/skills/normal_attack.gd",
+			"skill_name": "强力刺击",
+			"target_type": 0
+		},
+		{
+			"attack_rate": 1.0,
+			"cast_animation": "attack_01",
+			"cast_range": 80.0,
+			"cooldown": 1.0,
+			"description": "",
+			"hit_frame": [
+				3
+			],
+			"manual_finish": false,
+			"on_hit_effect": null,
+			"path": "res://data/skills/necromancer_attack.tres",
+			"priority": 0,
+			"script_path": "res://scripts/skills/normal_attack.gd",
+			"skill_name": "普通攻击",
+			"target_type": 0
+		},
+		{
+			"attack_rate": 1.0,
+			"cast_animation": "attack_02",
+			"cast_range": 250.0,
+			"cooldown": 4.0,
+			"description": "",
+			"hit_frame": [
+				3
+			],
+			"manual_finish": false,
+			"on_hit_effect": "res://scenes/effects/green_boom.tscn",
+			"path": "res://data/skills/necromancer_power_attack.tres",
+			"priority": 1,
+			"script_path": "res://scripts/skills/normal_attack.gd",
+			"skill_name": "远程攻击",
+			"target_type": 0
+		},
+		{
+			"attack_rate": 1.0,
+			"cast_animation": "summon",
+			"cast_range": 80.0,
+			"cooldown": 8.0,
+			"description": "在召唤点展开魔法阵，特效结束后生成一只蝙蝠。召唤师死亡或战斗回合结束时取消尚未完成的召唤。",
+			"effect_animation": "green_magic_circle",
+			"hit_frame": [
+				5
+			],
+			"manual_finish": false,
+			"on_hit_effect": "res://scenes/effects/creat_effect.tscn",
+			"path": "res://data/skills/necromancer_summon.tres",
+			"priority": 2,
+			"script_path": "res://scripts/skills/summon_unit.gd",
+			"skill_name": "蝙蝠召唤",
+			"summon_scene": "res://scenes/units/bat.tscn",
+			"target_type": 2
+		},
+		{
+			"attack_rate": 1.0,
+			"cast_animation": "attack_01",
+			"cast_range": 80.0,
+			"cooldown": 1.0,
+			"description": "",
+			"hit_frame": [
+				3
+			],
+			"manual_finish": false,
+			"on_hit_effect": null,
+			"path": "res://data/skills/normal_attack.tres",
+			"priority": 0,
+			"script_path": "res://scripts/skills/normal_attack.gd",
+			"skill_name": "普通攻击",
+			"target_type": 0
+		},
+		{
+			"attack_rate": 1.0,
+			"cast_animation": "attack_01",
+			"cast_range": 80.0,
+			"cooldown": 1.0,
+			"description": "",
+			"hit_frame": [
+				3
+			],
+			"manual_finish": false,
+			"on_hit_effect": null,
+			"path": "res://data/skills/orc_attack.tres",
+			"priority": 0,
+			"script_path": "res://scripts/skills/normal_attack.gd",
+			"skill_name": "普通攻击",
+			"target_type": 0
+		},
+		{
+			"attack_rate": 1.5,
+			"cast_animation": "attack_02",
+			"cast_range": 80.0,
+			"cooldown": 4.0,
+			"description": "",
+			"hit_frame": [
+				3
+			],
+			"manual_finish": false,
+			"on_hit_effect": null,
+			"path": "res://data/skills/orc_power_attack.tres",
+			"priority": 0,
+			"script_path": "res://scripts/skills/normal_attack.gd",
+			"skill_name": "强力攻击",
+			"target_type": 0
+		},
+		{
+			"attack_rate": 1.0,
+			"cast_animation": "attack_01",
+			"cast_range": 80.0,
+			"cooldown": 1.0,
+			"description": "",
+			"hit_frame": [
+				4
+			],
+			"manual_finish": false,
+			"on_hit_effect": null,
+			"path": "res://data/skills/orc_rider_attack.tres",
+			"priority": 0,
+			"script_path": "res://scripts/skills/normal_attack.gd",
+			"skill_name": "普通攻击",
+			"target_type": 0
+		},
+		{
+			"attack_rate": 1.0,
+			"cast_animation": "attack_02",
+			"cast_range": 80.0,
+			"cooldown": 1.0,
+			"description": "",
+			"hit_frame": [
+				4
+			],
+			"manual_finish": false,
+			"on_hit_effect": null,
+			"path": "res://data/skills/orc_rider_dodge_attack.tres",
+			"priority": 0,
+			"script_path": "res://scripts/skills/dodge_attack.gd",
+			"skill_name": "防守反击",
+			"target_type": 0
+		},
+		{
+			"attack_rate": 1.2,
+			"cast_animation": "attack_03",
+			"cast_range": 80.0,
+			"cooldown": 4.0,
+			"description": "",
+			"hit_frame": [
+				6
+			],
+			"manual_finish": false,
+			"on_hit_effect": null,
+			"path": "res://data/skills/orc_rider_power_attack.tres",
+			"priority": 1,
+			"script_path": "res://scripts/skills/area_attack.gd",
+			"skill_name": "强力攻击",
+			"target_type": 0
+		},
+		{
+			"attack_rate": 1.0,
+			"cast_animation": "attack_01",
+			"cast_range": 400.0,
+			"cooldown": 1.0,
+			"description": "",
+			"hit_frame": [
+				4
+			],
+			"manual_finish": false,
+			"on_hit_effect": "res://scenes/effects/priest_hurt_effect.tscn",
+			"path": "res://data/skills/priest_attack.tres",
+			"priority": 0,
+			"script_path": "res://scripts/skills/normal_attack.gd",
+			"skill_name": "普通攻击",
+			"target_type": 0
+		},
+		{
+			"attack_rate": 0.6,
+			"cast_animation": "heal_01",
+			"cast_range": 400.0,
+			"cooldown": 3.0,
+			"description": "",
+			"hit_frame": [
+				2
+			],
+			"manual_finish": false,
+			"on_hit_effect": "res://scenes/effects/priest_healer_effect.tscn",
+			"path": "res://data/skills/priest_healer.tres",
+			"priority": 1,
+			"script_path": "res://scripts/skills/ally_heal.gd",
+			"skill_name": "治疗",
+			"target_type": 1
+		},
+		{
+			"attack_rate": 1.0,
+			"cast_animation": "attack_01",
+			"cast_range": 600.0,
+			"cooldown": 1.0,
+			"description": "",
+			"hit_frame": [
+				6
+			],
+			"manual_finish": false,
+			"on_hit_effect": null,
+			"path": "res://data/skills/skeleton_archer_attack.tres",
+			"pierce_count": 1,
+			"priority": 0,
+			"projectile_scene": "res://scenes/projectiles/projectile.tscn",
+			"projectile_trajectory": 1,
+			"script_path": "res://scripts/skills/arrow_attack.gd",
+			"skill_name": "普通攻击",
+			"target_type": 0
+		},
+		{
+			"attack_rate": 1.0,
+			"cast_animation": "attack_01",
+			"cast_range": 80.0,
+			"cooldown": 1.0,
+			"description": "",
+			"hit_frame": [
+				3
+			],
+			"manual_finish": false,
+			"on_hit_effect": null,
+			"path": "res://data/skills/skeleton_attack.tres",
+			"priority": 0,
+			"script_path": "res://scripts/skills/normal_attack.gd",
+			"skill_name": "普通攻击",
+			"target_type": 0
+		},
+		{
+			"attack_rate": 1.2,
+			"cast_animation": "attack_02",
+			"cast_range": 80.0,
+			"cooldown": 6.0,
+			"description": "",
+			"hit_frame": [
+				3
+			],
+			"manual_finish": false,
+			"on_hit_effect": null,
+			"path": "res://data/skills/skeleton_power_attack.tres",
+			"priority": 1,
+			"script_path": "res://scripts/skills/normal_attack.gd",
+			"skill_name": "普通攻击",
+			"target_type": 0
+		},
+		{
+			"attack_rate": 1.0,
+			"cast_animation": "attack_01",
+			"cast_range": 80.0,
+			"cooldown": 1.0,
+			"description": "",
+			"hit_frame": [
+				3
+			],
+			"manual_finish": false,
+			"on_hit_effect": null,
+			"path": "res://data/skills/slime_attack.tres",
+			"priority": 0,
+			"script_path": "res://scripts/skills/normal_attack.gd",
+			"skill_name": "普通攻击",
+			"target_type": 0
+		},
+		{
+			"attack_rate": 1.4,
+			"cast_animation": "attack_02",
+			"cast_range": 80.0,
+			"cooldown": 6.0,
+			"description": "",
+			"hit_frame": [
+				8
+			],
+			"manual_finish": false,
+			"on_hit_effect": null,
+			"path": "res://data/skills/slime_power_attack.tres",
+			"priority": 1,
+			"script_path": "res://scripts/skills/normal_attack.gd",
+			"skill_name": "普通攻击",
+			"target_type": 0
+		},
+		{
+			"attack_rate": 1.3,
+			"cast_animation": "attack_02",
+			"cast_range": 80.0,
+			"cooldown": 2.0,
+			"description": "",
+			"hit_frame": [
+				3
+			],
+			"manual_finish": false,
+			"on_hit_effect": null,
+			"path": "res://data/skills/soldier_power_attack.tres",
+			"priority": 2,
+			"script_path": "res://scripts/skills/normal_attack.gd",
+			"skill_name": "斩击",
+			"target_type": 0
+		},
+		{
+			"attack_rate": 1.0,
+			"cast_animation": "attack_01",
+			"cast_range": 80.0,
+			"cooldown": 1.0,
+			"description": "",
+			"hit_frame": [
+				3
+			],
+			"manual_finish": false,
+			"on_hit_effect": null,
+			"path": "res://data/skills/swords_man_attack.tres",
+			"priority": 0,
+			"script_path": "res://scripts/skills/normal_attack.gd",
+			"skill_name": "普通攻击",
+			"target_type": 0
+		},
+		{
+			"attack_rate": 0.7,
+			"cast_animation": "attack_02",
+			"cast_range": 80.0,
+			"cooldown": 3.0,
+			"description": "",
+			"hit_frame": [
+				3,
+				6,
+				12
+			],
+			"manual_finish": false,
+			"on_hit_effect": null,
+			"path": "res://data/skills/swords_man_muti_attack.tres",
+			"priority": 1,
+			"script_path": "res://scripts/skills/normal_attack.gd",
+			"skill_name": "三连击",
+			"target_type": 0
+		},
+		{
+			"attack_rate": 0.4,
+			"cast_animation": "attack_03",
+			"cast_range": 80.0,
+			"cooldown": 5.0,
+			"description": "",
+			"hit_frame": [
+				5,
+				6,
+				7,
+				8,
+				9,
+				10,
+				11
+			],
+			"manual_finish": false,
+			"on_hit_effect": null,
+			"path": "res://data/skills/swords_man_stick_muti_attack.tres",
+			"priority": 2,
+			"script_path": "res://scripts/skills/normal_attack.gd",
+			"skill_name": "六连刺",
+			"target_type": 0
+		},
+		{
+			"attack_rate": 1.0,
+			"cast_animation": "attack_01",
+			"cast_range": 80.0,
+			"cooldown": 1.0,
+			"description": "",
+			"hit_frame": [
+				5
+			],
+			"manual_finish": false,
+			"on_hit_effect": null,
+			"path": "res://data/skills/were_bear_attack.tres",
+			"priority": 0,
+			"script_path": "res://scripts/skills/normal_attack.gd",
+			"skill_name": "普通攻击",
+			"target_type": 0
+		},
+		{
+			"attack_rate": 0.8,
+			"cast_animation": "attack_02",
+			"cast_range": 80.0,
+			"cooldown": 3.0,
+			"description": "",
+			"hit_frame": [
+				4,
+				9
+			],
+			"manual_finish": false,
+			"on_hit_effect": null,
+			"path": "res://data/skills/were_bear_double_attack.tres",
+			"priority": 1,
+			"script_path": "res://scripts/skills/normal_attack.gd",
+			"skill_name": "二连爪",
+			"target_type": 0
+		},
+		{
+			"attack_rate": 1.5,
+			"cast_animation": "attack_03",
+			"cast_range": 80.0,
+			"cooldown": 6.0,
+			"description": "",
+			"hit_frame": [
+				5
+			],
+			"manual_finish": false,
+			"on_hit_effect": null,
+			"path": "res://data/skills/were_bear_smash.tres",
+			"priority": 2,
+			"script_path": "res://scripts/skills/area_attack.gd",
+			"skill_name": "撼地",
+			"target_type": 0
+		},
+		{
+			"attack_rate": 1.0,
+			"cast_animation": "attack_01",
+			"cast_range": 80.0,
+			"cooldown": 1.0,
+			"description": "",
+			"hit_frame": [
+				5
+			],
+			"manual_finish": false,
+			"on_hit_effect": null,
+			"path": "res://data/skills/were_wolf_attack.tres",
+			"priority": 0,
+			"script_path": "res://scripts/skills/normal_attack.gd",
+			"skill_name": "普通攻击",
+			"target_type": 0
+		},
+		{
+			"attack_rate": 0.6,
+			"cast_animation": "attack_02",
+			"cast_range": 80.0,
+			"cooldown": 7.0,
+			"description": "",
+			"hit_frame": [
+				7,
+				8,
+				9,
+				10,
+				11
+			],
+			"manual_finish": false,
+			"on_hit_effect": null,
+			"path": "res://data/skills/were_wolf_five_attack.tres",
+			"priority": 1,
+			"script_path": "res://scripts/skills/normal_attack.gd",
+			"skill_name": "五连斩击",
+			"target_type": 0
+		},
+		{
+			"attack_rate": 1.0,
+			"cast_animation": "attack_01",
+			"cast_range": 600.0,
+			"cooldown": 1.0,
+			"description": "",
+			"hit_frame": [
+				4
+			],
+			"manual_finish": false,
+			"on_hit_effect": "res://scenes/effects/wizard_fire_ball_effect.tscn",
+			"path": "res://data/skills/wizard_fire_ball.tres",
+			"pierce_count": 1,
+			"priority": 0,
+			"projectile_scene": "res://scenes/projectiles/fire_ball.tscn",
+			"projectile_trajectory": 1,
+			"script_path": "res://scripts/skills/arrow_attack.gd",
+			"skill_name": "火球",
+			"target_type": 0
+		},
+		{
+			"attack_rate": 1.2,
+			"cast_animation": "attack_02",
+			"cast_range": 600.0,
+			"cooldown": 8.0,
+			"description": "",
+			"hit_frame": [
+				2
+			],
+			"manual_finish": false,
+			"on_hit_effect": "res://scenes/effects/wizard_ice_crash_effect.tscn",
+			"path": "res://data/skills/wizard_ice_crash.tres",
+			"priority": 1,
+			"script_path": "res://scripts/skills/normal_attack.gd",
+			"skill_name": "冰晶爆裂",
+			"target_type": 0
+		}
+	],
+	"unit_scenes": [
+		{
+			"animations": {
+				"attack_01": {
+					"duration": 0.9,
+					"frames": 9,
+					"loop": false
+				},
+				"attack_02": {
+					"duration": 1.2,
+					"frames": 12,
+					"loop": false
+				},
+				"death": {
+					"duration": 0.4,
+					"frames": 4,
+					"loop": false
+				},
+				"hurt": {
+					"duration": 0.4,
+					"frames": 4,
+					"loop": false
+				},
+				"idle": {
+					"duration": 0.6,
+					"frames": 6,
+					"loop": true
+				},
+				"walk": {
+					"duration": 0.8,
+					"frames": 8,
+					"loop": true
+				}
+			},
+			"growth": {
+
+			},
+			"name": "Archer",
+			"position": [
+				0.0,
+				0.0
+			],
+			"scene_path": "res://scenes/units/archer.tscn",
+			"unit": {
+				"attack": 13,
+				"card_cost": 1,
+				"card_discription": "征召一名弓箭手作战",
+				"card_image": "res://assets/ui_redrawn/UI/cardUI/artsource/09.png",
+				"card_image_2": "res://data/units/archer.tres::AtlasTexture_np0ou",
+				"card_name": "弓箭手征召",
+				"defence": 3,
+				"dodge_rate": 0.0,
+				"dodge_skill": null,
+				"hp_damage_value": 2,
+				"max_hp": 80,
+				"path": "res://data/units/archer.tres",
+				"script_path": "res://data/units/unit_data.gd",
+				"skills": [
+					"res://data/skills/archer_arrow_attack.tres",
+					"res://data/skills/archer_power_shoot.tres"
+				],
+				"speed": 150.0,
+				"unit_english_name": "archer",
+				"unit_name": "弓箭手",
+				"unit_team": "team_a",
+				"unit_type": 1
+			}
+		},
+		{
+			"animations": {
+				"attack_01": {
+					"duration": 0.9,
+					"frames": 9,
+					"loop": false
+				},
+				"attack_02": {
+					"duration": 0.9,
+					"frames": 9,
+					"loop": false
+				},
+				"attack_03": {
+					"duration": 1.2,
+					"frames": 12,
+					"loop": false
+				},
+				"death": {
+					"duration": 0.4,
+					"frames": 4,
+					"loop": false
+				},
+				"hurt": {
+					"duration": 0.4,
+					"frames": 4,
+					"loop": false
+				},
+				"idle": {
+					"duration": 0.6,
+					"frames": 6,
+					"loop": true
+				},
+				"walk": {
+					"duration": 0.8,
+					"frames": 8,
+					"loop": true
+				}
+			},
+			"growth": {
+
+			},
+			"name": "ArmoredAxeman",
+			"position": [
+				0.0,
+				0.0
+			],
+			"scene_path": "res://scenes/units/armored_axeman.tscn",
+			"unit": {
+				"attack": 8,
+				"card_cost": 1,
+				"card_discription": "召唤一名装甲斧手作战",
+				"card_image": "res://assets/ui_redrawn/UI/cardUI/artsource/09.png",
+				"card_image_2": "res://data/units/armored_axeman.tres::AtlasTexture_vqt8a",
+				"card_name": "装甲斧手召唤",
+				"defence": 7,
+				"dodge_rate": 0.0,
+				"dodge_skill": null,
+				"hp_damage_value": 1,
+				"max_hp": 200,
+				"path": "res://data/units/armored_axeman.tres",
+				"script_path": "res://data/units/unit_data.gd",
+				"skills": [
+					"res://data/skills/armored_examan_attack.tres",
+					"res://data/skills/armored_examan_round_attack.tres",
+					"res://data/skills/armored_examan_chop_attack.tres"
+				],
+				"speed": 130.0,
+				"unit_english_name": "armored_axeman",
+				"unit_name": "装甲斧手",
+				"unit_team": "team_a",
+				"unit_type": 3
+			}
+		},
+		{
+			"animations": {
+				"attack_01": {
+					"duration": 0.7,
+					"frames": 7,
+					"loop": false
+				},
+				"attack_02": {
+					"duration": 0.8,
+					"frames": 8,
+					"loop": false
+				},
+				"attack_03": {
+					"duration": 0.9,
+					"frames": 9,
+					"loop": false
+				},
+				"death": {
+					"duration": 0.4,
+					"frames": 4,
+					"loop": false
+				},
+				"defend": {
+					"duration": 0.4,
+					"frames": 4,
+					"loop": false
+				},
+				"hurt": {
+					"duration": 0.4,
+					"frames": 4,
+					"loop": false
+				},
+				"idle": {
+					"duration": 0.6,
+					"frames": 6,
+					"loop": true
+				},
+				"walk": {
+					"duration": 0.8,
+					"frames": 8,
+					"loop": true
+				}
+			},
+			"growth": {
+
+			},
+			"name": "ArmoredOrc",
+			"position": [
+				0.0,
+				0.0
+			],
+			"scene_path": "res://scenes/units/armored_orc.tscn",
+			"unit": {
+				"attack": 15,
+				"card_cost": 1,
+				"card_discription": "",
+				"card_image": null,
+				"card_image_2": null,
+				"card_name": "",
+				"defence": 5,
+				"dodge_rate": 0.2,
+				"dodge_skill": "res://data/skills/armored_orc_dodge_attack.tres",
+				"hp_damage_value": 1,
+				"max_hp": 100,
+				"path": "res://data/units/armored_orc.tres",
+				"script_path": "res://data/units/unit_data.gd",
+				"skills": [
+					"res://data/skills/armored_orc_attack.tres",
+					"res://data/skills/armored_orc_power_attack.tres"
+				],
+				"speed": 150.0,
+				"unit_english_name": "armored_orc",
+				"unit_name": "武装哥布林",
+				"unit_team": "team_b",
+				"unit_type": 13
+			}
+		},
+		{
+			"animations": {
+				"attack_01": {
+					"duration": 0.6,
+					"frames": 6,
+					"loop": false
+				},
+				"attack_02": {
+					"duration": 0.7,
+					"frames": 7,
+					"loop": false
+				},
+				"death": {
+					"duration": 0.4,
+					"frames": 4,
+					"loop": false
+				},
+				"hurt": {
+					"duration": 0.4,
+					"frames": 4,
+					"loop": false
+				},
+				"idle": {
+					"duration": 0.6,
+					"frames": 6,
+					"loop": true
+				},
+				"walk": {
+					"duration": 0.6,
+					"frames": 6,
+					"loop": true
+				}
+			},
+			"growth": {
+
+			},
+			"name": "Bat",
+			"position": [
+				0.0,
+				0.0
+			],
+			"scene_path": "res://scenes/units/bat.tscn",
+			"unit": {
+				"attack": 10,
+				"card_cost": 1,
+				"card_discription": "",
+				"card_image": null,
+				"card_image_2": null,
+				"card_name": "",
+				"defence": 3,
+				"dodge_rate": 0.0,
+				"dodge_skill": null,
+				"hp_damage_value": 1,
+				"max_hp": 60,
+				"path": "res://data/units/bat.tres",
+				"script_path": "res://data/units/unit_data.gd",
+				"skills": [
+					"res://data/skills/bat_attack.tres",
+					"res://data/skills/bat_power_attack.tres"
+				],
+				"speed": 250.0,
+				"unit_english_name": "bat",
+				"unit_name": "蝙蝠",
+				"unit_team": "team_b",
+				"unit_type": 14
+			}
+		},
+		{
+			"animations": {
+				"attack_01": {
+					"duration": 0.7,
+					"frames": 7,
+					"loop": false
+				},
+				"attack_02": {
+					"duration": 1.1,
+					"frames": 11,
+					"loop": false
+				},
+				"attack_03": {
+					"duration": 0.9,
+					"frames": 9,
+					"loop": false
+				},
+				"death": {
+					"duration": 0.4,
+					"frames": 4,
+					"loop": false
+				},
+				"hurt": {
+					"duration": 0.4,
+					"frames": 4,
+					"loop": false
+				},
+				"idle": {
+					"duration": 0.6,
+					"frames": 6,
+					"loop": true
+				},
+				"walk": {
+					"duration": 0.8,
+					"frames": 8,
+					"loop": false
+				}
+			},
+			"growth": {
+
+			},
+			"name": "EliteOrc",
+			"position": [
+				0.0,
+				0.0
+			],
+			"scene_path": "res://scenes/units/elite_orc.tscn",
+			"unit": {
+				"attack": 17,
+				"card_cost": 1,
+				"card_discription": "",
+				"card_image": null,
+				"card_image_2": null,
+				"card_name": "",
+				"defence": 7,
+				"dodge_rate": 0.0,
+				"dodge_skill": null,
+				"hp_damage_value": 1,
+				"max_hp": 150,
+				"path": "res://data/units/elite_orc.tres",
+				"script_path": "res://data/units/unit_data.gd",
+				"skills": [
+					"res://data/skills/elite_orc_attack.tres",
+					"res://data/skills/elite_orc_power_attack.tres",
+					"res://data/skills/elite_orc_round_attack.tres"
+				],
+				"speed": 120.0,
+				"unit_english_name": "elite_orc",
+				"unit_name": "精英哥布林",
+				"unit_team": "team_b",
+				"unit_type": 15
+			}
+		},
+		{
+			"animations": {
+				"attack_01": {
+					"duration": 0.9,
+					"frames": 9,
+					"loop": false
+				},
+				"attack_02": {
+					"duration": 1.2,
+					"frames": 12,
+					"loop": false
+				},
+				"attack_03": {
+					"duration": 0.8,
+					"frames": 8,
+					"loop": false
+				},
+				"death": {
+					"duration": 0.4,
+					"frames": 4,
+					"loop": false
+				},
+				"hurt": {
+					"duration": 0.4,
+					"frames": 4,
+					"loop": false
+				},
+				"idle": {
+					"duration": 0.6,
+					"frames": 6,
+					"loop": true
+				},
+				"reborn": {
+					"duration": 0.5,
+					"frames": 5,
+					"loop": false
+				},
+				"walk": {
+					"duration": 0.9,
+					"frames": 9,
+					"loop": true
+				}
+			},
+			"growth": {
+
+			},
+			"name": "GreatswordSkeleton",
+			"position": [
+				0.0,
+				0.0
+			],
+			"scene_path": "res://scenes/units/greatsword_skeleton.tscn",
+			"unit": {
+				"attack": 13,
+				"card_cost": 1,
+				"card_discription": "",
+				"card_image": null,
+				"card_image_2": null,
+				"card_name": "",
+				"defence": 4,
+				"dodge_rate": 0.0,
+				"dodge_skill": null,
+				"hp_damage_value": 1,
+				"max_hp": 80,
+				"path": "res://data/units/greatsword_skeleton.tres",
+				"script_path": "res://data/units/unit_data.gd",
+				"skills": [
+					"res://data/skills/greatswords_skeleton_attack.tres",
+					"res://data/skills/greatswords_skeleton_power_attack.tres",
+					"res://data/skills/greatswords_skeleton_stick_attack.tres"
+				],
+				"speed": 150.0,
+				"unit_english_name": "greatsword_skeleton",
+				"unit_name": "骷髅剑士",
+				"unit_team": "team_b",
+				"unit_type": 16
+			}
+		},
+		{
+			"animations": {
+				"attack_01": {
+					"duration": 0.7,
+					"frames": 7,
+					"loop": false
+				},
+				"attack_02": {
+					"duration": 1.0,
+					"frames": 10,
+					"loop": false
+				},
+				"attack_03": {
+					"duration": 1.1,
+					"frames": 11,
+					"loop": false
+				},
+				"death": {
+					"duration": 0.4,
+					"frames": 4,
+					"loop": false
+				},
+				"defend": {
+					"duration": 0.4,
+					"frames": 4,
+					"loop": false
+				},
+				"hurt": {
+					"duration": 0.4,
+					"frames": 4,
+					"loop": false
+				},
+				"idle": {
+					"duration": 0.6,
+					"frames": 6,
+					"loop": true
+				},
+				"walk": {
+					"duration": 0.8,
+					"frames": 8,
+					"loop": true
+				}
+			},
+			"growth": {
+
+			},
+			"name": "Knight",
+			"position": [
+				0.0,
+				0.0
+			],
+			"scene_path": "res://scenes/units/knight.tscn",
+			"unit": {
+				"attack": 15,
+				"card_cost": 2,
+				"card_discription": "召唤一名骑士作战",
+				"card_image": "res://assets/ui_redrawn/UI/cardUI/artsource/09.png",
+				"card_image_2": "res://data/units/knight.tres::AtlasTexture_b0rbj",
+				"card_name": "骑士召唤",
+				"defence": 5,
+				"dodge_rate": 0.2,
+				"dodge_skill": "res://data/skills/knight_dodge_attack.tres",
+				"hp_damage_value": 3,
+				"max_hp": 800,
+				"path": "res://data/units/knight.tres",
+				"script_path": "res://data/units/unit_data.gd",
+				"skills": [
+					"res://data/skills/knight_attack.tres",
+					"res://data/skills/knight_power_attack.tres"
+				],
+				"speed": 150.0,
+				"unit_english_name": "knight",
+				"unit_name": "骑士",
+				"unit_team": "team_a",
+				"unit_type": 4
+			}
+		},
+		{
+			"animations": {
+				"attack_01": {
+					"duration": 0.7,
+					"frames": 7,
+					"loop": false
+				},
+				"attack_02": {
+					"duration": 0.8,
+					"frames": 8,
+					"loop": false
+				},
+				"attack_03": {
+					"duration": 1.1,
+					"frames": 11,
+					"loop": false
+				},
+				"death": {
+					"duration": 0.4,
+					"frames": 4,
+					"loop": false
+				},
+				"defend": {
+					"duration": 0.4,
+					"frames": 4,
+					"loop": false
+				},
+				"hurt": {
+					"duration": 0.4,
+					"frames": 4,
+					"loop": false
+				},
+				"idle": {
+					"duration": 0.6,
+					"frames": 6,
+					"loop": true
+				},
+				"walk": {
+					"duration": 0.8,
+					"frames": 8,
+					"loop": true
+				}
+			},
+			"growth": {
+
+			},
+			"name": "KnightTemplar",
+			"position": [
+				0.0,
+				0.0
+			],
+			"scene_path": "res://scenes/units/knight_templar.tscn",
+			"unit": {
+				"attack": 15,
+				"card_cost": 2,
+				"card_discription": "征召一名圣殿骑士作战",
+				"card_image": "res://assets/ui_redrawn/UI/cardUI/artsource/09.png",
+				"card_image_2": "res://data/units/knight_templar.tres::AtlasTexture_3pbut",
+				"card_name": "圣殿骑士征召",
+				"defence": 5,
+				"dodge_rate": 0.2,
+				"dodge_skill": "res://data/skills/knight_templar_dodge_attack.tres",
+				"hp_damage_value": 3,
+				"max_hp": 1000,
+				"path": "res://data/units/knight_templar.tres",
+				"script_path": "res://data/units/unit_data.gd",
+				"skills": [
+					"res://data/skills/knight_templar_attack.tres",
+					"res://data/skills/knight_templar_power_attack.tres"
+				],
+				"speed": 150.0,
+				"unit_english_name": "knight_templar",
+				"unit_name": "圣殿骑士",
+				"unit_team": "team_a",
+				"unit_type": 5
+			}
+		},
+		{
+			"animations": {
+				"attack_01": {
+					"duration": 0.6,
+					"frames": 6,
+					"loop": false
+				},
+				"attack_02": {
+					"duration": 0.9,
+					"frames": 9,
+					"loop": false
+				},
+				"attack_03": {
+					"duration": 0.8,
+					"frames": 8,
+					"loop": true
+				},
+				"death": {
+					"duration": 0.4,
+					"frames": 4,
+					"loop": false
+				},
+				"hurt": {
+					"duration": 0.4,
+					"frames": 4,
+					"loop": false
+				},
+				"idle": {
+					"duration": 0.6,
+					"frames": 6,
+					"loop": true
+				},
+				"walk": {
+					"duration": 0.8,
+					"frames": 8,
+					"loop": true
+				},
+				"walk_02": {
+					"duration": 0.8,
+					"frames": 8,
+					"loop": true
+				}
+			},
+			"growth": {
+
+			},
+			"name": "Lancer",
+			"position": [
+				0.0,
+				0.0
+			],
+			"scene_path": "res://scenes/units/lancer.tscn",
+			"unit": {
+				"attack": 15,
+				"card_cost": 3,
+				"card_discription": "征召一名骑兵作战",
+				"card_image": "res://assets/ui_redrawn/UI/cardUI/artsource/09.png",
+				"card_image_2": "res://data/units/lancer.tres::AtlasTexture_sdjeu",
+				"card_name": "骑兵征召",
+				"defence": 5,
+				"dodge_rate": 0.0,
+				"dodge_skill": null,
+				"hp_damage_value": 1,
+				"max_hp": 1000,
+				"path": "res://data/units/lancer.tres",
+				"script_path": "res://data/units/unit_data.gd",
+				"skills": [
+					"res://data/skills/lancer_attack.tres",
+					"res://data/skills/lancer_dash_attack.tres",
+					"res://data/skills/lancer_power_attack.tres"
+				],
+				"speed": 150.0,
+				"unit_english_name": "lancer",
+				"unit_name": "骑兵",
+				"unit_team": "team_a",
+				"unit_type": 6
+			}
+		},
+		{
+			"animations": {
+				"attack_01": {
+					"duration": 0.9,
+					"frames": 9,
+					"loop": false
+				},
+				"attack_02": {
+					"duration": 1.0,
+					"frames": 10,
+					"loop": false
+				},
+				"death": {
+					"duration": 0.8,
+					"frames": 8,
+					"loop": false
+				},
+				"hurt": {
+					"duration": 0.4,
+					"frames": 4,
+					"loop": false
+				},
+				"idle": {
+					"duration": 0.6,
+					"frames": 6,
+					"loop": true
+				},
+				"summon": {
+					"duration": 1.0,
+					"frames": 10,
+					"loop": false
+				},
+				"walk": {
+					"duration": 0.6,
+					"frames": 6,
+					"loop": true
+				}
+			},
+			"growth": {
+
+			},
+			"name": "Necromancer",
+			"position": [
+				0.0,
+				0.0
+			],
+			"scene_path": "res://scenes/units/necromancer.tscn",
+			"unit": {
+				"attack": 15,
+				"card_cost": 1,
+				"card_discription": "",
+				"card_image": null,
+				"card_image_2": null,
+				"card_name": "",
+				"defence": 5,
+				"dodge_rate": 0.0,
+				"dodge_skill": null,
+				"hp_damage_value": 1,
+				"max_hp": 100,
+				"path": "res://data/units/necromancer.tres",
+				"script_path": "res://data/units/unit_data.gd",
+				"skills": [
+					"res://data/skills/necromancer_summon.tres",
+					"res://data/skills/necromancer_attack.tres",
+					"res://data/skills/necromancer_power_attack.tres"
+				],
+				"speed": 150.0,
+				"unit_english_name": "necromancer",
+				"unit_name": "死灵法师",
+				"unit_team": "team_b",
+				"unit_type": 12
+			}
+		},
+		{
+			"animations": {
+				"attack_01": {
+					"duration": 0.6,
+					"frames": 6,
+					"loop": false
+				},
+				"attack_02": {
+					"duration": 0.6,
+					"frames": 6,
+					"loop": false
+				},
+				"death": {
+					"duration": 0.8,
+					"frames": 4,
+					"loop": false
+				},
+				"hurt": {
+					"duration": 0.8,
+					"frames": 4,
+					"loop": false
+				},
+				"idle": {
+					"duration": 0.6,
+					"frames": 6,
+					"loop": true
+				},
+				"walk": {
+					"duration": 1.6,
+					"frames": 8,
+					"loop": true
+				}
+			},
+			"growth": {
+
+			},
+			"name": "Orc",
+			"position": [
+				0.0,
+				0.0
+			],
+			"scene_path": "res://scenes/units/orc.tscn",
+			"unit": {
+				"attack": 15,
+				"card_cost": 1,
+				"card_discription": "",
+				"card_image": null,
+				"card_image_2": null,
+				"card_name": "",
+				"defence": 5,
+				"dodge_rate": 0.0,
+				"dodge_skill": null,
+				"hp_damage_value": 1,
+				"max_hp": 100,
+				"path": "res://data/units/orc.tres",
+				"script_path": "res://data/units/unit_data.gd",
+				"skills": [
+					"res://data/skills/orc_attack.tres",
+					"res://data/skills/orc_power_attack.tres"
+				],
+				"speed": 150.0,
+				"unit_english_name": "orc",
+				"unit_name": "哥布林",
+				"unit_team": "team_b",
+				"unit_type": 2
+			}
+		},
+		{
+			"animations": {
+				"attack_01": {
+					"duration": 0.8,
+					"frames": 8,
+					"loop": false
+				},
+				"attack_02": {
+					"duration": 0.9,
+					"frames": 9,
+					"loop": false
+				},
+				"attack_03": {
+					"duration": 1.1,
+					"frames": 11,
+					"loop": false
+				},
+				"death": {
+					"duration": 0.4,
+					"frames": 4,
+					"loop": false
+				},
+				"defend": {
+					"duration": 0.4,
+					"frames": 4,
+					"loop": false
+				},
+				"hurt": {
+					"duration": 0.4,
+					"frames": 4,
+					"loop": false
+				},
+				"idle": {
+					"duration": 0.6,
+					"frames": 6,
+					"loop": true
+				},
+				"walk": {
+					"duration": 0.8,
+					"frames": 8,
+					"loop": true
+				}
+			},
+			"growth": {
+
+			},
+			"name": "OrcRider",
+			"position": [
+				0.0,
+				0.0
+			],
+			"scene_path": "res://scenes/units/orc_rider.tscn",
+			"unit": {
+				"attack": 15,
+				"card_cost": 1,
+				"card_discription": "",
+				"card_image": null,
+				"card_image_2": null,
+				"card_name": "",
+				"defence": 10,
+				"dodge_rate": 0.2,
+				"dodge_skill": "res://data/skills/orc_rider_dodge_attack.tres",
+				"hp_damage_value": 1,
+				"max_hp": 100,
+				"path": "res://data/units/orc_rider.tres",
+				"script_path": "res://data/units/unit_data.gd",
+				"skills": [
+					"res://data/skills/orc_rider_attack.tres",
+					"res://data/skills/orc_rider_power_attack.tres"
+				],
+				"speed": 150.0,
+				"unit_english_name": "orc_rider",
+				"unit_name": "哥布林骑手",
+				"unit_team": "team_b",
+				"unit_type": 17
+			}
+		},
+		{
+			"animations": {
+				"attack_01": {
+					"duration": 0.9,
+					"frames": 9,
+					"loop": false
+				},
+				"attack_02": {
+					"duration": 0.9,
+					"frames": 9,
+					"loop": false
+				},
+				"death": {
+					"duration": 0.4,
+					"frames": 4,
+					"loop": false
+				},
+				"heal_01": {
+					"duration": 0.6,
+					"frames": 6,
+					"loop": false
+				},
+				"heal_02": {
+					"duration": 0.6,
+					"frames": 6,
+					"loop": false
+				},
+				"hurt": {
+					"duration": 0.4,
+					"frames": 4,
+					"loop": false
+				},
+				"idle": {
+					"duration": 0.6,
+					"frames": 6,
+					"loop": true
+				},
+				"walk": {
+					"duration": 0.8,
+					"frames": 8,
+					"loop": true
+				}
+			},
+			"growth": {
+
+			},
+			"name": "Priest",
+			"position": [
+				0.0,
+				0.0
+			],
+			"scene_path": "res://scenes/units/priest.tscn",
+			"unit": {
+				"attack": 15,
+				"card_cost": 1,
+				"card_discription": "征召一名牧师作战",
+				"card_image": "res://assets/ui_redrawn/UI/cardUI/artsource/09.png",
+				"card_image_2": "res://data/units/priest.tres::AtlasTexture_gmmgw",
+				"card_name": "牧师征召",
+				"defence": 5,
+				"dodge_rate": 0.0,
+				"dodge_skill": null,
+				"hp_damage_value": 1,
+				"max_hp": 100,
+				"path": "res://data/units/priest.tres",
+				"script_path": "res://data/units/unit_data.gd",
+				"skills": [
+					"res://data/skills/priest_attack.tres",
+					"res://data/skills/priest_healer.tres"
+				],
+				"speed": 150.0,
+				"unit_english_name": "priest",
+				"unit_name": "牧师",
+				"unit_team": "team_a",
+				"unit_type": 7
+			}
+		},
+		{
+			"animations": {
+				"attack_01": {
+					"duration": 0.6,
+					"frames": 6,
+					"loop": false
+				},
+				"attack_02": {
+					"duration": 0.7,
+					"frames": 7,
+					"loop": false
+				},
+				"death": {
+					"duration": 0.4,
+					"frames": 4,
+					"loop": false
+				},
+				"defend": {
+					"duration": 0.4,
+					"frames": 4,
+					"loop": false
+				},
+				"hurt": {
+					"duration": 0.4,
+					"frames": 4,
+					"loop": false
+				},
+				"idle": {
+					"duration": 0.6,
+					"frames": 6,
+					"loop": true
+				},
+				"reborn": {
+					"duration": 0.5,
+					"frames": 5,
+					"loop": false
+				},
+				"walk": {
+					"duration": 0.8,
+					"frames": 8,
+					"loop": true
+				}
+			},
+			"growth": {
+
+			},
+			"name": "Skeleton",
+			"position": [
+				0.0,
+				0.0
+			],
+			"scene_path": "res://scenes/units/skeleton.tscn",
+			"unit": {
+				"attack": 15,
+				"card_cost": 1,
+				"card_discription": "",
+				"card_image": null,
+				"card_image_2": null,
+				"card_name": "",
+				"defence": 5,
+				"dodge_rate": 0.0,
+				"dodge_skill": null,
+				"hp_damage_value": 1,
+				"max_hp": 100,
+				"path": "res://data/units/skeleton.tres",
+				"script_path": "res://data/units/unit_data.gd",
+				"skills": [
+					"res://data/skills/skeleton_attack.tres",
+					"res://data/skills/skeleton_power_attack.tres"
+				],
+				"speed": 150.0,
+				"unit_english_name": "skeleton",
+				"unit_name": "骷髅兵",
+				"unit_team": "team_b",
+				"unit_type": 18
+			}
+		},
+		{
+			"animations": {
+				"attack_01": {
+					"duration": 0.9,
+					"frames": 9,
+					"loop": false
+				},
+				"death": {
+					"duration": 0.4,
+					"frames": 4,
+					"loop": false
+				},
+				"hurt": {
+					"duration": 0.4,
+					"frames": 4,
+					"loop": false
+				},
+				"idle": {
+					"duration": 0.6,
+					"frames": 6,
+					"loop": true
+				},
+				"reborn": {
+					"duration": 0.5,
+					"frames": 5,
+					"loop": false
+				},
+				"walk": {
+					"duration": 0.8,
+					"frames": 8,
+					"loop": true
+				}
+			},
+			"growth": {
+
+			},
+			"name": "SkeletonArcher",
+			"position": [
+				0.0,
+				0.0
+			],
+			"scene_path": "res://scenes/units/skeleton_archer.tscn",
+			"unit": {
+				"attack": 15,
+				"card_cost": 1,
+				"card_discription": "",
+				"card_image": null,
+				"card_image_2": null,
+				"card_name": "",
+				"defence": 5,
+				"dodge_rate": 0.0,
+				"dodge_skill": null,
+				"hp_damage_value": 2,
+				"max_hp": 100,
+				"path": "res://data/units/skeleton_archer.tres",
+				"script_path": "res://data/units/unit_data.gd",
+				"skills": [
+					"res://data/skills/skeleton_archer_attack.tres"
+				],
+				"speed": 150.0,
+				"unit_english_name": "skeleton_archer",
+				"unit_name": "弓箭手哥布林",
+				"unit_team": "team_b",
+				"unit_type": 19
+			}
+		},
+		{
+			"animations": {
+				"attack_01": {
+					"duration": 0.6,
+					"frames": 6,
+					"loop": false
+				},
+				"attack_02": {
+					"duration": 1.2,
+					"frames": 12,
+					"loop": false
+				},
+				"death": {
+					"duration": 0.4,
+					"frames": 4,
+					"loop": false
+				},
+				"hurt": {
+					"duration": 0.4,
+					"frames": 4,
+					"loop": false
+				},
+				"idle": {
+					"duration": 1.2,
+					"frames": 6,
+					"loop": true
+				},
+				"walk": {
+					"duration": 0.6,
+					"frames": 6,
+					"loop": true
+				}
+			},
+			"growth": {
+
+			},
+			"name": "Slime",
+			"position": [
+				0.0,
+				0.0
+			],
+			"scene_path": "res://scenes/units/slime.tscn",
+			"unit": {
+				"attack": 15,
+				"card_cost": 1,
+				"card_discription": "",
+				"card_image": null,
+				"card_image_2": null,
+				"card_name": "",
+				"defence": 5,
+				"dodge_rate": 0.0,
+				"dodge_skill": null,
+				"hp_damage_value": 1,
+				"max_hp": 100,
+				"path": "res://data/units/slime.tres",
+				"script_path": "res://data/units/unit_data.gd",
+				"skills": [
+					"res://data/skills/slime_attack.tres",
+					"res://data/skills/slime_power_attack.tres"
+				],
+				"speed": 150.0,
+				"unit_english_name": "slime",
+				"unit_name": "史莱姆",
+				"unit_team": "team_b",
+				"unit_type": 20
+			}
+		},
+		{
+			"animations": {
+				"attack_01": {
+					"duration": 0.6,
+					"frames": 6,
+					"loop": false
+				},
+				"attack_02": {
+					"duration": 0.6,
+					"frames": 6,
+					"loop": false
+				},
+				"attack_03": {
+					"duration": 0.9,
+					"frames": 9,
+					"loop": false
+				},
+				"death": {
+					"duration": 0.4,
+					"frames": 4,
+					"loop": false
+				},
+				"hurt": {
+					"duration": 0.4,
+					"frames": 4,
+					"loop": false
+				},
+				"idle": {
+					"duration": 0.6,
+					"frames": 6,
+					"loop": true
+				},
+				"walk": {
+					"duration": 0.8,
+					"frames": 8,
+					"loop": true
+				}
+			},
+			"growth": {
+
+			},
+			"name": "Soldier",
+			"position": [
+				0.0,
+				0.0
+			],
+			"scene_path": "res://scenes/units/soldier.tscn",
+			"unit": {
+				"attack": 10,
+				"card_cost": 1,
+				"card_discription": "征召一名战士作战",
+				"card_image": "res://assets/ui_redrawn/UI/cardUI/artsource/09.png",
+				"card_image_2": "res://data/units/soldier.tres::AtlasTexture_rysiq",
+				"card_name": "战士召唤",
+				"defence": 5,
+				"dodge_rate": 0.0,
+				"dodge_skill": null,
+				"hp_damage_value": 1,
+				"max_hp": 100,
+				"path": "res://data/units/soldier.tres",
+				"script_path": "res://data/units/unit_data.gd",
+				"skills": [
+					"res://data/skills/normal_attack.tres",
+					"res://data/skills/soldier_power_attack.tres"
+				],
+				"speed": 150.0,
+				"unit_english_name": "soldier",
+				"unit_name": "士兵",
+				"unit_team": "team_a",
+				"unit_type": 0
+			}
+		},
+		{
+			"animations": {
+				"attack_01": {
+					"duration": 0.7,
+					"frames": 7,
+					"loop": false
+				},
+				"attack_02": {
+					"duration": 1.5,
+					"frames": 15,
+					"loop": false
+				},
+				"attack_03": {
+					"duration": 1.2,
+					"frames": 12,
+					"loop": false
+				},
+				"death": {
+					"duration": 0.4,
+					"frames": 4,
+					"loop": false
+				},
+				"hurt": {
+					"duration": 0.5,
+					"frames": 5,
+					"loop": false
+				},
+				"idle": {
+					"duration": 0.6,
+					"frames": 6,
+					"loop": true
+				},
+				"walk": {
+					"duration": 0.8,
+					"frames": 8,
+					"loop": true
+				}
+			},
+			"growth": {
+
+			},
+			"name": "SwordsMan",
+			"position": [
+				0.0,
+				0.0
+			],
+			"scene_path": "res://scenes/units/swords_man.tscn",
+			"unit": {
+				"attack": 15,
+				"card_cost": 3,
+				"card_discription": "征召一名剑士作战",
+				"card_image": "res://assets/ui_redrawn/UI/cardUI/artsource/09.png",
+				"card_image_2": "res://data/units/swords_man.tres::AtlasTexture_8d855",
+				"card_name": "剑士征召",
+				"defence": 5,
+				"dodge_rate": 0.0,
+				"dodge_skill": null,
+				"hp_damage_value": 1,
+				"max_hp": 1000,
+				"path": "res://data/units/swords_man.tres",
+				"script_path": "res://data/units/unit_data.gd",
+				"skills": [
+					"res://data/skills/swords_man_attack.tres",
+					"res://data/skills/swords_man_muti_attack.tres",
+					"res://data/skills/swords_man_stick_muti_attack.tres"
+				],
+				"speed": 150.0,
+				"unit_english_name": "swords_man",
+				"unit_name": "剑士",
+				"unit_team": "team_a",
+				"unit_type": 8
+			}
+		},
+		{
+			"animations": {
+				"attack_01": {
+					"duration": 0.9,
+					"frames": 9,
+					"loop": false
+				},
+				"attack_02": {
+					"duration": 1.3,
+					"frames": 13,
+					"loop": false
+				},
+				"attack_03": {
+					"duration": 0.9,
+					"frames": 9,
+					"loop": false
+				},
+				"death": {
+					"duration": 0.4,
+					"frames": 4,
+					"loop": false
+				},
+				"hurt": {
+					"duration": 0.4,
+					"frames": 4,
+					"loop": false
+				},
+				"idle": {
+					"duration": 0.6,
+					"frames": 6,
+					"loop": true
+				},
+				"walk": {
+					"duration": 0.8,
+					"frames": 8,
+					"loop": true
+				}
+			},
+			"growth": {
+
+			},
+			"name": "WereBear",
+			"position": [
+				0.0,
+				0.0
+			],
+			"scene_path": "res://scenes/units/were_bear.tscn",
+			"unit": {
+				"attack": 15,
+				"card_cost": 2,
+				"card_discription": "召唤一只暗影熊作战",
+				"card_image": "res://assets/ui_redrawn/UI/cardUI/artsource/09.png",
+				"card_image_2": "res://data/units/were_bear.tres::AtlasTexture_as036",
+				"card_name": "暗影熊召唤",
+				"defence": 5,
+				"dodge_rate": 0.0,
+				"dodge_skill": null,
+				"hp_damage_value": 1,
+				"max_hp": 100,
+				"path": "res://data/units/were_bear.tres",
+				"script_path": "res://data/units/unit_data.gd",
+				"skills": [
+					"res://data/skills/were_bear_attack.tres",
+					"res://data/skills/were_bear_double_attack.tres",
+					"res://data/skills/were_bear_smash.tres"
+				],
+				"speed": 150.0,
+				"unit_english_name": "were_bear",
+				"unit_name": "熊人",
+				"unit_team": "team_a",
+				"unit_type": 10
+			}
+		},
+		{
+			"animations": {
+				"attack_01": {
+					"duration": 0.9,
+					"frames": 9,
+					"loop": false
+				},
+				"attack_02": {
+					"duration": 1.3,
+					"frames": 13,
+					"loop": false
+				},
+				"death": {
+					"duration": 0.4,
+					"frames": 4,
+					"loop": false
+				},
+				"hurt": {
+					"duration": 0.4,
+					"frames": 4,
+					"loop": false
+				},
+				"idle": {
+					"duration": 0.6,
+					"frames": 6,
+					"loop": true
+				},
+				"walk": {
+					"duration": 0.8,
+					"frames": 8,
+					"loop": true
+				}
+			},
+			"growth": {
+
+			},
+			"name": "WereWolf",
+			"position": [
+				0.0,
+				0.0
+			],
+			"scene_path": "res://scenes/units/were_wolf.tscn",
+			"unit": {
+				"attack": 15,
+				"card_cost": 2,
+				"card_discription": "召唤一只狼人作战",
+				"card_image": "res://assets/ui_redrawn/UI/cardUI/artsource/09.png",
+				"card_image_2": "res://data/units/were_wolf.tres::AtlasTexture_hpdpb",
+				"card_name": "召唤狼人",
+				"defence": 5,
+				"dodge_rate": 0.0,
+				"dodge_skill": null,
+				"hp_damage_value": 1,
+				"max_hp": 100,
+				"path": "res://data/units/were_wolf.tres",
+				"script_path": "res://data/units/unit_data.gd",
+				"skills": [
+					"res://data/skills/were_wolf_attack.tres",
+					"res://data/skills/were_wolf_five_attack.tres"
+				],
+				"speed": 150.0,
+				"unit_english_name": "were_wolf",
+				"unit_name": "狼人",
+				"unit_team": "team_a",
+				"unit_type": 11
+			}
+		},
+		{
+			"animations": {
+				"attack_01": {
+					"duration": 0.9,
+					"frames": 9,
+					"loop": false
+				},
+				"attack_02": {
+					"duration": 0.6,
+					"frames": 6,
+					"loop": false
+				},
+				"attack_03": {
+					"duration": 1.4,
+					"frames": 14,
+					"loop": false
+				},
+				"attack_04": {
+					"duration": 1.5,
+					"frames": 15,
+					"loop": false
+				},
+				"death": {
+					"duration": 0.4,
+					"frames": 4,
+					"loop": false
+				},
+				"hurt": {
+					"duration": 0.4,
+					"frames": 4,
+					"loop": false
+				},
+				"idle": {
+					"duration": 0.6,
+					"frames": 6,
+					"loop": true
+				},
+				"walk": {
+					"duration": 0.8,
+					"frames": 8,
+					"loop": true
+				}
+			},
+			"growth": {
+
+			},
+			"name": "Wizard",
+			"position": [
+				0.0,
+				0.0
+			],
+			"scene_path": "res://scenes/units/wizard.tscn",
+			"unit": {
+				"attack": 15,
+				"card_cost": 3,
+				"card_discription": "征召一名巫师作战",
+				"card_image": "res://assets/ui_redrawn/UI/cardUI/artsource/09.png",
+				"card_image_2": "res://data/units/wizard.tres::AtlasTexture_w7nxy",
+				"card_name": "巫师征召",
+				"defence": 5,
+				"dodge_rate": 0.0,
+				"dodge_skill": null,
+				"hp_damage_value": 1,
+				"max_hp": 100,
+				"path": "res://data/units/wizard.tres",
+				"script_path": "res://data/units/unit_data.gd",
+				"skills": [
+					"res://data/skills/wizard_fire_ball.tres",
+					"res://data/skills/wizard_ice_crash.tres"
+				],
+				"speed": 150.0,
+				"unit_english_name": "wizard",
+				"unit_name": "巫师",
+				"unit_team": "team_a",
+				"unit_type": 9
+			}
+		}
+	],
+	"units": [
+		{
+			"attack": 13,
+			"card_cost": 1,
+			"card_discription": "征召一名弓箭手作战",
+			"card_image": "res://assets/ui_redrawn/UI/cardUI/artsource/09.png",
+			"card_image_2": "res://data/units/archer.tres::AtlasTexture_np0ou",
+			"card_name": "弓箭手征召",
+			"defence": 3,
+			"dodge_rate": 0.0,
+			"dodge_skill": null,
+			"hp_damage_value": 2,
+			"max_hp": 80,
+			"path": "res://data/units/archer.tres",
+			"script_path": "res://data/units/unit_data.gd",
+			"skills": [
+				"res://data/skills/archer_arrow_attack.tres",
+				"res://data/skills/archer_power_shoot.tres"
+			],
+			"speed": 150.0,
+			"unit_english_name": "archer",
+			"unit_name": "弓箭手",
+			"unit_team": "team_a",
+			"unit_type": 1
+		},
+		{
+			"attack": 8,
+			"card_cost": 1,
+			"card_discription": "召唤一名装甲斧手作战",
+			"card_image": "res://assets/ui_redrawn/UI/cardUI/artsource/09.png",
+			"card_image_2": "res://data/units/armored_axeman.tres::AtlasTexture_vqt8a",
+			"card_name": "装甲斧手召唤",
+			"defence": 7,
+			"dodge_rate": 0.0,
+			"dodge_skill": null,
+			"hp_damage_value": 1,
+			"max_hp": 200,
+			"path": "res://data/units/armored_axeman.tres",
+			"script_path": "res://data/units/unit_data.gd",
+			"skills": [
+				"res://data/skills/armored_examan_attack.tres",
+				"res://data/skills/armored_examan_round_attack.tres",
+				"res://data/skills/armored_examan_chop_attack.tres"
+			],
+			"speed": 130.0,
+			"unit_english_name": "armored_axeman",
+			"unit_name": "装甲斧手",
+			"unit_team": "team_a",
+			"unit_type": 3
+		},
+		{
+			"attack": 15,
+			"card_cost": 1,
+			"card_discription": "",
+			"card_image": null,
+			"card_image_2": null,
+			"card_name": "",
+			"defence": 5,
+			"dodge_rate": 0.2,
+			"dodge_skill": "res://data/skills/armored_orc_dodge_attack.tres",
+			"hp_damage_value": 1,
+			"max_hp": 100,
+			"path": "res://data/units/armored_orc.tres",
+			"script_path": "res://data/units/unit_data.gd",
+			"skills": [
+				"res://data/skills/armored_orc_attack.tres",
+				"res://data/skills/armored_orc_power_attack.tres"
+			],
+			"speed": 150.0,
+			"unit_english_name": "armored_orc",
+			"unit_name": "武装哥布林",
+			"unit_team": "team_b",
+			"unit_type": 13
+		},
+		{
+			"attack": 10,
+			"card_cost": 1,
+			"card_discription": "",
+			"card_image": null,
+			"card_image_2": null,
+			"card_name": "",
+			"defence": 3,
+			"dodge_rate": 0.0,
+			"dodge_skill": null,
+			"hp_damage_value": 1,
+			"max_hp": 60,
+			"path": "res://data/units/bat.tres",
+			"script_path": "res://data/units/unit_data.gd",
+			"skills": [
+				"res://data/skills/bat_attack.tres",
+				"res://data/skills/bat_power_attack.tres"
+			],
+			"speed": 250.0,
+			"unit_english_name": "bat",
+			"unit_name": "蝙蝠",
+			"unit_team": "team_b",
+			"unit_type": 14
+		},
+		{
+			"attack": 17,
+			"card_cost": 1,
+			"card_discription": "",
+			"card_image": null,
+			"card_image_2": null,
+			"card_name": "",
+			"defence": 7,
+			"dodge_rate": 0.0,
+			"dodge_skill": null,
+			"hp_damage_value": 1,
+			"max_hp": 150,
+			"path": "res://data/units/elite_orc.tres",
+			"script_path": "res://data/units/unit_data.gd",
+			"skills": [
+				"res://data/skills/elite_orc_attack.tres",
+				"res://data/skills/elite_orc_power_attack.tres",
+				"res://data/skills/elite_orc_round_attack.tres"
+			],
+			"speed": 120.0,
+			"unit_english_name": "elite_orc",
+			"unit_name": "精英哥布林",
+			"unit_team": "team_b",
+			"unit_type": 15
+		},
+		{
+			"attack": 13,
+			"card_cost": 1,
+			"card_discription": "",
+			"card_image": null,
+			"card_image_2": null,
+			"card_name": "",
+			"defence": 4,
+			"dodge_rate": 0.0,
+			"dodge_skill": null,
+			"hp_damage_value": 1,
+			"max_hp": 80,
+			"path": "res://data/units/greatsword_skeleton.tres",
+			"script_path": "res://data/units/unit_data.gd",
+			"skills": [
+				"res://data/skills/greatswords_skeleton_attack.tres",
+				"res://data/skills/greatswords_skeleton_power_attack.tres",
+				"res://data/skills/greatswords_skeleton_stick_attack.tres"
+			],
+			"speed": 150.0,
+			"unit_english_name": "greatsword_skeleton",
+			"unit_name": "骷髅剑士",
+			"unit_team": "team_b",
+			"unit_type": 16
+		},
+		{
+			"attack": 15,
+			"card_cost": 2,
+			"card_discription": "召唤一名骑士作战",
+			"card_image": "res://assets/ui_redrawn/UI/cardUI/artsource/09.png",
+			"card_image_2": "res://data/units/knight.tres::AtlasTexture_b0rbj",
+			"card_name": "骑士召唤",
+			"defence": 5,
+			"dodge_rate": 0.2,
+			"dodge_skill": "res://data/skills/knight_dodge_attack.tres",
+			"hp_damage_value": 3,
+			"max_hp": 800,
+			"path": "res://data/units/knight.tres",
+			"script_path": "res://data/units/unit_data.gd",
+			"skills": [
+				"res://data/skills/knight_attack.tres",
+				"res://data/skills/knight_power_attack.tres"
+			],
+			"speed": 150.0,
+			"unit_english_name": "knight",
+			"unit_name": "骑士",
+			"unit_team": "team_a",
+			"unit_type": 4
+		},
+		{
+			"attack": 15,
+			"card_cost": 2,
+			"card_discription": "征召一名圣殿骑士作战",
+			"card_image": "res://assets/ui_redrawn/UI/cardUI/artsource/09.png",
+			"card_image_2": "res://data/units/knight_templar.tres::AtlasTexture_3pbut",
+			"card_name": "圣殿骑士征召",
+			"defence": 5,
+			"dodge_rate": 0.2,
+			"dodge_skill": "res://data/skills/knight_templar_dodge_attack.tres",
+			"hp_damage_value": 3,
+			"max_hp": 1000,
+			"path": "res://data/units/knight_templar.tres",
+			"script_path": "res://data/units/unit_data.gd",
+			"skills": [
+				"res://data/skills/knight_templar_attack.tres",
+				"res://data/skills/knight_templar_power_attack.tres"
+			],
+			"speed": 150.0,
+			"unit_english_name": "knight_templar",
+			"unit_name": "圣殿骑士",
+			"unit_team": "team_a",
+			"unit_type": 5
+		},
+		{
+			"attack": 15,
+			"card_cost": 3,
+			"card_discription": "征召一名骑兵作战",
+			"card_image": "res://assets/ui_redrawn/UI/cardUI/artsource/09.png",
+			"card_image_2": "res://data/units/lancer.tres::AtlasTexture_sdjeu",
+			"card_name": "骑兵征召",
+			"defence": 5,
+			"dodge_rate": 0.0,
+			"dodge_skill": null,
+			"hp_damage_value": 1,
+			"max_hp": 1000,
+			"path": "res://data/units/lancer.tres",
+			"script_path": "res://data/units/unit_data.gd",
+			"skills": [
+				"res://data/skills/lancer_attack.tres",
+				"res://data/skills/lancer_dash_attack.tres",
+				"res://data/skills/lancer_power_attack.tres"
+			],
+			"speed": 150.0,
+			"unit_english_name": "lancer",
+			"unit_name": "骑兵",
+			"unit_team": "team_a",
+			"unit_type": 6
+		},
+		{
+			"attack": 15,
+			"card_cost": 1,
+			"card_discription": "",
+			"card_image": null,
+			"card_image_2": null,
+			"card_name": "",
+			"defence": 5,
+			"dodge_rate": 0.0,
+			"dodge_skill": null,
+			"hp_damage_value": 1,
+			"max_hp": 100,
+			"path": "res://data/units/necromancer.tres",
+			"script_path": "res://data/units/unit_data.gd",
+			"skills": [
+				"res://data/skills/necromancer_summon.tres",
+				"res://data/skills/necromancer_attack.tres",
+				"res://data/skills/necromancer_power_attack.tres"
+			],
+			"speed": 150.0,
+			"unit_english_name": "necromancer",
+			"unit_name": "死灵法师",
+			"unit_team": "team_b",
+			"unit_type": 12
+		},
+		{
+			"attack": 15,
+			"card_cost": 1,
+			"card_discription": "",
+			"card_image": null,
+			"card_image_2": null,
+			"card_name": "",
+			"defence": 5,
+			"dodge_rate": 0.0,
+			"dodge_skill": null,
+			"hp_damage_value": 1,
+			"max_hp": 100,
+			"path": "res://data/units/orc.tres",
+			"script_path": "res://data/units/unit_data.gd",
+			"skills": [
+				"res://data/skills/orc_attack.tres",
+				"res://data/skills/orc_power_attack.tres"
+			],
+			"speed": 150.0,
+			"unit_english_name": "orc",
+			"unit_name": "哥布林",
+			"unit_team": "team_b",
+			"unit_type": 2
+		},
+		{
+			"attack": 15,
+			"card_cost": 1,
+			"card_discription": "",
+			"card_image": null,
+			"card_image_2": null,
+			"card_name": "",
+			"defence": 10,
+			"dodge_rate": 0.2,
+			"dodge_skill": "res://data/skills/orc_rider_dodge_attack.tres",
+			"hp_damage_value": 1,
+			"max_hp": 100,
+			"path": "res://data/units/orc_rider.tres",
+			"script_path": "res://data/units/unit_data.gd",
+			"skills": [
+				"res://data/skills/orc_rider_attack.tres",
+				"res://data/skills/orc_rider_power_attack.tres"
+			],
+			"speed": 150.0,
+			"unit_english_name": "orc_rider",
+			"unit_name": "哥布林骑手",
+			"unit_team": "team_b",
+			"unit_type": 17
+		},
+		{
+			"attack": 15,
+			"card_cost": 1,
+			"card_discription": "征召一名牧师作战",
+			"card_image": "res://assets/ui_redrawn/UI/cardUI/artsource/09.png",
+			"card_image_2": "res://data/units/priest.tres::AtlasTexture_gmmgw",
+			"card_name": "牧师征召",
+			"defence": 5,
+			"dodge_rate": 0.0,
+			"dodge_skill": null,
+			"hp_damage_value": 1,
+			"max_hp": 100,
+			"path": "res://data/units/priest.tres",
+			"script_path": "res://data/units/unit_data.gd",
+			"skills": [
+				"res://data/skills/priest_attack.tres",
+				"res://data/skills/priest_healer.tres"
+			],
+			"speed": 150.0,
+			"unit_english_name": "priest",
+			"unit_name": "牧师",
+			"unit_team": "team_a",
+			"unit_type": 7
+		},
+		{
+			"attack": 15,
+			"card_cost": 1,
+			"card_discription": "",
+			"card_image": null,
+			"card_image_2": null,
+			"card_name": "",
+			"defence": 5,
+			"dodge_rate": 0.0,
+			"dodge_skill": null,
+			"hp_damage_value": 1,
+			"max_hp": 100,
+			"path": "res://data/units/skeleton.tres",
+			"script_path": "res://data/units/unit_data.gd",
+			"skills": [
+				"res://data/skills/skeleton_attack.tres",
+				"res://data/skills/skeleton_power_attack.tres"
+			],
+			"speed": 150.0,
+			"unit_english_name": "skeleton",
+			"unit_name": "骷髅兵",
+			"unit_team": "team_b",
+			"unit_type": 18
+		},
+		{
+			"attack": 15,
+			"card_cost": 1,
+			"card_discription": "",
+			"card_image": null,
+			"card_image_2": null,
+			"card_name": "",
+			"defence": 5,
+			"dodge_rate": 0.0,
+			"dodge_skill": null,
+			"hp_damage_value": 2,
+			"max_hp": 100,
+			"path": "res://data/units/skeleton_archer.tres",
+			"script_path": "res://data/units/unit_data.gd",
+			"skills": [
+				"res://data/skills/skeleton_archer_attack.tres"
+			],
+			"speed": 150.0,
+			"unit_english_name": "skeleton_archer",
+			"unit_name": "弓箭手哥布林",
+			"unit_team": "team_b",
+			"unit_type": 19
+		},
+		{
+			"attack": 15,
+			"card_cost": 1,
+			"card_discription": "",
+			"card_image": null,
+			"card_image_2": null,
+			"card_name": "",
+			"defence": 5,
+			"dodge_rate": 0.0,
+			"dodge_skill": null,
+			"hp_damage_value": 1,
+			"max_hp": 100,
+			"path": "res://data/units/slime.tres",
+			"script_path": "res://data/units/unit_data.gd",
+			"skills": [
+				"res://data/skills/slime_attack.tres",
+				"res://data/skills/slime_power_attack.tres"
+			],
+			"speed": 150.0,
+			"unit_english_name": "slime",
+			"unit_name": "史莱姆",
+			"unit_team": "team_b",
+			"unit_type": 20
+		},
+		{
+			"attack": 10,
+			"card_cost": 1,
+			"card_discription": "征召一名战士作战",
+			"card_image": "res://assets/ui_redrawn/UI/cardUI/artsource/09.png",
+			"card_image_2": "res://data/units/soldier.tres::AtlasTexture_rysiq",
+			"card_name": "战士召唤",
+			"defence": 5,
+			"dodge_rate": 0.0,
+			"dodge_skill": null,
+			"hp_damage_value": 1,
+			"max_hp": 100,
+			"path": "res://data/units/soldier.tres",
+			"script_path": "res://data/units/unit_data.gd",
+			"skills": [
+				"res://data/skills/normal_attack.tres",
+				"res://data/skills/soldier_power_attack.tres"
+			],
+			"speed": 150.0,
+			"unit_english_name": "soldier",
+			"unit_name": "士兵",
+			"unit_team": "team_a",
+			"unit_type": 0
+		},
+		{
+			"attack": 15,
+			"card_cost": 3,
+			"card_discription": "征召一名剑士作战",
+			"card_image": "res://assets/ui_redrawn/UI/cardUI/artsource/09.png",
+			"card_image_2": "res://data/units/swords_man.tres::AtlasTexture_8d855",
+			"card_name": "剑士征召",
+			"defence": 5,
+			"dodge_rate": 0.0,
+			"dodge_skill": null,
+			"hp_damage_value": 1,
+			"max_hp": 1000,
+			"path": "res://data/units/swords_man.tres",
+			"script_path": "res://data/units/unit_data.gd",
+			"skills": [
+				"res://data/skills/swords_man_attack.tres",
+				"res://data/skills/swords_man_muti_attack.tres",
+				"res://data/skills/swords_man_stick_muti_attack.tres"
+			],
+			"speed": 150.0,
+			"unit_english_name": "swords_man",
+			"unit_name": "剑士",
+			"unit_team": "team_a",
+			"unit_type": 8
+		},
+		{
+			"attack": 15,
+			"card_cost": 2,
+			"card_discription": "召唤一只暗影熊作战",
+			"card_image": "res://assets/ui_redrawn/UI/cardUI/artsource/09.png",
+			"card_image_2": "res://data/units/were_bear.tres::AtlasTexture_as036",
+			"card_name": "暗影熊召唤",
+			"defence": 5,
+			"dodge_rate": 0.0,
+			"dodge_skill": null,
+			"hp_damage_value": 1,
+			"max_hp": 100,
+			"path": "res://data/units/were_bear.tres",
+			"script_path": "res://data/units/unit_data.gd",
+			"skills": [
+				"res://data/skills/were_bear_attack.tres",
+				"res://data/skills/were_bear_double_attack.tres",
+				"res://data/skills/were_bear_smash.tres"
+			],
+			"speed": 150.0,
+			"unit_english_name": "were_bear",
+			"unit_name": "熊人",
+			"unit_team": "team_a",
+			"unit_type": 10
+		},
+		{
+			"attack": 15,
+			"card_cost": 2,
+			"card_discription": "召唤一只狼人作战",
+			"card_image": "res://assets/ui_redrawn/UI/cardUI/artsource/09.png",
+			"card_image_2": "res://data/units/were_wolf.tres::AtlasTexture_hpdpb",
+			"card_name": "召唤狼人",
+			"defence": 5,
+			"dodge_rate": 0.0,
+			"dodge_skill": null,
+			"hp_damage_value": 1,
+			"max_hp": 100,
+			"path": "res://data/units/were_wolf.tres",
+			"script_path": "res://data/units/unit_data.gd",
+			"skills": [
+				"res://data/skills/were_wolf_attack.tres",
+				"res://data/skills/were_wolf_five_attack.tres"
+			],
+			"speed": 150.0,
+			"unit_english_name": "were_wolf",
+			"unit_name": "狼人",
+			"unit_team": "team_a",
+			"unit_type": 11
+		},
+		{
+			"attack": 15,
+			"card_cost": 3,
+			"card_discription": "征召一名巫师作战",
+			"card_image": "res://assets/ui_redrawn/UI/cardUI/artsource/09.png",
+			"card_image_2": "res://data/units/wizard.tres::AtlasTexture_w7nxy",
+			"card_name": "巫师征召",
+			"defence": 5,
+			"dodge_rate": 0.0,
+			"dodge_skill": null,
+			"hp_damage_value": 1,
+			"max_hp": 100,
+			"path": "res://data/units/wizard.tres",
+			"script_path": "res://data/units/unit_data.gd",
+			"skills": [
+				"res://data/skills/wizard_fire_ball.tres",
+				"res://data/skills/wizard_ice_crash.tres"
+			],
+			"speed": 150.0,
+			"unit_english_name": "wizard",
+			"unit_name": "巫师",
+			"unit_team": "team_a",
+			"unit_type": 9
+		}
+	]
+}
