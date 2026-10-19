@@ -1,0 +1,2671 @@
+{
+  "version": "UNIT-POWER-CALC-v2",
+  "date": "2026-10-11",
+  "sourceCount": 120,
+  "sourceRevision": "d7bd6d855d7d",
+  "defaults": {
+    "schema": "unit-power-calculator/v1",
+    "curveMax": 1,
+    "units": [
+      {
+        "id": "archer",
+        "name": "弓箭手",
+        "team": "team_a",
+        "hp": 80,
+        "attack": 12,
+        "defence": 2,
+        "cost": 1,
+        "dodge": 0.0,
+        "hasCounter": false,
+        "counterUnlock": [],
+        "counterNetDps": 0,
+        "uptime": null,
+        "baseLevel": 0,
+        "gameMax": 1,
+        "upgradePoints": 2,
+        "departures": 0,
+        "hpDamage": 1,
+        "plan": {
+          "mode": "training",
+          "levels": 1,
+          "attackAllocation": 2,
+          "defenceAllocation": 0,
+          "hpStep": 0,
+          "attackStep": 2,
+          "defenceStep": 0,
+          "hpGrowth": 0,
+          "attackGrowth": 0,
+          "defenceGrowth": 0,
+          "dodgeStep": 0,
+          "costStep": 0,
+          "hpBuff": 0,
+          "attackBuff": 0,
+          "defenceBuff": 0,
+          "dodgeBuff": 0,
+          "costBuff": 0,
+          "buffEnergy": 0,
+          "cooldownFactor": 1,
+          "animationFactor": 1,
+          "outputFactor": 1
+        },
+        "skills": [
+          {
+            "id": "res://data/skills/archer_arrow_attack.tres",
+            "name": "射击",
+            "kind": "projectile",
+            "rate": 1.0,
+            "cooldown": 1.0,
+            "duration": 0.9,
+            "offsets": [
+              0.6000000000000001
+            ],
+            "priority": 0,
+            "range": 600.0,
+            "unlock": [
+              0,
+              1
+            ],
+            "targets": null,
+            "straight": false,
+            "pierce": 1,
+            "basic": false
+          },
+          {
+            "id": "res://data/skills/archer_power_shoot.tres",
+            "name": "穿刺射击",
+            "kind": "projectile",
+            "rate": 1.2,
+            "cooldown": 4.0,
+            "duration": 1.2000000000000002,
+            "offsets": [
+              0.9
+            ],
+            "priority": 1,
+            "range": 600.0,
+            "unlock": [
+              1
+            ],
+            "targets": null,
+            "straight": true,
+            "pierce": 2,
+            "basic": false
+          }
+        ]
+      },
+      {
+        "id": "armored_axeman",
+        "name": "装甲斧手",
+        "team": "team_a",
+        "hp": 160,
+        "attack": 8,
+        "defence": 7,
+        "cost": 1,
+        "dodge": 0.0,
+        "hasCounter": false,
+        "counterUnlock": [],
+        "counterNetDps": 0,
+        "uptime": null,
+        "baseLevel": 0,
+        "gameMax": 1,
+        "upgradePoints": 2,
+        "departures": 0,
+        "hpDamage": 1,
+        "plan": {
+          "mode": "training",
+          "levels": 1,
+          "attackAllocation": 2,
+          "defenceAllocation": 0,
+          "hpStep": 0,
+          "attackStep": 2,
+          "defenceStep": 0,
+          "hpGrowth": 0,
+          "attackGrowth": 0,
+          "defenceGrowth": 0,
+          "dodgeStep": 0,
+          "costStep": 0,
+          "hpBuff": 0,
+          "attackBuff": 0,
+          "defenceBuff": 0,
+          "dodgeBuff": 0,
+          "costBuff": 0,
+          "buffEnergy": 0,
+          "cooldownFactor": 1,
+          "animationFactor": 1,
+          "outputFactor": 1
+        },
+        "skills": [
+          {
+            "id": "res://data/skills/armored_examan_attack.tres",
+            "name": "普通攻击",
+            "kind": "normal",
+            "rate": 1.0,
+            "cooldown": 1.0,
+            "duration": 0.9,
+            "offsets": [
+              0.4
+            ],
+            "priority": 0,
+            "range": 80.0,
+            "unlock": [
+              0,
+              1
+            ],
+            "targets": null,
+            "straight": false,
+            "pierce": 1,
+            "basic": true
+          },
+          {
+            "id": "res://data/skills/armored_examan_round_attack.tres",
+            "name": "旋转攻击",
+            "kind": "area",
+            "rate": 0.8,
+            "cooldown": 3.0,
+            "duration": 0.9,
+            "offsets": [
+              0.5
+            ],
+            "priority": 1,
+            "range": 80.0,
+            "unlock": [
+              1
+            ],
+            "targets": null,
+            "straight": false,
+            "pierce": 1,
+            "basic": false
+          },
+          {
+            "id": "res://data/skills/armored_examan_chop_attack.tres",
+            "name": "劈砍攻击",
+            "kind": "normal",
+            "rate": 1.2,
+            "cooldown": 8.0,
+            "duration": 1.2000000000000002,
+            "offsets": [
+              0.4,
+              0.7000000000000001
+            ],
+            "priority": 2,
+            "range": 80.0,
+            "unlock": [
+              0
+            ],
+            "targets": null,
+            "straight": false,
+            "pierce": 1,
+            "basic": false
+          }
+        ]
+      },
+      {
+        "id": "armored_orc",
+        "name": "武装哥布林",
+        "team": "team_b",
+        "hp": 145,
+        "attack": 10,
+        "defence": 4,
+        "cost": 1,
+        "dodge": 0.2,
+        "hasCounter": true,
+        "counterUnlock": [
+          0,
+          1
+        ],
+        "counterNetDps": 0,
+        "uptime": null,
+        "baseLevel": 0,
+        "gameMax": 1,
+        "upgradePoints": 3,
+        "departures": 0,
+        "hpDamage": 2,
+        "plan": {
+          "mode": "custom",
+          "levels": 0,
+          "attackAllocation": 3,
+          "defenceAllocation": 0,
+          "hpStep": 0,
+          "attackStep": 3,
+          "defenceStep": 0,
+          "hpGrowth": 0,
+          "attackGrowth": 0,
+          "defenceGrowth": 0,
+          "dodgeStep": 0,
+          "costStep": 0,
+          "hpBuff": 0,
+          "attackBuff": 0,
+          "defenceBuff": 0,
+          "dodgeBuff": 0,
+          "costBuff": 0,
+          "buffEnergy": 0,
+          "cooldownFactor": 1,
+          "animationFactor": 1,
+          "outputFactor": 1
+        },
+        "skills": [
+          {
+            "id": "res://data/skills/armored_orc_attack.tres",
+            "name": "普通攻击",
+            "kind": "normal",
+            "rate": 1.0,
+            "cooldown": 1.0,
+            "duration": 0.7000000000000001,
+            "offsets": [
+              0.4
+            ],
+            "priority": 0,
+            "range": 80.0,
+            "unlock": [
+              0,
+              1
+            ],
+            "targets": null,
+            "straight": false,
+            "pierce": 1,
+            "basic": true
+          },
+          {
+            "id": "res://data/skills/armored_orc_power_attack.tres",
+            "name": "撼地",
+            "kind": "area",
+            "rate": 1.2,
+            "cooldown": 8.0,
+            "duration": 0.9,
+            "offsets": [
+              0.4
+            ],
+            "priority": 1,
+            "range": 80.0,
+            "unlock": [
+              0,
+              1
+            ],
+            "targets": null,
+            "straight": false,
+            "pierce": 1,
+            "basic": false
+          }
+        ]
+      },
+      {
+        "id": "bat",
+        "name": "蝙蝠",
+        "team": "team_b",
+        "hp": 60,
+        "attack": 10,
+        "defence": 3,
+        "cost": 1,
+        "dodge": 0.0,
+        "hasCounter": false,
+        "counterUnlock": [],
+        "counterNetDps": 0,
+        "uptime": null,
+        "baseLevel": 0,
+        "gameMax": 1,
+        "upgradePoints": 3,
+        "departures": 0,
+        "hpDamage": 1,
+        "plan": {
+          "mode": "custom",
+          "levels": 0,
+          "attackAllocation": 3,
+          "defenceAllocation": 0,
+          "hpStep": 0,
+          "attackStep": 3,
+          "defenceStep": 0,
+          "hpGrowth": 0,
+          "attackGrowth": 0,
+          "defenceGrowth": 0,
+          "dodgeStep": 0,
+          "costStep": 0,
+          "hpBuff": 0,
+          "attackBuff": 0,
+          "defenceBuff": 0,
+          "dodgeBuff": 0,
+          "costBuff": 0,
+          "buffEnergy": 0,
+          "cooldownFactor": 1,
+          "animationFactor": 1,
+          "outputFactor": 1
+        },
+        "skills": [
+          {
+            "id": "res://data/skills/bat_attack.tres",
+            "name": "普通攻击",
+            "kind": "normal",
+            "rate": 1.0,
+            "cooldown": 1.0,
+            "duration": 0.6000000000000001,
+            "offsets": [
+              0.30000000000000004
+            ],
+            "priority": 0,
+            "range": 80.0,
+            "unlock": [
+              0,
+              1
+            ],
+            "targets": null,
+            "straight": false,
+            "pierce": 1,
+            "basic": true
+          },
+          {
+            "id": "res://data/skills/bat_power_attack.tres",
+            "name": "嗜血攻击",
+            "kind": "lifesteal",
+            "rate": 1.2,
+            "cooldown": 6.0,
+            "duration": 0.7000000000000001,
+            "offsets": [
+              0.4
+            ],
+            "priority": 1,
+            "range": 80.0,
+            "unlock": [
+              0,
+              1
+            ],
+            "targets": null,
+            "straight": false,
+            "pierce": 1,
+            "basic": false
+          }
+        ]
+      },
+      {
+        "id": "elite_orc",
+        "name": "精英哥布林",
+        "team": "team_b",
+        "hp": 220,
+        "attack": 13,
+        "defence": 4,
+        "cost": 1,
+        "dodge": 0.0,
+        "hasCounter": false,
+        "counterUnlock": [],
+        "counterNetDps": 0,
+        "uptime": null,
+        "baseLevel": 0,
+        "gameMax": 1,
+        "upgradePoints": 3,
+        "departures": 0,
+        "hpDamage": 3,
+        "plan": {
+          "mode": "custom",
+          "levels": 0,
+          "attackAllocation": 3,
+          "defenceAllocation": 0,
+          "hpStep": 0,
+          "attackStep": 3,
+          "defenceStep": 0,
+          "hpGrowth": 0,
+          "attackGrowth": 0,
+          "defenceGrowth": 0,
+          "dodgeStep": 0,
+          "costStep": 0,
+          "hpBuff": 0,
+          "attackBuff": 0,
+          "defenceBuff": 0,
+          "dodgeBuff": 0,
+          "costBuff": 0,
+          "buffEnergy": 0,
+          "cooldownFactor": 1,
+          "animationFactor": 1,
+          "outputFactor": 1
+        },
+        "skills": [
+          {
+            "id": "res://data/skills/elite_orc_attack.tres",
+            "name": "普通攻击",
+            "kind": "normal",
+            "rate": 1.0,
+            "cooldown": 1.0,
+            "duration": 0.7000000000000001,
+            "offsets": [
+              0.30000000000000004
+            ],
+            "priority": 0,
+            "range": 80.0,
+            "unlock": [
+              0,
+              1
+            ],
+            "targets": null,
+            "straight": false,
+            "pierce": 1,
+            "basic": true
+          },
+          {
+            "id": "res://data/skills/elite_orc_power_attack.tres",
+            "name": "强力攻击",
+            "kind": "normal",
+            "rate": 2.0,
+            "cooldown": 10.0,
+            "duration": 0.9,
+            "offsets": [
+              0.4
+            ],
+            "priority": 1,
+            "range": 80.0,
+            "unlock": [
+              0,
+              1
+            ],
+            "targets": null,
+            "straight": false,
+            "pierce": 1,
+            "basic": false
+          },
+          {
+            "id": "res://data/skills/elite_orc_round_attack.tres",
+            "name": "旋转攻击",
+            "kind": "normal",
+            "rate": 0.8,
+            "cooldown": 8.0,
+            "duration": 1.1,
+            "offsets": [
+              0.1,
+              0.30000000000000004,
+              0.5,
+              0.8
+            ],
+            "priority": 2,
+            "range": 80.0,
+            "unlock": [
+              0,
+              1
+            ],
+            "targets": null,
+            "straight": false,
+            "pierce": 1,
+            "basic": false
+          }
+        ]
+      },
+      {
+        "id": "greatsword_skeleton",
+        "name": "骷髅剑士",
+        "team": "team_b",
+        "hp": 80,
+        "attack": 13,
+        "defence": 4,
+        "cost": 1,
+        "dodge": 0.0,
+        "hasCounter": false,
+        "counterUnlock": [],
+        "counterNetDps": 0,
+        "uptime": null,
+        "baseLevel": 0,
+        "gameMax": 1,
+        "upgradePoints": 3,
+        "departures": 0,
+        "hpDamage": 1,
+        "plan": {
+          "mode": "custom",
+          "levels": 0,
+          "attackAllocation": 3,
+          "defenceAllocation": 0,
+          "hpStep": 0,
+          "attackStep": 3,
+          "defenceStep": 0,
+          "hpGrowth": 0,
+          "attackGrowth": 0,
+          "defenceGrowth": 0,
+          "dodgeStep": 0,
+          "costStep": 0,
+          "hpBuff": 0,
+          "attackBuff": 0,
+          "defenceBuff": 0,
+          "dodgeBuff": 0,
+          "costBuff": 0,
+          "buffEnergy": 0,
+          "cooldownFactor": 1,
+          "animationFactor": 1,
+          "outputFactor": 1
+        },
+        "skills": [
+          {
+            "id": "res://data/skills/greatswords_skeleton_attack.tres",
+            "name": "普通攻击",
+            "kind": "normal",
+            "rate": 1.0,
+            "cooldown": 1.0,
+            "duration": 0.9,
+            "offsets": [
+              0.5
+            ],
+            "priority": 0,
+            "range": 80.0,
+            "unlock": [
+              0,
+              1
+            ],
+            "targets": null,
+            "straight": false,
+            "pierce": 1,
+            "basic": true
+          },
+          {
+            "id": "res://data/skills/greatswords_skeleton_power_attack.tres",
+            "name": "下扫",
+            "kind": "normal",
+            "rate": 1.2,
+            "cooldown": 4.0,
+            "duration": 1.2000000000000002,
+            "offsets": [
+              0.7000000000000001
+            ],
+            "priority": 1,
+            "range": 80.0,
+            "unlock": [
+              0,
+              1
+            ],
+            "targets": null,
+            "straight": false,
+            "pierce": 1,
+            "basic": false
+          },
+          {
+            "id": "res://data/skills/greatswords_skeleton_stick_attack.tres",
+            "name": "刺击",
+            "kind": "normal",
+            "rate": 1.4,
+            "cooldown": 6.0,
+            "duration": 0.8,
+            "offsets": [
+              0.4
+            ],
+            "priority": 0,
+            "range": 80.0,
+            "unlock": [
+              0,
+              1
+            ],
+            "targets": null,
+            "straight": false,
+            "pierce": 1,
+            "basic": false
+          }
+        ]
+      },
+      {
+        "id": "knight",
+        "name": "骑士",
+        "team": "team_a",
+        "hp": 100,
+        "attack": 12,
+        "defence": 5,
+        "cost": 2,
+        "dodge": 0.2,
+        "hasCounter": true,
+        "counterUnlock": [
+          0,
+          1
+        ],
+        "counterNetDps": 0,
+        "uptime": null,
+        "baseLevel": 0,
+        "gameMax": 1,
+        "upgradePoints": 2,
+        "departures": 0,
+        "hpDamage": 1,
+        "plan": {
+          "mode": "training",
+          "levels": 1,
+          "attackAllocation": 2,
+          "defenceAllocation": 0,
+          "hpStep": 0,
+          "attackStep": 2,
+          "defenceStep": 0,
+          "hpGrowth": 0,
+          "attackGrowth": 0,
+          "defenceGrowth": 0,
+          "dodgeStep": 0,
+          "costStep": 0,
+          "hpBuff": 0,
+          "attackBuff": 0,
+          "defenceBuff": 0,
+          "dodgeBuff": 0,
+          "costBuff": 0,
+          "buffEnergy": 0,
+          "cooldownFactor": 1,
+          "animationFactor": 1,
+          "outputFactor": 1
+        },
+        "skills": [
+          {
+            "id": "res://data/skills/knight_attack.tres",
+            "name": "普通攻击",
+            "kind": "normal",
+            "rate": 1.0,
+            "cooldown": 1.0,
+            "duration": 0.7000000000000001,
+            "offsets": [
+              0.4
+            ],
+            "priority": 0,
+            "range": 80.0,
+            "unlock": [
+              0,
+              1
+            ],
+            "targets": null,
+            "straight": false,
+            "pierce": 1,
+            "basic": true
+          },
+          {
+            "id": "res://data/skills/knight_power_attack.tres",
+            "name": "斩击",
+            "kind": "normal",
+            "rate": 1.5,
+            "cooldown": 5.0,
+            "duration": 1.1,
+            "offsets": [
+              0.7000000000000001
+            ],
+            "priority": 1,
+            "range": 80.0,
+            "unlock": [
+              1
+            ],
+            "targets": null,
+            "straight": false,
+            "pierce": 1,
+            "basic": false
+          }
+        ]
+      },
+      {
+        "id": "knight_templar",
+        "name": "圣殿骑士",
+        "team": "team_a",
+        "hp": 120,
+        "attack": 10,
+        "defence": 5,
+        "cost": 2,
+        "dodge": 0.2,
+        "hasCounter": true,
+        "counterUnlock": [
+          1
+        ],
+        "counterNetDps": 0,
+        "uptime": null,
+        "baseLevel": 0,
+        "gameMax": 1,
+        "upgradePoints": 2,
+        "departures": 0,
+        "hpDamage": 1,
+        "plan": {
+          "mode": "training",
+          "levels": 1,
+          "attackAllocation": 2,
+          "defenceAllocation": 0,
+          "hpStep": 0,
+          "attackStep": 2,
+          "defenceStep": 0,
+          "hpGrowth": 0,
+          "attackGrowth": 0,
+          "defenceGrowth": 0,
+          "dodgeStep": 0,
+          "costStep": 0,
+          "hpBuff": 0,
+          "attackBuff": 0,
+          "defenceBuff": 0,
+          "dodgeBuff": 0,
+          "costBuff": 0,
+          "buffEnergy": 0,
+          "cooldownFactor": 1,
+          "animationFactor": 1,
+          "outputFactor": 1
+        },
+        "skills": [
+          {
+            "id": "res://data/skills/knight_templar_attack.tres",
+            "name": "普通攻击",
+            "kind": "normal",
+            "rate": 1.0,
+            "cooldown": 1.0,
+            "duration": 0.7000000000000001,
+            "offsets": [
+              0.4
+            ],
+            "priority": 0,
+            "range": 80.0,
+            "unlock": [
+              0,
+              1
+            ],
+            "targets": null,
+            "straight": false,
+            "pierce": 1,
+            "basic": true
+          },
+          {
+            "id": "res://data/skills/knight_templar_power_attack.tres",
+            "name": "连续攻击",
+            "kind": "normal",
+            "rate": 1.0,
+            "cooldown": 5.0,
+            "duration": 1.1,
+            "offsets": [
+              0.30000000000000004,
+              0.7000000000000001
+            ],
+            "priority": 1,
+            "range": 80.0,
+            "unlock": [
+              0,
+              1
+            ],
+            "targets": null,
+            "straight": false,
+            "pierce": 1,
+            "basic": false
+          },
+          {
+            "id": "res://data/skills/knight_templar_protection_aura.tres",
+            "name": "庇护光环",
+            "kind": "aura_passive",
+            "rate": 1.0,
+            "cooldown": 1.0,
+            "duration": 0,
+            "offsets": [],
+            "priority": 0,
+            "range": 80.0,
+            "unlock": [
+              1
+            ],
+            "targets": null,
+            "straight": false,
+            "pierce": 1,
+            "basic": false,
+            "aura_radius": 200.0,
+            "aura_attack_bonus": 2,
+            "aura_include_caster": true
+          }
+        ]
+      },
+      {
+        "id": "lancer",
+        "name": "骑兵",
+        "team": "team_a",
+        "hp": 120,
+        "attack": 12,
+        "defence": 6,
+        "cost": 3,
+        "dodge": 0.0,
+        "hasCounter": false,
+        "counterUnlock": [],
+        "counterNetDps": 0,
+        "uptime": null,
+        "baseLevel": 0,
+        "gameMax": 1,
+        "upgradePoints": 2,
+        "departures": 0,
+        "hpDamage": 1,
+        "plan": {
+          "mode": "training",
+          "levels": 1,
+          "attackAllocation": 2,
+          "defenceAllocation": 0,
+          "hpStep": 0,
+          "attackStep": 2,
+          "defenceStep": 0,
+          "hpGrowth": 0,
+          "attackGrowth": 0,
+          "defenceGrowth": 0,
+          "dodgeStep": 0,
+          "costStep": 0,
+          "hpBuff": 0,
+          "attackBuff": 0,
+          "defenceBuff": 0,
+          "dodgeBuff": 0,
+          "costBuff": 0,
+          "buffEnergy": 0,
+          "cooldownFactor": 1,
+          "animationFactor": 1,
+          "outputFactor": 1
+        },
+        "skills": [
+          {
+            "id": "res://data/skills/lancer_attack.tres",
+            "name": "普通攻击",
+            "kind": "normal",
+            "rate": 1.0,
+            "cooldown": 1.0,
+            "duration": 0.6000000000000001,
+            "offsets": [
+              0.30000000000000004
+            ],
+            "priority": 0,
+            "range": 80.0,
+            "unlock": [
+              0,
+              1
+            ],
+            "targets": null,
+            "straight": false,
+            "pierce": 1,
+            "basic": true
+          },
+          {
+            "id": "res://data/skills/lancer_dash_attack.tres",
+            "name": "冲刺攻击",
+            "kind": "dash",
+            "rate": 1.0,
+            "cooldown": 6.0,
+            "duration": 2.0,
+            "offsets": [
+              0
+            ],
+            "priority": 2,
+            "range": 300.0,
+            "unlock": [
+              0,
+              1
+            ],
+            "targets": null,
+            "straight": false,
+            "pierce": 1,
+            "basic": false
+          },
+          {
+            "id": "res://data/skills/lancer_power_attack.tres",
+            "name": "强力刺击",
+            "kind": "normal",
+            "rate": 1.5,
+            "cooldown": 6.0,
+            "duration": 0.9,
+            "offsets": [
+              0.4
+            ],
+            "priority": 1,
+            "range": 80.0,
+            "unlock": [
+              1
+            ],
+            "targets": null,
+            "straight": false,
+            "pierce": 1,
+            "basic": false
+          },
+          {
+            "id": "res://data/skills/lancer_dash_attack_enhance.tres",
+            "name": "骑兵冲锋加强",
+            "kind": "dash",
+            "rate": 1.0,
+            "cooldown": 5.0,
+            "duration": 2.0,
+            "offsets": [
+              0
+            ],
+            "priority": 2,
+            "range": 450.0,
+            "unlock": [
+              1
+            ],
+            "targets": null,
+            "straight": false,
+            "pierce": 1,
+            "basic": false
+          }
+        ]
+      },
+      {
+        "id": "necromancer",
+        "name": "死灵法师",
+        "team": "team_b",
+        "hp": 100,
+        "attack": 15,
+        "defence": 5,
+        "cost": 1,
+        "dodge": 0.0,
+        "hasCounter": false,
+        "counterUnlock": [],
+        "counterNetDps": 0,
+        "uptime": null,
+        "baseLevel": 0,
+        "gameMax": 1,
+        "upgradePoints": 3,
+        "departures": 0,
+        "hpDamage": 1,
+        "plan": {
+          "mode": "custom",
+          "levels": 0,
+          "attackAllocation": 3,
+          "defenceAllocation": 0,
+          "hpStep": 0,
+          "attackStep": 3,
+          "defenceStep": 0,
+          "hpGrowth": 0,
+          "attackGrowth": 0,
+          "defenceGrowth": 0,
+          "dodgeStep": 0,
+          "costStep": 0,
+          "hpBuff": 0,
+          "attackBuff": 0,
+          "defenceBuff": 0,
+          "dodgeBuff": 0,
+          "costBuff": 0,
+          "buffEnergy": 0,
+          "cooldownFactor": 1,
+          "animationFactor": 1,
+          "outputFactor": 1
+        },
+        "skills": [
+          {
+            "id": "res://data/skills/necromancer_summon.tres",
+            "name": "蝙蝠召唤",
+            "kind": "summon",
+            "rate": 1.0,
+            "cooldown": 8.0,
+            "duration": 1.0,
+            "offsets": [
+              0.5
+            ],
+            "priority": 2,
+            "range": 80.0,
+            "unlock": [
+              0,
+              1
+            ],
+            "targets": null,
+            "straight": false,
+            "pierce": 1,
+            "basic": false,
+            "child": "bat",
+            "summonDelay": 0.7000000000000001
+          },
+          {
+            "id": "res://data/skills/necromancer_attack.tres",
+            "name": "普通攻击",
+            "kind": "normal",
+            "rate": 1.0,
+            "cooldown": 1.0,
+            "duration": 0.9,
+            "offsets": [
+              0.30000000000000004
+            ],
+            "priority": 0,
+            "range": 80.0,
+            "unlock": [
+              0,
+              1
+            ],
+            "targets": null,
+            "straight": false,
+            "pierce": 1,
+            "basic": true
+          },
+          {
+            "id": "res://data/skills/necromancer_power_attack.tres",
+            "name": "远程攻击",
+            "kind": "normal",
+            "rate": 1.0,
+            "cooldown": 4.0,
+            "duration": 1.0,
+            "offsets": [
+              0.30000000000000004
+            ],
+            "priority": 1,
+            "range": 250.0,
+            "unlock": [
+              0,
+              1
+            ],
+            "targets": null,
+            "straight": false,
+            "pierce": 1,
+            "basic": false
+          }
+        ]
+      },
+      {
+        "id": "orc",
+        "name": "哥布林",
+        "team": "team_b",
+        "hp": 100,
+        "attack": 11,
+        "defence": 3,
+        "cost": 1,
+        "dodge": 0.0,
+        "hasCounter": false,
+        "counterUnlock": [],
+        "counterNetDps": 0,
+        "uptime": null,
+        "baseLevel": 0,
+        "gameMax": 1,
+        "upgradePoints": 3,
+        "departures": 0,
+        "hpDamage": 1,
+        "plan": {
+          "mode": "custom",
+          "levels": 0,
+          "attackAllocation": 3,
+          "defenceAllocation": 0,
+          "hpStep": 0,
+          "attackStep": 3,
+          "defenceStep": 0,
+          "hpGrowth": 0,
+          "attackGrowth": 0,
+          "defenceGrowth": 0,
+          "dodgeStep": 0,
+          "costStep": 0,
+          "hpBuff": 0,
+          "attackBuff": 0,
+          "defenceBuff": 0,
+          "dodgeBuff": 0,
+          "costBuff": 0,
+          "buffEnergy": 0,
+          "cooldownFactor": 1,
+          "animationFactor": 1,
+          "outputFactor": 1
+        },
+        "skills": [
+          {
+            "id": "res://data/skills/orc_attack.tres",
+            "name": "普通攻击",
+            "kind": "normal",
+            "rate": 1.0,
+            "cooldown": 1.0,
+            "duration": 0.6000000000000001,
+            "offsets": [
+              0.30000000000000004
+            ],
+            "priority": 0,
+            "range": 80.0,
+            "unlock": [
+              0,
+              1
+            ],
+            "targets": null,
+            "straight": false,
+            "pierce": 1,
+            "basic": true
+          },
+          {
+            "id": "res://data/skills/orc_power_attack.tres",
+            "name": "强力攻击",
+            "kind": "normal",
+            "rate": 1.5,
+            "cooldown": 4.0,
+            "duration": 0.6000000000000001,
+            "offsets": [
+              0.30000000000000004
+            ],
+            "priority": 0,
+            "range": 80.0,
+            "unlock": [
+              0,
+              1
+            ],
+            "targets": null,
+            "straight": false,
+            "pierce": 1,
+            "basic": false
+          }
+        ]
+      },
+      {
+        "id": "orc_rider",
+        "name": "哥布林骑手",
+        "team": "team_b",
+        "hp": 100,
+        "attack": 15,
+        "defence": 10,
+        "cost": 1,
+        "dodge": 0.2,
+        "hasCounter": true,
+        "counterUnlock": [
+          0,
+          1
+        ],
+        "counterNetDps": 0,
+        "uptime": null,
+        "baseLevel": 0,
+        "gameMax": 1,
+        "upgradePoints": 3,
+        "departures": 0,
+        "hpDamage": 1,
+        "plan": {
+          "mode": "custom",
+          "levels": 0,
+          "attackAllocation": 3,
+          "defenceAllocation": 0,
+          "hpStep": 0,
+          "attackStep": 3,
+          "defenceStep": 0,
+          "hpGrowth": 0,
+          "attackGrowth": 0,
+          "defenceGrowth": 0,
+          "dodgeStep": 0,
+          "costStep": 0,
+          "hpBuff": 0,
+          "attackBuff": 0,
+          "defenceBuff": 0,
+          "dodgeBuff": 0,
+          "costBuff": 0,
+          "buffEnergy": 0,
+          "cooldownFactor": 1,
+          "animationFactor": 1,
+          "outputFactor": 1
+        },
+        "skills": [
+          {
+            "id": "res://data/skills/orc_rider_attack.tres",
+            "name": "普通攻击",
+            "kind": "normal",
+            "rate": 1.0,
+            "cooldown": 1.0,
+            "duration": 0.8,
+            "offsets": [
+              0.4
+            ],
+            "priority": 0,
+            "range": 80.0,
+            "unlock": [
+              0,
+              1
+            ],
+            "targets": null,
+            "straight": false,
+            "pierce": 1,
+            "basic": true
+          },
+          {
+            "id": "res://data/skills/orc_rider_power_attack.tres",
+            "name": "强力攻击",
+            "kind": "area",
+            "rate": 1.2,
+            "cooldown": 4.0,
+            "duration": 1.1,
+            "offsets": [
+              0.6000000000000001
+            ],
+            "priority": 1,
+            "range": 80.0,
+            "unlock": [
+              0,
+              1
+            ],
+            "targets": null,
+            "straight": false,
+            "pierce": 1,
+            "basic": false
+          }
+        ]
+      },
+      {
+        "id": "priest",
+        "name": "牧师",
+        "team": "team_a",
+        "hp": 100,
+        "attack": 8,
+        "defence": 3,
+        "cost": 1,
+        "dodge": 0.0,
+        "hasCounter": false,
+        "counterUnlock": [],
+        "counterNetDps": 0,
+        "uptime": null,
+        "baseLevel": 0,
+        "gameMax": 1,
+        "upgradePoints": 2,
+        "departures": 0,
+        "hpDamage": 1,
+        "plan": {
+          "mode": "training",
+          "levels": 1,
+          "attackAllocation": 2,
+          "defenceAllocation": 0,
+          "hpStep": 0,
+          "attackStep": 2,
+          "defenceStep": 0,
+          "hpGrowth": 0,
+          "attackGrowth": 0,
+          "defenceGrowth": 0,
+          "dodgeStep": 0,
+          "costStep": 0,
+          "hpBuff": 0,
+          "attackBuff": 0,
+          "defenceBuff": 0,
+          "dodgeBuff": 0,
+          "costBuff": 0,
+          "buffEnergy": 0,
+          "cooldownFactor": 1,
+          "animationFactor": 1,
+          "outputFactor": 1
+        },
+        "skills": [
+          {
+            "id": "res://data/skills/priest_attack.tres",
+            "name": "普通攻击",
+            "kind": "normal",
+            "rate": 1.0,
+            "cooldown": 1.0,
+            "duration": 0.9,
+            "offsets": [
+              0.4
+            ],
+            "priority": 0,
+            "range": 400.0,
+            "unlock": [
+              0,
+              1
+            ],
+            "targets": null,
+            "straight": false,
+            "pierce": 1,
+            "basic": true
+          },
+          {
+            "id": "res://data/skills/priest_healer.tres",
+            "name": "治疗",
+            "kind": "heal",
+            "rate": 0.6,
+            "cooldown": 3.0,
+            "duration": 0.6000000000000001,
+            "offsets": [
+              0.2
+            ],
+            "priority": 1,
+            "range": 400.0,
+            "unlock": [
+              0,
+              1
+            ],
+            "targets": null,
+            "straight": false,
+            "pierce": 1,
+            "basic": false
+          }
+        ]
+      },
+      {
+        "id": "skeleton",
+        "name": "骷髅兵",
+        "team": "team_b",
+        "hp": 70,
+        "attack": 9,
+        "defence": 2,
+        "cost": 1,
+        "dodge": 0.0,
+        "hasCounter": false,
+        "counterUnlock": [],
+        "counterNetDps": 0,
+        "uptime": null,
+        "baseLevel": 0,
+        "gameMax": 1,
+        "upgradePoints": 3,
+        "departures": 0,
+        "hpDamage": 1,
+        "plan": {
+          "mode": "custom",
+          "levels": 0,
+          "attackAllocation": 3,
+          "defenceAllocation": 0,
+          "hpStep": 0,
+          "attackStep": 3,
+          "defenceStep": 0,
+          "hpGrowth": 0,
+          "attackGrowth": 0,
+          "defenceGrowth": 0,
+          "dodgeStep": 0,
+          "costStep": 0,
+          "hpBuff": 0,
+          "attackBuff": 0,
+          "defenceBuff": 0,
+          "dodgeBuff": 0,
+          "costBuff": 0,
+          "buffEnergy": 0,
+          "cooldownFactor": 1,
+          "animationFactor": 1,
+          "outputFactor": 1
+        },
+        "skills": [
+          {
+            "id": "res://data/skills/skeleton_attack.tres",
+            "name": "普通攻击",
+            "kind": "normal",
+            "rate": 1.0,
+            "cooldown": 1.0,
+            "duration": 0.6000000000000001,
+            "offsets": [
+              0.30000000000000004
+            ],
+            "priority": 0,
+            "range": 80.0,
+            "unlock": [
+              0,
+              1
+            ],
+            "targets": null,
+            "straight": false,
+            "pierce": 1,
+            "basic": true
+          },
+          {
+            "id": "res://data/skills/skeleton_power_attack.tres",
+            "name": "普通攻击",
+            "kind": "normal",
+            "rate": 1.2,
+            "cooldown": 6.0,
+            "duration": 0.7000000000000001,
+            "offsets": [
+              0.30000000000000004
+            ],
+            "priority": 1,
+            "range": 80.0,
+            "unlock": [
+              0,
+              1
+            ],
+            "targets": null,
+            "straight": false,
+            "pierce": 1,
+            "basic": false
+          }
+        ]
+      },
+      {
+        "id": "skeleton_archer",
+        "name": "骷髅弓箭手",
+        "team": "team_b",
+        "hp": 55,
+        "attack": 10,
+        "defence": 1,
+        "cost": 1,
+        "dodge": 0.0,
+        "hasCounter": false,
+        "counterUnlock": [],
+        "counterNetDps": 0,
+        "uptime": null,
+        "baseLevel": 0,
+        "gameMax": 1,
+        "upgradePoints": 3,
+        "departures": 0,
+        "hpDamage": 1,
+        "plan": {
+          "mode": "custom",
+          "levels": 0,
+          "attackAllocation": 3,
+          "defenceAllocation": 0,
+          "hpStep": 0,
+          "attackStep": 3,
+          "defenceStep": 0,
+          "hpGrowth": 0,
+          "attackGrowth": 0,
+          "defenceGrowth": 0,
+          "dodgeStep": 0,
+          "costStep": 0,
+          "hpBuff": 0,
+          "attackBuff": 0,
+          "defenceBuff": 0,
+          "dodgeBuff": 0,
+          "costBuff": 0,
+          "buffEnergy": 0,
+          "cooldownFactor": 1,
+          "animationFactor": 1,
+          "outputFactor": 1
+        },
+        "skills": [
+          {
+            "id": "res://data/skills/skeleton_archer_attack.tres",
+            "name": "普通攻击",
+            "kind": "projectile",
+            "rate": 1.0,
+            "cooldown": 1.0,
+            "duration": 0.9,
+            "offsets": [
+              0.6000000000000001
+            ],
+            "priority": 0,
+            "range": 600.0,
+            "unlock": [
+              0,
+              1
+            ],
+            "targets": null,
+            "straight": false,
+            "pierce": 1,
+            "basic": false
+          }
+        ]
+      },
+      {
+        "id": "slime",
+        "name": "史莱姆",
+        "team": "team_b",
+        "hp": 100,
+        "attack": 15,
+        "defence": 5,
+        "cost": 1,
+        "dodge": 0.0,
+        "hasCounter": false,
+        "counterUnlock": [],
+        "counterNetDps": 0,
+        "uptime": null,
+        "baseLevel": 0,
+        "gameMax": 1,
+        "upgradePoints": 3,
+        "departures": 0,
+        "hpDamage": 1,
+        "plan": {
+          "mode": "custom",
+          "levels": 0,
+          "attackAllocation": 3,
+          "defenceAllocation": 0,
+          "hpStep": 0,
+          "attackStep": 3,
+          "defenceStep": 0,
+          "hpGrowth": 0,
+          "attackGrowth": 0,
+          "defenceGrowth": 0,
+          "dodgeStep": 0,
+          "costStep": 0,
+          "hpBuff": 0,
+          "attackBuff": 0,
+          "defenceBuff": 0,
+          "dodgeBuff": 0,
+          "costBuff": 0,
+          "buffEnergy": 0,
+          "cooldownFactor": 1,
+          "animationFactor": 1,
+          "outputFactor": 1
+        },
+        "skills": [
+          {
+            "id": "res://data/skills/slime_attack.tres",
+            "name": "普通攻击",
+            "kind": "normal",
+            "rate": 1.0,
+            "cooldown": 1.0,
+            "duration": 0.6000000000000001,
+            "offsets": [
+              0.30000000000000004
+            ],
+            "priority": 0,
+            "range": 80.0,
+            "unlock": [
+              0,
+              1
+            ],
+            "targets": null,
+            "straight": false,
+            "pierce": 1,
+            "basic": true
+          },
+          {
+            "id": "res://data/skills/slime_power_attack.tres",
+            "name": "普通攻击",
+            "kind": "normal",
+            "rate": 1.4,
+            "cooldown": 6.0,
+            "duration": 1.2000000000000002,
+            "offsets": [
+              0.8
+            ],
+            "priority": 1,
+            "range": 80.0,
+            "unlock": [
+              0,
+              1
+            ],
+            "targets": null,
+            "straight": false,
+            "pierce": 1,
+            "basic": false
+          }
+        ]
+      },
+      {
+        "id": "soldier",
+        "name": "士兵",
+        "team": "team_a",
+        "hp": 100,
+        "attack": 10,
+        "defence": 5,
+        "cost": 1,
+        "dodge": 0.0,
+        "hasCounter": false,
+        "counterUnlock": [],
+        "counterNetDps": 0,
+        "uptime": null,
+        "baseLevel": 0,
+        "gameMax": 1,
+        "upgradePoints": 2,
+        "departures": 0,
+        "hpDamage": 1,
+        "plan": {
+          "mode": "training",
+          "levels": 1,
+          "attackAllocation": 2,
+          "defenceAllocation": 0,
+          "hpStep": 0,
+          "attackStep": 2,
+          "defenceStep": 0,
+          "hpGrowth": 0,
+          "attackGrowth": 0,
+          "defenceGrowth": 0,
+          "dodgeStep": 0,
+          "costStep": 0,
+          "hpBuff": 0,
+          "attackBuff": 0,
+          "defenceBuff": 0,
+          "dodgeBuff": 0,
+          "costBuff": 0,
+          "buffEnergy": 0,
+          "cooldownFactor": 1,
+          "animationFactor": 1,
+          "outputFactor": 1
+        },
+        "skills": [
+          {
+            "id": "res://data/skills/normal_attack.tres",
+            "name": "普通攻击",
+            "kind": "normal",
+            "rate": 1.0,
+            "cooldown": 1.0,
+            "duration": 0.6000000000000001,
+            "offsets": [
+              0.30000000000000004
+            ],
+            "priority": 0,
+            "range": 80.0,
+            "unlock": [
+              0,
+              1
+            ],
+            "targets": null,
+            "straight": false,
+            "pierce": 1,
+            "basic": true
+          },
+          {
+            "id": "res://data/skills/soldier_power_attack.tres",
+            "name": "斩击",
+            "kind": "normal",
+            "rate": 1.3,
+            "cooldown": 2.0,
+            "duration": 0.6000000000000001,
+            "offsets": [
+              0.30000000000000004
+            ],
+            "priority": 2,
+            "range": 80.0,
+            "unlock": [
+              0,
+              1
+            ],
+            "targets": null,
+            "straight": false,
+            "pierce": 1,
+            "basic": false
+          }
+        ],
+        "sword": {
+          "range": 300,
+          "duration": 0.9,
+          "offset": 0.7000000000000001
+        }
+      },
+      {
+        "id": "swords_man",
+        "name": "剑士",
+        "team": "team_a",
+        "hp": 80,
+        "attack": 8,
+        "defence": 3,
+        "cost": 3,
+        "dodge": 0.0,
+        "hasCounter": false,
+        "counterUnlock": [],
+        "counterNetDps": 0,
+        "uptime": null,
+        "baseLevel": 0,
+        "gameMax": 1,
+        "upgradePoints": 2,
+        "departures": 0,
+        "hpDamage": 1,
+        "plan": {
+          "mode": "training",
+          "levels": 1,
+          "attackAllocation": 2,
+          "defenceAllocation": 0,
+          "hpStep": 0,
+          "attackStep": 2,
+          "defenceStep": 0,
+          "hpGrowth": 0,
+          "attackGrowth": 0,
+          "defenceGrowth": 0,
+          "dodgeStep": 0,
+          "costStep": 0,
+          "hpBuff": 0,
+          "attackBuff": 0,
+          "defenceBuff": 0,
+          "dodgeBuff": 0,
+          "costBuff": 0,
+          "buffEnergy": 0,
+          "cooldownFactor": 1,
+          "animationFactor": 1,
+          "outputFactor": 1
+        },
+        "skills": [
+          {
+            "id": "res://data/skills/swords_man_attack.tres",
+            "name": "普通攻击",
+            "kind": "normal",
+            "rate": 1.0,
+            "cooldown": 1.0,
+            "duration": 0.7000000000000001,
+            "offsets": [
+              0.30000000000000004
+            ],
+            "priority": 0,
+            "range": 80.0,
+            "unlock": [
+              0,
+              1
+            ],
+            "targets": null,
+            "straight": false,
+            "pierce": 1,
+            "basic": true
+          },
+          {
+            "id": "res://data/skills/swords_man_muti_attack.tres",
+            "name": "三连击",
+            "kind": "normal",
+            "rate": 0.7,
+            "cooldown": 3.0,
+            "duration": 1.5,
+            "offsets": [
+              0.30000000000000004,
+              0.6000000000000001,
+              1.2000000000000002
+            ],
+            "priority": 1,
+            "range": 80.0,
+            "unlock": [
+              0,
+              1
+            ],
+            "targets": null,
+            "straight": false,
+            "pierce": 1,
+            "basic": false
+          },
+          {
+            "id": "res://data/skills/swords_man_stick_muti_attack.tres",
+            "name": "六连刺",
+            "kind": "normal",
+            "rate": 0.4,
+            "cooldown": 5.0,
+            "duration": 1.2000000000000002,
+            "offsets": [
+              0.5,
+              0.6000000000000001,
+              0.7000000000000001,
+              0.8,
+              0.9,
+              1.0,
+              1.1
+            ],
+            "priority": 2,
+            "range": 80.0,
+            "unlock": [
+              0,
+              1
+            ],
+            "targets": null,
+            "straight": false,
+            "pierce": 1,
+            "basic": false
+          },
+          {
+            "id": "res://data/skills/swords_man_consecutive_attack.tres",
+            "name": "愈战愈勇",
+            "kind": "combo_passive",
+            "rate": 1.0,
+            "cooldown": 1.0,
+            "duration": 0,
+            "offsets": [],
+            "priority": 0,
+            "range": 80.0,
+            "unlock": [
+              0,
+              1
+            ],
+            "targets": null,
+            "straight": false,
+            "pierce": 1,
+            "basic": false,
+            "attack_bonus_per_hit": 1
+          }
+        ]
+      },
+      {
+        "id": "were_bear",
+        "name": "熊人",
+        "team": "team_a",
+        "hp": 100,
+        "attack": 15,
+        "defence": 5,
+        "cost": 2,
+        "dodge": 0.0,
+        "hasCounter": false,
+        "counterUnlock": [],
+        "counterNetDps": 0,
+        "uptime": null,
+        "baseLevel": 0,
+        "gameMax": 1,
+        "upgradePoints": 2,
+        "departures": 0,
+        "hpDamage": 1,
+        "plan": {
+          "mode": "training",
+          "levels": 1,
+          "attackAllocation": 2,
+          "defenceAllocation": 0,
+          "hpStep": 0,
+          "attackStep": 2,
+          "defenceStep": 0,
+          "hpGrowth": 0,
+          "attackGrowth": 0,
+          "defenceGrowth": 0,
+          "dodgeStep": 0,
+          "costStep": 0,
+          "hpBuff": 0,
+          "attackBuff": 0,
+          "defenceBuff": 0,
+          "dodgeBuff": 0,
+          "costBuff": 0,
+          "buffEnergy": 0,
+          "cooldownFactor": 1,
+          "animationFactor": 1,
+          "outputFactor": 1
+        },
+        "skills": [
+          {
+            "id": "res://data/skills/were_bear_attack.tres",
+            "name": "普通攻击",
+            "kind": "normal",
+            "rate": 1.0,
+            "cooldown": 1.0,
+            "duration": 0.9,
+            "offsets": [
+              0.5
+            ],
+            "priority": 0,
+            "range": 80.0,
+            "unlock": [
+              0
+            ],
+            "targets": null,
+            "straight": false,
+            "pierce": 1,
+            "basic": true
+          },
+          {
+            "id": "res://data/skills/were_bear_double_attack.tres",
+            "name": "二连爪",
+            "kind": "normal",
+            "rate": 0.8,
+            "cooldown": 3.0,
+            "duration": 1.3,
+            "offsets": [
+              0.4,
+              0.9
+            ],
+            "priority": 1,
+            "range": 80.0,
+            "unlock": [
+              0,
+              1
+            ],
+            "targets": null,
+            "straight": false,
+            "pierce": 1,
+            "basic": false
+          },
+          {
+            "id": "res://data/skills/were_bear_smash.tres",
+            "name": "撼地",
+            "kind": "area",
+            "rate": 0.8,
+            "cooldown": 1.0,
+            "duration": 0.9,
+            "offsets": [
+              0.5
+            ],
+            "priority": 0,
+            "range": 80.0,
+            "unlock": [
+              1
+            ],
+            "targets": null,
+            "straight": false,
+            "pierce": 1,
+            "basic": false
+          }
+        ]
+      },
+      {
+        "id": "were_wolf",
+        "name": "狼人",
+        "team": "team_a",
+        "hp": 100,
+        "attack": 15,
+        "defence": 5,
+        "cost": 2,
+        "dodge": 0.0,
+        "hasCounter": false,
+        "counterUnlock": [],
+        "counterNetDps": 0,
+        "uptime": null,
+        "baseLevel": 0,
+        "gameMax": 1,
+        "upgradePoints": 2,
+        "departures": 0,
+        "hpDamage": 1,
+        "plan": {
+          "mode": "training",
+          "levels": 1,
+          "attackAllocation": 2,
+          "defenceAllocation": 0,
+          "hpStep": 0,
+          "attackStep": 2,
+          "defenceStep": 0,
+          "hpGrowth": 0,
+          "attackGrowth": 0,
+          "defenceGrowth": 0,
+          "dodgeStep": 0,
+          "costStep": 0,
+          "hpBuff": 0,
+          "attackBuff": 0,
+          "defenceBuff": 0,
+          "dodgeBuff": 0,
+          "costBuff": 0,
+          "buffEnergy": 0,
+          "cooldownFactor": 1,
+          "animationFactor": 1,
+          "outputFactor": 1
+        },
+        "skills": [
+          {
+            "id": "res://data/skills/were_wolf_attack.tres",
+            "name": "普通攻击",
+            "kind": "normal",
+            "rate": 1.0,
+            "cooldown": 1.0,
+            "duration": 0.9,
+            "offsets": [
+              0.5
+            ],
+            "priority": 0,
+            "range": 80.0,
+            "unlock": [
+              0,
+              1
+            ],
+            "targets": null,
+            "straight": false,
+            "pierce": 1,
+            "basic": true
+          },
+          {
+            "id": "res://data/skills/were_wolf_five_attack.tres",
+            "name": "五连斩击",
+            "kind": "teleport",
+            "rate": 0.8,
+            "cooldown": 7.0,
+            "duration": 1.3,
+            "offsets": [
+              0.7000000000000001,
+              0.8,
+              0.9,
+              1.0,
+              1.1
+            ],
+            "priority": 1,
+            "range": 80.0,
+            "unlock": [
+              1
+            ],
+            "targets": null,
+            "straight": false,
+            "pierce": 1,
+            "basic": false
+          },
+          {
+            "id": "res://data/skills/were_wolf_low_health_stealth.tres",
+            "name": "月影潜行",
+            "kind": "stealth_passive",
+            "rate": 1.0,
+            "cooldown": 1.0,
+            "duration": 0,
+            "offsets": [],
+            "priority": 0,
+            "range": 80.0,
+            "unlock": [
+              0,
+              1
+            ],
+            "targets": null,
+            "straight": false,
+            "pierce": 1,
+            "basic": false,
+            "stealth_health_percent": 50.0,
+            "stealth_duration": 5.0
+          }
+        ]
+      },
+      {
+        "id": "wizard",
+        "name": "巫师",
+        "team": "team_a",
+        "hp": 100,
+        "attack": 20,
+        "defence": 3,
+        "cost": 3,
+        "dodge": 0.0,
+        "hasCounter": false,
+        "counterUnlock": [],
+        "counterNetDps": 0,
+        "uptime": null,
+        "baseLevel": 0,
+        "gameMax": 1,
+        "upgradePoints": 2,
+        "departures": 0,
+        "hpDamage": 1,
+        "plan": {
+          "mode": "training",
+          "levels": 1,
+          "attackAllocation": 2,
+          "defenceAllocation": 0,
+          "hpStep": 0,
+          "attackStep": 2,
+          "defenceStep": 0,
+          "hpGrowth": 0,
+          "attackGrowth": 0,
+          "defenceGrowth": 0,
+          "dodgeStep": 0,
+          "costStep": 0,
+          "hpBuff": 0,
+          "attackBuff": 0,
+          "defenceBuff": 0,
+          "dodgeBuff": 0,
+          "costBuff": 0,
+          "buffEnergy": 0,
+          "cooldownFactor": 1,
+          "animationFactor": 1,
+          "outputFactor": 1
+        },
+        "skills": [
+          {
+            "id": "res://data/skills/wizard_fire_ball.tres",
+            "name": "火球",
+            "kind": "projectile",
+            "rate": 1.2,
+            "cooldown": 2.5,
+            "duration": 0.9,
+            "offsets": [
+              0.4
+            ],
+            "priority": 0,
+            "range": 650.0,
+            "unlock": [
+              0,
+              1
+            ],
+            "targets": null,
+            "straight": false,
+            "pierce": 1,
+            "basic": false
+          },
+          {
+            "id": "res://data/skills/wizard_ice_crash.tres",
+            "name": "冰晶爆裂",
+            "kind": "normal",
+            "rate": 2.0,
+            "cooldown": 6.0,
+            "duration": 0.6000000000000001,
+            "offsets": [
+              0.2
+            ],
+            "priority": 1,
+            "range": 650.0,
+            "unlock": [
+              1
+            ],
+            "targets": null,
+            "straight": false,
+            "pierce": 1,
+            "basic": false
+          }
+        ]
+      }
+    ],
+    "model": {
+      "window": 12,
+      "incoming": 15,
+      "targetDefence": 5,
+      "eligible": 0.7,
+      "targetDodge": 0,
+      "meleeUptime": 0.8,
+      "rangedUptime": 1.0,
+      "areaTargets": 1.5,
+      "pierceTargets": 1.5,
+      "healRealization": 0.5,
+      "lifestealRealization": 0.5,
+      "healWeight": 0.5,
+      "summonRealization": 0.75,
+      "swordFarShare": 0.5,
+      "costBonus": 0.08,
+      "comboTargetHp": 100
+    }
+  },
+  "reference": {
+    "soldier": {
+      "id": "soldier",
+      "name": "士兵",
+      "team": "team_a",
+      "hp": 100,
+      "attack": 10,
+      "defence": 5,
+      "cost": 1,
+      "dodge": 0.0,
+      "hasCounter": false,
+      "counterUnlock": [],
+      "counterNetDps": 0,
+      "uptime": null,
+      "baseLevel": 0,
+      "gameMax": 1,
+      "upgradePoints": 2,
+      "departures": 0,
+      "hpDamage": 1,
+      "plan": {
+        "mode": "training",
+        "levels": 0,
+        "attackAllocation": 2,
+        "defenceAllocation": 0,
+        "hpStep": 0,
+        "attackStep": 2,
+        "defenceStep": 0,
+        "hpGrowth": 0,
+        "attackGrowth": 0,
+        "defenceGrowth": 0,
+        "dodgeStep": 0,
+        "costStep": 0,
+        "hpBuff": 0,
+        "attackBuff": 0,
+        "defenceBuff": 0,
+        "dodgeBuff": 0,
+        "costBuff": 0,
+        "buffEnergy": 0,
+        "cooldownFactor": 1,
+        "animationFactor": 1,
+        "outputFactor": 1
+      },
+      "skills": [
+        {
+          "id": "res://data/skills/normal_attack.tres",
+          "name": "普通攻击",
+          "kind": "normal",
+          "rate": 1.0,
+          "cooldown": 1.0,
+          "duration": 0.6000000000000001,
+          "offsets": [
+            0.30000000000000004
+          ],
+          "priority": 0,
+          "range": 80.0,
+          "unlock": [
+            0,
+            1
+          ],
+          "targets": null,
+          "straight": false,
+          "pierce": 1,
+          "basic": true
+        },
+        {
+          "id": "res://data/skills/soldier_power_attack.tres",
+          "name": "斩击",
+          "kind": "normal",
+          "rate": 1.3,
+          "cooldown": 2.0,
+          "duration": 0.6000000000000001,
+          "offsets": [
+            0.30000000000000004
+          ],
+          "priority": 2,
+          "range": 80.0,
+          "unlock": [
+            0,
+            1
+          ],
+          "targets": null,
+          "straight": false,
+          "pierce": 1,
+          "basic": false
+        }
+      ],
+      "sword": {
+        "range": 300,
+        "duration": 0.9,
+        "offset": 0.7000000000000001
+      }
+    },
+    "unitIds": [
+      "archer",
+      "armored_axeman",
+      "armored_orc",
+      "bat",
+      "elite_orc",
+      "greatsword_skeleton",
+      "knight",
+      "knight_templar",
+      "lancer",
+      "necromancer",
+      "orc",
+      "orc_rider",
+      "priest",
+      "skeleton",
+      "skeleton_archer",
+      "slime",
+      "soldier",
+      "swords_man",
+      "were_bear",
+      "were_wolf",
+      "wizard"
+    ]
+  },
+  "initialState": null,
+  "storageId": "unit-power-calc-v2-d7bd6d855d7d",
+  "sources": [
+    {
+      "path": "data/units/unit_data.gd",
+      "sha256": "b9a88fb0e47ccb2df83bb3b0ad9075b495da610583dba285632b4784745e8b95"
+    },
+    {
+      "path": "data/skills/skill_base.gd",
+      "sha256": "807741543af32ae0b2d6b434ed0e9d550886e1bc3bc2e279f9c1c54ede883935"
+    },
+    {
+      "path": "data/units/archer.tres",
+      "sha256": "09559630f8b521e540a45af18e62f04cdbb4a31e8e9fdefbb2b13c8f03f3a85f"
+    },
+    {
+      "path": "data/skills/archer_arrow_attack.tres",
+      "sha256": "82152c9f7eec9ddd38340a196989115933aff64f0e76ce687a101d30bc8da48e"
+    },
+    {
+      "path": "scripts/skills/arrow_attack.gd",
+      "sha256": "46e235d2f47405ecb9db432877ba6f07446e6e2e889d8fec34433dee26cb9081"
+    },
+    {
+      "path": "data/skills/archer_power_shoot.tres",
+      "sha256": "92532cc679099e9dadcaf9022b9d79e443487ac4101bf6478ae258230d26fef1"
+    },
+    {
+      "path": "scenes/units/archer.tscn",
+      "sha256": "a03df0aad1bbfeddfc29e0855e836d83985797921d9d54fe437d14a9c6b80cd4"
+    },
+    {
+      "path": "data/units/armored_axeman.tres",
+      "sha256": "f54293e101165c0fae4391f16120d2b63d4f9a75673eadd4f6995dd11924ffc4"
+    },
+    {
+      "path": "data/skills/armored_examan_attack.tres",
+      "sha256": "e6933ff5d804f05aa3b7c7f62b200d12fa49aee0da0837b802a150ce13984635"
+    },
+    {
+      "path": "scripts/skills/normal_attack.gd",
+      "sha256": "d61cbffa5390a48f4c4e3f3ccfb002223ca7e67fce6dea2ad80ccc792d3d4b81"
+    },
+    {
+      "path": "data/skills/armored_examan_round_attack.tres",
+      "sha256": "f7f757ab880ec2b6114967eca25b9f4724fba9bef1d291001fff072853d432bd"
+    },
+    {
+      "path": "scripts/skills/area_attack.gd",
+      "sha256": "c5db1757c6f9ffcdf172cc8487192994749d99673be7be6f44d22622c38df386"
+    },
+    {
+      "path": "data/skills/armored_examan_chop_attack.tres",
+      "sha256": "7b42b9189919c486b8407108a9e68b387f5991ab54a73794ed5a643e434cf84a"
+    },
+    {
+      "path": "scenes/units/armored_axeman.tscn",
+      "sha256": "bcfc04aa20a66e97f288afc7fec526a2c462ece0b1ca9aad2605a21d7c081c0e"
+    },
+    {
+      "path": "data/units/armored_orc.tres",
+      "sha256": "b7f5d110b6e4faef1fb3d707ad183c92961f4c3bdd41f11e56fd7aa6b116d659"
+    },
+    {
+      "path": "data/skills/armored_orc_attack.tres",
+      "sha256": "c05ca4cbb096a7727e30a5a73c862be135e6ef1719bf289b5b010d58e5b63550"
+    },
+    {
+      "path": "data/skills/armored_orc_power_attack.tres",
+      "sha256": "5900781fdecc13369538f54c6864bdedbd31bdf8e2befb34089be0d9187689ba"
+    },
+    {
+      "path": "data/skills/armored_orc_dodge_attack.tres",
+      "sha256": "c59729520b76a2e6c6a8ff342e2f05dcb846f862325fb4e08c58a2e807b623fc"
+    },
+    {
+      "path": "scenes/units/armored_orc.tscn",
+      "sha256": "d311072875c00512e0035ad9768b1b3fc2a5ca438e12a56ee5c7c44b812b72bd"
+    },
+    {
+      "path": "data/units/bat.tres",
+      "sha256": "9125c1a74cc62ca30017dab02eadd9c011118ed42004c7821e74cbdc2b1dd459"
+    },
+    {
+      "path": "data/skills/bat_attack.tres",
+      "sha256": "8793ca32ad4ccb5e7d680c0ddaa38676871023019e2c6a6aa93c6dd4fd81b1ee"
+    },
+    {
+      "path": "data/skills/bat_power_attack.tres",
+      "sha256": "fb9dc33cfc89d04bcf17d17176a603f5b3d8038176f0ef1d87e890e925261725"
+    },
+    {
+      "path": "scripts/skills/bloodthirst_attack.gd",
+      "sha256": "531aa7a2f597195ba377ce383cde0b98d94f06fddf4e10554ee43349b1d597c5"
+    },
+    {
+      "path": "scenes/units/bat.tscn",
+      "sha256": "029a18dfc5198c8ece9a3513ee3093f821412893e46a5968ab5ef8f191c9e496"
+    },
+    {
+      "path": "data/units/elite_orc.tres",
+      "sha256": "c64e5d99f6cc7ae0b16a120a65e62ad67463122663b317a6773758181c0a22d8"
+    },
+    {
+      "path": "data/skills/elite_orc_attack.tres",
+      "sha256": "c6193670db1f1e48fbccbc00c30ae7860620fa7ad513cb58fe44c7f094c48788"
+    },
+    {
+      "path": "data/skills/elite_orc_power_attack.tres",
+      "sha256": "46a9b5b1635ece84412f550827713578606028538adaff42392110ccdc79d88d"
+    },
+    {
+      "path": "data/skills/elite_orc_round_attack.tres",
+      "sha256": "b848a77e8544a33427f506bc2e09afdb80abcd7cf52e8aaec0819a4a90a745d3"
+    },
+    {
+      "path": "scenes/units/elite_orc.tscn",
+      "sha256": "89dff1d3f47b6c34bfbbd9d94f93ab4e07dede217415cf5dc0c6f50c1cb4f784"
+    },
+    {
+      "path": "data/units/greatsword_skeleton.tres",
+      "sha256": "853e43d3e005cdb8a1a67b2d108a4c5abfc4d1456af56671775ed8dad3a0927d"
+    },
+    {
+      "path": "data/skills/greatswords_skeleton_attack.tres",
+      "sha256": "9128e9eb476d9f4d5a7deb5a7cca7c5d187d88457d1220af8977a93c0998420b"
+    },
+    {
+      "path": "data/skills/greatswords_skeleton_power_attack.tres",
+      "sha256": "a222e7cb4c2fcef0005a9626cef1194fb804b3ff2109d46223a3d1e29476b649"
+    },
+    {
+      "path": "data/skills/greatswords_skeleton_stick_attack.tres",
+      "sha256": "17d63cd8c734b534fc9693aa150e4a5d78a0b9df2622ec6c1c85bd0360865ac2"
+    },
+    {
+      "path": "scenes/units/greatsword_skeleton.tscn",
+      "sha256": "a376858050756dcbd001cb958dcf6773c24b68c2e8d27602d4762eb06c635a0e"
+    },
+    {
+      "path": "data/units/knight.tres",
+      "sha256": "e46f118e99429b25fed0823f5133f9c965ee9614c06d4e8077f6c1554520c7eb"
+    },
+    {
+      "path": "data/skills/knight_attack.tres",
+      "sha256": "6dc3b4c2c923810565f0d1571b678ee0cb523caa5e64d1bc80bcce4a90bab8fb"
+    },
+    {
+      "path": "data/skills/knight_power_attack.tres",
+      "sha256": "448d07f9e548fe44c11c45b2143f6ce42cce5c52a0d4e0d2306733a92b1f918d"
+    },
+    {
+      "path": "data/skills/knight_dodge_attack.tres",
+      "sha256": "c5c237e34b12025b2c46e6e21e612f9defc17db13c61afef15556edcac445b7d"
+    },
+    {
+      "path": "scripts/skills/dodge_attack.gd",
+      "sha256": "768072ea798884530aec21fb968fcc8eb42e4bf6dac880d8416485c460810d71"
+    },
+    {
+      "path": "scenes/units/knight.tscn",
+      "sha256": "ad3fc3b6677dbdb2f13a805a0c742235e1a6bcd1430a20b614dedcaf22780a3c"
+    },
+    {
+      "path": "data/units/knight_templar.tres",
+      "sha256": "6d14945f47da1c648d9d2853f6dc044b307e459a9a3e462cd9aea8c66d269253"
+    },
+    {
+      "path": "data/skills/knight_templar_attack.tres",
+      "sha256": "8cc90a077d472ee9f36524ca8ea892e09f975161a8a1aaf4cf98f208b908560c"
+    },
+    {
+      "path": "data/skills/knight_templar_power_attack.tres",
+      "sha256": "1a5571c643b3ce1e80103e570193ce1ad6f914accaf2b9e05728951773e4dd04"
+    },
+    {
+      "path": "data/skills/knight_templar_protection_aura.tres",
+      "sha256": "d2da4851c8a521f2d5b07d7c5790aa99b9b05e66e80842eae5dac08a5d16cf00"
+    },
+    {
+      "path": "scripts/skills/protection_aura.gd",
+      "sha256": "ced0e30a2d74af52e4af0907bf6a038564cca8f8a135bf6e95f7af4927e123db"
+    },
+    {
+      "path": "scripts/units/protection_aura_runtime.gd",
+      "sha256": "67bb24e4c5d8d1ca281d625487788c4fbaeb18973018bcff15a5da8d01fae242"
+    },
+    {
+      "path": "data/skills/knight_templar_dodge_attack.tres",
+      "sha256": "440223a772711ae04d947bd3af4567bac7cd91f9b92bc1c17733715ba0fa20b2"
+    },
+    {
+      "path": "scenes/units/knight_templar.tscn",
+      "sha256": "eb7616f3647d5157e9dfdd9255644603366e819168ecbe8c965ab0b644c7ec1a"
+    },
+    {
+      "path": "data/units/lancer.tres",
+      "sha256": "5403128d184b82bcc106aabf9b408c385e0d10a197d02ce96f14f4dfbbfba6d3"
+    },
+    {
+      "path": "data/skills/lancer_attack.tres",
+      "sha256": "58cfab06d239ad5ec2a98e97d33a3b918c2c8575dedbbe664b80f869d87a172e"
+    },
+    {
+      "path": "data/skills/lancer_dash_attack.tres",
+      "sha256": "4baea0d680aac18c1d1d8c406e24db9cc98e2ba864963896109e93e0463db16c"
+    },
+    {
+      "path": "scripts/skills/dash_attack.gd",
+      "sha256": "b8b970ac72b5c3e821d0e8fed16321677d5b571e0e6037182e453153cf2f0d66"
+    },
+    {
+      "path": "data/skills/lancer_power_attack.tres",
+      "sha256": "f4c5cf92b862cac96d314663d3ba5c03867ab36d8973f333d75477eadaeb3352"
+    },
+    {
+      "path": "data/skills/lancer_dash_attack_enhance.tres",
+      "sha256": "d39f21e84e9d7ea17e307f637c987cae8cd1e4c991c26b8e5ca1705533471b5a"
+    },
+    {
+      "path": "scenes/units/lancer.tscn",
+      "sha256": "e7853026c2ef708bd1701cf2d25a74c6d91b63de9a02188d79b26b9ee6222f66"
+    },
+    {
+      "path": "data/units/necromancer.tres",
+      "sha256": "2046f536d2185383a9c64e1ba4c728eb0656743d4725da899141acca873b57fb"
+    },
+    {
+      "path": "data/skills/necromancer_summon.tres",
+      "sha256": "54012c4a90eb38c1a88127af0b6895fe11d2ba323c30cee316b3add7d44a90f5"
+    },
+    {
+      "path": "scripts/skills/summon_unit.gd",
+      "sha256": "71ea4b3d83c6db3abdb8b8a52e81559ed41aeb33f4f731374d24c6df762fbd38"
+    },
+    {
+      "path": "scenes/effects/creat_effect.tscn",
+      "sha256": "4e2e98771e01d3fcc8dbb438bec00b482977e6ba8185241d93d0cf3c08385fb1"
+    },
+    {
+      "path": "data/skills/necromancer_attack.tres",
+      "sha256": "3ffaaf96333d9e1e771b668924883d78857d5dae891da176f4ca26d9181848b3"
+    },
+    {
+      "path": "data/skills/necromancer_power_attack.tres",
+      "sha256": "f8123d2d4771513fba8e27ef8610d03fe7ca1ac718af3c0d528b074cbff237aa"
+    },
+    {
+      "path": "scenes/units/necromancer.tscn",
+      "sha256": "258771fb81d823684919212d0d9af31d9573d70e7c673efbbfe4e639f54c29e8"
+    },
+    {
+      "path": "data/units/orc.tres",
+      "sha256": "cdd2e34089852c8279a1fd833faf2cd712d4b26a31bff993a41dfe2ac16e4a3e"
+    },
+    {
+      "path": "data/skills/orc_attack.tres",
+      "sha256": "6aab88759e05ff0fe31aeb989caedee37cda9e353c83a1ffd1caafb26fd705ca"
+    },
+    {
+      "path": "data/skills/orc_power_attack.tres",
+      "sha256": "0eba87534f6cb0b0530567d8a533d3e74e1ce2cec6c24c01340fe55664b9724a"
+    },
+    {
+      "path": "scenes/units/orc.tscn",
+      "sha256": "e3759385c165ab7fc7731d95a43881f947903569b08da66f51ca1eca7922af26"
+    },
+    {
+      "path": "data/units/orc_rider.tres",
+      "sha256": "eb070636970e5e9d279553c9134f10118ce052722d546685c3a94d5640abf293"
+    },
+    {
+      "path": "data/skills/orc_rider_attack.tres",
+      "sha256": "614ac79a4e81709b67b9979924093cc278c1d40bf3e3b373322e3d72d683dcec"
+    },
+    {
+      "path": "data/skills/orc_rider_power_attack.tres",
+      "sha256": "818b77f953c23090452550f409b09e23024a7bed2eb216b64cae754e60925c98"
+    },
+    {
+      "path": "data/skills/orc_rider_dodge_attack.tres",
+      "sha256": "28250aa18b632b6ec5dc4e776c9b34cf08c991983834884f41bd9986a6cbd67e"
+    },
+    {
+      "path": "scenes/units/orc_rider.tscn",
+      "sha256": "84325eeda709b27cff0054bbe83797f22a1f7c81d770fc5c348bc4dcba062543"
+    },
+    {
+      "path": "data/units/priest.tres",
+      "sha256": "f35548221d775bc28de3bdbdcef9eccf5e7bc335b856e627c973e5f7498601d3"
+    },
+    {
+      "path": "data/skills/priest_attack.tres",
+      "sha256": "d40b1f88e4427d1e5c31c0d8d0d7766666d93f74530375180e9d97f54676e0e1"
+    },
+    {
+      "path": "data/skills/priest_healer.tres",
+      "sha256": "b7529b7679eb5eb449099aca28ab775c04e1238944f30498bdef02bfc72e35da"
+    },
+    {
+      "path": "scripts/skills/ally_heal.gd",
+      "sha256": "529beb7564b2c4a67e051688ee6df2d36d0a9fa3c004f976ceae1b105cb833ef"
+    },
+    {
+      "path": "scenes/units/priest.tscn",
+      "sha256": "eff7183ae049bb0f34a6b90b172d8505a3e4015e39745be7f6eab4889a619116"
+    },
+    {
+      "path": "data/units/skeleton.tres",
+      "sha256": "3fba6ed4d7087d3aa99b80e6955ef19513c61df64a4560d53a4f8c04125dc6c0"
+    },
+    {
+      "path": "data/skills/skeleton_attack.tres",
+      "sha256": "dffa9e3946dc5fac8c1c6a111f937cec99a057e6d42eafa1975ec74f18055433"
+    },
+    {
+      "path": "data/skills/skeleton_power_attack.tres",
+      "sha256": "c2ca2f8fd7d5bb84b4b0d3bf834c2998a159592976c31f0789a6b7b05e7fae9f"
+    },
+    {
+      "path": "scenes/units/skeleton.tscn",
+      "sha256": "2561cf78978f3fa9a5ef4cb36dddaf588a05a06cb0d8fe7ab01931319ab71b24"
+    },
+    {
+      "path": "data/units/skeleton_archer.tres",
+      "sha256": "6e2bffc8b5a68e097b7584d3e4185af3499d82000cab5e40ffe661b71c3aab37"
+    },
+    {
+      "path": "data/skills/skeleton_archer_attack.tres",
+      "sha256": "fb5bac55a09ca9c53abfc6d3e4a4a43ebac036de823feadd4555f02c7984a50a"
+    },
+    {
+      "path": "scenes/units/skeleton_archer.tscn",
+      "sha256": "fc8055f6e78285c4e6f5c7b4e2bbaca48ffbba6256af3a19917628c1bfc9c21e"
+    },
+    {
+      "path": "data/units/slime.tres",
+      "sha256": "cec77697ee31b40ffcf4b69d31eecfb7ecaabfb95d7af59e5a0cf6868becb368"
+    },
+    {
+      "path": "data/skills/slime_attack.tres",
+      "sha256": "04a8851b3b9c746f7a78d2be21ebb07cb3f8ee5a189ee839f89cd42a6da67a05"
+    },
+    {
+      "path": "data/skills/slime_power_attack.tres",
+      "sha256": "5efcbcdfd8017e92079cae5b42587c295012637f3868cfc70ba116306d393925"
+    },
+    {
+      "path": "scenes/units/slime.tscn",
+      "sha256": "3531bb75e50ab675266f9ab5b012c4f8ecc973895e8c9542fe11029f64a147b0"
+    },
+    {
+      "path": "data/units/soldier.tres",
+      "sha256": "f9563f4352e25fcdcb6b4c76616da78e13dac081c121c505442460aef368f2ee"
+    },
+    {
+      "path": "data/skills/normal_attack.tres",
+      "sha256": "54b8ad4dfdd2e35225f74f2ab976beeea7068cc10970034f97c0f741fcd4287a"
+    },
+    {
+      "path": "data/skills/soldier_power_attack.tres",
+      "sha256": "01063b7aca71837e7b19b87171f3283528b537d5891be3beb360ad043e2769b1"
+    },
+    {
+      "path": "scenes/units/soldier.tscn",
+      "sha256": "e635085920062453b7f3be6c70919aa4ef67db9b2ec3b1e9c7f664de9d039233"
+    },
+    {
+      "path": "data/units/swords_man.tres",
+      "sha256": "259e4d37c9518d5651f1f3da31d22bb17e1b7288d0aaa882e093663e5db4c186"
+    },
+    {
+      "path": "data/skills/swords_man_attack.tres",
+      "sha256": "c53e0f998fd72cd476ff36aee9c1dcfec5504a209f4f1f90e2975ee60499f5fd"
+    },
+    {
+      "path": "data/skills/swords_man_muti_attack.tres",
+      "sha256": "39bd763dfe1c4840e48072c5cebf0f43745cf4e0f662c1860799de71e2c8ad8b"
+    },
+    {
+      "path": "data/skills/swords_man_stick_muti_attack.tres",
+      "sha256": "6d0e43b3ee26ded4b707171de2bc92185fcaf57372cede555f7e6acc00b5dd0f"
+    },
+    {
+      "path": "data/skills/swords_man_consecutive_attack.tres",
+      "sha256": "c28ede6761ca68ae80509d0f6cedfdea50b2a00b0e0231241933aa5e7d5abfa3"
+    },
+    {
+      "path": "scripts/skills/consecutive_attack.gd",
+      "sha256": "fe081d2396197c10d87c37274bab9f1ab53fe5fd7d02973ba9fb51de364c8d57"
+    },
+    {
+      "path": "scripts/units/consecutive_attack_runtime.gd",
+      "sha256": "6cb0c913b1119b2ab637c55a154333af67c90481c2549114c72778a4072c6337"
+    },
+    {
+      "path": "scenes/units/swords_man.tscn",
+      "sha256": "f08ceefbcad62cd9327addbd0b72d51ed02ed44bb62fdeea5faba6b4ff849c24"
+    },
+    {
+      "path": "data/units/were_bear.tres",
+      "sha256": "134bfb78bd52e4698e80638e0d25427a499dc1ed4b157a308b9f2c6170712b51"
+    },
+    {
+      "path": "data/skills/were_bear_attack.tres",
+      "sha256": "413d3d79a0e79790fabe6507845d202d121004a0f9f9b36f6f7fff9059cbbefb"
+    },
+    {
+      "path": "data/skills/were_bear_double_attack.tres",
+      "sha256": "dfacfb6818222236feb26960f8e4665a89150761ee70cdd862620f2aab3a6af8"
+    },
+    {
+      "path": "data/skills/were_bear_smash.tres",
+      "sha256": "4f3030e018aa8e88ffa7429c23e03cc513d2a88d1f19357f3b40665e6c17c5fa"
+    },
+    {
+      "path": "scenes/units/were_bear.tscn",
+      "sha256": "66615652c35a32c9e42b9d6ebd94c2680d4323c4709ff33dc77baf589924eeb4"
+    },
+    {
+      "path": "data/units/were_wolf.tres",
+      "sha256": "49276c676a889c126ace38fb2707816fcdd0980d890280d0945c022c130ea0d1"
+    },
+    {
+      "path": "data/skills/were_wolf_attack.tres",
+      "sha256": "9225d95b9674dd0e7c87d9a0f15a1dd0c1bcfed18c7f080cf16d6592e58b3df9"
+    },
+    {
+      "path": "data/skills/were_wolf_five_attack.tres",
+      "sha256": "7dc4b7d10c4dae782296c301318d49427664c52120da5ab1534ab749939ed28b"
+    },
+    {
+      "path": "scripts/skills/teleport_combo_attack.gd",
+      "sha256": "a95e1745721201c06533902adcbce1e912982110ff35c8b28ee86ce7da3c2ab1"
+    },
+    {
+      "path": "data/skills/were_wolf_low_health_stealth.tres",
+      "sha256": "aad8097877a1499a59c2e620c1c8e9714f44045115981aa327bfea2dd8c42aa4"
+    },
+    {
+      "path": "scripts/skills/low_health_stealth.gd",
+      "sha256": "35b4d54663bb2d586bab9c01384997b98c43c3dd8d1c78e0ee8df0aefb4c9a59"
+    },
+    {
+      "path": "scripts/units/low_health_stealth_runtime.gd",
+      "sha256": "fbd249c247ba6168067d7b20169c4391686a5884bda1354549656816a9abb51d"
+    },
+    {
+      "path": "scenes/units/were_wolf.tscn",
+      "sha256": "d6d87292b5a9486f1e87457fdc3cd1a67644fb0c1384bed3063faee480b971ed"
+    },
+    {
+      "path": "data/units/wizard.tres",
+      "sha256": "f92770e1749e14bc960830b40d2f8890d92c143b6099815d2a643750cee426f4"
+    },
+    {
+      "path": "data/skills/wizard_fire_ball.tres",
+      "sha256": "ff5ff62540b504b935b10c66a1f48add16817eb863397d40fce02a668fe18cc6"
+    },
+    {
+      "path": "data/skills/wizard_ice_crash.tres",
+      "sha256": "295a5f0c5292a60f048075750e92621eab4161e99a2b647c14d17ec4a71dd249"
+    },
+    {
+      "path": "scenes/units/wizard.tscn",
+      "sha256": "ae90a7ca7b0bf7a86f2288a041af1fc11d529ac72cdbc5d34fe9ef6b3ea526d6"
+    },
+    {
+      "path": "scripts/cards/card_instance.gd",
+      "sha256": "db38e9b3f801b096726986411a58ac6081ad260722e6ec8ff36709dd04c022d1"
+    },
+    {
+      "path": "scripts/units/skill_manager.gd",
+      "sha256": "8f2a054d16977fe6b79f0e860d9eac9c9477b22c12137a207506279f92c424fb"
+    },
+    {
+      "path": "scripts/units/unit_base.gd",
+      "sha256": "4fb0409271c8b0d5a7e6d832c9db196b1337cb415ce317669a3e2ac1ad624175"
+    },
+    {
+      "path": "docs/数值设计/单位战力_计算标准.json",
+      "sha256": "3181faa925ff2b1ebf78e9c55156d844c72298bcfedb1cd5551776b9459ad1c5"
+    }
+  ]
+}

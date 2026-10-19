@@ -1,0 +1,704 @@
+<!doctype html>
+<html lang="zh-CN">
+<head>
+<meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
+<title>单位战力计算器 · 翠绿原野</title>
+<style>
+:root{color-scheme:light;--bg:#f3f5f2;--paper:#fff;--ink:#25392e;--muted:#637568;--line:#dbe3dd;--green:#1a7250;--teal:#317e91;--orange:#c97021;--soft:#eaf3ed;--bad:#af3838}
+*{box-sizing:border-box}body{margin:0;background:var(--bg);color:var(--ink);font:14px/1.5 "Microsoft YaHei","Segoe UI",sans-serif}button,input,select{font:inherit}button{cursor:pointer}button:focus-visible,a:focus-visible,input:focus-visible,select:focus-visible{outline:3px solid #dcaa56;outline-offset:2px}button{background:var(--paper);color:var(--ink);border:1px solid var(--line);border-radius:7px;padding:7px 12px}button:hover{border-color:var(--green)}button.primary{background:var(--green);color:white;border-color:var(--green)}input,select{border:1px solid var(--line);background:var(--paper);color:var(--ink);border-radius:6px;padding:7px 9px;min-width:0}input[type=number]{width:100%;font-variant-numeric:tabular-nums}input:invalid{border-color:var(--bad)}input[type=checkbox]{accent-color:var(--green)}h1{margin:0;font-size:23px;letter-spacing:.02em}h2{margin:0 0 14px;font-size:17px;font-weight:600}h3{font-size:14px;margin:18px 0 10px}.muted{color:var(--muted)}.mono{font-variant-numeric:tabular-nums}.shell{max-width:1600px;margin:auto;padding:26px 32px 44px}.masthead{display:flex;justify-content:space-between;align-items:center;gap:20px;margin-bottom:20px}.eyebrow{font-size:11px;letter-spacing:.16em;color:var(--green);margin-bottom:5px}.subtitle{color:var(--muted);margin:6px 0 0}.actions,.toolbar,.selector,.tabs,.legend-actions{display:flex;gap:8px;align-items:center;flex-wrap:wrap}.save{font-size:12px;min-width:90px;text-align:right}.tabs{border-bottom:1px solid var(--line);margin-bottom:18px;gap:20px}.tabs button{border:0;border-radius:0;padding:12px 1px;background:transparent;color:var(--muted);border-bottom:3px solid transparent}.tabs button[aria-selected=true]{border-color:var(--green);color:var(--ink);font-weight:600}.toolbar{justify-content:space-between;margin-bottom:16px}.selector select{min-width:190px}.selector label{color:var(--muted)}.pill{display:inline-block;border-radius:4px;padding:2px 6px;font-size:12px;background:var(--soft);color:var(--green)}.pill.enemy{background:#eaf1f4;color:var(--teal)}.cards{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:14px;margin:0 0 18px}.stat{background:var(--paper);border-radius:10px;padding:16px 19px;min-width:0}.stat .label{color:var(--muted);font-size:12px}.stat .value{font-size:30px;letter-spacing:-.02em;font-variant-numeric:tabular-nums}.stat .detail{font-size:12px;color:var(--muted)}.panels{display:grid;grid-template-columns:1fr 1fr;gap:18px}.panel{background:var(--paper);padding:20px;border-radius:10px;min-width:0;margin-bottom:18px}.panel-head{display:flex;justify-content:space-between;align-items:flex-start;gap:12px}.chart{width:100%;height:320px;display:block;overflow:visible}.chart text{font-family:inherit;font-size:12px;fill:var(--muted)}.chart .grid{stroke:var(--line);stroke-width:1}.chart .axis{stroke:var(--line)}.chart .series{fill:none;stroke-width:1.7;opacity:.27}.chart .selected{stroke-width:3;opacity:1}.chart .hit{fill:transparent}.chart .guide{stroke:var(--muted);stroke-dasharray:3 4;pointer-events:none}.chart-caption{font-size:12px;color:var(--muted);margin:2px 0 10px}.legend{display:flex;gap:6px 12px;flex-wrap:wrap;margin-bottom:14px}.legend label{font-size:12px;display:flex;align-items:center;gap:4px;cursor:pointer}.legend span[data-selected=true]{font-weight:600;color:var(--orange)}.legend input{margin:0}.dot{width:8px;height:8px;border-radius:50%;display:inline-block;background:var(--green)}.dot.enemy{background:var(--teal)}.dot.selected{background:var(--orange)}.table-wrap{overflow-x:auto}.unit-table{border-collapse:collapse;width:100%;font-size:13px;white-space:nowrap}.unit-table th{font-weight:400;color:var(--muted);text-align:right;padding:10px 9px;border-bottom:1px solid var(--line)}.unit-table td{padding:7px 9px;text-align:right;border-bottom:1px solid #edf1ed}.unit-table th:first-child,.unit-table td:first-child{text-align:left;position:sticky;left:0;background:var(--paper);z-index:1}.unit-table input{width:74px;padding:5px 6px;font-size:13px}.unit-table input[data-field=dodge]{width:60px}.unit-table tr.selected td{background:var(--soft)}.unit-table button.unit-name{border:0;background:transparent;padding:3px 0;font-weight:600;white-space:nowrap}.unit-table .power-cell{min-width:96px;position:relative}.unit-table .power-bar{height:3px;background:#afccb9;margin:3px 0 0;max-width:100%}.unit-table .power-bar.up{background:#d2a476}.up-value{color:#9b581f}.text-bad{color:var(--bad)}.fields{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:12px 14px}.fields label{display:flex;flex-direction:column;gap:5px;color:var(--muted);font-size:12px}.fields label input,.fields label select{font-size:14px;color:var(--ink)}.fields .wide{grid-column:1/-1}.help{font-size:12px;color:var(--muted);margin:10px 0 0}.help strong{color:var(--ink);font-weight:500}.formula{font:13px/1.8 Consolas,"Microsoft YaHei",monospace;background:var(--bg);padding:12px;border-radius:6px;white-space:pre-wrap;overflow-wrap:anywhere}.skill-grid{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:14px}.skill{border:1px solid var(--line);border-radius:8px;padding:16px}.skill h3{margin:0 0 12px;display:flex;justify-content:space-between}.skill .fields{grid-template-columns:repeat(3,minmax(0,1fr))}.note{padding:12px 15px;border-left:3px solid var(--orange);background:#fbf5ec;margin-bottom:18px;color:#775328;font-size:13px}.error{padding:12px;background:#fff0ee;color:var(--bad);border-radius:7px;margin-bottom:15px}.error[hidden],[hidden]{display:none!important}.detail-table{width:100%;border-collapse:collapse;font-size:13px}.detail-table td,.detail-table th{padding:8px 4px;text-align:right;border-bottom:1px solid var(--line)}.detail-table td:first-child,.detail-table th:first-child{text-align:left}.detail-table th{font-weight:400;color:var(--muted)}details summary{cursor:pointer;color:var(--green)}.footer{display:flex;justify-content:space-between;gap:16px;flex-wrap:wrap;color:var(--muted);font-size:12px;margin-top:12px}.toast{position:fixed;bottom:22px;left:50%;transform:translateX(-50%);background:var(--ink);color:white;padding:10px 18px;border-radius:8px;z-index:20;max-width:90vw}.tooltip{position:fixed;max-width:380px;max-height:75vh;overflow:auto;pointer-events:none;z-index:10;background:#fff;border:1px solid var(--line);box-shadow:0 8px 25px #203a2220;padding:12px 15px;border-radius:8px;font-size:12px}.tooltip .tiprow{display:flex;justify-content:space-between;gap:18px;line-height:1.65}.tooltip .tiprow.sel{color:var(--orange);font-weight:600}.tip-title{font-weight:600;margin-bottom:5px}.compact{width:74px!important}.note-flat{color:var(--muted);font-size:12px;margin-top:7px}.sectionline{margin-top:16px;padding-top:16px;border-top:1px solid var(--line)}.out-heading{display:flex;justify-content:space-between;gap:10px;align-items:center}.selected-name{font-size:15px;font-weight:600}.metric-line{font-size:13px;font-variant-numeric:tabular-nums;margin-bottom:10px}.checkline{display:flex;align-items:center;gap:7px;font-size:13px!important}.checkline input{width:auto!important}.plot-controls{display:flex;align-items:center;gap:8px;font-size:12px;flex-wrap:wrap}.plot-controls input{width:60px}
+.fields label.checkline{flex-direction:row;align-self:end;grid-column:1/-1}
+@media(max-width:1100px){.shell{padding:20px}.fields{grid-template-columns:repeat(2,minmax(0,1fr))}.skill .fields{grid-template-columns:repeat(2,minmax(0,1fr))}.masthead{align-items:flex-start}.actions{justify-content:flex-end}.skill-grid{grid-template-columns:1fr}}
+@media(max-width:760px){.shell{padding:16px 12px}.masthead{flex-direction:column;gap:12px}.actions{justify-content:flex-start}.save{text-align:left}.panels{grid-template-columns:1fr;gap:0}.cards{gap:7px}.stat{padding:12px}.stat .value{font-size:25px}.panel{padding:15px}.tabs{gap:18px}.toolbar{align-items:flex-start}.chart{height:290px}.fields{grid-template-columns:repeat(2,minmax(0,1fr))}.tooltip{max-width:90vw}.footer{display:block}.chart-caption{margin-bottom:8px}h1{font-size:21px}}
+@media(max-width:420px){.fields,.skill .fields{grid-template-columns:1fr}.cards{grid-template-columns:1fr}.stat{display:grid;grid-template-columns:1fr auto;gap:0 12px}.stat .detail{grid-column:1/-1}.stat .value{font-size:24px}.selector select{min-width:145px}.tabs{gap:12px}.tabs button{font-size:13px}.actions button{padding:7px 9px}.plot-controls{margin-bottom:10px}}
+</style>
+</head>
+<body>
+<main class="shell">
+  <header class="masthead"><div><div class="eyebrow">BALANCE WORKBENCH / UNIT POWER</div><h1>单位战力计算器</h1><p class="subtitle">21 个单位 · 属性、训练与强化 · 同一标准下比较成长和费用效率</p></div><div class="actions"><span id="save-status" class="save muted" role="status">读取中</span><button id="export-json">导出方案</button><button id="import-json">导入方案</button><button id="download-html" class="primary">保存当前页副本</button><button id="reset">恢复项目初值</button></div></header>
+  <input type="file" id="import-file" accept="application/json,.json" hidden>
+  <div class="toolbar"><div class="selector"><label for="selected-unit">查看单位</label><select id="selected-unit"></select><span id="team-tag" class="pill"></span></div><span id="snapshot-label" class="muted"></span></div>
+  <nav class="tabs" role="tablist" aria-label="计算器视图"><button id="tab-overview" data-tab="overview" role="tab" aria-controls="view-overview" aria-selected="true">全单位对比</button><button id="tab-editor" data-tab="editor" role="tab" aria-controls="view-editor" aria-selected="false">属性与强化</button><button id="tab-standard" data-tab="standard" role="tab" aria-controls="view-standard" aria-selected="false">计算标准</button></nav>
+  <div id="error" class="error" role="alert" hidden></div>
+  <div class="cards" aria-live="polite"><div class="stat"><span class="label">选中单位 · 当前战力</span><div id="current-power" class="value">—</div><div id="current-detail" class="detail"></div></div><div class="stat"><span class="label">升级强化后战力</span><div id="upgraded-power" class="value">—</div><div id="gain-detail" class="detail"></div></div><div class="stat"><span class="label">强化后征召战费比</span><div id="cost-power" class="value">—</div><div id="cost-detail" class="detail"></div></div></div>
+  <section id="view-overview" role="tabpanel" aria-labelledby="tab-overview">
+    <div class="toolbar"><div class="plot-controls"><label for="curve-max">曲线阶段上限</label><input type="number" id="curve-max" value="5" min="1" max="20" step="1"><label for="bulk-levels">全员比较阶段</label><input type="number" id="bulk-levels" value="1" min="0" max="20" step="1"><button id="apply-levels">应用</button></div><div class="legend-actions"><button id="show-all">显示全部曲线</button><button id="show-selected">只看选中单位</button></div></div>
+    <div id="curve-legend" class="legend" aria-label="曲线单位显示"></div>
+    <div class="panels"><div class="panel"><div class="panel-head"><h2>战力成长曲线</h2><span class="muted">士兵基准 100</span></div><svg id="power-chart" class="chart" role="img" aria-label="所有单位按强化阶段的战力曲线"></svg><div class="chart-caption"><span class="dot"></span> 己方 <span class="dot enemy"></span> 敌方 <span class="dot selected"></span> 选中单位 · 虚线为自定义或超上限预测；点击曲线区域查看阶段。</div></div><div class="panel"><div class="panel-head"><h2>战费比成长曲线</h2><span class="muted">战力 / 征召能量</span></div><svg id="cost-chart" class="chart" role="img" aria-label="所有单位按强化阶段的征召战费比曲线"></svg><div class="chart-caption">征召能量含退场涨费；免费单位不绘制比值。额外强化牌耗能另列在单位详情。</div></div></div>
+    <div class="panel"><div class="out-heading"><h2>全单位数值表</h2><div class="plot-controls"><label for="sort-units">排序</label><select id="sort-units"><option value="team">阵营与单位</option><option value="power">当前战力 ↓</option><option value="upgraded">强化战力 ↓</option><option value="efficiency">强化战费比 ↓</option><option value="gain">提升幅度 ↓</option></select></div></div><p class="help" style="margin:0 0 12px">直接修改生命、攻击、防御、费用和闪避；点击单位名称编辑成长及技能。敌军的费用仅作配兵参考。所有数值与曲线实时联动。</p><div class="table-wrap"><table class="unit-table"><thead><tr><th>单位 / 编辑</th><th>生命</th><th>攻击</th><th>防御</th><th>初费</th><th>闪避 %</th><th>当前战力</th><th>强化后战力</th><th>提升</th><th>强化费</th><th>当前战费比</th><th>强化战费比</th><th>阶段 / 性质</th></tr></thead><tbody id="unit-rows"></tbody></table></div></div>
+  </section>
+  <section id="view-editor" role="tabpanel" aria-labelledby="tab-editor" hidden>
+    <div id="plan-note" class="note"></div>
+    <div class="panels"><div class="panel"><h2>当前属性</h2><div id="base-fields" class="fields"></div><p class="help">这些值代表当前已拥有的单位。若填写已训练后的属性，同时填入已训练次数；计算器不会再次给当前值自动加训练点。</p></div><div class="panel"><h2>升级与强化方案</h2><div id="plan-fields" class="fields"></div><p id="training-help" class="help"></p></div></div>
+    <div class="panels"><div class="panel"><h2>额外强化</h2><div id="buff-fields" class="fields"></div><p class="help">额外强化在阶段 ≥1 时加入一次，各阶段不重复叠加。冷却系数小于 1 表示冷却缩短，动作系数不改变冲刺旅行时间。持续时间按覆盖完整评估窗口估价。</p></div><div class="panel"><h2>计算结果拆解</h2><div id="result-breakdown"></div><p class="help">召唤物读取对应单位的“当前属性”，不会自动继承召唤者或召唤物自己的升级方案。反击净 DPS 需要你通过实战校准。</p></div></div>
+    <div class="panel"><h2>技能数值</h2><p class="help" style="margin:0 0 15px">保留项目技能、动画占时与命中时间；按优先级和冷却顺序排程，逐击扣防。命中时间用英文逗号分隔，单位秒，从本次施放开始计时。平均目标数留空使用统一标准。</p><div id="skill-fields" class="skill-grid"></div><details class="sectionline"><summary>查看强化后的技能排程</summary><div id="schedule-detail" class="table-wrap"></div></details></div>
+  </section>
+  <section id="view-standard" role="tabpanel" aria-labelledby="tab-standard" hidden>
+    <div class="note">这是用于调参比较的估价模型。士兵的基准属性与技能固定在项目初值；修改单位表中的士兵不会改变其他单位的计分尺度。改变统一比较环境时，会在该环境下重新计算基准士兵。</div>
+    <div class="panels"><div class="panel"><h2>统一比较环境</h2><div id="standard-fields" class="fields"></div></div><div class="panel"><h2>公式与口径</h2><div class="formula">每击伤害 = max(floor(攻击 × 技能倍率) − 对手防御, 1)
+有效生命 = 生命 × 来袭单击伤害 / max(来袭单击伤害 − 防御, 1)
+           / (1 − 有效闪避率 × 可闪避来袭占比)
+等效输出 = DPS + 有效 HPS × 治疗折算权重
+本体战力 = 100 × sqrt(有效生命/基准有效生命 × 等效输出/基准等效输出)
+总战力 = 本体战力 + 召唤贡献
+征召战费比 = 总战力 / (该阶段征召费用 + 退场加费)
+总能量效率 = 总战力 / (征召费用 + 退场加费 + 额外强化耗能)
+费用预算 = 100 × 征召费用 × (1 + 费用溢价 × (征召费用 − 1))</div><div id="baseline-detail" class="help"></div><h3>成长计算</h3><div class="formula">自定义属性(n) = floor(当前属性 × (1 + 每阶增长率)^n
+                      + n × 每阶固定增长 + 一次额外强化)
+训练：每阶攻击/防御增长取所分配能力点，生命不自动增加。
+阶段 0 只使用当前属性；阶段 ≥1 才加入一次额外强化。
+闪避限制为 0～100%；生命至少 1，攻击/防御/征召费用至少 0。</div><p class="help">参考来袭伤害下的防御估价会在减伤达到每击 1 点时封顶。毒、眩晕、移速、仇恨、死亡爆炸、地形和幸存结算扣血尚未折成战力。治疗、范围与召唤系数都是可校准假设。</p><p class="help">士兵剑矢：分别计算近战与远程窗口，远程只施放射程足够的技能，再按远程占比加权；远近普攻共用冷却。所有单位开场技能就绪。</p></div></div>
+  </section>
+  <footer class="footer"><span id="source-info"></span><span>本地自动保存 · 导出方案可备份输入 · 不会改写游戏资源</span></footer>
+</main>
+<div id="chart-tooltip" class="tooltip" hidden></div><div id="toast" class="toast" role="status" hidden></div>
+<script id="calculator-seed" type="application/json">{"version":"UNIT-POWER-CALC-v2","date":"2026-10-11","sourceCount":120,"sourceRevision":"d7bd6d855d7d","defaults":{"schema":"unit-power-calculator/v1","curveMax":1,"units":[{"id":"archer","name":"弓箭手","team":"team_a","hp":80,"attack":12,"defence":2,"cost":1,"dodge":0.0,"hasCounter":false,"counterUnlock":[],"counterNetDps":0,"uptime":null,"baseLevel":0,"gameMax":1,"upgradePoints":2,"departures":0,"hpDamage":1,"plan":{"mode":"training","levels":1,"attackAllocation":2,"defenceAllocation":0,"hpStep":0,"attackStep":2,"defenceStep":0,"hpGrowth":0,"attackGrowth":0,"defenceGrowth":0,"dodgeStep":0,"costStep":0,"hpBuff":0,"attackBuff":0,"defenceBuff":0,"dodgeBuff":0,"costBuff":0,"buffEnergy":0,"cooldownFactor":1,"animationFactor":1,"outputFactor":1},"skills":[{"id":"res://data/skills/archer_arrow_attack.tres","name":"射击","kind":"projectile","rate":1.0,"cooldown":1.0,"duration":0.9,"offsets":[0.6000000000000001],"priority":0,"range":600.0,"unlock":[0,1],"targets":null,"straight":false,"pierce":1,"basic":false},{"id":"res://data/skills/archer_power_shoot.tres","name":"穿刺射击","kind":"projectile","rate":1.2,"cooldown":4.0,"duration":1.2000000000000002,"offsets":[0.9],"priority":1,"range":600.0,"unlock":[1],"targets":null,"straight":true,"pierce":2,"basic":false}]},{"id":"armored_axeman","name":"装甲斧手","team":"team_a","hp":160,"attack":8,"defence":7,"cost":1,"dodge":0.0,"hasCounter":false,"counterUnlock":[],"counterNetDps":0,"uptime":null,"baseLevel":0,"gameMax":1,"upgradePoints":2,"departures":0,"hpDamage":1,"plan":{"mode":"training","levels":1,"attackAllocation":2,"defenceAllocation":0,"hpStep":0,"attackStep":2,"defenceStep":0,"hpGrowth":0,"attackGrowth":0,"defenceGrowth":0,"dodgeStep":0,"costStep":0,"hpBuff":0,"attackBuff":0,"defenceBuff":0,"dodgeBuff":0,"costBuff":0,"buffEnergy":0,"cooldownFactor":1,"animationFactor":1,"outputFactor":1},"skills":[{"id":"res://data/skills/armored_examan_attack.tres","name":"普通攻击","kind":"normal","rate":1.0,"cooldown":1.0,"duration":0.9,"offsets":[0.4],"priority":0,"range":80.0,"unlock":[0,1],"targets":null,"straight":false,"pierce":1,"basic":true},{"id":"res://data/skills/armored_examan_round_attack.tres","name":"旋转攻击","kind":"area","rate":0.8,"cooldown":3.0,"duration":0.9,"offsets":[0.5],"priority":1,"range":80.0,"unlock":[1],"targets":null,"straight":false,"pierce":1,"basic":false},{"id":"res://data/skills/armored_examan_chop_attack.tres","name":"劈砍攻击","kind":"normal","rate":1.2,"cooldown":8.0,"duration":1.2000000000000002,"offsets":[0.4,0.7000000000000001],"priority":2,"range":80.0,"unlock":[0],"targets":null,"straight":false,"pierce":1,"basic":false}]},{"id":"armored_orc","name":"武装哥布林","team":"team_b","hp":145,"attack":10,"defence":4,"cost":1,"dodge":0.2,"hasCounter":true,"counterUnlock":[0,1],"counterNetDps":0,"uptime":null,"baseLevel":0,"gameMax":1,"upgradePoints":3,"departures":0,"hpDamage":2,"plan":{"mode":"custom","levels":0,"attackAllocation":3,"defenceAllocation":0,"hpStep":0,"attackStep":3,"defenceStep":0,"hpGrowth":0,"attackGrowth":0,"defenceGrowth":0,"dodgeStep":0,"costStep":0,"hpBuff":0,"attackBuff":0,"defenceBuff":0,"dodgeBuff":0,"costBuff":0,"buffEnergy":0,"cooldownFactor":1,"animationFactor":1,"outputFactor":1},"skills":[{"id":"res://data/skills/armored_orc_attack.tres","name":"普通攻击","kind":"normal","rate":1.0,"cooldown":1.0,"duration":0.7000000000000001,"offsets":[0.4],"priority":0,"range":80.0,"unlock":[0,1],"targets":null,"straight":false,"pierce":1,"basic":true},{"id":"res://data/skills/armored_orc_power_attack.tres","name":"撼地","kind":"area","rate":1.2,"cooldown":8.0,"duration":0.9,"offsets":[0.4],"priority":1,"range":80.0,"unlock":[0,1],"targets":null,"straight":false,"pierce":1,"basic":false}]},{"id":"bat","name":"蝙蝠","team":"team_b","hp":60,"attack":10,"defence":3,"cost":1,"dodge":0.0,"hasCounter":false,"counterUnlock":[],"counterNetDps":0,"uptime":null,"baseLevel":0,"gameMax":1,"upgradePoints":3,"departures":0,"hpDamage":1,"plan":{"mode":"custom","levels":0,"attackAllocation":3,"defenceAllocation":0,"hpStep":0,"attackStep":3,"defenceStep":0,"hpGrowth":0,"attackGrowth":0,"defenceGrowth":0,"dodgeStep":0,"costStep":0,"hpBuff":0,"attackBuff":0,"defenceBuff":0,"dodgeBuff":0,"costBuff":0,"buffEnergy":0,"cooldownFactor":1,"animationFactor":1,"outputFactor":1},"skills":[{"id":"res://data/skills/bat_attack.tres","name":"普通攻击","kind":"normal","rate":1.0,"cooldown":1.0,"duration":0.6000000000000001,"offsets":[0.30000000000000004],"priority":0,"range":80.0,"unlock":[0,1],"targets":null,"straight":false,"pierce":1,"basic":true},{"id":"res://data/skills/bat_power_attack.tres","name":"嗜血攻击","kind":"lifesteal","rate":1.2,"cooldown":6.0,"duration":0.7000000000000001,"offsets":[0.4],"priority":1,"range":80.0,"unlock":[0,1],"targets":null,"straight":false,"pierce":1,"basic":false}]},{"id":"elite_orc","name":"精英哥布林","team":"team_b","hp":220,"attack":13,"defence":4,"cost":1,"dodge":0.0,"hasCounter":false,"counterUnlock":[],"counterNetDps":0,"uptime":null,"baseLevel":0,"gameMax":1,"upgradePoints":3,"departures":0,"hpDamage":3,"plan":{"mode":"custom","levels":0,"attackAllocation":3,"defenceAllocation":0,"hpStep":0,"attackStep":3,"defenceStep":0,"hpGrowth":0,"attackGrowth":0,"defenceGrowth":0,"dodgeStep":0,"costStep":0,"hpBuff":0,"attackBuff":0,"defenceBuff":0,"dodgeBuff":0,"costBuff":0,"buffEnergy":0,"cooldownFactor":1,"animationFactor":1,"outputFactor":1},"skills":[{"id":"res://data/skills/elite_orc_attack.tres","name":"普通攻击","kind":"normal","rate":1.0,"cooldown":1.0,"duration":0.7000000000000001,"offsets":[0.30000000000000004],"priority":0,"range":80.0,"unlock":[0,1],"targets":null,"straight":false,"pierce":1,"basic":true},{"id":"res://data/skills/elite_orc_power_attack.tres","name":"强力攻击","kind":"normal","rate":2.0,"cooldown":10.0,"duration":0.9,"offsets":[0.4],"priority":1,"range":80.0,"unlock":[0,1],"targets":null,"straight":false,"pierce":1,"basic":false},{"id":"res://data/skills/elite_orc_round_attack.tres","name":"旋转攻击","kind":"normal","rate":0.8,"cooldown":8.0,"duration":1.1,"offsets":[0.1,0.30000000000000004,0.5,0.8],"priority":2,"range":80.0,"unlock":[0,1],"targets":null,"straight":false,"pierce":1,"basic":false}]},{"id":"greatsword_skeleton","name":"骷髅剑士","team":"team_b","hp":80,"attack":13,"defence":4,"cost":1,"dodge":0.0,"hasCounter":false,"counterUnlock":[],"counterNetDps":0,"uptime":null,"baseLevel":0,"gameMax":1,"upgradePoints":3,"departures":0,"hpDamage":1,"plan":{"mode":"custom","levels":0,"attackAllocation":3,"defenceAllocation":0,"hpStep":0,"attackStep":3,"defenceStep":0,"hpGrowth":0,"attackGrowth":0,"defenceGrowth":0,"dodgeStep":0,"costStep":0,"hpBuff":0,"attackBuff":0,"defenceBuff":0,"dodgeBuff":0,"costBuff":0,"buffEnergy":0,"cooldownFactor":1,"animationFactor":1,"outputFactor":1},"skills":[{"id":"res://data/skills/greatswords_skeleton_attack.tres","name":"普通攻击","kind":"normal","rate":1.0,"cooldown":1.0,"duration":0.9,"offsets":[0.5],"priority":0,"range":80.0,"unlock":[0,1],"targets":null,"straight":false,"pierce":1,"basic":true},{"id":"res://data/skills/greatswords_skeleton_power_attack.tres","name":"下扫","kind":"normal","rate":1.2,"cooldown":4.0,"duration":1.2000000000000002,"offsets":[0.7000000000000001],"priority":1,"range":80.0,"unlock":[0,1],"targets":null,"straight":false,"pierce":1,"basic":false},{"id":"res://data/skills/greatswords_skeleton_stick_attack.tres","name":"刺击","kind":"normal","rate":1.4,"cooldown":6.0,"duration":0.8,"offsets":[0.4],"priority":0,"range":80.0,"unlock":[0,1],"targets":null,"straight":false,"pierce":1,"basic":false}]},{"id":"knight","name":"骑士","team":"team_a","hp":100,"attack":12,"defence":5,"cost":2,"dodge":0.2,"hasCounter":true,"counterUnlock":[0,1],"counterNetDps":0,"uptime":null,"baseLevel":0,"gameMax":1,"upgradePoints":2,"departures":0,"hpDamage":1,"plan":{"mode":"training","levels":1,"attackAllocation":2,"defenceAllocation":0,"hpStep":0,"attackStep":2,"defenceStep":0,"hpGrowth":0,"attackGrowth":0,"defenceGrowth":0,"dodgeStep":0,"costStep":0,"hpBuff":0,"attackBuff":0,"defenceBuff":0,"dodgeBuff":0,"costBuff":0,"buffEnergy":0,"cooldownFactor":1,"animationFactor":1,"outputFactor":1},"skills":[{"id":"res://data/skills/knight_attack.tres","name":"普通攻击","kind":"normal","rate":1.0,"cooldown":1.0,"duration":0.7000000000000001,"offsets":[0.4],"priority":0,"range":80.0,"unlock":[0,1],"targets":null,"straight":false,"pierce":1,"basic":true},{"id":"res://data/skills/knight_power_attack.tres","name":"斩击","kind":"normal","rate":1.5,"cooldown":5.0,"duration":1.1,"offsets":[0.7000000000000001],"priority":1,"range":80.0,"unlock":[1],"targets":null,"straight":false,"pierce":1,"basic":false}]},{"id":"knight_templar","name":"圣殿骑士","team":"team_a","hp":120,"attack":10,"defence":5,"cost":2,"dodge":0.2,"hasCounter":true,"counterUnlock":[1],"counterNetDps":0,"uptime":null,"baseLevel":0,"gameMax":1,"upgradePoints":2,"departures":0,"hpDamage":1,"plan":{"mode":"training","levels":1,"attackAllocation":2,"defenceAllocation":0,"hpStep":0,"attackStep":2,"defenceStep":0,"hpGrowth":0,"attackGrowth":0,"defenceGrowth":0,"dodgeStep":0,"costStep":0,"hpBuff":0,"attackBuff":0,"defenceBuff":0,"dodgeBuff":0,"costBuff":0,"buffEnergy":0,"cooldownFactor":1,"animationFactor":1,"outputFactor":1},"skills":[{"id":"res://data/skills/knight_templar_attack.tres","name":"普通攻击","kind":"normal","rate":1.0,"cooldown":1.0,"duration":0.7000000000000001,"offsets":[0.4],"priority":0,"range":80.0,"unlock":[0,1],"targets":null,"straight":false,"pierce":1,"basic":true},{"id":"res://data/skills/knight_templar_power_attack.tres","name":"连续攻击","kind":"normal","rate":1.0,"cooldown":5.0,"duration":1.1,"offsets":[0.30000000000000004,0.7000000000000001],"priority":1,"range":80.0,"unlock":[0,1],"targets":null,"straight":false,"pierce":1,"basic":false},{"id":"res://data/skills/knight_templar_protection_aura.tres","name":"庇护光环","kind":"aura_passive","rate":1.0,"cooldown":1.0,"duration":0,"offsets":[],"priority":0,"range":80.0,"unlock":[1],"targets":null,"straight":false,"pierce":1,"basic":false,"aura_radius":200.0,"aura_attack_bonus":2,"aura_include_caster":true}]},{"id":"lancer","name":"骑兵","team":"team_a","hp":120,"attack":12,"defence":6,"cost":3,"dodge":0.0,"hasCounter":false,"counterUnlock":[],"counterNetDps":0,"uptime":null,"baseLevel":0,"gameMax":1,"upgradePoints":2,"departures":0,"hpDamage":1,"plan":{"mode":"training","levels":1,"attackAllocation":2,"defenceAllocation":0,"hpStep":0,"attackStep":2,"defenceStep":0,"hpGrowth":0,"attackGrowth":0,"defenceGrowth":0,"dodgeStep":0,"costStep":0,"hpBuff":0,"attackBuff":0,"defenceBuff":0,"dodgeBuff":0,"costBuff":0,"buffEnergy":0,"cooldownFactor":1,"animationFactor":1,"outputFactor":1},"skills":[{"id":"res://data/skills/lancer_attack.tres","name":"普通攻击","kind":"normal","rate":1.0,"cooldown":1.0,"duration":0.6000000000000001,"offsets":[0.30000000000000004],"priority":0,"range":80.0,"unlock":[0,1],"targets":null,"straight":false,"pierce":1,"basic":true},{"id":"res://data/skills/lancer_dash_attack.tres","name":"冲刺攻击","kind":"dash","rate":1.0,"cooldown":6.0,"duration":2.0,"offsets":[0],"priority":2,"range":300.0,"unlock":[0,1],"targets":null,"straight":false,"pierce":1,"basic":false},{"id":"res://data/skills/lancer_power_attack.tres","name":"强力刺击","kind":"normal","rate":1.5,"cooldown":6.0,"duration":0.9,"offsets":[0.4],"priority":1,"range":80.0,"unlock":[1],"targets":null,"straight":false,"pierce":1,"basic":false},{"id":"res://data/skills/lancer_dash_attack_enhance.tres","name":"骑兵冲锋加强","kind":"dash","rate":1.0,"cooldown":5.0,"duration":2.0,"offsets":[0],"priority":2,"range":450.0,"unlock":[1],"targets":null,"straight":false,"pierce":1,"basic":false}]},{"id":"necromancer","name":"死灵法师","team":"team_b","hp":100,"attack":15,"defence":5,"cost":1,"dodge":0.0,"hasCounter":false,"counterUnlock":[],"counterNetDps":0,"uptime":null,"baseLevel":0,"gameMax":1,"upgradePoints":3,"departures":0,"hpDamage":1,"plan":{"mode":"custom","levels":0,"attackAllocation":3,"defenceAllocation":0,"hpStep":0,"attackStep":3,"defenceStep":0,"hpGrowth":0,"attackGrowth":0,"defenceGrowth":0,"dodgeStep":0,"costStep":0,"hpBuff":0,"attackBuff":0,"defenceBuff":0,"dodgeBuff":0,"costBuff":0,"buffEnergy":0,"cooldownFactor":1,"animationFactor":1,"outputFactor":1},"skills":[{"id":"res://data/skills/necromancer_summon.tres","name":"蝙蝠召唤","kind":"summon","rate":1.0,"cooldown":8.0,"duration":1.0,"offsets":[0.5],"priority":2,"range":80.0,"unlock":[0,1],"targets":null,"straight":false,"pierce":1,"basic":false,"child":"bat","summonDelay":0.7000000000000001},{"id":"res://data/skills/necromancer_attack.tres","name":"普通攻击","kind":"normal","rate":1.0,"cooldown":1.0,"duration":0.9,"offsets":[0.30000000000000004],"priority":0,"range":80.0,"unlock":[0,1],"targets":null,"straight":false,"pierce":1,"basic":true},{"id":"res://data/skills/necromancer_power_attack.tres","name":"远程攻击","kind":"normal","rate":1.0,"cooldown":4.0,"duration":1.0,"offsets":[0.30000000000000004],"priority":1,"range":250.0,"unlock":[0,1],"targets":null,"straight":false,"pierce":1,"basic":false}]},{"id":"orc","name":"哥布林","team":"team_b","hp":100,"attack":11,"defence":3,"cost":1,"dodge":0.0,"hasCounter":false,"counterUnlock":[],"counterNetDps":0,"uptime":null,"baseLevel":0,"gameMax":1,"upgradePoints":3,"departures":0,"hpDamage":1,"plan":{"mode":"custom","levels":0,"attackAllocation":3,"defenceAllocation":0,"hpStep":0,"attackStep":3,"defenceStep":0,"hpGrowth":0,"attackGrowth":0,"defenceGrowth":0,"dodgeStep":0,"costStep":0,"hpBuff":0,"attackBuff":0,"defenceBuff":0,"dodgeBuff":0,"costBuff":0,"buffEnergy":0,"cooldownFactor":1,"animationFactor":1,"outputFactor":1},"skills":[{"id":"res://data/skills/orc_attack.tres","name":"普通攻击","kind":"normal","rate":1.0,"cooldown":1.0,"duration":0.6000000000000001,"offsets":[0.30000000000000004],"priority":0,"range":80.0,"unlock":[0,1],"targets":null,"straight":false,"pierce":1,"basic":true},{"id":"res://data/skills/orc_power_attack.tres","name":"强力攻击","kind":"normal","rate":1.5,"cooldown":4.0,"duration":0.6000000000000001,"offsets":[0.30000000000000004],"priority":0,"range":80.0,"unlock":[0,1],"targets":null,"straight":false,"pierce":1,"basic":false}]},{"id":"orc_rider","name":"哥布林骑手","team":"team_b","hp":100,"attack":15,"defence":10,"cost":1,"dodge":0.2,"hasCounter":true,"counterUnlock":[0,1],"counterNetDps":0,"uptime":null,"baseLevel":0,"gameMax":1,"upgradePoints":3,"departures":0,"hpDamage":1,"plan":{"mode":"custom","levels":0,"attackAllocation":3,"defenceAllocation":0,"hpStep":0,"attackStep":3,"defenceStep":0,"hpGrowth":0,"attackGrowth":0,"defenceGrowth":0,"dodgeStep":0,"costStep":0,"hpBuff":0,"attackBuff":0,"defenceBuff":0,"dodgeBuff":0,"costBuff":0,"buffEnergy":0,"cooldownFactor":1,"animationFactor":1,"outputFactor":1},"skills":[{"id":"res://data/skills/orc_rider_attack.tres","name":"普通攻击","kind":"normal","rate":1.0,"cooldown":1.0,"duration":0.8,"offsets":[0.4],"priority":0,"range":80.0,"unlock":[0,1],"targets":null,"straight":false,"pierce":1,"basic":true},{"id":"res://data/skills/orc_rider_power_attack.tres","name":"强力攻击","kind":"area","rate":1.2,"cooldown":4.0,"duration":1.1,"offsets":[0.6000000000000001],"priority":1,"range":80.0,"unlock":[0,1],"targets":null,"straight":false,"pierce":1,"basic":false}]},{"id":"priest","name":"牧师","team":"team_a","hp":100,"attack":8,"defence":3,"cost":1,"dodge":0.0,"hasCounter":false,"counterUnlock":[],"counterNetDps":0,"uptime":null,"baseLevel":0,"gameMax":1,"upgradePoints":2,"departures":0,"hpDamage":1,"plan":{"mode":"training","levels":1,"attackAllocation":2,"defenceAllocation":0,"hpStep":0,"attackStep":2,"defenceStep":0,"hpGrowth":0,"attackGrowth":0,"defenceGrowth":0,"dodgeStep":0,"costStep":0,"hpBuff":0,"attackBuff":0,"defenceBuff":0,"dodgeBuff":0,"costBuff":0,"buffEnergy":0,"cooldownFactor":1,"animationFactor":1,"outputFactor":1},"skills":[{"id":"res://data/skills/priest_attack.tres","name":"普通攻击","kind":"normal","rate":1.0,"cooldown":1.0,"duration":0.9,"offsets":[0.4],"priority":0,"range":400.0,"unlock":[0,1],"targets":null,"straight":false,"pierce":1,"basic":true},{"id":"res://data/skills/priest_healer.tres","name":"治疗","kind":"heal","rate":0.6,"cooldown":3.0,"duration":0.6000000000000001,"offsets":[0.2],"priority":1,"range":400.0,"unlock":[0,1],"targets":null,"straight":false,"pierce":1,"basic":false}]},{"id":"skeleton","name":"骷髅兵","team":"team_b","hp":70,"attack":9,"defence":2,"cost":1,"dodge":0.0,"hasCounter":false,"counterUnlock":[],"counterNetDps":0,"uptime":null,"baseLevel":0,"gameMax":1,"upgradePoints":3,"departures":0,"hpDamage":1,"plan":{"mode":"custom","levels":0,"attackAllocation":3,"defenceAllocation":0,"hpStep":0,"attackStep":3,"defenceStep":0,"hpGrowth":0,"attackGrowth":0,"defenceGrowth":0,"dodgeStep":0,"costStep":0,"hpBuff":0,"attackBuff":0,"defenceBuff":0,"dodgeBuff":0,"costBuff":0,"buffEnergy":0,"cooldownFactor":1,"animationFactor":1,"outputFactor":1},"skills":[{"id":"res://data/skills/skeleton_attack.tres","name":"普通攻击","kind":"normal","rate":1.0,"cooldown":1.0,"duration":0.6000000000000001,"offsets":[0.30000000000000004],"priority":0,"range":80.0,"unlock":[0,1],"targets":null,"straight":false,"pierce":1,"basic":true},{"id":"res://data/skills/skeleton_power_attack.tres","name":"普通攻击","kind":"normal","rate":1.2,"cooldown":6.0,"duration":0.7000000000000001,"offsets":[0.30000000000000004],"priority":1,"range":80.0,"unlock":[0,1],"targets":null,"straight":false,"pierce":1,"basic":false}]},{"id":"skeleton_archer","name":"骷髅弓箭手","team":"team_b","hp":55,"attack":10,"defence":1,"cost":1,"dodge":0.0,"hasCounter":false,"counterUnlock":[],"counterNetDps":0,"uptime":null,"baseLevel":0,"gameMax":1,"upgradePoints":3,"departures":0,"hpDamage":1,"plan":{"mode":"custom","levels":0,"attackAllocation":3,"defenceAllocation":0,"hpStep":0,"attackStep":3,"defenceStep":0,"hpGrowth":0,"attackGrowth":0,"defenceGrowth":0,"dodgeStep":0,"costStep":0,"hpBuff":0,"attackBuff":0,"defenceBuff":0,"dodgeBuff":0,"costBuff":0,"buffEnergy":0,"cooldownFactor":1,"animationFactor":1,"outputFactor":1},"skills":[{"id":"res://data/skills/skeleton_archer_attack.tres","name":"普通攻击","kind":"projectile","rate":1.0,"cooldown":1.0,"duration":0.9,"offsets":[0.6000000000000001],"priority":0,"range":600.0,"unlock":[0,1],"targets":null,"straight":false,"pierce":1,"basic":false}]},{"id":"slime","name":"史莱姆","team":"team_b","hp":100,"attack":15,"defence":5,"cost":1,"dodge":0.0,"hasCounter":false,"counterUnlock":[],"counterNetDps":0,"uptime":null,"baseLevel":0,"gameMax":1,"upgradePoints":3,"departures":0,"hpDamage":1,"plan":{"mode":"custom","levels":0,"attackAllocation":3,"defenceAllocation":0,"hpStep":0,"attackStep":3,"defenceStep":0,"hpGrowth":0,"attackGrowth":0,"defenceGrowth":0,"dodgeStep":0,"costStep":0,"hpBuff":0,"attackBuff":0,"defenceBuff":0,"dodgeBuff":0,"costBuff":0,"buffEnergy":0,"cooldownFactor":1,"animationFactor":1,"outputFactor":1},"skills":[{"id":"res://data/skills/slime_attack.tres","name":"普通攻击","kind":"normal","rate":1.0,"cooldown":1.0,"duration":0.6000000000000001,"offsets":[0.30000000000000004],"priority":0,"range":80.0,"unlock":[0,1],"targets":null,"straight":false,"pierce":1,"basic":true},{"id":"res://data/skills/slime_power_attack.tres","name":"普通攻击","kind":"normal","rate":1.4,"cooldown":6.0,"duration":1.2000000000000002,"offsets":[0.8],"priority":1,"range":80.0,"unlock":[0,1],"targets":null,"straight":false,"pierce":1,"basic":false}]},{"id":"soldier","name":"士兵","team":"team_a","hp":100,"attack":10,"defence":5,"cost":1,"dodge":0.0,"hasCounter":false,"counterUnlock":[],"counterNetDps":0,"uptime":null,"baseLevel":0,"gameMax":1,"upgradePoints":2,"departures":0,"hpDamage":1,"plan":{"mode":"training","levels":1,"attackAllocation":2,"defenceAllocation":0,"hpStep":0,"attackStep":2,"defenceStep":0,"hpGrowth":0,"attackGrowth":0,"defenceGrowth":0,"dodgeStep":0,"costStep":0,"hpBuff":0,"attackBuff":0,"defenceBuff":0,"dodgeBuff":0,"costBuff":0,"buffEnergy":0,"cooldownFactor":1,"animationFactor":1,"outputFactor":1},"skills":[{"id":"res://data/skills/normal_attack.tres","name":"普通攻击","kind":"normal","rate":1.0,"cooldown":1.0,"duration":0.6000000000000001,"offsets":[0.30000000000000004],"priority":0,"range":80.0,"unlock":[0,1],"targets":null,"straight":false,"pierce":1,"basic":true},{"id":"res://data/skills/soldier_power_attack.tres","name":"斩击","kind":"normal","rate":1.3,"cooldown":2.0,"duration":0.6000000000000001,"offsets":[0.30000000000000004],"priority":2,"range":80.0,"unlock":[0,1],"targets":null,"straight":false,"pierce":1,"basic":false}],"sword":{"range":300,"duration":0.9,"offset":0.7000000000000001}},{"id":"swords_man","name":"剑士","team":"team_a","hp":80,"attack":8,"defence":3,"cost":3,"dodge":0.0,"hasCounter":false,"counterUnlock":[],"counterNetDps":0,"uptime":null,"baseLevel":0,"gameMax":1,"upgradePoints":2,"departures":0,"hpDamage":1,"plan":{"mode":"training","levels":1,"attackAllocation":2,"defenceAllocation":0,"hpStep":0,"attackStep":2,"defenceStep":0,"hpGrowth":0,"attackGrowth":0,"defenceGrowth":0,"dodgeStep":0,"costStep":0,"hpBuff":0,"attackBuff":0,"defenceBuff":0,"dodgeBuff":0,"costBuff":0,"buffEnergy":0,"cooldownFactor":1,"animationFactor":1,"outputFactor":1},"skills":[{"id":"res://data/skills/swords_man_attack.tres","name":"普通攻击","kind":"normal","rate":1.0,"cooldown":1.0,"duration":0.7000000000000001,"offsets":[0.30000000000000004],"priority":0,"range":80.0,"unlock":[0,1],"targets":null,"straight":false,"pierce":1,"basic":true},{"id":"res://data/skills/swords_man_muti_attack.tres","name":"三连击","kind":"normal","rate":0.7,"cooldown":3.0,"duration":1.5,"offsets":[0.30000000000000004,0.6000000000000001,1.2000000000000002],"priority":1,"range":80.0,"unlock":[0,1],"targets":null,"straight":false,"pierce":1,"basic":false},{"id":"res://data/skills/swords_man_stick_muti_attack.tres","name":"六连刺","kind":"normal","rate":0.4,"cooldown":5.0,"duration":1.2000000000000002,"offsets":[0.5,0.6000000000000001,0.7000000000000001,0.8,0.9,1.0,1.1],"priority":2,"range":80.0,"unlock":[0,1],"targets":null,"straight":false,"pierce":1,"basic":false},{"id":"res://data/skills/swords_man_consecutive_attack.tres","name":"愈战愈勇","kind":"combo_passive","rate":1.0,"cooldown":1.0,"duration":0,"offsets":[],"priority":0,"range":80.0,"unlock":[0,1],"targets":null,"straight":false,"pierce":1,"basic":false,"attack_bonus_per_hit":1}]},{"id":"were_bear","name":"熊人","team":"team_a","hp":100,"attack":15,"defence":5,"cost":2,"dodge":0.0,"hasCounter":false,"counterUnlock":[],"counterNetDps":0,"uptime":null,"baseLevel":0,"gameMax":1,"upgradePoints":2,"departures":0,"hpDamage":1,"plan":{"mode":"training","levels":1,"attackAllocation":2,"defenceAllocation":0,"hpStep":0,"attackStep":2,"defenceStep":0,"hpGrowth":0,"attackGrowth":0,"defenceGrowth":0,"dodgeStep":0,"costStep":0,"hpBuff":0,"attackBuff":0,"defenceBuff":0,"dodgeBuff":0,"costBuff":0,"buffEnergy":0,"cooldownFactor":1,"animationFactor":1,"outputFactor":1},"skills":[{"id":"res://data/skills/were_bear_attack.tres","name":"普通攻击","kind":"normal","rate":1.0,"cooldown":1.0,"duration":0.9,"offsets":[0.5],"priority":0,"range":80.0,"unlock":[0],"targets":null,"straight":false,"pierce":1,"basic":true},{"id":"res://data/skills/were_bear_double_attack.tres","name":"二连爪","kind":"normal","rate":0.8,"cooldown":3.0,"duration":1.3,"offsets":[0.4,0.9],"priority":1,"range":80.0,"unlock":[0,1],"targets":null,"straight":false,"pierce":1,"basic":false},{"id":"res://data/skills/were_bear_smash.tres","name":"撼地","kind":"area","rate":0.8,"cooldown":1.0,"duration":0.9,"offsets":[0.5],"priority":0,"range":80.0,"unlock":[1],"targets":null,"straight":false,"pierce":1,"basic":false}]},{"id":"were_wolf","name":"狼人","team":"team_a","hp":100,"attack":15,"defence":5,"cost":2,"dodge":0.0,"hasCounter":false,"counterUnlock":[],"counterNetDps":0,"uptime":null,"baseLevel":0,"gameMax":1,"upgradePoints":2,"departures":0,"hpDamage":1,"plan":{"mode":"training","levels":1,"attackAllocation":2,"defenceAllocation":0,"hpStep":0,"attackStep":2,"defenceStep":0,"hpGrowth":0,"attackGrowth":0,"defenceGrowth":0,"dodgeStep":0,"costStep":0,"hpBuff":0,"attackBuff":0,"defenceBuff":0,"dodgeBuff":0,"costBuff":0,"buffEnergy":0,"cooldownFactor":1,"animationFactor":1,"outputFactor":1},"skills":[{"id":"res://data/skills/were_wolf_attack.tres","name":"普通攻击","kind":"normal","rate":1.0,"cooldown":1.0,"duration":0.9,"offsets":[0.5],"priority":0,"range":80.0,"unlock":[0,1],"targets":null,"straight":false,"pierce":1,"basic":true},{"id":"res://data/skills/were_wolf_five_attack.tres","name":"五连斩击","kind":"teleport","rate":0.8,"cooldown":7.0,"duration":1.3,"offsets":[0.7000000000000001,0.8,0.9,1.0,1.1],"priority":1,"range":80.0,"unlock":[1],"targets":null,"straight":false,"pierce":1,"basic":false},{"id":"res://data/skills/were_wolf_low_health_stealth.tres","name":"月影潜行","kind":"stealth_passive","rate":1.0,"cooldown":1.0,"duration":0,"offsets":[],"priority":0,"range":80.0,"unlock":[0,1],"targets":null,"straight":false,"pierce":1,"basic":false,"stealth_health_percent":50.0,"stealth_duration":5.0}]},{"id":"wizard","name":"巫师","team":"team_a","hp":100,"attack":20,"defence":3,"cost":3,"dodge":0.0,"hasCounter":false,"counterUnlock":[],"counterNetDps":0,"uptime":null,"baseLevel":0,"gameMax":1,"upgradePoints":2,"departures":0,"hpDamage":1,"plan":{"mode":"training","levels":1,"attackAllocation":2,"defenceAllocation":0,"hpStep":0,"attackStep":2,"defenceStep":0,"hpGrowth":0,"attackGrowth":0,"defenceGrowth":0,"dodgeStep":0,"costStep":0,"hpBuff":0,"attackBuff":0,"defenceBuff":0,"dodgeBuff":0,"costBuff":0,"buffEnergy":0,"cooldownFactor":1,"animationFactor":1,"outputFactor":1},"skills":[{"id":"res://data/skills/wizard_fire_ball.tres","name":"火球","kind":"projectile","rate":1.2,"cooldown":2.5,"duration":0.9,"offsets":[0.4],"priority":0,"range":650.0,"unlock":[0,1],"targets":null,"straight":false,"pierce":1,"basic":false},{"id":"res://data/skills/wizard_ice_crash.tres","name":"冰晶爆裂","kind":"normal","rate":2.0,"cooldown":6.0,"duration":0.6000000000000001,"offsets":[0.2],"priority":1,"range":650.0,"unlock":[1],"targets":null,"straight":false,"pierce":1,"basic":false}]}],"model":{"window":12,"incoming":15,"targetDefence":5,"eligible":0.7,"targetDodge":0,"meleeUptime":0.8,"rangedUptime":1.0,"areaTargets":1.5,"pierceTargets":1.5,"healRealization":0.5,"lifestealRealization":0.5,"healWeight":0.5,"summonRealization":0.75,"swordFarShare":0.5,"costBonus":0.08,"comboTargetHp":100}},"reference":{"soldier":{"id":"soldier","name":"士兵","team":"team_a","hp":100,"attack":10,"defence":5,"cost":1,"dodge":0.0,"hasCounter":false,"counterUnlock":[],"counterNetDps":0,"uptime":null,"baseLevel":0,"gameMax":1,"upgradePoints":2,"departures":0,"hpDamage":1,"plan":{"mode":"training","levels":0,"attackAllocation":2,"defenceAllocation":0,"hpStep":0,"attackStep":2,"defenceStep":0,"hpGrowth":0,"attackGrowth":0,"defenceGrowth":0,"dodgeStep":0,"costStep":0,"hpBuff":0,"attackBuff":0,"defenceBuff":0,"dodgeBuff":0,"costBuff":0,"buffEnergy":0,"cooldownFactor":1,"animationFactor":1,"outputFactor":1},"skills":[{"id":"res://data/skills/normal_attack.tres","name":"普通攻击","kind":"normal","rate":1.0,"cooldown":1.0,"duration":0.6000000000000001,"offsets":[0.30000000000000004],"priority":0,"range":80.0,"unlock":[0,1],"targets":null,"straight":false,"pierce":1,"basic":true},{"id":"res://data/skills/soldier_power_attack.tres","name":"斩击","kind":"normal","rate":1.3,"cooldown":2.0,"duration":0.6000000000000001,"offsets":[0.30000000000000004],"priority":2,"range":80.0,"unlock":[0,1],"targets":null,"straight":false,"pierce":1,"basic":false}],"sword":{"range":300,"duration":0.9,"offset":0.7000000000000001}},"unitIds":["archer","armored_axeman","armored_orc","bat","elite_orc","greatsword_skeleton","knight","knight_templar","lancer","necromancer","orc","orc_rider","priest","skeleton","skeleton_archer","slime","soldier","swords_man","were_bear","were_wolf","wizard"]},"initialState":null,"storageId":"unit-power-calc-v2-d7bd6d855d7d","sources":[{"path":"data/units/unit_data.gd","sha256":"b9a88fb0e47ccb2df83bb3b0ad9075b495da610583dba285632b4784745e8b95"},{"path":"data/skills/skill_base.gd","sha256":"807741543af32ae0b2d6b434ed0e9d550886e1bc3bc2e279f9c1c54ede883935"},{"path":"data/units/archer.tres","sha256":"09559630f8b521e540a45af18e62f04cdbb4a31e8e9fdefbb2b13c8f03f3a85f"},{"path":"data/skills/archer_arrow_attack.tres","sha256":"82152c9f7eec9ddd38340a196989115933aff64f0e76ce687a101d30bc8da48e"},{"path":"scripts/skills/arrow_attack.gd","sha256":"46e235d2f47405ecb9db432877ba6f07446e6e2e889d8fec34433dee26cb9081"},{"path":"data/skills/archer_power_shoot.tres","sha256":"92532cc679099e9dadcaf9022b9d79e443487ac4101bf6478ae258230d26fef1"},{"path":"scenes/units/archer.tscn","sha256":"a03df0aad1bbfeddfc29e0855e836d83985797921d9d54fe437d14a9c6b80cd4"},{"path":"data/units/armored_axeman.tres","sha256":"f54293e101165c0fae4391f16120d2b63d4f9a75673eadd4f6995dd11924ffc4"},{"path":"data/skills/armored_examan_attack.tres","sha256":"e6933ff5d804f05aa3b7c7f62b200d12fa49aee0da0837b802a150ce13984635"},{"path":"scripts/skills/normal_attack.gd","sha256":"d61cbffa5390a48f4c4e3f3ccfb002223ca7e67fce6dea2ad80ccc792d3d4b81"},{"path":"data/skills/armored_examan_round_attack.tres","sha256":"f7f757ab880ec2b6114967eca25b9f4724fba9bef1d291001fff072853d432bd"},{"path":"scripts/skills/area_attack.gd","sha256":"c5db1757c6f9ffcdf172cc8487192994749d99673be7be6f44d22622c38df386"},{"path":"data/skills/armored_examan_chop_attack.tres","sha256":"7b42b9189919c486b8407108a9e68b387f5991ab54a73794ed5a643e434cf84a"},{"path":"scenes/units/armored_axeman.tscn","sha256":"bcfc04aa20a66e97f288afc7fec526a2c462ece0b1ca9aad2605a21d7c081c0e"},{"path":"data/units/armored_orc.tres","sha256":"b7f5d110b6e4faef1fb3d707ad183c92961f4c3bdd41f11e56fd7aa6b116d659"},{"path":"data/skills/armored_orc_attack.tres","sha256":"c05ca4cbb096a7727e30a5a73c862be135e6ef1719bf289b5b010d58e5b63550"},{"path":"data/skills/armored_orc_power_attack.tres","sha256":"5900781fdecc13369538f54c6864bdedbd31bdf8e2befb34089be0d9187689ba"},{"path":"data/skills/armored_orc_dodge_attack.tres","sha256":"c59729520b76a2e6c6a8ff342e2f05dcb846f862325fb4e08c58a2e807b623fc"},{"path":"scenes/units/armored_orc.tscn","sha256":"d311072875c00512e0035ad9768b1b3fc2a5ca438e12a56ee5c7c44b812b72bd"},{"path":"data/units/bat.tres","sha256":"9125c1a74cc62ca30017dab02eadd9c011118ed42004c7821e74cbdc2b1dd459"},{"path":"data/skills/bat_attack.tres","sha256":"8793ca32ad4ccb5e7d680c0ddaa38676871023019e2c6a6aa93c6dd4fd81b1ee"},{"path":"data/skills/bat_power_attack.tres","sha256":"fb9dc33cfc89d04bcf17d17176a603f5b3d8038176f0ef1d87e890e925261725"},{"path":"scripts/skills/bloodthirst_attack.gd","sha256":"531aa7a2f597195ba377ce383cde0b98d94f06fddf4e10554ee43349b1d597c5"},{"path":"scenes/units/bat.tscn","sha256":"029a18dfc5198c8ece9a3513ee3093f821412893e46a5968ab5ef8f191c9e496"},{"path":"data/units/elite_orc.tres","sha256":"c64e5d99f6cc7ae0b16a120a65e62ad67463122663b317a6773758181c0a22d8"},{"path":"data/skills/elite_orc_attack.tres","sha256":"c6193670db1f1e48fbccbc00c30ae7860620fa7ad513cb58fe44c7f094c48788"},{"path":"data/skills/elite_orc_power_attack.tres","sha256":"46a9b5b1635ece84412f550827713578606028538adaff42392110ccdc79d88d"},{"path":"data/skills/elite_orc_round_attack.tres","sha256":"b848a77e8544a33427f506bc2e09afdb80abcd7cf52e8aaec0819a4a90a745d3"},{"path":"scenes/units/elite_orc.tscn","sha256":"89dff1d3f47b6c34bfbbd9d94f93ab4e07dede217415cf5dc0c6f50c1cb4f784"},{"path":"data/units/greatsword_skeleton.tres","sha256":"853e43d3e005cdb8a1a67b2d108a4c5abfc4d1456af56671775ed8dad3a0927d"},{"path":"data/skills/greatswords_skeleton_attack.tres","sha256":"9128e9eb476d9f4d5a7deb5a7cca7c5d187d88457d1220af8977a93c0998420b"},{"path":"data/skills/greatswords_skeleton_power_attack.tres","sha256":"a222e7cb4c2fcef0005a9626cef1194fb804b3ff2109d46223a3d1e29476b649"},{"path":"data/skills/greatswords_skeleton_stick_attack.tres","sha256":"17d63cd8c734b534fc9693aa150e4a5d78a0b9df2622ec6c1c85bd0360865ac2"},{"path":"scenes/units/greatsword_skeleton.tscn","sha256":"a376858050756dcbd001cb958dcf6773c24b68c2e8d27602d4762eb06c635a0e"},{"path":"data/units/knight.tres","sha256":"e46f118e99429b25fed0823f5133f9c965ee9614c06d4e8077f6c1554520c7eb"},{"path":"data/skills/knight_attack.tres","sha256":"6dc3b4c2c923810565f0d1571b678ee0cb523caa5e64d1bc80bcce4a90bab8fb"},{"path":"data/skills/knight_power_attack.tres","sha256":"448d07f9e548fe44c11c45b2143f6ce42cce5c52a0d4e0d2306733a92b1f918d"},{"path":"data/skills/knight_dodge_attack.tres","sha256":"c5c237e34b12025b2c46e6e21e612f9defc17db13c61afef15556edcac445b7d"},{"path":"scripts/skills/dodge_attack.gd","sha256":"768072ea798884530aec21fb968fcc8eb42e4bf6dac880d8416485c460810d71"},{"path":"scenes/units/knight.tscn","sha256":"ad3fc3b6677dbdb2f13a805a0c742235e1a6bcd1430a20b614dedcaf22780a3c"},{"path":"data/units/knight_templar.tres","sha256":"6d14945f47da1c648d9d2853f6dc044b307e459a9a3e462cd9aea8c66d269253"},{"path":"data/skills/knight_templar_attack.tres","sha256":"8cc90a077d472ee9f36524ca8ea892e09f975161a8a1aaf4cf98f208b908560c"},{"path":"data/skills/knight_templar_power_attack.tres","sha256":"1a5571c643b3ce1e80103e570193ce1ad6f914accaf2b9e05728951773e4dd04"},{"path":"data/skills/knight_templar_protection_aura.tres","sha256":"d2da4851c8a521f2d5b07d7c5790aa99b9b05e66e80842eae5dac08a5d16cf00"},{"path":"scripts/skills/protection_aura.gd","sha256":"ced0e30a2d74af52e4af0907bf6a038564cca8f8a135bf6e95f7af4927e123db"},{"path":"scripts/units/protection_aura_runtime.gd","sha256":"67bb24e4c5d8d1ca281d625487788c4fbaeb18973018bcff15a5da8d01fae242"},{"path":"data/skills/knight_templar_dodge_attack.tres","sha256":"440223a772711ae04d947bd3af4567bac7cd91f9b92bc1c17733715ba0fa20b2"},{"path":"scenes/units/knight_templar.tscn","sha256":"eb7616f3647d5157e9dfdd9255644603366e819168ecbe8c965ab0b644c7ec1a"},{"path":"data/units/lancer.tres","sha256":"5403128d184b82bcc106aabf9b408c385e0d10a197d02ce96f14f4dfbbfba6d3"},{"path":"data/skills/lancer_attack.tres","sha256":"58cfab06d239ad5ec2a98e97d33a3b918c2c8575dedbbe664b80f869d87a172e"},{"path":"data/skills/lancer_dash_attack.tres","sha256":"4baea0d680aac18c1d1d8c406e24db9cc98e2ba864963896109e93e0463db16c"},{"path":"scripts/skills/dash_attack.gd","sha256":"b8b970ac72b5c3e821d0e8fed16321677d5b571e0e6037182e453153cf2f0d66"},{"path":"data/skills/lancer_power_attack.tres","sha256":"f4c5cf92b862cac96d314663d3ba5c03867ab36d8973f333d75477eadaeb3352"},{"path":"data/skills/lancer_dash_attack_enhance.tres","sha256":"d39f21e84e9d7ea17e307f637c987cae8cd1e4c991c26b8e5ca1705533471b5a"},{"path":"scenes/units/lancer.tscn","sha256":"e7853026c2ef708bd1701cf2d25a74c6d91b63de9a02188d79b26b9ee6222f66"},{"path":"data/units/necromancer.tres","sha256":"2046f536d2185383a9c64e1ba4c728eb0656743d4725da899141acca873b57fb"},{"path":"data/skills/necromancer_summon.tres","sha256":"54012c4a90eb38c1a88127af0b6895fe11d2ba323c30cee316b3add7d44a90f5"},{"path":"scripts/skills/summon_unit.gd","sha256":"71ea4b3d83c6db3abdb8b8a52e81559ed41aeb33f4f731374d24c6df762fbd38"},{"path":"scenes/effects/creat_effect.tscn","sha256":"4e2e98771e01d3fcc8dbb438bec00b482977e6ba8185241d93d0cf3c08385fb1"},{"path":"data/skills/necromancer_attack.tres","sha256":"3ffaaf96333d9e1e771b668924883d78857d5dae891da176f4ca26d9181848b3"},{"path":"data/skills/necromancer_power_attack.tres","sha256":"f8123d2d4771513fba8e27ef8610d03fe7ca1ac718af3c0d528b074cbff237aa"},{"path":"scenes/units/necromancer.tscn","sha256":"258771fb81d823684919212d0d9af31d9573d70e7c673efbbfe4e639f54c29e8"},{"path":"data/units/orc.tres","sha256":"cdd2e34089852c8279a1fd833faf2cd712d4b26a31bff993a41dfe2ac16e4a3e"},{"path":"data/skills/orc_attack.tres","sha256":"6aab88759e05ff0fe31aeb989caedee37cda9e353c83a1ffd1caafb26fd705ca"},{"path":"data/skills/orc_power_attack.tres","sha256":"0eba87534f6cb0b0530567d8a533d3e74e1ce2cec6c24c01340fe55664b9724a"},{"path":"scenes/units/orc.tscn","sha256":"e3759385c165ab7fc7731d95a43881f947903569b08da66f51ca1eca7922af26"},{"path":"data/units/orc_rider.tres","sha256":"eb070636970e5e9d279553c9134f10118ce052722d546685c3a94d5640abf293"},{"path":"data/skills/orc_rider_attack.tres","sha256":"614ac79a4e81709b67b9979924093cc278c1d40bf3e3b373322e3d72d683dcec"},{"path":"data/skills/orc_rider_power_attack.tres","sha256":"818b77f953c23090452550f409b09e23024a7bed2eb216b64cae754e60925c98"},{"path":"data/skills/orc_rider_dodge_attack.tres","sha256":"28250aa18b632b6ec5dc4e776c9b34cf08c991983834884f41bd9986a6cbd67e"},{"path":"scenes/units/orc_rider.tscn","sha256":"84325eeda709b27cff0054bbe83797f22a1f7c81d770fc5c348bc4dcba062543"},{"path":"data/units/priest.tres","sha256":"f35548221d775bc28de3bdbdcef9eccf5e7bc335b856e627c973e5f7498601d3"},{"path":"data/skills/priest_attack.tres","sha256":"d40b1f88e4427d1e5c31c0d8d0d7766666d93f74530375180e9d97f54676e0e1"},{"path":"data/skills/priest_healer.tres","sha256":"b7529b7679eb5eb449099aca28ab775c04e1238944f30498bdef02bfc72e35da"},{"path":"scripts/skills/ally_heal.gd","sha256":"529beb7564b2c4a67e051688ee6df2d36d0a9fa3c004f976ceae1b105cb833ef"},{"path":"scenes/units/priest.tscn","sha256":"eff7183ae049bb0f34a6b90b172d8505a3e4015e39745be7f6eab4889a619116"},{"path":"data/units/skeleton.tres","sha256":"3fba6ed4d7087d3aa99b80e6955ef19513c61df64a4560d53a4f8c04125dc6c0"},{"path":"data/skills/skeleton_attack.tres","sha256":"dffa9e3946dc5fac8c1c6a111f937cec99a057e6d42eafa1975ec74f18055433"},{"path":"data/skills/skeleton_power_attack.tres","sha256":"c2ca2f8fd7d5bb84b4b0d3bf834c2998a159592976c31f0789a6b7b05e7fae9f"},{"path":"scenes/units/skeleton.tscn","sha256":"2561cf78978f3fa9a5ef4cb36dddaf588a05a06cb0d8fe7ab01931319ab71b24"},{"path":"data/units/skeleton_archer.tres","sha256":"6e2bffc8b5a68e097b7584d3e4185af3499d82000cab5e40ffe661b71c3aab37"},{"path":"data/skills/skeleton_archer_attack.tres","sha256":"fb5bac55a09ca9c53abfc6d3e4a4a43ebac036de823feadd4555f02c7984a50a"},{"path":"scenes/units/skeleton_archer.tscn","sha256":"fc8055f6e78285c4e6f5c7b4e2bbaca48ffbba6256af3a19917628c1bfc9c21e"},{"path":"data/units/slime.tres","sha256":"cec77697ee31b40ffcf4b69d31eecfb7ecaabfb95d7af59e5a0cf6868becb368"},{"path":"data/skills/slime_attack.tres","sha256":"04a8851b3b9c746f7a78d2be21ebb07cb3f8ee5a189ee839f89cd42a6da67a05"},{"path":"data/skills/slime_power_attack.tres","sha256":"5efcbcdfd8017e92079cae5b42587c295012637f3868cfc70ba116306d393925"},{"path":"scenes/units/slime.tscn","sha256":"3531bb75e50ab675266f9ab5b012c4f8ecc973895e8c9542fe11029f64a147b0"},{"path":"data/units/soldier.tres","sha256":"f9563f4352e25fcdcb6b4c76616da78e13dac081c121c505442460aef368f2ee"},{"path":"data/skills/normal_attack.tres","sha256":"54b8ad4dfdd2e35225f74f2ab976beeea7068cc10970034f97c0f741fcd4287a"},{"path":"data/skills/soldier_power_attack.tres","sha256":"01063b7aca71837e7b19b87171f3283528b537d5891be3beb360ad043e2769b1"},{"path":"scenes/units/soldier.tscn","sha256":"e635085920062453b7f3be6c70919aa4ef67db9b2ec3b1e9c7f664de9d039233"},{"path":"data/units/swords_man.tres","sha256":"259e4d37c9518d5651f1f3da31d22bb17e1b7288d0aaa882e093663e5db4c186"},{"path":"data/skills/swords_man_attack.tres","sha256":"c53e0f998fd72cd476ff36aee9c1dcfec5504a209f4f1f90e2975ee60499f5fd"},{"path":"data/skills/swords_man_muti_attack.tres","sha256":"39bd763dfe1c4840e48072c5cebf0f43745cf4e0f662c1860799de71e2c8ad8b"},{"path":"data/skills/swords_man_stick_muti_attack.tres","sha256":"6d0e43b3ee26ded4b707171de2bc92185fcaf57372cede555f7e6acc00b5dd0f"},{"path":"data/skills/swords_man_consecutive_attack.tres","sha256":"c28ede6761ca68ae80509d0f6cedfdea50b2a00b0e0231241933aa5e7d5abfa3"},{"path":"scripts/skills/consecutive_attack.gd","sha256":"fe081d2396197c10d87c37274bab9f1ab53fe5fd7d02973ba9fb51de364c8d57"},{"path":"scripts/units/consecutive_attack_runtime.gd","sha256":"6cb0c913b1119b2ab637c55a154333af67c90481c2549114c72778a4072c6337"},{"path":"scenes/units/swords_man.tscn","sha256":"f08ceefbcad62cd9327addbd0b72d51ed02ed44bb62fdeea5faba6b4ff849c24"},{"path":"data/units/were_bear.tres","sha256":"134bfb78bd52e4698e80638e0d25427a499dc1ed4b157a308b9f2c6170712b51"},{"path":"data/skills/were_bear_attack.tres","sha256":"413d3d79a0e79790fabe6507845d202d121004a0f9f9b36f6f7fff9059cbbefb"},{"path":"data/skills/were_bear_double_attack.tres","sha256":"dfacfb6818222236feb26960f8e4665a89150761ee70cdd862620f2aab3a6af8"},{"path":"data/skills/were_bear_smash.tres","sha256":"4f3030e018aa8e88ffa7429c23e03cc513d2a88d1f19357f3b40665e6c17c5fa"},{"path":"scenes/units/were_bear.tscn","sha256":"66615652c35a32c9e42b9d6ebd94c2680d4323c4709ff33dc77baf589924eeb4"},{"path":"data/units/were_wolf.tres","sha256":"49276c676a889c126ace38fb2707816fcdd0980d890280d0945c022c130ea0d1"},{"path":"data/skills/were_wolf_attack.tres","sha256":"9225d95b9674dd0e7c87d9a0f15a1dd0c1bcfed18c7f080cf16d6592e58b3df9"},{"path":"data/skills/were_wolf_five_attack.tres","sha256":"7dc4b7d10c4dae782296c301318d49427664c52120da5ab1534ab749939ed28b"},{"path":"scripts/skills/teleport_combo_attack.gd","sha256":"a95e1745721201c06533902adcbce1e912982110ff35c8b28ee86ce7da3c2ab1"},{"path":"data/skills/were_wolf_low_health_stealth.tres","sha256":"aad8097877a1499a59c2e620c1c8e9714f44045115981aa327bfea2dd8c42aa4"},{"path":"scripts/skills/low_health_stealth.gd","sha256":"35b4d54663bb2d586bab9c01384997b98c43c3dd8d1c78e0ee8df0aefb4c9a59"},{"path":"scripts/units/low_health_stealth_runtime.gd","sha256":"fbd249c247ba6168067d7b20169c4391686a5884bda1354549656816a9abb51d"},{"path":"scenes/units/were_wolf.tscn","sha256":"d6d87292b5a9486f1e87457fdc3cd1a67644fb0c1384bed3063faee480b971ed"},{"path":"data/units/wizard.tres","sha256":"f92770e1749e14bc960830b40d2f8890d92c143b6099815d2a643750cee426f4"},{"path":"data/skills/wizard_fire_ball.tres","sha256":"ff5ff62540b504b935b10c66a1f48add16817eb863397d40fce02a668fe18cc6"},{"path":"data/skills/wizard_ice_crash.tres","sha256":"295a5f0c5292a60f048075750e92621eab4161e99a2b647c14d17ec4a71dd249"},{"path":"scenes/units/wizard.tscn","sha256":"ae90a7ca7b0bf7a86f2288a041af1fc11d529ac72cdbc5d34fe9ef6b3ea526d6"},{"path":"scripts/cards/card_instance.gd","sha256":"db38e9b3f801b096726986411a58ac6081ad260722e6ec8ff36709dd04c022d1"},{"path":"scripts/units/skill_manager.gd","sha256":"8f2a054d16977fe6b79f0e860d9eac9c9477b22c12137a207506279f92c424fb"},{"path":"scripts/units/unit_base.gd","sha256":"4fb0409271c8b0d5a7e6d832c9db196b1337cb415ce317669a3e2ac1ad624175"},{"path":"docs/数值设计/单位战力_计算标准.json","sha256":"3181faa925ff2b1ebf78e9c55156d844c72298bcfedb1cd5551776b9459ad1c5"}]}</script>
+<script>/* UNIT-POWER-CALC v1: deterministic comparison model, no gameplay mutations. */
+(function (host) {
+  'use strict';
+  const EPS = 1e-9;
+  const copy = x => JSON.parse(JSON.stringify(x));
+  const number = (x, name, min, max, integer = false) => {
+    if (!Number.isFinite(x) || x < min || x > max || (integer && !Number.isInteger(x)))
+      throw new Error(`${name}应为${integer ? '整数' : '数值'}，范围 ${min}～${max}`);
+  };
+  const levels = (value, name) => {
+    if (Array.isArray(value)) {
+      if (value.length > 100) throw new Error(`${name}最多配置100个等级`);
+      value.forEach(level => number(level, name, 0, 99, true));
+    } else {
+      // 旧计算方案的整数保留原先的最低等级规则，新项目初值使用数组。
+      number(value, name, 0, 99, true);
+    }
+  };
+  const activeAt = (value, level) => Array.isArray(value) ? value.includes(level) : value <= level;
+  const passive = s => s.kind.endsWith('_passive');
+
+  function validate(state, ids) {
+    if (!state || state.schema !== 'unit-power-calculator/v1') throw new Error('方案格式或版本不匹配');
+    if (!Array.isArray(state.units) || state.units.length !== ids.length) throw new Error('方案必须包含全部现有单位');
+    const actual = state.units.map(u => u.id);
+    if (new Set(actual).size !== ids.length || ids.some(id => !actual.includes(id))) throw new Error('单位 ID 缺失、重复或不匹配');
+    const m = state.model;
+    if (!m) throw new Error('缺少计算标准');
+    for (const [k, lo, hi] of [
+      ['window', 1, 120], ['incoming', 1, 99999], ['targetDefence', 0, 99999],
+      ['eligible', 0, 1], ['targetDodge', 0, 1], ['meleeUptime', 0, 1], ['rangedUptime', 0, 1],
+      ['areaTargets', 1, 50], ['pierceTargets', 1, 50], ['healRealization', 0, 1],
+      ['lifestealRealization', 0, 1], ['healWeight', 0, 5], ['summonRealization', 0, 1],
+      ['swordFarShare', 0, 1], ['costBonus', 0, 1]
+    ]) number(m[k], k, lo, hi);
+    number(m.comboTargetHp ?? 100, '连击参考目标生命', 1, 10000000);
+    number(state.curveMax, '曲线阶段上限', 1, 20, true);
+    for (const u of state.units) {
+      if (typeof u.name !== 'string' || !u.name.trim() || u.name.length > 60) throw new Error('单位名称应为 1～60 字');
+      if (!['team_a', 'team_b'].includes(u.team)) throw new Error('单位阵营无效');
+      for (const [k, lo, hi] of [
+        ['hp', 1, 10000000], ['attack', 0, 100000], ['defence', 0, 100000], ['cost', 0, 999],
+        ['dodge', 0, 1], ['counterNetDps', -100000, 100000], ['baseLevel', 0, 99],
+        ['gameMax', 0, 99], ['upgradePoints', 0, 999], ['departures', 0, 999]
+      ]) number(u[k], `${u.name} ${k}`, lo, hi, !['dodge', 'counterNetDps'].includes(k));
+      if (u.uptime !== null) number(u.uptime, `${u.name}输出在线率`, 0, 1);
+      if (typeof u.hasCounter !== 'boolean') throw new Error('反击开关无效');
+      levels(u.counterUnlock, '反击生效等级');
+      const p = u.plan;
+      if (!p || !['training', 'custom'].includes(p.mode)) throw new Error('成长模式无效');
+      if (p.mode === 'training' && u.team !== 'team_a') throw new Error('敌方单位请使用自定义成长');
+      for (const k of ['levels', 'attackAllocation', 'defenceAllocation']) number(p[k], k, 0, k === 'levels' ? 20 : 999, true);
+      if (p.mode === 'training' && p.attackAllocation + p.defenceAllocation !== u.upgradePoints)
+        throw new Error(`${u.name}每次训练分配的攻击＋防御必须等于 ${u.upgradePoints} 能力点`);
+      for (const k of ['hpStep', 'attackStep', 'defenceStep', 'hpBuff', 'attackBuff', 'defenceBuff']) number(p[k], k, -100000, 100000, true);
+      for (const k of ['hpGrowth', 'attackGrowth', 'defenceGrowth']) number(p[k], k, -0.9, 2);
+      for (const k of ['dodgeStep', 'dodgeBuff']) number(p[k], k, -1, 1);
+      for (const k of ['costStep', 'costBuff']) number(p[k], k, -999, 999, true);
+      number(p.buffEnergy, '额外强化总能量', 0, 999);
+      number(p.cooldownFactor, '强化冷却系数', 0.1, 10);
+      number(p.animationFactor, '强化动作系数', 0.1, 10);
+      number(p.outputFactor, '强化输出系数', 0, 10);
+      if (!Array.isArray(u.skills) || u.skills.length > 20) throw new Error('每个单位最多 20 个技能');
+      for (const s of u.skills) {
+        if (!['normal', 'projectile', 'area', 'dash', 'lifesteal', 'heal', 'summon','teleport','combo_passive','aura_passive','stealth_passive'].includes(s.kind)) throw new Error('技能类型无效');
+        if (passive(s)) {
+          levels(s.unlock, '被动生效等级');
+          if (s.kind === 'combo_passive') number(s.attack_bonus_per_hit, '连击每命中攻击增量', 0, 999, true);
+          if (s.kind === 'aura_passive') {
+            number(s.aura_attack_bonus, '光环攻击增量', 0, 999, true); number(s.aura_radius, '光环半径', 1, 2000);
+            if (typeof s.aura_include_caster !== 'boolean') throw new Error('光环包括自身开关无效');
+          }
+          if (s.kind === 'stealth_passive') {
+            number(s.stealth_health_percent, '隐身触发生命百分比', 1, 100); number(s.stealth_duration, '隐身时长', .1, 60);
+          }
+          continue;
+        }
+        number(s.rate, '技能倍率', 0, 100); number(s.cooldown, '技能冷却', 0.05, 120);
+        number(s.duration, '技能占用时间', 0.05, 120); number(s.priority, '技能优先级', -999, 999, true);
+        number(s.range, '技能射程', 0, 99999); levels(s.unlock, '技能生效等级');
+        if (typeof s.basic !== 'boolean' || typeof s.straight !== 'boolean') throw new Error('技能攻击标记无效');
+        number(s.pierce, '穿透上限', 1, 99, true);
+        if (s.targets !== null) number(s.targets, '平均命中目标', 1, 50);
+        if (!Array.isArray(s.offsets) || !s.offsets.length || s.offsets.length > 100) throw new Error('命中时间应至少有一项');
+        s.offsets.forEach(t => number(t, '命中时间', 0, Math.max(0, s.duration - 0.000001)));
+        if (s.kind === 'summon') {
+          if (!ids.includes(s.child)) throw new Error('召唤目标不在单位表内');
+          number(s.summonDelay, '召唤延迟', 0, 120);
+        }
+      }
+      if (u.id === 'soldier') {
+        if (!u.sword) throw new Error('缺少士兵剑矢配置');
+        number(u.sword.range, '剑矢射程', 1, 99999);
+        number(u.sword.duration, '剑矢动画占时', 0.05, 120);
+        number(u.sword.offset, '剑矢发箭时间', 0, u.sword.duration - 0.000001);
+      }
+    }
+    return true;
+  }
+
+  function atStage(unit, stage) {
+    const u = copy(unit), p = unit.plan;
+    if (stage === 0) return u;
+    const training = p.mode === 'training';
+    const value = (base, growth, step, buff, min) => Math.max(min, Math.floor(base * Math.pow(1 + growth, stage) + stage * step + buff + EPS));
+    u.hp = value(unit.hp, training ? 0 : p.hpGrowth, training ? 0 : p.hpStep, p.hpBuff, 1);
+    u.attack = value(unit.attack, training ? 0 : p.attackGrowth, training ? p.attackAllocation : p.attackStep, p.attackBuff, 0);
+    u.defence = value(unit.defence, training ? 0 : p.defenceGrowth, training ? p.defenceAllocation : p.defenceStep, p.defenceBuff, 0);
+    u.dodge = Math.max(0, Math.min(1, unit.dodge + (training ? 0 : stage * p.dodgeStep) + p.dodgeBuff));
+    u.cost = Math.max(0, unit.cost + (training ? 0 : stage * p.costStep) + p.costBuff);
+    u.baseLevel = unit.baseLevel + stage;
+    return u;
+  }
+
+  function targets(skill, model) {
+    if (skill.targets !== null) return skill.targets;
+    if (['area', 'dash'].includes(skill.kind)) return model.areaTargets;
+    if (skill.kind === 'projectile' && skill.straight && skill.pierce > 1) return Math.min(skill.pierce, model.pierceTargets);
+    return 1;
+  }
+
+  function schedule(unit, model, stage, far = false) {
+    const p = unit.plan, upgraded = stage > 0;
+    const active = unit.skills.filter(s => activeAt(s.unlock, unit.baseLevel));
+    const passives = active.filter(passive);
+    const auraAttack = unit.team === 'team_a' ? Math.max(0, ...passives.filter(s => s.kind === 'aura_passive' && s.aura_include_caster).map(s => s.aura_attack_bonus)) : 0;
+    const comboBonus = Math.max(0, ...passives.filter(s => s.kind === 'combo_passive').map(s => s.attack_bonus_per_hit));
+    let chain = 0, remainingHp = model.comboTargetHp ?? 100, chainResets = 0;
+    let skills = active.filter(s => !passive(s)).map(copy);
+    const sword = unit.id === 'soldier' && unit.team === 'team_a' && unit.baseLevel >= 1;
+    if (far && sword) {
+      skills = skills.filter(s => s.basic || s.range >= unit.sword.range || ['heal', 'summon'].includes(s.kind));
+      for (const s of skills.filter(s => s.basic)) {
+        s.kind = 'projectile'; s.range = unit.sword.range; s.duration = unit.sword.duration;
+        s.offsets = [unit.sword.offset]; s.targets = 1;
+      }
+    }
+    const cdFactor = upgraded ? p.cooldownFactor : 1;
+    const animationFactor = upgraded ? p.animationFactor : 1;
+    for (const s of skills) {
+      s.cooldown *= cdFactor;
+      // Manual dash duration includes travel, not an ordinary cast animation.
+      if (s.kind !== 'dash') { s.duration *= animationFactor; s.offsets = s.offsets.map(t => t * animationFactor); }
+    }
+    const ranged = skills.some(s => !['heal', 'summon', 'dash'].includes(s.kind) && s.range >= 250);
+    const uptime = unit.uptime === null ? (ranged ? model.rangedUptime : model.meleeUptime) : unit.uptime;
+    const order = skills.map((_, i) => i).sort((a, b) => skills[b].priority - skills[a].priority || a - b);
+    const ready = skills.map(() => 0), trace = [], births = [];
+    const stats = skills.map(s => ({ name: s.name, casts: 0, hits: 0, damage: 0, healing: 0 }));
+    let t = 0, damage = 0, healing = 0;
+    while (skills.length && t < model.window - EPS) {
+      const i = order.find(i => ready[i] <= t + EPS);
+      if (i === undefined) { t = Math.min(...ready); continue; }
+      const s = skills[i], start = t, end = t + s.duration;
+      ready[i] = start + s.cooldown; stats[i].casts++;
+      const hits = [];
+      for (const offset of s.offsets) {
+        const time = start + offset;
+        if (time >= model.window - EPS) continue;
+        if (s.kind === 'summon') {
+          const born = time + s.summonDelay;
+          if (born < model.window) births.push({ child: s.child, time: born });
+          hits.push({ time, born }); continue;
+        }
+        let dmg = 0, heal = 0;
+        const attackUsed = unit.attack + auraAttack + chain * comboBonus;
+        if (s.kind === 'heal') heal = Math.floor(attackUsed * s.rate + EPS) * model.healRealization;
+        else {
+          dmg = Math.max(Math.floor(attackUsed * s.rate + EPS) - model.targetDefence, 1);
+          if (s.kind !== 'projectile') dmg *= 1 - model.targetDodge;
+          dmg *= targets(s, model);
+          if (s.kind === 'lifesteal') heal = dmg * model.lifestealRealization;
+          if (comboBonus) {
+            remainingHp -= dmg / targets(s, model);
+            if (remainingHp <= EPS) { remainingHp = model.comboTargetHp ?? 100; chain = 0; chainResets++; }
+            else chain += s.kind === 'projectile' ? 1 : 1 - model.targetDodge;
+          }
+        }
+        damage += dmg; healing += heal; stats[i].hits++; stats[i].damage += dmg; stats[i].healing += heal;
+        hits.push({ time, damage: dmg, healing: heal, attackUsed });
+      }
+      trace.push({ id: s.id, name: s.name, start, end, cooldown: s.cooldown, hits }); t = end;
+      if (trace.length > 10000) throw new Error('技能排程过长，请检查冷却与动作时间');
+    }
+    const outputFactor = upgraded ? p.outputFactor : 1;
+    const activeCounter = unit.hasCounter && activeAt(unit.counterUnlock, unit.baseLevel);
+    const counter = activeCounter ? unit.counterNetDps : 0;
+    const dps = damage / model.window * uptime * outputFactor + counter;
+    if (dps < 0) throw new Error(`${unit.name}反击净收益使总 DPS 小于零，请修正`);
+    const hps = healing / model.window * uptime * outputFactor;
+    const unpricedEffects = [];
+    for (const s of passives) {
+      if (s.kind === 'stealth_passive') unpricedEffects.push(`隐身：生命低于${s.stealth_health_percent}%持续${s.stealth_duration}秒，生存/索敌收益未折分`);
+      if (s.kind === 'aura_passive') unpricedEffects.push(`光环：范围${s.aura_radius}、攻击+${s.aura_attack_bonus}；${s.aura_include_caster ? '自身收益已计入，' : ''}其他友军收益未折分`);
+    }
+    if (skills.some(s => s.kind === 'teleport')) unpricedEffects.push('瞬移接敌和后排索敌收益未折分');
+    if (unit.id === 'knight' && unit.team === 'team_a') unpricedEffects.push(`征召抽${unit.baseLevel >= 1 ? 2 : 1}张牌，牌组收益未折分`);
+    return { dps, hps, output: dps + model.healWeight * hps, uptime, trace, stats, births, passives, auraAttack, comboBonus, chainResets, unpricedEffects };
+  }
+
+  function output(unit, model, stage) {
+    const near = schedule(unit, model, stage, false);
+    if (unit.id !== 'soldier' || unit.team !== 'team_a' || unit.baseLevel < 1 || !model.swordFarShare) return near;
+    const far = schedule(unit, model, stage, true), q = model.swordFarShare;
+    return { ...near, dps: near.dps * (1 - q) + far.dps * q, hps: near.hps * (1 - q) + far.hps * q,
+      output: near.output * (1 - q) + far.output * q, swordMix: { near, far, share: q } };
+  }
+
+  function ehp(unit, model) {
+    const dodge = unit.hasCounter && activeAt(unit.counterUnlock, unit.baseLevel) ? unit.dodge : 0;
+    const denominator = 1 - dodge * model.eligible;
+    if (denominator <= EPS) throw new Error(`${unit.name}闪避有效占比达到100%，有效生命无上限；请降低参考占比或闪避率`);
+    return unit.hp * model.incoming / Math.max(model.incoming - unit.defence, 1) / denominator;
+  }
+
+  function evaluateAll(state, reference) {
+    validate(state, reference.unitIds);
+    const m = state.model, baseline = output(reference.soldier, m, 0), baseEhp = ehp(reference.soldier, m);
+    if (baseline.output <= 0) throw new Error('当前比较标准下基准士兵输出为零，请调整对手闪避或治疗权重');
+    const norm = r => 100 * Math.sqrt(r.ehp / baseEhp * r.output / baseline.output);
+    const base = new Map(), result = new Map();
+    const phase = (u, n) => {
+      const current = atStage(u, n), out = output(current, m, n);
+      const r = { ...out, ehp: ehp(current, m), attributes: current, stage: n };
+      r.bodyPower = norm(r); return r;
+    };
+    for (const u of state.units) base.set(u.id, phase(u, 0));
+    function complete(u, n) {
+      const r = n === 0 ? { ...base.get(u.id) } : phase(u, n);
+      r.summonPower = 0; r.summons = [];
+      for (const birth of r.births) {
+        const child = base.get(birth.child);
+        if (!child) throw new Error('召唤目标不存在');
+        if (child.attributes.team !== u.team) throw new Error(`${u.name}与召唤单位阵营不一致`);
+        if (child.births.length) throw new Error('暂不支持嵌套召唤，请更换召唤目标');
+        const weight = (m.window - birth.time) / m.window * m.summonRealization;
+        const contribution = weight * child.bodyPower;
+        r.summonPower += contribution; r.summons.push({ ...birth, weight, contribution });
+      }
+      r.power = r.bodyPower + r.summonPower;
+      r.recruitCost = r.attributes.cost + u.departures;
+      r.totalEnergy = r.recruitCost + (n > 0 ? u.plan.buffEnergy : 0);
+      r.perCost = r.recruitCost > 0 ? r.power / r.recruitCost : null;
+      r.perTotalEnergy = r.totalEnergy > 0 ? r.power / r.totalEnergy : null;
+      r.budget = r.recruitCost > 0 ? 100 * r.recruitCost * (1 + m.costBonus * (r.recruitCost - 1)) : null;
+      r.budgetRatio = r.budget ? r.power / r.budget : null;
+      r.forecast = n > 0 && (u.plan.mode !== 'training' || u.baseLevel + n > u.gameMax);
+      return r;
+    }
+    const curveMax = Math.max(state.curveMax, ...state.units.map(u => u.plan.levels));
+    for (const u of state.units) {
+      const current = complete(u, 0), upgraded = complete(u, u.plan.levels);
+      const curve = Array.from({ length: curveMax + 1 }, (_, n) => complete(u, n));
+      result.set(u.id, { current, upgraded, curve, gain: current.power ? upgraded.power / current.power - 1 : null });
+    }
+    return { result, baseline: { ehp: baseEhp, output: baseline.output, dps: baseline.dps }, version: 'UNIT-POWER-CALC-v2' };
+  }
+
+  host.UnitPowerModel = { copy, validate, atStage, schedule, evaluateAll };
+  if (typeof module !== 'undefined' && module.exports) module.exports = host.UnitPowerModel;
+})(typeof window !== 'undefined' ? window : globalThis);
+</script>
+<script>(function () {
+  'use strict';
+  const M = window.UnitPowerModel;
+  const seed = JSON.parse(document.getElementById('calculator-seed').textContent);
+  const storageKey = seed.storageId;
+  const $ = id => document.getElementById(id);
+  const fmt = (n, digits = 1) => n === null || n === undefined ? '—' : n.toLocaleString('zh-CN', { minimumFractionDigits: digits, maximumFractionDigits: digits });
+  const esc = s => String(s).replace(/[&<>"']/g, c => ({ '&': '&amp;', '<': '&lt;', '>': '&gt;', '"': '&quot;', "'": '&#39;' }[c]));
+  const compact = n => Number(n.toFixed(6));
+  const kindName = { normal: '单体攻击', projectile: '投射物', area: '范围攻击', dash: '冲刺', lifesteal: '吸血攻击', heal: '治疗', summon: '召唤',teleport:'瞬移连击',combo_passive:'连击被动',aura_passive:'光环被动',stealth_passive:'隐身被动' };
+  let state = M.copy(seed.initialState || seed.defaults), selected = 'soldier', tab = 'overview', sort = 'team';
+  let hidden = new Set(), calculated, lastValidState, saveTimer, toastTimer, drawTimer, resetUndo, pending = new Map();
+  const colors = { ally: '#1a7250', enemy: '#317e91', selected: '#c97021' };
+  try {
+    const saved = localStorage.getItem(storageKey);
+    if (saved) { const parsed = JSON.parse(saved); M.evaluateAll(parsed, seed.reference); state = parsed; }
+  } catch (_) { $('save-status').textContent = '使用项目初值'; }
+  if (state.ui) {
+    if (state.units.some(u => u.id === state.ui.selected)) selected = state.ui.selected;
+    hidden = new Set((Array.isArray(state.ui.hidden) ? state.ui.hidden : []).filter(id => seed.reference.unitIds.includes(id)));
+    if (['overview', 'editor', 'standard'].includes(state.ui.tab)) tab = state.ui.tab;
+    if (['team', 'power', 'upgraded', 'efficiency', 'gain'].includes(state.ui.sort)) sort = state.ui.sort;
+  }
+  const unit = () => state.units.find(u => u.id === selected);
+  const unitIndex = () => state.units.findIndex(u => u.id === selected);
+  const snapshot = () => ({ ...M.copy(state), ui: { selected, hidden: [...hidden], tab, sort } });
+  function toast(message) {
+    clearTimeout(toastTimer); $('toast').textContent = message; $('toast').hidden = false;
+    toastTimer = setTimeout(() => $('toast').hidden = true, 4200);
+  }
+  function error(message) { $('error').textContent = message; $('error').hidden = !message; }
+  function save() {
+    if (pending.size) return;
+    clearTimeout(saveTimer); $('save-status').textContent = '保存中…';
+    saveTimer = setTimeout(() => {
+      try { localStorage.setItem(storageKey, JSON.stringify(snapshot())); $('save-status').textContent = '已自动保存'; }
+      catch (_) { $('save-status').textContent = '请导出备份'; }
+    }, 350);
+  }
+  function calculate() {
+    if (pending.size) return false;
+    try { calculated = M.evaluateAll(state, seed.reference); lastValidState = M.copy(state); error(''); return true; }
+    catch (e) { error(e.message + '。结果暂保留最近有效值。'); return false; }
+  }
+  function field(path, label, value, spec = {}) {
+    const { min = 0, max = 100000, step = 1, percent = false, nullable = false, options, checkbox = false, text = false, array = false, help = '' } = spec;
+    const id = 'f-' + path.replace(/\./g, '-');
+    const attr = `id="${esc(id)}" data-path="${esc(path)}"`;
+    let input;
+    if (checkbox) input = `<input type="checkbox" ${attr} ${value ? 'checked' : ''}>`;
+    else if (options) input = `<select ${attr}>${options.map(([v, t]) => `<option value="${esc(v)}" ${v === value ? 'selected' : ''}>${esc(t)}</option>`).join('')}</select>`;
+    else if (array) input = `<input type="text" ${attr} value="${esc(JSON.stringify(value))}" data-levels="true">`;
+    else if (text) input = `<input type="text" ${attr} value="${esc(value)}" ${path.endsWith('.offsets') ? 'data-offsets="true"' : ''}>`;
+    else input = `<input type="number" ${attr} min="${min}" max="${max}" step="${step === 1 && !percent ? 1 : 'any'}" value="${value === null ? '' : compact(percent ? value * 100 : value)}" ${percent ? 'data-percent="true"' : ''} ${nullable ? 'data-nullable="true" placeholder="自动"' : ''}>`;
+    return `<label class="${checkbox ? 'checkline' : ''}" for="${id}">${checkbox ? input + esc(label) : esc(label) + input}${help ? '<span>' + esc(help) + '</span>' : ''}</label>`;
+  }
+  function renderEditor() {
+    const u = unit(), i = unitIndex(), path = `units.${i}`, p = u.plan;
+    $('base-fields').innerHTML = [
+      field(path + '.hp', '当前生命', u.hp, { min: 1, max: 10000000 }),
+      field(path + '.attack', '当前攻击', u.attack), field(path + '.defence', '当前防御', u.defence),
+      field(path + '.cost', '基础征召费用', u.cost, { max: 999 }),
+      field(path + '.dodge', '闪避率 %', u.dodge, { max: 100, step: 1, percent: true }),
+      field(path + '.departures', '累计退场加费', u.departures, { max: 999 }),
+      field(path + '.baseLevel', '当前已训练次数', u.baseLevel, { max: 99 }),
+      field(path + '.gameMax', '游戏训练次数上限', u.gameMax, { max: 99 }),
+      field(path + '.upgradePoints', '每次训练能力点', u.upgradePoints, { max: 999 }),
+      field(path + '.uptime', '输出在线率 %（留空自动）', u.uptime, { max: 100, step: 1, percent: true, nullable: true }),
+      field(path + '.counterNetDps', '反击净 DPS（待实测）', u.counterNetDps, { min: -100000, step: 0.1 }),
+      field(path + '.counterUnlock', '反击生效强化等级', u.counterUnlock, { array: true, help: '[0,1] 仅在等级0和1生效；[] 不生效' }),
+      field(path + '.hasCounter', '已配置闪避 / 反击技能', u.hasCounter, { checkbox: true })
+    ].join('');
+    const modes = u.team === 'team_a' ? [['training', '按游戏训练规则'], ['custom', '自定义成长']] : [['custom', '自定义成长（敌军预测）']];
+    let growth = [field(path + '.plan.mode', '成长模式', p.mode, { options: modes }), field(path + '.plan.levels', '比较升级 / 强化阶段', p.levels, { max: 20 })];
+    if (p.mode === 'training') {
+      growth.push(field(path + '.plan.attackAllocation', '每次训练：攻击点', p.attackAllocation, { max: 999 }),
+        field(path + '.plan.defenceAllocation', '每次训练：防御点', p.defenceAllocation, { max: 999 }));
+      $('training-help').textContent = `每次分配共 ${u.upgradePoints} 点。修改攻击点时防御点自动补齐；修改防御点时攻击点自动补齐。当前剩余游戏训练次数 ${Math.max(0, u.gameMax - u.baseLevel)}。`;
+    } else {
+      for (const [k, label] of [['hpStep', '每阶生命 +'], ['attackStep', '每阶攻击 +'], ['defenceStep', '每阶防御 +'], ['costStep', '每阶征召费用 +']])
+        growth.push(field(path + '.plan.' + k, label, p[k], { min: k === 'costStep' ? -999 : -100000, max: k === 'costStep' ? 999 : 100000 }));
+      for (const [k, label] of [['hpGrowth', '每阶生命增长 %'], ['attackGrowth', '每阶攻击增长 %'], ['defenceGrowth', '每阶防御增长 %']])
+        growth.push(field(path + '.plan.' + k, label, p[k], { min: -90, max: 200, step: 1, percent: true }));
+      growth.push(field(path + '.plan.dodgeStep', '每阶闪避 + 百分点', p.dodgeStep, { min: -100, max: 100, percent: true }));
+      $('training-help').textContent = '自定义成长全部按预测标记。百分比增长采用复利，固定增长线性叠加；这些设置不会自动成为游戏中的训练规则。';
+    }
+    $('plan-fields').innerHTML = growth.join('');
+    $('buff-fields').innerHTML = [
+      ...[['hpBuff', '额外生命 +'], ['attackBuff', '额外攻击 +'], ['defenceBuff', '额外防御 +']].map(([k, label]) => field(path + '.plan.' + k, label, p[k], { min: -100000 })),
+      field(path + '.plan.dodgeBuff', '额外闪避 + 百分点', p.dodgeBuff, { min: -100, max: 100, percent: true }),
+      field(path + '.plan.costBuff', '额外征召费用 +', p.costBuff, { min: -999, max: 999 }),
+      field(path + '.plan.buffEnergy', '额外强化牌总耗能', p.buffEnergy, { max: 999, step: 0.1 }),
+      field(path + '.plan.cooldownFactor', '冷却时长系数', p.cooldownFactor, { min: 0.1, max: 10, step: 0.05 }),
+      field(path + '.plan.animationFactor', '动作时长系数', p.animationFactor, { min: 0.1, max: 10, step: 0.05 }),
+      field(path + '.plan.outputFactor', '伤害与治疗输出系数', p.outputFactor, { max: 10, step: 0.05 })
+    ].join('');
+    $('skill-fields').innerHTML = u.skills.map((s, j) => {
+      const sp = path + '.skills.' + j;
+      if (s.kind.endsWith('_passive')) {
+        let parameters = [field(sp+'.unlock','生效强化等级',s.unlock,{array:true})];
+        if(s.kind==='combo_passive') parameters.push(field(sp+'.attack_bonus_per_hit','每命中攻击 +',s.attack_bonus_per_hit,{max:999}));
+        if(s.kind==='aura_passive') parameters.push(field(sp+'.aura_attack_bonus','庇护攻击 +',s.aura_attack_bonus,{max:999}),field(sp+'.aura_radius','庇护半径',s.aura_radius,{min:1,max:2000}),field(sp+'.aura_include_caster','包含自身',s.aura_include_caster,{checkbox:true}));
+        if(s.kind==='stealth_passive') parameters.push(field(sp+'.stealth_health_percent','触发生命百分比 %',s.stealth_health_percent,{min:1,max:100}),field(sp+'.stealth_duration','隐身秒数',s.stealth_duration,{min:.1,max:60,step:.1}));
+        return `<section class="skill"><h3>${esc(s.name)}<span class="pill">${kindName[s.kind]}</span></h3><div class="fields">${parameters.join('')}</div><p class="help">被动不占用施法时间。连击按参考目标死亡后清零；光环只计自身攻击收益；隐身收益暂未折分。</p></section>`;
+      }
+      const extras = s.kind === 'summon' ? [
+        field(sp + '.child', '召唤单位', s.child, { options: state.units.filter(v => v.team === u.team).map(v => [v.id, v.name]) }),
+        field(sp + '.summonDelay', '命中后的生成延迟 / 秒', s.summonDelay, { max: 120, step: 0.05 })
+      ] : [];
+      return `<section class="skill"><h3>${esc(s.name)}<span class="pill">${kindName[s.kind]}</span></h3><div class="fields">` + [
+        field(sp + '.rate', s.kind === 'heal' ? '治疗倍率' : '伤害倍率', s.rate, { max: 100, step: 0.05 }),
+        field(sp + '.cooldown', '冷却 / 秒', s.cooldown, { min: 0.05, max: 120, step: 0.05 }),
+        field(sp + '.duration', '动作占用 / 秒', s.duration, { min: 0.05, max: 120, step: 0.05 }),
+        field(sp + '.priority', '优先级', s.priority, { min: -999, max: 999 }),
+        field(sp + '.range', '施法射程', s.range, { max: 99999 }),
+        field(sp + '.unlock', '解锁强化等级', s.unlock, { array: true, help: '[0] 强化后失效；[1] 仅强化一次时生效' }),
+        field(sp + '.targets', '平均命中目标（留空自动）', s.targets, { min: 1, max: 50, step: 0.1, nullable: true }),
+        field(sp + '.offsets', '命中时间 / 秒', s.offsets.map(compact).join(', '), { text: true }), ...extras
+      ].join('') + '</div></section>';
+    }).join('') + (u.id === 'soldier' ? `<section class="skill"><h3>训练后剑矢<span class="pill">远程窗口</span></h3><div class="fields">` + [
+      field(path + '.sword.range', '剑矢射程', u.sword.range, { min: 1, max: 99999 }),
+      field(path + '.sword.duration', '发箭动作占用 / 秒', u.sword.duration, { min: 0.05, max: 120, step: 0.05 }),
+      field(path + '.sword.offset', '发箭时间 / 秒', u.sword.offset, { max: 120, step: 0.05 })
+    ].join('') + '</div><p class="help">与近战普通攻击共用冷却和倍率。远程窗口占比在“计算标准”中调整。</p></section>' : '');
+  }
+  const standardSpecs = [
+    ['window', '评估窗口 / 秒', 1, 120, 1], ['incoming', '参考来袭每击原伤', 1, 99999, 1], ['targetDefence', '参考对手防御', 0, 99999, 1],
+    ['eligible', '可闪避来袭占比 %', 0, 100, 1, true], ['targetDodge', '参考对手闪避 %', 0, 100, 1, true],
+    ['meleeUptime', '近战输出在线率 %', 0, 100, 1, true], ['rangedUptime', '远程输出在线率 %', 0, 100, 1, true],
+    ['areaTargets', '范围 / 冲刺平均目标', 1, 50, 0.1], ['pierceTargets', '直线穿透平均目标', 1, 50, 0.1],
+    ['healRealization', '治疗兑现率 %', 0, 100, 1, true], ['lifestealRealization', '吸血兑现率 %', 0, 100, 1, true],
+    ['healWeight', '有效治疗折算权重', 0, 5, 0.05], ['summonRealization', '召唤兑现率 %', 0, 100, 1, true],
+    ['swordFarShare', '士兵剑矢远程窗口占比 %', 0, 100, 1, true], ['costBonus', '每多一费的预算溢价 %', 0, 100, 1, true],['comboTargetHp','连击参考目标生命',1,10000000,1]
+  ];
+  function renderStandard() {
+    $('standard-fields').innerHTML = standardSpecs.map(([k, label, min, max, step, percent]) => field('model.' + k, label, state.model[k] ?? 100, { min, max, step, percent })).join('');
+  }
+  function orderedUnits() {
+    const values = [...state.units], r = id => calculated.result.get(id);
+    if (sort === 'team') return values.sort((a, b) => a.team.localeCompare(b.team) || seed.reference.unitIds.indexOf(a.id) - seed.reference.unitIds.indexOf(b.id));
+    const metric = u => sort === 'power' ? r(u.id).current.power : sort === 'upgraded' ? r(u.id).upgraded.power : sort === 'efficiency' ? r(u.id).upgraded.perCost ?? -1 : r(u.id).gain ?? -1;
+    return values.sort((a, b) => metric(b) - metric(a));
+  }
+  function renderTable() {
+    $('unit-rows').innerHTML = orderedUnits().map(u => {
+      const i = state.units.indexOf(u), p = `units.${i}`;
+      const cells = [['hp', 1, 10000000], ['attack', 0, 100000], ['defence', 0, 100000], ['cost', 0, 999], ['dodge', 0, 100]]
+        .map(([k, min, max]) => `<td><input type="number" data-path="${p}.${k}" data-field="${k}" aria-label="${esc(u.name)}${k === 'hp' ? '生命' : k === 'attack' ? '攻击' : k === 'defence' ? '防御' : k === 'cost' ? '费用' : '闪避百分比'}" min="${min}" max="${max}" step="${k === 'dodge' ? 'any' : 1}" value="${k === 'dodge' ? compact(u[k] * 100) : u[k]}" ${k === 'dodge' ? 'data-percent="true"' : ''}></td>`).join('');
+      return `<tr data-unit="${u.id}" class="${u.id === selected ? 'selected' : ''}"><td><button class="unit-name" data-edit-unit="${u.id}">${esc(u.name)}</button> <span class="dot ${u.team === 'team_b' ? 'enemy' : ''}"></span></td>${cells}<td class="power-cell" data-result="current"></td><td class="power-cell" data-result="upgraded"></td><td data-result="gain"></td><td data-result="fee"></td><td data-result="base-ratio"></td><td data-result="up-ratio"></td><td data-result="stage"></td></tr>`;
+    }).join('');
+    updateTableResults();
+  }
+  function updateTableResults() {
+    const maxPower = Math.max(...[...calculated.result.values()].flatMap(r => [r.current.power, r.upgraded.power]), 1);
+    for (const row of $('unit-rows').rows) {
+      const r = calculated.result.get(row.dataset.unit), u = state.units.find(v => v.id === row.dataset.unit);
+      const fill = (name, html) => row.querySelector(`[data-result="${name}"]`).innerHTML = html;
+      for (const [key, cls] of [['current', ''], ['upgraded', 'up']]) fill(key, `<span class="mono ${cls ? 'up-value' : ''}">${fmt(r[key].power)}</span><div class="power-bar ${cls}" style="width:${r[key].power / maxPower * 100}%"></div>`);
+      fill('gain', r.gain === null ? '—' : `${r.gain >= 0 ? '+' : ''}${fmt(r.gain * 100)}%`);
+      fill('fee', fmt(r.upgraded.recruitCost, 0)); fill('base-ratio', r.current.perCost === null ? '免费' : fmt(r.current.perCost));
+      fill('up-ratio', r.upgraded.perCost === null ? '免费' : fmt(r.upgraded.perCost));
+      fill('stage', `${u.plan.levels} 阶 · ${r.upgraded.forecast ? '预测' : u.plan.levels === 0 ? '当前' : '训练'}`);
+      row.classList.toggle('selected', row.dataset.unit === selected);
+    }
+  }
+  function renderLegend() {
+    $('curve-legend').innerHTML = state.units.map(u => `<label><input type="checkbox" data-series="${u.id}" ${hidden.has(u.id) ? '' : 'checked'}><span class="dot ${u.id === selected ? 'selected' : u.team === 'team_b' ? 'enemy' : ''}"></span><span data-selected="${u.id === selected}">${esc(u.name)}</span></label>`).join('');
+  }
+  function results() {
+    const u = unit(), r = calculated.result.get(selected), b = r.current, a = r.upgraded;
+    $('current-power').textContent = fmt(b.power);
+    $('upgraded-power').textContent = fmt(a.power);
+    $('current-detail').textContent = `${u.name} · 本体 ${fmt(b.bodyPower)}${b.summonPower ? ' + 召唤 ' + fmt(b.summonPower) : ''}`;
+    $('gain-detail').textContent = `${u.plan.levels} 阶 · ${a.forecast ? '预测' : u.plan.levels ? '游戏训练' : '当前'} · ${r.gain === null ? '基准输出为零' : '提升 ' + (r.gain >= 0 ? '+' : '') + fmt(r.gain * 100) + '%'}`;
+    $('cost-power').textContent = a.perCost === null ? '免费' : fmt(a.perCost);
+    $('cost-detail').textContent = `征召 ${fmt(a.recruitCost, 0)} 能量 · 计入额外强化后 ${a.perTotalEnergy === null ? '免费' : fmt(a.perTotalEnergy) + ' 战力/能量'}`;
+    $('team-tag').textContent = u.team === 'team_a' ? '己方' : '敌方'; $('team-tag').classList.toggle('enemy', u.team === 'team_b');
+    const note = u.team === 'team_b' ? '敌军没有玩家篝火训练入口。强化数值用于自定义配兵预测，费用为配置参考值。' : a.forecast ? '当前方案属于自定义成长或超出游戏训练上限，图表按预测标记。' : '训练按当前游戏规则计算，额外强化按你填写的增量估价。';
+    $('plan-note').textContent = note + (u.id === 'soldier' ? ' 士兵训练达到 1 次后启用剑矢，近战与远程输出按统一占比估价。' : '');
+    const breakdown = [
+      ['属性：生命 / 攻击 / 防御', `${b.attributes.hp} / ${b.attributes.attack} / ${b.attributes.defence}`, `${a.attributes.hp} / ${a.attributes.attack} / ${a.attributes.defence}`],
+      ['有效生命', fmt(b.ehp), fmt(a.ehp)], ['输出 DPS', fmt(b.dps, 2), fmt(a.dps, 2)], ['有效治疗 HPS', fmt(b.hps, 2), fmt(a.hps, 2)],
+      ['等效输出', fmt(b.output, 2), fmt(a.output, 2)], ['本体战力', fmt(b.bodyPower), fmt(a.bodyPower)], ['召唤贡献', fmt(b.summonPower), fmt(a.summonPower)],
+      ['征召能量（含退场加费）', fmt(b.recruitCost, 0), fmt(a.recruitCost, 0)], ['含额外强化总能量', fmt(b.totalEnergy), fmt(a.totalEnergy)],
+      ['总能量效率', b.perTotalEnergy === null ? '免费' : fmt(b.perTotalEnergy), a.perTotalEnergy === null ? '免费' : fmt(a.perTotalEnergy)],
+      ['费用预算参考', b.budget === null ? '—' : fmt(b.budget), a.budget === null ? '—' : fmt(a.budget)],
+      ['实际战力 / 费用预算', b.budgetRatio === null ? '—' : fmt(b.budgetRatio * 100) + '%', a.budgetRatio === null ? '—' : fmt(a.budgetRatio * 100) + '%']
+    ];
+    $('result-breakdown').innerHTML = `<table class="detail-table"><thead><tr><th>指标</th><th>当前</th><th>强化后</th></tr></thead><tbody>${breakdown.map(row => '<tr>' + row.map(v => '<td>' + esc(v) + '</td>').join('') + '</tr>').join('')}</tbody></table>` + [...new Set([...b.unpricedEffects,...a.unpricedEffects])].map(v=>'<p class="help">'+esc(v)+'</p>').join('');
+    const scheduleTable = (data, title) => `<h3>${esc(title)}</h3><table class="detail-table"><thead><tr><th>技能</th><th>开始 / 秒</th><th>结束 / 秒</th><th>窗口内命中</th><th>伤害 / 治疗</th></tr></thead><tbody>${data.trace.map(t => `<tr><td>${esc(t.name)}</td><td>${fmt(t.start, 2)}</td><td>${fmt(t.end, 2)}</td><td>${t.hits.map(h => fmt(h.time, 2)).join(', ') || '—'}</td><td>${fmt(t.hits.reduce((sum, h) => sum + (h.damage || 0), 0), 1)} / ${fmt(t.hits.reduce((sum, h) => sum + (h.healing || 0), 0), 1)}</td></tr>`).join('')}</tbody></table>`;
+    $('schedule-detail').innerHTML = a.swordMix ? scheduleTable(a.swordMix.near, '剑矢：近战窗口') + scheduleTable(a.swordMix.far, '剑矢：远程窗口，占比 ' + fmt(a.swordMix.share * 100, 0) + '%') : scheduleTable(a, '标准输出窗口');
+    const base = calculated.baseline;
+    $('baseline-detail').textContent = `当前比较环境中的固定基准：士兵生命 ${seed.reference.soldier.hp} / 攻击 ${seed.reference.soldier.attack} / 防御 ${seed.reference.soldier.defence}，有效生命 ${fmt(base.ehp)}，等效输出 ${fmt(base.output, 4)}。`;
+    updateTableResults();
+    drawCharts();
+  }
+  function svgEl(tag, attrs, text) {
+    const el = document.createElementNS('http://www.w3.org/2000/svg', tag);
+    for (const [k, v] of Object.entries(attrs)) el.setAttribute(k, v);
+    if (text !== undefined) el.textContent = text;
+    return el;
+  }
+  function drawChart(id, metric) {
+    const svg = $(id), width = svg.getBoundingClientRect().width;
+    if (width < 100) return;
+    const height = svg.getBoundingClientRect().height, left = 64, right = 20, top = 15, bottom = 44;
+    const maxStage = Math.max(state.curveMax, ...state.units.map(u => u.plan.levels));
+    const visible = state.units.filter(u => !hidden.has(u.id));
+    const points = visible.flatMap(u => calculated.result.get(u.id).curve.map(r => r[metric]).filter(v => v !== null));
+    const rawMax = Math.max(...points, 1), magnitude = Math.pow(10, Math.floor(Math.log10(rawMax))), ceil = Math.ceil(rawMax / magnitude * 5) / 5 * magnitude;
+    const maxY = ceil * 1.08;
+    const x = n => left + n / maxStage * (width - left - right), y = n => height - bottom - n / maxY * (height - top - bottom);
+    svg.replaceChildren(); svg.setAttribute('viewBox', `0 0 ${width} ${height}`);
+    svg.append(svgEl('title', {}, metric === 'power' ? '单位战力成长曲线' : '单位征召战费比成长曲线'));
+    for (let i = 0; i <= 4; i++) {
+      const val = maxY * i / 4, yy = y(val);
+      svg.append(svgEl('line', { x1: left, x2: width - right, y1: yy, y2: yy, class: 'grid' }));
+      svg.append(svgEl('text', { x: left - 10, y: yy + 4, 'text-anchor': 'end' }, fmt(val, val > 100 ? 0 : 1)));
+    }
+    const tickStep = Math.max(1, Math.ceil(maxStage / (width < 420 ? 4 : 6)));
+    const ticks = new Set([0, maxStage]); for (let n = 0; n <= maxStage; n += tickStep) ticks.add(n);
+    [...ticks].sort((a, b) => a - b).forEach(n => svg.append(svgEl('text', { x: x(n), y: height - bottom + 20, 'text-anchor': 'middle' }, n)));
+    svg.append(svgEl('text', { x: width - right, y: height - 3, 'text-anchor': 'end' }, '强化阶段（次）'));
+    svg.append(svgEl('text', { x: left, y: 10 }, metric === 'power' ? '战力（分）' : '战力 / 能量'));
+    // Draw the selected series last so it remains readable among all 21 units.
+    for (const u of [...visible.filter(u => u.id !== selected), ...visible.filter(u => u.id === selected)]) {
+      const data = calculated.result.get(u.id).curve, color = u.id === selected ? colors.selected : u.team === 'team_a' ? colors.ally : colors.enemy;
+      for (let n = 1; n < data.length; n++) {
+        if (data[n - 1][metric] === null || data[n][metric] === null) continue;
+        svg.append(svgEl('path', { d: `M${x(n - 1)},${y(data[n - 1][metric])}L${x(n)},${y(data[n][metric])}`, stroke: color,
+          class: 'series' + (u.id === selected ? ' selected' : ''), 'stroke-dasharray': data[n].forecast ? '5 4' : 'none', 'data-unit-series': u.id }));
+      }
+      if (u.id === selected) for (const r of data) if (r[metric] !== null) svg.append(svgEl('circle', { cx: x(r.stage), cy: y(r[metric]), r: r.stage === u.plan.levels ? 5 : 3, fill: color }));
+    }
+    const guide = svgEl('line', { x1: left, x2: left, y1: top, y2: height - bottom, class: 'guide', visibility: 'hidden' });
+    svg.append(guide);
+    const hit = svgEl('rect', { x: left, y: top, width: width - left - right, height: height - top - bottom, class: 'hit' });
+    const show = e => {
+      const bounds = svg.getBoundingClientRect(), pos = Math.max(left, Math.min(width - right, e.clientX - bounds.left));
+      const n = (pos - left) / (width - left - right) * maxStage;
+      guide.setAttribute('x1', pos); guide.setAttribute('x2', pos); guide.setAttribute('visibility', 'visible');
+      const vals = visible.map(u => {
+        const curve = calculated.result.get(u.id).curve, lo = Math.floor(n), hi = Math.min(lo + 1, curve.length - 1);
+        const a = curve[lo]?.[metric], b = curve[hi]?.[metric];
+        return { u, value: a === null || a === undefined || b === null || b === undefined ? null : a + (b - a) * (n - lo) };
+      }).sort((a, b) => (b.value ?? -1) - (a.value ?? -1));
+      $('chart-tooltip').innerHTML = `<div class="tip-title">阶段 ${fmt(n, 2)} · ${metric === 'power' ? '战力' : '战费比'} <span class="muted">（连线插值）</span></div>` + vals.map(v => `<div class="tiprow ${v.u.id === selected ? 'sel' : ''}"><span>${esc(v.u.name)}</span><span>${v.value === null ? '免费' : fmt(v.value)}</span></div>`).join('');
+      const tip = $('chart-tooltip'); tip.hidden = false;
+      const tw = tip.offsetWidth, th = tip.offsetHeight;
+      tip.style.left = Math.max(8, Math.min(window.innerWidth - tw - 8, e.clientX + 14)) + 'px';
+      tip.style.top = Math.max(8, Math.min(window.innerHeight - th - 8, e.clientY + 14)) + 'px';
+    };
+    hit.addEventListener('pointermove', show);
+    hit.addEventListener('pointerleave', () => { guide.setAttribute('visibility', 'hidden'); $('chart-tooltip').hidden = true; });
+    hit.addEventListener('click', e => { show(e); }); svg.append(hit);
+  }
+  function drawCharts() { if (tab === 'overview') { drawChart('power-chart', 'power'); drawChart('cost-chart', 'perCost'); } }
+  function select(id, editor = false) {
+    if (pending.size) { toast('请先修正当前无效输入，再切换单位。'); return; }
+    selected = id; $('selected-unit').value = id;
+    if (editor) setTab('editor', false);
+    renderEditor(); renderLegend(); results(); save();
+  }
+  function setTab(next, persist = true) {
+    tab = next;
+    for (const name of ['overview', 'editor', 'standard']) { $('view-' + name).hidden = name !== tab; $('tab-' + name).setAttribute('aria-selected', String(name === tab)); }
+    drawCharts(); if (persist) save();
+  }
+  function renderAll() {
+    $('selected-unit').innerHTML = ['team_a', 'team_b'].map(team => `<optgroup label="${team === 'team_a' ? '己方单位' : '敌方单位'}">${state.units.filter(u => u.team === team).map(u => `<option value="${u.id}">${esc(u.name)}</option>`).join('')}</optgroup>`).join('');
+    $('selected-unit').value = selected; $('curve-max').value = state.curveMax; $('sort-units').value = sort;
+    $('bulk-levels').value = state.units.every(u => u.plan.levels === state.units[0].plan.levels) ? state.units[0].plan.levels : '';
+    $('bulk-levels').placeholder = '混合';
+    renderEditor(); renderStandard(); renderTable(); renderLegend(); setTab(tab, false); results();
+  }
+  function updateInput(e) {
+    const input = e.target, path = input.dataset.path;
+    if (!path) return;
+    const keys = path.split('.'), key = keys.pop(); let object = state;
+    for (const k of keys) object = object[k];
+    let value;
+    if (input.type === 'checkbox') value = input.checked;
+    else if (input.dataset.levels) {
+      try { value = JSON.parse(input.value); if (!Array.isArray(value)) value = null; }
+      catch (_) { value = null; }
+    }
+    else if (input.dataset.offsets) value = input.value.split(',').map(v => v.trim()).map(v => v === '' ? NaN : Number(v));
+    else if (input.tagName === 'SELECT') value = input.value;
+    else if (input.type === 'text') value = input.value;
+    else if (input.value.trim() === '') value = input.dataset.nullable ? null : NaN;
+    else value = Number(input.value) / (input.dataset.percent ? 100 : 1);
+    object[key] = value;
+    const match = path.match(/^units\.(\d+)\.plan\.(attackAllocation|defenceAllocation)$/);
+    if (match) {
+      const u = state.units[Number(match[1])], other = key === 'attackAllocation' ? 'defenceAllocation' : 'attackAllocation';
+      u.plan[other] = u.upgradePoints - value;
+    }
+    const pointMatch = path.match(/^units\.(\d+)\.upgradePoints$/);
+    if (pointMatch) { const u = state.units[Number(pointMatch[1])]; u.plan.attackAllocation = value; u.plan.defenceAllocation = 0; }
+    try {
+      const next = M.evaluateAll(state, seed.reference);
+      pending.clear(); calculated = next;
+      lastValidState = M.copy(state);
+      input.removeAttribute('aria-invalid');
+      document.querySelectorAll('[aria-invalid="true"][data-path]').forEach(el => el.removeAttribute('aria-invalid'));
+      error('');
+      // Mirror duplicate base inputs while preserving the focused input/caret.
+      document.querySelectorAll('[data-path]').forEach(el => {
+        if (el === input || el.dataset.path !== path) return;
+        if (el.type === 'checkbox') el.checked = value;
+        else el.value = value === null ? '' : el.dataset.levels ? JSON.stringify(value) : el.dataset.percent ? value * 100 : value;
+      });
+      if (match) {
+        const u = state.units[Number(match[1])];
+        for (const k of ['attackAllocation', 'defenceAllocation']) {
+          const el = document.querySelector(`[data-path="units.${match[1]}.plan.${k}"]`); if (el && el !== input) el.value = u.plan[k];
+        }
+      }
+      if (key === 'mode' || pointMatch) renderEditor();
+      results(); save();
+    } catch (err) {
+      pending.set(path, err.message); clearTimeout(saveTimer);
+      $('save-status').textContent = '有无效输入'; input.setAttribute('aria-invalid', 'true');
+      error(err.message + '。结果暂保留最近有效值，输入尚未保存。');
+    }
+  }
+  function download(name, data, type) {
+    const a = document.createElement('a'), url = URL.createObjectURL(new Blob([data], { type }));
+    a.href = url; a.download = name; document.body.append(a); a.click(); a.remove(); setTimeout(() => URL.revokeObjectURL(url), 2000);
+  }
+  function validExport() { if (pending.size) { toast('请先修正无效输入再导出。'); return false; } return true; }
+  document.addEventListener('input', updateInput);
+  document.addEventListener('change', e => { if (e.target.tagName === 'SELECT' || e.target.type === 'checkbox') updateInput(e); });
+  document.addEventListener('click', e => { const button = e.target.closest('[data-edit-unit]'); if (button) select(button.dataset.editUnit, true); });
+  $('selected-unit').addEventListener('change', e => { const id = e.target.value; select(id); if (pending.size) e.target.value = selected; });
+  document.querySelectorAll('[data-tab]').forEach(el => el.addEventListener('click', () => setTab(el.dataset.tab)));
+  $('curve-legend').addEventListener('change', e => { const id = e.target.dataset.series; if (!id) return; if (e.target.checked) hidden.delete(id); else hidden.add(id); drawCharts(); save(); });
+  $('show-all').addEventListener('click', () => { hidden.clear(); renderLegend(); drawCharts(); save(); });
+  $('show-selected').addEventListener('click', () => { hidden = new Set(state.units.filter(u => u.id !== selected).map(u => u.id)); renderLegend(); drawCharts(); save(); });
+  $('sort-units').addEventListener('change', e => { sort = e.target.value; renderTable(); save(); });
+  $('curve-max').addEventListener('input', e => {
+    const value = Number(e.target.value);
+    if (!e.target.value || !Number.isInteger(value) || value < 1 || value > 20) { e.target.setAttribute('aria-invalid', 'true'); return; }
+    e.target.removeAttribute('aria-invalid'); state.curveMax = value; if (calculate()) { drawCharts(); save(); }
+  });
+  $('apply-levels').addEventListener('click', () => {
+    if (!validExport()) return;
+    const value = Number($('bulk-levels').value);
+    if (!$('bulk-levels').value || !Number.isInteger(value) || value < 0 || value > 20) { toast('全员比较阶段应为 0～20 的整数。'); return; }
+    state.units.forEach(u => u.plan.levels = value); if (calculate()) { renderAll(); save(); toast(`全员比较阶段已设为 ${value}。`); }
+  });
+  $('export-json').addEventListener('click', () => { if (validExport()) download('单位战力方案.json', JSON.stringify(snapshot(), null, 2), 'application/json;charset=utf-8'); });
+  $('import-json').addEventListener('click', () => $('import-file').click());
+  $('import-file').addEventListener('change', async e => {
+    const file = e.target.files[0]; if (!file) return;
+    try {
+      if (file.size > 1000000) throw new Error('方案文件超过 1 MB');
+      const imported = JSON.parse(await file.text()); const next = M.evaluateAll(imported, seed.reference);
+      state = imported; lastValidState = M.copy(state); calculated = next; pending.clear(); selected = state.units.some(u => u.id === imported.ui?.selected) ? imported.ui.selected : 'soldier';
+      hidden.clear(); renderAll(); save(); toast('方案已导入，全部单位与曲线已更新。');
+    } catch (err) { toast('导入失败：' + err.message); }
+    e.target.value = '';
+  });
+  $('download-html').addEventListener('click', () => {
+    if (!validExport()) return;
+    const clone = document.documentElement.cloneNode(true), savedSeed = M.copy(seed);
+    savedSeed.initialState = snapshot(); savedSeed.storageId = 'unit-power-calc-v1-' + Date.now();
+    clone.querySelector('#calculator-seed').textContent = JSON.stringify(savedSeed).replace(/</g, '\\u003c');
+    clone.querySelector('#chart-tooltip').hidden = true; clone.querySelector('#toast').hidden = true;
+    download('单位战力计算器_当前方案.html', '<!doctype html>\n' + clone.outerHTML, 'text/html;charset=utf-8');
+    toast('副本包含全部单位、当前输入与固定基准，可离线打开。');
+  });
+  $('reset').addEventListener('click', () => {
+    if ($('reset').dataset.undo === 'yes') { state = resetUndo; $('reset').dataset.undo = ''; $('reset').textContent = '恢复项目初值'; }
+    else { resetUndo = M.copy(lastValidState); state = M.copy(seed.defaults); $('reset').dataset.undo = 'yes'; $('reset').textContent = '撤销恢复'; }
+    pending.clear(); selected = 'soldier'; hidden.clear(); calculate(); renderAll(); save(); toast('已更新，可用“撤销恢复”取回上一方案。');
+  });
+  const resize = new ResizeObserver(() => { clearTimeout(drawTimer); drawTimer = setTimeout(drawCharts, 70); });
+  resize.observe($('power-chart')); resize.observe($('cost-chart'));
+  window.addEventListener('scroll', () => $('chart-tooltip').hidden = true, { passive: true });
+  $('snapshot-label').textContent = '项目初值 · ' + seed.date;
+  $('source-info').textContent = seed.version + ' · ' + seed.sourceCount + ' 项资源读取校验 · 固定基准士兵 100 分';
+  if (calculate()) { renderAll(); $('save-status').textContent = '本地自动保存'; }
+  window.UnitPowerCalculator = { getState: snapshot, getResults: () => calculated, getSeed: () => M.copy(seed) };
+})();
+</script>
+</body>
+</html>

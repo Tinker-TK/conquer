@@ -1,0 +1,2582 @@
+[
+  {
+    "file": "icons/crossed_swords.png",
+    "width": 256,
+    "height": 256,
+    "transparent_pixels": 42374,
+    "opaque_pixels": 202,
+    "sources": [
+      "raw\\icons\\crossed_swords.png"
+    ],
+    "method": "preserved_alpha"
+  },
+  {
+    "file": "icons/crown.png",
+    "width": 256,
+    "height": 256,
+    "transparent_pixels": 35043,
+    "opaque_pixels": 30493,
+    "sources": [
+      "raw\\icons\\crown.png"
+    ],
+    "method": "border_flood_and_chroma_key"
+  },
+  {
+    "file": "icons/deck_book.png",
+    "width": 256,
+    "height": 256,
+    "transparent_pixels": 28710,
+    "opaque_pixels": 36826,
+    "sources": [
+      "raw\\icons\\deck_book.png"
+    ],
+    "method": "border_flood_and_chroma_key"
+  },
+  {
+    "file": "icons/equipment_armor.png",
+    "width": 256,
+    "height": 256,
+    "transparent_pixels": 26671,
+    "opaque_pixels": 38865,
+    "sources": [
+      "raw\\icons\\equipment_armor.png"
+    ],
+    "method": "border_flood_and_chroma_key"
+  },
+  {
+    "file": "icons/equipment_potion.png",
+    "width": 256,
+    "height": 256,
+    "transparent_pixels": 51446,
+    "opaque_pixels": 72,
+    "sources": [
+      "raw\\icons\\equipment_potion.png"
+    ],
+    "method": "preserved_alpha"
+  },
+  {
+    "file": "icons/equipment_sword.png",
+    "width": 256,
+    "height": 256,
+    "transparent_pixels": 46674,
+    "opaque_pixels": 18862,
+    "sources": [
+      "raw\\icons\\equipment_sword.png"
+    ],
+    "method": "border_flood_and_chroma_key"
+  },
+  {
+    "file": "icons/gear.png",
+    "width": 256,
+    "height": 256,
+    "transparent_pixels": 39993,
+    "opaque_pixels": 55,
+    "sources": [
+      "raw\\icons\\gear.png"
+    ],
+    "method": "preserved_alpha"
+  },
+  {
+    "file": "icons/gold_coin.png",
+    "width": 256,
+    "height": 256,
+    "transparent_pixels": 29222,
+    "opaque_pixels": 62,
+    "sources": [
+      "raw\\icons\\gold_coin.png"
+    ],
+    "method": "preserved_alpha_blank_coin_face"
+  },
+  {
+    "file": "icons/heart.png",
+    "width": 256,
+    "height": 256,
+    "transparent_pixels": 36743,
+    "opaque_pixels": 50,
+    "sources": [
+      "raw\\icons\\heart.png"
+    ],
+    "method": "preserved_alpha"
+  },
+  {
+    "file": "icons/map.png",
+    "width": 256,
+    "height": 256,
+    "transparent_pixels": 29278,
+    "opaque_pixels": 36258,
+    "sources": [
+      "raw\\icons\\map.png"
+    ],
+    "method": "preserved_alpha"
+  },
+  {
+    "file": "icons/relic_boot.png",
+    "width": 256,
+    "height": 256,
+    "transparent_pixels": 31069,
+    "opaque_pixels": 34467,
+    "sources": [
+      "raw\\icons\\relic_boot.png"
+    ],
+    "method": "border_flood_and_chroma_key"
+  },
+  {
+    "file": "icons/relic_clover.png",
+    "width": 256,
+    "height": 256,
+    "transparent_pixels": 41541,
+    "opaque_pixels": 100,
+    "sources": [
+      "raw\\icons\\relic_clover.png"
+    ],
+    "method": "preserved_alpha"
+  },
+  {
+    "file": "icons/relic_crystal.png",
+    "width": 256,
+    "height": 256,
+    "transparent_pixels": 40831,
+    "opaque_pixels": 24705,
+    "sources": [
+      "raw\\icons\\relic_crystal.png"
+    ],
+    "method": "border_flood_and_chroma_key"
+  },
+  {
+    "file": "icons/relic_leaf.png",
+    "width": 256,
+    "height": 256,
+    "transparent_pixels": 36081,
+    "opaque_pixels": 29455,
+    "sources": [
+      "raw\\icons\\relic_leaf.png"
+    ],
+    "method": "border_flood_and_chroma_key"
+  },
+  {
+    "file": "icons/relic_mushroom.png",
+    "width": 256,
+    "height": 256,
+    "transparent_pixels": 30194,
+    "opaque_pixels": 35342,
+    "sources": [
+      "raw\\icons\\relic_mushroom.png"
+    ],
+    "method": "border_flood_and_chroma_key"
+  },
+  {
+    "file": "icons/relic_ring.png",
+    "width": 256,
+    "height": 256,
+    "transparent_pixels": 39131,
+    "opaque_pixels": 26405,
+    "sources": [
+      "raw\\icons\\relic_ring.png"
+    ],
+    "method": "border_flood_and_chroma_key_center_hole"
+  },
+  {
+    "file": "status/healing.png",
+    "width": 256,
+    "height": 256,
+    "transparent_pixels": 30411,
+    "opaque_pixels": 35125,
+    "sources": [
+      "raw\\status\\healing.png"
+    ],
+    "method": "border_flood_and_chroma_key"
+  },
+  {
+    "file": "status/shield.png",
+    "width": 256,
+    "height": 256,
+    "transparent_pixels": 35161,
+    "opaque_pixels": 30375,
+    "sources": [
+      "raw\\status\\shield.png"
+    ],
+    "method": "border_flood_and_chroma_key"
+  },
+  {
+    "file": "status/skull.png",
+    "width": 256,
+    "height": 256,
+    "transparent_pixels": 26075,
+    "opaque_pixels": 39461,
+    "sources": [
+      "raw\\status\\skull.png"
+    ],
+    "method": "border_flood_and_chroma_key"
+  },
+  {
+    "file": "status/tree.png",
+    "width": 256,
+    "height": 256,
+    "transparent_pixels": 37840,
+    "opaque_pixels": 27696,
+    "sources": [
+      "raw\\status\\tree.png"
+    ],
+    "method": "border_flood_and_chroma_key"
+  },
+  {
+    "file": "units/archer.png",
+    "width": 512,
+    "height": 512,
+    "transparent_pixels": 143837,
+    "opaque_pixels": 118307,
+    "sources": [
+      "raw\\units\\archer.png"
+    ],
+    "method": "border_flood_and_chroma_key"
+  },
+  {
+    "file": "units/goblin.png",
+    "width": 512,
+    "height": 512,
+    "transparent_pixels": 151369,
+    "opaque_pixels": 110775,
+    "sources": [
+      "raw\\units\\goblin.png"
+    ],
+    "method": "border_flood_and_chroma_key"
+  },
+  {
+    "file": "units/knight.png",
+    "width": 512,
+    "height": 512,
+    "transparent_pixels": 128821,
+    "opaque_pixels": 133323,
+    "sources": [
+      "raw\\units\\knight.png"
+    ],
+    "method": "border_flood_and_chroma_key"
+  },
+  {
+    "file": "units/priest.png",
+    "width": 512,
+    "height": 512,
+    "transparent_pixels": 124890,
+    "opaque_pixels": 137254,
+    "sources": [
+      "raw\\units\\priest.png"
+    ],
+    "method": "border_flood_and_chroma_key"
+  },
+  {
+    "file": "components/gold_button.png",
+    "width": 1024,
+    "height": 360,
+    "transparent_pixels": 93090,
+    "opaque_pixels": 113,
+    "sources": [
+      "raw\\surfaces\\gold_button.png"
+    ],
+    "method": "preserved_alpha"
+  },
+  {
+    "file": "components/chapter_banner.png",
+    "width": 1280,
+    "height": 280,
+    "transparent_pixels": 103428,
+    "opaque_pixels": 254972,
+    "sources": [
+      "raw\\surfaces\\chapter_banner.png"
+    ],
+    "method": "border_flood_and_chroma_key"
+  },
+  {
+    "file": "components/dark_panel.png",
+    "width": 1000,
+    "height": 440,
+    "transparent_pixels": 74685,
+    "opaque_pixels": 365315,
+    "sources": [
+      "raw\\surfaces\\dark_panel.png"
+    ],
+    "method": "border_flood_and_chroma_key"
+  },
+  {
+    "file": "components/energy_orb.png",
+    "width": 512,
+    "height": 512,
+    "transparent_pixels": 119728,
+    "opaque_pixels": 262,
+    "sources": [
+      "raw\\surfaces\\energy_orb.png"
+    ],
+    "method": "preserved_alpha"
+  },
+  {
+    "file": "components/parchment_card.png",
+    "width": 768,
+    "height": 1024,
+    "transparent_pixels": 65480,
+    "opaque_pixels": 720952,
+    "sources": [
+      "raw\\surfaces\\parchment_card.png"
+    ],
+    "method": "border_flood_and_chroma_key"
+  },
+  {
+    "file": "components/cost_badge.png",
+    "width": 256,
+    "height": 256,
+    "transparent_pixels": 32564,
+    "opaque_pixels": 32972,
+    "sources": [
+      "raw\\surfaces\\cost_badge.png"
+    ],
+    "method": "border_flood_and_chroma_key"
+  },
+  {
+    "file": "components/draw_book.png",
+    "width": 512,
+    "height": 512,
+    "transparent_pixels": 91572,
+    "opaque_pixels": 170572,
+    "sources": [
+      "raw\\surfaces\\draw_book.png"
+    ],
+    "method": "border_flood_and_chroma_key"
+  },
+  {
+    "file": "components/discard_book.png",
+    "width": 512,
+    "height": 512,
+    "transparent_pixels": 94081,
+    "opaque_pixels": 168063,
+    "sources": [
+      "raw\\surfaces\\discard_book.png"
+    ],
+    "method": "border_flood_and_chroma_key"
+  },
+  {
+    "file": "components/health_bar.png",
+    "width": 768,
+    "height": 128,
+    "transparent_pixels": 83554,
+    "opaque_pixels": 12,
+    "sources": [
+      "raw\\surfaces\\health_bar.png"
+    ],
+    "method": "preserved_alpha"
+  },
+  {
+    "file": "components/toggle.png",
+    "width": 512,
+    "height": 256,
+    "transparent_pixels": 40541,
+    "opaque_pixels": 90531,
+    "sources": [
+      "raw\\surfaces\\toggle.png"
+    ],
+    "method": "border_flood_and_chroma_key"
+  },
+  {
+    "file": "components/crown_backplate.png",
+    "width": 384,
+    "height": 512,
+    "transparent_pixels": 50347,
+    "opaque_pixels": 146261,
+    "sources": [
+      "raw\\surfaces\\crown_backplate.png"
+    ],
+    "method": "border_flood_and_chroma_key"
+  },
+  {
+    "file": "components/card_frame_red.png",
+    "width": 768,
+    "height": 1024,
+    "transparent_pixels": 558719,
+    "opaque_pixels": 227713,
+    "sources": [
+      "drafts/card_frame_red_not_transparent.png"
+    ],
+    "method": "border_flood_and_chroma_key_center_hole"
+  },
+  {
+    "file": "panels/top_bar.png",
+    "width": 2048,
+    "height": 128,
+    "transparent_pixels": 72805,
+    "opaque_pixels": 189339,
+    "sources": [
+      "components/dark_panel.png"
+    ],
+    "method": "resized_complete_panel"
+  },
+  {
+    "file": "panels/stat_panel.png",
+    "width": 768,
+    "height": 224,
+    "transparent_pixels": 41861,
+    "opaque_pixels": 130171,
+    "sources": [
+      "components/dark_panel.png"
+    ],
+    "method": "resized_complete_panel"
+  },
+  {
+    "file": "panels/navigation_button.png",
+    "width": 512,
+    "height": 224,
+    "transparent_pixels": 28855,
+    "opaque_pixels": 85833,
+    "sources": [
+      "components/dark_panel.png"
+    ],
+    "method": "resized_complete_panel"
+  },
+  {
+    "file": "panels/phase_panel.png",
+    "width": 768,
+    "height": 224,
+    "transparent_pixels": 41861,
+    "opaque_pixels": 130171,
+    "sources": [
+      "components/dark_panel.png"
+    ],
+    "method": "resized_complete_panel"
+  },
+  {
+    "file": "panels/speed_button_blank.png",
+    "width": 320,
+    "height": 224,
+    "transparent_pixels": 19079,
+    "opaque_pixels": 52601,
+    "sources": [
+      "components/dark_panel.png"
+    ],
+    "method": "resized_complete_panel"
+  },
+  {
+    "file": "panels/auto_row_blank.png",
+    "width": 640,
+    "height": 160,
+    "transparent_pixels": 27633,
+    "opaque_pixels": 74767,
+    "sources": [
+      "components/dark_panel.png"
+    ],
+    "method": "resized_complete_panel"
+  },
+  {
+    "file": "panels/battle_control_panel.png",
+    "width": 1000,
+    "height": 440,
+    "transparent_pixels": 93776,
+    "opaque_pixels": 346224,
+    "sources": [
+      "components/dark_panel.png"
+    ],
+    "method": "resized_complete_panel"
+  },
+  {
+    "file": "panels/pile_backplate.png",
+    "width": 512,
+    "height": 320,
+    "transparent_pixels": 38387,
+    "opaque_pixels": 125453,
+    "sources": [
+      "components/dark_panel.png"
+    ],
+    "method": "resized_complete_panel"
+  },
+  {
+    "file": "components/card_frame_blue.png",
+    "width": 768,
+    "height": 1024,
+    "transparent_pixels": 558719,
+    "opaque_pixels": 227713,
+    "sources": [
+      "components/card_frame_red.png"
+    ],
+    "method": "palette_variant"
+  },
+  {
+    "file": "components/card_frame_green.png",
+    "width": 768,
+    "height": 1024,
+    "transparent_pixels": 558719,
+    "opaque_pixels": 227713,
+    "sources": [
+      "components/card_frame_red.png"
+    ],
+    "method": "palette_variant"
+  },
+  {
+    "file": "components/card_frame_gold.png",
+    "width": 768,
+    "height": 1024,
+    "transparent_pixels": 558719,
+    "opaque_pixels": 227713,
+    "sources": [
+      "components/card_frame_red.png"
+    ],
+    "method": "palette_variant"
+  },
+  {
+    "file": "health/10_fill.png",
+    "width": 768,
+    "height": 128,
+    "transparent_pixels": 90769,
+    "opaque_pixels": 0,
+    "sources": [
+      "components/health_bar.png"
+    ],
+    "method": "color_mask_full_layer",
+    "anchor": [
+      0,
+      0
+    ]
+  },
+  {
+    "file": "health/20_border.png",
+    "width": 768,
+    "height": 128,
+    "transparent_pixels": 91089,
+    "opaque_pixels": 12,
+    "sources": [
+      "components/health_bar.png"
+    ],
+    "method": "color_mask_full_layer",
+    "anchor": [
+      0,
+      0
+    ]
+  },
+  {
+    "file": "health/00_empty_bar.png",
+    "width": 768,
+    "height": 128,
+    "transparent_pixels": 83554,
+    "opaque_pixels": 12,
+    "sources": [
+      "components/health_bar.png"
+    ],
+    "method": "color_mask_full_layer",
+    "anchor": [
+      0,
+      0
+    ]
+  },
+  {
+    "file": "energy/00_core.png",
+    "width": 512,
+    "height": 512,
+    "transparent_pixels": 150531,
+    "opaque_pixels": 111597,
+    "sources": [
+      "components/energy_orb.png"
+    ],
+    "method": "extended_blue_core",
+    "anchor": [
+      0,
+      0
+    ]
+  },
+  {
+    "file": "energy/10_rim.png",
+    "width": 512,
+    "height": 512,
+    "transparent_pixels": 192021,
+    "opaque_pixels": 262,
+    "sources": [
+      "components/energy_orb.png"
+    ],
+    "method": "isolated_gold_rim",
+    "anchor": [
+      0,
+      0
+    ]
+  },
+  {
+    "file": "badges/counter_red.png",
+    "width": 256,
+    "height": 256,
+    "transparent_pixels": 32564,
+    "opaque_pixels": 32972,
+    "sources": [
+      "components/cost_badge.png"
+    ],
+    "method": "blank_badge_variant"
+  },
+  {
+    "file": "badges/badge_navy.png",
+    "width": 256,
+    "height": 256,
+    "transparent_pixels": 32564,
+    "opaque_pixels": 32972,
+    "sources": [
+      "components/cost_badge.png"
+    ],
+    "method": "blank_badge_variant"
+  },
+  {
+    "file": "controls/selected_border.png",
+    "width": 320,
+    "height": 224,
+    "transparent_pixels": 52610,
+    "opaque_pixels": 25,
+    "sources": [
+      "components/gold_button.png"
+    ],
+    "method": "blank_selection_overlay"
+  },
+  {
+    "file": "controls/pause_symbol.png",
+    "width": 256,
+    "height": 256,
+    "transparent_pixels": 52486,
+    "opaque_pixels": 13050,
+    "sources": [],
+    "method": "local_geometric_symbol"
+  },
+  {
+    "file": "controls/toggle_track.png",
+    "width": 512,
+    "height": 256,
+    "transparent_pixels": 40538,
+    "opaque_pixels": 90534,
+    "sources": [
+      "components/toggle.png"
+    ],
+    "method": "mirrored_unoccluded_track"
+  },
+  {
+    "file": "controls/toggle_knob.png",
+    "width": 224,
+    "height": 224,
+    "transparent_pixels": 18115,
+    "opaque_pixels": 32061,
+    "sources": [
+      "components/toggle.png"
+    ],
+    "method": "isolated_knob"
+  },
+  {
+    "file": "card_art/summon_guard_subject.png",
+    "width": 768,
+    "height": 768,
+    "transparent_pixels": 384252,
+    "opaque_pixels": 791,
+    "sources": [
+      "raw\\card_art\\summon_guard_subject.png"
+    ],
+    "method": "preserved_alpha"
+  },
+  {
+    "file": "card_art/summon_guard_background.png",
+    "width": 768,
+    "height": 768,
+    "transparent_pixels": 0,
+    "opaque_pixels": 589824,
+    "sources": [
+      "raw\\card_art\\summon_guard_background.png"
+    ],
+    "method": "complete_background_redraw",
+    "intentional_opaque": true
+  },
+  {
+    "file": "cards/summon_guard/00_backplate.png",
+    "width": 768,
+    "height": 1024,
+    "transparent_pixels": 192016,
+    "opaque_pixels": 594416,
+    "sources": [
+      "raw\\card_art\\summon_guard_subject.png",
+      "raw\\card_art\\summon_guard_background.png",
+      "components/parchment_card.png",
+      "components/card_frame_red.png",
+      "components/cost_badge.png"
+    ],
+    "method": "aligned_full_layer",
+    "order": 0,
+    "anchor": [
+      0,
+      0
+    ],
+    "card": "summon_guard"
+  },
+  {
+    "file": "cards/summon_guard/10_art_background.png",
+    "width": 768,
+    "height": 1024,
+    "transparent_pixels": 531968,
+    "opaque_pixels": 254464,
+    "sources": [
+      "raw\\card_art\\summon_guard_subject.png",
+      "raw\\card_art\\summon_guard_background.png",
+      "components/parchment_card.png",
+      "components/card_frame_red.png",
+      "components/cost_badge.png"
+    ],
+    "method": "aligned_full_layer",
+    "order": 1,
+    "anchor": [
+      0,
+      0
+    ],
+    "card": "summon_guard"
+  },
+  {
+    "file": "cards/summon_guard/20_art_subject.png",
+    "width": 768,
+    "height": 1024,
+    "transparent_pixels": 712144,
+    "opaque_pixels": 325,
+    "sources": [
+      "raw\\card_art\\summon_guard_subject.png",
+      "raw\\card_art\\summon_guard_background.png",
+      "components/parchment_card.png",
+      "components/card_frame_red.png",
+      "components/cost_badge.png"
+    ],
+    "method": "aligned_full_layer",
+    "order": 2,
+    "anchor": [
+      0,
+      0
+    ],
+    "card": "summon_guard"
+  },
+  {
+    "file": "cards/summon_guard/30_art_border.png",
+    "width": 768,
+    "height": 1024,
+    "transparent_pixels": 703001,
+    "opaque_pixels": 83431,
+    "sources": [
+      "raw\\card_art\\summon_guard_subject.png",
+      "raw\\card_art\\summon_guard_background.png",
+      "components/parchment_card.png",
+      "components/card_frame_red.png",
+      "components/cost_badge.png"
+    ],
+    "method": "aligned_full_layer",
+    "order": 3,
+    "anchor": [
+      0,
+      0
+    ],
+    "card": "summon_guard"
+  },
+  {
+    "file": "cards/summon_guard/40_outer_frame.png",
+    "width": 768,
+    "height": 1024,
+    "transparent_pixels": 558719,
+    "opaque_pixels": 227713,
+    "sources": [
+      "raw\\card_art\\summon_guard_subject.png",
+      "raw\\card_art\\summon_guard_background.png",
+      "components/parchment_card.png",
+      "components/card_frame_red.png",
+      "components/cost_badge.png"
+    ],
+    "method": "aligned_full_layer",
+    "order": 4,
+    "anchor": [
+      0,
+      0
+    ],
+    "card": "summon_guard"
+  },
+  {
+    "file": "cards/summon_guard/50_title_plate.png",
+    "width": 768,
+    "height": 1024,
+    "transparent_pixels": 731076,
+    "opaque_pixels": 55356,
+    "sources": [
+      "raw\\card_art\\summon_guard_subject.png",
+      "raw\\card_art\\summon_guard_background.png",
+      "components/parchment_card.png",
+      "components/card_frame_red.png",
+      "components/cost_badge.png"
+    ],
+    "method": "aligned_full_layer",
+    "order": 5,
+    "anchor": [
+      0,
+      0
+    ],
+    "card": "summon_guard"
+  },
+  {
+    "file": "cards/summon_guard/60_description_plate.png",
+    "width": 768,
+    "height": 1024,
+    "transparent_pixels": 661732,
+    "opaque_pixels": 124700,
+    "sources": [
+      "raw\\card_art\\summon_guard_subject.png",
+      "raw\\card_art\\summon_guard_background.png",
+      "components/parchment_card.png",
+      "components/card_frame_red.png",
+      "components/cost_badge.png"
+    ],
+    "method": "aligned_full_layer",
+    "order": 6,
+    "anchor": [
+      0,
+      0
+    ],
+    "card": "summon_guard"
+  },
+  {
+    "file": "cards/summon_guard/70_cost_badge.png",
+    "width": 768,
+    "height": 1024,
+    "transparent_pixels": 772126,
+    "opaque_pixels": 14306,
+    "sources": [
+      "raw\\card_art\\summon_guard_subject.png",
+      "raw\\card_art\\summon_guard_background.png",
+      "components/parchment_card.png",
+      "components/card_frame_red.png",
+      "components/cost_badge.png"
+    ],
+    "method": "aligned_full_layer",
+    "order": 7,
+    "anchor": [
+      0,
+      0
+    ],
+    "card": "summon_guard"
+  },
+  {
+    "file": "cards/summon_guard/preview.png",
+    "width": 768,
+    "height": 1024,
+    "transparent_pixels": 59434,
+    "opaque_pixels": 726998,
+    "sources": [
+      "cards/summon_guard/00_backplate.png",
+      "cards/summon_guard/10_art_background.png",
+      "cards/summon_guard/20_art_subject.png",
+      "cards/summon_guard/30_art_border.png",
+      "cards/summon_guard/40_outer_frame.png",
+      "cards/summon_guard/50_title_plate.png",
+      "cards/summon_guard/60_description_plate.png",
+      "cards/summon_guard/70_cost_badge.png"
+    ],
+    "method": "composited_preview",
+    "preview": true
+  },
+  {
+    "file": "card_art/hold_position_subject.png",
+    "width": 768,
+    "height": 768,
+    "transparent_pixels": 343913,
+    "opaque_pixels": 728,
+    "sources": [
+      "raw\\card_art\\hold_position_subject.png"
+    ],
+    "method": "preserved_alpha"
+  },
+  {
+    "file": "card_art/hold_position_background.png",
+    "width": 768,
+    "height": 768,
+    "transparent_pixels": 0,
+    "opaque_pixels": 589824,
+    "sources": [
+      "raw\\card_art\\hold_position_background.png"
+    ],
+    "method": "complete_background_redraw",
+    "intentional_opaque": true
+  },
+  {
+    "file": "cards/hold_position/00_backplate.png",
+    "width": 768,
+    "height": 1024,
+    "transparent_pixels": 192016,
+    "opaque_pixels": 594416,
+    "sources": [
+      "raw\\card_art\\hold_position_subject.png",
+      "raw\\card_art\\hold_position_background.png",
+      "components/parchment_card.png",
+      "components/card_frame_red.png",
+      "components/cost_badge.png"
+    ],
+    "method": "aligned_full_layer",
+    "order": 0,
+    "anchor": [
+      0,
+      0
+    ],
+    "card": "hold_position"
+  },
+  {
+    "file": "cards/hold_position/10_art_background.png",
+    "width": 768,
+    "height": 1024,
+    "transparent_pixels": 531968,
+    "opaque_pixels": 254464,
+    "sources": [
+      "raw\\card_art\\hold_position_subject.png",
+      "raw\\card_art\\hold_position_background.png",
+      "components/parchment_card.png",
+      "components/card_frame_red.png",
+      "components/cost_badge.png"
+    ],
+    "method": "aligned_full_layer",
+    "order": 1,
+    "anchor": [
+      0,
+      0
+    ],
+    "card": "hold_position"
+  },
+  {
+    "file": "cards/hold_position/20_art_subject.png",
+    "width": 768,
+    "height": 1024,
+    "transparent_pixels": 690072,
+    "opaque_pixels": 343,
+    "sources": [
+      "raw\\card_art\\hold_position_subject.png",
+      "raw\\card_art\\hold_position_background.png",
+      "components/parchment_card.png",
+      "components/card_frame_red.png",
+      "components/cost_badge.png"
+    ],
+    "method": "aligned_full_layer",
+    "order": 2,
+    "anchor": [
+      0,
+      0
+    ],
+    "card": "hold_position"
+  },
+  {
+    "file": "cards/hold_position/30_art_border.png",
+    "width": 768,
+    "height": 1024,
+    "transparent_pixels": 703001,
+    "opaque_pixels": 83431,
+    "sources": [
+      "raw\\card_art\\hold_position_subject.png",
+      "raw\\card_art\\hold_position_background.png",
+      "components/parchment_card.png",
+      "components/card_frame_red.png",
+      "components/cost_badge.png"
+    ],
+    "method": "aligned_full_layer",
+    "order": 3,
+    "anchor": [
+      0,
+      0
+    ],
+    "card": "hold_position"
+  },
+  {
+    "file": "cards/hold_position/40_outer_frame.png",
+    "width": 768,
+    "height": 1024,
+    "transparent_pixels": 558719,
+    "opaque_pixels": 227713,
+    "sources": [
+      "raw\\card_art\\hold_position_subject.png",
+      "raw\\card_art\\hold_position_background.png",
+      "components/parchment_card.png",
+      "components/card_frame_red.png",
+      "components/cost_badge.png"
+    ],
+    "method": "aligned_full_layer",
+    "order": 4,
+    "anchor": [
+      0,
+      0
+    ],
+    "card": "hold_position"
+  },
+  {
+    "file": "cards/hold_position/50_title_plate.png",
+    "width": 768,
+    "height": 1024,
+    "transparent_pixels": 731076,
+    "opaque_pixels": 55356,
+    "sources": [
+      "raw\\card_art\\hold_position_subject.png",
+      "raw\\card_art\\hold_position_background.png",
+      "components/parchment_card.png",
+      "components/card_frame_red.png",
+      "components/cost_badge.png"
+    ],
+    "method": "aligned_full_layer",
+    "order": 5,
+    "anchor": [
+      0,
+      0
+    ],
+    "card": "hold_position"
+  },
+  {
+    "file": "cards/hold_position/60_description_plate.png",
+    "width": 768,
+    "height": 1024,
+    "transparent_pixels": 661732,
+    "opaque_pixels": 124700,
+    "sources": [
+      "raw\\card_art\\hold_position_subject.png",
+      "raw\\card_art\\hold_position_background.png",
+      "components/parchment_card.png",
+      "components/card_frame_red.png",
+      "components/cost_badge.png"
+    ],
+    "method": "aligned_full_layer",
+    "order": 6,
+    "anchor": [
+      0,
+      0
+    ],
+    "card": "hold_position"
+  },
+  {
+    "file": "cards/hold_position/70_cost_badge.png",
+    "width": 768,
+    "height": 1024,
+    "transparent_pixels": 772126,
+    "opaque_pixels": 14306,
+    "sources": [
+      "raw\\card_art\\hold_position_subject.png",
+      "raw\\card_art\\hold_position_background.png",
+      "components/parchment_card.png",
+      "components/card_frame_red.png",
+      "components/cost_badge.png"
+    ],
+    "method": "aligned_full_layer",
+    "order": 7,
+    "anchor": [
+      0,
+      0
+    ],
+    "card": "hold_position"
+  },
+  {
+    "file": "cards/hold_position/preview.png",
+    "width": 768,
+    "height": 1024,
+    "transparent_pixels": 59434,
+    "opaque_pixels": 726998,
+    "sources": [
+      "cards/hold_position/00_backplate.png",
+      "cards/hold_position/10_art_background.png",
+      "cards/hold_position/20_art_subject.png",
+      "cards/hold_position/30_art_border.png",
+      "cards/hold_position/40_outer_frame.png",
+      "cards/hold_position/50_title_plate.png",
+      "cards/hold_position/60_description_plate.png",
+      "cards/hold_position/70_cost_badge.png"
+    ],
+    "method": "composited_preview",
+    "preview": true
+  },
+  {
+    "file": "card_art/fireball_subject.png",
+    "width": 768,
+    "height": 768,
+    "transparent_pixels": 370089,
+    "opaque_pixels": 992,
+    "sources": [
+      "raw\\card_art\\fireball_subject.png"
+    ],
+    "method": "preserved_alpha"
+  },
+  {
+    "file": "card_art/fireball_background.png",
+    "width": 768,
+    "height": 768,
+    "transparent_pixels": 0,
+    "opaque_pixels": 589824,
+    "sources": [
+      "raw\\card_art\\fireball_background.png"
+    ],
+    "method": "complete_background_redraw",
+    "intentional_opaque": true
+  },
+  {
+    "file": "cards/fireball/00_backplate.png",
+    "width": 768,
+    "height": 1024,
+    "transparent_pixels": 192016,
+    "opaque_pixels": 594416,
+    "sources": [
+      "raw\\card_art\\fireball_subject.png",
+      "raw\\card_art\\fireball_background.png",
+      "components/parchment_card.png",
+      "components/card_frame_red.png",
+      "components/cost_badge.png"
+    ],
+    "method": "aligned_full_layer",
+    "order": 0,
+    "anchor": [
+      0,
+      0
+    ],
+    "card": "fireball"
+  },
+  {
+    "file": "cards/fireball/10_art_background.png",
+    "width": 768,
+    "height": 1024,
+    "transparent_pixels": 531968,
+    "opaque_pixels": 254464,
+    "sources": [
+      "raw\\card_art\\fireball_subject.png",
+      "raw\\card_art\\fireball_background.png",
+      "components/parchment_card.png",
+      "components/card_frame_red.png",
+      "components/cost_badge.png"
+    ],
+    "method": "aligned_full_layer",
+    "order": 1,
+    "anchor": [
+      0,
+      0
+    ],
+    "card": "fireball"
+  },
+  {
+    "file": "cards/fireball/20_art_subject.png",
+    "width": 768,
+    "height": 1024,
+    "transparent_pixels": 707266,
+    "opaque_pixels": 333,
+    "sources": [
+      "raw\\card_art\\fireball_subject.png",
+      "raw\\card_art\\fireball_background.png",
+      "components/parchment_card.png",
+      "components/card_frame_red.png",
+      "components/cost_badge.png"
+    ],
+    "method": "aligned_full_layer",
+    "order": 2,
+    "anchor": [
+      0,
+      0
+    ],
+    "card": "fireball"
+  },
+  {
+    "file": "cards/fireball/30_art_border.png",
+    "width": 768,
+    "height": 1024,
+    "transparent_pixels": 703001,
+    "opaque_pixels": 83431,
+    "sources": [
+      "raw\\card_art\\fireball_subject.png",
+      "raw\\card_art\\fireball_background.png",
+      "components/parchment_card.png",
+      "components/card_frame_red.png",
+      "components/cost_badge.png"
+    ],
+    "method": "aligned_full_layer",
+    "order": 3,
+    "anchor": [
+      0,
+      0
+    ],
+    "card": "fireball"
+  },
+  {
+    "file": "cards/fireball/40_outer_frame.png",
+    "width": 768,
+    "height": 1024,
+    "transparent_pixels": 558719,
+    "opaque_pixels": 227713,
+    "sources": [
+      "raw\\card_art\\fireball_subject.png",
+      "raw\\card_art\\fireball_background.png",
+      "components/parchment_card.png",
+      "components/card_frame_red.png",
+      "components/cost_badge.png"
+    ],
+    "method": "aligned_full_layer",
+    "order": 4,
+    "anchor": [
+      0,
+      0
+    ],
+    "card": "fireball"
+  },
+  {
+    "file": "cards/fireball/50_title_plate.png",
+    "width": 768,
+    "height": 1024,
+    "transparent_pixels": 731076,
+    "opaque_pixels": 55356,
+    "sources": [
+      "raw\\card_art\\fireball_subject.png",
+      "raw\\card_art\\fireball_background.png",
+      "components/parchment_card.png",
+      "components/card_frame_red.png",
+      "components/cost_badge.png"
+    ],
+    "method": "aligned_full_layer",
+    "order": 5,
+    "anchor": [
+      0,
+      0
+    ],
+    "card": "fireball"
+  },
+  {
+    "file": "cards/fireball/60_description_plate.png",
+    "width": 768,
+    "height": 1024,
+    "transparent_pixels": 661732,
+    "opaque_pixels": 124700,
+    "sources": [
+      "raw\\card_art\\fireball_subject.png",
+      "raw\\card_art\\fireball_background.png",
+      "components/parchment_card.png",
+      "components/card_frame_red.png",
+      "components/cost_badge.png"
+    ],
+    "method": "aligned_full_layer",
+    "order": 6,
+    "anchor": [
+      0,
+      0
+    ],
+    "card": "fireball"
+  },
+  {
+    "file": "cards/fireball/70_cost_badge.png",
+    "width": 768,
+    "height": 1024,
+    "transparent_pixels": 772126,
+    "opaque_pixels": 14306,
+    "sources": [
+      "raw\\card_art\\fireball_subject.png",
+      "raw\\card_art\\fireball_background.png",
+      "components/parchment_card.png",
+      "components/card_frame_red.png",
+      "components/cost_badge.png"
+    ],
+    "method": "aligned_full_layer",
+    "order": 7,
+    "anchor": [
+      0,
+      0
+    ],
+    "card": "fireball"
+  },
+  {
+    "file": "cards/fireball/preview.png",
+    "width": 768,
+    "height": 1024,
+    "transparent_pixels": 59434,
+    "opaque_pixels": 726998,
+    "sources": [
+      "cards/fireball/00_backplate.png",
+      "cards/fireball/10_art_background.png",
+      "cards/fireball/20_art_subject.png",
+      "cards/fireball/30_art_border.png",
+      "cards/fireball/40_outer_frame.png",
+      "cards/fireball/50_title_plate.png",
+      "cards/fireball/60_description_plate.png",
+      "cards/fireball/70_cost_badge.png"
+    ],
+    "method": "composited_preview",
+    "preview": true
+  },
+  {
+    "file": "card_art/battlefield_heal_subject.png",
+    "width": 768,
+    "height": 768,
+    "transparent_pixels": 326257,
+    "opaque_pixels": 162,
+    "sources": [
+      "raw\\card_art\\battlefield_heal_subject.png"
+    ],
+    "method": "preserved_alpha"
+  },
+  {
+    "file": "card_art/battlefield_heal_background.png",
+    "width": 768,
+    "height": 768,
+    "transparent_pixels": 0,
+    "opaque_pixels": 589824,
+    "sources": [
+      "raw\\card_art\\battlefield_heal_background.png"
+    ],
+    "method": "complete_background_redraw",
+    "intentional_opaque": true
+  },
+  {
+    "file": "cards/battlefield_heal/00_backplate.png",
+    "width": 768,
+    "height": 1024,
+    "transparent_pixels": 192016,
+    "opaque_pixels": 594416,
+    "sources": [
+      "raw\\card_art\\battlefield_heal_subject.png",
+      "raw\\card_art\\battlefield_heal_background.png",
+      "components/parchment_card.png",
+      "components/card_frame_red.png",
+      "components/cost_badge.png"
+    ],
+    "method": "aligned_full_layer",
+    "order": 0,
+    "anchor": [
+      0,
+      0
+    ],
+    "card": "battlefield_heal"
+  },
+  {
+    "file": "cards/battlefield_heal/10_art_background.png",
+    "width": 768,
+    "height": 1024,
+    "transparent_pixels": 531968,
+    "opaque_pixels": 254464,
+    "sources": [
+      "raw\\card_art\\battlefield_heal_subject.png",
+      "raw\\card_art\\battlefield_heal_background.png",
+      "components/parchment_card.png",
+      "components/card_frame_red.png",
+      "components/cost_badge.png"
+    ],
+    "method": "aligned_full_layer",
+    "order": 1,
+    "anchor": [
+      0,
+      0
+    ],
+    "card": "battlefield_heal"
+  },
+  {
+    "file": "cards/battlefield_heal/20_art_subject.png",
+    "width": 768,
+    "height": 1024,
+    "transparent_pixels": 689184,
+    "opaque_pixels": 42,
+    "sources": [
+      "raw\\card_art\\battlefield_heal_subject.png",
+      "raw\\card_art\\battlefield_heal_background.png",
+      "components/parchment_card.png",
+      "components/card_frame_red.png",
+      "components/cost_badge.png"
+    ],
+    "method": "aligned_full_layer",
+    "order": 2,
+    "anchor": [
+      0,
+      0
+    ],
+    "card": "battlefield_heal"
+  },
+  {
+    "file": "cards/battlefield_heal/30_art_border.png",
+    "width": 768,
+    "height": 1024,
+    "transparent_pixels": 703001,
+    "opaque_pixels": 83431,
+    "sources": [
+      "raw\\card_art\\battlefield_heal_subject.png",
+      "raw\\card_art\\battlefield_heal_background.png",
+      "components/parchment_card.png",
+      "components/card_frame_red.png",
+      "components/cost_badge.png"
+    ],
+    "method": "aligned_full_layer",
+    "order": 3,
+    "anchor": [
+      0,
+      0
+    ],
+    "card": "battlefield_heal"
+  },
+  {
+    "file": "cards/battlefield_heal/40_outer_frame.png",
+    "width": 768,
+    "height": 1024,
+    "transparent_pixels": 558719,
+    "opaque_pixels": 227713,
+    "sources": [
+      "raw\\card_art\\battlefield_heal_subject.png",
+      "raw\\card_art\\battlefield_heal_background.png",
+      "components/parchment_card.png",
+      "components/card_frame_red.png",
+      "components/cost_badge.png"
+    ],
+    "method": "aligned_full_layer",
+    "order": 4,
+    "anchor": [
+      0,
+      0
+    ],
+    "card": "battlefield_heal"
+  },
+  {
+    "file": "cards/battlefield_heal/50_title_plate.png",
+    "width": 768,
+    "height": 1024,
+    "transparent_pixels": 731076,
+    "opaque_pixels": 55356,
+    "sources": [
+      "raw\\card_art\\battlefield_heal_subject.png",
+      "raw\\card_art\\battlefield_heal_background.png",
+      "components/parchment_card.png",
+      "components/card_frame_red.png",
+      "components/cost_badge.png"
+    ],
+    "method": "aligned_full_layer",
+    "order": 5,
+    "anchor": [
+      0,
+      0
+    ],
+    "card": "battlefield_heal"
+  },
+  {
+    "file": "cards/battlefield_heal/60_description_plate.png",
+    "width": 768,
+    "height": 1024,
+    "transparent_pixels": 661732,
+    "opaque_pixels": 124700,
+    "sources": [
+      "raw\\card_art\\battlefield_heal_subject.png",
+      "raw\\card_art\\battlefield_heal_background.png",
+      "components/parchment_card.png",
+      "components/card_frame_red.png",
+      "components/cost_badge.png"
+    ],
+    "method": "aligned_full_layer",
+    "order": 6,
+    "anchor": [
+      0,
+      0
+    ],
+    "card": "battlefield_heal"
+  },
+  {
+    "file": "cards/battlefield_heal/70_cost_badge.png",
+    "width": 768,
+    "height": 1024,
+    "transparent_pixels": 772126,
+    "opaque_pixels": 14306,
+    "sources": [
+      "raw\\card_art\\battlefield_heal_subject.png",
+      "raw\\card_art\\battlefield_heal_background.png",
+      "components/parchment_card.png",
+      "components/card_frame_red.png",
+      "components/cost_badge.png"
+    ],
+    "method": "aligned_full_layer",
+    "order": 7,
+    "anchor": [
+      0,
+      0
+    ],
+    "card": "battlefield_heal"
+  },
+  {
+    "file": "cards/battlefield_heal/preview.png",
+    "width": 768,
+    "height": 1024,
+    "transparent_pixels": 59434,
+    "opaque_pixels": 726998,
+    "sources": [
+      "cards/battlefield_heal/00_backplate.png",
+      "cards/battlefield_heal/10_art_background.png",
+      "cards/battlefield_heal/20_art_subject.png",
+      "cards/battlefield_heal/30_art_border.png",
+      "cards/battlefield_heal/40_outer_frame.png",
+      "cards/battlefield_heal/50_title_plate.png",
+      "cards/battlefield_heal/60_description_plate.png",
+      "cards/battlefield_heal/70_cost_badge.png"
+    ],
+    "method": "composited_preview",
+    "preview": true
+  },
+  {
+    "file": "card_art/battle_inspiration_subject.png",
+    "width": 768,
+    "height": 768,
+    "transparent_pixels": 343836,
+    "opaque_pixels": 245988,
+    "sources": [
+      "raw\\card_art\\battle_inspiration_subject.png"
+    ],
+    "method": "border_flood_and_chroma_key"
+  },
+  {
+    "file": "card_art/battle_inspiration_background.png",
+    "width": 768,
+    "height": 768,
+    "transparent_pixels": 0,
+    "opaque_pixels": 589824,
+    "sources": [
+      "raw\\card_art\\battle_inspiration_background.png"
+    ],
+    "method": "complete_background_redraw",
+    "intentional_opaque": true
+  },
+  {
+    "file": "cards/battle_inspiration/00_backplate.png",
+    "width": 768,
+    "height": 1024,
+    "transparent_pixels": 192016,
+    "opaque_pixels": 594416,
+    "sources": [
+      "raw\\card_art\\battle_inspiration_subject.png",
+      "raw\\card_art\\battle_inspiration_background.png",
+      "components/parchment_card.png",
+      "components/card_frame_red.png",
+      "components/cost_badge.png"
+    ],
+    "method": "aligned_full_layer",
+    "order": 0,
+    "anchor": [
+      0,
+      0
+    ],
+    "card": "battle_inspiration"
+  },
+  {
+    "file": "cards/battle_inspiration/10_art_background.png",
+    "width": 768,
+    "height": 1024,
+    "transparent_pixels": 531968,
+    "opaque_pixels": 254464,
+    "sources": [
+      "raw\\card_art\\battle_inspiration_subject.png",
+      "raw\\card_art\\battle_inspiration_background.png",
+      "components/parchment_card.png",
+      "components/card_frame_red.png",
+      "components/cost_badge.png"
+    ],
+    "method": "aligned_full_layer",
+    "order": 1,
+    "anchor": [
+      0,
+      0
+    ],
+    "card": "battle_inspiration"
+  },
+  {
+    "file": "cards/battle_inspiration/20_art_subject.png",
+    "width": 768,
+    "height": 1024,
+    "transparent_pixels": 697701,
+    "opaque_pixels": 88731,
+    "sources": [
+      "raw\\card_art\\battle_inspiration_subject.png",
+      "raw\\card_art\\battle_inspiration_background.png",
+      "components/parchment_card.png",
+      "components/card_frame_red.png",
+      "components/cost_badge.png"
+    ],
+    "method": "aligned_full_layer",
+    "order": 2,
+    "anchor": [
+      0,
+      0
+    ],
+    "card": "battle_inspiration"
+  },
+  {
+    "file": "cards/battle_inspiration/30_art_border.png",
+    "width": 768,
+    "height": 1024,
+    "transparent_pixels": 703001,
+    "opaque_pixels": 83431,
+    "sources": [
+      "raw\\card_art\\battle_inspiration_subject.png",
+      "raw\\card_art\\battle_inspiration_background.png",
+      "components/parchment_card.png",
+      "components/card_frame_red.png",
+      "components/cost_badge.png"
+    ],
+    "method": "aligned_full_layer",
+    "order": 3,
+    "anchor": [
+      0,
+      0
+    ],
+    "card": "battle_inspiration"
+  },
+  {
+    "file": "cards/battle_inspiration/40_outer_frame.png",
+    "width": 768,
+    "height": 1024,
+    "transparent_pixels": 558719,
+    "opaque_pixels": 227713,
+    "sources": [
+      "raw\\card_art\\battle_inspiration_subject.png",
+      "raw\\card_art\\battle_inspiration_background.png",
+      "components/parchment_card.png",
+      "components/card_frame_red.png",
+      "components/cost_badge.png"
+    ],
+    "method": "aligned_full_layer",
+    "order": 4,
+    "anchor": [
+      0,
+      0
+    ],
+    "card": "battle_inspiration"
+  },
+  {
+    "file": "cards/battle_inspiration/50_title_plate.png",
+    "width": 768,
+    "height": 1024,
+    "transparent_pixels": 731076,
+    "opaque_pixels": 55356,
+    "sources": [
+      "raw\\card_art\\battle_inspiration_subject.png",
+      "raw\\card_art\\battle_inspiration_background.png",
+      "components/parchment_card.png",
+      "components/card_frame_red.png",
+      "components/cost_badge.png"
+    ],
+    "method": "aligned_full_layer",
+    "order": 5,
+    "anchor": [
+      0,
+      0
+    ],
+    "card": "battle_inspiration"
+  },
+  {
+    "file": "cards/battle_inspiration/60_description_plate.png",
+    "width": 768,
+    "height": 1024,
+    "transparent_pixels": 661732,
+    "opaque_pixels": 124700,
+    "sources": [
+      "raw\\card_art\\battle_inspiration_subject.png",
+      "raw\\card_art\\battle_inspiration_background.png",
+      "components/parchment_card.png",
+      "components/card_frame_red.png",
+      "components/cost_badge.png"
+    ],
+    "method": "aligned_full_layer",
+    "order": 6,
+    "anchor": [
+      0,
+      0
+    ],
+    "card": "battle_inspiration"
+  },
+  {
+    "file": "cards/battle_inspiration/70_cost_badge.png",
+    "width": 768,
+    "height": 1024,
+    "transparent_pixels": 772126,
+    "opaque_pixels": 14306,
+    "sources": [
+      "raw\\card_art\\battle_inspiration_subject.png",
+      "raw\\card_art\\battle_inspiration_background.png",
+      "components/parchment_card.png",
+      "components/card_frame_red.png",
+      "components/cost_badge.png"
+    ],
+    "method": "aligned_full_layer",
+    "order": 7,
+    "anchor": [
+      0,
+      0
+    ],
+    "card": "battle_inspiration"
+  },
+  {
+    "file": "cards/battle_inspiration/preview.png",
+    "width": 768,
+    "height": 1024,
+    "transparent_pixels": 59434,
+    "opaque_pixels": 726998,
+    "sources": [
+      "cards/battle_inspiration/00_backplate.png",
+      "cards/battle_inspiration/10_art_background.png",
+      "cards/battle_inspiration/20_art_subject.png",
+      "cards/battle_inspiration/30_art_border.png",
+      "cards/battle_inspiration/40_outer_frame.png",
+      "cards/battle_inspiration/50_title_plate.png",
+      "cards/battle_inspiration/60_description_plate.png",
+      "cards/battle_inspiration/70_cost_badge.png"
+    ],
+    "method": "composited_preview",
+    "preview": true
+  },
+  {
+    "file": "ui_layers/crown_badge/00_crown_backplate.png",
+    "width": 384,
+    "height": 512,
+    "transparent_pixels": 50347,
+    "opaque_pixels": 146261,
+    "sources": [
+      "components/crown_backplate.png"
+    ],
+    "method": "aligned_ui_layer",
+    "anchor": [
+      0,
+      0
+    ],
+    "order": 0,
+    "group": "crown_badge"
+  },
+  {
+    "file": "ui_layers/crown_badge/01_crown.png",
+    "width": 384,
+    "height": 512,
+    "transparent_pixels": 169816,
+    "opaque_pixels": 26792,
+    "sources": [
+      "icons/crown.png"
+    ],
+    "method": "aligned_ui_layer",
+    "anchor": [
+      0,
+      0
+    ],
+    "order": 1,
+    "group": "crown_badge"
+  },
+  {
+    "file": "ui_layers/crown_badge/preview.png",
+    "width": 384,
+    "height": 512,
+    "transparent_pixels": 50347,
+    "opaque_pixels": 146261,
+    "sources": [
+      "ui_layers/crown_badge/00_crown_backplate.png",
+      "ui_layers/crown_badge/01_crown.png"
+    ],
+    "method": "composited_ui_preview",
+    "preview": true
+  },
+  {
+    "file": "ui_layers/health_panel/00_stat_panel.png",
+    "width": 768,
+    "height": 224,
+    "transparent_pixels": 41861,
+    "opaque_pixels": 130171,
+    "sources": [
+      "panels/stat_panel.png"
+    ],
+    "method": "aligned_ui_layer",
+    "anchor": [
+      0,
+      0
+    ],
+    "order": 0,
+    "group": "health_panel"
+  },
+  {
+    "file": "ui_layers/health_panel/01_heart.png",
+    "width": 768,
+    "height": 224,
+    "transparent_pixels": 149971,
+    "opaque_pixels": 45,
+    "sources": [
+      "icons/heart.png"
+    ],
+    "method": "aligned_ui_layer",
+    "anchor": [
+      0,
+      0
+    ],
+    "order": 1,
+    "group": "health_panel"
+  },
+  {
+    "file": "ui_layers/health_panel/preview.png",
+    "width": 768,
+    "height": 224,
+    "transparent_pixels": 41861,
+    "opaque_pixels": 130171,
+    "sources": [
+      "ui_layers/health_panel/00_stat_panel.png",
+      "ui_layers/health_panel/01_heart.png"
+    ],
+    "method": "composited_ui_preview",
+    "preview": true
+  },
+  {
+    "file": "ui_layers/gold_panel/00_stat_panel.png",
+    "width": 768,
+    "height": 224,
+    "transparent_pixels": 41861,
+    "opaque_pixels": 130171,
+    "sources": [
+      "panels/stat_panel.png"
+    ],
+    "method": "aligned_ui_layer",
+    "anchor": [
+      0,
+      0
+    ],
+    "order": 0,
+    "group": "gold_panel"
+  },
+  {
+    "file": "ui_layers/gold_panel/01_gold_coin.png",
+    "width": 768,
+    "height": 224,
+    "transparent_pixels": 144268,
+    "opaque_pixels": 42,
+    "sources": [
+      "icons/gold_coin.png"
+    ],
+    "method": "aligned_ui_layer",
+    "anchor": [
+      0,
+      0
+    ],
+    "order": 1,
+    "group": "gold_panel"
+  },
+  {
+    "file": "ui_layers/gold_panel/preview.png",
+    "width": 768,
+    "height": 224,
+    "transparent_pixels": 41581,
+    "opaque_pixels": 130173,
+    "sources": [
+      "ui_layers/gold_panel/00_stat_panel.png",
+      "ui_layers/gold_panel/01_gold_coin.png"
+    ],
+    "method": "composited_ui_preview",
+    "preview": true
+  },
+  {
+    "file": "ui_layers/equipment_panel/00_stat_panel.png",
+    "width": 768,
+    "height": 224,
+    "transparent_pixels": 41861,
+    "opaque_pixels": 130171,
+    "sources": [
+      "panels/stat_panel.png"
+    ],
+    "method": "aligned_ui_layer",
+    "anchor": [
+      0,
+      0
+    ],
+    "order": 0,
+    "group": "equipment_panel"
+  },
+  {
+    "file": "ui_layers/equipment_panel/01_equipment_sword.png",
+    "width": 768,
+    "height": 224,
+    "transparent_pixels": 157588,
+    "opaque_pixels": 14444,
+    "sources": [
+      "icons/equipment_sword.png"
+    ],
+    "method": "aligned_ui_layer",
+    "anchor": [
+      0,
+      0
+    ],
+    "order": 1,
+    "group": "equipment_panel"
+  },
+  {
+    "file": "ui_layers/equipment_panel/02_equipment_armor.png",
+    "width": 768,
+    "height": 224,
+    "transparent_pixels": 142180,
+    "opaque_pixels": 29852,
+    "sources": [
+      "icons/equipment_armor.png"
+    ],
+    "method": "aligned_ui_layer",
+    "anchor": [
+      0,
+      0
+    ],
+    "order": 2,
+    "group": "equipment_panel"
+  },
+  {
+    "file": "ui_layers/equipment_panel/03_equipment_potion.png",
+    "width": 768,
+    "height": 224,
+    "transparent_pixels": 161257,
+    "opaque_pixels": 60,
+    "sources": [
+      "icons/equipment_potion.png"
+    ],
+    "method": "aligned_ui_layer",
+    "anchor": [
+      0,
+      0
+    ],
+    "order": 3,
+    "group": "equipment_panel"
+  },
+  {
+    "file": "ui_layers/equipment_panel/preview.png",
+    "width": 768,
+    "height": 224,
+    "transparent_pixels": 40156,
+    "opaque_pixels": 131875,
+    "sources": [
+      "ui_layers/equipment_panel/00_stat_panel.png",
+      "ui_layers/equipment_panel/01_equipment_sword.png",
+      "ui_layers/equipment_panel/02_equipment_armor.png",
+      "ui_layers/equipment_panel/03_equipment_potion.png"
+    ],
+    "method": "composited_ui_preview",
+    "preview": true
+  },
+  {
+    "file": "ui_layers/phase_panel/00_phase_panel.png",
+    "width": 768,
+    "height": 224,
+    "transparent_pixels": 41861,
+    "opaque_pixels": 130171,
+    "sources": [
+      "panels/phase_panel.png"
+    ],
+    "method": "aligned_ui_layer",
+    "anchor": [
+      0,
+      0
+    ],
+    "order": 0,
+    "group": "phase_panel"
+  },
+  {
+    "file": "ui_layers/phase_panel/01_crossed_swords.png",
+    "width": 768,
+    "height": 224,
+    "transparent_pixels": 157295,
+    "opaque_pixels": 126,
+    "sources": [
+      "icons/crossed_swords.png"
+    ],
+    "method": "aligned_ui_layer",
+    "anchor": [
+      0,
+      0
+    ],
+    "order": 1,
+    "group": "phase_panel"
+  },
+  {
+    "file": "ui_layers/phase_panel/preview.png",
+    "width": 768,
+    "height": 224,
+    "transparent_pixels": 41861,
+    "opaque_pixels": 130171,
+    "sources": [
+      "ui_layers/phase_panel/00_phase_panel.png",
+      "ui_layers/phase_panel/01_crossed_swords.png"
+    ],
+    "method": "composited_ui_preview",
+    "preview": true
+  },
+  {
+    "file": "ui_layers/start_button/00_gold_button.png",
+    "width": 1024,
+    "height": 360,
+    "transparent_pixels": 93090,
+    "opaque_pixels": 113,
+    "sources": [
+      "components/gold_button.png"
+    ],
+    "method": "aligned_ui_layer",
+    "anchor": [
+      0,
+      0
+    ],
+    "order": 0,
+    "group": "start_button"
+  },
+  {
+    "file": "ui_layers/start_button/01_crossed_swords.png",
+    "width": 1024,
+    "height": 360,
+    "transparent_pixels": 350865,
+    "opaque_pixels": 164,
+    "sources": [
+      "icons/crossed_swords.png"
+    ],
+    "method": "aligned_ui_layer",
+    "anchor": [
+      0,
+      0
+    ],
+    "order": 1,
+    "group": "start_button"
+  },
+  {
+    "file": "ui_layers/start_button/preview.png",
+    "width": 1024,
+    "height": 360,
+    "transparent_pixels": 93090,
+    "opaque_pixels": 17343,
+    "sources": [
+      "ui_layers/start_button/00_gold_button.png",
+      "ui_layers/start_button/01_crossed_swords.png"
+    ],
+    "method": "composited_ui_preview",
+    "preview": true
+  },
+  {
+    "file": "ui_layers/battle_control/00_battle_control_panel.png",
+    "width": 1000,
+    "height": 440,
+    "transparent_pixels": 93776,
+    "opaque_pixels": 346224,
+    "sources": [
+      "panels/battle_control_panel.png"
+    ],
+    "method": "aligned_ui_layer",
+    "anchor": [
+      0,
+      0
+    ],
+    "order": 0,
+    "group": "battle_control"
+  },
+  {
+    "file": "ui_layers/battle_control/01_speed_button_blank.png",
+    "width": 1000,
+    "height": 440,
+    "transparent_pixels": 401711,
+    "opaque_pixels": 38289,
+    "sources": [
+      "panels/speed_button_blank.png"
+    ],
+    "method": "aligned_ui_layer",
+    "anchor": [
+      0,
+      0
+    ],
+    "order": 1,
+    "group": "battle_control"
+  },
+  {
+    "file": "ui_layers/battle_control/02_speed_button_blank.png",
+    "width": 1000,
+    "height": 440,
+    "transparent_pixels": 401711,
+    "opaque_pixels": 38289,
+    "sources": [
+      "panels/speed_button_blank.png"
+    ],
+    "method": "aligned_ui_layer",
+    "anchor": [
+      0,
+      0
+    ],
+    "order": 2,
+    "group": "battle_control"
+  },
+  {
+    "file": "ui_layers/battle_control/03_speed_button_blank.png",
+    "width": 1000,
+    "height": 440,
+    "transparent_pixels": 401711,
+    "opaque_pixels": 38289,
+    "sources": [
+      "panels/speed_button_blank.png"
+    ],
+    "method": "aligned_ui_layer",
+    "anchor": [
+      0,
+      0
+    ],
+    "order": 3,
+    "group": "battle_control"
+  },
+  {
+    "file": "ui_layers/battle_control/04_pause_symbol.png",
+    "width": 1000,
+    "height": 440,
+    "transparent_pixels": 435900,
+    "opaque_pixels": 4100,
+    "sources": [
+      "controls/pause_symbol.png"
+    ],
+    "method": "aligned_ui_layer",
+    "anchor": [
+      0,
+      0
+    ],
+    "order": 4,
+    "group": "battle_control"
+  },
+  {
+    "file": "ui_layers/battle_control/05_selected_border.png",
+    "width": 1000,
+    "height": 440,
+    "transparent_pixels": 425999,
+    "opaque_pixels": 22,
+    "sources": [
+      "controls/selected_border.png"
+    ],
+    "method": "aligned_ui_layer",
+    "anchor": [
+      0,
+      0
+    ],
+    "order": 5,
+    "group": "battle_control"
+  },
+  {
+    "file": "ui_layers/battle_control/06_auto_row_blank.png",
+    "width": 1000,
+    "height": 440,
+    "transparent_pixels": 362420,
+    "opaque_pixels": 77580,
+    "sources": [
+      "panels/auto_row_blank.png"
+    ],
+    "method": "aligned_ui_layer",
+    "anchor": [
+      0,
+      0
+    ],
+    "order": 6,
+    "group": "battle_control"
+  },
+  {
+    "file": "ui_layers/battle_control/07_toggle_track.png",
+    "width": 1000,
+    "height": 440,
+    "transparent_pixels": 423266,
+    "opaque_pixels": 16734,
+    "sources": [
+      "controls/toggle_track.png"
+    ],
+    "method": "aligned_ui_layer",
+    "anchor": [
+      0,
+      0
+    ],
+    "order": 7,
+    "group": "battle_control"
+  },
+  {
+    "file": "ui_layers/battle_control/08_toggle_knob.png",
+    "width": 1000,
+    "height": 440,
+    "transparent_pixels": 433848,
+    "opaque_pixels": 6152,
+    "sources": [
+      "controls/toggle_knob.png"
+    ],
+    "method": "aligned_ui_layer",
+    "anchor": [
+      0,
+      0
+    ],
+    "order": 8,
+    "group": "battle_control"
+  },
+  {
+    "file": "ui_layers/battle_control/preview.png",
+    "width": 1000,
+    "height": 440,
+    "transparent_pixels": 93776,
+    "opaque_pixels": 346224,
+    "sources": [
+      "ui_layers/battle_control/00_battle_control_panel.png",
+      "ui_layers/battle_control/01_speed_button_blank.png",
+      "ui_layers/battle_control/02_speed_button_blank.png",
+      "ui_layers/battle_control/03_speed_button_blank.png",
+      "ui_layers/battle_control/04_pause_symbol.png",
+      "ui_layers/battle_control/05_selected_border.png",
+      "ui_layers/battle_control/06_auto_row_blank.png",
+      "ui_layers/battle_control/07_toggle_track.png",
+      "ui_layers/battle_control/08_toggle_knob.png"
+    ],
+    "method": "composited_ui_preview",
+    "preview": true
+  },
+  {
+    "file": "ui_layers/energy/00_00_core.png",
+    "width": 512,
+    "height": 512,
+    "transparent_pixels": 150531,
+    "opaque_pixels": 111597,
+    "sources": [
+      "energy/00_core.png"
+    ],
+    "method": "aligned_ui_layer",
+    "anchor": [
+      0,
+      0
+    ],
+    "order": 0,
+    "group": "energy"
+  },
+  {
+    "file": "ui_layers/energy/01_10_rim.png",
+    "width": 512,
+    "height": 512,
+    "transparent_pixels": 192021,
+    "opaque_pixels": 262,
+    "sources": [
+      "energy/10_rim.png"
+    ],
+    "method": "aligned_ui_layer",
+    "anchor": [
+      0,
+      0
+    ],
+    "order": 1,
+    "group": "energy"
+  },
+  {
+    "file": "ui_layers/energy/preview.png",
+    "width": 512,
+    "height": 512,
+    "transparent_pixels": 119728,
+    "opaque_pixels": 111859,
+    "sources": [
+      "ui_layers/energy/00_00_core.png",
+      "ui_layers/energy/01_10_rim.png"
+    ],
+    "method": "composited_ui_preview",
+    "preview": true
+  },
+  {
+    "file": "ui_layers/health_bar/00_00_empty_bar.png",
+    "width": 768,
+    "height": 128,
+    "transparent_pixels": 83554,
+    "opaque_pixels": 12,
+    "sources": [
+      "health/00_empty_bar.png"
+    ],
+    "method": "aligned_ui_layer",
+    "anchor": [
+      0,
+      0
+    ],
+    "order": 0,
+    "group": "health_bar"
+  },
+  {
+    "file": "ui_layers/health_bar/01_10_fill.png",
+    "width": 768,
+    "height": 128,
+    "transparent_pixels": 90769,
+    "opaque_pixels": 0,
+    "sources": [
+      "health/10_fill.png"
+    ],
+    "method": "aligned_ui_layer",
+    "anchor": [
+      0,
+      0
+    ],
+    "order": 1,
+    "group": "health_bar"
+  },
+  {
+    "file": "ui_layers/health_bar/02_20_border.png",
+    "width": 768,
+    "height": 128,
+    "transparent_pixels": 91089,
+    "opaque_pixels": 12,
+    "sources": [
+      "health/20_border.png"
+    ],
+    "method": "aligned_ui_layer",
+    "anchor": [
+      0,
+      0
+    ],
+    "order": 2,
+    "group": "health_bar"
+  },
+  {
+    "file": "ui_layers/health_bar/preview.png",
+    "width": 768,
+    "height": 128,
+    "transparent_pixels": 83554,
+    "opaque_pixels": 14654,
+    "sources": [
+      "ui_layers/health_bar/00_00_empty_bar.png",
+      "ui_layers/health_bar/01_10_fill.png",
+      "ui_layers/health_bar/02_20_border.png"
+    ],
+    "method": "composited_ui_preview",
+    "preview": true
+  },
+  {
+    "file": "ui_layers/map_button/00_navigation_button.png",
+    "width": 512,
+    "height": 224,
+    "transparent_pixels": 28855,
+    "opaque_pixels": 85833,
+    "sources": [
+      "panels/navigation_button.png"
+    ],
+    "method": "aligned_ui_layer",
+    "anchor": [
+      0,
+      0
+    ],
+    "order": 0,
+    "group": "map_button"
+  },
+  {
+    "file": "ui_layers/map_button/01_map.png",
+    "width": 512,
+    "height": 224,
+    "transparent_pixels": 92659,
+    "opaque_pixels": 22029,
+    "sources": [
+      "icons/map.png"
+    ],
+    "method": "aligned_ui_layer",
+    "anchor": [
+      0,
+      0
+    ],
+    "order": 1,
+    "group": "map_button"
+  },
+  {
+    "file": "ui_layers/map_button/preview.png",
+    "width": 512,
+    "height": 224,
+    "transparent_pixels": 28843,
+    "opaque_pixels": 85845,
+    "sources": [
+      "ui_layers/map_button/00_navigation_button.png",
+      "ui_layers/map_button/01_map.png"
+    ],
+    "method": "composited_ui_preview",
+    "preview": true
+  },
+  {
+    "file": "ui_layers/deck_button/00_navigation_button.png",
+    "width": 512,
+    "height": 224,
+    "transparent_pixels": 28855,
+    "opaque_pixels": 85833,
+    "sources": [
+      "panels/navigation_button.png"
+    ],
+    "method": "aligned_ui_layer",
+    "anchor": [
+      0,
+      0
+    ],
+    "order": 0,
+    "group": "deck_button"
+  },
+  {
+    "file": "ui_layers/deck_button/01_deck_book.png",
+    "width": 512,
+    "height": 224,
+    "transparent_pixels": 92310,
+    "opaque_pixels": 22378,
+    "sources": [
+      "icons/deck_book.png"
+    ],
+    "method": "aligned_ui_layer",
+    "anchor": [
+      0,
+      0
+    ],
+    "order": 1,
+    "group": "deck_button"
+  },
+  {
+    "file": "ui_layers/deck_button/preview.png",
+    "width": 512,
+    "height": 224,
+    "transparent_pixels": 28855,
+    "opaque_pixels": 85833,
+    "sources": [
+      "ui_layers/deck_button/00_navigation_button.png",
+      "ui_layers/deck_button/01_deck_book.png"
+    ],
+    "method": "composited_ui_preview",
+    "preview": true
+  },
+  {
+    "file": "ui_layers/settings_button/00_navigation_button.png",
+    "width": 512,
+    "height": 224,
+    "transparent_pixels": 28855,
+    "opaque_pixels": 85833,
+    "sources": [
+      "panels/navigation_button.png"
+    ],
+    "method": "aligned_ui_layer",
+    "anchor": [
+      0,
+      0
+    ],
+    "order": 0,
+    "group": "settings_button"
+  },
+  {
+    "file": "ui_layers/settings_button/01_gear.png",
+    "width": 512,
+    "height": 224,
+    "transparent_pixels": 99086,
+    "opaque_pixels": 34,
+    "sources": [
+      "icons/gear.png"
+    ],
+    "method": "aligned_ui_layer",
+    "anchor": [
+      0,
+      0
+    ],
+    "order": 1,
+    "group": "settings_button"
+  },
+  {
+    "file": "ui_layers/settings_button/preview.png",
+    "width": 512,
+    "height": 224,
+    "transparent_pixels": 28855,
+    "opaque_pixels": 85833,
+    "sources": [
+      "ui_layers/settings_button/00_navigation_button.png",
+      "ui_layers/settings_button/01_gear.png"
+    ],
+    "method": "composited_ui_preview",
+    "preview": true
+  },
+  {
+    "file": "ui_layers/draw_pile/00_pile_backplate.png",
+    "width": 512,
+    "height": 512,
+    "transparent_pixels": 157409,
+    "opaque_pixels": 104735,
+    "sources": [
+      "panels/pile_backplate.png"
+    ],
+    "method": "aligned_ui_layer",
+    "anchor": [
+      0,
+      0
+    ],
+    "order": 0,
+    "group": "draw_pile"
+  },
+  {
+    "file": "ui_layers/draw_pile/01_draw_book.png",
+    "width": 512,
+    "height": 512,
+    "transparent_pixels": 166191,
+    "opaque_pixels": 95953,
+    "sources": [
+      "components/draw_book.png"
+    ],
+    "method": "aligned_ui_layer",
+    "anchor": [
+      0,
+      0
+    ],
+    "order": 1,
+    "group": "draw_pile"
+  },
+  {
+    "file": "ui_layers/draw_pile/02_counter_red.png",
+    "width": 512,
+    "height": 512,
+    "transparent_pixels": 253903,
+    "opaque_pixels": 8241,
+    "sources": [
+      "badges/counter_red.png"
+    ],
+    "method": "aligned_ui_layer",
+    "anchor": [
+      0,
+      0
+    ],
+    "order": 2,
+    "group": "draw_pile"
+  },
+  {
+    "file": "ui_layers/draw_pile/preview.png",
+    "width": 512,
+    "height": 512,
+    "transparent_pixels": 86674,
+    "opaque_pixels": 175470,
+    "sources": [
+      "ui_layers/draw_pile/00_pile_backplate.png",
+      "ui_layers/draw_pile/01_draw_book.png",
+      "ui_layers/draw_pile/02_counter_red.png"
+    ],
+    "method": "composited_ui_preview",
+    "preview": true
+  },
+  {
+    "file": "ui_layers/discard_pile/00_pile_backplate.png",
+    "width": 512,
+    "height": 512,
+    "transparent_pixels": 157409,
+    "opaque_pixels": 104735,
+    "sources": [
+      "panels/pile_backplate.png"
+    ],
+    "method": "aligned_ui_layer",
+    "anchor": [
+      0,
+      0
+    ],
+    "order": 0,
+    "group": "discard_pile"
+  },
+  {
+    "file": "ui_layers/discard_pile/01_discard_book.png",
+    "width": 512,
+    "height": 512,
+    "transparent_pixels": 167628,
+    "opaque_pixels": 94516,
+    "sources": [
+      "components/discard_book.png"
+    ],
+    "method": "aligned_ui_layer",
+    "anchor": [
+      0,
+      0
+    ],
+    "order": 1,
+    "group": "discard_pile"
+  },
+  {
+    "file": "ui_layers/discard_pile/02_counter_red.png",
+    "width": 512,
+    "height": 512,
+    "transparent_pixels": 253903,
+    "opaque_pixels": 8241,
+    "sources": [
+      "badges/counter_red.png"
+    ],
+    "method": "aligned_ui_layer",
+    "anchor": [
+      0,
+      0
+    ],
+    "order": 2,
+    "group": "discard_pile"
+  },
+  {
+    "file": "ui_layers/discard_pile/preview.png",
+    "width": 512,
+    "height": 512,
+    "transparent_pixels": 87293,
+    "opaque_pixels": 174851,
+    "sources": [
+      "ui_layers/discard_pile/00_pile_backplate.png",
+      "ui_layers/discard_pile/01_discard_book.png",
+      "ui_layers/discard_pile/02_counter_red.png"
+    ],
+    "method": "composited_ui_preview",
+    "preview": true
+  }
+]

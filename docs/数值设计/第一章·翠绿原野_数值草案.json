@@ -1,0 +1,5237 @@
+{
+  "version": "CH1-v0.1",
+  "date": "2026-10-09",
+  "status": "reference_only_not_game_import",
+  "scope": "保留现有节点类型和连线；不计地形、天气、站位收益；不依赖新卡或药水；结算示例不代表实测。",
+  "facts": {
+    "node_count": 26,
+    "starting_hp": 100,
+    "max_hp": 100,
+    "gold": 99,
+    "starting_deck": {
+      "soldier": 3,
+      "archer": 2,
+      "defend": 2,
+      "power_enhance": 3
+    },
+    "normal_battles_min": 2,
+    "normal_battles_max": 4,
+    "path_count": 14,
+    "rest_min": 1,
+    "rest_max": 3,
+    "boss_entry_min": 76,
+    "boss_entry_max": 100,
+    "end_hp_min": 54,
+    "end_hp_max": 78,
+    "stress_boss_min": 54.0,
+    "stress_boss_max": 100,
+    "stress_end_min": 21.0,
+    "stress_end_max": 67.0
+  },
+  "player_units": {
+    "soldier": {
+      "max_hp": 100,
+      "attack": 10,
+      "defence": 5,
+      "card_cost": 1,
+      "hp_damage_value": 1,
+      "dodge_rate": 0
+    },
+    "archer": {
+      "max_hp": 80,
+      "attack": 13,
+      "defence": 3,
+      "card_cost": 1,
+      "hp_damage_value": 2,
+      "dodge_rate": 0
+    }
+  },
+  "enemies": [
+    {
+      "code": "S",
+      "name": "骷髅兵",
+      "source": "skeleton",
+      "max_hp": 70,
+      "attack": 9,
+      "defence": 2,
+      "hp_damage_value": 1,
+      "dodge_rate": 0,
+      "role": "基础近战，早期主力",
+      "current": {
+        "max_hp": 100,
+        "attack": 15,
+        "defence": 5,
+        "card_cost": 1,
+        "hp_damage_value": 1,
+        "dodge_rate": 0
+      },
+      "source_path": "res://data/units/skeleton.tres"
+    },
+    {
+      "code": "R",
+      "name": "骷髅弓手",
+      "source": "skeleton_archer",
+      "max_hp": 55,
+      "attack": 10,
+      "defence": 1,
+      "hp_damage_value": 2,
+      "dodge_rate": 0,
+      "role": "脆弱远程；资源显示名为弓箭手哥布林",
+      "current": {
+        "max_hp": 100,
+        "attack": 15,
+        "defence": 5,
+        "card_cost": 1,
+        "hp_damage_value": 2,
+        "dodge_rate": 0
+      },
+      "source_path": "res://data/units/skeleton_archer.tres"
+    },
+    {
+      "code": "O",
+      "name": "哥布林",
+      "source": "orc",
+      "max_hp": 100,
+      "attack": 11,
+      "defence": 3,
+      "hp_damage_value": 1,
+      "dodge_rate": 0,
+      "role": "中段近战，力量强化的受益目标",
+      "current": {
+        "max_hp": 100,
+        "attack": 15,
+        "defence": 5,
+        "card_cost": 1,
+        "hp_damage_value": 1,
+        "dodge_rate": 0
+      },
+      "source_path": "res://data/units/orc.tres"
+    },
+    {
+      "code": "T",
+      "name": "武装哥布林",
+      "source": "armored_orc",
+      "max_hp": 145,
+      "attack": 10,
+      "defence": 4,
+      "hp_damage_value": 2,
+      "dodge_rate": 0,
+      "role": "高生命前排；首版关闭闪避，减少随机反击",
+      "current": {
+        "max_hp": 100,
+        "attack": 15,
+        "defence": 5,
+        "card_cost": 1,
+        "hp_damage_value": 1,
+        "dodge_rate": 0.2
+      },
+      "source_path": "res://data/units/armored_orc.tres"
+    },
+    {
+      "code": "B",
+      "name": "原野督军",
+      "source": "elite_orc",
+      "max_hp": 220,
+      "attack": 13,
+      "defence": 4,
+      "hp_damage_value": 3,
+      "dodge_rate": 0,
+      "role": "沿用精英哥布林技能，仅作为Boss波次单位",
+      "current": {
+        "max_hp": 150,
+        "attack": 17,
+        "defence": 7,
+        "card_cost": 1,
+        "hp_damage_value": 1,
+        "dodge_rate": 0
+      },
+      "source_path": "res://data/units/elite_orc.tres"
+    }
+  ],
+  "encounters": [
+    {
+      "id": "A",
+      "name": "原野初遇",
+      "floors": "第2层",
+      "enemy_max_hp": 22,
+      "round_target": "4–6",
+      "loss_target": "0–8",
+      "waves": [
+        {
+          "S": 1,
+          "R": 0,
+          "O": 0,
+          "T": 0,
+          "B": 0
+        },
+        {
+          "S": 2,
+          "R": 0,
+          "O": 0,
+          "T": 0,
+          "B": 0
+        },
+        {
+          "S": 1,
+          "R": 1,
+          "O": 0,
+          "T": 0,
+          "B": 0
+        },
+        {
+          "S": 0,
+          "R": 0,
+          "O": 0,
+          "T": 0,
+          "B": 0
+        },
+        {
+          "S": 2,
+          "R": 0,
+          "O": 0,
+          "T": 0,
+          "B": 0
+        },
+        {
+          "S": 1,
+          "R": 0,
+          "O": 0,
+          "T": 0,
+          "B": 0
+        }
+      ],
+      "settlement": [
+        [
+          1,
+          2,
+          0
+        ],
+        [
+          1,
+          3,
+          0
+        ],
+        [
+          0,
+          0,
+          1
+        ],
+        [
+          1,
+          3,
+          0
+        ],
+        [
+          1,
+          2,
+          0
+        ]
+      ],
+      "purpose": "先学征召，再接触近远程混编；第4轮给补伤害机会。",
+      "energy_per_round": 3,
+      "energy_growth": 1,
+      "base_energy_cap": 10,
+      "cards_per_round": 5,
+      "repeat_waves": false,
+      "repeat_start": 1,
+      "repeat_end": 0,
+      "cycle_growth": {
+        "attack": 0,
+        "max_hp": 0,
+        "defence": 0
+      },
+      "reference_rows": [
+        {
+          "round": 1,
+          "wave": 1,
+          "cycle": 0,
+          "composition": {
+            "S": 1,
+            "R": 0,
+            "O": 0,
+            "T": 0,
+            "B": 0
+          },
+          "result": 1,
+          "ally_survivor_damage": 2,
+          "enemy_survivor_damage": 0,
+          "enemy_damage": 3,
+          "player_loss": 0,
+          "enemy_remaining_hp": 19,
+          "cumulative_loss": 0,
+          "base_energy": 3
+        },
+        {
+          "round": 2,
+          "wave": 2,
+          "cycle": 0,
+          "composition": {
+            "S": 2,
+            "R": 0,
+            "O": 0,
+            "T": 0,
+            "B": 0
+          },
+          "result": 1,
+          "ally_survivor_damage": 3,
+          "enemy_survivor_damage": 0,
+          "enemy_damage": 5,
+          "player_loss": 0,
+          "enemy_remaining_hp": 14,
+          "cumulative_loss": 0,
+          "base_energy": 4
+        },
+        {
+          "round": 3,
+          "wave": 3,
+          "cycle": 0,
+          "composition": {
+            "S": 1,
+            "R": 1,
+            "O": 0,
+            "T": 0,
+            "B": 0
+          },
+          "result": 0,
+          "ally_survivor_damage": 0,
+          "enemy_survivor_damage": 1,
+          "enemy_damage": 0,
+          "player_loss": 4,
+          "enemy_remaining_hp": 14,
+          "cumulative_loss": 4,
+          "base_energy": 5
+        },
+        {
+          "round": 4,
+          "wave": 4,
+          "cycle": 0,
+          "composition": {
+            "S": 0,
+            "R": 0,
+            "O": 0,
+            "T": 0,
+            "B": 0
+          },
+          "result": 1,
+          "ally_survivor_damage": 3,
+          "enemy_survivor_damage": 0,
+          "enemy_damage": 7,
+          "player_loss": 0,
+          "enemy_remaining_hp": 7,
+          "cumulative_loss": 4,
+          "base_energy": 6
+        },
+        {
+          "round": 5,
+          "wave": 5,
+          "cycle": 0,
+          "composition": {
+            "S": 2,
+            "R": 0,
+            "O": 0,
+            "T": 0,
+            "B": 0
+          },
+          "result": 1,
+          "ally_survivor_damage": 2,
+          "enemy_survivor_damage": 0,
+          "enemy_damage": 7,
+          "player_loss": 0,
+          "enemy_remaining_hp": 0,
+          "cumulative_loss": 4,
+          "base_energy": 7
+        }
+      ],
+      "reference_rounds": 5,
+      "reference_loss": 4,
+      "reference_enemy_damage": 22
+    },
+    {
+      "id": "B",
+      "name": "边境混编",
+      "floors": "第4层战斗",
+      "enemy_max_hp": 30,
+      "round_target": "5–7",
+      "loss_target": "6–14",
+      "waves": [
+        {
+          "S": 2,
+          "R": 0,
+          "O": 0,
+          "T": 0,
+          "B": 0
+        },
+        {
+          "S": 1,
+          "R": 1,
+          "O": 0,
+          "T": 0,
+          "B": 0
+        },
+        {
+          "S": 2,
+          "R": 1,
+          "O": 0,
+          "T": 0,
+          "B": 0
+        },
+        {
+          "S": 0,
+          "R": 0,
+          "O": 0,
+          "T": 0,
+          "B": 0
+        },
+        {
+          "S": 1,
+          "R": 0,
+          "O": 1,
+          "T": 0,
+          "B": 0
+        },
+        {
+          "S": 1,
+          "R": 1,
+          "O": 0,
+          "T": 0,
+          "B": 0
+        },
+        {
+          "S": 1,
+          "R": 0,
+          "O": 0,
+          "T": 0,
+          "B": 0
+        }
+      ],
+      "settlement": [
+        [
+          1,
+          3,
+          0
+        ],
+        [
+          1,
+          3,
+          0
+        ],
+        [
+          0,
+          0,
+          2
+        ],
+        [
+          1,
+          3,
+          0
+        ],
+        [
+          0,
+          0,
+          2
+        ],
+        [
+          1,
+          3,
+          0
+        ],
+        [
+          1,
+          2,
+          0
+        ]
+      ],
+      "purpose": "第一场明显压力；第3、5轮检验强化和前后排配合。",
+      "energy_per_round": 3,
+      "energy_growth": 1,
+      "base_energy_cap": 10,
+      "cards_per_round": 5,
+      "repeat_waves": false,
+      "repeat_start": 1,
+      "repeat_end": 0,
+      "cycle_growth": {
+        "attack": 0,
+        "max_hp": 0,
+        "defence": 0
+      },
+      "reference_rows": [
+        {
+          "round": 1,
+          "wave": 1,
+          "cycle": 0,
+          "composition": {
+            "S": 2,
+            "R": 0,
+            "O": 0,
+            "T": 0,
+            "B": 0
+          },
+          "result": 1,
+          "ally_survivor_damage": 3,
+          "enemy_survivor_damage": 0,
+          "enemy_damage": 4,
+          "player_loss": 0,
+          "enemy_remaining_hp": 26,
+          "cumulative_loss": 0,
+          "base_energy": 3
+        },
+        {
+          "round": 2,
+          "wave": 2,
+          "cycle": 0,
+          "composition": {
+            "S": 1,
+            "R": 1,
+            "O": 0,
+            "T": 0,
+            "B": 0
+          },
+          "result": 1,
+          "ally_survivor_damage": 3,
+          "enemy_survivor_damage": 0,
+          "enemy_damage": 5,
+          "player_loss": 0,
+          "enemy_remaining_hp": 21,
+          "cumulative_loss": 0,
+          "base_energy": 4
+        },
+        {
+          "round": 3,
+          "wave": 3,
+          "cycle": 0,
+          "composition": {
+            "S": 2,
+            "R": 1,
+            "O": 0,
+            "T": 0,
+            "B": 0
+          },
+          "result": 0,
+          "ally_survivor_damage": 0,
+          "enemy_survivor_damage": 2,
+          "enemy_damage": 0,
+          "player_loss": 5,
+          "enemy_remaining_hp": 21,
+          "cumulative_loss": 5,
+          "base_energy": 5
+        },
+        {
+          "round": 4,
+          "wave": 4,
+          "cycle": 0,
+          "composition": {
+            "S": 0,
+            "R": 0,
+            "O": 0,
+            "T": 0,
+            "B": 0
+          },
+          "result": 1,
+          "ally_survivor_damage": 3,
+          "enemy_survivor_damage": 0,
+          "enemy_damage": 7,
+          "player_loss": 0,
+          "enemy_remaining_hp": 14,
+          "cumulative_loss": 5,
+          "base_energy": 6
+        },
+        {
+          "round": 5,
+          "wave": 5,
+          "cycle": 0,
+          "composition": {
+            "S": 1,
+            "R": 0,
+            "O": 1,
+            "T": 0,
+            "B": 0
+          },
+          "result": 0,
+          "ally_survivor_damage": 0,
+          "enemy_survivor_damage": 2,
+          "enemy_damage": 0,
+          "player_loss": 7,
+          "enemy_remaining_hp": 14,
+          "cumulative_loss": 12,
+          "base_energy": 7
+        },
+        {
+          "round": 6,
+          "wave": 6,
+          "cycle": 0,
+          "composition": {
+            "S": 1,
+            "R": 1,
+            "O": 0,
+            "T": 0,
+            "B": 0
+          },
+          "result": 1,
+          "ally_survivor_damage": 3,
+          "enemy_survivor_damage": 0,
+          "enemy_damage": 9,
+          "player_loss": 0,
+          "enemy_remaining_hp": 5,
+          "cumulative_loss": 12,
+          "base_energy": 8
+        },
+        {
+          "round": 7,
+          "wave": 7,
+          "cycle": 0,
+          "composition": {
+            "S": 1,
+            "R": 0,
+            "O": 0,
+            "T": 0,
+            "B": 0
+          },
+          "result": 1,
+          "ally_survivor_damage": 2,
+          "enemy_survivor_damage": 0,
+          "enemy_damage": 9,
+          "player_loss": 0,
+          "enemy_remaining_hp": 0,
+          "cumulative_loss": 12,
+          "base_energy": 9
+        }
+      ],
+      "reference_rounds": 7,
+      "reference_loss": 12,
+      "reference_enemy_damage": 34
+    },
+    {
+      "id": "C",
+      "name": "补给线阻击",
+      "floors": "第5层战斗",
+      "enemy_max_hp": 34,
+      "round_target": "6–8",
+      "loss_target": "8–16",
+      "waves": [
+        {
+          "S": 2,
+          "R": 0,
+          "O": 0,
+          "T": 0,
+          "B": 0
+        },
+        {
+          "S": 1,
+          "R": 0,
+          "O": 1,
+          "T": 0,
+          "B": 0
+        },
+        {
+          "S": 1,
+          "R": 2,
+          "O": 0,
+          "T": 0,
+          "B": 0
+        },
+        {
+          "S": 0,
+          "R": 0,
+          "O": 0,
+          "T": 0,
+          "B": 0
+        },
+        {
+          "S": 1,
+          "R": 1,
+          "O": 1,
+          "T": 0,
+          "B": 0
+        },
+        {
+          "S": 1,
+          "R": 1,
+          "O": 0,
+          "T": 0,
+          "B": 0
+        },
+        {
+          "S": 1,
+          "R": 0,
+          "O": 0,
+          "T": 0,
+          "B": 0
+        }
+      ],
+      "settlement": [
+        [
+          1,
+          3,
+          0
+        ],
+        [
+          1,
+          2,
+          0
+        ],
+        [
+          0,
+          0,
+          2
+        ],
+        [
+          1,
+          3,
+          0
+        ],
+        [
+          0,
+          0,
+          2
+        ],
+        [
+          1,
+          3,
+          0
+        ],
+        [
+          1,
+          3,
+          0
+        ]
+      ],
+      "purpose": "双远程与哥布林交替；仍只用当前起始牌组做基准。",
+      "energy_per_round": 3,
+      "energy_growth": 1,
+      "base_energy_cap": 10,
+      "cards_per_round": 5,
+      "repeat_waves": false,
+      "repeat_start": 1,
+      "repeat_end": 0,
+      "cycle_growth": {
+        "attack": 0,
+        "max_hp": 0,
+        "defence": 0
+      },
+      "reference_rows": [
+        {
+          "round": 1,
+          "wave": 1,
+          "cycle": 0,
+          "composition": {
+            "S": 2,
+            "R": 0,
+            "O": 0,
+            "T": 0,
+            "B": 0
+          },
+          "result": 1,
+          "ally_survivor_damage": 3,
+          "enemy_survivor_damage": 0,
+          "enemy_damage": 4,
+          "player_loss": 0,
+          "enemy_remaining_hp": 30,
+          "cumulative_loss": 0,
+          "base_energy": 3
+        },
+        {
+          "round": 2,
+          "wave": 2,
+          "cycle": 0,
+          "composition": {
+            "S": 1,
+            "R": 0,
+            "O": 1,
+            "T": 0,
+            "B": 0
+          },
+          "result": 1,
+          "ally_survivor_damage": 2,
+          "enemy_survivor_damage": 0,
+          "enemy_damage": 4,
+          "player_loss": 0,
+          "enemy_remaining_hp": 26,
+          "cumulative_loss": 0,
+          "base_energy": 4
+        },
+        {
+          "round": 3,
+          "wave": 3,
+          "cycle": 0,
+          "composition": {
+            "S": 1,
+            "R": 2,
+            "O": 0,
+            "T": 0,
+            "B": 0
+          },
+          "result": 0,
+          "ally_survivor_damage": 0,
+          "enemy_survivor_damage": 2,
+          "enemy_damage": 0,
+          "player_loss": 5,
+          "enemy_remaining_hp": 26,
+          "cumulative_loss": 5,
+          "base_energy": 5
+        },
+        {
+          "round": 4,
+          "wave": 4,
+          "cycle": 0,
+          "composition": {
+            "S": 0,
+            "R": 0,
+            "O": 0,
+            "T": 0,
+            "B": 0
+          },
+          "result": 1,
+          "ally_survivor_damage": 3,
+          "enemy_survivor_damage": 0,
+          "enemy_damage": 7,
+          "player_loss": 0,
+          "enemy_remaining_hp": 19,
+          "cumulative_loss": 5,
+          "base_energy": 6
+        },
+        {
+          "round": 5,
+          "wave": 5,
+          "cycle": 0,
+          "composition": {
+            "S": 1,
+            "R": 1,
+            "O": 1,
+            "T": 0,
+            "B": 0
+          },
+          "result": 0,
+          "ally_survivor_damage": 0,
+          "enemy_survivor_damage": 2,
+          "enemy_damage": 0,
+          "player_loss": 7,
+          "enemy_remaining_hp": 19,
+          "cumulative_loss": 12,
+          "base_energy": 7
+        },
+        {
+          "round": 6,
+          "wave": 6,
+          "cycle": 0,
+          "composition": {
+            "S": 1,
+            "R": 1,
+            "O": 0,
+            "T": 0,
+            "B": 0
+          },
+          "result": 1,
+          "ally_survivor_damage": 3,
+          "enemy_survivor_damage": 0,
+          "enemy_damage": 9,
+          "player_loss": 0,
+          "enemy_remaining_hp": 10,
+          "cumulative_loss": 12,
+          "base_energy": 8
+        },
+        {
+          "round": 7,
+          "wave": 7,
+          "cycle": 0,
+          "composition": {
+            "S": 1,
+            "R": 0,
+            "O": 0,
+            "T": 0,
+            "B": 0
+          },
+          "result": 1,
+          "ally_survivor_damage": 3,
+          "enemy_survivor_damage": 0,
+          "enemy_damage": 10,
+          "player_loss": 0,
+          "enemy_remaining_hp": 0,
+          "cumulative_loss": 12,
+          "base_energy": 9
+        }
+      ],
+      "reference_rounds": 7,
+      "reference_loss": 12,
+      "reference_enemy_damage": 34
+    },
+    {
+      "id": "D",
+      "name": "原野守军",
+      "floors": "第7层战斗",
+      "enemy_max_hp": 38,
+      "round_target": "6–8",
+      "loss_target": "8–18",
+      "waves": [
+        {
+          "S": 1,
+          "R": 0,
+          "O": 1,
+          "T": 0,
+          "B": 0
+        },
+        {
+          "S": 0,
+          "R": 1,
+          "O": 1,
+          "T": 0,
+          "B": 0
+        },
+        {
+          "S": 2,
+          "R": 2,
+          "O": 0,
+          "T": 0,
+          "B": 0
+        },
+        {
+          "S": 0,
+          "R": 0,
+          "O": 0,
+          "T": 0,
+          "B": 0
+        },
+        {
+          "S": 1,
+          "R": 1,
+          "O": 1,
+          "T": 0,
+          "B": 0
+        },
+        {
+          "S": 1,
+          "R": 1,
+          "O": 0,
+          "T": 0,
+          "B": 0
+        },
+        {
+          "S": 1,
+          "R": 0,
+          "O": 0,
+          "T": 0,
+          "B": 0
+        }
+      ],
+      "settlement": [
+        [
+          1,
+          3,
+          0
+        ],
+        [
+          1,
+          3,
+          0
+        ],
+        [
+          0,
+          0,
+          2
+        ],
+        [
+          1,
+          3,
+          0
+        ],
+        [
+          0,
+          0,
+          2
+        ],
+        [
+          1,
+          3,
+          0
+        ],
+        [
+          1,
+          3,
+          0
+        ],
+        [
+          1,
+          2,
+          0
+        ]
+      ],
+      "purpose": "第3轮四单位为本关峰值，随后缓和；第8轮起复用末波单骷髅。",
+      "energy_per_round": 3,
+      "energy_growth": 1,
+      "base_energy_cap": 10,
+      "cards_per_round": 5,
+      "repeat_waves": false,
+      "repeat_start": 1,
+      "repeat_end": 0,
+      "cycle_growth": {
+        "attack": 0,
+        "max_hp": 0,
+        "defence": 0
+      },
+      "reference_rows": [
+        {
+          "round": 1,
+          "wave": 1,
+          "cycle": 0,
+          "composition": {
+            "S": 1,
+            "R": 0,
+            "O": 1,
+            "T": 0,
+            "B": 0
+          },
+          "result": 1,
+          "ally_survivor_damage": 3,
+          "enemy_survivor_damage": 0,
+          "enemy_damage": 4,
+          "player_loss": 0,
+          "enemy_remaining_hp": 34,
+          "cumulative_loss": 0,
+          "base_energy": 3
+        },
+        {
+          "round": 2,
+          "wave": 2,
+          "cycle": 0,
+          "composition": {
+            "S": 0,
+            "R": 1,
+            "O": 1,
+            "T": 0,
+            "B": 0
+          },
+          "result": 1,
+          "ally_survivor_damage": 3,
+          "enemy_survivor_damage": 0,
+          "enemy_damage": 5,
+          "player_loss": 0,
+          "enemy_remaining_hp": 29,
+          "cumulative_loss": 0,
+          "base_energy": 4
+        },
+        {
+          "round": 3,
+          "wave": 3,
+          "cycle": 0,
+          "composition": {
+            "S": 2,
+            "R": 2,
+            "O": 0,
+            "T": 0,
+            "B": 0
+          },
+          "result": 0,
+          "ally_survivor_damage": 0,
+          "enemy_survivor_damage": 2,
+          "enemy_damage": 0,
+          "player_loss": 5,
+          "enemy_remaining_hp": 29,
+          "cumulative_loss": 5,
+          "base_energy": 5
+        },
+        {
+          "round": 4,
+          "wave": 4,
+          "cycle": 0,
+          "composition": {
+            "S": 0,
+            "R": 0,
+            "O": 0,
+            "T": 0,
+            "B": 0
+          },
+          "result": 1,
+          "ally_survivor_damage": 3,
+          "enemy_survivor_damage": 0,
+          "enemy_damage": 7,
+          "player_loss": 0,
+          "enemy_remaining_hp": 22,
+          "cumulative_loss": 5,
+          "base_energy": 6
+        },
+        {
+          "round": 5,
+          "wave": 5,
+          "cycle": 0,
+          "composition": {
+            "S": 1,
+            "R": 1,
+            "O": 1,
+            "T": 0,
+            "B": 0
+          },
+          "result": 0,
+          "ally_survivor_damage": 0,
+          "enemy_survivor_damage": 2,
+          "enemy_damage": 0,
+          "player_loss": 7,
+          "enemy_remaining_hp": 22,
+          "cumulative_loss": 12,
+          "base_energy": 7
+        },
+        {
+          "round": 6,
+          "wave": 6,
+          "cycle": 0,
+          "composition": {
+            "S": 1,
+            "R": 1,
+            "O": 0,
+            "T": 0,
+            "B": 0
+          },
+          "result": 1,
+          "ally_survivor_damage": 3,
+          "enemy_survivor_damage": 0,
+          "enemy_damage": 9,
+          "player_loss": 0,
+          "enemy_remaining_hp": 13,
+          "cumulative_loss": 12,
+          "base_energy": 8
+        },
+        {
+          "round": 7,
+          "wave": 7,
+          "cycle": 0,
+          "composition": {
+            "S": 1,
+            "R": 0,
+            "O": 0,
+            "T": 0,
+            "B": 0
+          },
+          "result": 1,
+          "ally_survivor_damage": 3,
+          "enemy_survivor_damage": 0,
+          "enemy_damage": 10,
+          "player_loss": 0,
+          "enemy_remaining_hp": 3,
+          "cumulative_loss": 12,
+          "base_energy": 9
+        },
+        {
+          "round": 8,
+          "wave": 7,
+          "cycle": 0,
+          "composition": {
+            "S": 1,
+            "R": 0,
+            "O": 0,
+            "T": 0,
+            "B": 0
+          },
+          "result": 1,
+          "ally_survivor_damage": 2,
+          "enemy_survivor_damage": 0,
+          "enemy_damage": 10,
+          "player_loss": 0,
+          "enemy_remaining_hp": 0,
+          "cumulative_loss": 12,
+          "base_energy": 10
+        }
+      ],
+      "reference_rounds": 8,
+      "reference_loss": 12,
+      "reference_enemy_damage": 45
+    },
+    {
+      "id": "E",
+      "name": "督军前哨",
+      "floors": "第8层战斗",
+      "enemy_max_hp": 42,
+      "round_target": "7–9",
+      "loss_target": "10–22",
+      "waves": [
+        {
+          "S": 1,
+          "R": 0,
+          "O": 1,
+          "T": 0,
+          "B": 0
+        },
+        {
+          "S": 0,
+          "R": 1,
+          "O": 0,
+          "T": 1,
+          "B": 0
+        },
+        {
+          "S": 1,
+          "R": 2,
+          "O": 1,
+          "T": 0,
+          "B": 0
+        },
+        {
+          "S": 0,
+          "R": 0,
+          "O": 0,
+          "T": 0,
+          "B": 0
+        },
+        {
+          "S": 1,
+          "R": 1,
+          "O": 0,
+          "T": 1,
+          "B": 0
+        },
+        {
+          "S": 0,
+          "R": 1,
+          "O": 1,
+          "T": 0,
+          "B": 0
+        },
+        {
+          "S": 1,
+          "R": 0,
+          "O": 0,
+          "T": 0,
+          "B": 0
+        }
+      ],
+      "settlement": [
+        [
+          1,
+          3,
+          0
+        ],
+        [
+          0,
+          0,
+          2
+        ],
+        [
+          0,
+          0,
+          2
+        ],
+        [
+          1,
+          3,
+          0
+        ],
+        [
+          0,
+          0,
+          2
+        ],
+        [
+          1,
+          3,
+          0
+        ],
+        [
+          1,
+          3,
+          0
+        ],
+        [
+          1,
+          3,
+          0
+        ],
+        [
+          1,
+          2,
+          0
+        ]
+      ],
+      "purpose": "引入高生命前排，鼓励力量强化；不要求高阶征召、药水或招募奖励。",
+      "energy_per_round": 3,
+      "energy_growth": 1,
+      "base_energy_cap": 10,
+      "cards_per_round": 5,
+      "repeat_waves": false,
+      "repeat_start": 1,
+      "repeat_end": 0,
+      "cycle_growth": {
+        "attack": 0,
+        "max_hp": 0,
+        "defence": 0
+      },
+      "reference_rows": [
+        {
+          "round": 1,
+          "wave": 1,
+          "cycle": 0,
+          "composition": {
+            "S": 1,
+            "R": 0,
+            "O": 1,
+            "T": 0,
+            "B": 0
+          },
+          "result": 1,
+          "ally_survivor_damage": 3,
+          "enemy_survivor_damage": 0,
+          "enemy_damage": 4,
+          "player_loss": 0,
+          "enemy_remaining_hp": 38,
+          "cumulative_loss": 0,
+          "base_energy": 3
+        },
+        {
+          "round": 2,
+          "wave": 2,
+          "cycle": 0,
+          "composition": {
+            "S": 0,
+            "R": 1,
+            "O": 0,
+            "T": 1,
+            "B": 0
+          },
+          "result": 0,
+          "ally_survivor_damage": 0,
+          "enemy_survivor_damage": 2,
+          "enemy_damage": 0,
+          "player_loss": 4,
+          "enemy_remaining_hp": 38,
+          "cumulative_loss": 4,
+          "base_energy": 4
+        },
+        {
+          "round": 3,
+          "wave": 3,
+          "cycle": 0,
+          "composition": {
+            "S": 1,
+            "R": 2,
+            "O": 1,
+            "T": 0,
+            "B": 0
+          },
+          "result": 0,
+          "ally_survivor_damage": 0,
+          "enemy_survivor_damage": 2,
+          "enemy_damage": 0,
+          "player_loss": 5,
+          "enemy_remaining_hp": 38,
+          "cumulative_loss": 9,
+          "base_energy": 5
+        },
+        {
+          "round": 4,
+          "wave": 4,
+          "cycle": 0,
+          "composition": {
+            "S": 0,
+            "R": 0,
+            "O": 0,
+            "T": 0,
+            "B": 0
+          },
+          "result": 1,
+          "ally_survivor_damage": 3,
+          "enemy_survivor_damage": 0,
+          "enemy_damage": 7,
+          "player_loss": 0,
+          "enemy_remaining_hp": 31,
+          "cumulative_loss": 9,
+          "base_energy": 6
+        },
+        {
+          "round": 5,
+          "wave": 5,
+          "cycle": 0,
+          "composition": {
+            "S": 1,
+            "R": 1,
+            "O": 0,
+            "T": 1,
+            "B": 0
+          },
+          "result": 0,
+          "ally_survivor_damage": 0,
+          "enemy_survivor_damage": 2,
+          "enemy_damage": 0,
+          "player_loss": 7,
+          "enemy_remaining_hp": 31,
+          "cumulative_loss": 16,
+          "base_energy": 7
+        },
+        {
+          "round": 6,
+          "wave": 6,
+          "cycle": 0,
+          "composition": {
+            "S": 0,
+            "R": 1,
+            "O": 1,
+            "T": 0,
+            "B": 0
+          },
+          "result": 1,
+          "ally_survivor_damage": 3,
+          "enemy_survivor_damage": 0,
+          "enemy_damage": 9,
+          "player_loss": 0,
+          "enemy_remaining_hp": 22,
+          "cumulative_loss": 16,
+          "base_energy": 8
+        },
+        {
+          "round": 7,
+          "wave": 7,
+          "cycle": 0,
+          "composition": {
+            "S": 1,
+            "R": 0,
+            "O": 0,
+            "T": 0,
+            "B": 0
+          },
+          "result": 1,
+          "ally_survivor_damage": 3,
+          "enemy_survivor_damage": 0,
+          "enemy_damage": 10,
+          "player_loss": 0,
+          "enemy_remaining_hp": 12,
+          "cumulative_loss": 16,
+          "base_energy": 9
+        },
+        {
+          "round": 8,
+          "wave": 7,
+          "cycle": 0,
+          "composition": {
+            "S": 1,
+            "R": 0,
+            "O": 0,
+            "T": 0,
+            "B": 0
+          },
+          "result": 1,
+          "ally_survivor_damage": 3,
+          "enemy_survivor_damage": 0,
+          "enemy_damage": 11,
+          "player_loss": 0,
+          "enemy_remaining_hp": 1,
+          "cumulative_loss": 16,
+          "base_energy": 10
+        },
+        {
+          "round": 9,
+          "wave": 7,
+          "cycle": 0,
+          "composition": {
+            "S": 1,
+            "R": 0,
+            "O": 0,
+            "T": 0,
+            "B": 0
+          },
+          "result": 1,
+          "ally_survivor_damage": 2,
+          "enemy_survivor_damage": 0,
+          "enemy_damage": 11,
+          "player_loss": 0,
+          "enemy_remaining_hp": 0,
+          "cumulative_loss": 16,
+          "base_energy": 10
+        }
+      ],
+      "reference_rounds": 9,
+      "reference_loss": 16,
+      "reference_enemy_damage": 52
+    },
+    {
+      "id": "F",
+      "name": "原野督军",
+      "floors": "第10层Boss",
+      "enemy_max_hp": 52,
+      "round_target": "8–11",
+      "loss_target": "16–34",
+      "waves": [
+        {
+          "S": 1,
+          "R": 0,
+          "O": 1,
+          "T": 0,
+          "B": 0
+        },
+        {
+          "S": 0,
+          "R": 2,
+          "O": 1,
+          "T": 0,
+          "B": 0
+        },
+        {
+          "S": 0,
+          "R": 1,
+          "O": 0,
+          "T": 1,
+          "B": 0
+        },
+        {
+          "S": 0,
+          "R": 0,
+          "O": 0,
+          "T": 0,
+          "B": 0
+        },
+        {
+          "S": 1,
+          "R": 0,
+          "O": 0,
+          "T": 0,
+          "B": 1
+        },
+        {
+          "S": 0,
+          "R": 1,
+          "O": 1,
+          "T": 0,
+          "B": 0
+        },
+        {
+          "S": 1,
+          "R": 1,
+          "O": 0,
+          "T": 1,
+          "B": 0
+        },
+        {
+          "S": 0,
+          "R": 0,
+          "O": 0,
+          "T": 0,
+          "B": 0
+        },
+        {
+          "S": 0,
+          "R": 1,
+          "O": 0,
+          "T": 0,
+          "B": 1
+        },
+        {
+          "S": 1,
+          "R": 1,
+          "O": 0,
+          "T": 0,
+          "B": 0
+        }
+      ],
+      "settlement": [
+        [
+          1,
+          3,
+          0
+        ],
+        [
+          1,
+          3,
+          0
+        ],
+        [
+          0,
+          0,
+          2
+        ],
+        [
+          1,
+          3,
+          0
+        ],
+        [
+          0,
+          0,
+          3
+        ],
+        [
+          1,
+          3,
+          0
+        ],
+        [
+          0,
+          0,
+          2
+        ],
+        [
+          1,
+          3,
+          0
+        ],
+        [
+          1,
+          2,
+          0
+        ],
+        [
+          1,
+          3,
+          0
+        ]
+      ],
+      "purpose": "第5、9轮督军压力，第4、8轮喘息；第11轮起循环6–10波，不附加成长。",
+      "energy_per_round": 3,
+      "energy_growth": 1,
+      "base_energy_cap": 10,
+      "cards_per_round": 5,
+      "repeat_waves": true,
+      "repeat_start": 6,
+      "repeat_end": 10,
+      "cycle_growth": {
+        "attack": 0,
+        "max_hp": 0,
+        "defence": 0
+      },
+      "reference_rows": [
+        {
+          "round": 1,
+          "wave": 1,
+          "cycle": 0,
+          "composition": {
+            "S": 1,
+            "R": 0,
+            "O": 1,
+            "T": 0,
+            "B": 0
+          },
+          "result": 1,
+          "ally_survivor_damage": 3,
+          "enemy_survivor_damage": 0,
+          "enemy_damage": 4,
+          "player_loss": 0,
+          "enemy_remaining_hp": 48,
+          "cumulative_loss": 0,
+          "base_energy": 3
+        },
+        {
+          "round": 2,
+          "wave": 2,
+          "cycle": 0,
+          "composition": {
+            "S": 0,
+            "R": 2,
+            "O": 1,
+            "T": 0,
+            "B": 0
+          },
+          "result": 1,
+          "ally_survivor_damage": 3,
+          "enemy_survivor_damage": 0,
+          "enemy_damage": 5,
+          "player_loss": 0,
+          "enemy_remaining_hp": 43,
+          "cumulative_loss": 0,
+          "base_energy": 4
+        },
+        {
+          "round": 3,
+          "wave": 3,
+          "cycle": 0,
+          "composition": {
+            "S": 0,
+            "R": 1,
+            "O": 0,
+            "T": 1,
+            "B": 0
+          },
+          "result": 0,
+          "ally_survivor_damage": 0,
+          "enemy_survivor_damage": 2,
+          "enemy_damage": 0,
+          "player_loss": 5,
+          "enemy_remaining_hp": 43,
+          "cumulative_loss": 5,
+          "base_energy": 5
+        },
+        {
+          "round": 4,
+          "wave": 4,
+          "cycle": 0,
+          "composition": {
+            "S": 0,
+            "R": 0,
+            "O": 0,
+            "T": 0,
+            "B": 0
+          },
+          "result": 1,
+          "ally_survivor_damage": 3,
+          "enemy_survivor_damage": 0,
+          "enemy_damage": 7,
+          "player_loss": 0,
+          "enemy_remaining_hp": 36,
+          "cumulative_loss": 5,
+          "base_energy": 6
+        },
+        {
+          "round": 5,
+          "wave": 5,
+          "cycle": 0,
+          "composition": {
+            "S": 1,
+            "R": 0,
+            "O": 0,
+            "T": 0,
+            "B": 1
+          },
+          "result": 0,
+          "ally_survivor_damage": 0,
+          "enemy_survivor_damage": 3,
+          "enemy_damage": 0,
+          "player_loss": 8,
+          "enemy_remaining_hp": 36,
+          "cumulative_loss": 13,
+          "base_energy": 7
+        },
+        {
+          "round": 6,
+          "wave": 6,
+          "cycle": 0,
+          "composition": {
+            "S": 0,
+            "R": 1,
+            "O": 1,
+            "T": 0,
+            "B": 0
+          },
+          "result": 1,
+          "ally_survivor_damage": 3,
+          "enemy_survivor_damage": 0,
+          "enemy_damage": 9,
+          "player_loss": 0,
+          "enemy_remaining_hp": 27,
+          "cumulative_loss": 13,
+          "base_energy": 8
+        },
+        {
+          "round": 7,
+          "wave": 7,
+          "cycle": 0,
+          "composition": {
+            "S": 1,
+            "R": 1,
+            "O": 0,
+            "T": 1,
+            "B": 0
+          },
+          "result": 0,
+          "ally_survivor_damage": 0,
+          "enemy_survivor_damage": 2,
+          "enemy_damage": 0,
+          "player_loss": 9,
+          "enemy_remaining_hp": 27,
+          "cumulative_loss": 22,
+          "base_energy": 9
+        },
+        {
+          "round": 8,
+          "wave": 8,
+          "cycle": 0,
+          "composition": {
+            "S": 0,
+            "R": 0,
+            "O": 0,
+            "T": 0,
+            "B": 0
+          },
+          "result": 1,
+          "ally_survivor_damage": 3,
+          "enemy_survivor_damage": 0,
+          "enemy_damage": 11,
+          "player_loss": 0,
+          "enemy_remaining_hp": 16,
+          "cumulative_loss": 22,
+          "base_energy": 10
+        },
+        {
+          "round": 9,
+          "wave": 9,
+          "cycle": 0,
+          "composition": {
+            "S": 0,
+            "R": 1,
+            "O": 0,
+            "T": 0,
+            "B": 1
+          },
+          "result": 1,
+          "ally_survivor_damage": 2,
+          "enemy_survivor_damage": 0,
+          "enemy_damage": 11,
+          "player_loss": 0,
+          "enemy_remaining_hp": 5,
+          "cumulative_loss": 22,
+          "base_energy": 10
+        },
+        {
+          "round": 10,
+          "wave": 10,
+          "cycle": 0,
+          "composition": {
+            "S": 1,
+            "R": 1,
+            "O": 0,
+            "T": 0,
+            "B": 0
+          },
+          "result": 1,
+          "ally_survivor_damage": 3,
+          "enemy_survivor_damage": 0,
+          "enemy_damage": 13,
+          "player_loss": 0,
+          "enemy_remaining_hp": 0,
+          "cumulative_loss": 22,
+          "base_energy": 10
+        }
+      ],
+      "reference_rounds": 10,
+      "reference_loss": 22,
+      "reference_enemy_damage": 60
+    }
+  ],
+  "chapter_nodes": [
+    {
+      "event": {
+        "choices": [
+          {
+            "gold": 15,
+            "heal": 0,
+            "text": "搜刮物资"
+          },
+          {
+            "gold": 0,
+            "heal": 0,
+            "text": "谨慎离开"
+          }
+        ],
+        "description": "你发现一座被遗弃的兵营。帐篷中还有一些可用物资。"
+      },
+      "event_id": "abandoned_camp",
+      "floor": 1,
+      "id": "floor_01_01",
+      "map_pos": {
+        "x": 0.4032951289398281,
+        "y": 0.93
+      },
+      "next": [
+        "floor_02_02",
+        "floor_02_03",
+        "floor_02_01"
+      ],
+      "title": "事件",
+      "type": 1,
+      "reference_encounter": ""
+    },
+    {
+      "event_id": "level_001_1",
+      "floor": 2,
+      "id": "floor_02_01",
+      "map_pos": {
+        "x": 0.2693409742120344,
+        "y": 0.8344444444444445
+      },
+      "next": [
+        "floor_03_01"
+      ],
+      "title": "战斗",
+      "type": 0,
+      "reference_encounter": "A"
+    },
+    {
+      "event_id": "level_001",
+      "floor": 2,
+      "id": "floor_02_02",
+      "map_pos": {
+        "x": 0.3861031518624642,
+        "y": 0.8344444444444445
+      },
+      "next": [
+        "floor_03_02",
+        "floor_03_03"
+      ],
+      "title": "战斗",
+      "type": 0,
+      "reference_encounter": "A"
+    },
+    {
+      "event": {
+        "choices": [
+          {
+            "gold": 15,
+            "heal": 0,
+            "text": "搜刮物资"
+          },
+          {
+            "gold": 0,
+            "heal": 0,
+            "text": "谨慎离开"
+          }
+        ],
+        "description": "你发现一座被遗弃的兵营。帐篷中还有一些可用物资。"
+      },
+      "event_id": "level_001",
+      "floor": 2,
+      "id": "floor_02_03",
+      "map_pos": {
+        "x": 0.5429799426934098,
+        "y": 0.8344444444444445
+      },
+      "next": [
+        "floor_03_04"
+      ],
+      "title": "战斗",
+      "type": 0,
+      "reference_encounter": "A"
+    },
+    {
+      "event": {
+        "choices": [
+          {
+            "gold": 15,
+            "heal": 0,
+            "text": "搜刮物资"
+          },
+          {
+            "gold": 0,
+            "heal": 0,
+            "text": "谨慎离开"
+          }
+        ],
+        "description": "你发现一座被遗弃的兵营。帐篷中还有一些可用物资。"
+      },
+      "event_id": "level_001",
+      "floor": 3,
+      "id": "floor_03_01",
+      "map_pos": {
+        "x": 0.2256446991404011,
+        "y": 0.7388888888888889
+      },
+      "next": [
+        "floor_04_01"
+      ],
+      "title": "战斗",
+      "type": 1,
+      "reference_encounter": ""
+    },
+    {
+      "event": {
+        "choices": [
+          {
+            "gold": 15,
+            "heal": 0,
+            "text": "搜刮物资"
+          },
+          {
+            "gold": 0,
+            "heal": 0,
+            "text": "谨慎离开"
+          }
+        ],
+        "description": "你发现一座被遗弃的兵营。帐篷中还有一些可用物资。"
+      },
+      "event_id": "abandoned_camp",
+      "floor": 3,
+      "id": "floor_03_02",
+      "map_pos": {
+        "x": 0.32951289398280803,
+        "y": 0.7388888888888889
+      },
+      "next": [
+        "floor_04_01"
+      ],
+      "title": "事件",
+      "type": 1,
+      "reference_encounter": ""
+    },
+    {
+      "event": {
+        "choices": [
+          {
+            "gold": 15,
+            "heal": 0,
+            "text": "搜刮物资"
+          },
+          {
+            "gold": 0,
+            "heal": 0,
+            "text": "谨慎离开"
+          }
+        ],
+        "description": "你发现一座被遗弃的兵营。帐篷中还有一些可用物资。"
+      },
+      "event_id": "level_001",
+      "floor": 3,
+      "id": "floor_03_03",
+      "map_pos": {
+        "x": 0.4663323782234957,
+        "y": 0.7388888888888889
+      },
+      "next": [
+        "floor_04_02"
+      ],
+      "title": "战斗",
+      "type": 1,
+      "reference_encounter": ""
+    },
+    {
+      "event": {
+        "choices": [
+          {
+            "gold": 15,
+            "heal": 0,
+            "text": "搜刮物资"
+          },
+          {
+            "gold": 0,
+            "heal": 0,
+            "text": "谨慎离开"
+          }
+        ],
+        "description": "你发现一座被遗弃的兵营。帐篷中还有一些可用物资。"
+      },
+      "event_id": "abandoned_camp",
+      "floor": 3,
+      "id": "floor_03_04",
+      "map_pos": {
+        "x": 0.6489971346704871,
+        "y": 0.7388888888888889
+      },
+      "next": [
+        "floor_04_03"
+      ],
+      "title": "事件",
+      "type": 1,
+      "reference_encounter": ""
+    },
+    {
+      "event": {
+        "choices": [
+          {
+            "gold": 15,
+            "heal": 0,
+            "text": "搜刮物资"
+          },
+          {
+            "gold": 0,
+            "heal": 0,
+            "text": "谨慎离开"
+          }
+        ],
+        "description": "你发现一座被遗弃的兵营。帐篷中还有一些可用物资。"
+      },
+      "event_id": "level_001",
+      "floor": 4,
+      "id": "floor_04_01",
+      "map_pos": {
+        "x": 0.31805157593123207,
+        "y": 0.6433333333333334
+      },
+      "next": [
+        "floor_05_01"
+      ],
+      "title": "战斗",
+      "type": 1,
+      "reference_encounter": ""
+    },
+    {
+      "event": {
+        "choices": [
+          {
+            "gold": 0,
+            "heal": 20,
+            "text": "修复基地"
+          },
+          {
+            "gold": 0,
+            "heal": 0,
+            "text": "离开"
+          }
+        ],
+        "description": "微弱的火光让士兵们暂时获得喘息。"
+      },
+      "event_id": "campfire",
+      "floor": 4,
+      "id": "floor_04_02",
+      "map_pos": {
+        "x": 0.4656160458452722,
+        "y": 0.6433333333333334
+      },
+      "next": [
+        "floor_05_03",
+        "floor_05_02"
+      ],
+      "title": "休息",
+      "type": 2,
+      "reference_encounter": ""
+    },
+    {
+      "event_id": "level_001",
+      "floor": 4,
+      "id": "floor_04_03",
+      "map_pos": {
+        "x": 0.5522922636103151,
+        "y": 0.6433333333333334
+      },
+      "next": [
+        "floor_05_03"
+      ],
+      "title": "战斗",
+      "type": 0,
+      "reference_encounter": "B"
+    },
+    {
+      "event": {
+        "choices": [
+          {
+            "gold": 15,
+            "heal": 0,
+            "text": "搜刮物资"
+          },
+          {
+            "gold": 0,
+            "heal": 0,
+            "text": "谨慎离开"
+          }
+        ],
+        "description": "你发现一座被遗弃的兵营。帐篷中还有一些可用物资。"
+      },
+      "event_id": "abandoned_camp",
+      "floor": 5,
+      "id": "floor_05_01",
+      "map_pos": {
+        "x": 0.25,
+        "y": 0.5477777777777779
+      },
+      "next": [
+        "floor_06_01"
+      ],
+      "title": "事件",
+      "type": 1,
+      "reference_encounter": ""
+    },
+    {
+      "event_id": "level_001",
+      "floor": 5,
+      "id": "floor_05_02",
+      "map_pos": {
+        "x": 0.4169054441260745,
+        "y": 0.5477777777777779
+      },
+      "next": [
+        "floor_06_01"
+      ],
+      "title": "战斗",
+      "type": 0,
+      "reference_encounter": "C"
+    },
+    {
+      "event": {
+        "choices": [
+          {
+            "gold": 15,
+            "heal": 0,
+            "text": "搜刮物资"
+          },
+          {
+            "gold": 0,
+            "heal": 0,
+            "text": "谨慎离开"
+          }
+        ],
+        "description": "你发现一座被遗弃的兵营。帐篷中还有一些可用物资。"
+      },
+      "event_id": "abandoned_camp",
+      "floor": 5,
+      "id": "floor_05_03",
+      "map_pos": {
+        "x": 0.5,
+        "y": 0.5477777777777779
+      },
+      "next": [
+        "floor_06_03",
+        "floor_06_02"
+      ],
+      "title": "事件",
+      "type": 1,
+      "reference_encounter": ""
+    },
+    {
+      "event": {
+        "choices": [
+          {
+            "gold": 15,
+            "heal": 0,
+            "text": "搜刮物资"
+          },
+          {
+            "gold": 0,
+            "heal": 0,
+            "text": "谨慎离开"
+          }
+        ],
+        "description": "你发现一座被遗弃的兵营。帐篷中还有一些可用物资。"
+      },
+      "event_id": "level_001",
+      "floor": 6,
+      "id": "floor_06_01",
+      "map_pos": {
+        "x": 0.35888252148997135,
+        "y": 0.45222222222222225
+      },
+      "next": [
+        "floor_07_01",
+        "floor_07_02"
+      ],
+      "title": "战斗",
+      "type": 1,
+      "reference_encounter": ""
+    },
+    {
+      "event": {
+        "choices": [
+          {
+            "gold": 0,
+            "heal": 20,
+            "text": "修复基地"
+          },
+          {
+            "gold": 0,
+            "heal": 0,
+            "text": "离开"
+          }
+        ],
+        "description": "微弱的火光让士兵们暂时获得喘息。"
+      },
+      "event_id": "campfire",
+      "floor": 6,
+      "id": "floor_06_02",
+      "map_pos": {
+        "x": 0.48530901722391084,
+        "y": 0.45222222222222225
+      },
+      "next": [
+        "floor_07_03"
+      ],
+      "title": "休息",
+      "type": 2,
+      "reference_encounter": ""
+    },
+    {
+      "event": {
+        "choices": [
+          {
+            "gold": 15,
+            "heal": 0,
+            "text": "搜刮物资"
+          },
+          {
+            "gold": 0,
+            "heal": 0,
+            "text": "谨慎离开"
+          }
+        ],
+        "description": "你发现一座被遗弃的兵营。帐篷中还有一些可用物资。"
+      },
+      "event_id": "abandoned_camp",
+      "floor": 6,
+      "id": "floor_06_03",
+      "map_pos": {
+        "x": 0.6200607902735562,
+        "y": 0.45222222222222225
+      },
+      "next": [
+        "floor_07_03"
+      ],
+      "title": "事件",
+      "type": 1,
+      "reference_encounter": ""
+    },
+    {
+      "event": {
+        "choices": [
+          {
+            "gold": 15,
+            "heal": 0,
+            "text": "搜刮物资"
+          },
+          {
+            "gold": 0,
+            "heal": 0,
+            "text": "谨慎离开"
+          }
+        ],
+        "description": "你发现一座被遗弃的兵营。帐篷中还有一些可用物资。"
+      },
+      "event_id": "abandoned_camp",
+      "floor": 7,
+      "id": "floor_07_01",
+      "map_pos": {
+        "x": 0.25,
+        "y": 0.3566666666666668
+      },
+      "next": [
+        "floor_08_01"
+      ],
+      "title": "事件",
+      "type": 1,
+      "reference_encounter": ""
+    },
+    {
+      "event_id": "level_001",
+      "floor": 7,
+      "id": "floor_07_02",
+      "map_pos": {
+        "x": 0.40186246418338106,
+        "y": 0.3566666666666668
+      },
+      "next": [
+        "floor_08_01"
+      ],
+      "title": "战斗",
+      "type": 0,
+      "reference_encounter": "D"
+    },
+    {
+      "event_id": "level_001",
+      "floor": 7,
+      "id": "floor_07_03",
+      "map_pos": {
+        "x": 0.5737822349570201,
+        "y": 0.3566666666666668
+      },
+      "next": [
+        "floor_08_02",
+        "floor_08_03"
+      ],
+      "title": "战斗",
+      "type": 0,
+      "reference_encounter": "D"
+    },
+    {
+      "event_id": "level_001",
+      "floor": 8,
+      "id": "floor_08_01",
+      "map_pos": {
+        "x": 0.32593123209169056,
+        "y": 0.2611111111111112
+      },
+      "next": [
+        "floor_09_01"
+      ],
+      "title": "战斗",
+      "type": 0,
+      "reference_encounter": "E"
+    },
+    {
+      "event": {
+        "choices": [
+          {
+            "gold": 15,
+            "heal": 0,
+            "text": "搜刮物资"
+          },
+          {
+            "gold": 0,
+            "heal": 0,
+            "text": "谨慎离开"
+          }
+        ],
+        "description": "你发现一座被遗弃的兵营。帐篷中还有一些可用物资。"
+      },
+      "event_id": "abandoned_camp",
+      "floor": 8,
+      "id": "floor_08_02",
+      "map_pos": {
+        "x": 0.4921203438395416,
+        "y": 0.2611111111111112
+      },
+      "next": [
+        "floor_09_02"
+      ],
+      "title": "事件",
+      "type": 1,
+      "reference_encounter": ""
+    },
+    {
+      "event_id": "level_001",
+      "floor": 8,
+      "id": "floor_08_03",
+      "map_pos": {
+        "x": 0.6310888252148997,
+        "y": 0.2611111111111112
+      },
+      "next": [
+        "floor_09_02"
+      ],
+      "title": "战斗",
+      "type": 0,
+      "reference_encounter": "E"
+    },
+    {
+      "event": {
+        "choices": [
+          {
+            "gold": 0,
+            "heal": 20,
+            "text": "修复基地"
+          },
+          {
+            "gold": 0,
+            "heal": 0,
+            "text": "离开"
+          }
+        ],
+        "description": "微弱的火光让士兵们暂时获得喘息。"
+      },
+      "event_id": "campfire",
+      "floor": 9,
+      "id": "floor_09_01",
+      "map_pos": {
+        "x": 0.3333333333333333,
+        "y": 0.16555555555555568
+      },
+      "next": [
+        "floor_10_01"
+      ],
+      "title": "休息",
+      "type": 2,
+      "reference_encounter": ""
+    },
+    {
+      "event": {
+        "choices": [
+          {
+            "gold": 0,
+            "heal": 20,
+            "text": "修复基地"
+          },
+          {
+            "gold": 0,
+            "heal": 0,
+            "text": "离开"
+          }
+        ],
+        "description": "微弱的火光让士兵们暂时获得喘息。"
+      },
+      "event_id": "level_001",
+      "floor": 9,
+      "id": "floor_09_02",
+      "map_pos": {
+        "x": 0.5666189111747851,
+        "y": 0.16555555555555568
+      },
+      "next": [
+        "floor_10_01"
+      ],
+      "title": "战斗",
+      "type": 2,
+      "reference_encounter": ""
+    },
+    {
+      "event_id": "level_002",
+      "floor": 10,
+      "id": "floor_10_01",
+      "map_pos": {
+        "x": 0.42120343839541546,
+        "y": 0.07000000000000006
+      },
+      "next": [],
+      "title": "Boss",
+      "type": 3,
+      "reference_encounter": "F"
+    }
+  ],
+  "routes": [
+    {
+      "id": 1,
+      "nodes": [
+        "floor_01_01",
+        "floor_02_02",
+        "floor_03_02",
+        "floor_04_01",
+        "floor_05_01",
+        "floor_06_01",
+        "floor_07_01",
+        "floor_08_01",
+        "floor_09_01",
+        "floor_10_01"
+      ],
+      "normal_battles": 2,
+      "rest_count": 1,
+      "baseline": {
+        "boss_entry_hp": 100,
+        "end_hp": 78,
+        "total_loss": 42,
+        "actual_heal": 20,
+        "points": [
+          {
+            "node_id": "floor_01_01",
+            "entry_hp": 100,
+            "loss": 0,
+            "nominal_heal": 0,
+            "actual_heal": 0,
+            "exit_hp": 100
+          },
+          {
+            "node_id": "floor_02_02",
+            "entry_hp": 100,
+            "loss": 4,
+            "nominal_heal": 0,
+            "actual_heal": 0,
+            "exit_hp": 96
+          },
+          {
+            "node_id": "floor_03_02",
+            "entry_hp": 96,
+            "loss": 0,
+            "nominal_heal": 0,
+            "actual_heal": 0,
+            "exit_hp": 96
+          },
+          {
+            "node_id": "floor_04_01",
+            "entry_hp": 96,
+            "loss": 0,
+            "nominal_heal": 0,
+            "actual_heal": 0,
+            "exit_hp": 96
+          },
+          {
+            "node_id": "floor_05_01",
+            "entry_hp": 96,
+            "loss": 0,
+            "nominal_heal": 0,
+            "actual_heal": 0,
+            "exit_hp": 96
+          },
+          {
+            "node_id": "floor_06_01",
+            "entry_hp": 96,
+            "loss": 0,
+            "nominal_heal": 0,
+            "actual_heal": 0,
+            "exit_hp": 96
+          },
+          {
+            "node_id": "floor_07_01",
+            "entry_hp": 96,
+            "loss": 0,
+            "nominal_heal": 0,
+            "actual_heal": 0,
+            "exit_hp": 96
+          },
+          {
+            "node_id": "floor_08_01",
+            "entry_hp": 96,
+            "loss": 16,
+            "nominal_heal": 0,
+            "actual_heal": 0,
+            "exit_hp": 80
+          },
+          {
+            "node_id": "floor_09_01",
+            "entry_hp": 80,
+            "loss": 0,
+            "nominal_heal": 20,
+            "actual_heal": 20,
+            "exit_hp": 100
+          },
+          {
+            "node_id": "floor_10_01",
+            "entry_hp": 100,
+            "loss": 22,
+            "nominal_heal": 0,
+            "actual_heal": 0,
+            "exit_hp": 78
+          }
+        ]
+      },
+      "stress": {
+        "boss_entry_hp": 90.0,
+        "end_hp": 57.0,
+        "total_loss": 63.0,
+        "actual_heal": 20.0,
+        "points": [
+          {
+            "node_id": "floor_01_01",
+            "entry_hp": 100,
+            "loss": 0,
+            "nominal_heal": 0,
+            "actual_heal": 0,
+            "exit_hp": 100
+          },
+          {
+            "node_id": "floor_02_02",
+            "entry_hp": 100,
+            "loss": 6.0,
+            "nominal_heal": 0,
+            "actual_heal": 0,
+            "exit_hp": 94.0
+          },
+          {
+            "node_id": "floor_03_02",
+            "entry_hp": 94.0,
+            "loss": 0,
+            "nominal_heal": 0,
+            "actual_heal": 0,
+            "exit_hp": 94.0
+          },
+          {
+            "node_id": "floor_04_01",
+            "entry_hp": 94.0,
+            "loss": 0,
+            "nominal_heal": 0,
+            "actual_heal": 0,
+            "exit_hp": 94.0
+          },
+          {
+            "node_id": "floor_05_01",
+            "entry_hp": 94.0,
+            "loss": 0,
+            "nominal_heal": 0,
+            "actual_heal": 0,
+            "exit_hp": 94.0
+          },
+          {
+            "node_id": "floor_06_01",
+            "entry_hp": 94.0,
+            "loss": 0,
+            "nominal_heal": 0,
+            "actual_heal": 0,
+            "exit_hp": 94.0
+          },
+          {
+            "node_id": "floor_07_01",
+            "entry_hp": 94.0,
+            "loss": 0,
+            "nominal_heal": 0,
+            "actual_heal": 0,
+            "exit_hp": 94.0
+          },
+          {
+            "node_id": "floor_08_01",
+            "entry_hp": 94.0,
+            "loss": 24.0,
+            "nominal_heal": 0,
+            "actual_heal": 0,
+            "exit_hp": 70.0
+          },
+          {
+            "node_id": "floor_09_01",
+            "entry_hp": 70.0,
+            "loss": 0,
+            "nominal_heal": 20,
+            "actual_heal": 20.0,
+            "exit_hp": 90.0
+          },
+          {
+            "node_id": "floor_10_01",
+            "entry_hp": 90.0,
+            "loss": 33.0,
+            "nominal_heal": 0,
+            "actual_heal": 0,
+            "exit_hp": 57.0
+          }
+        ]
+      }
+    },
+    {
+      "id": 2,
+      "nodes": [
+        "floor_01_01",
+        "floor_02_02",
+        "floor_03_02",
+        "floor_04_01",
+        "floor_05_01",
+        "floor_06_01",
+        "floor_07_02",
+        "floor_08_01",
+        "floor_09_01",
+        "floor_10_01"
+      ],
+      "normal_battles": 3,
+      "rest_count": 1,
+      "baseline": {
+        "boss_entry_hp": 88,
+        "end_hp": 66,
+        "total_loss": 54,
+        "actual_heal": 20,
+        "points": [
+          {
+            "node_id": "floor_01_01",
+            "entry_hp": 100,
+            "loss": 0,
+            "nominal_heal": 0,
+            "actual_heal": 0,
+            "exit_hp": 100
+          },
+          {
+            "node_id": "floor_02_02",
+            "entry_hp": 100,
+            "loss": 4,
+            "nominal_heal": 0,
+            "actual_heal": 0,
+            "exit_hp": 96
+          },
+          {
+            "node_id": "floor_03_02",
+            "entry_hp": 96,
+            "loss": 0,
+            "nominal_heal": 0,
+            "actual_heal": 0,
+            "exit_hp": 96
+          },
+          {
+            "node_id": "floor_04_01",
+            "entry_hp": 96,
+            "loss": 0,
+            "nominal_heal": 0,
+            "actual_heal": 0,
+            "exit_hp": 96
+          },
+          {
+            "node_id": "floor_05_01",
+            "entry_hp": 96,
+            "loss": 0,
+            "nominal_heal": 0,
+            "actual_heal": 0,
+            "exit_hp": 96
+          },
+          {
+            "node_id": "floor_06_01",
+            "entry_hp": 96,
+            "loss": 0,
+            "nominal_heal": 0,
+            "actual_heal": 0,
+            "exit_hp": 96
+          },
+          {
+            "node_id": "floor_07_02",
+            "entry_hp": 96,
+            "loss": 12,
+            "nominal_heal": 0,
+            "actual_heal": 0,
+            "exit_hp": 84
+          },
+          {
+            "node_id": "floor_08_01",
+            "entry_hp": 84,
+            "loss": 16,
+            "nominal_heal": 0,
+            "actual_heal": 0,
+            "exit_hp": 68
+          },
+          {
+            "node_id": "floor_09_01",
+            "entry_hp": 68,
+            "loss": 0,
+            "nominal_heal": 20,
+            "actual_heal": 20,
+            "exit_hp": 88
+          },
+          {
+            "node_id": "floor_10_01",
+            "entry_hp": 88,
+            "loss": 22,
+            "nominal_heal": 0,
+            "actual_heal": 0,
+            "exit_hp": 66
+          }
+        ]
+      },
+      "stress": {
+        "boss_entry_hp": 72.0,
+        "end_hp": 39.0,
+        "total_loss": 81.0,
+        "actual_heal": 20.0,
+        "points": [
+          {
+            "node_id": "floor_01_01",
+            "entry_hp": 100,
+            "loss": 0,
+            "nominal_heal": 0,
+            "actual_heal": 0,
+            "exit_hp": 100
+          },
+          {
+            "node_id": "floor_02_02",
+            "entry_hp": 100,
+            "loss": 6.0,
+            "nominal_heal": 0,
+            "actual_heal": 0,
+            "exit_hp": 94.0
+          },
+          {
+            "node_id": "floor_03_02",
+            "entry_hp": 94.0,
+            "loss": 0,
+            "nominal_heal": 0,
+            "actual_heal": 0,
+            "exit_hp": 94.0
+          },
+          {
+            "node_id": "floor_04_01",
+            "entry_hp": 94.0,
+            "loss": 0,
+            "nominal_heal": 0,
+            "actual_heal": 0,
+            "exit_hp": 94.0
+          },
+          {
+            "node_id": "floor_05_01",
+            "entry_hp": 94.0,
+            "loss": 0,
+            "nominal_heal": 0,
+            "actual_heal": 0,
+            "exit_hp": 94.0
+          },
+          {
+            "node_id": "floor_06_01",
+            "entry_hp": 94.0,
+            "loss": 0,
+            "nominal_heal": 0,
+            "actual_heal": 0,
+            "exit_hp": 94.0
+          },
+          {
+            "node_id": "floor_07_02",
+            "entry_hp": 94.0,
+            "loss": 18.0,
+            "nominal_heal": 0,
+            "actual_heal": 0,
+            "exit_hp": 76.0
+          },
+          {
+            "node_id": "floor_08_01",
+            "entry_hp": 76.0,
+            "loss": 24.0,
+            "nominal_heal": 0,
+            "actual_heal": 0,
+            "exit_hp": 52.0
+          },
+          {
+            "node_id": "floor_09_01",
+            "entry_hp": 52.0,
+            "loss": 0,
+            "nominal_heal": 20,
+            "actual_heal": 20.0,
+            "exit_hp": 72.0
+          },
+          {
+            "node_id": "floor_10_01",
+            "entry_hp": 72.0,
+            "loss": 33.0,
+            "nominal_heal": 0,
+            "actual_heal": 0,
+            "exit_hp": 39.0
+          }
+        ]
+      }
+    },
+    {
+      "id": 3,
+      "nodes": [
+        "floor_01_01",
+        "floor_02_02",
+        "floor_03_03",
+        "floor_04_02",
+        "floor_05_03",
+        "floor_06_03",
+        "floor_07_03",
+        "floor_08_02",
+        "floor_09_02",
+        "floor_10_01"
+      ],
+      "normal_battles": 2,
+      "rest_count": 2,
+      "baseline": {
+        "boss_entry_hp": 100,
+        "end_hp": 78,
+        "total_loss": 38,
+        "actual_heal": 16,
+        "points": [
+          {
+            "node_id": "floor_01_01",
+            "entry_hp": 100,
+            "loss": 0,
+            "nominal_heal": 0,
+            "actual_heal": 0,
+            "exit_hp": 100
+          },
+          {
+            "node_id": "floor_02_02",
+            "entry_hp": 100,
+            "loss": 4,
+            "nominal_heal": 0,
+            "actual_heal": 0,
+            "exit_hp": 96
+          },
+          {
+            "node_id": "floor_03_03",
+            "entry_hp": 96,
+            "loss": 0,
+            "nominal_heal": 0,
+            "actual_heal": 0,
+            "exit_hp": 96
+          },
+          {
+            "node_id": "floor_04_02",
+            "entry_hp": 96,
+            "loss": 0,
+            "nominal_heal": 20,
+            "actual_heal": 4,
+            "exit_hp": 100
+          },
+          {
+            "node_id": "floor_05_03",
+            "entry_hp": 100,
+            "loss": 0,
+            "nominal_heal": 0,
+            "actual_heal": 0,
+            "exit_hp": 100
+          },
+          {
+            "node_id": "floor_06_03",
+            "entry_hp": 100,
+            "loss": 0,
+            "nominal_heal": 0,
+            "actual_heal": 0,
+            "exit_hp": 100
+          },
+          {
+            "node_id": "floor_07_03",
+            "entry_hp": 100,
+            "loss": 12,
+            "nominal_heal": 0,
+            "actual_heal": 0,
+            "exit_hp": 88
+          },
+          {
+            "node_id": "floor_08_02",
+            "entry_hp": 88,
+            "loss": 0,
+            "nominal_heal": 0,
+            "actual_heal": 0,
+            "exit_hp": 88
+          },
+          {
+            "node_id": "floor_09_02",
+            "entry_hp": 88,
+            "loss": 0,
+            "nominal_heal": 20,
+            "actual_heal": 12,
+            "exit_hp": 100
+          },
+          {
+            "node_id": "floor_10_01",
+            "entry_hp": 100,
+            "loss": 22,
+            "nominal_heal": 0,
+            "actual_heal": 0,
+            "exit_hp": 78
+          }
+        ]
+      },
+      "stress": {
+        "boss_entry_hp": 100,
+        "end_hp": 67.0,
+        "total_loss": 57.0,
+        "actual_heal": 24.0,
+        "points": [
+          {
+            "node_id": "floor_01_01",
+            "entry_hp": 100,
+            "loss": 0,
+            "nominal_heal": 0,
+            "actual_heal": 0,
+            "exit_hp": 100
+          },
+          {
+            "node_id": "floor_02_02",
+            "entry_hp": 100,
+            "loss": 6.0,
+            "nominal_heal": 0,
+            "actual_heal": 0,
+            "exit_hp": 94.0
+          },
+          {
+            "node_id": "floor_03_03",
+            "entry_hp": 94.0,
+            "loss": 0,
+            "nominal_heal": 0,
+            "actual_heal": 0,
+            "exit_hp": 94.0
+          },
+          {
+            "node_id": "floor_04_02",
+            "entry_hp": 94.0,
+            "loss": 0,
+            "nominal_heal": 20,
+            "actual_heal": 6.0,
+            "exit_hp": 100
+          },
+          {
+            "node_id": "floor_05_03",
+            "entry_hp": 100,
+            "loss": 0,
+            "nominal_heal": 0,
+            "actual_heal": 0,
+            "exit_hp": 100
+          },
+          {
+            "node_id": "floor_06_03",
+            "entry_hp": 100,
+            "loss": 0,
+            "nominal_heal": 0,
+            "actual_heal": 0,
+            "exit_hp": 100
+          },
+          {
+            "node_id": "floor_07_03",
+            "entry_hp": 100,
+            "loss": 18.0,
+            "nominal_heal": 0,
+            "actual_heal": 0,
+            "exit_hp": 82.0
+          },
+          {
+            "node_id": "floor_08_02",
+            "entry_hp": 82.0,
+            "loss": 0,
+            "nominal_heal": 0,
+            "actual_heal": 0,
+            "exit_hp": 82.0
+          },
+          {
+            "node_id": "floor_09_02",
+            "entry_hp": 82.0,
+            "loss": 0,
+            "nominal_heal": 20,
+            "actual_heal": 18.0,
+            "exit_hp": 100
+          },
+          {
+            "node_id": "floor_10_01",
+            "entry_hp": 100,
+            "loss": 33.0,
+            "nominal_heal": 0,
+            "actual_heal": 0,
+            "exit_hp": 67.0
+          }
+        ]
+      }
+    },
+    {
+      "id": 4,
+      "nodes": [
+        "floor_01_01",
+        "floor_02_02",
+        "floor_03_03",
+        "floor_04_02",
+        "floor_05_03",
+        "floor_06_03",
+        "floor_07_03",
+        "floor_08_03",
+        "floor_09_02",
+        "floor_10_01"
+      ],
+      "normal_battles": 3,
+      "rest_count": 2,
+      "baseline": {
+        "boss_entry_hp": 92,
+        "end_hp": 70,
+        "total_loss": 54,
+        "actual_heal": 24,
+        "points": [
+          {
+            "node_id": "floor_01_01",
+            "entry_hp": 100,
+            "loss": 0,
+            "nominal_heal": 0,
+            "actual_heal": 0,
+            "exit_hp": 100
+          },
+          {
+            "node_id": "floor_02_02",
+            "entry_hp": 100,
+            "loss": 4,
+            "nominal_heal": 0,
+            "actual_heal": 0,
+            "exit_hp": 96
+          },
+          {
+            "node_id": "floor_03_03",
+            "entry_hp": 96,
+            "loss": 0,
+            "nominal_heal": 0,
+            "actual_heal": 0,
+            "exit_hp": 96
+          },
+          {
+            "node_id": "floor_04_02",
+            "entry_hp": 96,
+            "loss": 0,
+            "nominal_heal": 20,
+            "actual_heal": 4,
+            "exit_hp": 100
+          },
+          {
+            "node_id": "floor_05_03",
+            "entry_hp": 100,
+            "loss": 0,
+            "nominal_heal": 0,
+            "actual_heal": 0,
+            "exit_hp": 100
+          },
+          {
+            "node_id": "floor_06_03",
+            "entry_hp": 100,
+            "loss": 0,
+            "nominal_heal": 0,
+            "actual_heal": 0,
+            "exit_hp": 100
+          },
+          {
+            "node_id": "floor_07_03",
+            "entry_hp": 100,
+            "loss": 12,
+            "nominal_heal": 0,
+            "actual_heal": 0,
+            "exit_hp": 88
+          },
+          {
+            "node_id": "floor_08_03",
+            "entry_hp": 88,
+            "loss": 16,
+            "nominal_heal": 0,
+            "actual_heal": 0,
+            "exit_hp": 72
+          },
+          {
+            "node_id": "floor_09_02",
+            "entry_hp": 72,
+            "loss": 0,
+            "nominal_heal": 20,
+            "actual_heal": 20,
+            "exit_hp": 92
+          },
+          {
+            "node_id": "floor_10_01",
+            "entry_hp": 92,
+            "loss": 22,
+            "nominal_heal": 0,
+            "actual_heal": 0,
+            "exit_hp": 70
+          }
+        ]
+      },
+      "stress": {
+        "boss_entry_hp": 78.0,
+        "end_hp": 45.0,
+        "total_loss": 81.0,
+        "actual_heal": 26.0,
+        "points": [
+          {
+            "node_id": "floor_01_01",
+            "entry_hp": 100,
+            "loss": 0,
+            "nominal_heal": 0,
+            "actual_heal": 0,
+            "exit_hp": 100
+          },
+          {
+            "node_id": "floor_02_02",
+            "entry_hp": 100,
+            "loss": 6.0,
+            "nominal_heal": 0,
+            "actual_heal": 0,
+            "exit_hp": 94.0
+          },
+          {
+            "node_id": "floor_03_03",
+            "entry_hp": 94.0,
+            "loss": 0,
+            "nominal_heal": 0,
+            "actual_heal": 0,
+            "exit_hp": 94.0
+          },
+          {
+            "node_id": "floor_04_02",
+            "entry_hp": 94.0,
+            "loss": 0,
+            "nominal_heal": 20,
+            "actual_heal": 6.0,
+            "exit_hp": 100
+          },
+          {
+            "node_id": "floor_05_03",
+            "entry_hp": 100,
+            "loss": 0,
+            "nominal_heal": 0,
+            "actual_heal": 0,
+            "exit_hp": 100
+          },
+          {
+            "node_id": "floor_06_03",
+            "entry_hp": 100,
+            "loss": 0,
+            "nominal_heal": 0,
+            "actual_heal": 0,
+            "exit_hp": 100
+          },
+          {
+            "node_id": "floor_07_03",
+            "entry_hp": 100,
+            "loss": 18.0,
+            "nominal_heal": 0,
+            "actual_heal": 0,
+            "exit_hp": 82.0
+          },
+          {
+            "node_id": "floor_08_03",
+            "entry_hp": 82.0,
+            "loss": 24.0,
+            "nominal_heal": 0,
+            "actual_heal": 0,
+            "exit_hp": 58.0
+          },
+          {
+            "node_id": "floor_09_02",
+            "entry_hp": 58.0,
+            "loss": 0,
+            "nominal_heal": 20,
+            "actual_heal": 20.0,
+            "exit_hp": 78.0
+          },
+          {
+            "node_id": "floor_10_01",
+            "entry_hp": 78.0,
+            "loss": 33.0,
+            "nominal_heal": 0,
+            "actual_heal": 0,
+            "exit_hp": 45.0
+          }
+        ]
+      }
+    },
+    {
+      "id": 5,
+      "nodes": [
+        "floor_01_01",
+        "floor_02_02",
+        "floor_03_03",
+        "floor_04_02",
+        "floor_05_03",
+        "floor_06_02",
+        "floor_07_03",
+        "floor_08_02",
+        "floor_09_02",
+        "floor_10_01"
+      ],
+      "normal_battles": 2,
+      "rest_count": 3,
+      "baseline": {
+        "boss_entry_hp": 100,
+        "end_hp": 78,
+        "total_loss": 38,
+        "actual_heal": 16,
+        "points": [
+          {
+            "node_id": "floor_01_01",
+            "entry_hp": 100,
+            "loss": 0,
+            "nominal_heal": 0,
+            "actual_heal": 0,
+            "exit_hp": 100
+          },
+          {
+            "node_id": "floor_02_02",
+            "entry_hp": 100,
+            "loss": 4,
+            "nominal_heal": 0,
+            "actual_heal": 0,
+            "exit_hp": 96
+          },
+          {
+            "node_id": "floor_03_03",
+            "entry_hp": 96,
+            "loss": 0,
+            "nominal_heal": 0,
+            "actual_heal": 0,
+            "exit_hp": 96
+          },
+          {
+            "node_id": "floor_04_02",
+            "entry_hp": 96,
+            "loss": 0,
+            "nominal_heal": 20,
+            "actual_heal": 4,
+            "exit_hp": 100
+          },
+          {
+            "node_id": "floor_05_03",
+            "entry_hp": 100,
+            "loss": 0,
+            "nominal_heal": 0,
+            "actual_heal": 0,
+            "exit_hp": 100
+          },
+          {
+            "node_id": "floor_06_02",
+            "entry_hp": 100,
+            "loss": 0,
+            "nominal_heal": 20,
+            "actual_heal": 0,
+            "exit_hp": 100
+          },
+          {
+            "node_id": "floor_07_03",
+            "entry_hp": 100,
+            "loss": 12,
+            "nominal_heal": 0,
+            "actual_heal": 0,
+            "exit_hp": 88
+          },
+          {
+            "node_id": "floor_08_02",
+            "entry_hp": 88,
+            "loss": 0,
+            "nominal_heal": 0,
+            "actual_heal": 0,
+            "exit_hp": 88
+          },
+          {
+            "node_id": "floor_09_02",
+            "entry_hp": 88,
+            "loss": 0,
+            "nominal_heal": 20,
+            "actual_heal": 12,
+            "exit_hp": 100
+          },
+          {
+            "node_id": "floor_10_01",
+            "entry_hp": 100,
+            "loss": 22,
+            "nominal_heal": 0,
+            "actual_heal": 0,
+            "exit_hp": 78
+          }
+        ]
+      },
+      "stress": {
+        "boss_entry_hp": 100,
+        "end_hp": 67.0,
+        "total_loss": 57.0,
+        "actual_heal": 24.0,
+        "points": [
+          {
+            "node_id": "floor_01_01",
+            "entry_hp": 100,
+            "loss": 0,
+            "nominal_heal": 0,
+            "actual_heal": 0,
+            "exit_hp": 100
+          },
+          {
+            "node_id": "floor_02_02",
+            "entry_hp": 100,
+            "loss": 6.0,
+            "nominal_heal": 0,
+            "actual_heal": 0,
+            "exit_hp": 94.0
+          },
+          {
+            "node_id": "floor_03_03",
+            "entry_hp": 94.0,
+            "loss": 0,
+            "nominal_heal": 0,
+            "actual_heal": 0,
+            "exit_hp": 94.0
+          },
+          {
+            "node_id": "floor_04_02",
+            "entry_hp": 94.0,
+            "loss": 0,
+            "nominal_heal": 20,
+            "actual_heal": 6.0,
+            "exit_hp": 100
+          },
+          {
+            "node_id": "floor_05_03",
+            "entry_hp": 100,
+            "loss": 0,
+            "nominal_heal": 0,
+            "actual_heal": 0,
+            "exit_hp": 100
+          },
+          {
+            "node_id": "floor_06_02",
+            "entry_hp": 100,
+            "loss": 0,
+            "nominal_heal": 20,
+            "actual_heal": 0,
+            "exit_hp": 100
+          },
+          {
+            "node_id": "floor_07_03",
+            "entry_hp": 100,
+            "loss": 18.0,
+            "nominal_heal": 0,
+            "actual_heal": 0,
+            "exit_hp": 82.0
+          },
+          {
+            "node_id": "floor_08_02",
+            "entry_hp": 82.0,
+            "loss": 0,
+            "nominal_heal": 0,
+            "actual_heal": 0,
+            "exit_hp": 82.0
+          },
+          {
+            "node_id": "floor_09_02",
+            "entry_hp": 82.0,
+            "loss": 0,
+            "nominal_heal": 20,
+            "actual_heal": 18.0,
+            "exit_hp": 100
+          },
+          {
+            "node_id": "floor_10_01",
+            "entry_hp": 100,
+            "loss": 33.0,
+            "nominal_heal": 0,
+            "actual_heal": 0,
+            "exit_hp": 67.0
+          }
+        ]
+      }
+    },
+    {
+      "id": 6,
+      "nodes": [
+        "floor_01_01",
+        "floor_02_02",
+        "floor_03_03",
+        "floor_04_02",
+        "floor_05_03",
+        "floor_06_02",
+        "floor_07_03",
+        "floor_08_03",
+        "floor_09_02",
+        "floor_10_01"
+      ],
+      "normal_battles": 3,
+      "rest_count": 3,
+      "baseline": {
+        "boss_entry_hp": 92,
+        "end_hp": 70,
+        "total_loss": 54,
+        "actual_heal": 24,
+        "points": [
+          {
+            "node_id": "floor_01_01",
+            "entry_hp": 100,
+            "loss": 0,
+            "nominal_heal": 0,
+            "actual_heal": 0,
+            "exit_hp": 100
+          },
+          {
+            "node_id": "floor_02_02",
+            "entry_hp": 100,
+            "loss": 4,
+            "nominal_heal": 0,
+            "actual_heal": 0,
+            "exit_hp": 96
+          },
+          {
+            "node_id": "floor_03_03",
+            "entry_hp": 96,
+            "loss": 0,
+            "nominal_heal": 0,
+            "actual_heal": 0,
+            "exit_hp": 96
+          },
+          {
+            "node_id": "floor_04_02",
+            "entry_hp": 96,
+            "loss": 0,
+            "nominal_heal": 20,
+            "actual_heal": 4,
+            "exit_hp": 100
+          },
+          {
+            "node_id": "floor_05_03",
+            "entry_hp": 100,
+            "loss": 0,
+            "nominal_heal": 0,
+            "actual_heal": 0,
+            "exit_hp": 100
+          },
+          {
+            "node_id": "floor_06_02",
+            "entry_hp": 100,
+            "loss": 0,
+            "nominal_heal": 20,
+            "actual_heal": 0,
+            "exit_hp": 100
+          },
+          {
+            "node_id": "floor_07_03",
+            "entry_hp": 100,
+            "loss": 12,
+            "nominal_heal": 0,
+            "actual_heal": 0,
+            "exit_hp": 88
+          },
+          {
+            "node_id": "floor_08_03",
+            "entry_hp": 88,
+            "loss": 16,
+            "nominal_heal": 0,
+            "actual_heal": 0,
+            "exit_hp": 72
+          },
+          {
+            "node_id": "floor_09_02",
+            "entry_hp": 72,
+            "loss": 0,
+            "nominal_heal": 20,
+            "actual_heal": 20,
+            "exit_hp": 92
+          },
+          {
+            "node_id": "floor_10_01",
+            "entry_hp": 92,
+            "loss": 22,
+            "nominal_heal": 0,
+            "actual_heal": 0,
+            "exit_hp": 70
+          }
+        ]
+      },
+      "stress": {
+        "boss_entry_hp": 78.0,
+        "end_hp": 45.0,
+        "total_loss": 81.0,
+        "actual_heal": 26.0,
+        "points": [
+          {
+            "node_id": "floor_01_01",
+            "entry_hp": 100,
+            "loss": 0,
+            "nominal_heal": 0,
+            "actual_heal": 0,
+            "exit_hp": 100
+          },
+          {
+            "node_id": "floor_02_02",
+            "entry_hp": 100,
+            "loss": 6.0,
+            "nominal_heal": 0,
+            "actual_heal": 0,
+            "exit_hp": 94.0
+          },
+          {
+            "node_id": "floor_03_03",
+            "entry_hp": 94.0,
+            "loss": 0,
+            "nominal_heal": 0,
+            "actual_heal": 0,
+            "exit_hp": 94.0
+          },
+          {
+            "node_id": "floor_04_02",
+            "entry_hp": 94.0,
+            "loss": 0,
+            "nominal_heal": 20,
+            "actual_heal": 6.0,
+            "exit_hp": 100
+          },
+          {
+            "node_id": "floor_05_03",
+            "entry_hp": 100,
+            "loss": 0,
+            "nominal_heal": 0,
+            "actual_heal": 0,
+            "exit_hp": 100
+          },
+          {
+            "node_id": "floor_06_02",
+            "entry_hp": 100,
+            "loss": 0,
+            "nominal_heal": 20,
+            "actual_heal": 0,
+            "exit_hp": 100
+          },
+          {
+            "node_id": "floor_07_03",
+            "entry_hp": 100,
+            "loss": 18.0,
+            "nominal_heal": 0,
+            "actual_heal": 0,
+            "exit_hp": 82.0
+          },
+          {
+            "node_id": "floor_08_03",
+            "entry_hp": 82.0,
+            "loss": 24.0,
+            "nominal_heal": 0,
+            "actual_heal": 0,
+            "exit_hp": 58.0
+          },
+          {
+            "node_id": "floor_09_02",
+            "entry_hp": 58.0,
+            "loss": 0,
+            "nominal_heal": 20,
+            "actual_heal": 20.0,
+            "exit_hp": 78.0
+          },
+          {
+            "node_id": "floor_10_01",
+            "entry_hp": 78.0,
+            "loss": 33.0,
+            "nominal_heal": 0,
+            "actual_heal": 0,
+            "exit_hp": 45.0
+          }
+        ]
+      }
+    },
+    {
+      "id": 7,
+      "nodes": [
+        "floor_01_01",
+        "floor_02_02",
+        "floor_03_03",
+        "floor_04_02",
+        "floor_05_02",
+        "floor_06_01",
+        "floor_07_01",
+        "floor_08_01",
+        "floor_09_01",
+        "floor_10_01"
+      ],
+      "normal_battles": 3,
+      "rest_count": 2,
+      "baseline": {
+        "boss_entry_hp": 92,
+        "end_hp": 70,
+        "total_loss": 54,
+        "actual_heal": 24,
+        "points": [
+          {
+            "node_id": "floor_01_01",
+            "entry_hp": 100,
+            "loss": 0,
+            "nominal_heal": 0,
+            "actual_heal": 0,
+            "exit_hp": 100
+          },
+          {
+            "node_id": "floor_02_02",
+            "entry_hp": 100,
+            "loss": 4,
+            "nominal_heal": 0,
+            "actual_heal": 0,
+            "exit_hp": 96
+          },
+          {
+            "node_id": "floor_03_03",
+            "entry_hp": 96,
+            "loss": 0,
+            "nominal_heal": 0,
+            "actual_heal": 0,
+            "exit_hp": 96
+          },
+          {
+            "node_id": "floor_04_02",
+            "entry_hp": 96,
+            "loss": 0,
+            "nominal_heal": 20,
+            "actual_heal": 4,
+            "exit_hp": 100
+          },
+          {
+            "node_id": "floor_05_02",
+            "entry_hp": 100,
+            "loss": 12,
+            "nominal_heal": 0,
+            "actual_heal": 0,
+            "exit_hp": 88
+          },
+          {
+            "node_id": "floor_06_01",
+            "entry_hp": 88,
+            "loss": 0,
+            "nominal_heal": 0,
+            "actual_heal": 0,
+            "exit_hp": 88
+          },
+          {
+            "node_id": "floor_07_01",
+            "entry_hp": 88,
+            "loss": 0,
+            "nominal_heal": 0,
+            "actual_heal": 0,
+            "exit_hp": 88
+          },
+          {
+            "node_id": "floor_08_01",
+            "entry_hp": 88,
+            "loss": 16,
+            "nominal_heal": 0,
+            "actual_heal": 0,
+            "exit_hp": 72
+          },
+          {
+            "node_id": "floor_09_01",
+            "entry_hp": 72,
+            "loss": 0,
+            "nominal_heal": 20,
+            "actual_heal": 20,
+            "exit_hp": 92
+          },
+          {
+            "node_id": "floor_10_01",
+            "entry_hp": 92,
+            "loss": 22,
+            "nominal_heal": 0,
+            "actual_heal": 0,
+            "exit_hp": 70
+          }
+        ]
+      },
+      "stress": {
+        "boss_entry_hp": 78.0,
+        "end_hp": 45.0,
+        "total_loss": 81.0,
+        "actual_heal": 26.0,
+        "points": [
+          {
+            "node_id": "floor_01_01",
+            "entry_hp": 100,
+            "loss": 0,
+            "nominal_heal": 0,
+            "actual_heal": 0,
+            "exit_hp": 100
+          },
+          {
+            "node_id": "floor_02_02",
+            "entry_hp": 100,
+            "loss": 6.0,
+            "nominal_heal": 0,
+            "actual_heal": 0,
+            "exit_hp": 94.0
+          },
+          {
+            "node_id": "floor_03_03",
+            "entry_hp": 94.0,
+            "loss": 0,
+            "nominal_heal": 0,
+            "actual_heal": 0,
+            "exit_hp": 94.0
+          },
+          {
+            "node_id": "floor_04_02",
+            "entry_hp": 94.0,
+            "loss": 0,
+            "nominal_heal": 20,
+            "actual_heal": 6.0,
+            "exit_hp": 100
+          },
+          {
+            "node_id": "floor_05_02",
+            "entry_hp": 100,
+            "loss": 18.0,
+            "nominal_heal": 0,
+            "actual_heal": 0,
+            "exit_hp": 82.0
+          },
+          {
+            "node_id": "floor_06_01",
+            "entry_hp": 82.0,
+            "loss": 0,
+            "nominal_heal": 0,
+            "actual_heal": 0,
+            "exit_hp": 82.0
+          },
+          {
+            "node_id": "floor_07_01",
+            "entry_hp": 82.0,
+            "loss": 0,
+            "nominal_heal": 0,
+            "actual_heal": 0,
+            "exit_hp": 82.0
+          },
+          {
+            "node_id": "floor_08_01",
+            "entry_hp": 82.0,
+            "loss": 24.0,
+            "nominal_heal": 0,
+            "actual_heal": 0,
+            "exit_hp": 58.0
+          },
+          {
+            "node_id": "floor_09_01",
+            "entry_hp": 58.0,
+            "loss": 0,
+            "nominal_heal": 20,
+            "actual_heal": 20.0,
+            "exit_hp": 78.0
+          },
+          {
+            "node_id": "floor_10_01",
+            "entry_hp": 78.0,
+            "loss": 33.0,
+            "nominal_heal": 0,
+            "actual_heal": 0,
+            "exit_hp": 45.0
+          }
+        ]
+      }
+    },
+    {
+      "id": 8,
+      "nodes": [
+        "floor_01_01",
+        "floor_02_02",
+        "floor_03_03",
+        "floor_04_02",
+        "floor_05_02",
+        "floor_06_01",
+        "floor_07_02",
+        "floor_08_01",
+        "floor_09_01",
+        "floor_10_01"
+      ],
+      "normal_battles": 4,
+      "rest_count": 2,
+      "baseline": {
+        "boss_entry_hp": 80,
+        "end_hp": 58,
+        "total_loss": 66,
+        "actual_heal": 24,
+        "points": [
+          {
+            "node_id": "floor_01_01",
+            "entry_hp": 100,
+            "loss": 0,
+            "nominal_heal": 0,
+            "actual_heal": 0,
+            "exit_hp": 100
+          },
+          {
+            "node_id": "floor_02_02",
+            "entry_hp": 100,
+            "loss": 4,
+            "nominal_heal": 0,
+            "actual_heal": 0,
+            "exit_hp": 96
+          },
+          {
+            "node_id": "floor_03_03",
+            "entry_hp": 96,
+            "loss": 0,
+            "nominal_heal": 0,
+            "actual_heal": 0,
+            "exit_hp": 96
+          },
+          {
+            "node_id": "floor_04_02",
+            "entry_hp": 96,
+            "loss": 0,
+            "nominal_heal": 20,
+            "actual_heal": 4,
+            "exit_hp": 100
+          },
+          {
+            "node_id": "floor_05_02",
+            "entry_hp": 100,
+            "loss": 12,
+            "nominal_heal": 0,
+            "actual_heal": 0,
+            "exit_hp": 88
+          },
+          {
+            "node_id": "floor_06_01",
+            "entry_hp": 88,
+            "loss": 0,
+            "nominal_heal": 0,
+            "actual_heal": 0,
+            "exit_hp": 88
+          },
+          {
+            "node_id": "floor_07_02",
+            "entry_hp": 88,
+            "loss": 12,
+            "nominal_heal": 0,
+            "actual_heal": 0,
+            "exit_hp": 76
+          },
+          {
+            "node_id": "floor_08_01",
+            "entry_hp": 76,
+            "loss": 16,
+            "nominal_heal": 0,
+            "actual_heal": 0,
+            "exit_hp": 60
+          },
+          {
+            "node_id": "floor_09_01",
+            "entry_hp": 60,
+            "loss": 0,
+            "nominal_heal": 20,
+            "actual_heal": 20,
+            "exit_hp": 80
+          },
+          {
+            "node_id": "floor_10_01",
+            "entry_hp": 80,
+            "loss": 22,
+            "nominal_heal": 0,
+            "actual_heal": 0,
+            "exit_hp": 58
+          }
+        ]
+      },
+      "stress": {
+        "boss_entry_hp": 60.0,
+        "end_hp": 27.0,
+        "total_loss": 99.0,
+        "actual_heal": 26.0,
+        "points": [
+          {
+            "node_id": "floor_01_01",
+            "entry_hp": 100,
+            "loss": 0,
+            "nominal_heal": 0,
+            "actual_heal": 0,
+            "exit_hp": 100
+          },
+          {
+            "node_id": "floor_02_02",
+            "entry_hp": 100,
+            "loss": 6.0,
+            "nominal_heal": 0,
+            "actual_heal": 0,
+            "exit_hp": 94.0
+          },
+          {
+            "node_id": "floor_03_03",
+            "entry_hp": 94.0,
+            "loss": 0,
+            "nominal_heal": 0,
+            "actual_heal": 0,
+            "exit_hp": 94.0
+          },
+          {
+            "node_id": "floor_04_02",
+            "entry_hp": 94.0,
+            "loss": 0,
+            "nominal_heal": 20,
+            "actual_heal": 6.0,
+            "exit_hp": 100
+          },
+          {
+            "node_id": "floor_05_02",
+            "entry_hp": 100,
+            "loss": 18.0,
+            "nominal_heal": 0,
+            "actual_heal": 0,
+            "exit_hp": 82.0
+          },
+          {
+            "node_id": "floor_06_01",
+            "entry_hp": 82.0,
+            "loss": 0,
+            "nominal_heal": 0,
+            "actual_heal": 0,
+            "exit_hp": 82.0
+          },
+          {
+            "node_id": "floor_07_02",
+            "entry_hp": 82.0,
+            "loss": 18.0,
+            "nominal_heal": 0,
+            "actual_heal": 0,
+            "exit_hp": 64.0
+          },
+          {
+            "node_id": "floor_08_01",
+            "entry_hp": 64.0,
+            "loss": 24.0,
+            "nominal_heal": 0,
+            "actual_heal": 0,
+            "exit_hp": 40.0
+          },
+          {
+            "node_id": "floor_09_01",
+            "entry_hp": 40.0,
+            "loss": 0,
+            "nominal_heal": 20,
+            "actual_heal": 20.0,
+            "exit_hp": 60.0
+          },
+          {
+            "node_id": "floor_10_01",
+            "entry_hp": 60.0,
+            "loss": 33.0,
+            "nominal_heal": 0,
+            "actual_heal": 0,
+            "exit_hp": 27.0
+          }
+        ]
+      }
+    },
+    {
+      "id": 9,
+      "nodes": [
+        "floor_01_01",
+        "floor_02_03",
+        "floor_03_04",
+        "floor_04_03",
+        "floor_05_03",
+        "floor_06_03",
+        "floor_07_03",
+        "floor_08_02",
+        "floor_09_02",
+        "floor_10_01"
+      ],
+      "normal_battles": 3,
+      "rest_count": 1,
+      "baseline": {
+        "boss_entry_hp": 92,
+        "end_hp": 70,
+        "total_loss": 50,
+        "actual_heal": 20,
+        "points": [
+          {
+            "node_id": "floor_01_01",
+            "entry_hp": 100,
+            "loss": 0,
+            "nominal_heal": 0,
+            "actual_heal": 0,
+            "exit_hp": 100
+          },
+          {
+            "node_id": "floor_02_03",
+            "entry_hp": 100,
+            "loss": 4,
+            "nominal_heal": 0,
+            "actual_heal": 0,
+            "exit_hp": 96
+          },
+          {
+            "node_id": "floor_03_04",
+            "entry_hp": 96,
+            "loss": 0,
+            "nominal_heal": 0,
+            "actual_heal": 0,
+            "exit_hp": 96
+          },
+          {
+            "node_id": "floor_04_03",
+            "entry_hp": 96,
+            "loss": 12,
+            "nominal_heal": 0,
+            "actual_heal": 0,
+            "exit_hp": 84
+          },
+          {
+            "node_id": "floor_05_03",
+            "entry_hp": 84,
+            "loss": 0,
+            "nominal_heal": 0,
+            "actual_heal": 0,
+            "exit_hp": 84
+          },
+          {
+            "node_id": "floor_06_03",
+            "entry_hp": 84,
+            "loss": 0,
+            "nominal_heal": 0,
+            "actual_heal": 0,
+            "exit_hp": 84
+          },
+          {
+            "node_id": "floor_07_03",
+            "entry_hp": 84,
+            "loss": 12,
+            "nominal_heal": 0,
+            "actual_heal": 0,
+            "exit_hp": 72
+          },
+          {
+            "node_id": "floor_08_02",
+            "entry_hp": 72,
+            "loss": 0,
+            "nominal_heal": 0,
+            "actual_heal": 0,
+            "exit_hp": 72
+          },
+          {
+            "node_id": "floor_09_02",
+            "entry_hp": 72,
+            "loss": 0,
+            "nominal_heal": 20,
+            "actual_heal": 20,
+            "exit_hp": 92
+          },
+          {
+            "node_id": "floor_10_01",
+            "entry_hp": 92,
+            "loss": 22,
+            "nominal_heal": 0,
+            "actual_heal": 0,
+            "exit_hp": 70
+          }
+        ]
+      },
+      "stress": {
+        "boss_entry_hp": 78.0,
+        "end_hp": 45.0,
+        "total_loss": 75.0,
+        "actual_heal": 20.0,
+        "points": [
+          {
+            "node_id": "floor_01_01",
+            "entry_hp": 100,
+            "loss": 0,
+            "nominal_heal": 0,
+            "actual_heal": 0,
+            "exit_hp": 100
+          },
+          {
+            "node_id": "floor_02_03",
+            "entry_hp": 100,
+            "loss": 6.0,
+            "nominal_heal": 0,
+            "actual_heal": 0,
+            "exit_hp": 94.0
+          },
+          {
+            "node_id": "floor_03_04",
+            "entry_hp": 94.0,
+            "loss": 0,
+            "nominal_heal": 0,
+            "actual_heal": 0,
+            "exit_hp": 94.0
+          },
+          {
+            "node_id": "floor_04_03",
+            "entry_hp": 94.0,
+            "loss": 18.0,
+            "nominal_heal": 0,
+            "actual_heal": 0,
+            "exit_hp": 76.0
+          },
+          {
+            "node_id": "floor_05_03",
+            "entry_hp": 76.0,
+            "loss": 0,
+            "nominal_heal": 0,
+            "actual_heal": 0,
+            "exit_hp": 76.0
+          },
+          {
+            "node_id": "floor_06_03",
+            "entry_hp": 76.0,
+            "loss": 0,
+            "nominal_heal": 0,
+            "actual_heal": 0,
+            "exit_hp": 76.0
+          },
+          {
+            "node_id": "floor_07_03",
+            "entry_hp": 76.0,
+            "loss": 18.0,
+            "nominal_heal": 0,
+            "actual_heal": 0,
+            "exit_hp": 58.0
+          },
+          {
+            "node_id": "floor_08_02",
+            "entry_hp": 58.0,
+            "loss": 0,
+            "nominal_heal": 0,
+            "actual_heal": 0,
+            "exit_hp": 58.0
+          },
+          {
+            "node_id": "floor_09_02",
+            "entry_hp": 58.0,
+            "loss": 0,
+            "nominal_heal": 20,
+            "actual_heal": 20.0,
+            "exit_hp": 78.0
+          },
+          {
+            "node_id": "floor_10_01",
+            "entry_hp": 78.0,
+            "loss": 33.0,
+            "nominal_heal": 0,
+            "actual_heal": 0,
+            "exit_hp": 45.0
+          }
+        ]
+      }
+    },
+    {
+      "id": 10,
+      "nodes": [
+        "floor_01_01",
+        "floor_02_03",
+        "floor_03_04",
+        "floor_04_03",
+        "floor_05_03",
+        "floor_06_03",
+        "floor_07_03",
+        "floor_08_03",
+        "floor_09_02",
+        "floor_10_01"
+      ],
+      "normal_battles": 4,
+      "rest_count": 1,
+      "baseline": {
+        "boss_entry_hp": 76,
+        "end_hp": 54,
+        "total_loss": 66,
+        "actual_heal": 20,
+        "points": [
+          {
+            "node_id": "floor_01_01",
+            "entry_hp": 100,
+            "loss": 0,
+            "nominal_heal": 0,
+            "actual_heal": 0,
+            "exit_hp": 100
+          },
+          {
+            "node_id": "floor_02_03",
+            "entry_hp": 100,
+            "loss": 4,
+            "nominal_heal": 0,
+            "actual_heal": 0,
+            "exit_hp": 96
+          },
+          {
+            "node_id": "floor_03_04",
+            "entry_hp": 96,
+            "loss": 0,
+            "nominal_heal": 0,
+            "actual_heal": 0,
+            "exit_hp": 96
+          },
+          {
+            "node_id": "floor_04_03",
+            "entry_hp": 96,
+            "loss": 12,
+            "nominal_heal": 0,
+            "actual_heal": 0,
+            "exit_hp": 84
+          },
+          {
+            "node_id": "floor_05_03",
+            "entry_hp": 84,
+            "loss": 0,
+            "nominal_heal": 0,
+            "actual_heal": 0,
+            "exit_hp": 84
+          },
+          {
+            "node_id": "floor_06_03",
+            "entry_hp": 84,
+            "loss": 0,
+            "nominal_heal": 0,
+            "actual_heal": 0,
+            "exit_hp": 84
+          },
+          {
+            "node_id": "floor_07_03",
+            "entry_hp": 84,
+            "loss": 12,
+            "nominal_heal": 0,
+            "actual_heal": 0,
+            "exit_hp": 72
+          },
+          {
+            "node_id": "floor_08_03",
+            "entry_hp": 72,
+            "loss": 16,
+            "nominal_heal": 0,
+            "actual_heal": 0,
+            "exit_hp": 56
+          },
+          {
+            "node_id": "floor_09_02",
+            "entry_hp": 56,
+            "loss": 0,
+            "nominal_heal": 20,
+            "actual_heal": 20,
+            "exit_hp": 76
+          },
+          {
+            "node_id": "floor_10_01",
+            "entry_hp": 76,
+            "loss": 22,
+            "nominal_heal": 0,
+            "actual_heal": 0,
+            "exit_hp": 54
+          }
+        ]
+      },
+      "stress": {
+        "boss_entry_hp": 54.0,
+        "end_hp": 21.0,
+        "total_loss": 99.0,
+        "actual_heal": 20.0,
+        "points": [
+          {
+            "node_id": "floor_01_01",
+            "entry_hp": 100,
+            "loss": 0,
+            "nominal_heal": 0,
+            "actual_heal": 0,
+            "exit_hp": 100
+          },
+          {
+            "node_id": "floor_02_03",
+            "entry_hp": 100,
+            "loss": 6.0,
+            "nominal_heal": 0,
+            "actual_heal": 0,
+            "exit_hp": 94.0
+          },
+          {
+            "node_id": "floor_03_04",
+            "entry_hp": 94.0,
+            "loss": 0,
+            "nominal_heal": 0,
+            "actual_heal": 0,
+            "exit_hp": 94.0
+          },
+          {
+            "node_id": "floor_04_03",
+            "entry_hp": 94.0,
+            "loss": 18.0,
+            "nominal_heal": 0,
+            "actual_heal": 0,
+            "exit_hp": 76.0
+          },
+          {
+            "node_id": "floor_05_03",
+            "entry_hp": 76.0,
+            "loss": 0,
+            "nominal_heal": 0,
+            "actual_heal": 0,
+            "exit_hp": 76.0
+          },
+          {
+            "node_id": "floor_06_03",
+            "entry_hp": 76.0,
+            "loss": 0,
+            "nominal_heal": 0,
+            "actual_heal": 0,
+            "exit_hp": 76.0
+          },
+          {
+            "node_id": "floor_07_03",
+            "entry_hp": 76.0,
+            "loss": 18.0,
+            "nominal_heal": 0,
+            "actual_heal": 0,
+            "exit_hp": 58.0
+          },
+          {
+            "node_id": "floor_08_03",
+            "entry_hp": 58.0,
+            "loss": 24.0,
+            "nominal_heal": 0,
+            "actual_heal": 0,
+            "exit_hp": 34.0
+          },
+          {
+            "node_id": "floor_09_02",
+            "entry_hp": 34.0,
+            "loss": 0,
+            "nominal_heal": 20,
+            "actual_heal": 20.0,
+            "exit_hp": 54.0
+          },
+          {
+            "node_id": "floor_10_01",
+            "entry_hp": 54.0,
+            "loss": 33.0,
+            "nominal_heal": 0,
+            "actual_heal": 0,
+            "exit_hp": 21.0
+          }
+        ]
+      }
+    },
+    {
+      "id": 11,
+      "nodes": [
+        "floor_01_01",
+        "floor_02_03",
+        "floor_03_04",
+        "floor_04_03",
+        "floor_05_03",
+        "floor_06_02",
+        "floor_07_03",
+        "floor_08_02",
+        "floor_09_02",
+        "floor_10_01"
+      ],
+      "normal_battles": 3,
+      "rest_count": 2,
+      "baseline": {
+        "boss_entry_hp": 100,
+        "end_hp": 78,
+        "total_loss": 50,
+        "actual_heal": 28,
+        "points": [
+          {
+            "node_id": "floor_01_01",
+            "entry_hp": 100,
+            "loss": 0,
+            "nominal_heal": 0,
+            "actual_heal": 0,
+            "exit_hp": 100
+          },
+          {
+            "node_id": "floor_02_03",
+            "entry_hp": 100,
+            "loss": 4,
+            "nominal_heal": 0,
+            "actual_heal": 0,
+            "exit_hp": 96
+          },
+          {
+            "node_id": "floor_03_04",
+            "entry_hp": 96,
+            "loss": 0,
+            "nominal_heal": 0,
+            "actual_heal": 0,
+            "exit_hp": 96
+          },
+          {
+            "node_id": "floor_04_03",
+            "entry_hp": 96,
+            "loss": 12,
+            "nominal_heal": 0,
+            "actual_heal": 0,
+            "exit_hp": 84
+          },
+          {
+            "node_id": "floor_05_03",
+            "entry_hp": 84,
+            "loss": 0,
+            "nominal_heal": 0,
+            "actual_heal": 0,
+            "exit_hp": 84
+          },
+          {
+            "node_id": "floor_06_02",
+            "entry_hp": 84,
+            "loss": 0,
+            "nominal_heal": 20,
+            "actual_heal": 16,
+            "exit_hp": 100
+          },
+          {
+            "node_id": "floor_07_03",
+            "entry_hp": 100,
+            "loss": 12,
+            "nominal_heal": 0,
+            "actual_heal": 0,
+            "exit_hp": 88
+          },
+          {
+            "node_id": "floor_08_02",
+            "entry_hp": 88,
+            "loss": 0,
+            "nominal_heal": 0,
+            "actual_heal": 0,
+            "exit_hp": 88
+          },
+          {
+            "node_id": "floor_09_02",
+            "entry_hp": 88,
+            "loss": 0,
+            "nominal_heal": 20,
+            "actual_heal": 12,
+            "exit_hp": 100
+          },
+          {
+            "node_id": "floor_10_01",
+            "entry_hp": 100,
+            "loss": 22,
+            "nominal_heal": 0,
+            "actual_heal": 0,
+            "exit_hp": 78
+          }
+        ]
+      },
+      "stress": {
+        "boss_entry_hp": 98.0,
+        "end_hp": 65.0,
+        "total_loss": 75.0,
+        "actual_heal": 40.0,
+        "points": [
+          {
+            "node_id": "floor_01_01",
+            "entry_hp": 100,
+            "loss": 0,
+            "nominal_heal": 0,
+            "actual_heal": 0,
+            "exit_hp": 100
+          },
+          {
+            "node_id": "floor_02_03",
+            "entry_hp": 100,
+            "loss": 6.0,
+            "nominal_heal": 0,
+            "actual_heal": 0,
+            "exit_hp": 94.0
+          },
+          {
+            "node_id": "floor_03_04",
+            "entry_hp": 94.0,
+            "loss": 0,
+            "nominal_heal": 0,
+            "actual_heal": 0,
+            "exit_hp": 94.0
+          },
+          {
+            "node_id": "floor_04_03",
+            "entry_hp": 94.0,
+            "loss": 18.0,
+            "nominal_heal": 0,
+            "actual_heal": 0,
+            "exit_hp": 76.0
+          },
+          {
+            "node_id": "floor_05_03",
+            "entry_hp": 76.0,
+            "loss": 0,
+            "nominal_heal": 0,
+            "actual_heal": 0,
+            "exit_hp": 76.0
+          },
+          {
+            "node_id": "floor_06_02",
+            "entry_hp": 76.0,
+            "loss": 0,
+            "nominal_heal": 20,
+            "actual_heal": 20.0,
+            "exit_hp": 96.0
+          },
+          {
+            "node_id": "floor_07_03",
+            "entry_hp": 96.0,
+            "loss": 18.0,
+            "nominal_heal": 0,
+            "actual_heal": 0,
+            "exit_hp": 78.0
+          },
+          {
+            "node_id": "floor_08_02",
+            "entry_hp": 78.0,
+            "loss": 0,
+            "nominal_heal": 0,
+            "actual_heal": 0,
+            "exit_hp": 78.0
+          },
+          {
+            "node_id": "floor_09_02",
+            "entry_hp": 78.0,
+            "loss": 0,
+            "nominal_heal": 20,
+            "actual_heal": 20.0,
+            "exit_hp": 98.0
+          },
+          {
+            "node_id": "floor_10_01",
+            "entry_hp": 98.0,
+            "loss": 33.0,
+            "nominal_heal": 0,
+            "actual_heal": 0,
+            "exit_hp": 65.0
+          }
+        ]
+      }
+    },
+    {
+      "id": 12,
+      "nodes": [
+        "floor_01_01",
+        "floor_02_03",
+        "floor_03_04",
+        "floor_04_03",
+        "floor_05_03",
+        "floor_06_02",
+        "floor_07_03",
+        "floor_08_03",
+        "floor_09_02",
+        "floor_10_01"
+      ],
+      "normal_battles": 4,
+      "rest_count": 2,
+      "baseline": {
+        "boss_entry_hp": 92,
+        "end_hp": 70,
+        "total_loss": 66,
+        "actual_heal": 36,
+        "points": [
+          {
+            "node_id": "floor_01_01",
+            "entry_hp": 100,
+            "loss": 0,
+            "nominal_heal": 0,
+            "actual_heal": 0,
+            "exit_hp": 100
+          },
+          {
+            "node_id": "floor_02_03",
+            "entry_hp": 100,
+            "loss": 4,
+            "nominal_heal": 0,
+            "actual_heal": 0,
+            "exit_hp": 96
+          },
+          {
+            "node_id": "floor_03_04",
+            "entry_hp": 96,
+            "loss": 0,
+            "nominal_heal": 0,
+            "actual_heal": 0,
+            "exit_hp": 96
+          },
+          {
+            "node_id": "floor_04_03",
+            "entry_hp": 96,
+            "loss": 12,
+            "nominal_heal": 0,
+            "actual_heal": 0,
+            "exit_hp": 84
+          },
+          {
+            "node_id": "floor_05_03",
+            "entry_hp": 84,
+            "loss": 0,
+            "nominal_heal": 0,
+            "actual_heal": 0,
+            "exit_hp": 84
+          },
+          {
+            "node_id": "floor_06_02",
+            "entry_hp": 84,
+            "loss": 0,
+            "nominal_heal": 20,
+            "actual_heal": 16,
+            "exit_hp": 100
+          },
+          {
+            "node_id": "floor_07_03",
+            "entry_hp": 100,
+            "loss": 12,
+            "nominal_heal": 0,
+            "actual_heal": 0,
+            "exit_hp": 88
+          },
+          {
+            "node_id": "floor_08_03",
+            "entry_hp": 88,
+            "loss": 16,
+            "nominal_heal": 0,
+            "actual_heal": 0,
+            "exit_hp": 72
+          },
+          {
+            "node_id": "floor_09_02",
+            "entry_hp": 72,
+            "loss": 0,
+            "nominal_heal": 20,
+            "actual_heal": 20,
+            "exit_hp": 92
+          },
+          {
+            "node_id": "floor_10_01",
+            "entry_hp": 92,
+            "loss": 22,
+            "nominal_heal": 0,
+            "actual_heal": 0,
+            "exit_hp": 70
+          }
+        ]
+      },
+      "stress": {
+        "boss_entry_hp": 74.0,
+        "end_hp": 41.0,
+        "total_loss": 99.0,
+        "actual_heal": 40.0,
+        "points": [
+          {
+            "node_id": "floor_01_01",
+            "entry_hp": 100,
+            "loss": 0,
+            "nominal_heal": 0,
+            "actual_heal": 0,
+            "exit_hp": 100
+          },
+          {
+            "node_id": "floor_02_03",
+            "entry_hp": 100,
+            "loss": 6.0,
+            "nominal_heal": 0,
+            "actual_heal": 0,
+            "exit_hp": 94.0
+          },
+          {
+            "node_id": "floor_03_04",
+            "entry_hp": 94.0,
+            "loss": 0,
+            "nominal_heal": 0,
+            "actual_heal": 0,
+            "exit_hp": 94.0
+          },
+          {
+            "node_id": "floor_04_03",
+            "entry_hp": 94.0,
+            "loss": 18.0,
+            "nominal_heal": 0,
+            "actual_heal": 0,
+            "exit_hp": 76.0
+          },
+          {
+            "node_id": "floor_05_03",
+            "entry_hp": 76.0,
+            "loss": 0,
+            "nominal_heal": 0,
+            "actual_heal": 0,
+            "exit_hp": 76.0
+          },
+          {
+            "node_id": "floor_06_02",
+            "entry_hp": 76.0,
+            "loss": 0,
+            "nominal_heal": 20,
+            "actual_heal": 20.0,
+            "exit_hp": 96.0
+          },
+          {
+            "node_id": "floor_07_03",
+            "entry_hp": 96.0,
+            "loss": 18.0,
+            "nominal_heal": 0,
+            "actual_heal": 0,
+            "exit_hp": 78.0
+          },
+          {
+            "node_id": "floor_08_03",
+            "entry_hp": 78.0,
+            "loss": 24.0,
+            "nominal_heal": 0,
+            "actual_heal": 0,
+            "exit_hp": 54.0
+          },
+          {
+            "node_id": "floor_09_02",
+            "entry_hp": 54.0,
+            "loss": 0,
+            "nominal_heal": 20,
+            "actual_heal": 20.0,
+            "exit_hp": 74.0
+          },
+          {
+            "node_id": "floor_10_01",
+            "entry_hp": 74.0,
+            "loss": 33.0,
+            "nominal_heal": 0,
+            "actual_heal": 0,
+            "exit_hp": 41.0
+          }
+        ]
+      }
+    },
+    {
+      "id": 13,
+      "nodes": [
+        "floor_01_01",
+        "floor_02_01",
+        "floor_03_01",
+        "floor_04_01",
+        "floor_05_01",
+        "floor_06_01",
+        "floor_07_01",
+        "floor_08_01",
+        "floor_09_01",
+        "floor_10_01"
+      ],
+      "normal_battles": 2,
+      "rest_count": 1,
+      "baseline": {
+        "boss_entry_hp": 100,
+        "end_hp": 78,
+        "total_loss": 42,
+        "actual_heal": 20,
+        "points": [
+          {
+            "node_id": "floor_01_01",
+            "entry_hp": 100,
+            "loss": 0,
+            "nominal_heal": 0,
+            "actual_heal": 0,
+            "exit_hp": 100
+          },
+          {
+            "node_id": "floor_02_01",
+            "entry_hp": 100,
+            "loss": 4,
+            "nominal_heal": 0,
+            "actual_heal": 0,
+            "exit_hp": 96
+          },
+          {
+            "node_id": "floor_03_01",
+            "entry_hp": 96,
+            "loss": 0,
+            "nominal_heal": 0,
+            "actual_heal": 0,
+            "exit_hp": 96
+          },
+          {
+            "node_id": "floor_04_01",
+            "entry_hp": 96,
+            "loss": 0,
+            "nominal_heal": 0,
+            "actual_heal": 0,
+            "exit_hp": 96
+          },
+          {
+            "node_id": "floor_05_01",
+            "entry_hp": 96,
+            "loss": 0,
+            "nominal_heal": 0,
+            "actual_heal": 0,
+            "exit_hp": 96
+          },
+          {
+            "node_id": "floor_06_01",
+            "entry_hp": 96,
+            "loss": 0,
+            "nominal_heal": 0,
+            "actual_heal": 0,
+            "exit_hp": 96
+          },
+          {
+            "node_id": "floor_07_01",
+            "entry_hp": 96,
+            "loss": 0,
+            "nominal_heal": 0,
+            "actual_heal": 0,
+            "exit_hp": 96
+          },
+          {
+            "node_id": "floor_08_01",
+            "entry_hp": 96,
+            "loss": 16,
+            "nominal_heal": 0,
+            "actual_heal": 0,
+            "exit_hp": 80
+          },
+          {
+            "node_id": "floor_09_01",
+            "entry_hp": 80,
+            "loss": 0,
+            "nominal_heal": 20,
+            "actual_heal": 20,
+            "exit_hp": 100
+          },
+          {
+            "node_id": "floor_10_01",
+            "entry_hp": 100,
+            "loss": 22,
+            "nominal_heal": 0,
+            "actual_heal": 0,
+            "exit_hp": 78
+          }
+        ]
+      },
+      "stress": {
+        "boss_entry_hp": 90.0,
+        "end_hp": 57.0,
+        "total_loss": 63.0,
+        "actual_heal": 20.0,
+        "points": [
+          {
+            "node_id": "floor_01_01",
+            "entry_hp": 100,
+            "loss": 0,
+            "nominal_heal": 0,
+            "actual_heal": 0,
+            "exit_hp": 100
+          },
+          {
+            "node_id": "floor_02_01",
+            "entry_hp": 100,
+            "loss": 6.0,
+            "nominal_heal": 0,
+            "actual_heal": 0,
+            "exit_hp": 94.0
+          },
+          {
+            "node_id": "floor_03_01",
+            "entry_hp": 94.0,
+            "loss": 0,
+            "nominal_heal": 0,
+            "actual_heal": 0,
+            "exit_hp": 94.0
+          },
+          {
+            "node_id": "floor_04_01",
+            "entry_hp": 94.0,
+            "loss": 0,
+            "nominal_heal": 0,
+            "actual_heal": 0,
+            "exit_hp": 94.0
+          },
+          {
+            "node_id": "floor_05_01",
+            "entry_hp": 94.0,
+            "loss": 0,
+            "nominal_heal": 0,
+            "actual_heal": 0,
+            "exit_hp": 94.0
+          },
+          {
+            "node_id": "floor_06_01",
+            "entry_hp": 94.0,
+            "loss": 0,
+            "nominal_heal": 0,
+            "actual_heal": 0,
+            "exit_hp": 94.0
+          },
+          {
+            "node_id": "floor_07_01",
+            "entry_hp": 94.0,
+            "loss": 0,
+            "nominal_heal": 0,
+            "actual_heal": 0,
+            "exit_hp": 94.0
+          },
+          {
+            "node_id": "floor_08_01",
+            "entry_hp": 94.0,
+            "loss": 24.0,
+            "nominal_heal": 0,
+            "actual_heal": 0,
+            "exit_hp": 70.0
+          },
+          {
+            "node_id": "floor_09_01",
+            "entry_hp": 70.0,
+            "loss": 0,
+            "nominal_heal": 20,
+            "actual_heal": 20.0,
+            "exit_hp": 90.0
+          },
+          {
+            "node_id": "floor_10_01",
+            "entry_hp": 90.0,
+            "loss": 33.0,
+            "nominal_heal": 0,
+            "actual_heal": 0,
+            "exit_hp": 57.0
+          }
+        ]
+      }
+    },
+    {
+      "id": 14,
+      "nodes": [
+        "floor_01_01",
+        "floor_02_01",
+        "floor_03_01",
+        "floor_04_01",
+        "floor_05_01",
+        "floor_06_01",
+        "floor_07_02",
+        "floor_08_01",
+        "floor_09_01",
+        "floor_10_01"
+      ],
+      "normal_battles": 3,
+      "rest_count": 1,
+      "baseline": {
+        "boss_entry_hp": 88,
+        "end_hp": 66,
+        "total_loss": 54,
+        "actual_heal": 20,
+        "points": [
+          {
+            "node_id": "floor_01_01",
+            "entry_hp": 100,
+            "loss": 0,
+            "nominal_heal": 0,
+            "actual_heal": 0,
+            "exit_hp": 100
+          },
+          {
+            "node_id": "floor_02_01",
+            "entry_hp": 100,
+            "loss": 4,
+            "nominal_heal": 0,
+            "actual_heal": 0,
+            "exit_hp": 96
+          },
+          {
+            "node_id": "floor_03_01",
+            "entry_hp": 96,
+            "loss": 0,
+            "nominal_heal": 0,
+            "actual_heal": 0,
+            "exit_hp": 96
+          },
+          {
+            "node_id": "floor_04_01",
+            "entry_hp": 96,
+            "loss": 0,
+            "nominal_heal": 0,
+            "actual_heal": 0,
+            "exit_hp": 96
+          },
+          {
+            "node_id": "floor_05_01",
+            "entry_hp": 96,
+            "loss": 0,
+            "nominal_heal": 0,
+            "actual_heal": 0,
+            "exit_hp": 96
+          },
+          {
+            "node_id": "floor_06_01",
+            "entry_hp": 96,
+            "loss": 0,
+            "nominal_heal": 0,
+            "actual_heal": 0,
+            "exit_hp": 96
+          },
+          {
+            "node_id": "floor_07_02",
+            "entry_hp": 96,
+            "loss": 12,
+            "nominal_heal": 0,
+            "actual_heal": 0,
+            "exit_hp": 84
+          },
+          {
+            "node_id": "floor_08_01",
+            "entry_hp": 84,
+            "loss": 16,
+            "nominal_heal": 0,
+            "actual_heal": 0,
+            "exit_hp": 68
+          },
+          {
+            "node_id": "floor_09_01",
+            "entry_hp": 68,
+            "loss": 0,
+            "nominal_heal": 20,
+            "actual_heal": 20,
+            "exit_hp": 88
+          },
+          {
+            "node_id": "floor_10_01",
+            "entry_hp": 88,
+            "loss": 22,
+            "nominal_heal": 0,
+            "actual_heal": 0,
+            "exit_hp": 66
+          }
+        ]
+      },
+      "stress": {
+        "boss_entry_hp": 72.0,
+        "end_hp": 39.0,
+        "total_loss": 81.0,
+        "actual_heal": 20.0,
+        "points": [
+          {
+            "node_id": "floor_01_01",
+            "entry_hp": 100,
+            "loss": 0,
+            "nominal_heal": 0,
+            "actual_heal": 0,
+            "exit_hp": 100
+          },
+          {
+            "node_id": "floor_02_01",
+            "entry_hp": 100,
+            "loss": 6.0,
+            "nominal_heal": 0,
+            "actual_heal": 0,
+            "exit_hp": 94.0
+          },
+          {
+            "node_id": "floor_03_01",
+            "entry_hp": 94.0,
+            "loss": 0,
+            "nominal_heal": 0,
+            "actual_heal": 0,
+            "exit_hp": 94.0
+          },
+          {
+            "node_id": "floor_04_01",
+            "entry_hp": 94.0,
+            "loss": 0,
+            "nominal_heal": 0,
+            "actual_heal": 0,
+            "exit_hp": 94.0
+          },
+          {
+            "node_id": "floor_05_01",
+            "entry_hp": 94.0,
+            "loss": 0,
+            "nominal_heal": 0,
+            "actual_heal": 0,
+            "exit_hp": 94.0
+          },
+          {
+            "node_id": "floor_06_01",
+            "entry_hp": 94.0,
+            "loss": 0,
+            "nominal_heal": 0,
+            "actual_heal": 0,
+            "exit_hp": 94.0
+          },
+          {
+            "node_id": "floor_07_02",
+            "entry_hp": 94.0,
+            "loss": 18.0,
+            "nominal_heal": 0,
+            "actual_heal": 0,
+            "exit_hp": 76.0
+          },
+          {
+            "node_id": "floor_08_01",
+            "entry_hp": 76.0,
+            "loss": 24.0,
+            "nominal_heal": 0,
+            "actual_heal": 0,
+            "exit_hp": 52.0
+          },
+          {
+            "node_id": "floor_09_01",
+            "entry_hp": 52.0,
+            "loss": 0,
+            "nominal_heal": 20,
+            "actual_heal": 20.0,
+            "exit_hp": 72.0
+          },
+          {
+            "node_id": "floor_10_01",
+            "entry_hp": 72.0,
+            "loss": 33.0,
+            "nominal_heal": 0,
+            "actual_heal": 0,
+            "exit_hp": 39.0
+          }
+        ]
+      }
+    }
+  ],
+  "sources": [
+    {
+      "path": "data/levels/第一章 ·  翠绿原野.json",
+      "sha256": "323ed638e743073c490af5b1d9491d790ef344189a6c9881d1a32d5e47217edd"
+    },
+    {
+      "path": "data/units/unit_data.gd",
+      "sha256": "533708edecc97e83d86162eaf00da26229b09981b8dca39a3a4a876f484dfbb4"
+    },
+    {
+      "path": "data/run/run_start_data.tres",
+      "sha256": "f5302032d84d4571b3783f79fb845e3149ec5fb121a8bc7f119d5779a83d7db5"
+    },
+    {
+      "path": "data/run/run_start_data.gd",
+      "sha256": "63fed8b1a9dfec8c71383826046d65d0c94e46158d97ff66f06edab17ca08c1b"
+    },
+    {
+      "path": "scripts/battle/level_wave.gd",
+      "sha256": "0b92f7b8c02144d779d994b3cb40a0ee9548a6091011414b1ebe2eb3b8dcc6c0"
+    },
+    {
+      "path": "scripts/battle/wave_sequence.gd",
+      "sha256": "426172f1c6de1e905843502a84a1ff9a2311d0e3d9aab8e41095f52e7aea837f"
+    },
+    {
+      "path": "scripts/battle/battle_round_manager.gd",
+      "sha256": "9514c1d7be32f91c84acc4f3fe9e4ced4724665667f05a0a5a5b07843f7cc9a3"
+    },
+    {
+      "path": "scripts/cards/card_instance.gd",
+      "sha256": "59bdc9ff582cae30d070df896f45b36e1d1c0301dec347a2cbef4acd596b4848"
+    },
+    {
+      "path": "scripts/cards/hand_manager.gd",
+      "sha256": "b638c7b9b35d97e07f4368fe7b3c5aa4a127ea84745da090701c840d79a619f8"
+    },
+    {
+      "path": "scripts/units/skill_manager.gd",
+      "sha256": "3918c3b015ecc6886e2f1d794e5efd9f141c45e0be180b9d5962fb952ba49432"
+    },
+    {
+      "path": "scripts/map/fixed_map_config.gd",
+      "sha256": "04eceb98db1d047be61695b5e8ae154ad548e8ac14703c551f65e978fbd52f91"
+    },
+    {
+      "path": "autoload/run_manager.gd",
+      "sha256": "a2cef247f4dbbcd0cb5e960803b8ab62df6f0add77401c4262358abb8ee274d6"
+    },
+    {
+      "path": "data/cards/power_enhance.tres",
+      "sha256": "867e34076fa5ca6e4afa6214c89bf1d4f79b27ac0ca2ae34ca9d62b4f168bc3c"
+    },
+    {
+      "path": "data/cards/defend.tres",
+      "sha256": "76846df101ba9a8e9dd1a6d45730452d7bbc6c05301024fe10f51e00ea0872da"
+    },
+    {
+      "path": "data/relics/base_heart.tres",
+      "sha256": "64f385bb375d2d3672c8994eb988a0c70721c82657c6cbe5d4ebbb6508decd45"
+    },
+    {
+      "path": "data/units/skeleton.tres",
+      "sha256": "87fe3940828ec86a296c761a1539b518d6a5689241927201548b38d095c33f22"
+    },
+    {
+      "path": "data/units/skeleton_archer.tres",
+      "sha256": "2d49fadee9c69c48d12984017011c55ebd5daaee9300fb233970b5e2d0cfc84e"
+    },
+    {
+      "path": "data/units/orc.tres",
+      "sha256": "81525f1ac1a9c94553bf49b2f65dc97cf38c99f8cc4296ffec50525c2807b2c5"
+    },
+    {
+      "path": "data/units/armored_orc.tres",
+      "sha256": "d433a6bc0defb39db14ac5710e2d5c0542d811cecd55e979b074b9b92f72d474"
+    },
+    {
+      "path": "data/units/elite_orc.tres",
+      "sha256": "0bfc758a12589d76b618219868743d11e90106fc907159dbf0f577fab83074ea"
+    },
+    {
+      "path": "data/units/soldier.tres",
+      "sha256": "36e11769ab885fe43efc092a68e60bf142349519c40474f1de63ffd350f6eb27"
+    },
+    {
+      "path": "data/units/archer.tres",
+      "sha256": "58ea8d22422d01fac97769b3655fcfe4c5051863c82b3855e2639a3debaf571f"
+    }
+  ]
+}

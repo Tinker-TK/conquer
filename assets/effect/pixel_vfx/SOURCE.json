@@ -1,0 +1,3279 @@
+{
+  "date": "2026-10-09",
+  "archives": [
+    {
+      "id": "foozle",
+      "source_url": "https://foozlecc.itch.io/lucifer-effects",
+      "downloaded_at": "2026-10-09T13:06:45.977835+00:00",
+      "retrieval": "official itch.io free-download flow",
+      "archive_sha256": "72bbb1d038cc25148debd45c1b5fe1806fe326ad205d65be39bad67fbe55c2b5",
+      "archive_bytes": 33390,
+      "file_count": 39,
+      "path": "source/foozle.zip",
+      "sha256": "72bbb1d038cc25148debd45c1b5fe1806fe326ad205d65be39bad67fbe55c2b5"
+    },
+    {
+      "id": "craftpix_magic",
+      "source_url": "https://free-game-assets.itch.io/free-pixel-magic-sprite-effects-pack",
+      "downloaded_at": "2026-10-09T13:06:45.980835+00:00",
+      "retrieval": "official itch.io free-download flow",
+      "archive_sha256": "559137c76026ff8f54ce8b576b4cbc021171e58dcbf7cb273bf0d4d46ac5aea1",
+      "archive_bytes": 36001,
+      "file_count": 28,
+      "path": "source/craftpix_magic.zip",
+      "sha256": "559137c76026ff8f54ce8b576b4cbc021171e58dcbf7cb273bf0d4d46ac5aea1"
+    },
+    {
+      "id": "alenia",
+      "source_url": "https://alenia-studios.itch.io/10-pixel-art-atmospheric-vfx-pack",
+      "downloaded_at": "2026-10-09T13:06:45.979835+00:00",
+      "retrieval": "official itch.io free-download flow",
+      "archive_sha256": "744a90be39a25797879ebf5c532d9239b747137f093409fa5e44369dc80fab45",
+      "archive_bytes": 21930915,
+      "file_count": 2482,
+      "path": "source/alenia.zip",
+      "sha256": "744a90be39a25797879ebf5c532d9239b747137f093409fa5e44369dc80fab45"
+    },
+    {
+      "id": "craftpix_explosions",
+      "source_url": "https://free-game-assets.itch.io/11-free-pixel-art-explosion-sprites",
+      "downloaded_at": "2026-10-09T13:06:50.883376+00:00",
+      "retrieval": "official itch.io free-download flow",
+      "archive_sha256": "09653dfa7537deee70c1538572bf32e8e2abdd58ac510da6865840cf1468992a",
+      "archive_bytes": 552731,
+      "file_count": 126,
+      "path": "source/craftpix_explosions.zip",
+      "sha256": "09653dfa7537deee70c1538572bf32e8e2abdd58ac510da6865840cf1468992a"
+    },
+    {
+      "id": "pvfx",
+      "source_url": "https://nerijs.itch.io/pvfx-foundry",
+      "downloaded_at": "2026-10-09T13:06:51.401837+00:00",
+      "retrieval": "official itch.io free-download flow",
+      "archive_sha256": "e23004af4a583d1c182bae3680468ab69f0e12fb69df2132347b35e80fd332ec",
+      "archive_bytes": 1338800,
+      "file_count": 186,
+      "path": "source/pvfx.zip",
+      "sha256": "e23004af4a583d1c182bae3680468ab69f0e12fb69df2132347b35e80fd332ec"
+    },
+    {
+      "id": "codemanu_free",
+      "source_url": "https://opengameart.org/content/free-pixel-effects-pack",
+      "downloaded_at": "2026-10-09T13:05:59.618904+00:00",
+      "retrieval": "official public download link",
+      "archive_sha256": "831566871401a9c27246a26f7a760bb9db72a140e88ff134748fb023d30ca1fe",
+      "archive_bytes": 1513656,
+      "file_count": 22,
+      "path": "source/codemanu_free.zip",
+      "sha256": "831566871401a9c27246a26f7a760bb9db72a140e88ff134748fb023d30ca1fe"
+    },
+    {
+      "id": "codemanu_fx",
+      "source_url": "https://opengameart.org/content/pixel-fx-pack",
+      "downloaded_at": "2026-10-09T13:06:01.324764+00:00",
+      "retrieval": "official public download link",
+      "archive_sha256": "5a32646f95b75fa866e7876e5fc93c4c0ebf00c820a58ba4a799e3606672461e",
+      "archive_bytes": 448166,
+      "file_count": 10,
+      "path": "source/codemanu_fx.zip",
+      "sha256": "5a32646f95b75fa866e7876e5fc93c4c0ebf00c820a58ba4a799e3606672461e"
+    },
+    {
+      "id": "kenney",
+      "source_url": "https://kenney.nl/assets/pixel-shmup",
+      "downloaded_at": "2026-10-09T13:06:01.721309+00:00",
+      "retrieval": "official public download link",
+      "archive_sha256": "e33fd626b799de343f18c81ebaa6f3bc161772fdd717acf3f223589ce74cf952",
+      "archive_bytes": 127424,
+      "file_count": 155,
+      "path": "source/kenney.zip",
+      "sha256": "e33fd626b799de343f18c81ebaa6f3bc161772fdd717acf3f223589ce74cf952"
+    },
+    {
+      "id": "warped",
+      "source_url": "https://opengameart.org/content/warped-shooting-fx",
+      "downloaded_at": "2026-10-09T13:06:01.438784+00:00",
+      "retrieval": "official public download link",
+      "archive_sha256": "b6945dba8e8da05608fb38abd9b9ff1cf5013663ef71045d1c10f42965062139",
+      "archive_bytes": 13501456,
+      "file_count": 111,
+      "path": "source/warped.zip",
+      "sha256": "b6945dba8e8da05608fb38abd9b9ff1cf5013663ef71045d1c10f42965062139"
+    },
+    {
+      "id": "godot_vfx",
+      "source_url": "https://store.godotengine.org/asset/heyheythere/vfx-2d-free/",
+      "downloaded_at": "2026-10-09T13:06:02.949114+00:00",
+      "retrieval": "official public download link",
+      "archive_sha256": "c7a6b7ad78b7b575b7851f43365458f4c6d8c689754de49df4d62682e248a6a8",
+      "archive_bytes": 18139,
+      "file_count": 18,
+      "path": "source/godot_vfx.zip",
+      "sha256": "c7a6b7ad78b7b575b7851f43365458f4c6d8c689754de49df4d62682e248a6a8"
+    }
+  ],
+  "deduplicated": [
+    {
+      "kept": "1_magicspell_spritesheet.png",
+      "duplicate": "1.png",
+      "pixel_exact": true
+    },
+    {
+      "kept": "2_magic8_spritesheet.png",
+      "duplicate": "2.png",
+      "pixel_exact": true
+    },
+    {
+      "kept": "3_bluefire_spritesheet.png",
+      "duplicate": "3.png",
+      "pixel_exact": true
+    },
+    {
+      "kept": "4_casting_spritesheet.png",
+      "duplicate": "4.png",
+      "pixel_exact": true
+    },
+    {
+      "kept": "5_magickahit_spritesheet.png",
+      "duplicate": "5.png",
+      "pixel_exact": true
+    },
+    {
+      "kept": "6_flamelash_spritesheet.png",
+      "duplicate": "6.png",
+      "pixel_exact": true
+    },
+    {
+      "kept": "7_firespin_spritesheet.png",
+      "duplicate": "7.png",
+      "pixel_exact": true
+    },
+    {
+      "kept": "8_protectioncircle_spritesheet.png",
+      "duplicate": "8.png",
+      "pixel_exact": true
+    },
+    {
+      "kept": "9_brightfire_spritesheet.png",
+      "duplicate": "9.png",
+      "pixel_exact": true
+    },
+    {
+      "kept": "10_weaponhit_spritesheet.png",
+      "duplicate": "10.png",
+      "pixel_exact": true
+    }
+  ],
+  "transformations": [
+    "Alenia: 60 frame RGBA strips repacked to 10x6 grid, pixels unchanged",
+    "Foozle: native Aseprite counts/durations",
+    "PVFX: metadata counts/durations/loops/pivots",
+    "CodeManu: every 100x100 grid cell retained including transparent cells",
+    "Warped: natural numbered frame order and native GIF timings",
+    "Craftpix: suggested timings clearly labeled",
+    "Kenney: static tile_0000 through tile_0011 subset",
+    "Godot VFX2D: res paths remapped, pixel_size default=3, export enum restricted to four free shaders"
+  ],
+  "files": [
+    {
+      "path": "catalog.html",
+      "sha256": "152cf481e2c6995bf6a3af09635bc0381aeb6ea72623e22b9bc5b06b37662b1d"
+    },
+    {
+      "path": "catalog.json",
+      "sha256": "33297ee5026cca0ee378ffc02b6c83e65cc7fd446cb0695e8675b16d2a710b29"
+    },
+    {
+      "path": "catalog.md",
+      "sha256": "9d302d19607324ca513919c16d1ee65e3fe09706c5945f9530b97b38e105f03e"
+    },
+    {
+      "path": "CREDITS.md",
+      "sha256": "cb15ddfeb8b601b536b19803cd7edadbeb76bcfb67144d3e19cca24b7fe75dc5"
+    },
+    {
+      "path": "README.md",
+      "sha256": "0b2e3d84489483dbb5fa6bd719d6b31567db962c0b84b4da3303191d02ddf89a"
+    },
+    {
+      "path": "VERIFICATION.json",
+      "sha256": "55d4ae9665517748f197723dbbfde969f28d8d913ad94edbf079c77ca8b50005"
+    },
+    {
+      "path": "demo/pixel_vfx_demo.gd",
+      "sha256": "697dbded4fafe13eabd88809c2d7e4e0ab3db0ec0760707dfdc7b30c2d14e360"
+    },
+    {
+      "path": "demo/pixel_vfx_demo.tscn",
+      "sha256": "1676c6a97296fd88d93fe72ad00c1dddde0e2bdeffcf80affa26366c0b0ae7e5"
+    },
+    {
+      "path": "licenses/.gdignore",
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "path": "licenses/alenia-说明.md",
+      "sha256": "12cc3ff86fa0948f28ca510e26580193bdef95738eb861979a3b923c34614e5d"
+    },
+    {
+      "path": "licenses/alenia.txt",
+      "sha256": "67e069babb7d4105e562c43ce00059fddd2dff3c456499477c5ae748e9fe4732"
+    },
+    {
+      "path": "licenses/codemanu-说明.md",
+      "sha256": "edc9da33346b7884e93dc3dc3b2fb0bfe61abebbf1113defac99f6452de9e1ae"
+    },
+    {
+      "path": "licenses/codemanu.txt",
+      "sha256": "8932233eca4960d0756cfeaf8148d2247e16235987613269f5b0d2267a69f216"
+    },
+    {
+      "path": "licenses/craftpix_explosions-说明.md",
+      "sha256": "c611a6315ccd9b79937faf6edf88270ba432398fc9d2085f75856e06493b5386"
+    },
+    {
+      "path": "licenses/craftpix_explosions.txt",
+      "sha256": "0c0f673571adbb935c734ac17fbc6e51fb4368a225b915aa25031712b03960d4"
+    },
+    {
+      "path": "licenses/craftpix_magic-说明.md",
+      "sha256": "851b296bbf93485c1b0d3955d64c57e7e85001aa025957309a3005bedd8bec15"
+    },
+    {
+      "path": "licenses/craftpix_magic.txt",
+      "sha256": "0c0f673571adbb935c734ac17fbc6e51fb4368a225b915aa25031712b03960d4"
+    },
+    {
+      "path": "licenses/foozle-说明.md",
+      "sha256": "a387d88528e8129eb4b5d0a58b41630f3cae33fdeddde316cb2e8ec10e924062"
+    },
+    {
+      "path": "licenses/foozle.txt",
+      "sha256": "4ef58e4dbacc095575bcadd7cabe085c86f8425b04e6639ebb5c11d80b27d81a"
+    },
+    {
+      "path": "licenses/godot_vfx-说明.md",
+      "sha256": "6174f7f6532a0bcb635524db0d66cf17649413a8864ccc6f0a47ee1c4326fe3e"
+    },
+    {
+      "path": "licenses/godot_vfx.txt",
+      "sha256": "351700b2444f4f3c8cc96948fa10ba1bfc90df377975bd1e1b4f8be7756051f7"
+    },
+    {
+      "path": "licenses/kenney-说明.md",
+      "sha256": "2ac98ef10a47d9ee5da636465e32169312f3d72c2f220bf638303f541abdb703"
+    },
+    {
+      "path": "licenses/kenney.txt",
+      "sha256": "92986cb06bedca55e10f2aad83dae5cb296778ce774d35f37612840ddccb14dd"
+    },
+    {
+      "path": "licenses/pvfx-说明.md",
+      "sha256": "d838a698518faf3ab34692d35b3a2a02fe8b86b71a87000d54a892e3cd3fcf06"
+    },
+    {
+      "path": "licenses/pvfx.txt",
+      "sha256": "bb4c0eae8268742c5d4e430e3756854b547360cb2361f5622496605deb634fc2"
+    },
+    {
+      "path": "licenses/warped-说明.md",
+      "sha256": "e4207d0ffeff69022e97c3e7979e9a562232f75951f8a58a1854c95f89174d86"
+    },
+    {
+      "path": "licenses/warped.txt",
+      "sha256": "4cc5fa8b0b8ff30987983db8c18dfbc16ef1aabf8f221c3cab6e3d323199f29b"
+    },
+    {
+      "path": "preview/.gdignore",
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "path": "source/.gdignore",
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "path": "source/alenia.zip",
+      "sha256": "744a90be39a25797879ebf5c532d9239b747137f093409fa5e44369dc80fab45"
+    },
+    {
+      "path": "source/codemanu_free.zip",
+      "sha256": "831566871401a9c27246a26f7a760bb9db72a140e88ff134748fb023d30ca1fe"
+    },
+    {
+      "path": "source/codemanu_fx.zip",
+      "sha256": "5a32646f95b75fa866e7876e5fc93c4c0ebf00c820a58ba4a799e3606672461e"
+    },
+    {
+      "path": "source/craftpix_explosions.zip",
+      "sha256": "09653dfa7537deee70c1538572bf32e8e2abdd58ac510da6865840cf1468992a"
+    },
+    {
+      "path": "source/craftpix_magic.zip",
+      "sha256": "559137c76026ff8f54ce8b576b4cbc021171e58dcbf7cb273bf0d4d46ac5aea1"
+    },
+    {
+      "path": "source/foozle.zip",
+      "sha256": "72bbb1d038cc25148debd45c1b5fe1806fe326ad205d65be39bad67fbe55c2b5"
+    },
+    {
+      "path": "source/godot_vfx.zip",
+      "sha256": "c7a6b7ad78b7b575b7851f43365458f4c6d8c689754de49df4d62682e248a6a8"
+    },
+    {
+      "path": "source/kenney.zip",
+      "sha256": "e33fd626b799de343f18c81ebaa6f3bc161772fdd717acf3f223589ce74cf952"
+    },
+    {
+      "path": "source/pvfx.zip",
+      "sha256": "e23004af4a583d1c182bae3680468ab69f0e12fb69df2132347b35e80fd332ec"
+    },
+    {
+      "path": "source/warped.zip",
+      "sha256": "b6945dba8e8da05608fb38abd9b9ff1cf5013663ef71045d1c10f42965062139"
+    },
+    {
+      "path": "packs/godot_vfx/explosion.tscn",
+      "sha256": "dc0025efc0b4f9458f5162ad613794f0cd31426c967ecf5cfdcc719802feada8"
+    },
+    {
+      "path": "packs/godot_vfx/fire.tscn",
+      "sha256": "6763ebe79b5c3b4a5bcfad818561aa3fa496089dfe36824309bd21ca3764d971"
+    },
+    {
+      "path": "packs/godot_vfx/smoke.tscn",
+      "sha256": "50665251be0080ad0d2991ea60d7266749e16dc688b01e2a1604f1bf7baed7ca"
+    },
+    {
+      "path": "packs/godot_vfx/spark.tscn",
+      "sha256": "5c45b7f051c3dd0c43b7862fbc2a42b651ebb074f5538769f594df0721e88bb2"
+    },
+    {
+      "path": "packs/godot_vfx/vfx_2d.gd",
+      "sha256": "9635ed87a64b2196d13bf69359dd49d376523661b903c7d597e46289ad52676c"
+    },
+    {
+      "path": "packs/alenia/环境天气/abejas.png",
+      "sha256": "ac7d809891b25fa2e29a6a92a6f644ea0990e96501a5f1a7989f1306409f363d"
+    },
+    {
+      "path": "packs/alenia/环境天气/abejas.tres",
+      "sha256": "3dba7f035a667829271efa39172ddf39bcbc10b5e71304bc6a30865d8acae8a6"
+    },
+    {
+      "path": "packs/alenia/环境天气/abejas.tscn",
+      "sha256": "da995594fc2afff61510d1d1dade682f706a0db3ae29ff80dfb35fabf085230e"
+    },
+    {
+      "path": "packs/alenia/环境天气/agua_nenufares.png",
+      "sha256": "86ac441cf007e956a46be7ed802fb5e8e46dc4aaf67444ea7030c402450e31fc"
+    },
+    {
+      "path": "packs/alenia/环境天气/agua_nenufares.tres",
+      "sha256": "42098bcfb4bf15430e9baefba3eb1c7b298d2cdfd04415e8a8fae4bdaace7023"
+    },
+    {
+      "path": "packs/alenia/环境天气/agua_nenufares.tscn",
+      "sha256": "7c7745054b2111c930004e7cdf375a7695f173a7e3835f599e3f51b360034798"
+    },
+    {
+      "path": "packs/alenia/环境天气/arcoiris_sutil.png",
+      "sha256": "5a319e47b064758c7c1ffea3e0a188240dd590d73e2052d4cd5e2d06e592a084"
+    },
+    {
+      "path": "packs/alenia/环境天气/arcoiris_sutil.tres",
+      "sha256": "e498b036181add56a838ba95f2c1b32b6999e7d25d25035c74780e0ee2e7354b"
+    },
+    {
+      "path": "packs/alenia/环境天气/arcoiris_sutil.tscn",
+      "sha256": "699172430598d6c0e5c67480224350093ec641b36d08ecd48b4d1b5bd1e06275"
+    },
+    {
+      "path": "packs/alenia/环境天气/aurora_boreal.png",
+      "sha256": "c383f61db04cff4cbb9e44b816523761eaa715eccc56f0b7114bc94b1c700df0"
+    },
+    {
+      "path": "packs/alenia/环境天气/aurora_boreal.tres",
+      "sha256": "093c233e6dc62a2da90866c5e6ab1054760917455bd2ac2ba5756704171c1eaa"
+    },
+    {
+      "path": "packs/alenia/环境天气/aurora_boreal.tscn",
+      "sha256": "9f58850480cca6181bf90a325a06a3b0e039f280f79fff120dde4e7fe81af76d"
+    },
+    {
+      "path": "packs/alenia/环境天气/burbujas_ascendentes.png",
+      "sha256": "5733ddab952cfb77e2f078f710cdbaf338d2a1e3df46d04cd69b845bbeda8048"
+    },
+    {
+      "path": "packs/alenia/环境天气/burbujas_ascendentes.tres",
+      "sha256": "27fe6a1cf394827bcb54a2b683b292df48faca47ecdb892785e9a465198c7607"
+    },
+    {
+      "path": "packs/alenia/环境天气/burbujas_ascendentes.tscn",
+      "sha256": "76ad12cac5c79bfcead0e9158f934fe5ea1d83300978998bbaf6c909d5a932bf"
+    },
+    {
+      "path": "packs/alenia/环境天气/burbujas_colores.png",
+      "sha256": "3ebf8d2f049c5bcf797f8a01e43eb169c3f7759f6438929a01183fa267c5221e"
+    },
+    {
+      "path": "packs/alenia/环境天气/burbujas_colores.tres",
+      "sha256": "3146465a9a4a2a9438a87090259a24eae740dabf515fb2f2af345490644c4f41"
+    },
+    {
+      "path": "packs/alenia/环境天气/burbujas_colores.tscn",
+      "sha256": "0c6e933a03527d24d006305528ca07bf481332bc91895e6e1b564820b10b50fe"
+    },
+    {
+      "path": "packs/alenia/环境天气/burbujas_explosivas.png",
+      "sha256": "b736cb078427eb390d8c3cfb1cbf6ff1c7dd72f7e91589bec71ecc457fa9b596"
+    },
+    {
+      "path": "packs/alenia/环境天气/burbujas_explosivas.tres",
+      "sha256": "52c3032070a8d69232c10837037a4b034f3903ba8612095e04d498f7a513d558"
+    },
+    {
+      "path": "packs/alenia/环境天气/burbujas_explosivas.tscn",
+      "sha256": "61cd4ec8ad9f17bc99bf5739d14034f064f012d846b4d3ee42b2cb29fc24f2a7"
+    },
+    {
+      "path": "packs/alenia/环境天气/burbujas_pantano.png",
+      "sha256": "e9e412ac2a57658284020121635432b1a3486c17c8100bde6ccd36340ff2455c"
+    },
+    {
+      "path": "packs/alenia/环境天气/burbujas_pantano.tres",
+      "sha256": "92dd03c97e66e21ecc21b7c5ada6bf0dfa4bc761e7e09cc9ceb7a686a6c91eb8"
+    },
+    {
+      "path": "packs/alenia/环境天气/burbujas_pantano.tscn",
+      "sha256": "7efe5524e189c8bdc8fbd63f94cf9b026899016ac08efcca07f8455ccfb5ba54"
+    },
+    {
+      "path": "packs/alenia/环境天气/causticas.png",
+      "sha256": "4f55f3237aa192ae1550db851ee7c3aec5135906f085e4174f51564909436b35"
+    },
+    {
+      "path": "packs/alenia/环境天气/causticas.tres",
+      "sha256": "c70065889beb10779c99b8731e1c68206d479691cfea976be969903a27026060"
+    },
+    {
+      "path": "packs/alenia/环境天气/causticas.tscn",
+      "sha256": "5e8a38ffd0caf81d82fc5d27bd7fe4356215aa970e5917dd4a93f9973dabf7ed"
+    },
+    {
+      "path": "packs/alenia/环境天气/ceniza_volcanica.png",
+      "sha256": "0c8e16ce6e51e7c750607fea1c08d0f19a59b325d53d886ad07976293aa05544"
+    },
+    {
+      "path": "packs/alenia/环境天气/ceniza_volcanica.tres",
+      "sha256": "f3c82cd5b2d9def8210ee7153ab861bc784909ad25922eecfa05797cb854e6a5"
+    },
+    {
+      "path": "packs/alenia/环境天气/ceniza_volcanica.tscn",
+      "sha256": "88af691c3b8c30bbde73317122240b25f85ea6162448f30b1a0b72b436a36289"
+    },
+    {
+      "path": "packs/alenia/环境天气/chispas_fuego.png",
+      "sha256": "cd9ee3f46bb325c4d42204a3f836fa1e2a4e471f5957efc370dbc15c59cbcc8d"
+    },
+    {
+      "path": "packs/alenia/环境天气/chispas_fuego.tres",
+      "sha256": "e76fa99296ba3784149bcd367e784791bd6d1aeb6cdc854d5dfcaff5a7286132"
+    },
+    {
+      "path": "packs/alenia/环境天气/chispas_fuego.tscn",
+      "sha256": "8aac6701229227eea3d5ada1d0e400d141de26c93b6c0786ceb980747aa1ba83"
+    },
+    {
+      "path": "packs/alenia/环境天气/confeti.png",
+      "sha256": "eb74f0f3ef43806b7636fe2ad0f1d8899a8eb46969a197453eb86a8153b2060a"
+    },
+    {
+      "path": "packs/alenia/环境天气/confeti.tres",
+      "sha256": "fde3ff2eccf7099fe1192a626b4abd5ec1a830c260ca806ac983666cb14e18e5"
+    },
+    {
+      "path": "packs/alenia/环境天气/confeti.tscn",
+      "sha256": "654ce79d2da2c844062a8f64cac5cec1be0875e7ed226a2b0af5a1461e9daab4"
+    },
+    {
+      "path": "packs/alenia/环境天气/congelacion.png",
+      "sha256": "0c6c5361372f0f5b201ebd58537a01b8b65fec032cbdf163a3d8ce3562961553"
+    },
+    {
+      "path": "packs/alenia/环境天气/congelacion.tres",
+      "sha256": "ae1bd1730442da8a7d15e9d3a4363064e5f6ea89c8bb83fec138b74b4e775b65"
+    },
+    {
+      "path": "packs/alenia/环境天气/congelacion.tscn",
+      "sha256": "bfabafb0038f261baf5b788a8d8163c9a352c2735a15a16aa3a19f3df10dd4fa"
+    },
+    {
+      "path": "packs/alenia/环境天气/dientes_leon.png",
+      "sha256": "c8696636c7388c914674290c8ea7f4e0ee0f7456a40d76842305df8e2216da3e"
+    },
+    {
+      "path": "packs/alenia/环境天气/dientes_leon.tres",
+      "sha256": "7127f569ea39d8486f4993ccddb12072182105ba4a19a2215ffac533699214e4"
+    },
+    {
+      "path": "packs/alenia/环境天气/dientes_leon.tscn",
+      "sha256": "6f7ea1c1c94a3afbf7121bb90c335fc7898b8b716230cb5e8207a744b827126e"
+    },
+    {
+      "path": "packs/alenia/环境天气/esporas_magicas.png",
+      "sha256": "ccbe4b59841bf8c607d48e5bf001c3d61957e0e9cc3eec7c570bc3ebcd3ce8a6"
+    },
+    {
+      "path": "packs/alenia/环境天气/esporas_magicas.tres",
+      "sha256": "8409ef32812fedee6a1040f53b59f6085fa185dc8326331c4438f4427b70077d"
+    },
+    {
+      "path": "packs/alenia/环境天气/esporas_magicas.tscn",
+      "sha256": "cb36bddbf302a3b767af875eddd10959d412981e1aecc007bc4aa01ab59be0e7"
+    },
+    {
+      "path": "packs/alenia/环境天气/globos_aerostaticos.png",
+      "sha256": "1b5b6efa3dad3374a30483b37a4ed209729c3d1f1c963da3b3d10ffba1e3c2b7"
+    },
+    {
+      "path": "packs/alenia/环境天气/globos_aerostaticos.tres",
+      "sha256": "d83089bcbd23bf43102483ab7fb512571faf3ded89acfb9cc4af6e2fe7322a00"
+    },
+    {
+      "path": "packs/alenia/环境天气/globos_aerostaticos.tscn",
+      "sha256": "ded01348fee28b008ac06698a7d589615415e4d2f8dce08ad2363ba35bf6f0fa"
+    },
+    {
+      "path": "packs/alenia/环境天气/godrays.png",
+      "sha256": "9a014ae8398d6a9a06d1b70e50ca6a89687487f90442d87f257e4ac15607ac0f"
+    },
+    {
+      "path": "packs/alenia/环境天气/godrays.tres",
+      "sha256": "eb1cf90ac2cf6609236157cddb2e8df155d7eed980b6b818ded71a35671bedfd"
+    },
+    {
+      "path": "packs/alenia/环境天气/godrays.tscn",
+      "sha256": "b639a645398305e797094c51731ac0d18d8d5cdbc4d4f23b42ed0a75b7637d3e"
+    },
+    {
+      "path": "packs/alenia/环境天气/hojas_otono.png",
+      "sha256": "d9e6b4a4a06a7741e62e92fcec95c3c4971eebb378e91163748d6c9f7cf95c60"
+    },
+    {
+      "path": "packs/alenia/环境天气/hojas_otono.tres",
+      "sha256": "a0e6843487d151246f9d8d2f0a35c758b13c5b00d5df288b50bf29bbad6303ca"
+    },
+    {
+      "path": "packs/alenia/环境天气/hojas_otono.tscn",
+      "sha256": "cb308b96ac4cb46fbfae23124a3cf58eb7ef937a4717498586a7793851612b7a"
+    },
+    {
+      "path": "packs/alenia/环境天气/hojas_pino.png",
+      "sha256": "947e17121f7093f53c91a9ddc736c142436d531b0feff9ff1591d382ab1c0741"
+    },
+    {
+      "path": "packs/alenia/环境天气/hojas_pino.tres",
+      "sha256": "0eb6396fac75cc87126b498773f3f8fe65944469e7ed02b396c0abb38ffb1b32"
+    },
+    {
+      "path": "packs/alenia/环境天气/hojas_pino.tscn",
+      "sha256": "f6305e150f1a755dcf9cbd53e502022a6634c82ae6c4cf31d5eb077fbd93b424"
+    },
+    {
+      "path": "packs/alenia/环境天气/humo_chimenea.png",
+      "sha256": "7422525a4e99dd1d979689ef4bbfa741e9348eda6b856797e0fe05455ef5e5c1"
+    },
+    {
+      "path": "packs/alenia/环境天气/humo_chimenea.tres",
+      "sha256": "105a21ce823347ae22fbe0e255502c437c18fa4495af5a30f078690569bd9de7"
+    },
+    {
+      "path": "packs/alenia/环境天气/humo_chimenea.tscn",
+      "sha256": "4ed8a876afeca65279623dde7844ab0763fc503bcca0423f9260fed4633bc48b"
+    },
+    {
+      "path": "packs/alenia/环境天气/lluvia_estetica.png",
+      "sha256": "14a25e15173ec7c474466ab97898b346247c648d649600bf4494b01e4d223826"
+    },
+    {
+      "path": "packs/alenia/环境天气/lluvia_estetica.tres",
+      "sha256": "dbcd4c3cf3fa655b00f27ffd5e4cb1b22b14b707e545930d61660c34eb46db04"
+    },
+    {
+      "path": "packs/alenia/环境天气/lluvia_estetica.tscn",
+      "sha256": "9befbdf4fb3ea45a6e475c1dcdd7845a98dea29450db9ebdd2f61c6e87c6ece3"
+    },
+    {
+      "path": "packs/alenia/环境天气/lluvia_splash.png",
+      "sha256": "4f5c0d0c96ed54ab28e4088a5a595a4c2b503877f0e80b3cf8ee16b84e81a529"
+    },
+    {
+      "path": "packs/alenia/环境天气/lluvia_splash.tres",
+      "sha256": "6be4b8d7fdb1fa86c9ef0d841b14f31e4162e3272a5e89dcc3b425927311bfeb"
+    },
+    {
+      "path": "packs/alenia/环境天气/lluvia_splash.tscn",
+      "sha256": "6a469b370135dd285fd38be9dfe790907d96f6521baef339063956e47b310be9"
+    },
+    {
+      "path": "packs/alenia/环境天气/luciernagas_azules.png",
+      "sha256": "39a0889bf16d7d04c51a33e8eab9553f13e2926e6f446e7e8c90474035d2d11a"
+    },
+    {
+      "path": "packs/alenia/环境天气/luciernagas_azules.tres",
+      "sha256": "7ea05a99f9aaf65a53a0df30f3f4f28a8e8deda714b889b96dad48f734c5f0f6"
+    },
+    {
+      "path": "packs/alenia/环境天气/luciernagas_azules.tscn",
+      "sha256": "f354277f26e47cfe5babc724d3dd285c182f40dda4c55c0c92699fc434269ec6"
+    },
+    {
+      "path": "packs/alenia/环境天气/luciernagas_cozy.png",
+      "sha256": "fa021b4832f729fb53d91fdc3cc6893ee21890bd7876fce0e4da87d7da60b5fe"
+    },
+    {
+      "path": "packs/alenia/环境天气/luciernagas_cozy.tres",
+      "sha256": "24476f03071e24c0f39ed2cf6f377e88ada179aba77c100cc9639c3dd599d19b"
+    },
+    {
+      "path": "packs/alenia/环境天气/luciernagas_cozy.tscn",
+      "sha256": "27e5113733d889cfc7978317b779cd13e26bc65996c8fb7a7a21405a0f173465"
+    },
+    {
+      "path": "packs/alenia/环境天气/mariposas.png",
+      "sha256": "0b5cc8ad52d0f8f73222bcce449752311b370388ac5d378dbdb11692148c2194"
+    },
+    {
+      "path": "packs/alenia/环境天气/mariposas.tres",
+      "sha256": "60804b2bf5718b154675e1df19295eb3e9c203ada7b8525f2f59dbdcb512afa1"
+    },
+    {
+      "path": "packs/alenia/环境天气/mariposas.tscn",
+      "sha256": "a545b6409fc15d161be32b4066bd8cfc0de14a2136e50a6fc657fcad44601c9f"
+    },
+    {
+      "path": "packs/alenia/环境天气/meteoritos.png",
+      "sha256": "a845bd43d7b9ab79e06e9be69d0a2b5de5a6254c30f558212fd9a8781d10b66b"
+    },
+    {
+      "path": "packs/alenia/环境天气/meteoritos.tres",
+      "sha256": "1d9eca9d6989377b02f6230b1a36c2d3ac03b9767dd11197b049a7a74bfb646e"
+    },
+    {
+      "path": "packs/alenia/环境天气/meteoritos.tscn",
+      "sha256": "3337d4a2c0658d6d58b22c9fc7506857355302392665896ed213fb39fac4aa57"
+    },
+    {
+      "path": "packs/alenia/环境天气/niebla_espesa.png",
+      "sha256": "dddc566cc49e77562136a1c311fd4230eef6c841a7b735159bf252385c057c2f"
+    },
+    {
+      "path": "packs/alenia/环境天气/niebla_espesa.tres",
+      "sha256": "e1fb1cfded6a75fa2dfb7ab8fc90329037f4a579d8aa83a38dda387d367d00d1"
+    },
+    {
+      "path": "packs/alenia/环境天气/niebla_espesa.tscn",
+      "sha256": "4e5cc5e2322fd2fff253dd59e01eb95e86b99141d232fab4988c70ceb13f1adc"
+    },
+    {
+      "path": "packs/alenia/环境天气/nieve_cinematica.png",
+      "sha256": "f283bf27679d955a094f0899f4dfc1d9055b6808caa825c404c7115f4698bdb1"
+    },
+    {
+      "path": "packs/alenia/环境天气/nieve_cinematica.tres",
+      "sha256": "9d077bc09826dee8a39305a9efe7ee463bf9a1b77be67c82b45e0800ebe1a468"
+    },
+    {
+      "path": "packs/alenia/环境天气/nieve_cinematica.tscn",
+      "sha256": "f9221e9e0dca809460bf1215a8ad7022dbbb45c09a7e6938de2f06723ef6a5bb"
+    },
+    {
+      "path": "packs/alenia/环境天气/nieve_cozy.png",
+      "sha256": "1b0eec7e54ce1d47ae724763fb40638d805d6a818db0dbbbb88c9a129136ad7a"
+    },
+    {
+      "path": "packs/alenia/环境天气/nieve_cozy.tres",
+      "sha256": "7bcf7848f3f311d355396abfc790d81261d08d1d8ef8720ddacdbe08c6449d85"
+    },
+    {
+      "path": "packs/alenia/环境天气/nieve_cozy.tscn",
+      "sha256": "0701508d3fdd2cfb0e644e46446b26d5e147885a189bfb00917c99cd599894dd"
+    },
+    {
+      "path": "packs/alenia/环境天气/notas_musicales.png",
+      "sha256": "0908fa704b51788d5d9a36575b0461ed436a35b61e2ddc06483d80196c971ece"
+    },
+    {
+      "path": "packs/alenia/环境天气/notas_musicales.tres",
+      "sha256": "675c569d7d06f2d20e8524afa0773c21b99fe464c529368166b992ccef1cbf27"
+    },
+    {
+      "path": "packs/alenia/环境天气/notas_musicales.tscn",
+      "sha256": "ddc89941883515cb217e70160180b71d792e649fe323bebe6de437663f54b5aa"
+    },
+    {
+      "path": "packs/alenia/环境天气/nubes_algodon.png",
+      "sha256": "ce251bdae3b8494aa170c3b21706eec20a7bb230222de01a6a9e03ba21f4cba9"
+    },
+    {
+      "path": "packs/alenia/环境天气/nubes_algodon.tres",
+      "sha256": "c0e36788ea4f4914fee7664046bed3578e57f31673c8d0dfac9c7db1965cd2ad"
+    },
+    {
+      "path": "packs/alenia/环境天气/nubes_algodon.tscn",
+      "sha256": "810e4b66064a79e366da26f87af826ab5e8822787e9e4ea21e077d9240ca5eff"
+    },
+    {
+      "path": "packs/alenia/环境天气/pajaros.png",
+      "sha256": "7c2b21ef6235b56a8950d77758d4958432111bb5dd94c76eb91e5460a772a801"
+    },
+    {
+      "path": "packs/alenia/环境天气/pajaros.tres",
+      "sha256": "b8179303ce27549d59c61ffb74a8492317dd8020b9ffa6eb7a2539d29b9a831e"
+    },
+    {
+      "path": "packs/alenia/环境天气/pajaros.tscn",
+      "sha256": "07fc3bdc17b2e7e0f5f23a44ac6db008d3a300972d6c05a90c349c2d4ee1e21f"
+    },
+    {
+      "path": "packs/alenia/环境天气/petalos_azules.png",
+      "sha256": "ffed14ec171ff2d45401d18e91e376fe3f17e90e70bae64a82787187244804b1"
+    },
+    {
+      "path": "packs/alenia/环境天气/petalos_azules.tres",
+      "sha256": "26397939dd6886ef40dfafe76eca2311589fccb7359ae34421a15a8cfaf0c7ef"
+    },
+    {
+      "path": "packs/alenia/环境天气/petalos_azules.tscn",
+      "sha256": "504acce5d08149ae17141e7834c67fc5fc14f4a954c45d933809d95410e43889"
+    },
+    {
+      "path": "packs/alenia/环境天气/polen_primavera.png",
+      "sha256": "b758c308ec0717c86cb23bddb44a02cbec478fbfc8fa806c3e9f6d82b166e36a"
+    },
+    {
+      "path": "packs/alenia/环境天气/polen_primavera.tres",
+      "sha256": "f7d3a41345f93cda957cd2426e0c873510e984cca71f87618a52558db7407cf7"
+    },
+    {
+      "path": "packs/alenia/环境天气/polen_primavera.tscn",
+      "sha256": "13420e7354a80abf61909bbdb9c399da7e6ad5362aaf40abd3f73424ef100fdd"
+    },
+    {
+      "path": "packs/alenia/环境天气/rayos_lunares.png",
+      "sha256": "90d49167d14fae2f9169330567d6a9992570fdc118ab7a1a7c5c9e62248b69e4"
+    },
+    {
+      "path": "packs/alenia/环境天气/rayos_lunares.tres",
+      "sha256": "7007878332e019dfb720f62fbd29fca08b5d24b3794486e37b2191d9579734f0"
+    },
+    {
+      "path": "packs/alenia/环境天气/rayos_lunares.tscn",
+      "sha256": "b1fe84487226f7108cee4a2992750cde9cec0f0ee828a72f173fbf52c79a39cf"
+    },
+    {
+      "path": "packs/alenia/环境天气/sakura.png",
+      "sha256": "40765b2918bbe54b432267b32e5bff0515fd6c4ffd1c6d6d9de39d8e1c971236"
+    },
+    {
+      "path": "packs/alenia/环境天气/sakura.tres",
+      "sha256": "c1ae80bc41671c7cb9d8542e00d74e51993892a64a5d40fff8080137cb857ff4"
+    },
+    {
+      "path": "packs/alenia/环境天气/sakura.tscn",
+      "sha256": "06e79ab4d79a5dd5b209e7224b47f29ecba132792895a0c62417f3f5cfaaca43"
+    },
+    {
+      "path": "packs/alenia/环境天气/tormenta_electrica.png",
+      "sha256": "a3ac4399bf448119dd91a8e9fb90612fb9ef234dd5eb535fc5537fedf95b90dd"
+    },
+    {
+      "path": "packs/alenia/环境天气/tormenta_electrica.tres",
+      "sha256": "4d0490dd389f12fe1ac721aa7f5cad9b41ad1bf9b1c6b1a84ccad8b648b6de51"
+    },
+    {
+      "path": "packs/alenia/环境天气/tormenta_electrica.tscn",
+      "sha256": "d3ee2116d4051af0cee724d473b3d619c61f91a49aca192c9aadc8d97bbb0055"
+    },
+    {
+      "path": "packs/alenia/环境天气/tornado_epico.png",
+      "sha256": "677da5abbce2c3d61bd93455855b1461f6bb964600d29362399f248b19676b46"
+    },
+    {
+      "path": "packs/alenia/环境天气/tornado_epico.tres",
+      "sha256": "55c7e84867cc56350fc1be206e545d88694313844f652a3727635955062ae5c8"
+    },
+    {
+      "path": "packs/alenia/环境天气/tornado_epico.tscn",
+      "sha256": "55c02158e2f0ec416a8ec054b6f98a5b9a4c96fcda05ad2f15d3c793ff0eb5b1"
+    },
+    {
+      "path": "packs/alenia/环境天气/viento_estetico.png",
+      "sha256": "1ff9488d4951c657d9eea00ee77f0d962b9af8dc594a41775d616b1e0e1be0f7"
+    },
+    {
+      "path": "packs/alenia/环境天气/viento_estetico.tres",
+      "sha256": "0a1d6d5682f36130621bcad7e050edb831c2b7c06472094659137fd51306f172"
+    },
+    {
+      "path": "packs/alenia/环境天气/viento_estetico.tscn",
+      "sha256": "67afab8f4ea8109c6586c4fe42efda04f810504e16adddbbbd0fbc945e6dd17d"
+    },
+    {
+      "path": "packs/alenia/环境天气/viento_magico.png",
+      "sha256": "afd398e7be12383961b2c489d62c6c3b89b4bf90d0a85a32eaf68ac0b8d903ae"
+    },
+    {
+      "path": "packs/alenia/环境天气/viento_magico.tres",
+      "sha256": "07542c83765463e8b07926950c01f3d35cdfd1c8285c6ab4d1d18139b72006f4"
+    },
+    {
+      "path": "packs/alenia/环境天气/viento_magico.tscn",
+      "sha256": "89f6a572eaa7e35995479c85a46dcd9d22bbfad727923ce8e7f5e4cc063367b0"
+    },
+    {
+      "path": "packs/codemanu/战斗魔法/10_weaponhit.png",
+      "sha256": "9a7510b9bab90ad16dd9f8ea81e5f5c3b2813f8187b920334057e04fb76d4ae4"
+    },
+    {
+      "path": "packs/codemanu/战斗魔法/10_weaponhit.tres",
+      "sha256": "f3c61e3d09e3768f9ed9817af9448e3fd5bc7130be44107629368210de9f3016"
+    },
+    {
+      "path": "packs/codemanu/战斗魔法/10_weaponhit.tscn",
+      "sha256": "7814ac12b8c7c2be69b0a4ac2adb605e8538662bf446b40a88c809010e9fc1d3"
+    },
+    {
+      "path": "packs/codemanu/战斗魔法/11_fire.png",
+      "sha256": "eff4a8d29d9246a599838028282290f2a2c7a5868e71e30d41acada30e459e76"
+    },
+    {
+      "path": "packs/codemanu/战斗魔法/11_fire.tres",
+      "sha256": "1c9ddd48a0f6e6bdb97e43cc46fdf667a43553700a84192d92d60d6e6c5e4494"
+    },
+    {
+      "path": "packs/codemanu/战斗魔法/11_fire.tscn",
+      "sha256": "0583829dc8591690ae9fbf7aee37d278a4c65d3e7d078d332dc905493ad06dca"
+    },
+    {
+      "path": "packs/codemanu/战斗魔法/12_nebula.png",
+      "sha256": "5ca7a9f533fe553b2db46b5e66ff873864d31f0cb6ba03e517719e07d9b669d9"
+    },
+    {
+      "path": "packs/codemanu/战斗魔法/12_nebula.tres",
+      "sha256": "52f9b22a8d3ba6d21bdec68c0b8999b213ba53a2799a17cc1f02181f818ef4cf"
+    },
+    {
+      "path": "packs/codemanu/战斗魔法/12_nebula.tscn",
+      "sha256": "fcb0c3ac920756fde4f253abfd4b888302042f5bb72870b30a4b963e79fa034c"
+    },
+    {
+      "path": "packs/codemanu/战斗魔法/13_vortex.png",
+      "sha256": "89b5e763703b2cb9c3f50008753ce19be7a8f019d06f11f1975dc4d8dcf51616"
+    },
+    {
+      "path": "packs/codemanu/战斗魔法/13_vortex.tres",
+      "sha256": "5ec0cb99297dceef418357d3618c6579b74a9c591b3d9d2c99da10d732ae42b2"
+    },
+    {
+      "path": "packs/codemanu/战斗魔法/13_vortex.tscn",
+      "sha256": "dd6be2598f819e8a7046ec07f28c748186ae03eda2e8e502c61a4a76778aac5a"
+    },
+    {
+      "path": "packs/codemanu/战斗魔法/14_phantom.png",
+      "sha256": "963aded525180c644389bb6575009e7490875451fdb5526069875def3bbb891f"
+    },
+    {
+      "path": "packs/codemanu/战斗魔法/14_phantom.tres",
+      "sha256": "49be4eb63ad796b971d2fda51494dc35689215b3e4709b79e0dbf8932c8c7848"
+    },
+    {
+      "path": "packs/codemanu/战斗魔法/14_phantom.tscn",
+      "sha256": "0c468b2d7071f3d61fa8de1842a107620dec88c1f23e2e540991f4cff8362e0e"
+    },
+    {
+      "path": "packs/codemanu/战斗魔法/15_loading.png",
+      "sha256": "14f245382ba573782d39bad426f840d772912b361ea6257ec5f8c198346abe53"
+    },
+    {
+      "path": "packs/codemanu/战斗魔法/15_loading.tres",
+      "sha256": "2cd77b33186faf95715bc6108021d4fb611905c8dcd3ecf3c9ac88741de33a52"
+    },
+    {
+      "path": "packs/codemanu/战斗魔法/15_loading.tscn",
+      "sha256": "c9c86e6ab6eaea4150d4aa8bcdb99a81348037f2d63cc9c6f23e6e5a1860e205"
+    },
+    {
+      "path": "packs/codemanu/战斗魔法/16_sunburn.png",
+      "sha256": "86ecb27ffc38641bc83dbef2439b2fd4711a11aa42697e56b6a79bc2f6355760"
+    },
+    {
+      "path": "packs/codemanu/战斗魔法/16_sunburn.tres",
+      "sha256": "4be7f639648aa3b398f95ebaa67ff9aa5378308cb4e1ddc37c4a0d246d8730cd"
+    },
+    {
+      "path": "packs/codemanu/战斗魔法/16_sunburn.tscn",
+      "sha256": "d76a220a0036f8c21084c8b88e5eb25ca0893201a8e55720da70b128c04f08aa"
+    },
+    {
+      "path": "packs/codemanu/战斗魔法/17_felspell.png",
+      "sha256": "ccccc3cdec9b8d77c1cbe73e56fd13d4dc67b3c42622c99aa4427c1e60f02ffd"
+    },
+    {
+      "path": "packs/codemanu/战斗魔法/17_felspell.tres",
+      "sha256": "b137c5043d114d2d644d3757d163f09adade79e697444c6281ddc1bb4eb7ff42"
+    },
+    {
+      "path": "packs/codemanu/战斗魔法/17_felspell.tscn",
+      "sha256": "021d641acbb69f7faa215b8cfa3b8c3947ff3bc0ce0e8cdb841db5a608167bab"
+    },
+    {
+      "path": "packs/codemanu/战斗魔法/18_midnight.png",
+      "sha256": "212912eff255d6b405c8fbb10a1a7c77f5988f6b7604f5bdc05fb217dda4db99"
+    },
+    {
+      "path": "packs/codemanu/战斗魔法/18_midnight.tres",
+      "sha256": "ce0ea93767aac5162af445652c345791147e45f6d72b09502c6a074d458a17a9"
+    },
+    {
+      "path": "packs/codemanu/战斗魔法/18_midnight.tscn",
+      "sha256": "152f67960ee4cd6aba2f5d23f628262198efdc87df5d065681ca12a712e64404"
+    },
+    {
+      "path": "packs/codemanu/战斗魔法/19_freezing.png",
+      "sha256": "b811801cd68fce85f1e38c80c2b8cfaa6e88c70fd072b08210073a72c8027854"
+    },
+    {
+      "path": "packs/codemanu/战斗魔法/19_freezing.tres",
+      "sha256": "134b008be39a0accb2152a720c8e09d1e51e297cbd65e1b94e15aeea5d0019b0"
+    },
+    {
+      "path": "packs/codemanu/战斗魔法/19_freezing.tscn",
+      "sha256": "01453d68876b3538f5215055a6ba474417fcda46cd127e479b84966950c83fea"
+    },
+    {
+      "path": "packs/codemanu/战斗魔法/1_magicspell.png",
+      "sha256": "025b0df8f3adf8512fec53db6609f43cb0b764c18e3214b3711a8afcfc69d2cb"
+    },
+    {
+      "path": "packs/codemanu/战斗魔法/1_magicspell.tres",
+      "sha256": "8f586b382fc0fcf01b0be7af003f3cd2b258a058076cd3116f2ac5addef2b7d1"
+    },
+    {
+      "path": "packs/codemanu/战斗魔法/1_magicspell.tscn",
+      "sha256": "9e6c3215dcca146dc7bce3b947a7eb5c1eb5cb8aac257e381ef789d6aef93e28"
+    },
+    {
+      "path": "packs/codemanu/战斗魔法/20_magicbubbles.png",
+      "sha256": "259e42f227e2b13a466df39c816b638d4d851dfb97e750d92c37109c797e7794"
+    },
+    {
+      "path": "packs/codemanu/战斗魔法/20_magicbubbles.tres",
+      "sha256": "9fcdbc240ca9c6dc278c68fa62122040d6e6286be6b298bde362c350ba01be1f"
+    },
+    {
+      "path": "packs/codemanu/战斗魔法/20_magicbubbles.tscn",
+      "sha256": "868f48719ecdfaef0b62f3d2e52a75c49fd562cea9b0fdf3f2cb012e186fa45e"
+    },
+    {
+      "path": "packs/codemanu/战斗魔法/2_magic8.png",
+      "sha256": "3c98aad5a8c484bd73df3d2f7311a804b0f8c52f27f6d1207b9babb844ea5ab7"
+    },
+    {
+      "path": "packs/codemanu/战斗魔法/2_magic8.tres",
+      "sha256": "172cdf8030630d60e74b39a7e156ae853e05f8b79a0d613fb3b71af262745925"
+    },
+    {
+      "path": "packs/codemanu/战斗魔法/2_magic8.tscn",
+      "sha256": "46033390371a81d6d61eeafccf8dea1a46a3524797f77d32b3a0c9085abcefb0"
+    },
+    {
+      "path": "packs/codemanu/战斗魔法/3_bluefire.png",
+      "sha256": "fa398fc0dac056437006c1a0d9e78807a58112e5d2c651dce989d0107afc589d"
+    },
+    {
+      "path": "packs/codemanu/战斗魔法/3_bluefire.tres",
+      "sha256": "03b1a6c6383a8545027315bd013761d7300b115e064d6e76dd6efb390e238163"
+    },
+    {
+      "path": "packs/codemanu/战斗魔法/3_bluefire.tscn",
+      "sha256": "bae8150c0dd91aa7051b03f2c9e03711891e39d4e5fd79d66252bb51934d32a7"
+    },
+    {
+      "path": "packs/codemanu/战斗魔法/4_casting.png",
+      "sha256": "e127c18703000750da9168ba3b8d5e1ed6eef111385d045034ba034c7639baf0"
+    },
+    {
+      "path": "packs/codemanu/战斗魔法/4_casting.tres",
+      "sha256": "dfc8d82c4f30829fc25e57d09ea673f7a588ec1bee19669770d9248b0edaeffa"
+    },
+    {
+      "path": "packs/codemanu/战斗魔法/4_casting.tscn",
+      "sha256": "cc7316f76374d460ce6a1a8722c0c1867151f386384a4e1c0d63cc0ee72da51e"
+    },
+    {
+      "path": "packs/codemanu/战斗魔法/5_magickahit.png",
+      "sha256": "71bbe3fdb280a62bd7207d12db4aa2fc9ff4d42d11aa2355fddf7e300a2b2165"
+    },
+    {
+      "path": "packs/codemanu/战斗魔法/5_magickahit.tres",
+      "sha256": "0bf7d17c1c1274f0de5f766ae1cf30e7fdde6e31d800106e064a1890e71b3044"
+    },
+    {
+      "path": "packs/codemanu/战斗魔法/5_magickahit.tscn",
+      "sha256": "476677b03641b8e578e2a0b605b9cdcb5f45077abb7fe527e835987595761e8e"
+    },
+    {
+      "path": "packs/codemanu/战斗魔法/6_flamelash.png",
+      "sha256": "ec00a395c3832668a70bb02bad78b050f46e953b76d5cff8957c287441860b84"
+    },
+    {
+      "path": "packs/codemanu/战斗魔法/6_flamelash.tres",
+      "sha256": "36a7d6a864369bd6c671d35455a1a76445d34b7f7ac299ce6fe5dd469cc6b79f"
+    },
+    {
+      "path": "packs/codemanu/战斗魔法/6_flamelash.tscn",
+      "sha256": "1ad92a29582ef39285f3270849e36dd7f7ab7e3996d7a710091aa959c398282e"
+    },
+    {
+      "path": "packs/codemanu/战斗魔法/7_firespin.png",
+      "sha256": "d394e254dcc06f5c5e1925692a0d6af6e86cfa7399ba58ab7027dfdde70e56fc"
+    },
+    {
+      "path": "packs/codemanu/战斗魔法/7_firespin.tres",
+      "sha256": "a2eb5242624a58de1830ebab5381fff7221e3aa81fb34cf24f9428a571933739"
+    },
+    {
+      "path": "packs/codemanu/战斗魔法/7_firespin.tscn",
+      "sha256": "5ced3c54fb11ddbb97388efcbcb17b8145f53afdaa5cb0d98bfa8b34bad7dac0"
+    },
+    {
+      "path": "packs/codemanu/战斗魔法/8_protectioncircle.png",
+      "sha256": "9ce95d8c06923e5be56841681482b7c903be803c7bbb9911930d772a9e362185"
+    },
+    {
+      "path": "packs/codemanu/战斗魔法/8_protectioncircle.tres",
+      "sha256": "ce1b7cf6466f2b0982f5f5b8edcc3c278cc1b7cfd11803c75b7bdf09fed897d1"
+    },
+    {
+      "path": "packs/codemanu/战斗魔法/8_protectioncircle.tscn",
+      "sha256": "7c851f2c09e9c5464f5e03dbde7b3ebb4255ffcfde6cf2374376ad854bf86443"
+    },
+    {
+      "path": "packs/codemanu/战斗魔法/9_brightfire.png",
+      "sha256": "08de0f405b0a7b779839d7a5e2172803ff47feb3aed6fb4194b6c1bbb48d7f02"
+    },
+    {
+      "path": "packs/codemanu/战斗魔法/9_brightfire.tres",
+      "sha256": "7ca624f9991323c4f4c986b587689f828f64163d75c683571c98d0579fd06219"
+    },
+    {
+      "path": "packs/codemanu/战斗魔法/9_brightfire.tscn",
+      "sha256": "3da76a6d80475d13f48b141d4cb198878d26c485b7c14e8bfe8df7a33a84f198"
+    },
+    {
+      "path": "packs/craftpix_explosions/icons/Icon1.png",
+      "sha256": "eaf9da55af47f2fd08908994e76c6b77e1746cb32f622d0f6077f375d45c2033"
+    },
+    {
+      "path": "packs/craftpix_explosions/icons/Icon10.png",
+      "sha256": "3a97ff901547e01713778ef9211c6605b55b0449c77fc49ea72c012413f57f4a"
+    },
+    {
+      "path": "packs/craftpix_explosions/icons/Icon11.png",
+      "sha256": "48daab22b9ee05e7055d0c220dc955523413c4b6d54eff5d4ae629a684eee7b4"
+    },
+    {
+      "path": "packs/craftpix_explosions/icons/Icon2.png",
+      "sha256": "664b4ce59a6f89b01f78e9cb331a6d560d51f73b13a4065a70abebbdab4378e2"
+    },
+    {
+      "path": "packs/craftpix_explosions/icons/Icon3.png",
+      "sha256": "6144a5e69282bff7539a427c0c603c61e13569e5cc0efc63592fda1864b5bb7e"
+    },
+    {
+      "path": "packs/craftpix_explosions/icons/Icon4.png",
+      "sha256": "c0bb9a076f0c0b706098f7385c3dc8061c394a3d356c0ce94c4392575adc6c98"
+    },
+    {
+      "path": "packs/craftpix_explosions/icons/Icon5.png",
+      "sha256": "b71095a8ba0d1cf7eab441c2e559df42b8e9be52385d8d815da9f65a58655468"
+    },
+    {
+      "path": "packs/craftpix_explosions/icons/Icon6.png",
+      "sha256": "ac4a8a3a33f72e949cab6b10e5c4ccc9f2e0676879d170781ed90493b99e073f"
+    },
+    {
+      "path": "packs/craftpix_explosions/icons/Icon7.png",
+      "sha256": "1ebce4b9300adb6c5120f63d60d506b42b24a5eceee0d77fa83c0d2e143c2964"
+    },
+    {
+      "path": "packs/craftpix_explosions/icons/Icon8.png",
+      "sha256": "6567a2cdb870cbf9f20652b2a1d884eadaa8d19ac723f3bb5570cba9d7951466"
+    },
+    {
+      "path": "packs/craftpix_explosions/icons/Icon9.png",
+      "sha256": "a87007b4b6f9d53938cb71b5650aecad555dab2ee20b6a4b03defcb33771c548"
+    },
+    {
+      "path": "packs/craftpix_explosions/爆炸烟火/circle_explosion.png",
+      "sha256": "793b798dd6c9bd16ec26e667963a8c1d3951ae1802ed139bff27c7f29ffbcbbf"
+    },
+    {
+      "path": "packs/craftpix_explosions/爆炸烟火/circle_explosion.tres",
+      "sha256": "0f8976b5845654800f68f621fe5d5da92860579e1f4de14da6f1cf7beebd1489"
+    },
+    {
+      "path": "packs/craftpix_explosions/爆炸烟火/circle_explosion.tscn",
+      "sha256": "5676edd924061cc37bcd47ce708c8a39d2c56e3c8fd10be1c9e0837c1675eb5b"
+    },
+    {
+      "path": "packs/craftpix_explosions/爆炸烟火/explosion.png",
+      "sha256": "28cc4367bd98ae2f511cd93e69559674b8f8b2ad027feee6b579329295aaa666"
+    },
+    {
+      "path": "packs/craftpix_explosions/爆炸烟火/explosion.tres",
+      "sha256": "40822dd1fc4762a8c0edf0194baa4198e62e9657035881f5800dc58bf9b76b58"
+    },
+    {
+      "path": "packs/craftpix_explosions/爆炸烟火/explosion.tscn",
+      "sha256": "e43c24f58e8a739ad87f12f3f88a79b8e432d97b82cc958f613866c634b8985e"
+    },
+    {
+      "path": "packs/craftpix_explosions/爆炸烟火/explosion_blue_circle.png",
+      "sha256": "a371954f087c180ea3e303439dc41eed650785506894a865fc39f82bf294c365"
+    },
+    {
+      "path": "packs/craftpix_explosions/爆炸烟火/explosion_blue_circle.tres",
+      "sha256": "91b3d35c659a3393892fde5088b35e70be14266b508e372612d6c6e825c38b8c"
+    },
+    {
+      "path": "packs/craftpix_explosions/爆炸烟火/explosion_blue_circle.tscn",
+      "sha256": "0550470c4c500bb35230edb7f8bb989431de8ef7d4e73eba7f7575cb43f50b92"
+    },
+    {
+      "path": "packs/craftpix_explosions/爆炸烟火/explosion_blue_oval.png",
+      "sha256": "2aa7dfef5abd15bd9247d5d078a69b8c5af73301d5c89255091bf93596414cbd"
+    },
+    {
+      "path": "packs/craftpix_explosions/爆炸烟火/explosion_blue_oval.tres",
+      "sha256": "6cc6786b945d7ab27b807c394f35e3bc806eec0a9d768998f1b5c1c8bacea3a7"
+    },
+    {
+      "path": "packs/craftpix_explosions/爆炸烟火/explosion_blue_oval.tscn",
+      "sha256": "706e2e094731cb741f1df0df970ec0e34bfd89b8da21e59893c8606ed0b4be05"
+    },
+    {
+      "path": "packs/craftpix_explosions/爆炸烟火/explosion_gas.png",
+      "sha256": "ffd25b4ad0152adbbe6058ee910a3101ac36af8a210b4ebcdf08999587902532"
+    },
+    {
+      "path": "packs/craftpix_explosions/爆炸烟火/explosion_gas.tres",
+      "sha256": "e48f4b035fdd10d3bc1ba56360651078e59d626d08f6ff5c7603c6f11bb8068b"
+    },
+    {
+      "path": "packs/craftpix_explosions/爆炸烟火/explosion_gas.tscn",
+      "sha256": "8918442da9e734e31e91ae21f87d4c6c2f2370c18515b813b68c752405370b8b"
+    },
+    {
+      "path": "packs/craftpix_explosions/爆炸烟火/explosion_gas_circle.png",
+      "sha256": "178f3546f04259a09a056911beac6e834d7a562482b324493e9ba6c9231965ff"
+    },
+    {
+      "path": "packs/craftpix_explosions/爆炸烟火/explosion_gas_circle.tres",
+      "sha256": "de2f39ff2939472b61d6107cde1f1603fd093ff3e9b2abe32f0423b326031740"
+    },
+    {
+      "path": "packs/craftpix_explosions/爆炸烟火/explosion_gas_circle.tscn",
+      "sha256": "957de64c00c864b9b7a7fe3344e73aca62166fef19dff652c94f9c8a6521dc95"
+    },
+    {
+      "path": "packs/craftpix_explosions/爆炸烟火/explosion_two_colors.png",
+      "sha256": "2b5cead6ff902e7c63b2132d27651d9328714e47cf9af608e394ff234070fb1f"
+    },
+    {
+      "path": "packs/craftpix_explosions/爆炸烟火/explosion_two_colors.tres",
+      "sha256": "cf67df91b1c9791f462a0a628ef0fd98e064156aa0eea1740579c49440caad6b"
+    },
+    {
+      "path": "packs/craftpix_explosions/爆炸烟火/explosion_two_colors.tscn",
+      "sha256": "73ef11866db51eed8aae020c4c249b96ffe3b79b479cc5f439f43461e775ff75"
+    },
+    {
+      "path": "packs/craftpix_explosions/爆炸烟火/fire.png",
+      "sha256": "48fee7c90ca8dc21393016831cd85523ed0d89f46bf56f500e5059fbfd535d3d"
+    },
+    {
+      "path": "packs/craftpix_explosions/爆炸烟火/fire.tres",
+      "sha256": "7c5a8b81e43bfe1bf6d108323f72457fba76d23a55f7f740245d4a0e9807ef84"
+    },
+    {
+      "path": "packs/craftpix_explosions/爆炸烟火/fire.tscn",
+      "sha256": "a0f5b381fd5ed2d3279d87b5fe29c23f3920296405efdf423721400098552bee"
+    },
+    {
+      "path": "packs/craftpix_explosions/爆炸烟火/lightning.png",
+      "sha256": "c7e0e7f40a94398c43d887c563d4b281bc176606444189e38312d78901629ccd"
+    },
+    {
+      "path": "packs/craftpix_explosions/爆炸烟火/lightning.tres",
+      "sha256": "3cf5e33e98b24d724960467e1d6b28710fe795ae3d744807d85ba33166771055"
+    },
+    {
+      "path": "packs/craftpix_explosions/爆炸烟火/lightning.tscn",
+      "sha256": "69bf15b8dbc6e0d93979d34ea28f999f794c2b5a747ba1c1c4b05d0621257e4e"
+    },
+    {
+      "path": "packs/craftpix_explosions/爆炸烟火/lightning_cycle.png",
+      "sha256": "2cf1a38f237c030a47ee27ca96469491df56ea0c2b026ff092cbeb2cd44e6f05"
+    },
+    {
+      "path": "packs/craftpix_explosions/爆炸烟火/lightning_cycle.tres",
+      "sha256": "7b6c5817da4ee119b5f8d25f2bc742b3187fe8fb88ac113e457b35cb75d6558d"
+    },
+    {
+      "path": "packs/craftpix_explosions/爆炸烟火/lightning_cycle.tscn",
+      "sha256": "041acc7be47fe0fce827227316f4447e2516de99435a0e3929c940f4c8e9b037"
+    },
+    {
+      "path": "packs/craftpix_explosions/爆炸烟火/lightning_part.png",
+      "sha256": "66f5151bf9d83b485c19735fe3f52a99f4521fd6ebad63ab4181d53b936d6d63"
+    },
+    {
+      "path": "packs/craftpix_explosions/爆炸烟火/lightning_part.tres",
+      "sha256": "87c5be5c0c5e657e2077ddb9368f1a252f6f230d796aa816c1337d47590d9d8c"
+    },
+    {
+      "path": "packs/craftpix_explosions/爆炸烟火/lightning_part.tscn",
+      "sha256": "1b750f27c19af948c263bafa88aafd6cc257179b80aed22e4901a7e40316ac9c"
+    },
+    {
+      "path": "packs/craftpix_explosions/爆炸烟火/lightning_spot.png",
+      "sha256": "3707449b0317379682650d1eca95b56068041b421a64ce28ed33872960c5b538"
+    },
+    {
+      "path": "packs/craftpix_explosions/爆炸烟火/lightning_spot.tres",
+      "sha256": "6e79d1de1872598282d989fef87d022ea8a67febb2759ba9c8b2b6ee56119cf7"
+    },
+    {
+      "path": "packs/craftpix_explosions/爆炸烟火/lightning_spot.tscn",
+      "sha256": "972ac0722566e559431aa7e35a2b986f270162a740ad030be5a865cee21fb7eb"
+    },
+    {
+      "path": "packs/craftpix_explosions/爆炸烟火/nuclear_explosion.png",
+      "sha256": "d82ef14b93daf131201dc6260581d5b1252995dc3eb4927b15983487f024c957"
+    },
+    {
+      "path": "packs/craftpix_explosions/爆炸烟火/nuclear_explosion.tres",
+      "sha256": "422bf464b2dd78e87aaeaf8a4dc243e05b333c3789f5cb8eb498788249bed6b8"
+    },
+    {
+      "path": "packs/craftpix_explosions/爆炸烟火/nuclear_explosion.tscn",
+      "sha256": "0c1870f8ebbb2c2c6be222c3c8ff0b57b5f0fc794a339d41a2cee9eaf88e92c8"
+    },
+    {
+      "path": "packs/craftpix_explosions/爆炸烟火/smoke.png",
+      "sha256": "6172266e589c08f8c8972a11cfe44865d7f072f5e32b51e2db2ee2d6d96ffec1"
+    },
+    {
+      "path": "packs/craftpix_explosions/爆炸烟火/smoke.tres",
+      "sha256": "9802cbfb943175e8a7667e0e04609d4c700b016dfab1e9726a184b3f54d7acc1"
+    },
+    {
+      "path": "packs/craftpix_explosions/爆炸烟火/smoke.tscn",
+      "sha256": "ccf7208d255a34e7177bdc115ba72a841bdb7e1a4a596404466e672cccb124f9"
+    },
+    {
+      "path": "packs/craftpix_magic/icons/Icons.png",
+      "sha256": "cb603ad4dfeac84273c5366aa4472baac661f5c5f83934ca345709a4231be379"
+    },
+    {
+      "path": "packs/craftpix_magic/icons/Icon_01.png",
+      "sha256": "32ca713faeb0a369e3687f686a043bdffa2870abdb638dbdffff414d17f4ee52"
+    },
+    {
+      "path": "packs/craftpix_magic/icons/Icon_02.png",
+      "sha256": "980229a371c50f7987c11a9ebe6efe4c307d100817c2ff1c4f8e56c67d183c42"
+    },
+    {
+      "path": "packs/craftpix_magic/icons/Icon_03.png",
+      "sha256": "c3437396e5f91ee1b0d9e197d2e8a89da48877a50c39aa9a65b4373ada9db258"
+    },
+    {
+      "path": "packs/craftpix_magic/icons/Icon_04.png",
+      "sha256": "1cc712ee53185c43df808d7ef7f8a8ad49fece1fe210bde9711f20face4ba602"
+    },
+    {
+      "path": "packs/craftpix_magic/icons/Icon_05.png",
+      "sha256": "f8b50825d85b5d941b12ccf964b5b700df0f364e9ae19a21efa256695a428726"
+    },
+    {
+      "path": "packs/craftpix_magic/icons/Icon_06.png",
+      "sha256": "d13e36da3ecd13f4f98574f9f31bf599c9ad9e24cf57c326493fe65da628f61f"
+    },
+    {
+      "path": "packs/craftpix_magic/icons/Icon_07.png",
+      "sha256": "15ce806845f426ec393b1ce2fe302cbc4a6621b97bcd711efbd11eeba1897c4f"
+    },
+    {
+      "path": "packs/craftpix_magic/icons/Icon_08.png",
+      "sha256": "4ced8a4ab67d37ce0864fdf846a3194750da1d3c488f237dba7a26d6a24dc384"
+    },
+    {
+      "path": "packs/craftpix_magic/icons/Icon_09.png",
+      "sha256": "5d36261834818590ff17df72cb7d5dd01ec554809c823ae8058bd3e3e00199db"
+    },
+    {
+      "path": "packs/craftpix_magic/icons/Icon_10.png",
+      "sha256": "f79d2f780d9e000802f1eec176e6ea27d4eaf9ff1765a5beff03209d20def7b3"
+    },
+    {
+      "path": "packs/craftpix_magic/元素魔法/magic_1.png",
+      "sha256": "31ca45104b6bc21ee5f7b97c089762bd3b417a75bdc7f96e31a92f0f2ec19497"
+    },
+    {
+      "path": "packs/craftpix_magic/元素魔法/magic_1.tres",
+      "sha256": "6d80ff9757bb9cfa126568b1df9dad6e047828d2404861fec6e10a2b5a462256"
+    },
+    {
+      "path": "packs/craftpix_magic/元素魔法/magic_1.tscn",
+      "sha256": "5b1d6d2ae3a55d60eb1ca5a50d0614bd21a9f8379063f99d13754f2b0f82edde"
+    },
+    {
+      "path": "packs/craftpix_magic/元素魔法/magic_10.png",
+      "sha256": "e35c9f4419400e16605595bc37b8b45a5aa0dbaed056c579c67c32e768fcb298"
+    },
+    {
+      "path": "packs/craftpix_magic/元素魔法/magic_10.tres",
+      "sha256": "8cc67ddf3a2ccc08ec059ef76625493e1b0a9c7817ac6d4bf392dee31bf2d8dd"
+    },
+    {
+      "path": "packs/craftpix_magic/元素魔法/magic_10.tscn",
+      "sha256": "13c53e85d196c4eb7d4b53e02d514c45ce64c883cc7f0a3c6970204ca1269081"
+    },
+    {
+      "path": "packs/craftpix_magic/元素魔法/magic_1_2.png",
+      "sha256": "923d86d38a626fd340b6b16cba76f6c2d694621eb9f2f069fb34cf28455d95d2"
+    },
+    {
+      "path": "packs/craftpix_magic/元素魔法/magic_1_2.tres",
+      "sha256": "58316a7999cfa97de0db886b385e9012854bb631b5a45714f880b49fc48e14ca"
+    },
+    {
+      "path": "packs/craftpix_magic/元素魔法/magic_1_2.tscn",
+      "sha256": "f36e9890bc32c4f040751840e1ab99c4beb3c277494b7e2e4edb343397f15433"
+    },
+    {
+      "path": "packs/craftpix_magic/元素魔法/magic_2.png",
+      "sha256": "ccc358ef297ccf50f3f9e3d84fcd49fcc4580194efd79b68ce50b91d2143a7d0"
+    },
+    {
+      "path": "packs/craftpix_magic/元素魔法/magic_2.tres",
+      "sha256": "37ad5cf063b36606e022e13e03096d374a38af8f359c09fd629a3c40bfa95982"
+    },
+    {
+      "path": "packs/craftpix_magic/元素魔法/magic_2.tscn",
+      "sha256": "531aa31d53dc34c25503184db890cd384966677cab99e2f5fd462162b0a24620"
+    },
+    {
+      "path": "packs/craftpix_magic/元素魔法/magic_3.png",
+      "sha256": "e4c549d07e1e116244a3b8c3135357ce4f61c65e9c52f837f4accd836f312b8d"
+    },
+    {
+      "path": "packs/craftpix_magic/元素魔法/magic_3.tres",
+      "sha256": "d8777023b93a0bcf752db42e40beec628db20c7be936043573c981a0d813c21c"
+    },
+    {
+      "path": "packs/craftpix_magic/元素魔法/magic_3.tscn",
+      "sha256": "bc543b4a0d8be35259274113bd4c9e0afbf4822537da0b2ec6478bbb3b4c90b5"
+    },
+    {
+      "path": "packs/craftpix_magic/元素魔法/magic_3_2.png",
+      "sha256": "f7625be97f4fc60b648e75e6e415a43566ec2f1f9480eaff71290b8405633486"
+    },
+    {
+      "path": "packs/craftpix_magic/元素魔法/magic_3_2.tres",
+      "sha256": "d273b24dd0e5eb930be94671d296e69b793912d75350c4865b8b6abac4072ad3"
+    },
+    {
+      "path": "packs/craftpix_magic/元素魔法/magic_3_2.tscn",
+      "sha256": "0f4b274535d8932ce6e1c2f283fbf20d95e0589d3ee3457b9d9e7cdf62083477"
+    },
+    {
+      "path": "packs/craftpix_magic/元素魔法/magic_4.png",
+      "sha256": "c0bd9dc894f529d9c9eb95beba651b2fd713786026367d8b951d959e417a563c"
+    },
+    {
+      "path": "packs/craftpix_magic/元素魔法/magic_4.tres",
+      "sha256": "81c9d2e712749a36f6c58981c89b5a0a77b7f95f67031ff918f355ca04c8cdc2"
+    },
+    {
+      "path": "packs/craftpix_magic/元素魔法/magic_4.tscn",
+      "sha256": "a6e5324cbf65a0714a4aa8abb4969455e3367dcf023feb716d0cc10b4594c52d"
+    },
+    {
+      "path": "packs/craftpix_magic/元素魔法/magic_4_1.png",
+      "sha256": "d61e5d8b546730d24d6cb6e14db924438320cc03ff5df3804f32588c79353c30"
+    },
+    {
+      "path": "packs/craftpix_magic/元素魔法/magic_4_1.tres",
+      "sha256": "a13d17dc1edc3fbba9305ed7a607a6e20ab1aac8fb4600eaffbb8012a19d8155"
+    },
+    {
+      "path": "packs/craftpix_magic/元素魔法/magic_4_1.tscn",
+      "sha256": "eb11f0c9a02cf4a3859eab667274bdb811bec2e5dd5908af1a89250bb686539a"
+    },
+    {
+      "path": "packs/craftpix_magic/元素魔法/magic_4_2.png",
+      "sha256": "de6505b7377dfd464042626311d0686423a562949c2fad10813b0a0d5f0bd581"
+    },
+    {
+      "path": "packs/craftpix_magic/元素魔法/magic_4_2.tres",
+      "sha256": "2fc32d0fa4b8e5523d87b7556c5f5daaf97e0b2da661c27c1fa8b4edb9f4251d"
+    },
+    {
+      "path": "packs/craftpix_magic/元素魔法/magic_4_2.tscn",
+      "sha256": "a95ebd0a82a3cef29c456461eaa42b5088827e456e0dbe5d4b200cb632acfd27"
+    },
+    {
+      "path": "packs/craftpix_magic/元素魔法/magic_5.png",
+      "sha256": "95c96c978d040808d933c5aace8e6e23fccb7183e415aee82592717f505170c3"
+    },
+    {
+      "path": "packs/craftpix_magic/元素魔法/magic_5.tres",
+      "sha256": "8643ace619ce38bc4dd564ae956244e829433c1e9a374bfe2c34e6e0807320e5"
+    },
+    {
+      "path": "packs/craftpix_magic/元素魔法/magic_5.tscn",
+      "sha256": "e3dd6738907b527d41cd40b23252b9943f5b279f9411733ed86449f7269c522b"
+    },
+    {
+      "path": "packs/craftpix_magic/元素魔法/magic_6.png",
+      "sha256": "5074095bf528fd8442ff38539ee1a1b2c14c87aab0511e07e74a4e16b9dffa5d"
+    },
+    {
+      "path": "packs/craftpix_magic/元素魔法/magic_6.tres",
+      "sha256": "f41cc0ab75a7513420b98eb21e894ca2982d4b39be3ca3510beeb35674fd7285"
+    },
+    {
+      "path": "packs/craftpix_magic/元素魔法/magic_6.tscn",
+      "sha256": "c8021cdd8bab5ffbc79b45b03adb98d5fc505b99b4f47bf89b6919f289137a69"
+    },
+    {
+      "path": "packs/craftpix_magic/元素魔法/magic_6_2.png",
+      "sha256": "178b53954d34f6d761aae0f0dab8a2217292d3535165adef4236d00cd6ed85d4"
+    },
+    {
+      "path": "packs/craftpix_magic/元素魔法/magic_6_2.tres",
+      "sha256": "552f34f831aa0a604c03181c72ba89c4e23b0aac4c59cfeea3025da877d78476"
+    },
+    {
+      "path": "packs/craftpix_magic/元素魔法/magic_6_2.tscn",
+      "sha256": "edb1eb3df331a52cc7090e29d7482aa3f796b86dacaa81727e878503caa2bc61"
+    },
+    {
+      "path": "packs/craftpix_magic/元素魔法/magic_7.png",
+      "sha256": "4066cbc399eebd15db1c44a921f3ffd85fef9fb8c4b87ed0cde720411a0f8f8f"
+    },
+    {
+      "path": "packs/craftpix_magic/元素魔法/magic_7.tres",
+      "sha256": "192f99dbd4f38d58521c764f5a647aadae780765e9d9d2eacf8624adcc5d9416"
+    },
+    {
+      "path": "packs/craftpix_magic/元素魔法/magic_7.tscn",
+      "sha256": "b9756a7fab9b683e775083294d29e1f29480ceb8e7d8d9e2aa5f4e149207216a"
+    },
+    {
+      "path": "packs/craftpix_magic/元素魔法/magic_8.png",
+      "sha256": "58ada649f829e325e8ed3b529111feea60a9bafb548fb40c8c7e8be84139fc02"
+    },
+    {
+      "path": "packs/craftpix_magic/元素魔法/magic_8.tres",
+      "sha256": "bbe4db23739ec844d9cdac03ab3fb96cf5bf923fede7b7fb91a614d34aa307cf"
+    },
+    {
+      "path": "packs/craftpix_magic/元素魔法/magic_8.tscn",
+      "sha256": "8e54debe933e10fc30d049eaef8012fb6a2685a7567cdcc78a57c9ecb4a4eaf5"
+    },
+    {
+      "path": "packs/craftpix_magic/元素魔法/magic_9.png",
+      "sha256": "36eebc4f726c3f1083a97db6abd3f1060504b331595c708aab6228c69d4679a0"
+    },
+    {
+      "path": "packs/craftpix_magic/元素魔法/magic_9.tres",
+      "sha256": "6a5c0a2ce10f83bada2250f36deada981daa793262b2badbd3f057db09597f9a"
+    },
+    {
+      "path": "packs/craftpix_magic/元素魔法/magic_9.tscn",
+      "sha256": "b70dcdd16b00bf50cfc3027eba0982e66eaf5cc9de93718601166d05c5227ae9"
+    },
+    {
+      "path": "packs/foozle/战斗命中/destroy_effect.png",
+      "sha256": "f553f8fc00c6262096519b726f23d046e6cb4a570b678c027ffdc55168ea6087"
+    },
+    {
+      "path": "packs/foozle/战斗命中/destroy_effect.tres",
+      "sha256": "6f84ca14cd670d25466bb476fd068c18bf76b85b3efc63997d42d9b14f38ff07"
+    },
+    {
+      "path": "packs/foozle/战斗命中/destroy_effect.tscn",
+      "sha256": "d580774d1211745c6f68c5818e9081331776e9a7b82febff37e3fb6e31136925"
+    },
+    {
+      "path": "packs/foozle/拾取品质/common_effect.png",
+      "sha256": "d51ab4e1311906a8f29ff8918a7ea6f06c053feb956a6edaa01463f38d596ce7"
+    },
+    {
+      "path": "packs/foozle/拾取品质/common_effect.tres",
+      "sha256": "18dde3db7852909d32ce85176c0e0bd8f85838cbb120f698ab85e2597ac4ef34"
+    },
+    {
+      "path": "packs/foozle/拾取品质/common_effect.tscn",
+      "sha256": "f45cd41f7ebfe251484c519de5e9168232374ba1f600434705d2a2f93a0617d2"
+    },
+    {
+      "path": "packs/foozle/拾取品质/gem_pickup_effect.png",
+      "sha256": "efe20f01f709ac08e1d0ac478affcb2d392f02aed5b9e0bd77220a0271392caf"
+    },
+    {
+      "path": "packs/foozle/拾取品质/gem_pickup_effect.tres",
+      "sha256": "c5de861c1992acd6aad8104de97d1ba962d3ee9e656f24add6e93513cc4b7076"
+    },
+    {
+      "path": "packs/foozle/拾取品质/gem_pickup_effect.tscn",
+      "sha256": "8d68d99dbdfa8a647f4cd79f2133ca9f806fec0233afb213eebba33ee4890dd5"
+    },
+    {
+      "path": "packs/foozle/拾取品质/gold_pickup_effect.png",
+      "sha256": "a20b603d1589383ae8e36c3ed3453bea01b748a92ad872281a17fcac17e13bac"
+    },
+    {
+      "path": "packs/foozle/拾取品质/gold_pickup_effect.tres",
+      "sha256": "e4b64b660af0cbd7c0eb6971205d32b13366b0740f628126ab033ecfe3d6e9b4"
+    },
+    {
+      "path": "packs/foozle/拾取品质/gold_pickup_effect.tscn",
+      "sha256": "fcd4b2b80616d58b7786c68a4fc6813d38088fa34fdd0b6eaaae899f85743e9a"
+    },
+    {
+      "path": "packs/foozle/拾取品质/health_potion_pickup_effect.png",
+      "sha256": "0eb80f422cd55b0f46cf42b99466a3cd60a81fbb2388652e28f93a490351bfa2"
+    },
+    {
+      "path": "packs/foozle/拾取品质/health_potion_pickup_effect.tres",
+      "sha256": "b8ff48f42bd535035639825fbe7e1088279382075115a770c033da5d0a8f2951"
+    },
+    {
+      "path": "packs/foozle/拾取品质/health_potion_pickup_effect.tscn",
+      "sha256": "c6d0418397a572fb99eb4aef6f4a1f6e8f929fc1c493c78a6713a443bbc132db"
+    },
+    {
+      "path": "packs/foozle/拾取品质/legendary_effect.png",
+      "sha256": "b63c3cd5323c2e2e5d30d6b78c72278f1b040597f9145728a3c800b43387da51"
+    },
+    {
+      "path": "packs/foozle/拾取品质/legendary_effect.tres",
+      "sha256": "d0ecebf9fa623b93d7d2712b0fb42cabcdf55be06641c2718191a8465ce73efc"
+    },
+    {
+      "path": "packs/foozle/拾取品质/legendary_effect.tscn",
+      "sha256": "01ed86ad4d4e18ab398cfeabee04590dfb711f83ba56aba5b75d9511e24a7b0e"
+    },
+    {
+      "path": "packs/foozle/拾取品质/magic_effect.png",
+      "sha256": "d97d7f2a64632cd36d39c0a38e495823eba339ce4f43c2af0473bb1c70098f3b"
+    },
+    {
+      "path": "packs/foozle/拾取品质/magic_effect.tres",
+      "sha256": "1d52029c4103a5dc2b0de7bb25115c4c4b29d8d536e7d9b49319bfb0eb6dae7f"
+    },
+    {
+      "path": "packs/foozle/拾取品质/magic_effect.tscn",
+      "sha256": "d1b03a188e83ac6440dc7d0691db812ed2ef5a412704332b612f41adac3e30e9"
+    },
+    {
+      "path": "packs/foozle/拾取品质/mana_potion_pickup_effect.png",
+      "sha256": "311b60936b9df49105806de83efdb840324d873f3b217c287f028841c4bd6f8b"
+    },
+    {
+      "path": "packs/foozle/拾取品质/mana_potion_pickup_effect.tres",
+      "sha256": "77193afd9360adad7529dec130da2cea4f305e83f37d0b1e83854221e9253ff7"
+    },
+    {
+      "path": "packs/foozle/拾取品质/mana_potion_pickup_effect.tscn",
+      "sha256": "5b2ec1770caf9f5a94cdd64ef27f769d5d733ffed91f7e6dee670560bd2d59fa"
+    },
+    {
+      "path": "packs/foozle/拾取品质/mythic_effect.png",
+      "sha256": "1f482d5d5d3a322d1cff631b38d3d041904833108e0a828a59bf9b369bade065"
+    },
+    {
+      "path": "packs/foozle/拾取品质/mythic_effect.tres",
+      "sha256": "b477440f235f16807b52c62a6f7ee4f572b97932d82457afa6922580c2f9601a"
+    },
+    {
+      "path": "packs/foozle/拾取品质/mythic_effect.tscn",
+      "sha256": "e80c5146fac0764e4eb3b442d4ecd878a0625e342d9995c0bb91c7c3150c28a5"
+    },
+    {
+      "path": "packs/foozle/拾取品质/rare_effect.png",
+      "sha256": "95c08c86df3cf2157d6c6b443415220440096dea0ac5093e95ef1b56ca8748d9"
+    },
+    {
+      "path": "packs/foozle/拾取品质/rare_effect.tres",
+      "sha256": "06a91d19f2ff89b09b0fd03c8ce98d912f4e46693eaf7208f428e60626bc3dd3"
+    },
+    {
+      "path": "packs/foozle/拾取品质/rare_effect.tscn",
+      "sha256": "1d584b46fd356723fb8ed8aebaa1b9056d76259051e84e6d4e540a15d908a579"
+    },
+    {
+      "path": "packs/foozle/拾取品质/stamina_potion_pickup_effect.png",
+      "sha256": "567cbc61bc06f1f75acdd3bc3f50b00da43b7b4214e743d0cfa98789bb6fa201"
+    },
+    {
+      "path": "packs/foozle/拾取品质/stamina_potion_pickup_effect.tres",
+      "sha256": "1129c27020b75bdd560498f8d516c39dbb52ffdd65f7f68f32f43ef82774dcd4"
+    },
+    {
+      "path": "packs/foozle/拾取品质/stamina_potion_pickup_effect.tscn",
+      "sha256": "e645f35cbd6ac6b6e8218c901b34af03ac539dbd8635f3a9eb71b04f5d046973"
+    },
+    {
+      "path": "packs/foozle/水体波纹/wavebigdown.png",
+      "sha256": "e00e43947a7d8e95c4cb9395a2f705509b341a942926668cc587a9ea843f5014"
+    },
+    {
+      "path": "packs/foozle/水体波纹/wavebigdown.tres",
+      "sha256": "22707e43825ac59e93a143163b5e654bb7705468746a11723cc086a42e0f267f"
+    },
+    {
+      "path": "packs/foozle/水体波纹/wavebigdown.tscn",
+      "sha256": "84feb4cdbad742f6d263ecb57d2a8b705e9a3d8925cbe98ab25cabe54291efb3"
+    },
+    {
+      "path": "packs/foozle/水体波纹/wavebigleft.png",
+      "sha256": "6d939a00df1b2b5e70a17ccc5f8e8f1c0f280792263566e1ce5fc3df763f2d56"
+    },
+    {
+      "path": "packs/foozle/水体波纹/wavebigleft.tres",
+      "sha256": "be9a3cbe190dab9b6e2dbef87d56feffa98094fca3f46cb1539491df36806884"
+    },
+    {
+      "path": "packs/foozle/水体波纹/wavebigleft.tscn",
+      "sha256": "f8cd9dd2bf856f1b336ac813aee3ce59ec61d40e3d95e1f169d238a719f72d82"
+    },
+    {
+      "path": "packs/foozle/水体波纹/wavebigright.png",
+      "sha256": "c2ee36220fcb0ea7df3b2ea87f5956c529f46032a823f7d783266d8cb01780b9"
+    },
+    {
+      "path": "packs/foozle/水体波纹/wavebigright.tres",
+      "sha256": "a8655f4ed2dc8b8398ca6da94e0edbcc8e116c676fbb9ea5cc0b70989388df17"
+    },
+    {
+      "path": "packs/foozle/水体波纹/wavebigright.tscn",
+      "sha256": "7553f0d2ee6853605be309a0f73171e0834604d77519212e765d299f89898e30"
+    },
+    {
+      "path": "packs/foozle/水体波纹/wavebigup.png",
+      "sha256": "7a0c25c579c833dfac27000cd366749e2767f6f023700b3adf6131d1073590a4"
+    },
+    {
+      "path": "packs/foozle/水体波纹/wavebigup.tres",
+      "sha256": "dcf6e5bf8447167a8777d88783f220cabc78299c18668e22a130a7eedf054bda"
+    },
+    {
+      "path": "packs/foozle/水体波纹/wavebigup.tscn",
+      "sha256": "c28d247d951ca50a134823eeaf345b85c82a982d6ab76a664adbaec94cb15cc5"
+    },
+    {
+      "path": "packs/foozle/水体波纹/wavesmalldown.png",
+      "sha256": "8a61a6c773d1c66c84a593242ed3a594582fabca96d5d4fbba6d313984969d56"
+    },
+    {
+      "path": "packs/foozle/水体波纹/wavesmalldown.tres",
+      "sha256": "5450593cd21e2781412707f9d319d7cff5550c0ecf6c17acca81cb825833382b"
+    },
+    {
+      "path": "packs/foozle/水体波纹/wavesmalldown.tscn",
+      "sha256": "7273b48a7ea8c1b2ff90274a033e4013222580a5eb8c87c7b34bedba6091ed9d"
+    },
+    {
+      "path": "packs/foozle/水体波纹/wavesmallleft.png",
+      "sha256": "d26e07cf413ee9b3af44096d4b3a83083f8961aad90f054664223fb4ebcc5dc7"
+    },
+    {
+      "path": "packs/foozle/水体波纹/wavesmallleft.tres",
+      "sha256": "bc87d43be4c4daef513d0af430b65d4c7b3255c48da182dea7487ea4735da08c"
+    },
+    {
+      "path": "packs/foozle/水体波纹/wavesmallleft.tscn",
+      "sha256": "f9cd15c39a2c2a0fda4a319b6c04d2d36a1110091658d017884c6511b0c559d1"
+    },
+    {
+      "path": "packs/foozle/水体波纹/wavesmallright.png",
+      "sha256": "c4b4db0458a024006a436b8f656d20b3f601371ab91657dcd380f96c735a8641"
+    },
+    {
+      "path": "packs/foozle/水体波纹/wavesmallright.tres",
+      "sha256": "e4c4f0123e739b32770da1890c70d042f545544610e1ed322ebf8e61b6780bf6"
+    },
+    {
+      "path": "packs/foozle/水体波纹/wavesmallright.tscn",
+      "sha256": "dfbd21d0dde8afbe3001efcc897a88f70f9ec68850d399d855d136dc3d61472f"
+    },
+    {
+      "path": "packs/foozle/水体波纹/wavesmallup.png",
+      "sha256": "1950cfdef45c29cce64fcbb4e2c547d15fa15cc173f3ca234be98a592007959a"
+    },
+    {
+      "path": "packs/foozle/水体波纹/wavesmallup.tres",
+      "sha256": "badcc58ba5b2f0339ece8c28ab7c3d5d1c70161a99e33d8442534c43a414530c"
+    },
+    {
+      "path": "packs/foozle/水体波纹/wavesmallup.tscn",
+      "sha256": "6b2d5d2b219224ea8b367ad686ebd2aaeff59f58ee686525a3206042438776d2"
+    },
+    {
+      "path": "packs/godot_vfx/shaders/explosion.gdshader",
+      "sha256": "0fc7e889d0ef82517f869ad09ae88cccd9040f2459720cae9314ac58447648f6"
+    },
+    {
+      "path": "packs/godot_vfx/shaders/fire.gdshader",
+      "sha256": "23a6f5f6a405d5f65671ed58586262fb8b61bc6ee623dec9928c39d55a8ef6b7"
+    },
+    {
+      "path": "packs/godot_vfx/shaders/smoke.gdshader",
+      "sha256": "955707eda3e2b20d278ad1fea4cebb99a3bf47d55fabff316ad28e40e705aab9"
+    },
+    {
+      "path": "packs/godot_vfx/shaders/spark.gdshader",
+      "sha256": "932cec13457552ec5db258d40c85e4ae6945b4c5fe784a02f807eefbe55fd011"
+    },
+    {
+      "path": "packs/godot_vfx/shaders/vfx_common.gdshaderinc",
+      "sha256": "748a15bcb121fedada4b2ca1e570572186ed05f7cbe41d019744f1d2c004739e"
+    },
+    {
+      "path": "packs/kenney/射击贴图/tile_0000.png",
+      "sha256": "f611e2750389320fd779ebc4b04055f24ea811f118007b57f2caed4e3fc68564"
+    },
+    {
+      "path": "packs/kenney/射击贴图/tile_0000.tres",
+      "sha256": "4f92f7f92dd273f3bcefa285804d9c1d893cd084c765c796d6dc8c2fb7a07c89"
+    },
+    {
+      "path": "packs/kenney/射击贴图/tile_0000.tscn",
+      "sha256": "933fb21bc655f8e490fb182da65c2a8b7dbb0fbbf6da0a043e5a63e7f72ba4ff"
+    },
+    {
+      "path": "packs/kenney/射击贴图/tile_0001.png",
+      "sha256": "d55c5d393d701693eac51a74b1e64f8963a93c7a408b68e36211891d7df4fba9"
+    },
+    {
+      "path": "packs/kenney/射击贴图/tile_0001.tres",
+      "sha256": "181988805b9a890604e93917206f3af55da3f7be5e28fb14d9c238b0394a0db3"
+    },
+    {
+      "path": "packs/kenney/射击贴图/tile_0001.tscn",
+      "sha256": "e39ac25189e943d275f998c4e0c63cb2b6c303f06df137bbb33e52c11ed36128"
+    },
+    {
+      "path": "packs/kenney/射击贴图/tile_0002.png",
+      "sha256": "85d8423f8e1ceb3d0fd0e334af9ff5686dfe90270b0c8a345c770a65e4a4cd5c"
+    },
+    {
+      "path": "packs/kenney/射击贴图/tile_0002.tres",
+      "sha256": "23479cc1e824e8598c42cbd5dc62188acb8870809a1885e3fd6a975bf4564544"
+    },
+    {
+      "path": "packs/kenney/射击贴图/tile_0002.tscn",
+      "sha256": "f94b6fad937471781dabd8926fcf9c9580a0dc7bf772675767f2c76a0b27680d"
+    },
+    {
+      "path": "packs/kenney/射击贴图/tile_0003.png",
+      "sha256": "92ed9ba40b5ddbd354b601ac93d973edb00783097bc60c9eb2514f0123501e67"
+    },
+    {
+      "path": "packs/kenney/射击贴图/tile_0003.tres",
+      "sha256": "6ba1f03b676e516fb356f9fd8d4024b20c389bd10303fe2231178158964dc971"
+    },
+    {
+      "path": "packs/kenney/射击贴图/tile_0003.tscn",
+      "sha256": "b426d974fb01a2771b4ba0bc8f8d28adcd83e131ec5ae632ec9745c1e267c9d3"
+    },
+    {
+      "path": "packs/kenney/射击贴图/tile_0004.png",
+      "sha256": "88ce7b3a48b0eed4b272b65c86dda72768b274d725d1a9b84f06fcc7ea471d61"
+    },
+    {
+      "path": "packs/kenney/射击贴图/tile_0004.tres",
+      "sha256": "cb7cc0f2d24f14d457e211c4633e9bac96db823766f30434872ef573d82f9648"
+    },
+    {
+      "path": "packs/kenney/射击贴图/tile_0004.tscn",
+      "sha256": "5c2426a90ab063067754526843748efe21fa7a1a7ef73494e6955f40d135c4aa"
+    },
+    {
+      "path": "packs/kenney/射击贴图/tile_0005.png",
+      "sha256": "0ebea2d4cd012cefa649368f7b18d78bf35f0f0bcc0783f58b595215a4e18273"
+    },
+    {
+      "path": "packs/kenney/射击贴图/tile_0005.tres",
+      "sha256": "bb5627173d18b900311b70a46c1469bb5b881e36713083983f99039b1e3af6c8"
+    },
+    {
+      "path": "packs/kenney/射击贴图/tile_0005.tscn",
+      "sha256": "a13d7e1bd6040cc619fcf8ba79aacf5e1a26c0ffa29563ba602443cad6c2b243"
+    },
+    {
+      "path": "packs/kenney/射击贴图/tile_0006.png",
+      "sha256": "a170cdef9a95741f7884212d6c6b7ffb9f08ddf1e7bd1cedb0a02b78b496963b"
+    },
+    {
+      "path": "packs/kenney/射击贴图/tile_0006.tres",
+      "sha256": "95c21d175fbf24e05d15eef8fc1926b59166671f6341bf09a2abc85e629174ff"
+    },
+    {
+      "path": "packs/kenney/射击贴图/tile_0006.tscn",
+      "sha256": "1df8eee8ef51417a8bf6e7f6cb81ddcdecd362add38e12e2080b4bb81326e7ad"
+    },
+    {
+      "path": "packs/kenney/射击贴图/tile_0007.png",
+      "sha256": "f5f58c025cf3e9d4ed035aec92b3a76194511e2463accfb2adaa431625e08701"
+    },
+    {
+      "path": "packs/kenney/射击贴图/tile_0007.tres",
+      "sha256": "c8d353ef4ce8e169e3e68d96af4293ff3c75b33e83035a14f4815ab623379bad"
+    },
+    {
+      "path": "packs/kenney/射击贴图/tile_0007.tscn",
+      "sha256": "33c356f8523aafbd8f8fe1e1f36cc23aae308c278ac31013a95aae0512b47fbd"
+    },
+    {
+      "path": "packs/kenney/射击贴图/tile_0008.png",
+      "sha256": "b45b99bf08ea9324274dcd41994e857f65e840cacd0f8fc6e97ef313ed858446"
+    },
+    {
+      "path": "packs/kenney/射击贴图/tile_0008.tres",
+      "sha256": "e03153782fd314d8a514f5018fa02870ddf027592f435ee0d87aabae7ee43f59"
+    },
+    {
+      "path": "packs/kenney/射击贴图/tile_0008.tscn",
+      "sha256": "c627ec2e719aa1424c5d8af82935968a798669a8e8fe9c366a2a265671133012"
+    },
+    {
+      "path": "packs/kenney/射击贴图/tile_0009.png",
+      "sha256": "f7192bb126ec4bcedcf25ff52d801b62296d86a5867c4737a6088bdd8497a3c3"
+    },
+    {
+      "path": "packs/kenney/射击贴图/tile_0009.tres",
+      "sha256": "5ee5c6f58e6fce554647160dde10e6dc68f8201cbe3d2d0f947e73e5d4f34c68"
+    },
+    {
+      "path": "packs/kenney/射击贴图/tile_0009.tscn",
+      "sha256": "65019afd4d5ea7a9a97e7feb6c94ad2618e4ff2853dea38f1f566b66aa7318e6"
+    },
+    {
+      "path": "packs/kenney/射击贴图/tile_0010.png",
+      "sha256": "804e70b25866f48e1724403764aff409fb803c62ecb3e3cdfea49716436413e4"
+    },
+    {
+      "path": "packs/kenney/射击贴图/tile_0010.tres",
+      "sha256": "caa21897ceb37e9244d42687f38a2c3c52c0068ca9cd237176033d97bdaa7cce"
+    },
+    {
+      "path": "packs/kenney/射击贴图/tile_0010.tscn",
+      "sha256": "4d5c60fd8923287b5b19eb706d58dc5384302c64ea71665e605d9933b6aca181"
+    },
+    {
+      "path": "packs/kenney/射击贴图/tile_0011.png",
+      "sha256": "8b4aef3f3668f758abd06837bf5ff560c5b5acaa5bed6ff0e2aa60026dbf174a"
+    },
+    {
+      "path": "packs/kenney/射击贴图/tile_0011.tres",
+      "sha256": "29188c9df8de3ff3ab9520821b166ca4d4699a572de833105afb4c1a9c3082fe"
+    },
+    {
+      "path": "packs/kenney/射击贴图/tile_0011.tscn",
+      "sha256": "e32dfecd9a604e4d1a92525db51045fcd1794641fe1c309391ed8eec0889a458"
+    },
+    {
+      "path": "packs/pvfx/元素魔法/acid_splash.png",
+      "sha256": "a15d4eb0e589ae59b55f28c73c71797970819d6099f66defee7c6021a73a1b04"
+    },
+    {
+      "path": "packs/pvfx/元素魔法/acid_splash.tres",
+      "sha256": "2393e3abb944d55193822d538b2679bd072d88753e8659b4f375d5a643f17e8d"
+    },
+    {
+      "path": "packs/pvfx/元素魔法/acid_splash.tscn",
+      "sha256": "b7b4ec70d14653d0dbfd093e540274a75b3328b27f8a14934130238d5d11779d"
+    },
+    {
+      "path": "packs/pvfx/元素魔法/dripping_runoff.png",
+      "sha256": "97ca3b01bbd8c479c29c2862d3ac6f6643b9c2392f2a50853a9007b989ee36ee"
+    },
+    {
+      "path": "packs/pvfx/元素魔法/dripping_runoff.tres",
+      "sha256": "85a69ab604a57f01f604c71147e094e3303c6263d53419db256bb7733ea81655"
+    },
+    {
+      "path": "packs/pvfx/元素魔法/dripping_runoff.tscn",
+      "sha256": "b389fae139dbdab12d9ff1632c7c5d8eb877bd89264db7a7fde3ee6e857d5595"
+    },
+    {
+      "path": "packs/pvfx/元素魔法/earth_rupture.png",
+      "sha256": "c51e700af508a44c1b8895a2c1495d552a005d535b64fe36e6af5fcc083cfc0c"
+    },
+    {
+      "path": "packs/pvfx/元素魔法/earth_rupture.tres",
+      "sha256": "4cc745cd79c8b6928cd3a6c883a7a0d173e20b691a4121b484328f7003fefa9d"
+    },
+    {
+      "path": "packs/pvfx/元素魔法/earth_rupture.tscn",
+      "sha256": "3ac632c037cd07babf6f168a9100e27a68e1191e7322657dd8a9208ca5dd6d5a"
+    },
+    {
+      "path": "packs/pvfx/元素魔法/ember_jet.png",
+      "sha256": "5f52ddc927f35f261c0afdd18edd5de240f3f019dfd78cedff3a828d9add0a5c"
+    },
+    {
+      "path": "packs/pvfx/元素魔法/ember_jet.tres",
+      "sha256": "991d529ab2211d43133035c0198f5de911a30935a643eed0cb0168864f2cb027"
+    },
+    {
+      "path": "packs/pvfx/元素魔法/ember_jet.tscn",
+      "sha256": "76cdbad6f4798d4f52a9e295ef91ef144fadfd8e2aff7b9f754a6a7a6302ee14"
+    },
+    {
+      "path": "packs/pvfx/元素魔法/frost_nova.png",
+      "sha256": "9e67c62233d4ce6ec1820d4dfae2d126c010f92b277da90f48d5aa62c13f3540"
+    },
+    {
+      "path": "packs/pvfx/元素魔法/frost_nova.tres",
+      "sha256": "bd00b9e157429d6212a8ecea5d5dac2c8ccfe2ea48651d16663880265c14b3cc"
+    },
+    {
+      "path": "packs/pvfx/元素魔法/frost_nova.tscn",
+      "sha256": "9d71d74d083c5306d7efbb38053d32c228b6cf2dba3f96d032e589e1f4bdc56c"
+    },
+    {
+      "path": "packs/pvfx/元素魔法/leaf_gust.png",
+      "sha256": "643bc89d80b29e89d9942b17ac3d8b68d2e3af25b7eeddd7083d8bacf6a2cc40"
+    },
+    {
+      "path": "packs/pvfx/元素魔法/leaf_gust.tres",
+      "sha256": "8c751daa87a53b21581a1029b8418b57e74fe35eeabae5877e380b4c951e432a"
+    },
+    {
+      "path": "packs/pvfx/元素魔法/leaf_gust.tscn",
+      "sha256": "857b07967a1fea568a9a30725bacb04437a1b3fa39dcef406db514cddfcbc3db"
+    },
+    {
+      "path": "packs/pvfx/元素魔法/rain_field.png",
+      "sha256": "f0e4107544beb08640c833f152b9419677adf6d0c0b8a4b93d1b3489092c2524"
+    },
+    {
+      "path": "packs/pvfx/元素魔法/rain_field.tres",
+      "sha256": "221775bbc6450791c3e721d1ab083a1b2b35d2b37459edd78262c74d04bfe9fa"
+    },
+    {
+      "path": "packs/pvfx/元素魔法/rain_field.tscn",
+      "sha256": "eab19504b087e1826e955e24c9bf34aeef310d214e5d4fba1381f09bd0c52ba2"
+    },
+    {
+      "path": "packs/pvfx/元素魔法/shoreline_foam.png",
+      "sha256": "3ad4f15754278968d61bc36f57a33ff5105974c1daeee1d41b0f0f12085650b8"
+    },
+    {
+      "path": "packs/pvfx/元素魔法/shoreline_foam.tres",
+      "sha256": "035cccc2b692011fc32641f48d1558c20b6c4fc8f765b8992f8cd173dd6fa695"
+    },
+    {
+      "path": "packs/pvfx/元素魔法/shoreline_foam.tscn",
+      "sha256": "0ac97f2a985d33874ac8ba02e2cc7e7f183de282b421f054644bc8d735985b87"
+    },
+    {
+      "path": "packs/pvfx/元素魔法/smoke_puff.png",
+      "sha256": "d07693fe54b9ff967447ee757f3e31dff6e6569286f34b6e75e3a200e071bd3d"
+    },
+    {
+      "path": "packs/pvfx/元素魔法/smoke_puff.tres",
+      "sha256": "4c711fcaaf704924334e210863d7d0d73c06ae9c3c4e94d591f9e0a14939b376"
+    },
+    {
+      "path": "packs/pvfx/元素魔法/smoke_puff.tscn",
+      "sha256": "e4aec469b155d7dcdbea31b7a917994334327baba774bdfb1e4f600785fe88e4"
+    },
+    {
+      "path": "packs/pvfx/元素魔法/splash_crown.png",
+      "sha256": "7f256506099f594e098d27a124956d89518db5c168a1957956c8b68880c268fd"
+    },
+    {
+      "path": "packs/pvfx/元素魔法/splash_crown.tres",
+      "sha256": "7b93c69641fbe163d8122438d21075fa4c04dff436cb6b71fcaa1014f4b657f6"
+    },
+    {
+      "path": "packs/pvfx/元素魔法/splash_crown.tscn",
+      "sha256": "1e03cb74841398bb34bae40ebd3a01b871811fa8b31e0d9979fe3e9b8436b19c"
+    },
+    {
+      "path": "packs/pvfx/元素魔法/warm_explosion.png",
+      "sha256": "e6edda563620814a8416d4b4be054766b1c197edefdd8698571c27cbf3d1a4ef"
+    },
+    {
+      "path": "packs/pvfx/元素魔法/warm_explosion.tres",
+      "sha256": "0dd69da0d6b8881c824f07952ce44464037e359e5611c879601cfa8f6e0e34e5"
+    },
+    {
+      "path": "packs/pvfx/元素魔法/warm_explosion.tscn",
+      "sha256": "41836189c6118bcb5051390b37599966b253b4e3c107bb2a9dbcce6e0976f3f3"
+    },
+    {
+      "path": "packs/pvfx/奥术传送/rift_portal.png",
+      "sha256": "217a37fddea273dbab965858d1d14ab7b3e9f88b8f082d72d085ca82e0fbc23b"
+    },
+    {
+      "path": "packs/pvfx/奥术传送/rift_portal.tres",
+      "sha256": "91d787bd13776f02e7a9bfcdcd25e0a4fc5280dad457196b52daddb4f24d3caa"
+    },
+    {
+      "path": "packs/pvfx/奥术传送/rift_portal.tscn",
+      "sha256": "fda3dbd74809f102eeafccd987f400af2a85007aa8053ca9d56a6e7e2b94803e"
+    },
+    {
+      "path": "packs/pvfx/奥术传送/spectral_bloom.png",
+      "sha256": "152a6133cf7a28967c25a1048fda539d485655354672ac6818aeae00f098c7fc"
+    },
+    {
+      "path": "packs/pvfx/奥术传送/spectral_bloom.tres",
+      "sha256": "a763afc94f0dad080774b30eafe88c3d85787e561d2832bef435b376a1454cd3"
+    },
+    {
+      "path": "packs/pvfx/奥术传送/spectral_bloom.tscn",
+      "sha256": "48c18468993373b488a0f6ef212bc6d08d8b8e58d9da6e97d2f89e17c25c793f"
+    },
+    {
+      "path": "packs/pvfx/奥术传送/void_implosion.png",
+      "sha256": "de60937030670d50f50125a145301567a85abee51ea6d341330a869a87cbf9ca"
+    },
+    {
+      "path": "packs/pvfx/奥术传送/void_implosion.tres",
+      "sha256": "7fa51ec33c201c008c929ee4c6bfe856bd2c02b84709c54cd22156b4067c5fe1"
+    },
+    {
+      "path": "packs/pvfx/奥术传送/void_implosion.tscn",
+      "sha256": "bb48052ac078b9ccc76ea12277ae81dee50647a08f44b55dfaa4a2ffabd94564"
+    },
+    {
+      "path": "packs/pvfx/战斗命中/beam_cutoff_burst.png",
+      "sha256": "5ed991f9df541794a2f1709a3c588abd5082110033f457c3548ca6f044694866"
+    },
+    {
+      "path": "packs/pvfx/战斗命中/beam_cutoff_burst.tres",
+      "sha256": "fc860e54ead35186458a9b5a4e41f3de86afc07d50ede3aa7e0425d67076e5db"
+    },
+    {
+      "path": "packs/pvfx/战斗命中/beam_cutoff_burst.tscn",
+      "sha256": "2cfeeda91f0a80cf7b863a9ba34168cce23e4439951bbe50c3578baaa45c3a9b"
+    },
+    {
+      "path": "packs/pvfx/战斗命中/cinder_orchid.png",
+      "sha256": "8f5d5b7c2b45baa66f4e31588e963517b9ac1ece8e111fcb07db2c5517067bf2"
+    },
+    {
+      "path": "packs/pvfx/战斗命中/cinder_orchid.tres",
+      "sha256": "c658a7886fd5acd2fdf310d4f30bbeb34a5dc24d240c28bbe3c14c348cf88f88"
+    },
+    {
+      "path": "packs/pvfx/战斗命中/cinder_orchid.tscn",
+      "sha256": "91def025b94926b1472b513b8d15485bf36e6d0fbc0099677fdd2c53c961eb5d"
+    },
+    {
+      "path": "packs/pvfx/战斗命中/crescent_slash.png",
+      "sha256": "1fd5ac617e75f8139501dd85b297ece109baea45a480f76db5156b42950e123e"
+    },
+    {
+      "path": "packs/pvfx/战斗命中/crescent_slash.tres",
+      "sha256": "e99aafbcd3c4d4c88eb27a349ab8c2c63fa5144e5cf505abe0f37b46b82b835b"
+    },
+    {
+      "path": "packs/pvfx/战斗命中/crescent_slash.tscn",
+      "sha256": "e0067e007013ba7f1443d5c69ffa1c81acd89e8fd8a3784a9a76819d5de680cc"
+    },
+    {
+      "path": "packs/pvfx/战斗命中/electric_impact.png",
+      "sha256": "12b3a1c858e6d8036ca1abc2d07f202f409cc7d9d25bdcc0ca2829bc59299bcd"
+    },
+    {
+      "path": "packs/pvfx/战斗命中/electric_impact.tres",
+      "sha256": "ab3ff5581a5d0c86cd9c9c8017e3cbc1b88582a85b475e2b63bc1e7089671f74"
+    },
+    {
+      "path": "packs/pvfx/战斗命中/electric_impact.tscn",
+      "sha256": "98e87f971d83b454956fe9c03631d972a8bf9d7d0f2838ee84d4faac602422ec"
+    },
+    {
+      "path": "packs/pvfx/战斗命中/focus_charge.png",
+      "sha256": "d69ad29152757666abc88cbad065ca4827df3fe7767f9f7a9ed4e942a63ce2a6"
+    },
+    {
+      "path": "packs/pvfx/战斗命中/focus_charge.tres",
+      "sha256": "1ecefb66ad5e5b5828466c2a12053a445d4c17a70ee6e5c620109d7b58add103"
+    },
+    {
+      "path": "packs/pvfx/战斗命中/focus_charge.tscn",
+      "sha256": "1324b3d91fceea70dfe2fbc9f0450c5a3258eaf16d46555a9a48e52b37aaef49"
+    },
+    {
+      "path": "packs/pvfx/战斗命中/landing_dust.png",
+      "sha256": "6e7a1f83bb9689b05d32e3c469f8496080900e41a1a55a245065fe96ec71d623"
+    },
+    {
+      "path": "packs/pvfx/战斗命中/landing_dust.tres",
+      "sha256": "5383b6267533b173a5d63668c9c13e8607fc0d0632f8096efb55dfe1c01351ca"
+    },
+    {
+      "path": "packs/pvfx/战斗命中/landing_dust.tscn",
+      "sha256": "38f6e8cf2f7382e8d69a4083b85ebca608c2b9c9418cf0aa053f893654b9f980"
+    },
+    {
+      "path": "packs/pvfx/战斗命中/lattice_beam.png",
+      "sha256": "6142190920958098ead1891b2210c0708118b779401077cff94bc1f7af5cdce4"
+    },
+    {
+      "path": "packs/pvfx/战斗命中/lattice_beam.tres",
+      "sha256": "e7d41c9db6cc6d8b734fa260aa33068493872fe8ed7dc673447f5e1af8554bb9"
+    },
+    {
+      "path": "packs/pvfx/战斗命中/lattice_beam.tscn",
+      "sha256": "791d049d705d52b7bba0a84e0cf029c1bc6e1e8792e144565d9b2a788ebe1ead"
+    },
+    {
+      "path": "packs/pvfx/战斗命中/magical_projectile.png",
+      "sha256": "fe1599e3a87c2c9e199ee4e9ea789f10719ba0ad75f31a6940e1f0a60c9e81cb"
+    },
+    {
+      "path": "packs/pvfx/战斗命中/magical_projectile.tres",
+      "sha256": "6cb310cd11c0bad23989b23b4dcaab66a151e3b579315eb7c2a001acf9fcbfe1"
+    },
+    {
+      "path": "packs/pvfx/战斗命中/magical_projectile.tscn",
+      "sha256": "a269a8d5bb8f1ee78dcae1086da530a3edf0c3e2b3e441e560fbc9e20cc28961"
+    },
+    {
+      "path": "packs/pvfx/战斗命中/mass_release.png",
+      "sha256": "5e5c93b4f323bd0f1ea10d6fc9b162930832765afcb98272194bcdb759db9a78"
+    },
+    {
+      "path": "packs/pvfx/战斗命中/mass_release.tres",
+      "sha256": "253161f005df7bbbd16cad485c0b74046e9040025619d801a3e65fc2649c4268"
+    },
+    {
+      "path": "packs/pvfx/战斗命中/mass_release.tscn",
+      "sha256": "de881ba612bd103a972115ae982fca59a5186bbfcc743721f266f7a62d05d9e1"
+    },
+    {
+      "path": "packs/pvfx/战斗命中/resonant_break.png",
+      "sha256": "aed847d7e97cdf36713b0c19f6467290259a0b9e8b463dbf61c6c6731bea3b71"
+    },
+    {
+      "path": "packs/pvfx/战斗命中/resonant_break.tres",
+      "sha256": "49dc0e43cbb0aa5c51f2c68c83ff5b380336ead37582b089c80d828c0b83b8ba"
+    },
+    {
+      "path": "packs/pvfx/战斗命中/resonant_break.tscn",
+      "sha256": "2566338ac53e31da9d60ce91039dee66936063f64e0d420a207d198db0353083"
+    },
+    {
+      "path": "packs/pvfx/战斗命中/rootscript.png",
+      "sha256": "8dded9fad0c06018dbde52403372812dac39acf12f2504c5972ba39fd846867e"
+    },
+    {
+      "path": "packs/pvfx/战斗命中/rootscript.tres",
+      "sha256": "93e1f4918349194a94e44b338d1fa10d64c18882a61b0d138ab25611c626e32b"
+    },
+    {
+      "path": "packs/pvfx/战斗命中/rootscript.tscn",
+      "sha256": "3b5eca71f21865de5b344dd20d9c41f4280c97b99d9efeaf2f7646705e09e184"
+    },
+    {
+      "path": "packs/pvfx/战斗命中/solar_shrapnel.png",
+      "sha256": "a0953add5ee5010c77de1c1c78b297be6d197635a79891c77db3e28c64e3f49d"
+    },
+    {
+      "path": "packs/pvfx/战斗命中/solar_shrapnel.tres",
+      "sha256": "360d234ca6cba607e5cd2b136ade7d8ca00c7d87e4ed4d684145ccc41e8395b9"
+    },
+    {
+      "path": "packs/pvfx/战斗命中/solar_shrapnel.tscn",
+      "sha256": "7031d6a84bce2965225df7c1ea30be9e4ebd5538d0ca4fd4f91c34b41ced09bc"
+    },
+    {
+      "path": "packs/pvfx/战斗命中/tether_catch.png",
+      "sha256": "e87af885e80ef9ba7c2a2d35a1dbd5d59ee2e2f007e7a9c6d222cbb6b8e91908"
+    },
+    {
+      "path": "packs/pvfx/战斗命中/tether_catch.tres",
+      "sha256": "1f14a29d2cf72b55a97b36164de546fa6b3171372a72c02fedddd11d69f3f9e1"
+    },
+    {
+      "path": "packs/pvfx/战斗命中/tether_catch.tscn",
+      "sha256": "014ed1b30fc2b5f4ca8dd6710b46043348b07afee18494a7daa044a2e1824c0c"
+    },
+    {
+      "path": "packs/pvfx/拾取交互/beacon_seed.png",
+      "sha256": "aa47e6f8a1d5b827780f6695b32ea49b7fbeb2328748d0eb3ff1120e8b965df9"
+    },
+    {
+      "path": "packs/pvfx/拾取交互/beacon_seed.tres",
+      "sha256": "2115da344c1b57895bae479967e2f26398620894be45727d7ef65dc5e543473e"
+    },
+    {
+      "path": "packs/pvfx/拾取交互/beacon_seed.tscn",
+      "sha256": "376c5bc4f59cd2e906e83ccfcd7fe2d56e7a1a77fe85dd08c064670405e5251d"
+    },
+    {
+      "path": "packs/pvfx/拾取交互/echo_shuttle.png",
+      "sha256": "e8ff53479adeedf99318fe0ad99a3fbd71078ae31b7941703f83470321ab1203"
+    },
+    {
+      "path": "packs/pvfx/拾取交互/echo_shuttle.tres",
+      "sha256": "5b5aa6f2c4dbefa8f2117f5912c13a6b1fa9ca25ad34580f73d156bdfbbcce04"
+    },
+    {
+      "path": "packs/pvfx/拾取交互/echo_shuttle.tscn",
+      "sha256": "489abc63c9a3cebc9b4e547e24751a63c14ff6561a5cf71d17a09294c4055e5a"
+    },
+    {
+      "path": "packs/pvfx/拾取交互/harvest_seal.png",
+      "sha256": "f5db793db92e624d5b656e065a56d31d8ca2ddd8452be6ad08fa919e0db03837"
+    },
+    {
+      "path": "packs/pvfx/拾取交互/harvest_seal.tres",
+      "sha256": "a8368f29725cfc50c58914bf86013d401d51cd84f9d8136a2ea93b0fa5d23c4c"
+    },
+    {
+      "path": "packs/pvfx/拾取交互/harvest_seal.tscn",
+      "sha256": "dc05bcd98ef15a3b64145c82999934101223bcae05bc67533c5a4f291ee5dcb4"
+    },
+    {
+      "path": "packs/pvfx/治疗辅助/radiant_heal.png",
+      "sha256": "5efb66dba08b375d784178104215ceb774a58f423414139d1ae6b63ee521a40b"
+    },
+    {
+      "path": "packs/pvfx/治疗辅助/radiant_heal.tres",
+      "sha256": "1a7efe6038d72f31c988e219e0efd41cdaf6e72782e37fea08a8246e68c23cfb"
+    },
+    {
+      "path": "packs/pvfx/治疗辅助/radiant_heal.tscn",
+      "sha256": "1eeba62a75140222ccec36e14397df8dbf130f5462af62fdd181b7caa1e1b112"
+    },
+    {
+      "path": "packs/pvfx/治疗辅助/suturelight.png",
+      "sha256": "7a563584bed289cb762c2600a791ad05097f2dcc97735b0cc37feb3898e28a41"
+    },
+    {
+      "path": "packs/pvfx/治疗辅助/suturelight.tres",
+      "sha256": "fc0e2aa0750bdcb7b7eae3e633ffdfe1a718ef322f11e4ae09c8ea6c637cb087"
+    },
+    {
+      "path": "packs/pvfx/治疗辅助/suturelight.tscn",
+      "sha256": "30132e66b92457e13138f3ffa25afee40d3abf15ea3926c6f7c25478861b735e"
+    },
+    {
+      "path": "packs/pvfx/治疗辅助/venom_ward.png",
+      "sha256": "2324b3b8a1dfd7e65c4ceb86dd0f016ff1920d05a089a3a82ba93464f478291e"
+    },
+    {
+      "path": "packs/pvfx/治疗辅助/venom_ward.tres",
+      "sha256": "fa9f526845aae08554ca7e84b8c0c0f4fd77504024800ccb9c9bf1042da38681"
+    },
+    {
+      "path": "packs/pvfx/治疗辅助/venom_ward.tscn",
+      "sha256": "39e5b878fae97f33df241831cb6c74b5b476afb324572df031ca85320d047dc8"
+    },
+    {
+      "path": "packs/pvfx/状态控制/counterfall.png",
+      "sha256": "fca4977672e636e05a354e468d5f79575de24e38c1403a347eea6a47c01d12a2"
+    },
+    {
+      "path": "packs/pvfx/状态控制/counterfall.tres",
+      "sha256": "0d9265a368ad205f9574e29b52135cf068180d14fe0f9c512614a8ef2d828e73"
+    },
+    {
+      "path": "packs/pvfx/状态控制/counterfall.tscn",
+      "sha256": "9e564032d97ceecde4d72e3733be076c940137b4ba57200c81d300f6d2330988"
+    },
+    {
+      "path": "packs/pvfx/状态控制/hourglass_splinter.png",
+      "sha256": "49911ea9aa1a413f83632cd1b2b9dafa8cdaac35912743130297adbfcf31db3a"
+    },
+    {
+      "path": "packs/pvfx/状态控制/hourglass_splinter.tres",
+      "sha256": "a1e9ba2e1c686c66b5ecd2071083dbeeba0843ef1e3ef9f824ea57338152cccf"
+    },
+    {
+      "path": "packs/pvfx/状态控制/hourglass_splinter.tscn",
+      "sha256": "2d4bde80f564996a664899cd02261514fae094b2bf36c759b345f40516859df4"
+    },
+    {
+      "path": "packs/pvfx/状态控制/hush_lock.png",
+      "sha256": "0a17a2bd82aedb84c1186f9555e62a0a9a33f32bbbc1ae609753ae6ab8ccdaf7"
+    },
+    {
+      "path": "packs/pvfx/状态控制/hush_lock.tres",
+      "sha256": "37bf4f3aa19ef0e9174a4fbdb41e953f57186390bbc189248130c22d7e5063ed"
+    },
+    {
+      "path": "packs/pvfx/状态控制/hush_lock.tscn",
+      "sha256": "9e8a7dfd60aeee139c5cbcd92510925a3d00ac76261b9a0b3660540979c845c6"
+    },
+    {
+      "path": "packs/pvfx/状态控制/prism_loom.png",
+      "sha256": "1ea30b5c760a1d5a82b84fcfaed830015d84f6369e2effa94ec6fe12c892a635"
+    },
+    {
+      "path": "packs/pvfx/状态控制/prism_loom.tres",
+      "sha256": "5fd930b167f793c1dd51b1e8b0143478fd3c141d00e0e0fcd39b5184d8a0b405"
+    },
+    {
+      "path": "packs/pvfx/状态控制/prism_loom.tscn",
+      "sha256": "9ee3c76aa8fcd8350b1ee1522f20f2d683bb61b32c994ca3e21a90aec29e6bf7"
+    },
+    {
+      "path": "packs/pvfx/环境天气/choir_moths.png",
+      "sha256": "8083b76379e45a5cd0ae4f54736f22be828fdb113ff3cc756383ad89ca9be4c0"
+    },
+    {
+      "path": "packs/pvfx/环境天气/choir_moths.tres",
+      "sha256": "d73a8b725bac086822aa2d3fe0cc17d9da644ada9cf0f831aefaa69430d692dc"
+    },
+    {
+      "path": "packs/pvfx/环境天气/choir_moths.tscn",
+      "sha256": "c7273f8a232796ec9278b8676fa607449e753c19f75158d1d6b650887d5ae116"
+    },
+    {
+      "path": "packs/pvfx/环境天气/ferrospine.png",
+      "sha256": "dadee41ff8a615ae90a8a449786f7fc9d5817e19fd3700ae43b005cc3e524d53"
+    },
+    {
+      "path": "packs/pvfx/环境天气/ferrospine.tres",
+      "sha256": "80a67eecd5abdbc202fe91440a467b715d4c0979e41ff531b5733a178b25bad5"
+    },
+    {
+      "path": "packs/pvfx/环境天气/ferrospine.tscn",
+      "sha256": "9ab7c91c8f5738561b062b7e077c032d7a722ae13a2785474f94c9bbc8e94d76"
+    },
+    {
+      "path": "packs/pvfx/环境天气/pawl_snap.png",
+      "sha256": "37148cae01ba2886e7ba7df908815c342ad4b6cd50f2f778e4acd1534b0f3fae"
+    },
+    {
+      "path": "packs/pvfx/环境天气/pawl_snap.tres",
+      "sha256": "215c670b9a9b5c54df933db7be747ba10bb5e8ed4d0969f6d84f404a9c144c39"
+    },
+    {
+      "path": "packs/pvfx/环境天气/pawl_snap.tscn",
+      "sha256": "badc9bb97f4d8908eb182446376a80756b3f91dcdd67ba3e30daf06878fcbc8a"
+    },
+    {
+      "path": "packs/pvfx/环境天气/relay_bough.png",
+      "sha256": "e1f1b384fa598a92973bc654eb2fd5483af84d437ede1383cdf39bcea3213264"
+    },
+    {
+      "path": "packs/pvfx/环境天气/relay_bough.tres",
+      "sha256": "dcb85a2c43fdb31c9b33784158787ff6632a4896df954edcf75d37ba16c1a95e"
+    },
+    {
+      "path": "packs/pvfx/环境天气/relay_bough.tscn",
+      "sha256": "a07771d831cbead8adbbacd061de98608f82a33613cf7fd31244debbefda80ba"
+    },
+    {
+      "path": "packs/pvfx/移动传送/foldstep.png",
+      "sha256": "75e28fbfd0cd8551b4ac5d33f706ddd2763038dfad59e35af03eb36b319eb8df"
+    },
+    {
+      "path": "packs/pvfx/移动传送/foldstep.tres",
+      "sha256": "f5b148ba5b437a3f2fc0391da9d1d0609a3fddf0eeb44987f57316e5248cd519"
+    },
+    {
+      "path": "packs/pvfx/移动传送/foldstep.tscn",
+      "sha256": "bccfd3a0acda288621eaa4e6831ad145345aa282b472a6217a8e4f4d2f60aec2"
+    },
+    {
+      "path": "packs/pvfx/防御护盾/arcane_parry.png",
+      "sha256": "4d0374a9f6979a3c5e99d65be05105dcf21a611ffd5dc2885638534e8c751f3d"
+    },
+    {
+      "path": "packs/pvfx/防御护盾/arcane_parry.tres",
+      "sha256": "59a2ffe0ed4bf7d5b21046bbe6f60f8b4de82f52277d15a9c06f0cc2379e1510"
+    },
+    {
+      "path": "packs/pvfx/防御护盾/arcane_parry.tscn",
+      "sha256": "bed66fa7a99530bca866c3c8c646d5873ba31a3be8ff2a57d6dcde8e43c41038"
+    },
+    {
+      "path": "packs/pvfx/防御护盾/mercury_molt.png",
+      "sha256": "8b0698939831f8c1f42991e4375654b4cc0dcaf0c63a62e2b8327a8450e957fa"
+    },
+    {
+      "path": "packs/pvfx/防御护盾/mercury_molt.tres",
+      "sha256": "7a4098d220bea51f7e3052349cefec7f1f53c6557445a983cc4b76cb613d2c15"
+    },
+    {
+      "path": "packs/pvfx/防御护盾/mercury_molt.tscn",
+      "sha256": "19c06732c82342eed9b924331a106f78bacf312624244a6a6b71de56e803d775"
+    },
+    {
+      "path": "packs/warped/射击弹道/bolt.png",
+      "sha256": "e9698cb2cbb369e09068506fcc0e2bc7f3dc8ed9222055793c6ea3f056e881f8"
+    },
+    {
+      "path": "packs/warped/射击弹道/bolt.tres",
+      "sha256": "f5be2c46a2f09948e1e79f3678b8df8bd6966a6cbe91dadc54761fe931226aa0"
+    },
+    {
+      "path": "packs/warped/射击弹道/bolt.tscn",
+      "sha256": "99b7b5d056a61709d8e535175911f957fdaf5eb6b8a12fe2991c5d4daf2e590b"
+    },
+    {
+      "path": "packs/warped/射击弹道/charged.png",
+      "sha256": "046caf45f3185988b47d38e380f6f72411030be2cacb14b773da9353844aac85"
+    },
+    {
+      "path": "packs/warped/射击弹道/charged.tres",
+      "sha256": "27fe849eb53adef10c004866011f27d657ff17daab2e25654ab3c7199cc1386a"
+    },
+    {
+      "path": "packs/warped/射击弹道/charged.tscn",
+      "sha256": "cc40dd413d6267678e6eaa8be31bed0e202881ff7ecb063174bd861e0727cc47"
+    },
+    {
+      "path": "packs/warped/射击弹道/crossed.png",
+      "sha256": "a475648647a5b2981837875c9e4282935d49e39178a2f5c1ca8133c8e85ff24d"
+    },
+    {
+      "path": "packs/warped/射击弹道/crossed.tres",
+      "sha256": "56172e376bb25a934d10fedefc8aad25feabbde21fd76436c24b19c63e32acc8"
+    },
+    {
+      "path": "packs/warped/射击弹道/crossed.tscn",
+      "sha256": "f4878ec910f1ed2b78f3d7ccb82caf72213223b91b4684f46b2b9d07f9b070a4"
+    },
+    {
+      "path": "packs/warped/射击弹道/pulse.png",
+      "sha256": "fbb45d82bf5b395744acb24d0a28c188be898d223df4dba54f2d7a54a121692a"
+    },
+    {
+      "path": "packs/warped/射击弹道/pulse.tres",
+      "sha256": "89ef7bf64fae74469b71d0f13c79ac0f62f11b3b0def63252e3f775cbb0816d9"
+    },
+    {
+      "path": "packs/warped/射击弹道/pulse.tscn",
+      "sha256": "0ebfa67c8a85213570a7b3978dbc14c5dbe3e7068b56dcce84cec5383d426da6"
+    },
+    {
+      "path": "packs/warped/射击弹道/spark.png",
+      "sha256": "b2bd8228e0a614afabf40d3b11ac602d2fa3f6c064454769b2e194f0ce66088d"
+    },
+    {
+      "path": "packs/warped/射击弹道/spark.tres",
+      "sha256": "0201927423a21c662d04d9d3904e552f3286152832eb97bd5cf7c881adac5ef1"
+    },
+    {
+      "path": "packs/warped/射击弹道/spark.tscn",
+      "sha256": "21ed8707681e9ae1c249ea8c62c634464b168f49351d8686346e23b2dcf8f4b7"
+    },
+    {
+      "path": "packs/warped/射击弹道/waveform.png",
+      "sha256": "3eef0a3506392c639801939d51936ec19048f512db4bc9eab17e7a829a1dd310"
+    },
+    {
+      "path": "packs/warped/射击弹道/waveform.tres",
+      "sha256": "d3f03c8305e9d3d5590dfdb13aff72e0136319571f143e54d07e4ab673ddc45b"
+    },
+    {
+      "path": "packs/warped/射击弹道/waveform.tscn",
+      "sha256": "dfe59dcd9bf7f3143b877185044dcff0f2461a9d467d304fccbff0ee41745eee"
+    },
+    {
+      "path": "packs/warped/战斗命中/hits_1.png",
+      "sha256": "c215d986d894ccb7771786d134ec00358442601f5786560485e7d6e11ff5dd12"
+    },
+    {
+      "path": "packs/warped/战斗命中/hits_1.tres",
+      "sha256": "4300ebbe0f1262d395e5bbefd8e3515038e2cda95c883ce5b62803f45e65e074"
+    },
+    {
+      "path": "packs/warped/战斗命中/hits_1.tscn",
+      "sha256": "70f62388fe592ee75fbf0ef51938904b55547cae6273fc6afa31a5cf76b68b74"
+    },
+    {
+      "path": "packs/warped/战斗命中/hits_2.png",
+      "sha256": "077fc67d2051f0fbf785b9404efc91a1dc2a7c4f3a345064c780989fe86eddb7"
+    },
+    {
+      "path": "packs/warped/战斗命中/hits_2.tres",
+      "sha256": "5af21c598ff10a01aeadf78b028aa76d551893f64158d7acf18dd4e556dff613"
+    },
+    {
+      "path": "packs/warped/战斗命中/hits_2.tscn",
+      "sha256": "b851ba019d0ce739b8e794ab98bc76a08649e298b05900969947ea400511b3f6"
+    },
+    {
+      "path": "packs/warped/战斗命中/hits_3.png",
+      "sha256": "eed534d9cffe6117abff5168b8e00e6b38209172eebcdba4265a649f978c3e53"
+    },
+    {
+      "path": "packs/warped/战斗命中/hits_3.tres",
+      "sha256": "3533feb8ad6cfe5521dcf3de996563753a29e6e42f1951054845bbd8b2bae560"
+    },
+    {
+      "path": "packs/warped/战斗命中/hits_3.tscn",
+      "sha256": "15dc043f4a43abf89f3ffebdd45e1663b7f0b5f732fe2539b018d8333207b6df"
+    },
+    {
+      "path": "packs/warped/战斗命中/hits_4.png",
+      "sha256": "7ffe34e53dd81a59854a5ce6af59fb5e70c0f8283d415ad09b72b1a1872d87cb"
+    },
+    {
+      "path": "packs/warped/战斗命中/hits_4.tres",
+      "sha256": "65873ea429af9eb60938ef576eb26558e8cb5ec33a069ad42f2fc2f8780308de"
+    },
+    {
+      "path": "packs/warped/战斗命中/hits_4.tscn",
+      "sha256": "ae6bfc30a52c70493406af4e6eacdd5eb1c4ab98afe7ca3d3d2f3923721c99bc"
+    },
+    {
+      "path": "packs/warped/战斗命中/hits_5.png",
+      "sha256": "d81d930ea290ad7dfadd448bf99f79a179d7745f215ad96687ad5be983c76490"
+    },
+    {
+      "path": "packs/warped/战斗命中/hits_5.tres",
+      "sha256": "a9bd17eba4d0bbad88e35fae16721a0564847859e1615d3d645050d82e3bac3d"
+    },
+    {
+      "path": "packs/warped/战斗命中/hits_5.tscn",
+      "sha256": "e3af2de8fcb02fa68f6ce7ac43584ad61e0e4561de4f33aacc85caf35a0bc4d0"
+    },
+    {
+      "path": "packs/warped/战斗命中/hits_6.png",
+      "sha256": "c2ce5a568ea27ff1b84a5136dc40e6ba9388b366e9fd01bce75363f11a0201c0"
+    },
+    {
+      "path": "packs/warped/战斗命中/hits_6.tres",
+      "sha256": "00b184aedc7e084650333e49da8769b8a7e5a317a22601a7d36657a16c41b776"
+    },
+    {
+      "path": "packs/warped/战斗命中/hits_6.tscn",
+      "sha256": "adbc0d57f5afa9e67e0b97e7e2329669057063ecb9e512b93d3d4ecd171a2520"
+    },
+    {
+      "path": "preview/alenia/abejas.png",
+      "sha256": "9e0c5e3c448956ce8ccf3a2a15637183402907e6f23f3f10682a27f95942f0ae"
+    },
+    {
+      "path": "preview/alenia/agua_nenufares.png",
+      "sha256": "7b5fb4639fefca834ece1f6df6099d1a39ba63f1ab605e91042fe55480c71324"
+    },
+    {
+      "path": "preview/alenia/arcoiris_sutil.png",
+      "sha256": "f2cb29db780fddbe078f6267b9381196e039a0be849a8150420aad9e7699c0dd"
+    },
+    {
+      "path": "preview/alenia/aurora_boreal.png",
+      "sha256": "bddbc9242adc93fff425cf7bd406fb9a95f5e0df50d9249e9f710b1bb5e0d156"
+    },
+    {
+      "path": "preview/alenia/burbujas_ascendentes.png",
+      "sha256": "07da24445f842852e24f938bcb5f5ab564a8c474eb89adc2824c8d52f08fe9b4"
+    },
+    {
+      "path": "preview/alenia/burbujas_colores.png",
+      "sha256": "6f44b7665b511fbe35dcb3213dea699c6968753be13493a0db6a07c96db366f8"
+    },
+    {
+      "path": "preview/alenia/burbujas_explosivas.png",
+      "sha256": "71495282a79a67243bd18acb69a3f47c43c5502f0e394c3ab6f563e17b23f1d8"
+    },
+    {
+      "path": "preview/alenia/burbujas_pantano.png",
+      "sha256": "b0228218aaa15632644d2c45ca3fdc8e216eae4e294d51952a539802527d1a72"
+    },
+    {
+      "path": "preview/alenia/causticas.png",
+      "sha256": "ad397664d3928e6fd3d5c3f693d2e4be669c4d2cd707fc3daa343c6314c5f54e"
+    },
+    {
+      "path": "preview/alenia/ceniza_volcanica.png",
+      "sha256": "78a2a4d6c4188bdd4baa6d0582f542ec13a630ac3e3fe9bbf30e78476a149021"
+    },
+    {
+      "path": "preview/alenia/chispas_fuego.png",
+      "sha256": "a38aba4bd7501a3e67a7d92a33f0471235504a3a3e8c90f1ea9e8d904510030f"
+    },
+    {
+      "path": "preview/alenia/confeti.png",
+      "sha256": "1b505e2d350d0ab6f4afec07c2fa2baefe9764791690f4142dd33e70d6153897"
+    },
+    {
+      "path": "preview/alenia/congelacion.png",
+      "sha256": "8a76826956b029e20bc6bb204e61f1349f2ed53dd315dfc566c09e64c3da07a5"
+    },
+    {
+      "path": "preview/alenia/dientes_leon.png",
+      "sha256": "6d466b4d11f3dcc6580161a55fe4b8bbbd1e5d713b5a9f50eaa7cb377f929b90"
+    },
+    {
+      "path": "preview/alenia/esporas_magicas.png",
+      "sha256": "a8a950beff3cabcdb0574f1b20de1f7f1fcb0fa35bb1ab14f365324acb20920c"
+    },
+    {
+      "path": "preview/alenia/globos_aerostaticos.png",
+      "sha256": "9f9040b4b3c763e63a89479514d6b5de0f3481ac9b8edcabc135eaf23e385518"
+    },
+    {
+      "path": "preview/alenia/godrays.png",
+      "sha256": "52bf9057d738d2282e043ae1277df41785dde8ad02867ada6cfa223335a59f83"
+    },
+    {
+      "path": "preview/alenia/hojas_otono.png",
+      "sha256": "948bf3e57af09339ba6eeab4b45f3ec3dbb1cc649053939916dca86eb3e063da"
+    },
+    {
+      "path": "preview/alenia/hojas_pino.png",
+      "sha256": "40a13fcd153556b74a6c29ad879a7d800b6bca02c017663e84692f990cd75a25"
+    },
+    {
+      "path": "preview/alenia/humo_chimenea.png",
+      "sha256": "053249cd6472d5be42960f30c20f05b570cdb06ca4ba66bf5d44db832b01fb3d"
+    },
+    {
+      "path": "preview/alenia/lluvia_estetica.png",
+      "sha256": "4353bc1da9b44a397848d69f18a0b307227b5171d5e1c1d1f789e79f5c2344d7"
+    },
+    {
+      "path": "preview/alenia/lluvia_splash.png",
+      "sha256": "47f78a4784eaf7b08b460fedf519aa97d46931c980d04f3163c84fe726f26dd2"
+    },
+    {
+      "path": "preview/alenia/luciernagas_azules.png",
+      "sha256": "57c4c5c704996fad4dc830bf536cc4e3a4a9c5b5a5fa759e0e383b6c8a463eda"
+    },
+    {
+      "path": "preview/alenia/luciernagas_cozy.png",
+      "sha256": "9c9f2c3ca867f89fbb83c419a3052b54dd4219cabae2d646d2b0453e65feb611"
+    },
+    {
+      "path": "preview/alenia/mariposas.png",
+      "sha256": "5f0eff7f1be0d807a52db715b395484c97934196af5c48faa02e71f8e6d91e7c"
+    },
+    {
+      "path": "preview/alenia/meteoritos.png",
+      "sha256": "f6499e0ca4b3bc1ee8cdf7c1caae586d702f65580f3d2c03cb008842a9d999f7"
+    },
+    {
+      "path": "preview/alenia/niebla_espesa.png",
+      "sha256": "3a9aa36e5740a52998a272c006467907ef8199d41d8cef9b645eb54979861fea"
+    },
+    {
+      "path": "preview/alenia/nieve_cinematica.png",
+      "sha256": "7b96cbd65526941bdb5e3364f8d381e71276eadc0b1aeefd13b2328a32341ccd"
+    },
+    {
+      "path": "preview/alenia/nieve_cozy.png",
+      "sha256": "55e8b21402c15443c546379051f87fcec6ff07e88542f5073df5a1304f1b4295"
+    },
+    {
+      "path": "preview/alenia/notas_musicales.png",
+      "sha256": "17b3bcf71c98be0bb33245fe9bfef54874efc914ad37eef79792658bb6d5db34"
+    },
+    {
+      "path": "preview/alenia/nubes_algodon.png",
+      "sha256": "ee0056696f0d15d5208c791225a2e0818a95316d95a3157b0088aa41646d129e"
+    },
+    {
+      "path": "preview/alenia/pajaros.png",
+      "sha256": "8c3cf48e03ab185fd659e8ba85bf4a7324706c9d8358b8207c1f04f01924b02e"
+    },
+    {
+      "path": "preview/alenia/petalos_azules.png",
+      "sha256": "46187f3659036afa324c056f524f9c82aacffb2748d172d1d2ae94bf91403d02"
+    },
+    {
+      "path": "preview/alenia/polen_primavera.png",
+      "sha256": "10ba891412c1a24d6552819ae0428148ac1c8a96749e22aa153b3f9d34b7b4ca"
+    },
+    {
+      "path": "preview/alenia/rayos_lunares.png",
+      "sha256": "c09c739f86269203ac23615d47b3438ac3ce4c1d3453a09f39caa9652c029ab9"
+    },
+    {
+      "path": "preview/alenia/sakura.png",
+      "sha256": "bec287fd1a81ccfd4cd78b37e09d84f91430b7341beb19e47812aff62dc52f9d"
+    },
+    {
+      "path": "preview/alenia/tormenta_electrica.png",
+      "sha256": "cd231248a0726c75c3dbce19a5388f6886561115b3a53d4e73991b539f80d7b2"
+    },
+    {
+      "path": "preview/alenia/tornado_epico.png",
+      "sha256": "670272dba8171a0e204f0e79a1e5ffff88e49dfc5b5b4fbc1913029addd9daed"
+    },
+    {
+      "path": "preview/alenia/viento_estetico.png",
+      "sha256": "d95bbccdc2b3ab1b1c5d3c78ab2c150d4f6e2f608bbc43d36b4fd9ad39e160ba"
+    },
+    {
+      "path": "preview/alenia/viento_magico.png",
+      "sha256": "8f6eab641f35c55ed5516f3588d0e61b0bad1e82168a3515a8dbebafcdd048d2"
+    },
+    {
+      "path": "preview/codemanu/10_weaponhit.png",
+      "sha256": "03ea4e51494f647d1d2220fd1c592720d7554a625e2325288155d45e72f0c2ce"
+    },
+    {
+      "path": "preview/codemanu/11_fire.png",
+      "sha256": "92471ecce272f605dadc6f359ca28e5377ea5c42a67e78e622220d8e6e2c4269"
+    },
+    {
+      "path": "preview/codemanu/12_nebula.png",
+      "sha256": "e7a543e26cb2d37ebe841f97008e201fa1e98579af19498ae3cb87e53b2da444"
+    },
+    {
+      "path": "preview/codemanu/13_vortex.png",
+      "sha256": "b1f5c2e9d33813a7d9ae65a739d762ca87ecb789c161399fa140bb28565a8b4f"
+    },
+    {
+      "path": "preview/codemanu/14_phantom.png",
+      "sha256": "17ba7903d503b7a70ef1b7db79ffdacb3788c2321862f8757d9d0ec9d4185aae"
+    },
+    {
+      "path": "preview/codemanu/15_loading.png",
+      "sha256": "b0389931f4c566d32aa34b8d00fab51b48c3cf5d6483f90f3ec1f54eb3f85b99"
+    },
+    {
+      "path": "preview/codemanu/16_sunburn.png",
+      "sha256": "b97b345bc2d5f469a50839ebf7daad66c8285eab506a467a0c225533ba2f79c9"
+    },
+    {
+      "path": "preview/codemanu/17_felspell.png",
+      "sha256": "7ff9604c010e32ebb1db7dc248dd5f33a242753d1fb46d90a548927f7fcde884"
+    },
+    {
+      "path": "preview/codemanu/18_midnight.png",
+      "sha256": "2b7e2243a02ca08605988b1e66394832e06420df4391b6ba0fd7a4dc054192e4"
+    },
+    {
+      "path": "preview/codemanu/19_freezing.png",
+      "sha256": "8aadda2d4138a940e1d67fe42a616063905f87fa0311b11f5ad3166523e2c264"
+    },
+    {
+      "path": "preview/codemanu/1_magicspell.png",
+      "sha256": "fe931ec8507491931753f6a3715d67a645ab62f1b247f52b82beaa32f492f243"
+    },
+    {
+      "path": "preview/codemanu/20_magicbubbles.png",
+      "sha256": "69afc5c9ee1624e931b0c092739dcb9e7188f76aa6faebc31733d0b518f23af8"
+    },
+    {
+      "path": "preview/codemanu/2_magic8.png",
+      "sha256": "5bd5e5cc935dbde32dc3c16c3bbdcbd9f33bc5e441f68af10d1c593d12501cff"
+    },
+    {
+      "path": "preview/codemanu/3_bluefire.png",
+      "sha256": "5ea30e23c07b4159ad5eb4ba258935417e1cca048961d506b264c5932cc9f3ac"
+    },
+    {
+      "path": "preview/codemanu/4_casting.png",
+      "sha256": "de9d67472bcff1e5b664a59f905f7ec578d33fb145238cef3931dec090e7548b"
+    },
+    {
+      "path": "preview/codemanu/5_magickahit.png",
+      "sha256": "586ff5e278e567ac721c7054b65361a46d646f9c5aebe4769bb73ceb3be0e957"
+    },
+    {
+      "path": "preview/codemanu/6_flamelash.png",
+      "sha256": "55b3a59500210e9a0ef47185e29beafe1745fb363386d95b81bc935666cc85b3"
+    },
+    {
+      "path": "preview/codemanu/7_firespin.png",
+      "sha256": "775aa9104048504adf9fd01a94df06aa146c26cf1a667fbe78b5ee2c714b082d"
+    },
+    {
+      "path": "preview/codemanu/8_protectioncircle.png",
+      "sha256": "52d68d745332b1b75b3a18b24acdbbd81f0068aab0f455ae89771fb51bb1fd29"
+    },
+    {
+      "path": "preview/codemanu/9_brightfire.png",
+      "sha256": "991befb994e0f2670a2059e610358cf76bc5df7a39619c8222aabf4fda9c1533"
+    },
+    {
+      "path": "preview/craftpix_explosions/circle_explosion.png",
+      "sha256": "fb3c5e883a91a9e0591330b7449f74bf415bde3ac84cf03e2f13f1a0d08b65de"
+    },
+    {
+      "path": "preview/craftpix_explosions/explosion.png",
+      "sha256": "2795017d2037bccb5f4650bc3101225afe7e8e79f3d6f42ef672da77c3bc618b"
+    },
+    {
+      "path": "preview/craftpix_explosions/explosion_blue_circle.png",
+      "sha256": "d16fe87db50fc496eec60b16a2c8358edcb1e05d902732d7c7b0b75519054ed1"
+    },
+    {
+      "path": "preview/craftpix_explosions/explosion_blue_oval.png",
+      "sha256": "662db150fb5154cc22d51b7a796553b3a928d881904996f4c707cf32187eb9d2"
+    },
+    {
+      "path": "preview/craftpix_explosions/explosion_gas.png",
+      "sha256": "e860a1613dd3dbba1bbd85ca474cf411391e6f074c11434ad0f77011916dacc8"
+    },
+    {
+      "path": "preview/craftpix_explosions/explosion_gas_circle.png",
+      "sha256": "4438597c8d7acc35a50e3c950e24d55952ccda721591cc4270183b6e2b6ab568"
+    },
+    {
+      "path": "preview/craftpix_explosions/explosion_two_colors.png",
+      "sha256": "84b4a21512f2bf99d89ed63a49ee0e6d06bcaf4b6f63688a52b2524fd72ce053"
+    },
+    {
+      "path": "preview/craftpix_explosions/fire.png",
+      "sha256": "1a3e7e2f8aacb40c64d2812b70aa1c6bd905387692b277796c7d7aa3d4e5fd38"
+    },
+    {
+      "path": "preview/craftpix_explosions/lightning.png",
+      "sha256": "9cb25d24c2da4b67755ab6eb75501f78f496bef5cd3fa51979b72a62ac1de07e"
+    },
+    {
+      "path": "preview/craftpix_explosions/lightning_cycle.png",
+      "sha256": "9cb25d24c2da4b67755ab6eb75501f78f496bef5cd3fa51979b72a62ac1de07e"
+    },
+    {
+      "path": "preview/craftpix_explosions/lightning_part.png",
+      "sha256": "e607d0e0963409dc2ddf36765fd8d50b6aa6b3424eb637c9c46c7b034f60e61d"
+    },
+    {
+      "path": "preview/craftpix_explosions/lightning_spot.png",
+      "sha256": "cf28f5943bb7ffa8cdf4d1dfed6ee0e6f07cd0a50af1a96536026a5acd6eab60"
+    },
+    {
+      "path": "preview/craftpix_explosions/nuclear_explosion.png",
+      "sha256": "ca3cc176b70084ef8c889f05119c6a0a6411a089a493654d3cacfbd5944684cb"
+    },
+    {
+      "path": "preview/craftpix_explosions/smoke.png",
+      "sha256": "b0605b6eef486c6be99c32b29f7d85700e15cd62caf81742a680b7e4e2975d98"
+    },
+    {
+      "path": "preview/craftpix_magic/magic_1.png",
+      "sha256": "c5f43781d3f5726034c741b610bcb1127b0e11528c87b2cdc70f11575e5f628e"
+    },
+    {
+      "path": "preview/craftpix_magic/magic_10.png",
+      "sha256": "e53421571c2b73f8fa9ca7f2ccc80a6bb15b52d4150315216ebdab833fb393fe"
+    },
+    {
+      "path": "preview/craftpix_magic/magic_1_2.png",
+      "sha256": "1360171d1ccbac41682f3a55ee183ecf6ba95579f74048fc708727aab9151564"
+    },
+    {
+      "path": "preview/craftpix_magic/magic_2.png",
+      "sha256": "bd4ebf28c45c0263f8045e4da0f538f003507ce4df91cc38a1e9b5b8bd1dac3c"
+    },
+    {
+      "path": "preview/craftpix_magic/magic_3.png",
+      "sha256": "99b6e8d61b22e1e3907ff86014c00c88d721622eab113260ad3523d1afe322b5"
+    },
+    {
+      "path": "preview/craftpix_magic/magic_3_2.png",
+      "sha256": "c90ce0bb820f012285f37450c6964f0cbe9a1b7c6014b9a6d8c2d0322fa87e5c"
+    },
+    {
+      "path": "preview/craftpix_magic/magic_4.png",
+      "sha256": "2677dd9282e78e6fd3ae6b451e05060ee6117e0df63f9f49509c4cd6c27dbb52"
+    },
+    {
+      "path": "preview/craftpix_magic/magic_4_1.png",
+      "sha256": "3418bcaabb8ea3a885c8d52fb97c5ed34319be067b7d8ffcbf5a29aa2b42571f"
+    },
+    {
+      "path": "preview/craftpix_magic/magic_4_2.png",
+      "sha256": "e19391d3fb1059b4a63bef1c2123606079230c5167412deb9de8f1729b6483b7"
+    },
+    {
+      "path": "preview/craftpix_magic/magic_5.png",
+      "sha256": "f8445e52e1198aefba97cd88026bdcde83a457ecdfa4c55b1146b7d8338f6cf5"
+    },
+    {
+      "path": "preview/craftpix_magic/magic_6.png",
+      "sha256": "c394ba6a4f900a5efa5987c9714ba94e09b1ff04920371eb308ee91ed6ecebf0"
+    },
+    {
+      "path": "preview/craftpix_magic/magic_6_2.png",
+      "sha256": "df35e205608ccaf817045091b7b0a86f01ab56287259afca207778a0237d4ee7"
+    },
+    {
+      "path": "preview/craftpix_magic/magic_7.png",
+      "sha256": "55a2cef0414d9410a606ddfdcf543494db153c58fd58e078b301b35d97c5ebef"
+    },
+    {
+      "path": "preview/craftpix_magic/magic_8.png",
+      "sha256": "aaa5a2438591c6feb6a188fc096667d0d86f42b8aa9d6ef33760242077a34e73"
+    },
+    {
+      "path": "preview/craftpix_magic/magic_9.png",
+      "sha256": "b0da4b0476340d773e001397f976d2ccd5b167d797acedc5c643d4d7d1dc2520"
+    },
+    {
+      "path": "preview/foozle/common_effect.png",
+      "sha256": "019e73fa8abc5a988266fa3037af626b4576960667552822615571d0e1923a3b"
+    },
+    {
+      "path": "preview/foozle/destroy_effect.png",
+      "sha256": "da5e147748962c6ac463c41918dc37f217b5b0891848db7897dc5106538819c6"
+    },
+    {
+      "path": "preview/foozle/gem_pickup_effect.png",
+      "sha256": "16571a778953c8551010fdf57dd50947532fb51460a9e723b1407547a5f34243"
+    },
+    {
+      "path": "preview/foozle/gold_pickup_effect.png",
+      "sha256": "822e1e0f912ef84d0f9da34675f3ada1b7bc22249d2c57822449f7fef05584ab"
+    },
+    {
+      "path": "preview/foozle/health_potion_pickup_effect.png",
+      "sha256": "e840d050cd28e66284836cca22756f35ef7a836f324907955676c99eb318a557"
+    },
+    {
+      "path": "preview/foozle/legendary_effect.png",
+      "sha256": "68086511894a9ca59ceabda69679619bd3c2e3584ce9f69c96c80458ff4c09e9"
+    },
+    {
+      "path": "preview/foozle/magic_effect.png",
+      "sha256": "7fb70c869a7d0f1c7b7c438a560e514d785edcc4efd5a588a98aa06769b56163"
+    },
+    {
+      "path": "preview/foozle/mana_potion_pickup_effect.png",
+      "sha256": "1cb83d2470d1577c005ccbda9df53ca6b1f14abaf0281451b56658625eb519b7"
+    },
+    {
+      "path": "preview/foozle/mythic_effect.png",
+      "sha256": "c191b49342509b788db9507f0a0325edf6c75f581af9e51f8c69df254a103334"
+    },
+    {
+      "path": "preview/foozle/rare_effect.png",
+      "sha256": "d38e75ebf2fc9aee8b4ba931ff4e90039dc7542455b5a8fd905d712b0ab5fda3"
+    },
+    {
+      "path": "preview/foozle/stamina_potion_pickup_effect.png",
+      "sha256": "fdb824a75c584c02b63ba515cae64aa3b944f461fa4b4c8d4586f9659a0d0cfa"
+    },
+    {
+      "path": "preview/foozle/wavebigdown.png",
+      "sha256": "bc4cd1b8c33fc66dbe4713b8c8d405980bcb29f486bdcebc02a7dc2e33970d76"
+    },
+    {
+      "path": "preview/foozle/wavebigleft.png",
+      "sha256": "76534bdb9bfc19bdfb3f4ca506261c0f65d69eae8e42b4c7d13e39723a328194"
+    },
+    {
+      "path": "preview/foozle/wavebigright.png",
+      "sha256": "96a7ec0ae91f6d4c86a0c1230ce44a383e340d12b7d538800d74f163f0c56f2b"
+    },
+    {
+      "path": "preview/foozle/wavebigup.png",
+      "sha256": "f0ed4bc88d583859997367fd2fbc77e5a87bfdec6496b2a88b9ed7248596b16d"
+    },
+    {
+      "path": "preview/foozle/wavesmalldown.png",
+      "sha256": "93acf9aa1322177f6617735091d268de82445ff3b9a00a45979da9926f76ec6b"
+    },
+    {
+      "path": "preview/foozle/wavesmallleft.png",
+      "sha256": "69647e924fccc4caa2e98dc0e1782d36758baf1a57b4155d912bf9c096d8580c"
+    },
+    {
+      "path": "preview/foozle/wavesmallright.png",
+      "sha256": "33b6f6790745a32c86b28a1221003aaacf8ca356e5a44e153ef19d5ae1dec1a1"
+    },
+    {
+      "path": "preview/foozle/wavesmallup.png",
+      "sha256": "b1d91c1a8203f0d1a98ae7c91f813620a49eeab061ec05e952c05ca55324e489"
+    },
+    {
+      "path": "preview/kenney/tile_0000.png",
+      "sha256": "369a6bcf3c9789131cb05ba3249611afc4620f204b6ba6e4f1eb37c5d835a47a"
+    },
+    {
+      "path": "preview/kenney/tile_0001.png",
+      "sha256": "fffad5019b8729104d45ddf1938244d43c47c36c631e6045f0fabc5932fd7ca4"
+    },
+    {
+      "path": "preview/kenney/tile_0002.png",
+      "sha256": "a0eadefb6e30ba5d3a1c5f0d065d4577cb5a7226ae12e840e1cafe2ced074c02"
+    },
+    {
+      "path": "preview/kenney/tile_0003.png",
+      "sha256": "56dc7bd5641b82238bac8bca40f6a4904c071eb630f0994992954b43318020fb"
+    },
+    {
+      "path": "preview/kenney/tile_0004.png",
+      "sha256": "103bc98b26be12e2fc2f50f92d4bd0c3eefc3beb36cf1c8fd063e48ff76ba5b6"
+    },
+    {
+      "path": "preview/kenney/tile_0005.png",
+      "sha256": "e8f98b5ad5dfd1bf88f80aa1b73f4be486b4c4505b88bc1e0373b8068b505666"
+    },
+    {
+      "path": "preview/kenney/tile_0006.png",
+      "sha256": "dd283a1a88ea43011885079ec64ae513600acb0995c7312faf94d4e01987756f"
+    },
+    {
+      "path": "preview/kenney/tile_0007.png",
+      "sha256": "359ee9087246bde1f2e36236ea5323935c430096f144eb2a16260fd20edb90d2"
+    },
+    {
+      "path": "preview/kenney/tile_0008.png",
+      "sha256": "50ea28300e8db6a9313565999e593f1790144d3f95cecf3416a1a8a60f33a5ca"
+    },
+    {
+      "path": "preview/kenney/tile_0009.png",
+      "sha256": "1a72412891469729a43b1eeea7e773989189256b65afc54eff42a23c562eee05"
+    },
+    {
+      "path": "preview/kenney/tile_0010.png",
+      "sha256": "7b31bee6c0f9dd242b4a9db95939a4be5bfb92297b6c06733d32b7b4544ac8ef"
+    },
+    {
+      "path": "preview/kenney/tile_0011.png",
+      "sha256": "a2ff371e57abfbe23d0c43c0feb3eedff5aa82445d4744bdfc3da37468bc7f41"
+    },
+    {
+      "path": "preview/pvfx/acid_splash.png",
+      "sha256": "10e9da053f03520731552d54aa5a7ed9487d156a3842d325bfc47edf619eceab"
+    },
+    {
+      "path": "preview/pvfx/arcane_parry.png",
+      "sha256": "f5996be47397ebb56f46b6aff5c597c13aef7c6179ebdfbd867ade75b6a3110a"
+    },
+    {
+      "path": "preview/pvfx/beacon_seed.png",
+      "sha256": "601e582f8c60be2f5df112a7fe49f3761630a24d0e4cead15cf0c40bae0f7ad1"
+    },
+    {
+      "path": "preview/pvfx/beam_cutoff_burst.png",
+      "sha256": "978adea154c1d3f40d34f769058d8f754616e31fd2aaa4b29896c44bfa0d6431"
+    },
+    {
+      "path": "preview/pvfx/choir_moths.png",
+      "sha256": "9ed0918d079ce2f716441ef4db94854f78bc809b56705f269131c65ec1654cab"
+    },
+    {
+      "path": "preview/pvfx/cinder_orchid.png",
+      "sha256": "ed91388a6082ce40d11eda7c038309b1f5909b1a52fcdf3f006202969a8d7532"
+    },
+    {
+      "path": "preview/pvfx/counterfall.png",
+      "sha256": "1ca4cbea073a24f82e1192559b1e5468edfe31256ea7350fee2f1f09259600dd"
+    },
+    {
+      "path": "preview/pvfx/crescent_slash.png",
+      "sha256": "8f3fe70465a399d69fe9da1f7ba44d1f4d832c9b67748e6773903cd0e6b4bc28"
+    },
+    {
+      "path": "preview/pvfx/dripping_runoff.png",
+      "sha256": "e342fcdb1aef08495969df4ce65028ae43395e96daa73b3e31b4335ba156a10a"
+    },
+    {
+      "path": "preview/pvfx/earth_rupture.png",
+      "sha256": "3a1ec1878310695d8a6f3303ab1b4be9b8272132523113e86e3a89de1bf4caac"
+    },
+    {
+      "path": "preview/pvfx/echo_shuttle.png",
+      "sha256": "ef53b00345f010ab9a45f47466189d90fe750b54542fcb1fed3ce2f44328a07b"
+    },
+    {
+      "path": "preview/pvfx/electric_impact.png",
+      "sha256": "be8a656d1edcdf232083ad28ef71aae2aac876c352dff0caab117c37957a1de9"
+    },
+    {
+      "path": "preview/pvfx/ember_jet.png",
+      "sha256": "e5cc8394bfafb9ddad8ff31b10ebea95ea63376ec0a2e33986c0f7723908c7b5"
+    },
+    {
+      "path": "preview/pvfx/ferrospine.png",
+      "sha256": "e385d8a3e9d497b7ebd636fc136bf0e0f39513b9ce4a2221a52c7d6c1a95f2cc"
+    },
+    {
+      "path": "preview/pvfx/focus_charge.png",
+      "sha256": "a468d676b219f4d395f9a6ab6fd343870dea1a9f24d7900a8b617be02a27680e"
+    },
+    {
+      "path": "preview/pvfx/foldstep.png",
+      "sha256": "2586844b5f5af228542c94eb2d10d0bf67882d450308c86dc536e2bb161000c1"
+    },
+    {
+      "path": "preview/pvfx/frost_nova.png",
+      "sha256": "765d908373408ccb890c4cf6519d4806c5d8236fe021cb4c1f0e22398fec778d"
+    },
+    {
+      "path": "preview/pvfx/harvest_seal.png",
+      "sha256": "d101de7c28444a57dde953d3dff8cb3c3b46d9ba51eeec817e6a39a90945efb9"
+    },
+    {
+      "path": "preview/pvfx/hourglass_splinter.png",
+      "sha256": "a2bcba73fcd0fd16cf667c9be8f5c21678b69c1312fc557c2425adeea54f47ee"
+    },
+    {
+      "path": "preview/pvfx/hush_lock.png",
+      "sha256": "4828d008ef37bdcbd46328f42863a5a948c37fd27ee5544013051682c1cf21db"
+    },
+    {
+      "path": "preview/pvfx/landing_dust.png",
+      "sha256": "f4aecbb7e131c75d61d001ebec0d2818ffad3eee08202eaa9643f4380423d9d5"
+    },
+    {
+      "path": "preview/pvfx/lattice_beam.png",
+      "sha256": "b065e0de5dd8b43480eaba54768b83cd186f8357ec82af6a43d84b2da04d1327"
+    },
+    {
+      "path": "preview/pvfx/leaf_gust.png",
+      "sha256": "22097dee2ef32fdbac979d5fc0a7ee29a8da0dcf6784316b89db8995c365dfeb"
+    },
+    {
+      "path": "preview/pvfx/magical_projectile.png",
+      "sha256": "ebe716ba4a0b25d8a5077d092ac9cb8e33d9bf510a6322f604365317a38d0f11"
+    },
+    {
+      "path": "preview/pvfx/mass_release.png",
+      "sha256": "188903878f0b9ad453de824c74f1b3b0174c92b584353cc28f71d042fa28e41b"
+    },
+    {
+      "path": "preview/pvfx/mercury_molt.png",
+      "sha256": "5a1878c93c26ade7ae87d57c2403795235936c66ad1e93c6075e27ba5efbc1a8"
+    },
+    {
+      "path": "preview/pvfx/pawl_snap.png",
+      "sha256": "81f0260e194d1326636598c16a39d0359cadfd81458d8b9f9ae3ba0673c44fc2"
+    },
+    {
+      "path": "preview/pvfx/prism_loom.png",
+      "sha256": "6b43dde17c6397e1c7ed9942cebb01bbe3365232805764997237d0b96dafa446"
+    },
+    {
+      "path": "preview/pvfx/radiant_heal.png",
+      "sha256": "3c29f604e900545e144e564d876506bf148a17b2a790eb65e3e5ce2e3033626d"
+    },
+    {
+      "path": "preview/pvfx/rain_field.png",
+      "sha256": "8182f3611abc31e2e6eb86e7b965361e3ed99edec2bda076cbf8c244fd2dbb23"
+    },
+    {
+      "path": "preview/pvfx/relay_bough.png",
+      "sha256": "8c2c3168114aaf6b1e9efbfbdf41f344f4bb44d9a0a85e18e7cfe854ba0e054b"
+    },
+    {
+      "path": "preview/pvfx/resonant_break.png",
+      "sha256": "5cd971cb6c55d58c27ea10435a85b0e37764cd6da658dacf737b9a39f38205d2"
+    },
+    {
+      "path": "preview/pvfx/rift_portal.png",
+      "sha256": "74173434bc7547723fb459161df7ce2c5970692bfa551b000cffbe2e40bc09ae"
+    },
+    {
+      "path": "preview/pvfx/rootscript.png",
+      "sha256": "c5be1b93e9901ed264036c0fcabf82ea1379687f233209b53a84136ebcd99c56"
+    },
+    {
+      "path": "preview/pvfx/shoreline_foam.png",
+      "sha256": "0e368a49cf5a83552fbf5721cfd84930567c3d2c619455647df043e9ba9b4d96"
+    },
+    {
+      "path": "preview/pvfx/smoke_puff.png",
+      "sha256": "ba003f17e48c4c0689c257707a845be767dd6faac75f4adee02a7d17975045ce"
+    },
+    {
+      "path": "preview/pvfx/solar_shrapnel.png",
+      "sha256": "3421d6ae522e894d225bc1db2cda471c038a363b39d8c8ec4a5f52ea797bf001"
+    },
+    {
+      "path": "preview/pvfx/spectral_bloom.png",
+      "sha256": "f74452880f631b279cf06275341dea40dbded43884ec0cac351a3ba6fee4130d"
+    },
+    {
+      "path": "preview/pvfx/splash_crown.png",
+      "sha256": "ed1a9a0f6ece481c6e4f33dc758dafe444ad0a97fc1329cd68d5cf5a93ab6ae1"
+    },
+    {
+      "path": "preview/pvfx/suturelight.png",
+      "sha256": "b0a5e2a506b87e0dbc32cda0c041981be5103c9ba9904239b18aa3a68686ee19"
+    },
+    {
+      "path": "preview/pvfx/tether_catch.png",
+      "sha256": "a5345f65b8d22926f121ae5bacdce9708b3521a97b63329b42be957b5022bfca"
+    },
+    {
+      "path": "preview/pvfx/venom_ward.png",
+      "sha256": "ab57e657b4af714c9ce2f492f9be79021c1e3923a60ede99265a631a40943134"
+    },
+    {
+      "path": "preview/pvfx/void_implosion.png",
+      "sha256": "79a09e6319dec3154b4631cfac23c6a0c6edb92ad20834ca5edcfc00d8a78fbe"
+    },
+    {
+      "path": "preview/pvfx/warm_explosion.png",
+      "sha256": "e01d43a002ce71234b88d9138022bcf19ad510952ab85177637a8bc105d22545"
+    },
+    {
+      "path": "preview/warped/bolt.png",
+      "sha256": "2f5b62721165d1c36d34256d3f12fe882cdf9ddbe92af479b898173b4f557b59"
+    },
+    {
+      "path": "preview/warped/charged.png",
+      "sha256": "8d447d94c0907577dd14b2d37ce0c65280de27289a9168667458afd2a87d8367"
+    },
+    {
+      "path": "preview/warped/crossed.png",
+      "sha256": "9e439b133781fb60c1f656b1fb55f1d492e4d68cad0625dcb97b19f95956c14a"
+    },
+    {
+      "path": "preview/warped/hits_1.png",
+      "sha256": "767ae4813f6f6a85f2d433b5d175540c0017a8467c8586c2ea0f3ee0fb5a9ca5"
+    },
+    {
+      "path": "preview/warped/hits_2.png",
+      "sha256": "13c7c8367dbbe9193e502ae60502405e82017ee96858d19d04f727f15c643817"
+    },
+    {
+      "path": "preview/warped/hits_3.png",
+      "sha256": "8e1e7ad165f052f25facabecfb3e960d64ee0fa14b2654865c70e216661032f8"
+    },
+    {
+      "path": "preview/warped/hits_4.png",
+      "sha256": "ed20330d9673cfac895dc3dc9b31fcb77217daac820ebc6fc1017f5aaf7befd6"
+    },
+    {
+      "path": "preview/warped/hits_5.png",
+      "sha256": "becb5e61c1cfdd699a48d456e761471fbf825e5368882a23d0f928572d1f6ac1"
+    },
+    {
+      "path": "preview/warped/hits_6.png",
+      "sha256": "734b931bda3c8cec5f9ebf10a7c9999972e2b83197700b32bb17fb3931df64bb"
+    },
+    {
+      "path": "preview/warped/pulse.png",
+      "sha256": "e18b3adaeb68545f49ab9987e7d63d9c098b70d09697327712e7c29cad394668"
+    },
+    {
+      "path": "preview/warped/spark.png",
+      "sha256": "bbd86527d8dc77b702bcc0cf2e4d72a201f348c9e945e2a58ceeb7a4e03a9af4"
+    },
+    {
+      "path": "preview/warped/waveform.png",
+      "sha256": "3f50336704852f3e800f44ae0ce40824665c9468cb2eca2c4b4c3f566fe59d14"
+    }
+  ]
+}
