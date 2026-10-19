@@ -1,0 +1,51 @@
+{
+  "path": "res://assets/audio/ai/local_design/ai_combat/sfx_combat_bow_release_v01.ogg",
+  "asset": "sfx_combat_bow_release_v01",
+  "title": "弓箭手 · 弓弦放箭 · A 清脆",
+  "category": "ai_combat",
+  "domain": "SFX",
+  "batch": "audition_20261019",
+  "provider": "local_design",
+  "recipe": "bow",
+  "variant": 1,
+  "seed": 2345729886,
+  "prompt": "Single wooden recurve bow release, taut gut string twang followed by a thin arrow air swish, quick nimble attack, dry outdoor close perspective, 0.36 seconds. No drawing preparation, voices, music or echo.",
+  "author": "项目本地声音设计（CC0 分层素材＋原创程序合成）",
+  "source": "res://tools/audio/ai/produce_audition.py",
+  "license": "CC0-1.0",
+  "source_layers": [
+    {
+      "path": "res://assets/audio/library/medieval-textures/scythian_recurve_shoot_02.ogg",
+      "author": "Ben Jaszczak & Brian Nelson / Still North Media",
+      "source": "https://opengameart.org/content/medieval-sound-effects-weapon-textures",
+      "license": "CC0-1.0",
+      "sha256": "360a144e9895357f389fbc14a0dc13424def1d2db175e4cd650200653d1525cb"
+    }
+  ],
+  "changes": "分层混音、确定性变体、裁剪静音、44.1kHz 单声道、短淡入淡出、峰值控制、OGG；循环保留完整小节。",
+  "notes": "本批试听 · 本地制作；SFX；单次动作。",
+  "duration_seconds": 0.149,
+  "loop": false,
+  "features": {
+    "duration_seconds": 0.149,
+    "peak_dbfs": -2.95,
+    "rms_dbfs": -25.59,
+    "crest_db": 22.64,
+    "spectral_centroid_hz": 5440.7,
+    "zero_cross_rate": 0.0756,
+    "attack_ms": 17.2,
+    "tail_ms": 0.2
+  },
+  "channels": 1,
+  "sample_rate": 44100,
+  "seam_jump": null,
+  "sha256": "906ae08f269b7aab388366613023f1c83f277f5e66b77a3f063f70439aa420a6",
+  "created_at": "2026-10-19T02:03:55+00:00",
+  "tags": [
+    "one-shot",
+    "soft-attack",
+    "bright",
+    "spiky"
+  ],
+  "problems": []
+}

@@ -1,0 +1,19 @@
+[gd_resource type="Resource" script_class="UnitData" format=3 uid="uid://40dksc3gxvu6"]
+
+[ext_resource type="Script" uid="uid://2m1qlskaxcox" path="res://data/units/unit_data.gd" id="1"]
+[ext_resource type="Script" uid="uid://c4huhq7re2216" path="res://data/skills/skill_base.gd" id="2"]
+[ext_resource type="Resource" uid="uid://71iifag028pm" path="res://data/skills/necromancer_summon.tres" id="4"]
+[ext_resource type="Resource" uid="uid://ddkyri1qsuc8n" path="res://data/skills/necromancer_attack.tres" id="4_q1f58"]
+[ext_resource type="Resource" uid="uid://dtli5ks6tp7b1" path="res://data/skills/necromancer_power_attack.tres" id="5_7vksx"]
+
+[resource]
+script = ExtResource("1")
+speed = 0.0
+attack = 10
+monster_rank = 2
+unit_name = "死灵法师"
+unit_english_name = "necromancer"
+unit_type = 12
+unit_team = "team_b"
+skills = Array[ExtResource("2")]([ExtResource("4"), ExtResource("4_q1f58"), ExtResource("5_7vksx")])
+hp_damage_value = 1

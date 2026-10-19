@@ -1,0 +1,7 @@
+[gd_scene format=3 uid="uid://dnabca665q1u4"]
+
+[ext_resource type="PackedScene" uid="uid://brwy2m2g1kqpo" path="res://scenes/cards/unit_card.tscn" id="1_261oj"]
+[ext_resource type="Resource" uid="uid://qw8iwmesnnia" path="res://data/units/armored_axeman.tres" id="2_261oj"]
+
+[node name="ArmoredAxemanCard" unique_id=964477398 instance=ExtResource("1_261oj")]
+unit_data = ExtResource("2_261oj")

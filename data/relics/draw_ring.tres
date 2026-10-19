@@ -1,0 +1,14 @@
+[gd_resource type="Resource" script_class="RelicDefinition" format=3 uid="uid://ldnjr222b3er"]
+
+[ext_resource type="Script" uid="uid://be4bple3628ic" path="res://data/relics/relic_definition.gd" id="1"]
+[ext_resource type="Texture2D" uid="uid://cifgs8dnxorwi" path="res://assets/ui_redrawn/icons/relic_ring.png" id="1_ykvxy"]
+
+[resource]
+script = ExtResource("1")
+id = &"draw_ring"
+display_name = "行军戒指"
+description = "每实际抽到8张牌获得1点能量，计数跨回合、跨战斗保留。"
+icon = ExtResource("1_ykvxy")
+draw_threshold = 8
+rarity = 1
+tags = Array[StringName]([&"cycle"])

@@ -1,0 +1,20 @@
+[gd_resource type="Resource" script_class="RelicDefinition" format=3]
+
+[ext_resource type="Script" path="res://data/relics/relic_definition.gd" id="1"]
+[ext_resource type="Texture2D" path="res://assets/ui_redrawn/icons/relic_crystal.png" id="2"]
+
+[resource]
+script = ExtResource("1")
+id = &"stasis_field"
+display_name = "静滞领域"
+description = "全体敌人眩晕 2 秒；其首次受击伤害 +50%。"
+icon = ExtResource("2")
+kind = 5
+rarity = 2
+tags = Array[StringName]([&"control"])
+trigger = 3
+handler = &"stasis_field"
+max_per_battle = 1
+max_per_round = 0
+cooldown_seconds = 0.0
+priority = 2

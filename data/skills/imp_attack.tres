@@ -1,0 +1,14 @@
+[gd_resource type="Resource" format=3 uid="uid://brgymimcio7te"]
+
+[ext_resource type="Script" uid="uid://l5slg1wgnhew" path="res://scripts/skills/normal_attack.gd" id="skill"]
+
+[resource]
+script = ExtResource("skill")
+skill_name = "喷火"
+is_basic_attack = true
+description = "喷出一股火焰，对目标造成三段伤害。"
+attack_rate = 0.5
+cooldown = 2.4
+cast_range = 110.0
+hit_frame = Array[int]([4, 8, 12])
+combat_sound_profile = "fire"

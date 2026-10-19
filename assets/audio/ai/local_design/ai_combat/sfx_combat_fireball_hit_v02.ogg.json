@@ -1,0 +1,50 @@
+{
+  "path": "res://assets/audio/ai/local_design/ai_combat/sfx_combat_fireball_hit_v02.ogg",
+  "asset": "sfx_combat_fireball_hit_v02",
+  "title": "法师 · 火球爆燃 · B 厚重",
+  "category": "ai_combat",
+  "domain": "SFX",
+  "batch": "audition_20261019",
+  "provider": "local_design",
+  "recipe": "fire_hit",
+  "variant": 2,
+  "seed": 151880149,
+  "prompt": "One small fantasy fireball impact, crisp ignition crack, compact warm bass thump and fast ember decay, punchy enough for many simultaneous units, dry 0.90 second one-shot. No huge cinematic boom, music, voices or long reverb.",
+  "author": "项目本地声音设计（CC0 分层素材＋原创程序合成）",
+  "source": "res://tools/audio/ai/produce_audition.py",
+  "license": "CC0-1.0",
+  "source_layers": [
+    {
+      "path": "res://assets/audio/library/explosions/explosion2.ogg",
+      "author": "EZduzziteh",
+      "source": "https://opengameart.org/content/explosions-4",
+      "license": "CC0-1.0",
+      "sha256": "810ff0c4fd0d3242f451dd8c33e1e094ba2f2ac54b9cd654370151b00b31de12"
+    }
+  ],
+  "changes": "分层混音、确定性变体、裁剪静音、44.1kHz 单声道、短淡入淡出、峰值控制、OGG；循环保留完整小节。",
+  "notes": "本批试听 · 本地制作；SFX；单次动作。",
+  "duration_seconds": 0.533,
+  "loop": false,
+  "features": {
+    "duration_seconds": 0.533,
+    "peak_dbfs": -2.83,
+    "rms_dbfs": -17.91,
+    "crest_db": 15.08,
+    "spectral_centroid_hz": 3774.6,
+    "zero_cross_rate": 0.1409,
+    "attack_ms": 34.6,
+    "tail_ms": 0.5
+  },
+  "channels": 1,
+  "sample_rate": 44100,
+  "seam_jump": null,
+  "sha256": "7b7ee980c6f5d5596030374fd745173340044e6132232beff3b08eeb4b0645c8",
+  "created_at": "2026-10-19T02:03:55+00:00",
+  "tags": [
+    "one-shot",
+    "soft-attack",
+    "bright"
+  ],
+  "problems": []
+}

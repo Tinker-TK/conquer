@@ -1,0 +1,45 @@
+[gd_scene format=3 uid="uid://c76ult7ed0th5"]
+
+[ext_resource type="Texture2D" uid="uid://d1ndsprlpl6bk" path="res://assets/characters/Priest/Magic(projectile)/Priest_Heal_effect.png" id="1_yb80t"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_a26c6"]
+atlas = ExtResource("1_yb80t")
+region = Rect2(0, 0, 100, 100)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_xn5om"]
+atlas = ExtResource("1_yb80t")
+region = Rect2(100, 0, 100, 100)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_woawm"]
+atlas = ExtResource("1_yb80t")
+region = Rect2(200, 0, 100, 100)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_8tim2"]
+atlas = ExtResource("1_yb80t")
+region = Rect2(300, 0, 100, 100)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_gw0p6"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_a26c6")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_xn5om")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_woawm")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_8tim2")
+}],
+"loop": false,
+"name": &"green_cure",
+"speed": 5.0
+}]
+
+[node name="CureEffect" type="AnimatedSprite2D" unique_id=2061345145]
+sprite_frames = SubResource("SpriteFrames_gw0p6")
+animation = &"green_cure"
+frame = 3
+frame_progress = 1.0

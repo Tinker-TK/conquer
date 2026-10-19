@@ -1,0 +1,49 @@
+[gd_scene format=3 uid="uid://cawcnyj7qk415"]
+
+[ext_resource type="Script" uid="uid://dyayek7btkusi" path="res://scripts/effects/pixel_flame.gd" id="1"]
+[ext_resource type="Shader" path="res://shaders/pixel_flame.gdshader" id="2"]
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_2ovwl"]
+resource_local_to_scene = true
+shader = ExtResource("2")
+shader_parameter/draw_size = Vector2(64, 80)
+shader_parameter/pixel_size = 1.5
+shader_parameter/clock_time = 104.80407499998138
+shader_parameter/animation_fps = 18.0
+shader_parameter/flow_speed = 2.3
+shader_parameter/distortion = 0.52
+shader_parameter/erosion = 0.42
+shader_parameter/wind = 0.0
+shader_parameter/intensity = 1.0
+shader_parameter/tall_shape = 0.0
+shader_parameter/random_seed = 1.0
+shader_parameter/embers_enabled = true
+shader_parameter/glow_enabled = false
+shader_parameter/debug_view = 0
+shader_parameter/use_shape_mask = false
+shader_parameter/color_0 = Color(0.1254902, 0.23921569, 0.2784314, 1)
+shader_parameter/color_1 = Color(0.20392157, 0.41960785, 0.4392157, 1)
+shader_parameter/color_2 = Color(0.33333334, 0.61960787, 0.61960787, 1)
+shader_parameter/color_3 = Color(0.5372549, 0.8117647, 0.7921569, 1)
+shader_parameter/color_4 = Color(0.7647059, 0.9372549, 0.8745098, 1)
+
+[sub_resource type="Gradient" id="Gradient_white"]
+colors = PackedColorArray(1, 1, 1, 1, 1, 1, 1, 1)
+
+[sub_resource type="GradientTexture2D" id="Texture_white"]
+gradient = SubResource("Gradient_white")
+height = 80
+
+[node name="PixelFlame" type="Node2D" unique_id=925843018]
+texture_filter = 1
+script = ExtResource("1")
+pixel_size = 1.5
+flow_speed = 2.3
+distortion = 0.52
+erosion = 0.42
+custom_palette = PackedColorArray(0.1254902, 0.23921569, 0.2784314, 1, 0.20392157, 0.41960785, 0.4392157, 1, 0.33333334, 0.61960787, 0.61960787, 1, 0.5372549, 0.8117647, 0.7921569, 1, 0.7647059, 0.9372549, 0.8745098, 1)
+
+[node name="Flame" type="Sprite2D" parent="." unique_id=2042728777]
+material = SubResource("ShaderMaterial_2ovwl")
+position = Vector2(0, -40)
+texture = SubResource("Texture_white")

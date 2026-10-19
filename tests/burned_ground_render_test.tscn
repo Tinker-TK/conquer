@@ -1,0 +1,6 @@
+[gd_scene load_steps=2 format=3]
+
+[ext_resource type="Script" path="res://tests/burned_ground_render_test.gd" id="1"]
+
+[node name="BurnedGroundRenderTest" type="Node"]
+script = ExtResource("1")

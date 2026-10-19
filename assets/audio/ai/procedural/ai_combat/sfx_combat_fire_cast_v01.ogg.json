@@ -1,0 +1,39 @@
+{
+  "id": "combat_fire_cast",
+  "variant": 1,
+  "asset": "sfx_combat_fire_cast_v01",
+  "provider": "procedural",
+  "category": "ai_combat",
+  "title": "火球蓄发",
+  "prompt": "fireball ignition, whoosh of flame, magical crackle",
+  "source_prompt": "fireball ignition, whoosh of flame, magical crackle",
+  "duration_seconds": 1.1,
+  "output_format": "wav_48000",
+  "tags": [
+    "spell",
+    "fire",
+    "cast"
+  ],
+  "license": "CC0-1.0",
+  "author": "项目程序合成（占位）",
+  "source": "res://tools/audio/ai/procedural.py",
+  "recipe": "fire_cast",
+  "created_at": "2026-10-18T17:03:23+00:00",
+  "sha256": "7bdcb085454205aa45909415786abfb10f359bcd5d36ba8e73a279f26ff1d4a6",
+  "path": "res://assets/audio/ai/procedural/ai_combat/sfx_combat_fire_cast_v01.ogg",
+  "loop": false,
+  "sample_rate": 44100,
+  "channels": 1,
+  "features": {
+    "duration_seconds": 1.098,
+    "peak_dbfs": -1.0,
+    "rms_dbfs": -18.44,
+    "crest_db": 17.44,
+    "spectral_centroid_hz": 5619.9,
+    "zero_cross_rate": 0.076,
+    "attack_ms": 346.8,
+    "tail_ms": 0.2
+  },
+  "seam_jump": null,
+  "bytes": 12638
+}

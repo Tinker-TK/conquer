@@ -1,0 +1,20 @@
+[gd_resource type="Resource" script_class="PotionDefinition" format=3 uid="uid://c8oo6u0nccl2n"]
+
+[ext_resource type="Script" uid="uid://b452136fqvyor" path="res://data/potions/potion_definition.gd" id="1"]
+[ext_resource type="Texture2D" uid="uid://b7jviq8ht0ppl" path="res://assets/ui_redrawn/icons/equipment_potion.png" id="1_p3e8v"]
+[ext_resource type="PackedScene" uid="uid://c3tbobrbtk12m" path="res://scenes/effects/potion_effect/fx_yellow_flash.tscn" id="1_wub5h"]
+
+[resource]
+script = ExtResource("1")
+id = &"lightning"
+display_name = "闪电药水"
+description = "依次点击4个落点，每次对小范围敌军造成20点伤害。每次间隔0.4秒。"
+icon = ExtResource("1_p3e8v")
+kind = 1
+damage = 20
+radius = 65.0
+effect_scene = ExtResource("1_wub5h")
+rarity = 1
+price = 60
+min_act = 1
+tags = Array[StringName]([&"爆发"])

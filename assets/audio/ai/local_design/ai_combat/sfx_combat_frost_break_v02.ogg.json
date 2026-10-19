@@ -1,0 +1,50 @@
+{
+  "path": "res://assets/audio/ai/local_design/ai_combat/sfx_combat_frost_break_v02.ogg",
+  "asset": "sfx_combat_frost_break_v02",
+  "title": "法师 · 冰晶碎裂 · B 厚重",
+  "category": "ai_combat",
+  "domain": "SFX",
+  "batch": "audition_20261019",
+  "provider": "local_design",
+  "recipe": "ice",
+  "variant": 2,
+  "seed": 2766578872,
+  "prompt": "One enchanted ice crystal breaking on impact, brittle glass-like snap with fine falling ice fragments and a tiny cold tonal shimmer, precise dry onset, 0.70 seconds. No big glass crash, music, vocals or long echo.",
+  "author": "项目本地声音设计（CC0 分层素材＋原创程序合成）",
+  "source": "res://tools/audio/ai/produce_audition.py",
+  "license": "CC0-1.0",
+  "source_layers": [
+    {
+      "path": "res://assets/audio/combat/kenney-impact/impactGlass_light_000.ogg",
+      "author": "Kenney",
+      "source": "https://kenney.nl/assets/impact-sounds",
+      "license": "CC0-1.0",
+      "sha256": "d750cf88097d0c3e69920e6e14496e1444e1a9da01aa4cca8f5ec8cb44c57b4f"
+    }
+  ],
+  "changes": "分层混音、确定性变体、裁剪静音、44.1kHz 单声道、短淡入淡出、峰值控制、OGG；循环保留完整小节。",
+  "notes": "本批试听 · 本地制作；SFX；单次动作。",
+  "duration_seconds": 0.398,
+  "loop": false,
+  "features": {
+    "duration_seconds": 0.398,
+    "peak_dbfs": -3.28,
+    "rms_dbfs": -20.18,
+    "crest_db": 16.9,
+    "spectral_centroid_hz": 5277.7,
+    "zero_cross_rate": 0.2135,
+    "attack_ms": 7.2,
+    "tail_ms": 1.1
+  },
+  "channels": 1,
+  "sample_rate": 44100,
+  "seam_jump": null,
+  "sha256": "5cdcdfa43b6489e767e7ca8dc56e92230fc787d1c6919f004e41d43373a85745",
+  "created_at": "2026-10-19T02:03:55+00:00",
+  "tags": [
+    "one-shot",
+    "percussive",
+    "bright"
+  ],
+  "problems": []
+}

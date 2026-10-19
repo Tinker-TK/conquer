@@ -1,0 +1,18 @@
+[gd_resource type="Resource" script_class="EventDefinition" format=3]
+
+[ext_resource type="Script" path="res://data/events/event_definition.gd" id="1"]
+[ext_resource type="Texture2D" path="res://assets/ui/events/illustrations/retired-drillmaster.png" id="2"]
+
+[resource]
+script = ExtResource("1")
+id = "act1_retired_drillmaster"
+title = "退役教官"
+description = "树荫下立着一个被刀砍烂的木人，独臂老兵坐在旁边磨一把没开刃的剑。\n\n「三十五金币，」他说，「我让你的人知道什么叫疼。或者二十金币，陪我喝一杯，我告诉你什么叫活着。」"
+template = 4
+min_floor = 2
+max_floor = 6
+rarity = "common"
+illustration = ExtResource("2")
+tags = Array[String](["train"])
+requires = Array[String](["trainable"])
+choices = Array[Dictionary]([{"gold": 0, "heal": 0, "effect": {"type": "train_unit"}, "cost": {"gold": 35}, "text": "请他操练", "summary": "支付 35 金币 · 训练 1 张兵种卡", "result_text": "木人被劈成两半。老兵用断臂夹住你的剑，纠正了最后一个姿势。"}, {"gold": 0, "heal": 18, "cost": {"gold": 20}, "text": "陪他喝酒", "summary": "支付 20 金币 · 回复 18 生命", "result_text": "酒很烈，故事很长。你只记住一句：别让旗子比人先倒。"}, {"gold": 0, "heal": 0, "effect": {"type": "choose_cards", "unit_offer": 0, "unit_picks": 0, "effect_offer": 3, "effect_picks": 1}, "cost": {"gold": 45}, "text": "买下木人", "summary": "支付 45 金币 · 从 3 张战术牌中选 1 张", "result_text": "你把木人绑在车尾。老兵在后面喊：「砍它的时候，记得它不会还手！」"}, {"text": "离开", "leave": true, "heal": 0, "gold": 0}])

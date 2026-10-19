@@ -1,0 +1,14 @@
+[gd_resource type="Resource" format=3 uid="uid://c2xhkm5qvv6nj"]
+
+[ext_resource type="Script" path="res://scripts/skills/shield_chop.gd" id="1_7ip08"]
+
+[resource]
+script = ExtResource("1_7ip08")
+unlock_upgrade_levels = Array[int]([0])
+skill_name = "劈砍攻击"
+attack_rate = 1.2
+cooldown = 8.0
+priority = 2
+cast_animation = "attack_03"
+hit_frame = Array[int]([4, 7])
+metadata/_data_table_id = 4

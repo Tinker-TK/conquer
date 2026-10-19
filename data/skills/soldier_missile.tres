@@ -1,0 +1,16 @@
+[gd_resource type="Resource" format=3]
+
+[ext_resource type="Script" path="res://scripts/skills/soldier_missile.gd" id="1"]
+
+[resource]
+script = ExtResource("1")
+skill_name = "飞弹"
+unlock_upgrade_levels = Array[int]([1])
+soldier_branch = "missile"
+attack_rate = 0.8
+cooldown = 2.0
+priority = 2
+cast_range = 300.0
+cast_animation = "attack_03"
+hit_frame = Array[int]([7])
+combat_sound_profile = "bow"

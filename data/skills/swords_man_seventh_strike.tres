@@ -1,0 +1,13 @@
+[gd_resource type="Resource" format=3]
+
+[ext_resource type="Script" path="res://scripts/skills/seventh_strike.gd" id="1"]
+
+[resource]
+script = ExtResource("1")
+skill_name = "七伤"
+unlock_upgrade_levels = Array[int]([0])
+target_type = 2
+hit_frame = Array[int]([])
+combat_sound_profile = "silent"
+damage_trigger_count = 7
+true_damage_base_percent = 3.0

@@ -1,0 +1,12 @@
+[gd_resource type="Resource" format=3 uid="uid://d1jw7ovnulyuo"]
+
+[ext_resource type="PackedScene" uid="uid://qhywq42rjtbe" path="res://scenes/effects/priest_hurt_effect.tscn" id="1_yxixh"]
+[ext_resource type="Script" uid="uid://l5slg1wgnhew" path="res://scripts/skills/normal_attack.gd" id="2_yxixh"]
+
+[resource]
+script = ExtResource("2_yxixh")
+chant_duration = 0.3
+cast_range = 400.0
+hit_frame = Array[int]([4])
+on_hit_effect = ExtResource("1_yxixh")
+metadata/_data_table_id = 4

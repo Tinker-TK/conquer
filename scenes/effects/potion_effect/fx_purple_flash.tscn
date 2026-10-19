@@ -1,0 +1,93 @@
+[gd_scene format=3 uid="uid://dqub6cwjisu4q"]
+
+[ext_resource type="Texture2D" uid="uid://car2wsyddjl8f" path="res://assets/effect/potion_effect/Dark-Bolt.png" id="5_w2tdd"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_osegp"]
+atlas = ExtResource("5_w2tdd")
+region = Rect2(0, 0, 64, 88)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_14fx0"]
+atlas = ExtResource("5_w2tdd")
+region = Rect2(64, 0, 64, 88)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_lglg7"]
+atlas = ExtResource("5_w2tdd")
+region = Rect2(128, 0, 64, 88)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_xd37u"]
+atlas = ExtResource("5_w2tdd")
+region = Rect2(192, 0, 64, 88)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_kcw1d"]
+atlas = ExtResource("5_w2tdd")
+region = Rect2(256, 0, 64, 88)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_gkwco"]
+atlas = ExtResource("5_w2tdd")
+region = Rect2(320, 0, 64, 88)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_i11ke"]
+atlas = ExtResource("5_w2tdd")
+region = Rect2(384, 0, 64, 88)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_x7jo0"]
+atlas = ExtResource("5_w2tdd")
+region = Rect2(448, 0, 64, 88)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_4jb03"]
+atlas = ExtResource("5_w2tdd")
+region = Rect2(512, 0, 64, 88)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_3das0"]
+atlas = ExtResource("5_w2tdd")
+region = Rect2(576, 0, 64, 88)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_3jk3l"]
+atlas = ExtResource("5_w2tdd")
+region = Rect2(640, 0, 64, 88)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_g8mj3"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_osegp")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_14fx0")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_lglg7")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_xd37u")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_kcw1d")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_gkwco")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_i11ke")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_x7jo0")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_4jb03")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_3das0")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_3jk3l")
+}],
+"loop": false,
+"name": &"purple_flash",
+"speed": 10.0
+}]
+
+[node name="PotionEffect" type="AnimatedSprite2D" unique_id=1061785420]
+sprite_frames = SubResource("SpriteFrames_g8mj3")
+animation = &"purple_flash"
+offset = Vector2(0, -60)

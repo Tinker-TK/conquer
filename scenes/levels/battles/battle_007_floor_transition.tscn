@@ -1,0 +1,21 @@
+[gd_scene format=3]
+
+[ext_resource type="Script" path="res://scripts/world/floor_transition.gd" id="1_transition"]
+
+[sub_resource type="RectangleShape2D" id="Shape"]
+size = Vector2(128, 64)
+
+[node name="FloorTransition" type="Area2D"]
+collision_layer = 0
+collision_mask = 0
+monitoring = false
+script = ExtResource("1_transition")
+
+[node name="From" type="Marker2D" parent="."]
+position = Vector2(-32, 0)
+
+[node name="To" type="Marker2D" parent="."]
+position = Vector2(32, 0)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+shape = SubResource("Shape")

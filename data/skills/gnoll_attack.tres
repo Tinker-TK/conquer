@@ -1,0 +1,18 @@
+[gd_resource type="Resource" format=3]
+
+[ext_resource type="Script" path="res://scripts/skills/arrow_attack.gd" id="skill"]
+[ext_resource type="PackedScene" path="res://scenes/projectiles/gnoll_projectile.tscn" id="projectile"]
+
+[resource]
+script = ExtResource("skill")
+skill_name = "远程攻击"
+is_basic_attack = true
+description = "向敌人发射投射物。"
+cooldown = 1.3
+cast_range = 360.0
+cast_animation = "attack_01"
+hit_frame = Array[int]([5])
+combat_sound_profile = "bow"
+projectile_scene = ExtResource("projectile")
+projectile_trajectory = 1
+projectile_pos = Vector2(24, 48)

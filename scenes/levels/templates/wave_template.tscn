@@ -1,0 +1,11 @@
+[gd_scene format=3 uid="uid://cxtisoivdgbdd"]
+
+[ext_resource type="PackedScene" uid="uid://dv8wd86n8oihw" path="res://scenes/units/orc.tscn" id="1"]
+
+[node name="WaveTemplate" type="Node2D" unique_id=20533638]
+
+[node name="Enemy" parent="." unique_id=1684465009 instance=ExtResource("1")]
+position = Vector2(-100, -70)
+
+[node name="Enemy2" parent="." unique_id=1689314388 instance=ExtResource("1")]
+position = Vector2(-100, 70)

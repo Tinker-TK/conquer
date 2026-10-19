@@ -1,0 +1,18 @@
+[gd_resource type="Resource" script_class="EventDefinition" format=3]
+
+[ext_resource type="Script" path="res://data/events/event_definition.gd" id="1"]
+[ext_resource type="Texture2D" path="res://assets/ui/events/illustrations/broken-standard.png" id="2"]
+
+[resource]
+script = ExtResource("1")
+id = "act1_broken_standard"
+title = "折断的军旗"
+description = "旧军团的最后一名旗手跪在路边，旗杆从中间折断，褪色的狮鹫旗面拖在泥里。\n\n他抬头看你，把断旗往前递了递：「旗还在，军团就没散。」"
+template = 4
+min_floor = 3
+max_floor = 8
+rarity = "rare"
+illustration = ExtResource("2")
+tags = Array[String](["recruit"])
+requires = Array[String](["two_recruits"])
+choices = Array[Dictionary]([{"gold": 0, "heal": 0, "effect": {"type": "choose_cards", "unit_offer": 3, "unit_picks": 1, "effect_offer": 0, "effect_picks": 0, "unit_pool": ["res://data/units/knight.tres", "res://data/units/knight_templar.tres", "res://data/units/armored_axeman.tres", "res://data/units/lancer.tres"]}, "cost": {"max_hp": 8}, "text": "接过军旗", "summary": "最大生命 -8 · 从 3 张精锐征召牌中选 1 张", "result_text": "你把断旗绑在自己的旗杆上。旧军团的重量压上肩头，也有一道影子跟进了队伍。"}, {"gold": 55, "heal": 0, "text": "取下狮鹫徽记", "summary": "获得 55 金币", "result_text": "徽记是纯银的。旗手没有阻拦，只是把脸埋进旗布里。"}, {"gold": 0, "heal": 12, "effect": {"type": "random_potion"}, "text": "为他立一块石头", "summary": "回复 12 生命，获得 1 瓶随机药水", "result_text": "你们一起把断旗折好，压在石头下。旗手把随身的药瓶塞给你，转身走进暮色。"}, {"text": "离开", "leave": true, "heal": 0, "gold": 0}])

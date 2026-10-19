@@ -1,0 +1,102 @@
+[gd_scene format=3 uid="uid://svtfniu75ayg"]
+
+[ext_resource type="Script" uid="uid://kpq8ia3fly1k" path="res://scripts/world/tree.gd" id="1_drvx4"]
+[ext_resource type="Texture2D" uid="uid://cy5t7b0mmnydc" path="res://assets/tilemap/tree/Tree4.png" id="2_drvx4"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_u5ofl"]
+atlas = ExtResource("2_drvx4")
+region = Rect2(0, 0, 192, 192)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_vosph"]
+atlas = ExtResource("2_drvx4")
+region = Rect2(192, 0, 192, 192)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_n2h1t"]
+atlas = ExtResource("2_drvx4")
+region = Rect2(384, 0, 192, 192)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_1k3nm"]
+atlas = ExtResource("2_drvx4")
+region = Rect2(576, 0, 192, 192)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_ry7gr"]
+atlas = ExtResource("2_drvx4")
+region = Rect2(768, 0, 192, 192)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_lxwqp"]
+atlas = ExtResource("2_drvx4")
+region = Rect2(960, 0, 192, 192)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_fxiu2"]
+atlas = ExtResource("2_drvx4")
+region = Rect2(1152, 0, 192, 192)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_6p5dj"]
+atlas = ExtResource("2_drvx4")
+region = Rect2(1344, 0, 192, 192)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_mtren"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_u5ofl")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_vosph")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_n2h1t")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_1k3nm")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_ry7gr")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_lxwqp")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_fxiu2")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_6p5dj")
+}],
+"loop": true,
+"name": &"default",
+"speed": 5.0
+}]
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_avsvi"]
+radius = 6.0827627
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_avsvi"]
+size = Vector2(72, 103)
+
+[node name="Tree" type="StaticBody2D" unique_id=1063778826]
+y_sort_enabled = true
+collision_layer = 4
+collision_mask = 11
+script = ExtResource("1_drvx4")
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="." unique_id=346283804]
+sprite_frames = SubResource("SpriteFrames_mtren")
+autoplay = "default"
+offset = Vector2(0, -62)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=579077981]
+position = Vector2(1, 0)
+shape = SubResource("CircleShape2D_avsvi")
+
+[node name="TransparentCheck" type="Area2D" parent="." unique_id=1358125869]
+light_mask = 0
+visibility_layer = 0
+collision_layer = 0
+collision_mask = 3
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="TransparentCheck" unique_id=1336505211]
+position = Vector2(0, -51.5)
+shape = SubResource("RectangleShape2D_avsvi")
+
+[connection signal="body_entered" from="TransparentCheck" to="." method="_on_transparent_check_body_entered"]
+[connection signal="body_exited" from="TransparentCheck" to="." method="_on_transparent_check_body_exited"]

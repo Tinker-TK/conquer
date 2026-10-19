@@ -1,0 +1,491 @@
+[
+  {
+    "source": "hud/top_status_bar.png",
+    "outputs": [
+      "panels/top_bar.png"
+    ],
+    "note": "无文字数值；重复造型复用。补画是风格推断，不是原始图层恢复。"
+  },
+  {
+    "source": "hud/crown_badge.png",
+    "outputs": [
+      "components/crown_backplate.png",
+      "icons/crown.png"
+    ],
+    "note": "无文字数值；重复造型复用。补画是风格推断，不是原始图层恢复。"
+  },
+  {
+    "source": "hud/health_panel.png",
+    "outputs": [
+      "panels/stat_panel.png",
+      "icons/heart.png"
+    ],
+    "note": "无文字数值；重复造型复用。补画是风格推断，不是原始图层恢复。"
+  },
+  {
+    "source": "hud/gold_panel.png",
+    "outputs": [
+      "panels/stat_panel.png",
+      "icons/gold_coin.png"
+    ],
+    "note": "无文字数值；重复造型复用。补画是风格推断，不是原始图层恢复。"
+  },
+  {
+    "source": "hud/equipment_panel.png",
+    "outputs": [
+      "panels/stat_panel.png",
+      "icons/equipment_sword.png",
+      "icons/equipment_armor.png",
+      "icons/equipment_potion.png"
+    ],
+    "note": "无文字数值；重复造型复用。补画是风格推断，不是原始图层恢复。"
+  },
+  {
+    "source": "hud/chapter_banner.png",
+    "outputs": [
+      "components/chapter_banner.png"
+    ],
+    "note": "无文字数值；重复造型复用。补画是风格推断，不是原始图层恢复。"
+  },
+  {
+    "source": "hud/map_button.png",
+    "outputs": [
+      "panels/navigation_button.png",
+      "icons/map.png"
+    ],
+    "note": "无文字数值；重复造型复用。补画是风格推断，不是原始图层恢复。"
+  },
+  {
+    "source": "hud/deck_button.png",
+    "outputs": [
+      "panels/navigation_button.png",
+      "icons/deck_book.png"
+    ],
+    "note": "无文字数值；重复造型复用。补画是风格推断，不是原始图层恢复。"
+  },
+  {
+    "source": "hud/settings_button.png",
+    "outputs": [
+      "panels/navigation_button.png",
+      "icons/gear.png"
+    ],
+    "note": "无文字数值；重复造型复用。补画是风格推断，不是原始图层恢复。"
+  },
+  {
+    "source": "hud/preparation_badge.png",
+    "outputs": [
+      "panels/phase_panel.png",
+      "icons/crossed_swords.png"
+    ],
+    "note": "无文字数值；重复造型复用。补画是风格推断，不是原始图层恢复。"
+  },
+  {
+    "source": "icons/heart.png",
+    "outputs": [
+      "icons/heart.png"
+    ],
+    "note": "无文字数值；重复造型复用。补画是风格推断，不是原始图层恢复。"
+  },
+  {
+    "source": "icons/gold_coin.png",
+    "outputs": [
+      "icons/gold_coin.png"
+    ],
+    "note": "无文字数值；重复造型复用。补画是风格推断，不是原始图层恢复。"
+  },
+  {
+    "source": "icons/equipment_sword.png",
+    "outputs": [
+      "icons/equipment_sword.png"
+    ],
+    "note": "无文字数值；重复造型复用。补画是风格推断，不是原始图层恢复。"
+  },
+  {
+    "source": "icons/equipment_armor.png",
+    "outputs": [
+      "icons/equipment_armor.png"
+    ],
+    "note": "无文字数值；重复造型复用。补画是风格推断，不是原始图层恢复。"
+  },
+  {
+    "source": "icons/equipment_potion.png",
+    "outputs": [
+      "icons/equipment_potion.png"
+    ],
+    "note": "无文字数值；重复造型复用。补画是风格推断，不是原始图层恢复。"
+  },
+  {
+    "source": "icons/relic_leaf.png",
+    "outputs": [
+      "icons/relic_leaf.png"
+    ],
+    "note": "无文字数值；重复造型复用。补画是风格推断，不是原始图层恢复。"
+  },
+  {
+    "source": "icons/relic_boot.png",
+    "outputs": [
+      "icons/relic_boot.png"
+    ],
+    "note": "无文字数值；重复造型复用。补画是风格推断，不是原始图层恢复。"
+  },
+  {
+    "source": "icons/relic_crystal.png",
+    "outputs": [
+      "icons/relic_crystal.png"
+    ],
+    "note": "无文字数值；重复造型复用。补画是风格推断，不是原始图层恢复。"
+  },
+  {
+    "source": "icons/relic_mushroom.png",
+    "outputs": [
+      "icons/relic_mushroom.png"
+    ],
+    "note": "无文字数值；重复造型复用。补画是风格推断，不是原始图层恢复。"
+  },
+  {
+    "source": "icons/relic_ring.png",
+    "outputs": [
+      "icons/relic_ring.png"
+    ],
+    "note": "无文字数值；重复造型复用。补画是风格推断，不是原始图层恢复。"
+  },
+  {
+    "source": "icons/relic_clover.png",
+    "outputs": [
+      "icons/relic_clover.png"
+    ],
+    "note": "无文字数值；重复造型复用。补画是风格推断，不是原始图层恢复。"
+  },
+  {
+    "source": "controls/battle_control_panel.png",
+    "outputs": [
+      "panels/battle_control_panel.png",
+      "panels/speed_button_blank.png",
+      "controls/selected_border.png",
+      "controls/pause_symbol.png",
+      "controls/toggle_track.png",
+      "controls/toggle_knob.png"
+    ],
+    "note": "无文字数值；重复造型复用。补画是风格推断，不是原始图层恢复。"
+  },
+  {
+    "source": "controls/pause_button.png",
+    "outputs": [
+      "panels/speed_button_blank.png",
+      "controls/pause_symbol.png"
+    ],
+    "note": "无文字数值；重复造型复用。补画是风格推断，不是原始图层恢复。"
+  },
+  {
+    "source": "controls/speed_1x_selected.png",
+    "outputs": [
+      "panels/speed_button_blank.png",
+      "controls/selected_border.png"
+    ],
+    "note": "无文字数值；重复造型复用。补画是风格推断，不是原始图层恢复。"
+  },
+  {
+    "source": "controls/speed_2x_button.png",
+    "outputs": [
+      "panels/speed_button_blank.png"
+    ],
+    "note": "无文字数值；重复造型复用。补画是风格推断，不是原始图层恢复。"
+  },
+  {
+    "source": "controls/auto_battle_row.png",
+    "outputs": [
+      "panels/auto_row_blank.png",
+      "controls/toggle_track.png",
+      "controls/toggle_knob.png"
+    ],
+    "note": "无文字数值；重复造型复用。补画是风格推断，不是原始图层恢复。"
+  },
+  {
+    "source": "controls/auto_battle_toggle.png",
+    "outputs": [
+      "controls/toggle_track.png",
+      "controls/toggle_knob.png"
+    ],
+    "note": "无文字数值；重复造型复用。补画是风格推断，不是原始图层恢复。"
+  },
+  {
+    "source": "controls/start_battle_button.png",
+    "outputs": [
+      "components/gold_button.png",
+      "icons/crossed_swords.png"
+    ],
+    "note": "无文字数值；重复造型复用。补画是风格推断，不是原始图层恢复。"
+  },
+  {
+    "source": "units/knight.png",
+    "outputs": [
+      "units/knight.png"
+    ],
+    "note": "无文字数值；重复造型复用。补画是风格推断，不是原始图层恢复。"
+  },
+  {
+    "source": "units/archer.png",
+    "outputs": [
+      "units/archer.png"
+    ],
+    "note": "无文字数值；重复造型复用。补画是风格推断，不是原始图层恢复。"
+  },
+  {
+    "source": "units/priest.png",
+    "outputs": [
+      "units/priest.png"
+    ],
+    "note": "无文字数值；重复造型复用。补画是风格推断，不是原始图层恢复。"
+  },
+  {
+    "source": "units/goblin_left.png",
+    "outputs": [
+      "units/goblin.png"
+    ],
+    "note": "无文字数值；重复造型复用。补画是风格推断，不是原始图层恢复。"
+  },
+  {
+    "source": "units/goblin_right.png",
+    "outputs": [
+      "units/goblin.png"
+    ],
+    "note": "无文字数值；重复造型复用。补画是风格推断，不是原始图层恢复。"
+  },
+  {
+    "source": "units/goblin_bottom_left.png",
+    "outputs": [
+      "units/goblin.png"
+    ],
+    "note": "无文字数值；重复造型复用。补画是风格推断，不是原始图层恢复。"
+  },
+  {
+    "source": "units/goblin_bottom_right.png",
+    "outputs": [
+      "units/goblin.png"
+    ],
+    "note": "无文字数值；重复造型复用。补画是风格推断，不是原始图层恢复。"
+  },
+  {
+    "source": "unit_hud/knight_health_bar.png",
+    "outputs": [
+      "health/00_empty_bar.png",
+      "health/10_fill.png",
+      "health/20_border.png"
+    ],
+    "note": "无文字数值；重复造型复用。补画是风格推断，不是原始图层恢复。"
+  },
+  {
+    "source": "unit_hud/archer_health_bar.png",
+    "outputs": [
+      "health/00_empty_bar.png",
+      "health/10_fill.png",
+      "health/20_border.png"
+    ],
+    "note": "无文字数值；重复造型复用。补画是风格推断，不是原始图层恢复。"
+  },
+  {
+    "source": "unit_hud/priest_health_bar.png",
+    "outputs": [
+      "health/00_empty_bar.png",
+      "health/10_fill.png",
+      "health/20_border.png"
+    ],
+    "note": "无文字数值；重复造型复用。补画是风格推断，不是原始图层恢复。"
+  },
+  {
+    "source": "unit_hud/goblin_health_bar.png",
+    "outputs": [
+      "health/00_empty_bar.png",
+      "health/10_fill.png",
+      "health/20_border.png"
+    ],
+    "note": "无文字数值；重复造型复用。补画是风格推断，不是原始图层恢复。"
+  },
+  {
+    "source": "unit_hud/attack_icon.png",
+    "outputs": [
+      "icons/equipment_sword.png"
+    ],
+    "note": "无文字数值；重复造型复用。补画是风格推断，不是原始图层恢复。"
+  },
+  {
+    "source": "unit_hud/shield_icon.png",
+    "outputs": [
+      "status/shield.png"
+    ],
+    "note": "无文字数值；重复造型复用。补画是风格推断，不是原始图层恢复。"
+  },
+  {
+    "source": "unit_hud/tree_status_icon.png",
+    "outputs": [
+      "status/tree.png"
+    ],
+    "note": "无文字数值；重复造型复用。补画是风格推断，不是原始图层恢复。"
+  },
+  {
+    "source": "unit_hud/healing_status_icon.png",
+    "outputs": [
+      "status/healing.png"
+    ],
+    "note": "无文字数值；重复造型复用。补画是风格推断，不是原始图层恢复。"
+  },
+  {
+    "source": "unit_hud/skull_status_icon.png",
+    "outputs": [
+      "status/skull.png"
+    ],
+    "note": "无文字数值；重复造型复用。补画是风格推断，不是原始图层恢复。"
+  },
+  {
+    "source": "unit_hud/knight_stats_row.png",
+    "outputs": [
+      "icons/equipment_sword.png",
+      "status/shield.png"
+    ],
+    "note": "无文字数值；重复造型复用。补画是风格推断，不是原始图层恢复。"
+  },
+  {
+    "source": "unit_hud/enemy_stats_row.png",
+    "outputs": [
+      "icons/equipment_sword.png",
+      "status/shield.png"
+    ],
+    "note": "无文字数值；重复造型复用。补画是风格推断，不是原始图层恢复。"
+  },
+  {
+    "source": "cards/card_summon_guard.png",
+    "outputs": [
+      "cards/summon_guard/00_backplate.png",
+      "cards/summon_guard/10_art_background.png",
+      "cards/summon_guard/20_art_subject.png",
+      "cards/summon_guard/30_art_border.png",
+      "cards/summon_guard/40_outer_frame.png",
+      "cards/summon_guard/50_title_plate.png",
+      "cards/summon_guard/60_description_plate.png",
+      "cards/summon_guard/70_cost_badge.png"
+    ],
+    "note": "无文字数值；重复造型复用。补画是风格推断，不是原始图层恢复。"
+  },
+  {
+    "source": "cards/card_hold_position.png",
+    "outputs": [
+      "cards/hold_position/00_backplate.png",
+      "cards/hold_position/10_art_background.png",
+      "cards/hold_position/20_art_subject.png",
+      "cards/hold_position/30_art_border.png",
+      "cards/hold_position/40_outer_frame.png",
+      "cards/hold_position/50_title_plate.png",
+      "cards/hold_position/60_description_plate.png",
+      "cards/hold_position/70_cost_badge.png"
+    ],
+    "note": "无文字数值；重复造型复用。补画是风格推断，不是原始图层恢复。"
+  },
+  {
+    "source": "cards/card_fireball.png",
+    "outputs": [
+      "cards/fireball/00_backplate.png",
+      "cards/fireball/10_art_background.png",
+      "cards/fireball/20_art_subject.png",
+      "cards/fireball/30_art_border.png",
+      "cards/fireball/40_outer_frame.png",
+      "cards/fireball/50_title_plate.png",
+      "cards/fireball/60_description_plate.png",
+      "cards/fireball/70_cost_badge.png"
+    ],
+    "note": "无文字数值；重复造型复用。补画是风格推断，不是原始图层恢复。"
+  },
+  {
+    "source": "cards/card_battlefield_heal.png",
+    "outputs": [
+      "cards/battlefield_heal/00_backplate.png",
+      "cards/battlefield_heal/10_art_background.png",
+      "cards/battlefield_heal/20_art_subject.png",
+      "cards/battlefield_heal/30_art_border.png",
+      "cards/battlefield_heal/40_outer_frame.png",
+      "cards/battlefield_heal/50_title_plate.png",
+      "cards/battlefield_heal/60_description_plate.png",
+      "cards/battlefield_heal/70_cost_badge.png"
+    ],
+    "note": "无文字数值；重复造型复用。补画是风格推断，不是原始图层恢复。"
+  },
+  {
+    "source": "cards/card_battle_inspiration.png",
+    "outputs": [
+      "cards/battle_inspiration/00_backplate.png",
+      "cards/battle_inspiration/10_art_background.png",
+      "cards/battle_inspiration/20_art_subject.png",
+      "cards/battle_inspiration/30_art_border.png",
+      "cards/battle_inspiration/40_outer_frame.png",
+      "cards/battle_inspiration/50_title_plate.png",
+      "cards/battle_inspiration/60_description_plate.png",
+      "cards/battle_inspiration/70_cost_badge.png"
+    ],
+    "note": "无文字数值；重复造型复用。补画是风格推断，不是原始图层恢复。"
+  },
+  {
+    "source": "card_art/art_summon_guard.png",
+    "outputs": [
+      "card_art/summon_guard_subject.png",
+      "card_art/summon_guard_background.png"
+    ],
+    "note": "无文字数值；重复造型复用。补画是风格推断，不是原始图层恢复。"
+  },
+  {
+    "source": "card_art/art_hold_position.png",
+    "outputs": [
+      "card_art/hold_position_subject.png",
+      "card_art/hold_position_background.png"
+    ],
+    "note": "无文字数值；重复造型复用。补画是风格推断，不是原始图层恢复。"
+  },
+  {
+    "source": "card_art/art_fireball.png",
+    "outputs": [
+      "card_art/fireball_subject.png",
+      "card_art/fireball_background.png"
+    ],
+    "note": "无文字数值；重复造型复用。补画是风格推断，不是原始图层恢复。"
+  },
+  {
+    "source": "card_art/art_battlefield_heal.png",
+    "outputs": [
+      "card_art/battlefield_heal_subject.png",
+      "card_art/battlefield_heal_background.png"
+    ],
+    "note": "无文字数值；重复造型复用。补画是风格推断，不是原始图层恢复。"
+  },
+  {
+    "source": "card_art/art_battle_inspiration.png",
+    "outputs": [
+      "card_art/battle_inspiration_subject.png",
+      "card_art/battle_inspiration_background.png"
+    ],
+    "note": "无文字数值；重复造型复用。补画是风格推断，不是原始图层恢复。"
+  },
+  {
+    "source": "energy/energy_orb_3_of_3.png",
+    "outputs": [
+      "energy/00_core.png",
+      "energy/10_rim.png"
+    ],
+    "note": "无文字数值；重复造型复用。补画是风格推断，不是原始图层恢复。"
+  },
+  {
+    "source": "piles/draw_pile_with_count.png",
+    "outputs": [
+      "panels/pile_backplate.png",
+      "components/draw_book.png",
+      "badges/counter_red.png"
+    ],
+    "note": "无文字数值；重复造型复用。补画是风格推断，不是原始图层恢复。"
+  },
+  {
+    "source": "piles/discard_pile_with_count.png",
+    "outputs": [
+      "panels/pile_backplate.png",
+      "components/discard_book.png",
+      "badges/counter_red.png"
+    ],
+    "note": "无文字数值；重复造型复用。补画是风格推断，不是原始图层恢复。"
+  }
+]

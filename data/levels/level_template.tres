@@ -1,0 +1,12 @@
+[gd_resource type="Resource" script_class="BattleLevelConfig" format=3 uid="uid://cxsjdkw4gxtx2"]
+
+[ext_resource type="Script" uid="uid://bpx0xb25eyf4" path="res://data/levels/battle_level_config.gd" id="1"]
+[ext_resource type="PackedScene" path="res://scenes/levels/battles/battle_001.tscn" id="1_pmu8h"]
+[ext_resource type="PackedScene" uid="uid://bset1rsra4bup" path="res://scenes/levels/waves/wave_01.tscn" id="3_ogjne"]
+
+[resource]
+script = ExtResource("1")
+level_name = "关卡模板：双兽人"
+notes = "复制此资源后配置自己的波次和地形。"
+battle_scene = ExtResource("1_pmu8h")
+waves = Array[PackedScene]([ExtResource("3_ogjne"), ExtResource("3_ogjne"), ExtResource("3_ogjne")])

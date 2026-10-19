@@ -1,0 +1,36 @@
+[gd_resource type="Resource" script_class="PotionDefinition" format=3]
+
+[ext_resource type="Script" path="res://data/potions/potion_definition.gd" id="1"]
+[ext_resource type="Script" path="res://data/potions/potion_effect.gd" id="2"]
+[ext_resource type="Texture2D" path="res://assets/ui/potions/blast.svg" id="3"]
+
+[sub_resource type="Resource" id="Effect0"]
+script = ExtResource("2")
+kind = 0
+amount = 50.0
+radius = 75.0
+
+[sub_resource type="Resource" id="Effect1"]
+script = ExtResource("2")
+kind = 19
+amount = 120.0
+radius = 75.0
+
+[resource]
+script = ExtResource("1")
+id = &"blast"
+display_name = "爆裂药剂"
+description = "对半径75内敌人造成50点直接伤害，并击退120。"
+icon = ExtResource("3")
+kind = 4
+rarity = 0
+target_mode = 0
+tags = Array[StringName]([&"爆发"])
+min_act = 1
+price = 45
+prep_usable = false
+max_per_run = 0
+radius = 75.0
+tint = Color(0.9686, 0.6431, 0.2941, 1)
+impact_vfx = "GrenadeExplosionVFX"
+effects = Array[ExtResource("2")]([SubResource("Effect0"), SubResource("Effect1")])

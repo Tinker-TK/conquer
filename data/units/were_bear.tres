@@ -1,0 +1,26 @@
+[gd_resource type="Resource" script_class="UnitData" format=3 uid="uid://bromqov0b0je6"]
+
+[ext_resource type="Script" uid="uid://2m1qlskaxcox" path="res://data/units/unit_data.gd" id="1_hwktq"]
+[ext_resource type="Texture2D" uid="uid://6dmq6k1nbncr" path="res://assets/cards/illustrations/were_bear.png" id="1_ocd5r"]
+[ext_resource type="Script" uid="uid://c4huhq7re2216" path="res://data/skills/skill_base.gd" id="2_50rgy"]
+[ext_resource type="Resource" uid="uid://1vl2espf1u51" path="res://data/skills/were_bear_attack.tres" id="3_6jej7"]
+[ext_resource type="Resource" uid="uid://cygufutb7b81k" path="res://data/skills/were_bear_double_attack.tres" id="4_84sgf"]
+[ext_resource type="Resource" uid="uid://hdodgkcxkpyq" path="res://data/skills/were_bear_smash.tres" id="5_ocd5r"]
+[ext_resource type="Resource" path="res://data/skills/were_bear_double_attack_upgraded.tres" id="6_claw"]
+[ext_resource type="Resource" path="res://data/skills/were_bear_smash_upgraded.tres" id="7_smash"]
+
+[resource]
+script = ExtResource("1_hwktq")
+defence = 5
+attack = 15
+max_hp = 100
+unit_name = "熊人"
+unit_english_name = "were_bear"
+unit_type = 10
+card_cost = 2
+card_name = "暗影熊召唤"
+card_image = ExtResource("1_ocd5r")
+card_discription = "征召1名熊人。"
+upgrade_ability_points = 2
+skills = Array[ExtResource("2_50rgy")]([ExtResource("3_6jej7"), ExtResource("4_84sgf"), ExtResource("5_ocd5r"), ExtResource("6_claw"), ExtResource("7_smash")])
+metadata/_data_table_id = 10

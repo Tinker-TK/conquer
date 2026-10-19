@@ -1,0 +1,54 @@
+[gd_resource type="Resource" script_class="EventDefinition" format=3 uid="uid://ddjvytqcj3767"]
+
+[ext_resource type="Texture2D" uid="uid://d0b5ty0eqmn5c" path="res://assets/ui/events/illustrations/beast-den.png" id="1_w5jo2"]
+[ext_resource type="Script" uid="uid://olxpk541mot3" path="res://data/events/event_definition.gd" id="2_vofs0"]
+
+[resource]
+script = ExtResource("2_vofs0")
+id = "act1_beast_den"
+title = "兽穴"
+description = "荆棘深处传来幼兽的呜咽。母兽不在，地上只有拖拽过的血迹和半截生锈的捕兽夹。
+
+夹子旁边，有人用炭笔画了一个歪歪扭扭的箭头，指向更深的巢穴。"
+illustration = ExtResource("1_w5jo2")
+template = 4
+choices = Array[Dictionary]([{
+"cost": {
+"max_hp": 8.0
+},
+"effect": {
+"effect_offer": 0.0,
+"effect_picks": 0.0,
+"type": "choose_cards",
+"unit_offer": 3.0,
+"unit_picks": 1.0,
+"unit_pool": ["res://data/units/were_wolf.tres", "res://data/units/were_bear.tres", "res://data/event_recruits/bear.tres"]
+},
+"gold": 0.0,
+"heal": 0.0,
+"result_text": "幼兽在你怀里挣扎了一下，然后安静下来。远处的灌木里，有什么东西一直跟到营地边缘。",
+"summary": "最大生命 -8 · 从 3 张野兽征召牌中选 1 张",
+"text": "抱走幼兽"
+}, {
+"gold": 35.0,
+"heal": 8.0,
+"result_text": "夹子下面压着一只旧钱袋，还有半卷没被血浸透的绷带。",
+"summary": "获得 35 金币，回复 8 生命",
+"text": "拆开捕兽夹"
+}, {
+"effect": {
+"type": "random_potion"
+},
+"gold": 0.0,
+"heal": 0.0,
+"result_text": "药草的味道冲得人眼睛发酸，但装进瓶子后，闻起来像活路。",
+"summary": "获得 1 瓶随机药水",
+"text": "采集洞口的药草"
+}, {
+"gold": 0.0,
+"heal": 0.0,
+"leave": true,
+"text": "离开"
+}])
+max_floor = 6
+tags = Array[String](["recruit"])

@@ -1,0 +1,70 @@
+[gd_scene format=3 uid="uid://b2iqe6y8te6wt"]
+
+[ext_resource type="Texture2D" uid="uid://beiw0pumhrp1m" path="res://assets/tilemap/level_icon.png" id="1_4l0lc"]
+[ext_resource type="Script" uid="uid://cujynb7ej2oho" path="res://scripts/map/map_node.gd" id="1_l50bx"]
+[ext_resource type="Shader" uid="uid://k76q65ugadpc" path="res://shaders/choose_red_circle.gdshader" id="2_pg7k2"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_pg7k2"]
+atlas = ExtResource("1_4l0lc")
+region = Rect2(660, 430, 180, 210)
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_74t2o"]
+shader = ExtResource("2_pg7k2")
+shader_parameter/progress = 1.0
+shader_parameter/draw_size = Vector2(270, 220)
+shader_parameter/edge_softness = 0.0130000006175
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_l50bx"]
+atlas = ExtResource("1_4l0lc")
+region = Rect2(1250, 450, 270, 220)
+
+[node name="MapNode" type="Control" unique_id=460198952]
+custom_minimum_size = Vector2(88, 88)
+layout_mode = 3
+anchors_preset = 0
+script = ExtResource("1_l50bx")
+flag_texture = SubResource("AtlasTexture_pg7k2")
+
+[node name="IconButton" type="TextureButton" parent="." unique_id=663422848]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+ignore_texture_size = true
+stretch_mode = 5
+
+[node name="SelectionRing" type="TextureRect" parent="." unique_id=1051938123]
+material = SubResource("ShaderMaterial_74t2o")
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = -9.0
+offset_top = -6.0
+offset_right = 9.0
+offset_bottom = 6.0
+grow_horizontal = 2
+grow_vertical = 2
+mouse_filter = 2
+texture = SubResource("AtlasTexture_l50bx")
+expand_mode = 1
+stretch_mode = 5
+
+[node name="CompletedFlag" type="TextureRect" parent="." unique_id=869936744]
+layout_mode = 1
+anchors_preset = 3
+anchor_left = 1.0
+anchor_top = 1.0
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = -32.0
+offset_top = -32.0
+offset_right = 8.0
+offset_bottom = 8.0
+grow_horizontal = 2
+grow_vertical = 2
+mouse_filter = 2
+expand_mode = 1
+stretch_mode = 5

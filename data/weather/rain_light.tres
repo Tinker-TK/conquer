@@ -1,0 +1,13 @@
+[gd_resource type="Resource" script_class="RainWeatherSettings" load_steps=2 format=3]
+
+[ext_resource type="Script" path="res://data/weather/rain_weather_settings.gd" id="1"]
+
+[resource]
+script = ExtResource("1")
+intensity = 0.3
+rain_amount = 360
+wind = -40.0
+rain_opacity = 0.2
+puddle_coverage = 0.35
+wetness = 0.5
+splash_rate = 24.0

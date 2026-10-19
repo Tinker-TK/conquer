@@ -1,0 +1,20 @@
+[gd_resource type="Resource" script_class="RelicDefinition" format=3]
+
+[ext_resource type="Script" path="res://data/relics/relic_definition.gd" id="1"]
+[ext_resource type="Texture2D" path="res://assets/ui_redrawn/icons/relic_leaf.png" id="2"]
+
+[resource]
+script = ExtResource("1")
+id = &"muster_roll"
+display_name = "征兵名册"
+description = "本场每部署 3 名单位，全体己方攻击 +1，最多 +3。"
+icon = ExtResource("2")
+kind = 5
+rarity = 0
+tags = Array[StringName]([&"wide"])
+trigger = 8
+handler = &"muster_roll"
+max_per_battle = 3
+max_per_round = 0
+cooldown_seconds = 0.0
+priority = 1

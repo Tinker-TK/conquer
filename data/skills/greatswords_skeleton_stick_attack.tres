@@ -1,0 +1,12 @@
+[gd_resource type="Resource" format=3 uid="uid://cdfvdndonuk12"]
+
+[ext_resource type="Script" uid="uid://l5slg1wgnhew" path="res://scripts/skills/normal_attack.gd" id="1_gvux4"]
+
+[resource]
+script = ExtResource("1_gvux4")
+skill_name = "刺击"
+attack_rate = 1.4
+cooldown = 6.0
+cast_animation = "attack_03"
+hit_frame = Array[int]([4])
+metadata/_data_table_id = 4

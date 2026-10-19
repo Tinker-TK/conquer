@@ -1,0 +1,11 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1920" height="1080" viewBox="0 0 1920 1080">
+<defs>
+ <radialGradient id="bg"><stop stop-color="#544336"/><stop offset="1" stop-color="#151619"/></radialGradient>
+ <linearGradient id="curtain"><stop stop-color="#231d24"/><stop offset=".5" stop-color="#51333a"/><stop offset="1" stop-color="#171719"/></linearGradient>
+</defs>
+<path fill="url(#bg)" d="M0 0h1920v1080H0z"/>
+<path fill="#332727" d="M0 100h1920v106H0z"/>
+<path fill="#6e3f3a" d="m0 100 130 0 50 106H0zm285 0h130l50 106H335zm285 0h130l50 106H620zm285 0h130l50 106H905zm285 0h130l50 106h-130zm285 0h130l50 106h-130zm285 0h130l50 106h-130z"/>
+<path fill="url(#curtain)" d="M0 130h119l44 85-21 255 51 212-29 254L95 1080H0zm1920 0h-119l-44 85 21 255-51 212 29 254 69 144h95z"/>
+<g fill="none" stroke="#c6a567" stroke-width="2" opacity=".2"><path d="M38 285h65v490H38zM1816 285h65v490h-65z"/><path d="m71 325 18 35-18 35-18-35zm1778 0 18 35-18 35-18-35z"/></g>
+</svg>

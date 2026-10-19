@@ -1,0 +1,54 @@
+[gd_scene format=3 uid="uid://vay83lb7w4f8"]
+
+[ext_resource type="Script" uid="uid://kjkuj358hhhi" path="res://scripts/combat/projectile.gd" id="1_5dkoy"]
+[ext_resource type="Texture2D" uid="uid://bqmksj1d2jcsx" path="res://assets/characters/Wizard/Magic(projectile)/Wizard_Attack02_Effect.png" id="2_5dkoy"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_gfhhc"]
+atlas = ExtResource("2_5dkoy")
+region = Rect2(0, 0, 100, 100)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_iup2w"]
+atlas = ExtResource("2_5dkoy")
+region = Rect2(100, 0, 100, 100)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_v0e4x"]
+atlas = ExtResource("2_5dkoy")
+region = Rect2(200, 0, 100, 100)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_uvlsj"]
+atlas = ExtResource("2_5dkoy")
+region = Rect2(300, 0, 100, 100)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_fqius"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_gfhhc")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_iup2w")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_v0e4x")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_uvlsj")
+}],
+"loop": true,
+"name": &"idle",
+"speed": 7.0
+}]
+
+[node name="FireBall" type="Node2D" unique_id=1877191077]
+z_index = 10
+script = ExtResource("1_5dkoy")
+speed = 300.0
+max_height = 0.0
+hit_radius = 30.0
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="." unique_id=1558827875]
+scale = Vector2(3, 3)
+sprite_frames = SubResource("SpriteFrames_fqius")
+animation = &"idle"
+autoplay = "idle"
+frame_progress = 0.042937692

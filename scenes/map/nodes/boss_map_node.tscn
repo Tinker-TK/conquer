@@ -1,0 +1,22 @@
+[gd_scene format=3 uid="uid://c5tyxtnsg6hb2"]
+
+[ext_resource type="PackedScene" uid="uid://b2iqe6y8te6wt" path="res://scenes/map/nodes/map_node.tscn" id="1_b4uqq"]
+[ext_resource type="Texture2D" uid="uid://beiw0pumhrp1m" path="res://assets/tilemap/level_icon.png" id="2_crxii"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_46osu"]
+atlas = ExtResource("2_crxii")
+region = Rect2(540, 220, 190, 200)
+
+[node name="BossMapNode" unique_id=460198952 instance=ExtResource("1_b4uqq")]
+icon_texture = SubResource("AtlasTexture_46osu")
+
+[node name="SelectionRing" parent="." index="1" unique_id=1051938123]
+offset_top = 15.0
+offset_bottom = 235.0
+
+[node name="CompletedFlag" parent="." index="2" unique_id=869936744]
+offset_left = 5.0
+offset_top = 7.0
+offset_right = 5.0
+offset_bottom = 7.0
+scale = Vector2(1, 1)

@@ -1,0 +1,647 @@
+{
+  "name": "旅途商队",
+  "recruit_count": 3,
+  "card_count": 4,
+  "relic_count": 3,
+  "potion_count": 3,
+  "recruits": [
+    {
+      "path": "res://data/units/soldier.tres",
+      "price": 60
+    },
+    {
+      "path": "res://data/units/archer.tres",
+      "price": 65
+    },
+    {
+      "path": "res://data/units/swords_man.tres",
+      "price": 170
+    },
+    {
+      "path": "res://data/units/lancer.tres",
+      "price": 160
+    },
+    {
+      "path": "res://data/units/armored_axeman.tres",
+      "price": 80
+    },
+    {
+      "path": "res://data/units/knight.tres",
+      "price": 120
+    },
+    {
+      "path": "res://data/units/priest.tres",
+      "price": 75
+    },
+    {
+      "path": "res://data/units/wizard.tres",
+      "price": 170
+    },
+    {
+      "path": "res://data/units/knight_templar.tres",
+      "price": 120
+    },
+    {
+      "path": "res://data/units/were_wolf.tres",
+      "price": 135
+    },
+    {
+      "path": "res://data/units/were_bear.tres",
+      "price": 135
+    }
+  ],
+  "cards": [
+    {
+      "path": "res://data/cards/heal.tres",
+      "price": 55
+    },
+    {
+      "path": "res://data/cards/defend.tres",
+      "price": 55
+    },
+    {
+      "path": "res://data/cards/power_enhance.tres",
+      "price": 65
+    },
+    {
+      "path": "res://data/cards/draw_four.tres",
+      "price": 75
+    },
+    {
+      "path": "res://data/cards/draw_hp.tres",
+      "price": 60
+    },
+    {
+      "path": "res://data/cards/fire_zone.tres",
+      "price": 80
+    },
+    {
+      "path": "res://data/cards/mud_zone.tres",
+      "price": 65
+    },
+    {
+      "path": "res://data/cards/recall_ally.tres",
+      "price": 60
+    },
+    {
+      "path": "res://data/cards/copy_ally.tres",
+      "price": 80
+    },
+    {
+      "path": "res://data/cards/death_attack.tres",
+      "price": 75
+    },
+    {
+      "path": "res://data/cards/death_explosion.tres",
+      "price": 80
+    },
+    {
+      "path": "res://data/cards/poison_on_hit.tres",
+      "price": 75
+    },
+    {
+      "path": "res://data/cards/random_play.tres",
+      "price": 80
+    },
+    {
+      "path": "res://data/cards/undying_army.tres",
+      "price": 120
+    },
+    {
+      "path": "res://data/cards/weakness.tres",
+      "price": 55
+    },
+    {
+      "path": "res://data/cards/vulnerability.tres",
+      "price": 65
+    },
+    {
+      "path": "res://data/cards/intimidation.tres",
+      "price": 55
+    },
+    {
+      "path": "res://data/cards/paralysis.tres",
+      "price": 60
+    },
+    {
+      "path": "res://data/cards/convert_enemy.tres",
+      "price": 80
+    },
+    {
+      "path": "res://data/cards/frenzy.tres",
+      "price": 100
+    },
+    {
+      "path": "res://data/cards/retreat_draw.tres",
+      "price": 60
+    },
+    {
+      "path": "res://data/cards/diverse_army.tres",
+      "price": 120
+    },
+    {
+      "path": "res://data/cards/keep_distance.tres",
+      "price": 120
+    },
+    {
+      "path": "res://data/cards/judger.tres",
+      "price": 120
+    },
+    {
+      "path": "res://data/cards/comrade.tres",
+      "price": 120
+    },
+    {
+      "path": "res://data/cards/evolution.tres",
+      "price": 65
+    },
+    {
+      "path": "res://data/cards/master_strategy.tres",
+      "price": 75
+    },
+    {
+      "path": "res://data/cards/rend.tres",
+      "price": 80
+    },
+    {
+      "path": "res://data/cards/healing_ban.tres",
+      "price": 80
+    },
+    {
+      "path": "res://data/cards/armor_shred.tres",
+      "price": 80
+    },
+    {
+      "path": "res://data/cards/slumber.tres",
+      "price": 80
+    },
+    {
+      "path": "res://data/cards/holy_bulwark.tres",
+      "price": 80
+    },
+    {
+      "path": "res://data/cards/overflow_prayer.tres",
+      "price": 80
+    },
+    {
+      "path": "res://data/cards/last_stand.tres",
+      "price": 80
+    },
+    {
+      "path": "res://data/cards/hold_ground.tres",
+      "price": 80
+    },
+    {
+      "path": "res://data/cards/mobilization.tres",
+      "price": 80
+    },
+    {
+      "path": "res://data/cards/letting_go.tres",
+      "price": 60
+    },
+    {
+      "path": "res://data/cards/sacrifice.tres",
+      "price": 80
+    },
+    {
+      "path": "res://data/cards/return_dead.tres",
+      "price": 80
+    },
+    {
+      "path": "res://data/cards/martyrdom.tres",
+      "price": 80
+    },
+    {
+      "path": "res://data/cards/war_cry.tres",
+      "price": 80
+    },
+    {
+      "path": "res://data/cards/fortify.tres",
+      "price": 80
+    },
+    {
+      "path": "res://data/cards/haste.tres",
+      "price": 80
+    },
+    {
+      "path": "res://data/cards/battle_standard.tres",
+      "price": 80
+    },
+    {
+      "path": "res://data/cards/spike_trap.tres",
+      "price": 80
+    },
+    {
+      "path": "res://data/cards/transcription.tres",
+      "price": 80
+    },
+    {
+      "path": "res://data/cards/reformation.tres",
+      "price": 80
+    },
+    {
+      "path": "res://data/cards/stratagem.tres",
+      "price": 80
+    },
+    {
+      "path": "res://data/cards/overdraft.tres",
+      "price": 60
+    },
+    {
+      "path": "res://data/cards/thrift.tres",
+      "price": 80
+    }
+  ],
+  "relics": [
+    {
+      "path": "res://data/relics/war_banner.tres",
+      "price": 150
+    },
+    {
+      "path": "res://data/relics/muster_roll.tres",
+      "price": 150
+    },
+    {
+      "path": "res://data/relics/diverse_codex.tres",
+      "price": 200
+    },
+    {
+      "path": "res://data/relics/fallen_roster.tres",
+      "price": 150
+    },
+    {
+      "path": "res://data/relics/beacon.tres",
+      "price": 200
+    },
+    {
+      "path": "res://data/relics/anvil.tres",
+      "price": 150
+    },
+    {
+      "path": "res://data/relics/lone_wolf.tres",
+      "price": 200
+    },
+    {
+      "path": "res://data/relics/bloodstone.tres",
+      "price": 150
+    },
+    {
+      "path": "res://data/relics/legacy_seal.tres",
+      "price": 200
+    },
+    {
+      "path": "res://data/relics/duel_pact.tres",
+      "price": 200
+    },
+    {
+      "path": "res://data/relics/urn.tres",
+      "price": 150
+    },
+    {
+      "path": "res://data/relics/mourner.tres",
+      "price": 150
+    },
+    {
+      "path": "res://data/relics/sacrificial_dagger.tres",
+      "price": 150
+    },
+    {
+      "path": "res://data/relics/death_echo.tres",
+      "price": 200
+    },
+    {
+      "path": "res://data/relics/martyr_crown.tres",
+      "price": 200
+    },
+    {
+      "path": "res://data/relics/corrosive_vial.tres",
+      "price": 150
+    },
+    {
+      "path": "res://data/relics/ember.tres",
+      "price": 150
+    },
+    {
+      "path": "res://data/relics/plague_mask.tres",
+      "price": 200
+    },
+    {
+      "path": "res://data/relics/slow_death.tres",
+      "price": 200
+    },
+    {
+      "path": "res://data/relics/sulfur_heart.tres",
+      "price": 200
+    },
+    {
+      "path": "res://data/relics/chains.tres",
+      "price": 150
+    },
+    {
+      "path": "res://data/relics/fear_totem.tres",
+      "price": 150
+    },
+    {
+      "path": "res://data/relics/sunder.tres",
+      "price": 200
+    },
+    {
+      "path": "res://data/relics/inquisitor.tres",
+      "price": 200
+    },
+    {
+      "path": "res://data/relics/executioner.tres",
+      "price": 150
+    },
+    {
+      "path": "res://data/relics/gloves.tres",
+      "price": 150
+    },
+    {
+      "path": "res://data/relics/fate_coin.tres",
+      "price": 150
+    },
+    {
+      "path": "res://data/relics/steady_hands.tres",
+      "price": 150
+    },
+    {
+      "path": "res://data/relics/borrowed_time.tres",
+      "price": 200
+    },
+    {
+      "path": "res://data/relics/echo_crystal.tres",
+      "price": 200
+    },
+    {
+      "path": "res://data/relics/iron_wall.tres",
+      "price": 200
+    },
+    {
+      "path": "res://data/relics/thorn_mail.tres",
+      "price": 150
+    },
+    {
+      "path": "res://data/relics/last_stand.tres",
+      "price": 150
+    },
+    {
+      "path": "res://data/relics/counter_stance.tres",
+      "price": 200
+    },
+    {
+      "path": "res://data/relics/holy_symbol.tres",
+      "price": 200
+    },
+    {
+      "path": "res://data/relics/guardian_oath.tres",
+      "price": 200
+    },
+    {
+      "path": "res://data/relics/blood_bank.tres",
+      "price": 200
+    },
+    {
+      "path": "res://data/relics/longbow_string.tres",
+      "price": 150
+    },
+    {
+      "path": "res://data/relics/kite_boots.tres",
+      "price": 150
+    },
+    {
+      "path": "res://data/relics/spell_focus.tres",
+      "price": 200
+    },
+    {
+      "path": "res://data/relics/hunter_mark.tres",
+      "price": 200
+    },
+    {
+      "path": "res://data/relics/coin_purse.tres",
+      "price": 150
+    },
+    {
+      "path": "res://data/relics/field_kit.tres",
+      "price": 150
+    },
+    {
+      "path": "res://data/relics/alchemy_pack.tres",
+      "price": 150
+    },
+    {
+      "path": "res://data/relics/merchant_seal.tres",
+      "price": 200
+    },
+    {
+      "path": "res://data/relics/greedy_cup.tres",
+      "price": 200
+    },
+    {
+      "path": "res://data/relics/tactical_map.tres",
+      "price": 150
+    },
+    {
+      "path": "res://data/relics/scout_horn.tres",
+      "price": 150
+    },
+    {
+      "path": "res://data/relics/veteran_medal.tres",
+      "price": 150
+    },
+    {
+      "path": "res://data/relics/hourglass.tres",
+      "price": 200
+    },
+    {
+      "path": "res://data/relics/spare_quiver.tres",
+      "price": 150
+    },
+    {
+      "path": "res://data/relics/draw_engine.tres",
+      "price": 200
+    },
+    {
+      "path": "res://data/relics/draw_ring.tres",
+      "price": 200
+    },
+    {
+      "path": "res://data/relics/base_heart.tres",
+      "price": 150
+    },
+    {
+      "path": "res://data/relics/traveler_amulet.tres",
+      "price": 150
+    },
+    {
+      "path": "res://data/relics/reserve_crystal.tres",
+      "price": 200
+    },
+    {
+      "path": "res://data/relics/opening_armour.tres",
+      "price": 150
+    }
+  ],
+  "potions": [
+    {
+      "path": "res://data/potions/fire.tres",
+      "price": 45
+    },
+    {
+      "path": "res://data/potions/lightning.tres",
+      "price": 60
+    },
+    {
+      "path": "res://data/potions/tornado.tres",
+      "price": 75
+    },
+    {
+      "path": "res://data/potions/thunder_cloud.tres",
+      "price": 110
+    },
+    {
+      "path": "res://data/potions/blast.tres",
+      "price": 45
+    },
+    {
+      "path": "res://data/potions/frost_flask.tres",
+      "price": 45
+    },
+    {
+      "path": "res://data/potions/poison_flask.tres",
+      "price": 45
+    },
+    {
+      "path": "res://data/potions/mud_flask.tres",
+      "price": 45
+    },
+    {
+      "path": "res://data/potions/weaken_gas.tres",
+      "price": 40
+    },
+    {
+      "path": "res://data/potions/sunder_acid.tres",
+      "price": 45
+    },
+    {
+      "path": "res://data/potions/strength_brew.tres",
+      "price": 50
+    },
+    {
+      "path": "res://data/potions/iron_brew.tres",
+      "price": 50
+    },
+    {
+      "path": "res://data/potions/cleanse_water.tres",
+      "price": 45
+    },
+    {
+      "path": "res://data/potions/healing_potion.tres",
+      "price": 50
+    },
+    {
+      "path": "res://data/potions/gambler_brew.tres",
+      "price": 40
+    },
+    {
+      "path": "res://data/potions/decoy_totem.tres",
+      "price": 50
+    },
+    {
+      "path": "res://data/potions/chain_lightning.tres",
+      "price": 75
+    },
+    {
+      "path": "res://data/potions/corrosive_flask.tres",
+      "price": 70
+    },
+    {
+      "path": "res://data/potions/frost_nova.tres",
+      "price": 75
+    },
+    {
+      "path": "res://data/potions/sleep_dust.tres",
+      "price": 70
+    },
+    {
+      "path": "res://data/potions/confusion_gas.tres",
+      "price": 70
+    },
+    {
+      "path": "res://data/potions/gravity_well.tres",
+      "price": 70
+    },
+    {
+      "path": "res://data/potions/aegis_brew.tres",
+      "price": 80
+    },
+    {
+      "path": "res://data/potions/envenom_brew.tres",
+      "price": 80
+    },
+    {
+      "path": "res://data/potions/deathrattle_brew.tres",
+      "price": 85
+    },
+    {
+      "path": "res://data/potions/energy_potion.tres",
+      "price": 75
+    },
+    {
+      "path": "res://data/potions/tactics_brew.tres",
+      "price": 85
+    },
+    {
+      "path": "res://data/potions/insight_brew.tres",
+      "price": 70
+    },
+    {
+      "path": "res://data/potions/reinforcement_horn.tres",
+      "price": 85
+    },
+    {
+      "path": "res://data/potions/forge_oil.tres",
+      "price": 80
+    },
+    {
+      "path": "res://data/potions/smoke_bomb.tres",
+      "price": 75
+    },
+    {
+      "path": "res://data/potions/meteor.tres",
+      "price": 140
+    },
+    {
+      "path": "res://data/potions/time_stop.tres",
+      "price": 130
+    },
+    {
+      "path": "res://data/potions/revive_potion.tres",
+      "price": 120
+    },
+    {
+      "path": "res://data/potions/fairy_tear.tres",
+      "price": 150
+    },
+    {
+      "path": "res://data/potions/undead_legion.tres",
+      "price": 130
+    },
+    {
+      "path": "res://data/potions/duplication_potion.tres",
+      "price": 120
+    },
+    {
+      "path": "res://data/potions/convert_potion.tres",
+      "price": 110
+    },
+    {
+      "path": "res://data/potions/life_fruit.tres",
+      "price": 110
+    },
+    {
+      "path": "res://data/potions/blood_offering.tres",
+      "price": 100
+    }
+  ]
+}

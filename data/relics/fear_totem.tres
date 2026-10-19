@@ -1,0 +1,20 @@
+[gd_resource type="Resource" script_class="RelicDefinition" format=3]
+
+[ext_resource type="Script" path="res://data/relics/relic_definition.gd" id="1"]
+[ext_resource type="Texture2D" path="res://assets/ui_redrawn/icons/relic_crystal.png" id="2"]
+
+[resource]
+script = ExtResource("1")
+id = &"fear_totem"
+display_name = "恐惧图腾"
+description = "随机 1 名敌人虚弱 2（攻击 −2），持续本回合。"
+icon = ExtResource("2")
+kind = 5
+rarity = 0
+tags = Array[StringName]([&"control"])
+trigger = 3
+handler = &"fear_totem"
+max_per_battle = 0
+max_per_round = 0
+cooldown_seconds = 0.0
+priority = 2

@@ -1,0 +1,18 @@
+[gd_resource type="Resource" script_class="EventDefinition" format=3]
+
+[ext_resource type="Script" path="res://data/events/event_definition.gd" id="1"]
+[ext_resource type="Texture2D" path="res://assets/ui/events/illustrations/caravan-wreck.png" id="2"]
+
+[resource]
+script = ExtResource("1")
+id = "act1_caravan_wreck"
+title = "商队残骸"
+description = "一辆商队货车翻在沟里，车轮还在空转。货物散了一地，车底压着半截还在动的影子。\n\n箱子上没有商会的印记，只有一道被刀划掉的家族纹章。"
+template = 4
+min_floor = 2
+max_floor = 6
+rarity = "common"
+illustration = ExtResource("2")
+tags = Array[String](["max_hp"])
+requires = Array[String]([])
+choices = Array[Dictionary]([{"gold": 65, "heal": 0, "cost": {"hp": 12}, "text": "搜刮货物", "summary": "失去 12 生命 · 获得 65 金币", "result_text": "你从车底拖出一只钱箱。那半截影子在你脚边停了一下，然后不动了。"}, {"gold": 0, "heal": 10, "effect": {"type": "max_hp", "amount": 4}, "cost": {"gold": 35}, "text": "救出车底的人", "summary": "支付 35 金币 · 最大生命 +4，回复 10 生命", "result_text": "是个瘦得脱形的年轻人。他把最后半袋干粮塞给你，说前面还有很长的路。"}, {"gold": 0, "heal": 0, "effect": {"type": "random_potion"}, "text": "追查车辙", "summary": "获得 1 瓶随机药水", "result_text": "车辙在溪边断了。你只找到一只被踩碎的玻璃瓶，里面的药水还没干。"}, {"text": "离开", "leave": true, "heal": 0, "gold": 0}])

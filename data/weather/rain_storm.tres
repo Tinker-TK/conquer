@@ -1,0 +1,22 @@
+[gd_resource type="Resource" script_class="RainWeatherSettings" format=3 uid="uid://yhq22w4t0d21"]
+
+[ext_resource type="Script" uid="uid://dbwy1s53x6kut" path="res://data/weather/rain_weather_settings.gd" id="1"]
+
+[resource]
+script = ExtResource("1")
+intensity = 1.0
+atmosphere_tint = Color(0.62, 0.72, 0.86, 1)
+rain_amount = 850
+fall_speed = 1050.0
+wind = -220.0
+rain_opacity = 0.48
+streak_length = 28.0
+puddle_coverage = 0.65
+puddle_scale = 260.0
+wetness = 0.95
+sky_strength = 0.9
+distortion = 1.0
+reflection_opacity = 0.9
+reflection_resolution = 1.0
+reflection_height = 1.0
+splash_rate = 68.0

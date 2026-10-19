@@ -1,0 +1,57 @@
+{
+  "path": "res://assets/audio/ai/local_design/ai_combat/sfx_combat_axe_cleave_v02.ogg",
+  "asset": "sfx_combat_axe_cleave_v02",
+  "title": "装甲斧手 · 重斧劈落 · B 厚重",
+  "category": "ai_combat",
+  "domain": "SFX",
+  "batch": "audition_20261019",
+  "provider": "local_design",
+  "recipe": "axe",
+  "variant": 2,
+  "seed": 227535055,
+  "prompt": "One heavy iron axe cleave, dense low air displacement, brief leather grip movement and a hard wood body impact, weighty but compact, immediate onset, dry game one-shot, 0.68 seconds. No long sub boom, music or voices.",
+  "author": "项目本地声音设计（CC0 分层素材＋原创程序合成）",
+  "source": "res://tools/audio/ai/produce_audition.py",
+  "license": "CC0-1.0",
+  "source_layers": [
+    {
+      "path": "res://assets/audio/library/medieval-textures/axe_swing_02.ogg",
+      "author": "Ben Jaszczak & Brian Nelson / Still North Media",
+      "source": "https://opengameart.org/content/medieval-sound-effects-weapon-textures",
+      "license": "CC0-1.0",
+      "sha256": "242cf5cb3e920bd5a2351723dcd04ca293e8a9ab9d6f41ac3ec251c7908e21df"
+    },
+    {
+      "path": "res://assets/audio/combat/kenney-rpg/chop.ogg",
+      "author": "Kenney",
+      "source": "https://kenney.nl/assets/rpg-audio",
+      "license": "CC0-1.0",
+      "sha256": "d00c2b3c9fff07e376145c8c8c45c90e5084ec192f6ce0387db233f7b86f1486"
+    }
+  ],
+  "changes": "分层混音、确定性变体、裁剪静音、44.1kHz 单声道、短淡入淡出、峰值控制、OGG；循环保留完整小节。",
+  "notes": "本批试听 · 本地制作；SFX；单次动作。",
+  "duration_seconds": 0.51,
+  "loop": false,
+  "features": {
+    "duration_seconds": 0.51,
+    "peak_dbfs": -3.06,
+    "rms_dbfs": -17.32,
+    "crest_db": 14.26,
+    "spectral_centroid_hz": 1425.9,
+    "zero_cross_rate": 0.0264,
+    "attack_ms": 129.7,
+    "tail_ms": 3.9
+  },
+  "channels": 1,
+  "sample_rate": 44100,
+  "seam_jump": null,
+  "sha256": "1e0922ecd607b4e89889c1ade29de8d1151398df94287104402371c1051c7501",
+  "created_at": "2026-10-19T02:03:55+00:00",
+  "tags": [
+    "one-shot",
+    "soft-attack",
+    "balanced"
+  ],
+  "problems": []
+}

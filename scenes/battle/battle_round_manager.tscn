@@ -1,0 +1,6 @@
+[gd_scene format=3 uid="uid://cu06u40wfihba"]
+
+[ext_resource type="Script" uid="uid://07he5dhif5t1" path="res://scripts/battle/battle_round_manager.gd" id="1_u8f8u"]
+
+[node name="BattleRoundManager" type="Node2D" unique_id=957030286]
+script = ExtResource("1_u8f8u")

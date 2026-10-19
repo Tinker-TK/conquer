@@ -1,0 +1,32 @@
+[gd_resource type="SpriteFrames" load_steps=6 format=3]
+
+[ext_resource type="Texture2D" path="res://assets/effect/pixel_vfx/packs/craftpix_explosions/爆炸烟火/lightning_spot.png" id="1"]
+
+[sub_resource type="AtlasTexture" id="Atlas_0"]
+atlas = ExtResource("1")
+region = Rect2(0, 0, 64, 64)
+
+[sub_resource type="AtlasTexture" id="Atlas_1"]
+atlas = ExtResource("1")
+region = Rect2(64, 0, 64, 64)
+
+[sub_resource type="AtlasTexture" id="Atlas_2"]
+atlas = ExtResource("1")
+region = Rect2(128, 0, 64, 64)
+
+[sub_resource type="AtlasTexture" id="Atlas_3"]
+atlas = ExtResource("1")
+region = Rect2(192, 0, 64, 64)
+
+[resource]
+animations = [{
+"frames": [
+{ "duration": 1.00000000, "texture": SubResource("Atlas_0") },
+{ "duration": 1.00000000, "texture": SubResource("Atlas_1") },
+{ "duration": 1.00000000, "texture": SubResource("Atlas_2") },
+{ "duration": 1.00000000, "texture": SubResource("Atlas_3") }
+],
+"loop": false,
+"name": &"default",
+"speed": 15.00000000
+}]

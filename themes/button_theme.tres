@@ -1,0 +1,6 @@
+[gd_resource type="Theme" format=3 uid="uid://cfpva3ulb3moy"]
+
+[ext_resource type="FontFile" uid="uid://brllobr6jxxqw" path="res://assets/fonts/numbers/jersey10/Jersey10-Regular.ttf" id="1_qnv5y"]
+
+[resource]
+default_font = ExtResource("1_qnv5y")

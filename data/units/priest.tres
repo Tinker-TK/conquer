@@ -1,0 +1,24 @@
+[gd_resource type="Resource" script_class="UnitData" format=3 uid="uid://c6bryt3iwx1j7"]
+
+[ext_resource type="Texture2D" uid="uid://cgcrx15nelnkb" path="res://assets/cards/illustrations/priest.png" id="1_2xlr7"]
+[ext_resource type="Script" uid="uid://2m1qlskaxcox" path="res://data/units/unit_data.gd" id="1_3rxfi"]
+[ext_resource type="Resource" uid="uid://d1jw7ovnulyuo" path="res://data/skills/priest_attack.tres" id="1_hhgln"]
+[ext_resource type="Script" uid="uid://c4huhq7re2216" path="res://data/skills/skill_base.gd" id="2_ly2et"]
+[ext_resource type="Resource" uid="uid://b33l17d6a2h2a" path="res://data/skills/priest_healer.tres" id="4_hhgln"]
+[ext_resource type="Resource" path="res://data/skills/priest_healer_upgraded.tres" id="5_heal"]
+
+[resource]
+script = ExtResource("1_3rxfi")
+max_hp = 100
+unit_name = "牧师"
+unit_english_name = "priest"
+unit_type = 7
+defence = 4
+attack = 10
+card_name = "牧师征召"
+card_image = ExtResource("1_2xlr7")
+card_discription = "征召1名牧师。
+治疗：为生命比例最低的友军（含自身）回复60%攻击力的生命。"
+upgrade_ability_points = 2
+skills = Array[ExtResource("2_ly2et")]([ExtResource("1_hhgln"), ExtResource("4_hhgln"), ExtResource("5_heal")])
+metadata/_data_table_id = 7

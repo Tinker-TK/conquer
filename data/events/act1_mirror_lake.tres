@@ -1,0 +1,18 @@
+[gd_resource type="Resource" script_class="EventDefinition" format=3]
+
+[ext_resource type="Script" path="res://data/events/event_definition.gd" id="1"]
+[ext_resource type="Texture2D" path="res://assets/ui/events/illustrations/mirror-lake.png" id="2"]
+
+[resource]
+script = ExtResource("1")
+id = "act1_mirror_lake"
+title = "镜湖"
+description = "湖面没有倒映天空，只倒映着你的队伍。水里的「你」先一步抬起手，像是在邀请。\n\n你回头，队伍里没有人举手。"
+template = 4
+min_floor = 5
+max_floor = 9
+rarity = "rare"
+illustration = ExtResource("2")
+tags = Array[String](["duplicate"])
+requires = Array[String]([])
+choices = Array[Dictionary]([{"gold": 0, "heal": 0, "effect": {"type": "duplicate_card", "filter": "any"}, "cost": {"max_hp": 12}, "text": "触碰倒影", "summary": "最大生命 -12 · 复制 1 张任意牌", "result_text": "水面碎开，你的手里多了一件熟悉的东西。它看起来像是你曾经拥有过的，只是更长、更安静。"}, {"gold": 0, "heal": 20, "text": "饮下湖水", "summary": "回复 20 生命", "result_text": "湖水冷得像刀。伤口收拢时，你在倒影里看见自己皱了一下眉。"}, {"gold": 55, "heal": 0, "cost": {"hp": 6}, "text": "打捞湖底", "summary": "失去 6 生命 · 获得 55 金币", "result_text": "你从淤泥里摸出一只锈蚀的钱箱。湖水漫过膝盖时，有什么东西轻轻碰了碰你的脚踝。"}, {"text": "离开", "leave": true, "heal": 0, "gold": 0}])

@@ -1,0 +1,20 @@
+[gd_resource type="Resource" script_class="RelicDefinition" format=3]
+
+[ext_resource type="Script" path="res://data/relics/relic_definition.gd" id="1"]
+[ext_resource type="Texture2D" path="res://assets/ui_redrawn/icons/relic_leaf.png" id="2"]
+
+[resource]
+script = ExtResource("1")
+id = &"diverse_codex"
+display_name = "万国兵书"
+description = "己方存活兵种每有 1 种，全体防御 +1（最多 +3）；≥3 种时额外 +1 攻。"
+icon = ExtResource("2")
+kind = 5
+rarity = 1
+tags = Array[StringName]([&"wide"])
+trigger = 0
+handler = &"diverse_codex"
+max_per_battle = 0
+max_per_round = 0
+cooldown_seconds = 0.0
+priority = 1

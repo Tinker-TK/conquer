@@ -1,0 +1,38 @@
+[
+  {
+    "name": "knight",
+    "source": "C:/Users/10059/Downloads/ChatGPT Image 2026年9月5日 11_47_48.png",
+    "prompt": "Use case: background-extraction. Input image is reference for a Godot pixel-art game asset. Redraw ONLY the specified single asset as a complete standalone highly polished pixel-art sprite, preserve original design/color palette, crisp square pixel clusters and dark navy outline. Centered, whole silhouette with 12% empty margin, 1024 square. Background must be exact uniform solid #FF00FF chroma-key magenta, no checkerboard, no transparency simulation, no magenta in subject. No text, numbers, UI, ground, shadow, scenery, extra items or characters. The blue and silver knight at left: silver helmet with blue plume, blue gold-edged shield, silver sword raised towards upper right, complete full body standing facing right.",
+    "generated_path": "C:\\Users\\10059\\.codex\\generated_images\\01a06fb5-6bb1-7b92-bed5-59d8d6fbcced\\exec-a052896e-001b-483e-a4b0-2a6295ea4ee7.png",
+    "saved_path": "assets/ui_redrawn/raw/units/knight.png",
+    "mode": "built-in image_gen",
+    "background": "magenta chroma-key, requires processing"
+  },
+  {
+    "name": "archer",
+    "source": "C:/Users/10059/Downloads/ChatGPT Image 2026年9月5日 11_47_48.png",
+    "prompt": "Use case: background-extraction. Input image is reference for a Godot pixel-art game asset. Redraw ONLY the specified single asset as a complete standalone highly polished pixel-art sprite, preserve original design/color palette, crisp square pixel clusters and dark navy outline. Centered, whole silhouette with 12% empty margin, 1024 square. Background must be exact uniform solid #FF00FF chroma-key magenta, no checkerboard, no transparency simulation, no magenta in subject. No text, numbers, UI, ground, shadow, scenery, extra items or characters. The green hooded archer at center left: brown leather gear, wooden curved bow drawn towards right, complete full body facing right.",
+    "generated_path": "C:\\Users\\10059\\.codex\\generated_images\\01a06fb5-6bb1-7b92-bed5-59d8d6fbcced\\exec-004b9083-ce47-4952-940a-b81f81f360a8.png",
+    "saved_path": "assets/ui_redrawn/raw/units/archer.png",
+    "mode": "built-in image_gen",
+    "background": "magenta chroma-key, requires processing"
+  },
+  {
+    "name": "priest",
+    "source": "C:/Users/10059/Downloads/ChatGPT Image 2026年9月5日 11_47_48.png",
+    "prompt": "Use case: background-extraction. Input image is reference for a Godot pixel-art game asset. Redraw ONLY the specified single asset as a complete standalone highly polished pixel-art sprite, preserve original design/color palette, crisp square pixel clusters and dark navy outline. Centered, whole silhouette with 12% empty margin, 1024 square. Background must be exact uniform solid #FF00FF chroma-key magenta, no checkerboard, no transparency simulation, no magenta in subject. No text, numbers, UI, ground, shadow, scenery, extra items or characters. The white hooded priest at lower left: white hooded robe with golden trim, brown belt, gold cross-topped staff held on right, complete full body facing right.",
+    "generated_path": "C:\\Users\\10059\\.codex\\generated_images\\01a06fb5-6bb1-7b92-bed5-59d8d6fbcced\\exec-f33c1065-c4e2-4722-b6f4-bd9bfe4f44b7.png",
+    "saved_path": "assets/ui_redrawn/raw/units/priest.png",
+    "mode": "built-in image_gen",
+    "background": "magenta chroma-key, requires processing"
+  },
+  {
+    "name": "goblin",
+    "source": "C:/Users/10059/Downloads/ChatGPT Image 2026年9月5日 11_47_48.png",
+    "prompt": "Use case: background-extraction. Input image is reference for a Godot pixel-art game asset. Redraw ONLY the specified single asset as a complete standalone highly polished pixel-art sprite, preserve original design/color palette, crisp square pixel clusters and dark navy outline. Centered, whole silhouette with 12% empty margin, 1024 square. Background must be exact uniform solid #FF00FF chroma-key magenta, no checkerboard, no transparency simulation, no magenta in subject. No text, numbers, UI, ground, shadow, scenery, extra items or characters. One green goblin axe warrior as seen on right battlefield: green head with pointed ears, brown leather tunic and boots, silver-bladed axe held left, complete full body facing LEFT towards player side.",
+    "generated_path": "C:\\Users\\10059\\.codex\\generated_images\\01a06fb5-6bb1-7b92-bed5-59d8d6fbcced\\exec-0292f425-9d0b-4e5b-8cdd-0a837941446d.png",
+    "saved_path": "assets/ui_redrawn/raw/units/goblin.png",
+    "mode": "built-in image_gen",
+    "background": "magenta chroma-key, requires processing"
+  }
+]

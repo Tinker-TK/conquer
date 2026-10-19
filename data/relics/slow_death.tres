@@ -1,0 +1,20 @@
+[gd_resource type="Resource" script_class="RelicDefinition" format=3]
+
+[ext_resource type="Script" path="res://data/relics/relic_definition.gd" id="1"]
+[ext_resource type="Texture2D" path="res://assets/ui_redrawn/icons/relic_mushroom.png" id="2"]
+
+[resource]
+script = ExtResource("1")
+id = &"slow_death"
+display_name = "慢性死亡"
+description = "25% 概率将本次伤害复制给 150 内另一敌人；每回合 2 次。"
+icon = ExtResource("2")
+kind = 5
+rarity = 1
+tags = Array[StringName]([&"dot"])
+trigger = 14
+handler = &"slow_death"
+max_per_battle = 0
+max_per_round = 2
+cooldown_seconds = 0.0
+priority = 3

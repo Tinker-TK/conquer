@@ -1,0 +1,112 @@
+{
+  "date": "2026-10-09",
+  "sheets": [
+    "关卡总览",
+    "路线生命",
+    "波次与结算",
+    "敌兵与开局"
+  ],
+  "formulaScan": "{\"kind\":\"notice\",\"message\":\"Cell search matched 0 entries.\"}",
+  "routes": 14,
+  "groups": {
+    "A": {
+      "start": 9,
+      "end": 14,
+      "summary": 9,
+      "waveRows": [
+        9,
+        10,
+        11,
+        12,
+        13,
+        14
+      ]
+    },
+    "B": {
+      "start": 16,
+      "end": 22,
+      "summary": 10,
+      "waveRows": [
+        16,
+        17,
+        18,
+        19,
+        20,
+        21,
+        22
+      ]
+    },
+    "C": {
+      "start": 24,
+      "end": 30,
+      "summary": 11,
+      "waveRows": [
+        24,
+        25,
+        26,
+        27,
+        28,
+        29,
+        30
+      ]
+    },
+    "D": {
+      "start": 32,
+      "end": 39,
+      "summary": 12,
+      "waveRows": [
+        32,
+        33,
+        34,
+        35,
+        36,
+        37,
+        38
+      ]
+    },
+    "E": {
+      "start": 41,
+      "end": 49,
+      "summary": 13,
+      "waveRows": [
+        41,
+        42,
+        43,
+        44,
+        45,
+        46,
+        47
+      ]
+    },
+    "F": {
+      "start": 51,
+      "end": 65,
+      "summary": 14,
+      "waveRows": [
+        51,
+        52,
+        53,
+        54,
+        55,
+        56,
+        57,
+        58,
+        59,
+        60
+      ]
+    }
+  },
+  "sensitivities": [
+    "stress1.5",
+    "enemyHPpending",
+    "blankOutcome",
+    "unitHP",
+    "deathAbsorbs"
+  ],
+  "baseline": {
+    "bossMin": 76,
+    "bossMax": 100,
+    "endMin": 54,
+    "endMax": 78
+  }
+}

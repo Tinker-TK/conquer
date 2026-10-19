@@ -1,0 +1,185 @@
+[gd_resource type="Resource" script_class="RunStartData" format=3 uid="uid://cr13gcy2eil84"]
+
+[ext_resource type="Script" path="res://data/card_effects/card_effect.gd" id="1_58hlp"]
+[ext_resource type="Script" path="res://data/cards/card_definition.gd" id="2_d7v7s"]
+[ext_resource type="Script" uid="uid://c53uoxvxtxwo1" path="res://data/run/run_start_data.gd" id="3_sto8m"]
+
+[sub_resource type="Resource" id="Effect_0_0"]
+script = ExtResource("1_58hlp")
+
+[sub_resource type="Resource" id="Card_0"]
+script = ExtResource("2_d7v7s")
+card_name = "磨砺锋刃"
+card_discription = "使1名己方单位攻击力+5，持续本场战斗。"
+effects = Array[ExtResource("1_58hlp")]([SubResource("Effect_0_0")])
+
+[sub_resource type="Resource" id="Effect_1_0"]
+script = ExtResource("1_58hlp")
+kind = 1
+amount = 25.0
+
+[sub_resource type="Resource" id="Card_1"]
+script = ExtResource("2_d7v7s")
+card_name = "战地治疗"
+card_discription = "为1名己方单位回复最大生命值的25%。"
+effects = Array[ExtResource("1_58hlp")]([SubResource("Effect_1_0")])
+
+[sub_resource type="Resource" id="Effect_2_0"]
+script = ExtResource("1_58hlp")
+kind = 2
+amount = 3.0
+
+[sub_resource type="Resource" id="Card_2"]
+script = ExtResource("2_d7v7s")
+card_name = "加固护甲"
+card_discription = "使1名己方单位防御力+3，持续本场战斗。"
+effects = Array[ExtResource("1_58hlp")]([SubResource("Effect_2_0")])
+
+[sub_resource type="Resource" id="Effect_3_0"]
+script = ExtResource("1_58hlp")
+kind = 3
+amount = 2.0
+
+[sub_resource type="Resource" id="Card_3"]
+script = ExtResource("2_d7v7s")
+card_name = "淬毒武器"
+card_discription = "使1名己方单位每次攻击命中附加2层中毒，持续本场战斗。"
+effects = Array[ExtResource("1_58hlp")]([SubResource("Effect_3_0")])
+
+[sub_resource type="Resource" id="Effect_4_0"]
+script = ExtResource("1_58hlp")
+kind = 4
+amount = 20.0
+
+[sub_resource type="Resource" id="Card_4"]
+script = ExtResource("2_d7v7s")
+card_name = "死亡宣告"
+card_discription = "使1名己方单位死亡时爆炸，对半径150内的所有单位造成20点伤害，无视防御。持续本场战斗。"
+effects = Array[ExtResource("1_58hlp")]([SubResource("Effect_4_0")])
+
+[sub_resource type="Resource" id="Effect_7_0"]
+script = ExtResource("1_58hlp")
+kind = 6
+amount = 1.0
+
+[sub_resource type="Resource" id="Card_7"]
+script = ExtResource("2_d7v7s")
+card_name = "镜像援军"
+card_discription = "复制1名己方单位，保留当前生命。"
+effects = Array[ExtResource("1_58hlp")]([SubResource("Effect_7_0")])
+
+[sub_resource type="Resource" id="Effect_8_0"]
+script = ExtResource("1_58hlp")
+kind = 7
+
+[sub_resource type="Resource" id="Card_8"]
+script = ExtResource("2_d7v7s")
+card_name = "烈焰区域"
+card_discription = "在指定位置生成半径150的火焰区域，每1秒对其中的敌方单位造成5点伤害，持续本场战斗。"
+target = 4
+effects = Array[ExtResource("1_58hlp")]([SubResource("Effect_8_0")])
+
+[sub_resource type="Resource" id="Effect_9_0"]
+script = ExtResource("1_58hlp")
+kind = 8
+amount = 50.0
+
+[sub_resource type="Resource" id="Card_9"]
+script = ExtResource("2_d7v7s")
+card_name = "泥潭"
+card_discription = "在指定位置生成半径150的泥潭，其中所有单位移动速度降低50%，持续本场战斗。"
+target = 4
+effects = Array[ExtResource("1_58hlp")]([SubResource("Effect_9_0")])
+
+[sub_resource type="Resource" id="Effect_10_0"]
+script = ExtResource("1_58hlp")
+kind = 9
+amount = 4.0
+
+[sub_resource type="Resource" id="Effect_10_1"]
+script = ExtResource("1_58hlp")
+kind = 10
+amount = 1.0
+
+[sub_resource type="Resource" id="Card_10"]
+script = ExtResource("2_d7v7s")
+card_name = "孤注一掷"
+card_discription = "抽4张牌。\n本回合无法再抽牌。"
+category = 2
+target = 0
+effects = Array[ExtResource("1_58hlp")]([SubResource("Effect_10_0"), SubResource("Effect_10_1")])
+
+[sub_resource type="Resource" id="Effect_11_0"]
+script = ExtResource("1_58hlp")
+kind = 11
+amount = 3.0
+
+[sub_resource type="Resource" id="Effect_11_1"]
+script = ExtResource("1_58hlp")
+kind = 9
+amount = 2.0
+
+[sub_resource type="Resource" id="Card_11"]
+script = ExtResource("2_d7v7s")
+card_name = "血契补给"
+card_discription = "消耗3点玩家生命。\n抽2张牌。"
+category = 2
+target = 0
+effects = Array[ExtResource("1_58hlp")]([SubResource("Effect_11_0"), SubResource("Effect_11_1")])
+
+[sub_resource type="Resource" id="Effect_12_0"]
+script = ExtResource("1_58hlp")
+kind = 12
+amount = 1.0
+
+[sub_resource type="Resource" id="Card_12"]
+script = ExtResource("2_d7v7s")
+card_name = "后勤动员"
+card_discription = "从下回合起，每回合额外获得1点能量，持续本场战斗。\n消耗。"
+category = 2
+target = 0
+after_use = 1
+effects = Array[ExtResource("1_58hlp")]([SubResource("Effect_12_0")])
+
+[sub_resource type="Resource" id="Effect_13_0"]
+script = ExtResource("1_58hlp")
+kind = 13
+amount = 2.0
+
+[sub_resource type="Resource" id="Card_13"]
+script = ExtResource("2_d7v7s")
+card_name = "悼亡战意"
+card_discription = "本场战斗每有1名己方单位阵亡，全体己方单位攻击力+2（计入此前阵亡）。\n消耗。"
+category = 2
+target = 0
+after_use = 1
+effects = Array[ExtResource("1_58hlp")]([SubResource("Effect_13_0")])
+
+[sub_resource type="Resource" id="Effect_14_0"]
+script = ExtResource("1_58hlp")
+kind = 14
+amount = 2.0
+
+[sub_resource type="Resource" id="Card_14"]
+script = ExtResource("2_d7v7s")
+card_name = "战术涌现"
+card_discription = "从抽牌堆随机打出2张牌，不消耗能量。"
+category = 2
+target = 0
+effects = Array[ExtResource("1_58hlp")]([SubResource("Effect_14_0")])
+
+[sub_resource type="Resource" id="Effect_15_0"]
+script = ExtResource("1_58hlp")
+kind = 15
+amount = 1.0
+
+[sub_resource type="Resource" id="Card_15"]
+script = ExtResource("2_d7v7s")
+card_name = "撤回部队"
+card_discription = "撤回1名己方单位，将其征召牌返回手牌。"
+category = 2
+effects = Array[ExtResource("1_58hlp")]([SubResource("Effect_15_0")])
+
+[resource]
+script = ExtResource("3_sto8m")
+cards = Array[Resource]([SubResource("Card_0"), SubResource("Card_1"), SubResource("Card_2"), SubResource("Card_3"), SubResource("Card_4"), SubResource("Card_7"), SubResource("Card_8"), SubResource("Card_9"), SubResource("Card_10"), SubResource("Card_11"), SubResource("Card_12"), SubResource("Card_13"), SubResource("Card_14"), SubResource("Card_15")])

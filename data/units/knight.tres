@@ -1,0 +1,30 @@
+[gd_resource type="Resource" script_class="UnitData" format=3 uid="uid://cq48e3ql61whe"]
+
+[ext_resource type="Resource" uid="uid://c6qk3ghsgbn8c" path="res://data/skills/knight_dodge_attack.tres" id="1_86anu"]
+[ext_resource type="Script" uid="uid://2m1qlskaxcox" path="res://data/units/unit_data.gd" id="1_fvxrw"]
+[ext_resource type="Texture2D" uid="uid://cp6tgjuce22vh" path="res://assets/cards/illustrations/knight.png" id="1_grp4k"]
+[ext_resource type="Script" uid="uid://c4huhq7re2216" path="res://data/skills/skill_base.gd" id="2_7yxhb"]
+[ext_resource type="Resource" uid="uid://wr85a7anuuox" path="res://data/skills/knight_attack.tres" id="4_5gfff"]
+[ext_resource type="Resource" uid="uid://c2cfgkv3f1qhk" path="res://data/skills/knight_power_attack.tres" id="5_grp4k"]
+[ext_resource type="Resource" path="res://data/skills/knight_blood_slash_upgraded.tres" id="6_blood"]
+
+[resource]
+script = ExtResource("1_fvxrw")
+defence = 5
+max_hp = 150
+unit_name = "骑士"
+unit_english_name = "knight"
+unit_type = 4
+attack = 15
+dodge_rate = 0.2
+card_cost = 2
+card_name = "骑士召唤"
+card_image = ExtResource("1_grp4k")
+card_discription = "征召1名骑士。
+上场时，抽1张牌。
+血影斩击：150%伤害，冷却10秒，命中叠加1层流血（每层1点/秒）。每6秒将自身流血扣血量回复骑士。
+防守反击：有20%几率闪避攻击并反击。"
+upgrade_ability_points = 2
+skills = Array[ExtResource("2_7yxhb")]([ExtResource("4_5gfff"), ExtResource("5_grp4k"), ExtResource("6_blood")])
+dodge_skill = ExtResource("1_86anu")
+metadata/_data_table_id = 3

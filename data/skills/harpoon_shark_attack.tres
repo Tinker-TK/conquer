@@ -1,0 +1,18 @@
+[gd_resource type="Resource" format=3]
+
+[ext_resource type="Script" path="res://scripts/skills/arrow_attack.gd" id="skill"]
+[ext_resource type="PackedScene" path="res://scenes/projectiles/harpoon_shark_projectile.tscn" id="projectile"]
+
+[resource]
+script = ExtResource("skill")
+skill_name = "远程攻击"
+is_basic_attack = true
+description = "向敌人发射投射物。"
+cooldown = 1.5
+cast_range = 420.0
+cast_animation = "attack_01"
+hit_frame = Array[int]([4])
+combat_sound_profile = "bow"
+projectile_scene = ExtResource("projectile")
+projectile_trajectory = 0
+projectile_pos = Vector2(28, 48)

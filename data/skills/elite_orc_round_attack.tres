@@ -1,0 +1,14 @@
+[gd_resource type="Resource" format=3 uid="uid://bcj1xv5e04wty"]
+
+[ext_resource type="Script" uid="uid://l5slg1wgnhew" path="res://scripts/skills/normal_attack.gd" id="1_eghv2"]
+
+[resource]
+script = ExtResource("1_eghv2")
+skill_name = "旋转攻击"
+description = "精英哥布林发动旋转攻击，对周围一圈的敌人造成伤害"
+attack_rate = 0.8
+cooldown = 8.0
+priority = 2
+cast_animation = "attack_02"
+hit_frame = Array[int]([1, 3, 5, 8])
+metadata/_data_table_id = 4

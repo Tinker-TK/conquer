@@ -1,0 +1,24 @@
+[gd_resource type="Resource" script_class="CardDefinition" format=3 uid="uid://bu476aauxiqr"]
+
+[ext_resource type="Texture2D" path="res://assets/cards/illustrations/death_explosion.png" id="1_uje1n"]
+[ext_resource type="Script" uid="uid://dvqd45gj27252" path="res://data/card_effects/card_effect.gd" id="2_tjg0v"]
+[ext_resource type="Script" uid="uid://6l58cf1r7imd" path="res://data/cards/card_definition.gd" id="3_kb4fa"]
+
+[sub_resource type="Resource" id="Resource_27uql"]
+script = ExtResource("2_tjg0v")
+lasting_rounds = 1
+kind = 4
+amount = 30.0
+radius = 160.0
+affected_team = 1
+metadata/_custom_type_script = "uid://dvqd45gj27252"
+upgrade_amount = 15.0
+
+[resource]
+script = ExtResource("3_kb4fa")
+card_name = "同生共死"
+card_discription = "使1名己方单位死亡时爆炸，对半径160内的所有单位造成30点伤害，无视防御。持续本场战斗。"
+card_image = ExtResource("1_uje1n")
+card_cost = 1
+effects = Array[ExtResource("2_tjg0v")]([SubResource("Resource_27uql")])
+max_upgrade_count = 1

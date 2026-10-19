@@ -1,0 +1,93 @@
+[gd_scene format=3 uid="uid://buhhk0wwpaop4"]
+
+[ext_resource type="Script" uid="uid://kpq8ia3fly1k" path="res://scripts/world/tree.gd" id="1_27sor"]
+[ext_resource type="Texture2D" uid="uid://dpp3t5bpll4vh" path="res://assets/tilemap/bush/Bushe2.png" id="2_27sor"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_ln8io"]
+atlas = ExtResource("2_27sor")
+region = Rect2(0, 0, 128, 128)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_087tt"]
+atlas = ExtResource("2_27sor")
+region = Rect2(128, 0, 128, 128)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_5jatc"]
+atlas = ExtResource("2_27sor")
+region = Rect2(256, 0, 128, 128)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_fa4xg"]
+atlas = ExtResource("2_27sor")
+region = Rect2(384, 0, 128, 128)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_fdant"]
+atlas = ExtResource("2_27sor")
+region = Rect2(512, 0, 128, 128)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_sdcje"]
+atlas = ExtResource("2_27sor")
+region = Rect2(640, 0, 128, 128)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_xqu4g"]
+atlas = ExtResource("2_27sor")
+region = Rect2(768, 0, 128, 128)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_xsuhj"]
+atlas = ExtResource("2_27sor")
+region = Rect2(896, 0, 128, 128)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_dkqy0"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_ln8io")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_087tt")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_5jatc")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_fa4xg")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_fdant")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_sdcje")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_xqu4g")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_xsuhj")
+}],
+"loop": true,
+"name": &"default",
+"speed": 5.0
+}]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_avsvi"]
+size = Vector2(41, 21)
+
+[node name="Tree" type="Node2D" unique_id=1126465960]
+y_sort_enabled = true
+script = ExtResource("1_27sor")
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="." unique_id=1432912340]
+sprite_frames = SubResource("SpriteFrames_dkqy0")
+autoplay = "default"
+frame_progress = 0.67207724
+
+[node name="TransparentCheck" type="Area2D" parent="." unique_id=1358125869]
+light_mask = 0
+visibility_layer = 0
+collision_layer = 0
+collision_mask = 3
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="TransparentCheck" unique_id=1336505211]
+position = Vector2(0, -10.5)
+shape = SubResource("RectangleShape2D_avsvi")
+
+[connection signal="body_entered" from="TransparentCheck" to="." method="_on_transparent_check_body_entered"]
+[connection signal="body_exited" from="TransparentCheck" to="." method="_on_transparent_check_body_exited"]

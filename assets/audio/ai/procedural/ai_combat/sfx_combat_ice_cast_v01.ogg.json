@@ -1,0 +1,39 @@
+{
+  "id": "combat_ice_cast",
+  "variant": 1,
+  "asset": "sfx_combat_ice_cast_v01",
+  "provider": "procedural",
+  "category": "ai_combat",
+  "title": "冰晶凝结",
+  "prompt": "ice shard forming, crystalline shimmer, frosty air",
+  "source_prompt": "ice shard forming, crystalline shimmer, frosty air",
+  "duration_seconds": 0.9,
+  "output_format": "wav_48000",
+  "tags": [
+    "spell",
+    "ice",
+    "cast"
+  ],
+  "license": "CC0-1.0",
+  "author": "项目程序合成（占位）",
+  "source": "res://tools/audio/ai/procedural.py",
+  "recipe": "ice_cast",
+  "created_at": "2026-10-18T17:03:23+00:00",
+  "sha256": "1c4d4e1e6fe7b733294cab748bfc363e20ecda04707b4fc67d448ce58416d31f",
+  "path": "res://assets/audio/ai/procedural/ai_combat/sfx_combat_ice_cast_v01.ogg",
+  "loop": false,
+  "sample_rate": 44100,
+  "channels": 1,
+  "features": {
+    "duration_seconds": 0.948,
+    "peak_dbfs": -1.0,
+    "rms_dbfs": -20.08,
+    "crest_db": 19.08,
+    "spectral_centroid_hz": 8467.4,
+    "zero_cross_rate": 0.346,
+    "attack_ms": 182.3,
+    "tail_ms": 0.2
+  },
+  "seam_jump": null,
+  "bytes": 13068
+}

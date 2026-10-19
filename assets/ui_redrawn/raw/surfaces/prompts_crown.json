@@ -1,0 +1,9 @@
+[
+  {
+    "name": "crown_backplate",
+    "src": "hud/crown_badge.png",
+    "prompt": "Edit reference into ONE isolated complete hanging heraldic UI banner BACKPLATE only. Preserve original navy/teal vertical pennant with gold border and V-shaped pointed bottom. Reconstruct the entire missing TOP edge and the complete blue surface behind the removed crown. Remove the crown emblem entirely; no letters, numbers, stars, emblems or icons. Blank blue face, golden double edge, dark navy stepped pixel outline. High resolution crisp pixel-art matching reference. Center whole banner with 12% margin on flat solid magenta #FF00FF background for local chroma key. Complete unoccluded upright symmetric banner, not shield-cost badge, no other objects.",
+    "hint": "Generated images are saved to C:\\Users\\10059\\.codex\\generated_images\\01a06fae-b281-7ca0-9405-7d3035d0915f as C:\\Users\\10059\\.codex\\generated_images\\01a06fae-b281-7ca0-9405-7d3035d0915f\\exec-a4f08b52-8ef2-4ed7-9580-dad3d6cefd28.png by default.\nIf you need to use a generated image at another path, copy it and leave the original in place unless the user explicitly asks you to delete it.\nThe generated image is already displayed to the user. There is no need to render it in the final response as a Markdown image or file link.",
+    "generated_path": "C:\\Users\\10059\\.codex\\generated_images\\01a06fae-b281-7ca0-9405-7d3035d0915f\\exec-a4f08b52-8ef2-4ed7-9580-dad3d6cefd28.png"
+  }
+]

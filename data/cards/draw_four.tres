@@ -1,0 +1,34 @@
+[gd_resource type="Resource" script_class="CardDefinition" format=3 uid="uid://dl215qs6t0xjy"]
+
+[ext_resource type="Texture2D" path="res://assets/cards/illustrations/draw_four.png" id="1_3psm4"]
+[ext_resource type="Script" uid="uid://dvqd45gj27252" path="res://data/card_effects/card_effect.gd" id="2_fb2kq"]
+[ext_resource type="Script" uid="uid://6l58cf1r7imd" path="res://data/cards/card_definition.gd" id="3_2pvdn"]
+
+[sub_resource type="Resource" id="Resource_27uql"]
+script = ExtResource("2_fb2kq")
+lasting_rounds = 1
+kind = 9
+amount = 3.0
+radius = 250.0
+affected_team = 1
+metadata/_custom_type_script = "uid://dvqd45gj27252"
+upgrade_amount = 1.0
+
+[sub_resource type="Resource" id="Resource_3psm4"]
+script = ExtResource("2_fb2kq")
+lasting_rounds = 1
+kind = 10
+affected_team = 1
+metadata/_custom_type_script = "uid://dvqd45gj27252"
+
+[resource]
+script = ExtResource("3_2pvdn")
+card_name = "孤注一掷"
+card_discription = "抽3张牌。\n本回合无法再抽牌。\n消耗。"
+card_image = ExtResource("1_3psm4")
+category = 2
+target = 0
+after_use = 1
+effects = Array[ExtResource("2_fb2kq")]([SubResource("Resource_27uql"), SubResource("Resource_3psm4")])
+max_upgrade_count = 1
+card_cost = 0

@@ -1,0 +1,16 @@
+[gd_scene format=3 uid="uid://ccjab1ic6mqq6"]
+
+[ext_resource type="Script" uid="uid://kjkuj358hhhi" path="res://scripts/combat/projectile.gd" id="1_bgvs4"]
+[ext_resource type="Texture2D" uid="uid://kbnt6ogepvt3" path="res://assets/characters/Archer/Arrow(projectile)/Arrow02(100x100).png" id="2_kvwh0"]
+
+[node name="PowerArrow" type="Node2D" unique_id=1877191077]
+z_index = 10
+scale = Vector2(2.5, 2.5)
+script = ExtResource("1_bgvs4")
+speed = 600.0
+max_height = 0.0
+hit_radius = 30.0
+
+[node name="Sprite2D" type="Sprite2D" parent="." unique_id=861216337]
+scale = Vector2(1.6, 1.6)
+texture = ExtResource("2_kvwh0")

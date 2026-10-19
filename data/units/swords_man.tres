@@ -1,0 +1,30 @@
+[gd_resource type="Resource" script_class="UnitData" format=3 uid="uid://q0e873g8rmct"]
+
+[ext_resource type="Script" uid="uid://2m1qlskaxcox" path="res://data/units/unit_data.gd" id="1_l3ep5"]
+[ext_resource type="Texture2D" uid="uid://7edjjxy0o3no" path="res://assets/cards/illustrations/swords_man.png" id="1_nrmjs"]
+[ext_resource type="Script" uid="uid://c4huhq7re2216" path="res://data/skills/skill_base.gd" id="2_fovtl"]
+[ext_resource type="Resource" uid="uid://deed13pfb6d4j" path="res://data/skills/swords_man_attack.tres" id="3_cwsxo"]
+[ext_resource type="Resource" uid="uid://bm57byh2s5ccs" path="res://data/skills/swords_man_muti_attack.tres" id="4_aoslt"]
+[ext_resource type="Resource" uid="uid://d045vo2w8qjtt" path="res://data/skills/swords_man_stick_muti_attack.tres" id="5_nrmjs"]
+[ext_resource type="Resource" path="res://data/skills/swords_man_seventh_strike.tres" id="6_passive"]
+[ext_resource type="Resource" path="res://data/skills/swords_man_seventh_strike_upgraded.tres" id="7_passive"]
+[ext_resource type="Resource" path="res://data/skills/swords_man_wind_combo_upgraded.tres" id="8_combo"]
+
+[resource]
+script = ExtResource("1_l3ep5")
+unit_name = "剑士"
+unit_english_name = "swords_man"
+unit_type = 8
+max_hp = 180
+defence = 5
+attack = 18
+card_cost = 3
+card_name = "剑士征召"
+card_image = ExtResource("1_nrmjs")
+card_discription = "征召1名剑士。
+三连击：后撤300，首次放风160%伤害，前突接两刀各70%伤害。
+六连刺：连击7次，每次40%攻击力伤害。
+七伤：每7次攻击伤害追加目标最大生命(3+x)%真伤，x为原牌当前费用，忽略临时免费。"
+upgrade_ability_points = 2
+skills = Array[ExtResource("2_fovtl")]([ExtResource("3_cwsxo"), ExtResource("4_aoslt"), ExtResource("5_nrmjs"), ExtResource("6_passive"), ExtResource("7_passive"), ExtResource("8_combo")])
+metadata/_data_table_id = 9

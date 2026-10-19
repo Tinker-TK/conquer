@@ -1,0 +1,20 @@
+[gd_resource type="Resource" script_class="RelicDefinition" format=3]
+
+[ext_resource type="Script" path="res://data/relics/relic_definition.gd" id="1"]
+[ext_resource type="Texture2D" path="res://assets/ui_redrawn/icons/relic_mushroom.png" id="2"]
+
+[resource]
+script = ExtResource("1")
+id = &"burning_city"
+display_name = "焚城之焰"
+description = "每场首个敌人死亡时，尸体处生成半径 180 火焰区域，每 0.5 秒 6 点，持续 2 回合。"
+icon = ExtResource("2")
+kind = 5
+rarity = 2
+tags = Array[StringName]([&"dot"])
+trigger = 9
+handler = &"burning_city"
+max_per_battle = 1
+max_per_round = 0
+cooldown_seconds = 0.0
+priority = 3

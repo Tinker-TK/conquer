@@ -1,0 +1,20 @@
+[gd_resource type="Resource" script_class="RelicDefinition" format=3]
+
+[ext_resource type="Script" path="res://data/relics/relic_definition.gd" id="1"]
+[ext_resource type="Texture2D" path="res://assets/ui_redrawn/icons/relic_ring.png" id="2"]
+
+[resource]
+script = ExtResource("1")
+id = &"duel_pact"
+display_name = "决斗契约"
+description = "每场第 1 名部署的单位：最大生命 +30%、攻击 +15%，持续本场。"
+icon = ExtResource("2")
+kind = 5
+rarity = 1
+tags = Array[StringName]([&"tall"])
+trigger = 8
+handler = &"duel_pact"
+max_per_battle = 1
+max_per_round = 0
+cooldown_seconds = 0.0
+priority = 1

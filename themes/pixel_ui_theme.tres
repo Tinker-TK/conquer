@@ -1,0 +1,122 @@
+[gd_resource type="Theme" format=3 uid="uid://cvshaatjvlfwx"]
+
+[ext_resource type="Texture2D" uid="uid://dfpp0pxjt83br" path="res://assets/ui/Buttons/Button_Blue_3Slides.png" id="1"]
+[ext_resource type="Texture2D" uid="uid://bi6r1s6imqj4p" path="res://assets/ui/Buttons/Button_Blue_3Slides_Pressed.png" id="2"]
+[ext_resource type="Texture2D" uid="uid://darbb5j5axqe1" path="res://assets/ui/Buttons/Button_Red_3Slides.png" id="3"]
+[ext_resource type="Texture2D" uid="uid://c6j0cyorwku4y" path="res://assets/ui/Buttons/Button_Red_3Slides_Pressed.png" id="4"]
+[ext_resource type="Texture2D" uid="uid://fl68nq4ij50w" path="res://assets/ui/Buttons/Button_Hover_3Slides.png" id="5"]
+[ext_resource type="Texture2D" uid="uid://c7h54nkmcx8be" path="res://assets/ui/Buttons/Button_Disable_3Slides.png" id="6"]
+
+[sub_resource type="StyleBoxTexture" id="Box6"]
+content_margin_left = 24.0
+content_margin_top = 10.0
+content_margin_right = 24.0
+content_margin_bottom = 14.0
+texture = ExtResource("6")
+texture_margin_left = 24.0
+texture_margin_top = 12.0
+texture_margin_right = 24.0
+texture_margin_bottom = 12.0
+region_rect = Rect2(0, 0, 192, 56)
+
+[sub_resource type="StyleBoxTexture" id="Focus"]
+texture = ExtResource("5")
+texture_margin_left = 24.0
+texture_margin_top = 12.0
+texture_margin_right = 24.0
+texture_margin_bottom = 12.0
+region_rect = Rect2(0, 0, 192, 56)
+draw_center = false
+
+[sub_resource type="StyleBoxTexture" id="Box5"]
+content_margin_left = 24.0
+content_margin_top = 6.0
+content_margin_right = 24.0
+content_margin_bottom = 18.0
+texture = ExtResource("5")
+texture_margin_left = 24.0
+texture_margin_top = 12.0
+texture_margin_right = 24.0
+texture_margin_bottom = 12.0
+region_rect = Rect2(0, 0, 192, 56)
+
+[sub_resource type="StyleBoxTexture" id="Box3"]
+content_margin_left = 24.0
+content_margin_top = 6.0
+content_margin_right = 24.0
+content_margin_bottom = 18.0
+texture = ExtResource("3")
+texture_margin_left = 24.0
+texture_margin_top = 12.0
+texture_margin_right = 24.0
+texture_margin_bottom = 12.0
+region_rect = Rect2(0, 0, 192, 56)
+
+[sub_resource type="StyleBoxTexture" id="Box4"]
+content_margin_left = 24.0
+content_margin_top = 10.0
+content_margin_right = 24.0
+content_margin_bottom = 14.0
+texture = ExtResource("4")
+texture_margin_left = 24.0
+texture_margin_top = 12.0
+texture_margin_right = 24.0
+texture_margin_bottom = 12.0
+region_rect = Rect2(0, 0, 192, 56)
+
+[sub_resource type="StyleBoxTexture" id="Box1"]
+content_margin_left = 24.0
+content_margin_top = 6.0
+content_margin_right = 24.0
+content_margin_bottom = 18.0
+texture = ExtResource("1")
+texture_margin_left = 24.0
+texture_margin_top = 12.0
+texture_margin_right = 24.0
+texture_margin_bottom = 12.0
+region_rect = Rect2(0, 0, 192, 56)
+
+[sub_resource type="StyleBoxTexture" id="Box2"]
+content_margin_left = 24.0
+content_margin_top = 10.0
+content_margin_right = 24.0
+content_margin_bottom = 14.0
+texture = ExtResource("2")
+texture_margin_left = 24.0
+texture_margin_top = 12.0
+texture_margin_right = 24.0
+texture_margin_bottom = 12.0
+region_rect = Rect2(0, 0, 192, 56)
+
+[sub_resource type="SystemFont" id="Font"]
+font_names = PackedStringArray("Microsoft YaHei", "Noto Sans CJK SC", "PingFang SC")
+font_weight = 800
+
+[resource]
+default_font = SubResource("Font")
+default_font_size = 22
+BattleStart/base_type = &"Button"
+BattleStart/colors/font_color = Color(0.157, 0.176, 0.231, 1)
+BattleStart/colors/font_disabled_color = Color(0.32, 0.34, 0.38, 1)
+BattleStart/colors/font_focus_color = Color(0.157, 0.176, 0.231, 1)
+BattleStart/colors/font_hover_color = Color(0.157, 0.176, 0.231, 1)
+BattleStart/colors/font_hover_pressed_color = Color(0.157, 0.176, 0.231, 1)
+BattleStart/colors/font_pressed_color = Color(0.157, 0.176, 0.231, 1)
+BattleStart/styles/disabled = SubResource("Box6")
+BattleStart/styles/focus = SubResource("Focus")
+BattleStart/styles/hover = SubResource("Box5")
+BattleStart/styles/hover_pressed = SubResource("Box5")
+BattleStart/styles/normal = SubResource("Box3")
+BattleStart/styles/pressed = SubResource("Box4")
+Button/colors/font_color = Color(0.157, 0.176, 0.231, 1)
+Button/colors/font_disabled_color = Color(0.32, 0.34, 0.38, 1)
+Button/colors/font_focus_color = Color(0.157, 0.176, 0.231, 1)
+Button/colors/font_hover_color = Color(0.157, 0.176, 0.231, 1)
+Button/colors/font_hover_pressed_color = Color(0.157, 0.176, 0.231, 1)
+Button/colors/font_pressed_color = Color(0.157, 0.176, 0.231, 1)
+Button/styles/disabled = SubResource("Box6")
+Button/styles/focus = SubResource("Focus")
+Button/styles/hover = SubResource("Box5")
+Button/styles/hover_pressed = SubResource("Box5")
+Button/styles/normal = SubResource("Box1")
+Button/styles/pressed = SubResource("Box2")

@@ -1,0 +1,26 @@
+[gd_resource type="Resource" script_class="CardDefinition" format=3]
+
+[ext_resource type="Script" path="res://data/cards/card_definition.gd" id="1_card"]
+[ext_resource type="Script" path="res://data/card_effects/card_effect.gd" id="2_effect"]
+[ext_resource type="Texture2D" path="res://assets/cards/illustrations/master_strategy.png" id="3_art"]
+
+[sub_resource type="Resource" id="Resource_effect"]
+script = ExtResource("2_effect")
+kind = 9
+amount = 2.0
+upgrade_amount = 1.0
+
+[resource]
+script = ExtResource("1_card")
+card_name = "运筹帷幄"
+card_discription = "立刻抽2张牌。消耗。固有：回合结束保留于手牌。"
+card_image = ExtResource("3_art")
+card_cost = 0
+rarity = 0
+category = 2
+target = 0
+after_use = 1
+retain_in_hand = true
+starts_in_hand = true
+max_upgrade_count = 1
+effects = Array[ExtResource("2_effect")]([SubResource("Resource_effect")])

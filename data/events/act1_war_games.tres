@@ -1,0 +1,18 @@
+[gd_resource type="Resource" script_class="EventDefinition" format=3]
+
+[ext_resource type="Script" path="res://data/events/event_definition.gd" id="1"]
+[ext_resource type="Texture2D" path="res://assets/ui/events/illustrations/war-games.png" id="2"]
+
+[resource]
+script = ExtResource("1")
+id = "act1_war_games"
+title = "沙盘推演"
+description = "废弃指挥帐中央摆着一张巨大的沙盘，敌我棋子仍在原位，仿佛战斗只暂停了一瞬。\n\n沙盘边缘插着一排小旗，每面旗上都写着同一句话：「再来一次。」"
+template = 4
+min_floor = 4
+max_floor = 8
+rarity = "common"
+illustration = ExtResource("2")
+tags = Array[String](["enhance"])
+requires = Array[String]([])
+choices = Array[Dictionary]([{"gold": 0, "heal": 0, "effect": {"type": "enhance_random", "count": 2}, "cost": {"max_hp": 8}, "text": "推演到天亮", "summary": "最大生命 -8 · 随机强化 2 张牌", "result_text": "天亮时，沙盘上的棋子已经被你挪过几十遍。你记住的不是胜负，是那几步差点输掉的地方。"}, {"gold": 0, "heal": 0, "effect": {"type": "enhance_card"}, "cost": {"gold": 35}, "text": "只复盘一局", "summary": "支付 35 金币 · 强化 1 张牌", "result_text": "你只推演了一遍，然后把那枚代表自己的棋子摆回原位。有些错误，一次就够。"}, {"gold": 40, "heal": 0, "text": "拿走棋子", "summary": "获得 40 金币", "result_text": "棋子是象牙的，底座的绒布已经磨破。你把它们装进口袋，没有再看沙盘。"}, {"text": "离开", "leave": true, "heal": 0, "gold": 0}])

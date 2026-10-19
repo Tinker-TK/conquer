@@ -1,0 +1,666 @@
+{
+  "repository": "https://github.com/haowg/GODOT-VFX-LIBRARY",
+  "branch": "main",
+  "commit": "6e8fc84ef426f82f747cd540823e1d5e1fdc563a",
+  "commit_date": "2026-01-25T08:35:11Z",
+  "message": "fix:Condition 'p_elem->_root != this' is true",
+  "archive_url": "https://codeload.github.com/haowg/GODOT-VFX-LIBRARY/zip/6e8fc84ef426f82f747cd540823e1d5e1fdc563a",
+  "archive_sha256": "c7434f35f2927bf55a442a2addf1ce2188551ef225f7f04082cf4a1dab0cf914",
+  "downloaded_at": "2026-10-09T12:21:58.4649650Z",
+  "imported_at_date": "2026-10-09",
+  "timezone": "Asia/Hong_Kong",
+  "destination": "res://assets/effect/godot_vfx_library/",
+  "license": "MIT",
+  "counts": {
+    "particle_scenes": 30,
+    "shaders": 24,
+    "textures": 4,
+    "managers": 2
+  },
+  "changes": [
+    "按用途分类并迁移 res:// 路径",
+    "保留场景和脚本 UID；贴图 UID 由 Godot 重新生成",
+    "演示改用场景内管理器，避免项目 Autoload 依赖",
+    "演示默认中文，退出恢复语言，界面字号适配当前项目",
+    "修正演示中萤火虫的零范围参数"
+  ],
+  "files": [
+    {
+      "source": "addons/vfx_library/assets/effect/fire_particle.png",
+      "path": "textures/fire_particle.png",
+      "original_sha256": "ff0da5254bc4f6d83fb140e45a080f35f7108cf2efc4119e28646b47f497fea8",
+      "sha256": "ff0da5254bc4f6d83fb140e45a080f35f7108cf2efc4119e28646b47f497fea8",
+      "modified": false
+    },
+    {
+      "source": "addons/vfx_library/assets/effect/firefly.png",
+      "path": "textures/firefly.png",
+      "original_sha256": "4743bb952e605055584472c56adfda7e887ff88c657a7bb12d53d22edf34b6f1",
+      "sha256": "4743bb952e605055584472c56adfda7e887ff88c657a7bb12d53d22edf34b6f1",
+      "modified": false
+    },
+    {
+      "source": "addons/vfx_library/assets/effect/leaf.png",
+      "path": "textures/leaf.png",
+      "original_sha256": "3c3ed7cf58256e48392f18ab61d29c3d38a0ae59ed8da434cd4a2a9d30e3c842",
+      "sha256": "3c3ed7cf58256e48392f18ab61d29c3d38a0ae59ed8da434cd4a2a9d30e3c842",
+      "modified": false
+    },
+    {
+      "source": "addons/vfx_library/assets/effect/spark_particle2.png",
+      "path": "textures/spark_particle2.png",
+      "original_sha256": "56c8790dae2ca82df95a5ad3a7930a8f8582cf5b6f645ad080bea8bf57cce23d",
+      "sha256": "56c8790dae2ca82df95a5ad3a7930a8f8582cf5b6f645ad080bea8bf57cce23d",
+      "modified": false
+    },
+    {
+      "source": "addons/vfx_library/demo/README.md",
+      "path": "demo/README.md",
+      "original_sha256": "8f53f93456ca96d17644d940d7af800525e162f302f86f60b9e2951514aa2820",
+      "sha256": "07dbd890a9188d71c9d93d50aff73c068687e1ec0381140a2b84d7849070f05e",
+      "modified": true
+    },
+    {
+      "source": "addons/vfx_library/demo/vfx_demo.csv",
+      "path": "demo/vfx_demo.csv",
+      "original_sha256": "9f0f87512127d2541e329402b40bc85d73cbf7891ecc5b78a7184f4afd4a313a",
+      "sha256": "e98da9f70d99601d922abe65556a18a70b8c41293095edcd34f6deaea46ee4d7",
+      "modified": true
+    },
+    {
+      "source": "addons/vfx_library/demo/vfx_demo.gd",
+      "path": "demo/vfx_demo.gd",
+      "original_sha256": "37f4dc3a97bdac99ab571fb2ad72c2e1bf958ba0b4dcafbf567c7fcd94054132",
+      "sha256": "cf48ef08d73c8f11c8f3cb339f2f8425df5a1aab0a80a87cdc814c9b034e73c0",
+      "modified": true
+    },
+    {
+      "source": "addons/vfx_library/demo/vfx_demo.gd.uid",
+      "path": "demo/vfx_demo.gd.uid",
+      "original_sha256": "bfb23d603edd9bfba2aa7398a12c5c53f50ac796bb0ab72f4708503a50c3bb9a",
+      "sha256": "bfb23d603edd9bfba2aa7398a12c5c53f50ac796bb0ab72f4708503a50c3bb9a",
+      "modified": false
+    },
+    {
+      "source": "addons/vfx_library/demo/vfx_demo.tscn",
+      "path": "demo/vfx_demo.tscn",
+      "original_sha256": "5fccc3d9ab681cb25606d1bf6652b5bfd450104bb7df815a39c4514645bdbd5f",
+      "sha256": "d049b1c330546167e8a16025a987a2203f0a639b867457dac5c7ba528e3e4317",
+      "modified": true
+    },
+    {
+      "source": "addons/vfx_library/effects/ash_particles.tscn",
+      "path": "effects/environment/ash_particles.tscn",
+      "original_sha256": "081ed4b04aaed18d2630084c08255d18c66c3842640241b3522245999d1d81b5",
+      "sha256": "081ed4b04aaed18d2630084c08255d18c66c3842640241b3522245999d1d81b5",
+      "modified": false
+    },
+    {
+      "source": "addons/vfx_library/effects/blood_splash.tscn",
+      "path": "effects/combat/blood_splash.tscn",
+      "original_sha256": "2ea3ecfeb29fcf18a5c5e69dd4c062af6c8014f82ae52c0609524559b616e2f7",
+      "sha256": "2ea3ecfeb29fcf18a5c5e69dd4c062af6c8014f82ae52c0609524559b616e2f7",
+      "modified": false
+    },
+    {
+      "source": "addons/vfx_library/effects/campfire_smoke.tscn",
+      "path": "effects/environment/campfire_smoke.tscn",
+      "original_sha256": "7aba9e1accecbcdf6a97b463ed5d8f01b64dd9d817c26753a10451a508b15d1a",
+      "sha256": "7aba9e1accecbcdf6a97b463ed5d8f01b64dd9d817c26753a10451a508b15d1a",
+      "modified": false
+    },
+    {
+      "source": "addons/vfx_library/effects/candle_flame.tscn",
+      "path": "effects/environment/candle_flame.tscn",
+      "original_sha256": "cfc6c6f8791e5cd3398e86cdc04333c4c5f4952231bd7e867fa26c2534df9ad1",
+      "sha256": "cfc6c6f8791e5cd3398e86cdc04333c4c5f4952231bd7e867fa26c2534df9ad1",
+      "modified": false
+    },
+    {
+      "source": "addons/vfx_library/effects/combat_particle.tscn",
+      "path": "effects/combat/combat_particle.tscn",
+      "original_sha256": "712690d3eda31c74bc51de7553e56c597a40314c092b8f2784d29e27200ed556",
+      "sha256": "712690d3eda31c74bc51de7553e56c597a40314c092b8f2784d29e27200ed556",
+      "modified": false
+    },
+    {
+      "source": "addons/vfx_library/effects/combo_ring.tscn",
+      "path": "effects/combat/combo_ring.tscn",
+      "original_sha256": "a20a3fa104606a83e337f26cf4c9d128e1629240a98168612c54af18801d6f78",
+      "sha256": "a20a3fa104606a83e337f26cf4c9d128e1629240a98168612c54af18801d6f78",
+      "modified": false
+    },
+    {
+      "source": "addons/vfx_library/effects/dash_trail.tscn",
+      "path": "effects/movement/dash_trail.tscn",
+      "original_sha256": "c80c0cd1345527e1928129a8fe2e1fb08beef021b9c1a79c762973d29bed5695",
+      "sha256": "c80c0cd1345527e1928129a8fe2e1fb08beef021b9c1a79c762973d29bed5695",
+      "modified": false
+    },
+    {
+      "source": "addons/vfx_library/effects/dust_cloud.tscn",
+      "path": "effects/environment/dust_cloud.tscn",
+      "original_sha256": "40e5819d0caff09764198f762ec53cb50b9bc41d16244a11cf9c40d6273cc163",
+      "sha256": "40e5819d0caff09764198f762ec53cb50b9bc41d16244a11cf9c40d6273cc163",
+      "modified": false
+    },
+    {
+      "source": "addons/vfx_library/effects/energy_burst.tscn",
+      "path": "effects/combat/energy_burst.tscn",
+      "original_sha256": "2abc69e124c74226815716b6f35e2f77b30b973b8c5bca8d2de5bd658f835d3c",
+      "sha256": "2abc69e124c74226815716b6f35e2f77b30b973b8c5bca8d2de5bd658f835d3c",
+      "modified": false
+    },
+    {
+      "source": "addons/vfx_library/effects/falling_leaves.tscn",
+      "path": "effects/environment/falling_leaves.tscn",
+      "original_sha256": "7e692a457c53f4a1410146ca6ed8177d7e357d93b46133d15d7d61faf8bda7ad",
+      "sha256": "d8744b566a07538a601204c2106a8593316b6126073404ca0c5f4498e0d0baab",
+      "modified": true
+    },
+    {
+      "source": "addons/vfx_library/effects/fireball_trail.tscn",
+      "path": "effects/magic/fireball_trail.tscn",
+      "original_sha256": "1a95dcac64f35f8f86ab49dbf2960c68bb714c7609837b73adf342a94a161ae2",
+      "sha256": "1a95dcac64f35f8f86ab49dbf2960c68bb714c7609837b73adf342a94a161ae2",
+      "modified": false
+    },
+    {
+      "source": "addons/vfx_library/effects/fireflies.tscn",
+      "path": "effects/environment/fireflies.tscn",
+      "original_sha256": "1f892aee71129059919340f9298a719a2e02f4cecfb8ff76c909c1b43fe69c25",
+      "sha256": "43b2764b3e53d9b10d0b7af5af42feb05a43d439e5e961d68dc5428c061ec3f3",
+      "modified": true
+    },
+    {
+      "source": "addons/vfx_library/effects/heal_particles.tscn",
+      "path": "effects/combat/heal_particles.tscn",
+      "original_sha256": "63aa0817ca5d71fe32679708759f4f8921fb5990b683e66f3d5c38fb33577bf5",
+      "sha256": "63aa0817ca5d71fe32679708759f4f8921fb5990b683e66f3d5c38fb33577bf5",
+      "modified": false
+    },
+    {
+      "source": "addons/vfx_library/effects/ice_frost.tscn",
+      "path": "effects/magic/ice_frost.tscn",
+      "original_sha256": "40983f482602b5f9c22035c9eb294305b34e355eed661cef0c11525157b08e87",
+      "sha256": "40983f482602b5f9c22035c9eb294305b34e355eed661cef0c11525157b08e87",
+      "modified": false
+    },
+    {
+      "source": "addons/vfx_library/effects/jump_dust.tscn",
+      "path": "effects/movement/jump_dust.tscn",
+      "original_sha256": "31f535c32623361519a683df3a91e01f1a5b0f179c66ad402f3815244a1328be",
+      "sha256": "31f535c32623361519a683df3a91e01f1a5b0f179c66ad402f3815244a1328be",
+      "modified": false
+    },
+    {
+      "source": "addons/vfx_library/effects/lightning_chain.tscn",
+      "path": "effects/magic/lightning_chain.tscn",
+      "original_sha256": "584929fdda8bbb2bbe22669160f0ea8f3cdd11f42fd51b2cb9987099dd4ef3ea",
+      "sha256": "584929fdda8bbb2bbe22669160f0ea8f3cdd11f42fd51b2cb9987099dd4ef3ea",
+      "modified": false
+    },
+    {
+      "source": "addons/vfx_library/effects/magic_aura.tscn",
+      "path": "effects/magic/magic_aura.tscn",
+      "original_sha256": "3a6eaa1d48db04ec7b9a77d722d6cd77df94bcfbb0c08b22073e9a2388e0abc9",
+      "sha256": "3a6eaa1d48db04ec7b9a77d722d6cd77df94bcfbb0c08b22073e9a2388e0abc9",
+      "modified": false
+    },
+    {
+      "source": "addons/vfx_library/effects/poison_cloud.tscn",
+      "path": "effects/magic/poison_cloud.tscn",
+      "original_sha256": "e693e405cfea33081680c172bb431a08a1ddd97c0a4075475ae8d464190b8af6",
+      "sha256": "e693e405cfea33081680c172bb431a08a1ddd97c0a4075475ae8d464190b8af6",
+      "modified": false
+    },
+    {
+      "source": "addons/vfx_library/effects/portal_vortex.tscn",
+      "path": "effects/magic/portal_vortex.tscn",
+      "original_sha256": "810a98096a369c65d5a8d5615cda9cd429d974841fb105ca0f554c81903c80f2",
+      "sha256": "810a98096a369c65d5a8d5615cda9cd429d974841fb105ca0f554c81903c80f2",
+      "modified": false
+    },
+    {
+      "source": "addons/vfx_library/effects/rain_drops.tscn",
+      "path": "effects/weather/rain_drops.tscn",
+      "original_sha256": "e80a0d142e22d1e3f07f3755b8894d742ed121d8adc8d178fb18efe1369bb0b3",
+      "sha256": "e80a0d142e22d1e3f07f3755b8894d742ed121d8adc8d178fb18efe1369bb0b3",
+      "modified": false
+    },
+    {
+      "source": "addons/vfx_library/effects/shield_break.tscn",
+      "path": "effects/combat/shield_break.tscn",
+      "original_sha256": "af23dde138591b2ddcc7029d1a1abba84843501a96747dabb16646baeeb965a4",
+      "sha256": "af23dde138591b2ddcc7029d1a1abba84843501a96747dabb16646baeeb965a4",
+      "modified": false
+    },
+    {
+      "source": "addons/vfx_library/effects/snow_flakes.tscn",
+      "path": "effects/weather/snow_flakes.tscn",
+      "original_sha256": "c260a8512c8855bc119fddbb899995acc784df32597c576149d3b7ea9f9ddf93",
+      "sha256": "c260a8512c8855bc119fddbb899995acc784df32597c576149d3b7ea9f9ddf93",
+      "modified": false
+    },
+    {
+      "source": "addons/vfx_library/effects/sparks.tscn",
+      "path": "effects/environment/sparks.tscn",
+      "original_sha256": "4c12f2f17b4bc14841498d5a5c5d7375db7ac4419c15ab299c9868c986f55452",
+      "sha256": "2f24e36f8bafb6652256e68029443a8f3e5cb268b2de7c8dfa1f57d27739b18e",
+      "modified": true
+    },
+    {
+      "source": "addons/vfx_library/effects/steam.tscn",
+      "path": "effects/environment/steam.tscn",
+      "original_sha256": "d2cd402505c3ab0340b5ae5ada7ccc4a06f03c249f157bba52fb2c3f83e39e7d",
+      "sha256": "d2cd402505c3ab0340b5ae5ada7ccc4a06f03c249f157bba52fb2c3f83e39e7d",
+      "modified": false
+    },
+    {
+      "source": "addons/vfx_library/effects/summon_circle.tscn",
+      "path": "effects/magic/summon_circle.tscn",
+      "original_sha256": "cd37d7fa5ee04a2df8e1c84901a9cd2fedf63573fa2ba3c49d430cfdb338c0d1",
+      "sha256": "cd37d7fa5ee04a2df8e1c84901a9cd2fedf63573fa2ba3c49d430cfdb338c0d1",
+      "modified": false
+    },
+    {
+      "source": "addons/vfx_library/effects/torch_fire.tscn",
+      "path": "effects/environment/torch_fire.tscn",
+      "original_sha256": "0f16f1a8969d3a1f079d0177947a60ac178ee439af6b17fe975c817f417264d1",
+      "sha256": "0bed771770771c1fad106c651d95ca1d3f90791f314054010f99a7b35af38903",
+      "modified": true
+    },
+    {
+      "source": "addons/vfx_library/effects/wall_slide_spark.tscn",
+      "path": "effects/movement/wall_slide_spark.tscn",
+      "original_sha256": "0bef10109fab2bcc8ad83b6336b4ba1af8261273011476436dae9223766a29e0",
+      "sha256": "0bef10109fab2bcc8ad83b6336b4ba1af8261273011476436dae9223766a29e0",
+      "modified": false
+    },
+    {
+      "source": "addons/vfx_library/effects/water_splash.tscn",
+      "path": "effects/environment/water_splash.tscn",
+      "original_sha256": "587e3148b7489d35c794583ca4dcb0a92706f55c780a3650e516491be047e421",
+      "sha256": "587e3148b7489d35c794583ca4dcb0a92706f55c780a3650e516491be047e421",
+      "modified": false
+    },
+    {
+      "source": "addons/vfx_library/effects/waterfall_mist.tscn",
+      "path": "effects/weather/waterfall_mist.tscn",
+      "original_sha256": "9adae60d87813ce004cc0a54f86fc796bc902435caf809bda3d8dea96e8bb2a3",
+      "sha256": "9adae60d87813ce004cc0a54f86fc796bc902435caf809bda3d8dea96e8bb2a3",
+      "modified": false
+    },
+    {
+      "source": "addons/vfx_library/effects/wood_debris.tscn",
+      "path": "effects/environment/wood_debris.tscn",
+      "original_sha256": "269770e12b01f87ab1afc2f2f7d54f414c597807ae90706230b56b6d3385dbb8",
+      "sha256": "269770e12b01f87ab1afc2f2f7d54f414c597807ae90706230b56b6d3385dbb8",
+      "modified": false
+    },
+    {
+      "source": "addons/vfx_library/env_vfx.gd",
+      "path": "scripts/env_vfx.gd",
+      "original_sha256": "7310fe12383fa1aa533d57a0917d4169b6bd297f0625e2920ad7ce82f57338b9",
+      "sha256": "b8041fc18899e0b1035724c603c3fb08949cf2619cdfcf8e449c837b77e939bb",
+      "modified": true
+    },
+    {
+      "source": "addons/vfx_library/env_vfx.gd.uid",
+      "path": "scripts/env_vfx.gd.uid",
+      "original_sha256": "398d1caafef51d65f7fb82d5a96b77a94a625fd18d0342d2ba94a816ef0cf8d2",
+      "sha256": "398d1caafef51d65f7fb82d5a96b77a94a625fd18d0342d2ba94a816ef0cf8d2",
+      "modified": false
+    },
+    {
+      "source": "addons/vfx_library/shaders/blink.gdshader",
+      "path": "shaders/status/blink.gdshader",
+      "original_sha256": "86e58a52f97487611f2095e6ebd7d5c0d503a996e524c0e3a980707b3fccb7e9",
+      "sha256": "86e58a52f97487611f2095e6ebd7d5c0d503a996e524c0e3a980707b3fccb7e9",
+      "modified": false
+    },
+    {
+      "source": "addons/vfx_library/shaders/blink.gdshader.uid",
+      "path": "shaders/status/blink.gdshader.uid",
+      "original_sha256": "4ecd3e5fe2ad1c2b940c87ac1c1756ef08842d218c8012e6ddc9db5f48c394fb",
+      "sha256": "4ecd3e5fe2ad1c2b940c87ac1c1756ef08842d218c8012e6ddc9db5f48c394fb",
+      "modified": false
+    },
+    {
+      "source": "addons/vfx_library/shaders/blur_amount.gdshader",
+      "path": "shaders/screen/blur_amount.gdshader",
+      "original_sha256": "031ea31c89f5a8a991cf985b8d0e24d974e094e2ee99f3bbe7926b4ec0c47432",
+      "sha256": "031ea31c89f5a8a991cf985b8d0e24d974e094e2ee99f3bbe7926b4ec0c47432",
+      "modified": false
+    },
+    {
+      "source": "addons/vfx_library/shaders/blur_amount.gdshader.uid",
+      "path": "shaders/screen/blur_amount.gdshader.uid",
+      "original_sha256": "8fd8fa67d845cb1dcb8f64ea0f5beab621890ddf24791904706655d0c8fa3e5e",
+      "sha256": "8fd8fa67d845cb1dcb8f64ea0f5beab621890ddf24791904706655d0c8fa3e5e",
+      "modified": false
+    },
+    {
+      "source": "addons/vfx_library/shaders/burning.gdshader",
+      "path": "shaders/status/burning.gdshader",
+      "original_sha256": "3847bd536a33cf9b37de70fc2eeedbb57d27254173d8482a6fd5f09af29e8af8",
+      "sha256": "3847bd536a33cf9b37de70fc2eeedbb57d27254173d8482a6fd5f09af29e8af8",
+      "modified": false
+    },
+    {
+      "source": "addons/vfx_library/shaders/burning.gdshader.uid",
+      "path": "shaders/status/burning.gdshader.uid",
+      "original_sha256": "e896ef5a84a01895c30be8e148ac442daf8a48a2c021449833ffd66733a8cad8",
+      "sha256": "e896ef5a84a01895c30be8e148ac442daf8a48a2c021449833ffd66733a8cad8",
+      "modified": false
+    },
+    {
+      "source": "addons/vfx_library/shaders/chromatic_aberration.gdshader",
+      "path": "shaders/screen/chromatic_aberration.gdshader",
+      "original_sha256": "c7fc606c17b8d151ce664cc1e71d994b5f461abf26fafa6cc7f4bc594a4270f3",
+      "sha256": "c7fc606c17b8d151ce664cc1e71d994b5f461abf26fafa6cc7f4bc594a4270f3",
+      "modified": false
+    },
+    {
+      "source": "addons/vfx_library/shaders/chromatic_aberration.gdshader.uid",
+      "path": "shaders/screen/chromatic_aberration.gdshader.uid",
+      "original_sha256": "4bf9f7fdbc309353bf6f48cf0e2c3c41bdde1d15561520aebc8f8baf5dca257b",
+      "sha256": "4bf9f7fdbc309353bf6f48cf0e2c3c41bdde1d15561520aebc8f8baf5dca257b",
+      "modified": false
+    },
+    {
+      "source": "addons/vfx_library/shaders/color_change.gdshader",
+      "path": "shaders/status/color_change.gdshader",
+      "original_sha256": "0f0662cfa640a0af8740dac282bc5662f08201d7c02dc7a9492793a8637c961f",
+      "sha256": "0f0662cfa640a0af8740dac282bc5662f08201d7c02dc7a9492793a8637c961f",
+      "modified": false
+    },
+    {
+      "source": "addons/vfx_library/shaders/color_change.gdshader.uid",
+      "path": "shaders/status/color_change.gdshader.uid",
+      "original_sha256": "2141f0992e9cbd9e8f9f27ef0ba64da3b1ad69a2cec08db792540afa294593bf",
+      "sha256": "2141f0992e9cbd9e8f9f27ef0ba64da3b1ad69a2cec08db792540afa294593bf",
+      "modified": false
+    },
+    {
+      "source": "addons/vfx_library/shaders/dissolve.gdshader",
+      "path": "shaders/status/dissolve.gdshader",
+      "original_sha256": "5287840953566afcd33b730a085390b1422501bc7819e44cac4b0bcd26b3d8e6",
+      "sha256": "5287840953566afcd33b730a085390b1422501bc7819e44cac4b0bcd26b3d8e6",
+      "modified": false
+    },
+    {
+      "source": "addons/vfx_library/shaders/dissolve.gdshader.uid",
+      "path": "shaders/status/dissolve.gdshader.uid",
+      "original_sha256": "9244decd50c2725c955e97edb5db86ec531e37889915490cd12cf43088bd7718",
+      "sha256": "9244decd50c2725c955e97edb5db86ec531e37889915490cd12cf43088bd7718",
+      "modified": false
+    },
+    {
+      "source": "addons/vfx_library/shaders/enemy.gdshader",
+      "path": "shaders/status/enemy.gdshader",
+      "original_sha256": "b46ad12e5e7f8662a79ddb91315f47be21416241b222830d554b7aaa731a0f9f",
+      "sha256": "b46ad12e5e7f8662a79ddb91315f47be21416241b222830d554b7aaa731a0f9f",
+      "modified": false
+    },
+    {
+      "source": "addons/vfx_library/shaders/enemy.gdshader.uid",
+      "path": "shaders/status/enemy.gdshader.uid",
+      "original_sha256": "0fb6b6c08921b9b953d7a3a37824af6fbc1d62ff0b059adf2a938f8c213ceb86",
+      "sha256": "0fb6b6c08921b9b953d7a3a37824af6fbc1d62ff0b059adf2a938f8c213ceb86",
+      "modified": false
+    },
+    {
+      "source": "addons/vfx_library/shaders/energy_barrier.gdshader",
+      "path": "shaders/magic/energy_barrier.gdshader",
+      "original_sha256": "9d7559b76995b29f72124b16dc19ff3c61ae17dfe8112575123a4d81101a06e9",
+      "sha256": "9d7559b76995b29f72124b16dc19ff3c61ae17dfe8112575123a4d81101a06e9",
+      "modified": false
+    },
+    {
+      "source": "addons/vfx_library/shaders/energy_barrier.gdshader.uid",
+      "path": "shaders/magic/energy_barrier.gdshader.uid",
+      "original_sha256": "c6072c3aefa0ca621f474f5731bc8591a42009fe1d04c8a48da0be4c7f56eb0c",
+      "sha256": "c6072c3aefa0ca621f474f5731bc8591a42009fe1d04c8a48da0be4c7f56eb0c",
+      "modified": false
+    },
+    {
+      "source": "addons/vfx_library/shaders/flash_white.gdshader",
+      "path": "shaders/status/flash_white.gdshader",
+      "original_sha256": "0428ef6c40e52bba952c40437cdcfabdad8aac0a4fb4ad8a80c179351523d9cd",
+      "sha256": "0428ef6c40e52bba952c40437cdcfabdad8aac0a4fb4ad8a80c179351523d9cd",
+      "modified": false
+    },
+    {
+      "source": "addons/vfx_library/shaders/flash_white.gdshader.uid",
+      "path": "shaders/status/flash_white.gdshader.uid",
+      "original_sha256": "ad6cf703a3f331ebdeba57cb8566775d532fb1a22fc53ebb1bb8191b74042d8a",
+      "sha256": "ad6cf703a3f331ebdeba57cb8566775d532fb1a22fc53ebb1bb8191b74042d8a",
+      "modified": false
+    },
+    {
+      "source": "addons/vfx_library/shaders/fog.gdshader",
+      "path": "shaders/screen/fog.gdshader",
+      "original_sha256": "60feeb313e9c4014db4d227b9d60931509efc3d10b6f113ae931316ac11e11a6",
+      "sha256": "60feeb313e9c4014db4d227b9d60931509efc3d10b6f113ae931316ac11e11a6",
+      "modified": false
+    },
+    {
+      "source": "addons/vfx_library/shaders/fog.gdshader.uid",
+      "path": "shaders/screen/fog.gdshader.uid",
+      "original_sha256": "01f7eb0b66bad8d9d89ed0262721c3281f5f9516474cb8234e53d3c5f5c153b1",
+      "sha256": "01f7eb0b66bad8d9d89ed0262721c3281f5f9516474cb8234e53d3c5f5c153b1",
+      "modified": false
+    },
+    {
+      "source": "addons/vfx_library/shaders/frozen.gdshader",
+      "path": "shaders/status/frozen.gdshader",
+      "original_sha256": "4ad7df712e94dc279749653e3bdd7f307d11c4dc87d2b9373b03f38c95db36ef",
+      "sha256": "4ad7df712e94dc279749653e3bdd7f307d11c4dc87d2b9373b03f38c95db36ef",
+      "modified": false
+    },
+    {
+      "source": "addons/vfx_library/shaders/frozen.gdshader.uid",
+      "path": "shaders/status/frozen.gdshader.uid",
+      "original_sha256": "90ac3861aff6f43dcbbabd9dd3af2e10c4b9e28b81cb45f4084145b90c395e08",
+      "sha256": "90ac3861aff6f43dcbbabd9dd3af2e10c4b9e28b81cb45f4084145b90c395e08",
+      "modified": false
+    },
+    {
+      "source": "addons/vfx_library/shaders/grayscale.gdshader",
+      "path": "shaders/screen/grayscale.gdshader",
+      "original_sha256": "a82afe4fbe1e095ad853df4f8806b74e0ea5f52ee3be5482310d2f10a852119e",
+      "sha256": "a82afe4fbe1e095ad853df4f8806b74e0ea5f52ee3be5482310d2f10a852119e",
+      "modified": false
+    },
+    {
+      "source": "addons/vfx_library/shaders/grayscale.gdshader.uid",
+      "path": "shaders/screen/grayscale.gdshader.uid",
+      "original_sha256": "1e68ba5c28458fe7310da6be804de7d23e7bba045815a87143709225958e7dd9",
+      "sha256": "1e68ba5c28458fe7310da6be804de7d23e7bba045815a87143709225958e7dd9",
+      "modified": false
+    },
+    {
+      "source": "addons/vfx_library/shaders/heat_distortion.gdshader",
+      "path": "shaders/environment/heat_distortion.gdshader",
+      "original_sha256": "ce6654ffabf14dac30ba0991b28108d8057b1fb97a143672531174590d889fca",
+      "sha256": "ce6654ffabf14dac30ba0991b28108d8057b1fb97a143672531174590d889fca",
+      "modified": false
+    },
+    {
+      "source": "addons/vfx_library/shaders/heat_distortion.gdshader.uid",
+      "path": "shaders/environment/heat_distortion.gdshader.uid",
+      "original_sha256": "4b97a2ad4aa89aa65089641c419aa12855e800a5f14a201af797fa4c1c8ca481",
+      "sha256": "4b97a2ad4aa89aa65089641c419aa12855e800a5f14a201af797fa4c1c8ca481",
+      "modified": false
+    },
+    {
+      "source": "addons/vfx_library/shaders/invisibility.gdshader",
+      "path": "shaders/status/invisibility.gdshader",
+      "original_sha256": "d6dd98dc172c78e07b38345a303456d8d2167c724fb1085b3998bc66337524d9",
+      "sha256": "d6dd98dc172c78e07b38345a303456d8d2167c724fb1085b3998bc66337524d9",
+      "modified": false
+    },
+    {
+      "source": "addons/vfx_library/shaders/invisibility.gdshader.uid",
+      "path": "shaders/status/invisibility.gdshader.uid",
+      "original_sha256": "3f3f0ba03f3c71261b3bef129caadcd243e40f32ba688757daa545ab66f99e4a",
+      "sha256": "3f3f0ba03f3c71261b3bef129caadcd243e40f32ba688757daa545ab66f99e4a",
+      "modified": false
+    },
+    {
+      "source": "addons/vfx_library/shaders/outline_glow.gdshader",
+      "path": "shaders/status/outline_glow.gdshader",
+      "original_sha256": "fd0c4f14b3b7fbcdc92e300e40744324ccb0eae6037ccc9bc87750fcb0339914",
+      "sha256": "fd0c4f14b3b7fbcdc92e300e40744324ccb0eae6037ccc9bc87750fcb0339914",
+      "modified": false
+    },
+    {
+      "source": "addons/vfx_library/shaders/outline_glow.gdshader.uid",
+      "path": "shaders/status/outline_glow.gdshader.uid",
+      "original_sha256": "91d77c67a4f827209ade1c4b0d17f1cb2623c9ab7ed126f8b8f1f4791f1020f0",
+      "sha256": "91d77c67a4f827209ade1c4b0d17f1cb2623c9ab7ed126f8b8f1f4791f1020f0",
+      "modified": false
+    },
+    {
+      "source": "addons/vfx_library/shaders/petrify.gdshader",
+      "path": "shaders/status/petrify.gdshader",
+      "original_sha256": "0cc55b87cf87d8262a519518f079f744fee8d64a681cf1f4e20439fc847b435f",
+      "sha256": "0cc55b87cf87d8262a519518f079f744fee8d64a681cf1f4e20439fc847b435f",
+      "modified": false
+    },
+    {
+      "source": "addons/vfx_library/shaders/petrify.gdshader.uid",
+      "path": "shaders/status/petrify.gdshader.uid",
+      "original_sha256": "634172480460c813f59ffb93d8aa4e6363c1fba07a4d55a7e854df1385c04059",
+      "sha256": "634172480460c813f59ffb93d8aa4e6363c1fba07a4d55a7e854df1385c04059",
+      "modified": false
+    },
+    {
+      "source": "addons/vfx_library/shaders/poison.gdshader",
+      "path": "shaders/status/poison.gdshader",
+      "original_sha256": "830e18457bc466afbbe12ca4b4bd22a746b9646c006972e04dc4a93806d90d8c",
+      "sha256": "830e18457bc466afbbe12ca4b4bd22a746b9646c006972e04dc4a93806d90d8c",
+      "modified": false
+    },
+    {
+      "source": "addons/vfx_library/shaders/poison.gdshader.uid",
+      "path": "shaders/status/poison.gdshader.uid",
+      "original_sha256": "6257aa48c52cc195be3b1159e667b7ec6d6b24e0017590b3e5f05172d2db9d86",
+      "sha256": "6257aa48c52cc195be3b1159e667b7ec6d6b24e0017590b3e5f05172d2db9d86",
+      "modified": false
+    },
+    {
+      "source": "addons/vfx_library/shaders/portal_vortex.gdshader",
+      "path": "shaders/magic/portal_vortex.gdshader",
+      "original_sha256": "045de6a9f0e2af9c024543fb08cd154bee2cb28e04b7ab5969e820fe603c73c3",
+      "sha256": "045de6a9f0e2af9c024543fb08cd154bee2cb28e04b7ab5969e820fe603c73c3",
+      "modified": false
+    },
+    {
+      "source": "addons/vfx_library/shaders/portal_vortex.gdshader.uid",
+      "path": "shaders/magic/portal_vortex.gdshader.uid",
+      "original_sha256": "0551c1226848a1b694c72db18f73dd884c80cb43b7790ea1551260a1c51d00ee",
+      "sha256": "0551c1226848a1b694c72db18f73dd884c80cb43b7790ea1551260a1c51d00ee",
+      "modified": false
+    },
+    {
+      "source": "addons/vfx_library/shaders/radial_blur.gdshader",
+      "path": "shaders/screen/radial_blur.gdshader",
+      "original_sha256": "fed5cf867df69d439b4a6cd92d35be3e6ff4e84fc2711feb9d53ceabf615b10d",
+      "sha256": "fed5cf867df69d439b4a6cd92d35be3e6ff4e84fc2711feb9d53ceabf615b10d",
+      "modified": false
+    },
+    {
+      "source": "addons/vfx_library/shaders/radial_blur.gdshader.uid",
+      "path": "shaders/screen/radial_blur.gdshader.uid",
+      "original_sha256": "1ae4ca706f52922bea7be601833050b7e8cda55b6d71fb0ba42a96baf5981647",
+      "sha256": "1ae4ca706f52922bea7be601833050b7e8cda55b6d71fb0ba42a96baf5981647",
+      "modified": false
+    },
+    {
+      "source": "addons/vfx_library/shaders/shake_intensity.gdshader",
+      "path": "shaders/screen/shake_intensity.gdshader",
+      "original_sha256": "97329bff0e6c990619234731edf9b3d972ce7bddef12827041c36fe528c23ed5",
+      "sha256": "97329bff0e6c990619234731edf9b3d972ce7bddef12827041c36fe528c23ed5",
+      "modified": false
+    },
+    {
+      "source": "addons/vfx_library/shaders/shake_intensity.gdshader.uid",
+      "path": "shaders/screen/shake_intensity.gdshader.uid",
+      "original_sha256": "4d74b809da18e1f8e330a32b72b2b78347e8fcea6cccc9eaa8c6fd53957d0e1c",
+      "sha256": "4d74b809da18e1f8e330a32b72b2b78347e8fcea6cccc9eaa8c6fd53957d0e1c",
+      "modified": false
+    },
+    {
+      "source": "addons/vfx_library/shaders/starSky.gdshader",
+      "path": "shaders/environment/starSky.gdshader",
+      "original_sha256": "ee699ffad249ffef65c1b86e9d9d4333a8e61ee05173658199edeca343ec6f25",
+      "sha256": "ee699ffad249ffef65c1b86e9d9d4333a8e61ee05173658199edeca343ec6f25",
+      "modified": false
+    },
+    {
+      "source": "addons/vfx_library/shaders/starSky.gdshader.uid",
+      "path": "shaders/environment/starSky.gdshader.uid",
+      "original_sha256": "4ec43477449a9a57cab9a3d5e89ef507e13c2a7f5abc8d31ba48f5e03aabc557",
+      "sha256": "4ec43477449a9a57cab9a3d5e89ef507e13c2a7f5abc8d31ba48f5e03aabc557",
+      "modified": false
+    },
+    {
+      "source": "addons/vfx_library/shaders/vignette.gdshader",
+      "path": "shaders/screen/vignette.gdshader",
+      "original_sha256": "016eb55b9dde052dcf8255a95b0f54dfdc51bb0144d15f8545467808f3d780b8",
+      "sha256": "016eb55b9dde052dcf8255a95b0f54dfdc51bb0144d15f8545467808f3d780b8",
+      "modified": false
+    },
+    {
+      "source": "addons/vfx_library/shaders/vignette.gdshader.uid",
+      "path": "shaders/screen/vignette.gdshader.uid",
+      "original_sha256": "6cedef6703885ac506b447661bf5c8516969af029eebb478d9c5bf8af86edd6c",
+      "sha256": "6cedef6703885ac506b447661bf5c8516969af029eebb478d9c5bf8af86edd6c",
+      "modified": false
+    },
+    {
+      "source": "addons/vfx_library/shaders/water.gdshader",
+      "path": "shaders/environment/water.gdshader",
+      "original_sha256": "7899f2d25afaeff5912e06fe8fa53113f7b370b90d84fdc0acbbb809897e23d6",
+      "sha256": "7899f2d25afaeff5912e06fe8fa53113f7b370b90d84fdc0acbbb809897e23d6",
+      "modified": false
+    },
+    {
+      "source": "addons/vfx_library/shaders/water.gdshader.uid",
+      "path": "shaders/environment/water.gdshader.uid",
+      "original_sha256": "cfe5b407a44ce618de3d8fdd998fbedbe360f8fecb885ecd52e06762545808a9",
+      "sha256": "cfe5b407a44ce618de3d8fdd998fbedbe360f8fecb885ecd52e06762545808a9",
+      "modified": false
+    },
+    {
+      "source": "addons/vfx_library/shaders/water_surface.gdshader",
+      "path": "shaders/environment/water_surface.gdshader",
+      "original_sha256": "dfe46097dd4d471b4db86e044e2693d8f4b8298b38e72f3f1233dda129a5b6c0",
+      "sha256": "dfe46097dd4d471b4db86e044e2693d8f4b8298b38e72f3f1233dda129a5b6c0",
+      "modified": false
+    },
+    {
+      "source": "addons/vfx_library/shaders/water_surface.gdshader.uid",
+      "path": "shaders/environment/water_surface.gdshader.uid",
+      "original_sha256": "d34fbb14b35fcb3675a73b5f29b7f67256920527336e821a77841350b0191c32",
+      "sha256": "d34fbb14b35fcb3675a73b5f29b7f67256920527336e821a77841350b0191c32",
+      "modified": false
+    },
+    {
+      "source": "addons/vfx_library/vfx.gd",
+      "path": "scripts/vfx.gd",
+      "original_sha256": "eacea62866fa40623f162f5766cde20779fcb1074e16457def3da3fb323ce50d",
+      "sha256": "99e7380900f93f686bb5a2342aed5f936980f29b7e9013ee67f1e877e962ca4b",
+      "modified": true
+    },
+    {
+      "source": "addons/vfx_library/vfx.gd.uid",
+      "path": "scripts/vfx.gd.uid",
+      "original_sha256": "93d82de04ab147c9dfcb3804d3560c956c748215591961c5c7c6d121e981b6da",
+      "sha256": "93d82de04ab147c9dfcb3804d3560c956c748215591961c5c7c6d121e981b6da",
+      "modified": false
+    }
+  ]
+}

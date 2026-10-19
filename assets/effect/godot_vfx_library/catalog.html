@@ -1,0 +1,327 @@
+<!doctype html>
+<html lang="zh-CN"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Godot VFX Library · 特效资产索引</title>
+<style>
+:root{color-scheme:dark;font-family:"Microsoft YaHei",sans-serif;background:#10141b;color:#e4e9f2}
+*{box-sizing:border-box}body{margin:0}main{max-width:1400px;margin:auto;padding:40px 28px}
+h1{margin:0 0 12px;font-size:30px}p{line-height:1.6}a{color:#87c7ff}
+.summary{color:#aab6c7}.toolbar{position:sticky;top:0;background:#10141bef;padding:18px 0;display:flex;gap:12px;flex-wrap:wrap;z-index:2}
+input,select,button{font:inherit;border:1px solid #39475d;border-radius:7px;background:#1b2431;color:#e4e9f2;padding:10px 12px}
+input{flex:1;min-width:240px}button{cursor:pointer}button:hover{background:#28384d}
+#count{align-self:center;color:#aab6c7}.grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(300px,1fr));gap:16px}
+article{padding:22px;background:#1a212d;border:1px solid #2b3648;border-radius:10px;display:flex;flex-direction:column}
+article[hidden]{display:none}.tag{color:#87c7ff;font-size:13px}h2{font-size:21px;margin:14px 0 0}
+.name{color:#b4c2d8;margin:5px 0 10px}.note{font-size:13px;color:#a5b3c7;min-height:42px;overflow-wrap:anywhere}
+code{font-size:12px;display:block;overflow-wrap:anywhere;color:#a8d5b6;margin:auto 0 16px}
+.texture{width:64px;height:64px;object-fit:contain;image-rendering:pixelated;background:#344053;margin-top:12px}
+details{margin:20px 0}summary{cursor:pointer}.cover{max-width:100%;display:block;margin-top:16px}
+#status{position:fixed;bottom:20px;right:20px;background:#244c37;padding:12px 20px;border-radius:8px;display:none}
+</style></head><body><main>
+<h1>Godot VFX Library · 特效资产索引</h1>
+<p class="summary">30 个粒子场景 · 24 个着色器 · 4 张贴图。按用途整理，保留英文文件名。</p>
+<p><a href="README.md">使用说明</a> · <a href="CATALOG.md">中文清单</a> · <a href="SOURCE.json">来源记录</a> · <a href="LICENSE">MIT 许可</a></p>
+<p class="summary">在 Godot 打开 <code style="display:inline">res://assets/effect/godot_vfx_library/demo/vfx_demo.tscn</code> 按 F6：选择粒子后右键生成，选择着色器后点 ✓ 应用。</p>
+<details><summary>查看上游整体预览图</summary><img class="cover" src="docs/previews/preview.png" alt="上游特效资源预览"></details>
+<div class="toolbar"><input id="query" type="search" aria-label="搜索资源" placeholder="搜索：血液 / 闪电 / weather / blur / 参数名…">
+<select id="kind" aria-label="资源类型"><option value="">全部资源</option><option>粒子场景</option><option>着色器</option><option>贴图</option></select><span id="count"></span></div>
+<section class="grid"><article data-search="粒子场景 战斗 blood_splash 血液飞溅 单次" data-kind="粒子场景">
+<span class="tag">粒子场景 · 战斗</span>
+<h2>血液飞溅</h2><p class="name">blood_splash</p>
+<p class="note">单次</p><code>res://assets/effect/godot_vfx_library/effects/combat/blood_splash.tscn</code>
+<button data-path="res://assets/effect/godot_vfx_library/effects/combat/blood_splash.tscn">复制 Godot 路径</button></article>
+<article data-search="粒子场景 战斗 combat_particle 通用元素战斗粒子 单次" data-kind="粒子场景">
+<span class="tag">粒子场景 · 战斗</span>
+<h2>通用元素战斗粒子</h2><p class="name">combat_particle</p>
+<p class="note">单次</p><code>res://assets/effect/godot_vfx_library/effects/combat/combat_particle.tscn</code>
+<button data-path="res://assets/effect/godot_vfx_library/effects/combat/combat_particle.tscn">复制 Godot 路径</button></article>
+<article data-search="粒子场景 战斗 combo_ring 连击光环 单次" data-kind="粒子场景">
+<span class="tag">粒子场景 · 战斗</span>
+<h2>连击光环</h2><p class="name">combo_ring</p>
+<p class="note">单次</p><code>res://assets/effect/godot_vfx_library/effects/combat/combo_ring.tscn</code>
+<button data-path="res://assets/effect/godot_vfx_library/effects/combat/combo_ring.tscn">复制 Godot 路径</button></article>
+<article data-search="粒子场景 战斗 energy_burst 能量爆发 单次" data-kind="粒子场景">
+<span class="tag">粒子场景 · 战斗</span>
+<h2>能量爆发</h2><p class="name">energy_burst</p>
+<p class="note">单次</p><code>res://assets/effect/godot_vfx_library/effects/combat/energy_burst.tscn</code>
+<button data-path="res://assets/effect/godot_vfx_library/effects/combat/energy_burst.tscn">复制 Godot 路径</button></article>
+<article data-search="粒子场景 战斗 heal_particles 治疗粒子 持续" data-kind="粒子场景">
+<span class="tag">粒子场景 · 战斗</span>
+<h2>治疗粒子</h2><p class="name">heal_particles</p>
+<p class="note">持续</p><code>res://assets/effect/godot_vfx_library/effects/combat/heal_particles.tscn</code>
+<button data-path="res://assets/effect/godot_vfx_library/effects/combat/heal_particles.tscn">复制 Godot 路径</button></article>
+<article data-search="粒子场景 战斗 shield_break 护盾破碎 单次" data-kind="粒子场景">
+<span class="tag">粒子场景 · 战斗</span>
+<h2>护盾破碎</h2><p class="name">shield_break</p>
+<p class="note">单次</p><code>res://assets/effect/godot_vfx_library/effects/combat/shield_break.tscn</code>
+<button data-path="res://assets/effect/godot_vfx_library/effects/combat/shield_break.tscn">复制 Godot 路径</button></article>
+<article data-search="粒子场景 移动 dash_trail 冲刺拖尾 持续" data-kind="粒子场景">
+<span class="tag">粒子场景 · 移动</span>
+<h2>冲刺拖尾</h2><p class="name">dash_trail</p>
+<p class="note">持续</p><code>res://assets/effect/godot_vfx_library/effects/movement/dash_trail.tscn</code>
+<button data-path="res://assets/effect/godot_vfx_library/effects/movement/dash_trail.tscn">复制 Godot 路径</button></article>
+<article data-search="粒子场景 移动 jump_dust 跳跃扬尘 单次" data-kind="粒子场景">
+<span class="tag">粒子场景 · 移动</span>
+<h2>跳跃扬尘</h2><p class="name">jump_dust</p>
+<p class="note">单次</p><code>res://assets/effect/godot_vfx_library/effects/movement/jump_dust.tscn</code>
+<button data-path="res://assets/effect/godot_vfx_library/effects/movement/jump_dust.tscn">复制 Godot 路径</button></article>
+<article data-search="粒子场景 移动 wall_slide_spark 滑墙火花 持续" data-kind="粒子场景">
+<span class="tag">粒子场景 · 移动</span>
+<h2>滑墙火花</h2><p class="name">wall_slide_spark</p>
+<p class="note">持续</p><code>res://assets/effect/godot_vfx_library/effects/movement/wall_slide_spark.tscn</code>
+<button data-path="res://assets/effect/godot_vfx_library/effects/movement/wall_slide_spark.tscn">复制 Godot 路径</button></article>
+<article data-search="粒子场景 魔法与技能 fireball_trail 火球拖尾 持续" data-kind="粒子场景">
+<span class="tag">粒子场景 · 魔法与技能</span>
+<h2>火球拖尾</h2><p class="name">fireball_trail</p>
+<p class="note">持续</p><code>res://assets/effect/godot_vfx_library/effects/magic/fireball_trail.tscn</code>
+<button data-path="res://assets/effect/godot_vfx_library/effects/magic/fireball_trail.tscn">复制 Godot 路径</button></article>
+<article data-search="粒子场景 魔法与技能 ice_frost 冰霜爆发 单次" data-kind="粒子场景">
+<span class="tag">粒子场景 · 魔法与技能</span>
+<h2>冰霜爆发</h2><p class="name">ice_frost</p>
+<p class="note">单次</p><code>res://assets/effect/godot_vfx_library/effects/magic/ice_frost.tscn</code>
+<button data-path="res://assets/effect/godot_vfx_library/effects/magic/ice_frost.tscn">复制 Godot 路径</button></article>
+<article data-search="粒子场景 魔法与技能 lightning_chain 闪电链 单次" data-kind="粒子场景">
+<span class="tag">粒子场景 · 魔法与技能</span>
+<h2>闪电链</h2><p class="name">lightning_chain</p>
+<p class="note">单次</p><code>res://assets/effect/godot_vfx_library/effects/magic/lightning_chain.tscn</code>
+<button data-path="res://assets/effect/godot_vfx_library/effects/magic/lightning_chain.tscn">复制 Godot 路径</button></article>
+<article data-search="粒子场景 魔法与技能 magic_aura 魔法光环 持续" data-kind="粒子场景">
+<span class="tag">粒子场景 · 魔法与技能</span>
+<h2>魔法光环</h2><p class="name">magic_aura</p>
+<p class="note">持续</p><code>res://assets/effect/godot_vfx_library/effects/magic/magic_aura.tscn</code>
+<button data-path="res://assets/effect/godot_vfx_library/effects/magic/magic_aura.tscn">复制 Godot 路径</button></article>
+<article data-search="粒子场景 魔法与技能 poison_cloud 毒雾 持续" data-kind="粒子场景">
+<span class="tag">粒子场景 · 魔法与技能</span>
+<h2>毒雾</h2><p class="name">poison_cloud</p>
+<p class="note">持续</p><code>res://assets/effect/godot_vfx_library/effects/magic/poison_cloud.tscn</code>
+<button data-path="res://assets/effect/godot_vfx_library/effects/magic/poison_cloud.tscn">复制 Godot 路径</button></article>
+<article data-search="粒子场景 魔法与技能 portal_vortex 传送门漩涡 持续" data-kind="粒子场景">
+<span class="tag">粒子场景 · 魔法与技能</span>
+<h2>传送门漩涡</h2><p class="name">portal_vortex</p>
+<p class="note">持续</p><code>res://assets/effect/godot_vfx_library/effects/magic/portal_vortex.tscn</code>
+<button data-path="res://assets/effect/godot_vfx_library/effects/magic/portal_vortex.tscn">复制 Godot 路径</button></article>
+<article data-search="粒子场景 魔法与技能 summon_circle 召唤法阵 持续" data-kind="粒子场景">
+<span class="tag">粒子场景 · 魔法与技能</span>
+<h2>召唤法阵</h2><p class="name">summon_circle</p>
+<p class="note">持续</p><code>res://assets/effect/godot_vfx_library/effects/magic/summon_circle.tscn</code>
+<button data-path="res://assets/effect/godot_vfx_library/effects/magic/summon_circle.tscn">复制 Godot 路径</button></article>
+<article data-search="粒子场景 环境 ash_particles 灰烬飘落 持续" data-kind="粒子场景">
+<span class="tag">粒子场景 · 环境</span>
+<h2>灰烬飘落</h2><p class="name">ash_particles</p>
+<p class="note">持续</p><code>res://assets/effect/godot_vfx_library/effects/environment/ash_particles.tscn</code>
+<button data-path="res://assets/effect/godot_vfx_library/effects/environment/ash_particles.tscn">复制 Godot 路径</button></article>
+<article data-search="粒子场景 环境 campfire_smoke 篝火烟雾 持续" data-kind="粒子场景">
+<span class="tag">粒子场景 · 环境</span>
+<h2>篝火烟雾</h2><p class="name">campfire_smoke</p>
+<p class="note">持续</p><code>res://assets/effect/godot_vfx_library/effects/environment/campfire_smoke.tscn</code>
+<button data-path="res://assets/effect/godot_vfx_library/effects/environment/campfire_smoke.tscn">复制 Godot 路径</button></article>
+<article data-search="粒子场景 环境 candle_flame 蜡烛火焰 持续" data-kind="粒子场景">
+<span class="tag">粒子场景 · 环境</span>
+<h2>蜡烛火焰</h2><p class="name">candle_flame</p>
+<p class="note">持续</p><code>res://assets/effect/godot_vfx_library/effects/environment/candle_flame.tscn</code>
+<button data-path="res://assets/effect/godot_vfx_library/effects/environment/candle_flame.tscn">复制 Godot 路径</button></article>
+<article data-search="粒子场景 环境 dust_cloud 尘土爆发 单次" data-kind="粒子场景">
+<span class="tag">粒子场景 · 环境</span>
+<h2>尘土爆发</h2><p class="name">dust_cloud</p>
+<p class="note">单次</p><code>res://assets/effect/godot_vfx_library/effects/environment/dust_cloud.tscn</code>
+<button data-path="res://assets/effect/godot_vfx_library/effects/environment/dust_cloud.tscn">复制 Godot 路径</button></article>
+<article data-search="粒子场景 环境 falling_leaves 落叶 持续" data-kind="粒子场景">
+<span class="tag">粒子场景 · 环境</span>
+<h2>落叶</h2><p class="name">falling_leaves</p>
+<p class="note">持续</p><code>res://assets/effect/godot_vfx_library/effects/environment/falling_leaves.tscn</code>
+<button data-path="res://assets/effect/godot_vfx_library/effects/environment/falling_leaves.tscn">复制 Godot 路径</button></article>
+<article data-search="粒子场景 环境 fireflies 萤火虫 持续" data-kind="粒子场景">
+<span class="tag">粒子场景 · 环境</span>
+<h2>萤火虫</h2><p class="name">fireflies</p>
+<p class="note">持续</p><code>res://assets/effect/godot_vfx_library/effects/environment/fireflies.tscn</code>
+<button data-path="res://assets/effect/godot_vfx_library/effects/environment/fireflies.tscn">复制 Godot 路径</button></article>
+<article data-search="粒子场景 环境 sparks 火花 单次" data-kind="粒子场景">
+<span class="tag">粒子场景 · 环境</span>
+<h2>火花</h2><p class="name">sparks</p>
+<p class="note">单次</p><code>res://assets/effect/godot_vfx_library/effects/environment/sparks.tscn</code>
+<button data-path="res://assets/effect/godot_vfx_library/effects/environment/sparks.tscn">复制 Godot 路径</button></article>
+<article data-search="粒子场景 环境 steam 蒸汽 单次" data-kind="粒子场景">
+<span class="tag">粒子场景 · 环境</span>
+<h2>蒸汽</h2><p class="name">steam</p>
+<p class="note">单次</p><code>res://assets/effect/godot_vfx_library/effects/environment/steam.tscn</code>
+<button data-path="res://assets/effect/godot_vfx_library/effects/environment/steam.tscn">复制 Godot 路径</button></article>
+<article data-search="粒子场景 环境 torch_fire 火把火焰 持续" data-kind="粒子场景">
+<span class="tag">粒子场景 · 环境</span>
+<h2>火把火焰</h2><p class="name">torch_fire</p>
+<p class="note">持续</p><code>res://assets/effect/godot_vfx_library/effects/environment/torch_fire.tscn</code>
+<button data-path="res://assets/effect/godot_vfx_library/effects/environment/torch_fire.tscn">复制 Godot 路径</button></article>
+<article data-search="粒子场景 环境 water_splash 水花飞溅 单次" data-kind="粒子场景">
+<span class="tag">粒子场景 · 环境</span>
+<h2>水花飞溅</h2><p class="name">water_splash</p>
+<p class="note">单次</p><code>res://assets/effect/godot_vfx_library/effects/environment/water_splash.tscn</code>
+<button data-path="res://assets/effect/godot_vfx_library/effects/environment/water_splash.tscn">复制 Godot 路径</button></article>
+<article data-search="粒子场景 环境 wood_debris 木屑飞溅 单次" data-kind="粒子场景">
+<span class="tag">粒子场景 · 环境</span>
+<h2>木屑飞溅</h2><p class="name">wood_debris</p>
+<p class="note">单次</p><code>res://assets/effect/godot_vfx_library/effects/environment/wood_debris.tscn</code>
+<button data-path="res://assets/effect/godot_vfx_library/effects/environment/wood_debris.tscn">复制 Godot 路径</button></article>
+<article data-search="粒子场景 天气 rain_drops 雨滴 持续" data-kind="粒子场景">
+<span class="tag">粒子场景 · 天气</span>
+<h2>雨滴</h2><p class="name">rain_drops</p>
+<p class="note">持续</p><code>res://assets/effect/godot_vfx_library/effects/weather/rain_drops.tscn</code>
+<button data-path="res://assets/effect/godot_vfx_library/effects/weather/rain_drops.tscn">复制 Godot 路径</button></article>
+<article data-search="粒子场景 天气 snow_flakes 雪花 持续" data-kind="粒子场景">
+<span class="tag">粒子场景 · 天气</span>
+<h2>雪花</h2><p class="name">snow_flakes</p>
+<p class="note">持续</p><code>res://assets/effect/godot_vfx_library/effects/weather/snow_flakes.tscn</code>
+<button data-path="res://assets/effect/godot_vfx_library/effects/weather/snow_flakes.tscn">复制 Godot 路径</button></article>
+<article data-search="粒子场景 天气 waterfall_mist 瀑布水雾 持续" data-kind="粒子场景">
+<span class="tag">粒子场景 · 天气</span>
+<h2>瀑布水雾</h2><p class="name">waterfall_mist</p>
+<p class="note">持续</p><code>res://assets/effect/godot_vfx_library/effects/weather/waterfall_mist.tscn</code>
+<button data-path="res://assets/effect/godot_vfx_library/effects/weather/waterfall_mist.tscn">复制 Godot 路径</button></article>
+<article data-search="着色器 角色状态 blink 闪烁 在 shadermaterial 中调整参数 · 参数：blink_speed, min_alpha" data-kind="着色器">
+<span class="tag">着色器 · 角色状态</span>
+<h2>闪烁</h2><p class="name">blink</p>
+<p class="note">在 ShaderMaterial 中调整参数 · 参数：blink_speed, min_alpha</p><code>res://assets/effect/godot_vfx_library/shaders/status/blink.gdshader</code>
+<button data-path="res://assets/effect/godot_vfx_library/shaders/status/blink.gdshader">复制 Godot 路径</button></article>
+<article data-search="着色器 角色状态 burning 燃烧 纹理参数：distortion_texture · 参数：burn_amount, fire_color1, fire_color2, distortion_texture, distortion_strength" data-kind="着色器">
+<span class="tag">着色器 · 角色状态</span>
+<h2>燃烧</h2><p class="name">burning</p>
+<p class="note">纹理参数：distortion_texture · 参数：burn_amount, fire_color1, fire_color2, distortion_texture, distortion_strength</p><code>res://assets/effect/godot_vfx_library/shaders/status/burning.gdshader</code>
+<button data-path="res://assets/effect/godot_vfx_library/shaders/status/burning.gdshader">复制 Godot 路径</button></article>
+<article data-search="着色器 角色状态 color_change 颜色替换 在 shadermaterial 中调整参数 · 参数：target_color, mix_amount, preserve_luminance" data-kind="着色器">
+<span class="tag">着色器 · 角色状态</span>
+<h2>颜色替换</h2><p class="name">color_change</p>
+<p class="note">在 ShaderMaterial 中调整参数 · 参数：target_color, mix_amount, preserve_luminance</p><code>res://assets/effect/godot_vfx_library/shaders/status/color_change.gdshader</code>
+<button data-path="res://assets/effect/godot_vfx_library/shaders/status/color_change.gdshader">复制 Godot 路径</button></article>
+<article data-search="着色器 角色状态 dissolve 溶解消失 纹理参数：dissolve_texture · 参数：dissolve_amount, dissolve_texture, edge_color, edge_width" data-kind="着色器">
+<span class="tag">着色器 · 角色状态</span>
+<h2>溶解消失</h2><p class="name">dissolve</p>
+<p class="note">纹理参数：dissolve_texture · 参数：dissolve_amount, dissolve_texture, edge_color, edge_width</p><code>res://assets/effect/godot_vfx_library/shaders/status/dissolve.gdshader</code>
+<button data-path="res://assets/effect/godot_vfx_library/shaders/status/dissolve.gdshader">复制 Godot 路径</button></article>
+<article data-search="着色器 角色状态 enemy 敌人受击组合效果 在 shadermaterial 中调整参数 · 参数：blur_amount, shake_intensity, white_intensity, time" data-kind="着色器">
+<span class="tag">着色器 · 角色状态</span>
+<h2>敌人受击组合效果</h2><p class="name">enemy</p>
+<p class="note">在 ShaderMaterial 中调整参数 · 参数：blur_amount, shake_intensity, white_intensity, time</p><code>res://assets/effect/godot_vfx_library/shaders/status/enemy.gdshader</code>
+<button data-path="res://assets/effect/godot_vfx_library/shaders/status/enemy.gdshader">复制 Godot 路径</button></article>
+<article data-search="着色器 角色状态 flash_white 受击闪白 在 shadermaterial 中调整参数 · 参数：flash_amount, flash_color" data-kind="着色器">
+<span class="tag">着色器 · 角色状态</span>
+<h2>受击闪白</h2><p class="name">flash_white</p>
+<p class="note">在 ShaderMaterial 中调整参数 · 参数：flash_amount, flash_color</p><code>res://assets/effect/godot_vfx_library/shaders/status/flash_white.gdshader</code>
+<button data-path="res://assets/effect/godot_vfx_library/shaders/status/flash_white.gdshader">复制 Godot 路径</button></article>
+<article data-search="着色器 角色状态 frozen 冻结 纹理参数：ice_texture · 参数：freeze_amount, ice_color, ice_texture, crystal_intensity" data-kind="着色器">
+<span class="tag">着色器 · 角色状态</span>
+<h2>冻结</h2><p class="name">frozen</p>
+<p class="note">纹理参数：ice_texture · 参数：freeze_amount, ice_color, ice_texture, crystal_intensity</p><code>res://assets/effect/godot_vfx_library/shaders/status/frozen.gdshader</code>
+<button data-path="res://assets/effect/godot_vfx_library/shaders/status/frozen.gdshader">复制 Godot 路径</button></article>
+<article data-search="着色器 角色状态 invisibility 隐身 纹理参数：distortion_texture · 参数：invisibility_amount, distortion_amount, distortion_texture" data-kind="着色器">
+<span class="tag">着色器 · 角色状态</span>
+<h2>隐身</h2><p class="name">invisibility</p>
+<p class="note">纹理参数：distortion_texture · 参数：invisibility_amount, distortion_amount, distortion_texture</p><code>res://assets/effect/godot_vfx_library/shaders/status/invisibility.gdshader</code>
+<button data-path="res://assets/effect/godot_vfx_library/shaders/status/invisibility.gdshader">复制 Godot 路径</button></article>
+<article data-search="着色器 角色状态 outline_glow 轮廓发光 在 shadermaterial 中调整参数 · 参数：outline_color, outline_width, glow_intensity" data-kind="着色器">
+<span class="tag">着色器 · 角色状态</span>
+<h2>轮廓发光</h2><p class="name">outline_glow</p>
+<p class="note">在 ShaderMaterial 中调整参数 · 参数：outline_color, outline_width, glow_intensity</p><code>res://assets/effect/godot_vfx_library/shaders/status/outline_glow.gdshader</code>
+<button data-path="res://assets/effect/godot_vfx_library/shaders/status/outline_glow.gdshader">复制 Godot 路径</button></article>
+<article data-search="着色器 角色状态 petrify 石化 纹理参数：crack_texture · 参数：petrify_amount, stone_color, crack_texture, crack_intensity" data-kind="着色器">
+<span class="tag">着色器 · 角色状态</span>
+<h2>石化</h2><p class="name">petrify</p>
+<p class="note">纹理参数：crack_texture · 参数：petrify_amount, stone_color, crack_texture, crack_intensity</p><code>res://assets/effect/godot_vfx_library/shaders/status/petrify.gdshader</code>
+<button data-path="res://assets/effect/godot_vfx_library/shaders/status/petrify.gdshader">复制 Godot 路径</button></article>
+<article data-search="着色器 角色状态 poison 中毒 在 shadermaterial 中调整参数 · 参数：poison_amount, poison_color, pulse_speed" data-kind="着色器">
+<span class="tag">着色器 · 角色状态</span>
+<h2>中毒</h2><p class="name">poison</p>
+<p class="note">在 ShaderMaterial 中调整参数 · 参数：poison_amount, poison_color, pulse_speed</p><code>res://assets/effect/godot_vfx_library/shaders/status/poison.gdshader</code>
+<button data-path="res://assets/effect/godot_vfx_library/shaders/status/poison.gdshader">复制 Godot 路径</button></article>
+<article data-search="着色器 屏幕效果 blur_amount 模糊 在 shadermaterial 中调整参数 · 参数：blur_amount" data-kind="着色器">
+<span class="tag">着色器 · 屏幕效果</span>
+<h2>模糊</h2><p class="name">blur_amount</p>
+<p class="note">在 ShaderMaterial 中调整参数 · 参数：blur_amount</p><code>res://assets/effect/godot_vfx_library/shaders/screen/blur_amount.gdshader</code>
+<button data-path="res://assets/effect/godot_vfx_library/shaders/screen/blur_amount.gdshader">复制 Godot 路径</button></article>
+<article data-search="着色器 屏幕效果 chromatic_aberration 色差 在 shadermaterial 中调整参数 · 参数：aberration_amount, aberration_direction" data-kind="着色器">
+<span class="tag">着色器 · 屏幕效果</span>
+<h2>色差</h2><p class="name">chromatic_aberration</p>
+<p class="note">在 ShaderMaterial 中调整参数 · 参数：aberration_amount, aberration_direction</p><code>res://assets/effect/godot_vfx_library/shaders/screen/chromatic_aberration.gdshader</code>
+<button data-path="res://assets/effect/godot_vfx_library/shaders/screen/chromatic_aberration.gdshader">复制 Godot 路径</button></article>
+<article data-search="着色器 屏幕效果 fog 雾气 纹理参数：noise_texture · 参数：noise_texture, density, speed" data-kind="着色器">
+<span class="tag">着色器 · 屏幕效果</span>
+<h2>雾气</h2><p class="name">fog</p>
+<p class="note">纹理参数：noise_texture · 参数：noise_texture, density, speed</p><code>res://assets/effect/godot_vfx_library/shaders/screen/fog.gdshader</code>
+<button data-path="res://assets/effect/godot_vfx_library/shaders/screen/fog.gdshader">复制 Godot 路径</button></article>
+<article data-search="着色器 屏幕效果 grayscale 灰度 在 shadermaterial 中调整参数 · 参数：grayscale_amount, luminance_weights" data-kind="着色器">
+<span class="tag">着色器 · 屏幕效果</span>
+<h2>灰度</h2><p class="name">grayscale</p>
+<p class="note">在 ShaderMaterial 中调整参数 · 参数：grayscale_amount, luminance_weights</p><code>res://assets/effect/godot_vfx_library/shaders/screen/grayscale.gdshader</code>
+<button data-path="res://assets/effect/godot_vfx_library/shaders/screen/grayscale.gdshader">复制 Godot 路径</button></article>
+<article data-search="着色器 屏幕效果 radial_blur 径向模糊 在 shadermaterial 中调整参数 · 参数：blur_strength, blur_center, samples" data-kind="着色器">
+<span class="tag">着色器 · 屏幕效果</span>
+<h2>径向模糊</h2><p class="name">radial_blur</p>
+<p class="note">在 ShaderMaterial 中调整参数 · 参数：blur_strength, blur_center, samples</p><code>res://assets/effect/godot_vfx_library/shaders/screen/radial_blur.gdshader</code>
+<button data-path="res://assets/effect/godot_vfx_library/shaders/screen/radial_blur.gdshader">复制 Godot 路径</button></article>
+<article data-search="着色器 屏幕效果 shake_intensity 抖动 在 shadermaterial 中调整参数 · 参数：time, shake_intensity" data-kind="着色器">
+<span class="tag">着色器 · 屏幕效果</span>
+<h2>抖动</h2><p class="name">shake_intensity</p>
+<p class="note">在 ShaderMaterial 中调整参数 · 参数：time, shake_intensity</p><code>res://assets/effect/godot_vfx_library/shaders/screen/shake_intensity.gdshader</code>
+<button data-path="res://assets/effect/godot_vfx_library/shaders/screen/shake_intensity.gdshader">复制 Godot 路径</button></article>
+<article data-search="着色器 屏幕效果 vignette 暗角 在 shadermaterial 中调整参数 · 参数：vignette_strength, vignette_size, vignette_color" data-kind="着色器">
+<span class="tag">着色器 · 屏幕效果</span>
+<h2>暗角</h2><p class="name">vignette</p>
+<p class="note">在 ShaderMaterial 中调整参数 · 参数：vignette_strength, vignette_size, vignette_color</p><code>res://assets/effect/godot_vfx_library/shaders/screen/vignette.gdshader</code>
+<button data-path="res://assets/effect/godot_vfx_library/shaders/screen/vignette.gdshader">复制 Godot 路径</button></article>
+<article data-search="着色器 环境 heat_distortion 热浪扭曲 纹理参数：noise_texture · 参数：distortion_speed, distortion_amount, noise_texture" data-kind="着色器">
+<span class="tag">着色器 · 环境</span>
+<h2>热浪扭曲</h2><p class="name">heat_distortion</p>
+<p class="note">纹理参数：noise_texture · 参数：distortion_speed, distortion_amount, noise_texture</p><code>res://assets/effect/godot_vfx_library/shaders/environment/heat_distortion.gdshader</code>
+<button data-path="res://assets/effect/godot_vfx_library/shaders/environment/heat_distortion.gdshader">复制 Godot 路径</button></article>
+<article data-search="着色器 环境 starsky 星空 纹理参数：small_stars_texture, large_stars_texture；保留 brian smith 的 mit 署名；适用于 colorrect · 参数：dimensions, small_stars, small_stars_far_size, small_stars_near_size, large_stars, large_stars_far_size, large_stars_near_size, far_stars_color, near_stars_color, small_stars_texture, large_stars_texture, base_scroll_speed, additional_scroll_speed" data-kind="着色器">
+<span class="tag">着色器 · 环境</span>
+<h2>星空</h2><p class="name">starSky</p>
+<p class="note">纹理参数：small_stars_texture, large_stars_texture；保留 Brian Smith 的 MIT 署名；适用于 ColorRect · 参数：dimensions, small_stars, small_stars_far_size, small_stars_near_size, large_stars, large_stars_far_size, large_stars_near_size, far_stars_color, near_stars_color, small_stars_texture, large_stars_texture, base_scroll_speed, additional_scroll_speed</p><code>res://assets/effect/godot_vfx_library/shaders/environment/starSky.gdshader</code>
+<button data-path="res://assets/effect/godot_vfx_library/shaders/environment/starSky.gdshader">复制 Godot 路径</button></article>
+<article data-search="着色器 环境 water 像素水面与倒影 纹理参数：noise_texture, noise_texture2, screen_texture · 参数：level, water_albedo, water_opacity, water_speed, wave_distortion, wave_multiplyer, water_texture_on, reflection_x_offset, reflection_y_offset, noise_texture, noise_texture2, screen_texture, pixel_resolution_x, pixel_resolution_y, edge_fade_width" data-kind="着色器">
+<span class="tag">着色器 · 环境</span>
+<h2>像素水面与倒影</h2><p class="name">water</p>
+<p class="note">纹理参数：noise_texture, noise_texture2, SCREEN_TEXTURE · 参数：level, water_albedo, water_opacity, water_speed, wave_distortion, wave_multiplyer, water_texture_on, reflection_X_offset, reflection_Y_offset, noise_texture, noise_texture2, SCREEN_TEXTURE, pixel_resolution_x, pixel_resolution_y, edge_fade_width</p><code>res://assets/effect/godot_vfx_library/shaders/environment/water.gdshader</code>
+<button data-path="res://assets/effect/godot_vfx_library/shaders/environment/water.gdshader">复制 Godot 路径</button></article>
+<article data-search="着色器 环境 water_surface 波动水面 在 shadermaterial 中调整参数 · 参数：wave_direction, wave_speed, wave_frequency, wave_amplitude, water_tint" data-kind="着色器">
+<span class="tag">着色器 · 环境</span>
+<h2>波动水面</h2><p class="name">water_surface</p>
+<p class="note">在 ShaderMaterial 中调整参数 · 参数：wave_direction, wave_speed, wave_frequency, wave_amplitude, water_tint</p><code>res://assets/effect/godot_vfx_library/shaders/environment/water_surface.gdshader</code>
+<button data-path="res://assets/effect/godot_vfx_library/shaders/environment/water_surface.gdshader">复制 Godot 路径</button></article>
+<article data-search="着色器 魔法与技能 energy_barrier 能量屏障 在 shadermaterial 中调整参数 · 参数：hex_scale, barrier_color, pulse_speed, edge_brightness" data-kind="着色器">
+<span class="tag">着色器 · 魔法与技能</span>
+<h2>能量屏障</h2><p class="name">energy_barrier</p>
+<p class="note">在 ShaderMaterial 中调整参数 · 参数：hex_scale, barrier_color, pulse_speed, edge_brightness</p><code>res://assets/effect/godot_vfx_library/shaders/magic/energy_barrier.gdshader</code>
+<button data-path="res://assets/effect/godot_vfx_library/shaders/magic/energy_barrier.gdshader">复制 Godot 路径</button></article>
+<article data-search="着色器 魔法与技能 portal_vortex 传送门扭曲 在 shadermaterial 中调整参数 · 参数：vortex_speed, vortex_strength, portal_color1, portal_color2" data-kind="着色器">
+<span class="tag">着色器 · 魔法与技能</span>
+<h2>传送门扭曲</h2><p class="name">portal_vortex</p>
+<p class="note">在 ShaderMaterial 中调整参数 · 参数：vortex_speed, vortex_strength, portal_color1, portal_color2</p><code>res://assets/effect/godot_vfx_library/shaders/magic/portal_vortex.gdshader</code>
+<button data-path="res://assets/effect/godot_vfx_library/shaders/magic/portal_vortex.gdshader">复制 Godot 路径</button></article>
+<article data-search="贴图 粒子贴图 fire_particle 火焰粒子贴图 " data-kind="贴图">
+<span class="tag">贴图 · 粒子贴图</span><img class="texture" src="textures/fire_particle.png" alt="火焰粒子贴图">
+<h2>火焰粒子贴图</h2><p class="name">fire_particle</p>
+<p class="note"></p><code>res://assets/effect/godot_vfx_library/textures/fire_particle.png</code>
+<button data-path="res://assets/effect/godot_vfx_library/textures/fire_particle.png">复制 Godot 路径</button></article>
+<article data-search="贴图 粒子贴图 firefly 萤火虫贴图 " data-kind="贴图">
+<span class="tag">贴图 · 粒子贴图</span><img class="texture" src="textures/firefly.png" alt="萤火虫贴图">
+<h2>萤火虫贴图</h2><p class="name">firefly</p>
+<p class="note"></p><code>res://assets/effect/godot_vfx_library/textures/firefly.png</code>
+<button data-path="res://assets/effect/godot_vfx_library/textures/firefly.png">复制 Godot 路径</button></article>
+<article data-search="贴图 粒子贴图 leaf 树叶贴图 " data-kind="贴图">
+<span class="tag">贴图 · 粒子贴图</span><img class="texture" src="textures/leaf.png" alt="树叶贴图">
+<h2>树叶贴图</h2><p class="name">leaf</p>
+<p class="note"></p><code>res://assets/effect/godot_vfx_library/textures/leaf.png</code>
+<button data-path="res://assets/effect/godot_vfx_library/textures/leaf.png">复制 Godot 路径</button></article>
+<article data-search="贴图 粒子贴图 spark_particle2 火花粒子贴图 " data-kind="贴图">
+<span class="tag">贴图 · 粒子贴图</span><img class="texture" src="textures/spark_particle2.png" alt="火花粒子贴图">
+<h2>火花粒子贴图</h2><p class="name">spark_particle2</p>
+<p class="note"></p><code>res://assets/effect/godot_vfx_library/textures/spark_particle2.png</code>
+<button data-path="res://assets/effect/godot_vfx_library/textures/spark_particle2.png">复制 Godot 路径</button></article></section></main><div id="status" role="status"></div>
+<script>
+const query=document.getElementById('query'),kind=document.getElementById('kind'),cards=[...document.querySelectorAll('article')];
+function filter(){const terms=query.value.toLowerCase().trim().split(/\s+/).filter(Boolean);let count=0;
+for(const card of cards){card.hidden=!(terms.every(term=>card.dataset.search.includes(term))&&(!kind.value||card.dataset.kind===kind.value));if(!card.hidden)count++}
+document.getElementById('count').textContent=count+' / '+cards.length+' 项'}
+query.addEventListener('input',filter);kind.addEventListener('change',filter);filter();
+document.addEventListener('click',async event=>{const button=event.target.closest('button[data-path]');if(!button)return;
+let copied=false;try{await navigator.clipboard.writeText(button.dataset.path);copied=true}catch(e){
+const area=document.createElement('textarea');area.value=button.dataset.path;area.style.position='fixed';area.style.left='-9999px';document.body.append(area);area.select();copied=document.execCommand('copy');area.remove()}
+const status=document.getElementById('status');status.textContent=copied?'已复制 Godot 路径':'复制失败，请选中卡片中的路径手动复制';status.style.display='block';setTimeout(()=>status.style.display='none',2200)});
+</script></body></html>

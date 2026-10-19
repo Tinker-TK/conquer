@@ -1,0 +1,18 @@
+[
+  {
+    "name": "battle_inspiration_subject",
+    "src": "cards/card_battle_inspiration.png",
+    "desc": "Only the complete red hanging battle banner on wooden/gold pole, gold rim and simple yellow heraldic sword emblem, with all corners reconstructed. Isolate banner and pole, no card frame, cost emblem or scene. Center whole object with 12% margin on flat solid magenta #FF00FF matte for keying. No magenta used in subject.",
+    "prompt": "Reference is edit target. Redraw and complete ONE high definition crisp pixel-art game card illustration layer. Only the complete red hanging battle banner on wooden/gold pole, gold rim and simple yellow heraldic sword emblem, with all corners reconstructed. Isolate banner and pole, no card frame, cost emblem or scene. Center whole object with 12% margin on flat solid magenta #FF00FF matte for keying. No magenta used in subject. Match reference colors and chunky pixel-art outlines. NO text, Chinese characters, English letters, numbers, UI symbols or watermark. Not a sprite sheet, no multiple assets.",
+    "hint": "Generated images are saved to C:\\Users\\10059\\.codex\\generated_images\\01a06fae-b281-7ca0-9405-7d3035d0915f as C:\\Users\\10059\\.codex\\generated_images\\01a06fae-b281-7ca0-9405-7d3035d0915f\\exec-034e3c7e-9c7a-42b3-ad95-ca902e76b3d9.png by default.\nIf you need to use a generated image at another path, copy it and leave the original in place unless the user explicitly asks you to delete it.\nThe generated image is already displayed to the user. There is no need to render it in the final response as a Markdown image or file link.",
+    "generated_path": "C:\\Users\\10059\\.codex\\generated_images\\01a06fae-b281-7ca0-9405-7d3035d0915f\\exec-034e3c7e-9c7a-42b3-ad95-ca902e76b3d9.png"
+  },
+  {
+    "name": "battle_inspiration_background",
+    "src": "cards/card_battle_inspiration.png",
+    "desc": "Only the full square dark crimson/orange magical background that belongs BEHIND the banner illustration. Remove banner, pole, emblem, card frame, all text, and reconstruct the entire empty background where they used to be. Full bleed square red and burnt orange warm magical abstract pixel texture, no objects, no magenta matte.",
+    "prompt": "Reference is edit target. Redraw and complete ONE high definition crisp pixel-art game card illustration layer. Only the full square dark crimson/orange magical background that belongs BEHIND the banner illustration. Remove banner, pole, emblem, card frame, all text, and reconstruct the entire empty background where they used to be. Full bleed square red and burnt orange warm magical abstract pixel texture, no objects, no magenta matte. Match reference colors and chunky pixel-art outlines. NO text, Chinese characters, English letters, numbers, UI symbols or watermark. Not a sprite sheet, no multiple assets.",
+    "hint": "Generated images are saved to C:\\Users\\10059\\.codex\\generated_images\\01a06fae-b281-7ca0-9405-7d3035d0915f as C:\\Users\\10059\\.codex\\generated_images\\01a06fae-b281-7ca0-9405-7d3035d0915f\\exec-e5a9def5-dc9a-45d6-b817-5ca03b5a3e8a.png by default.\nIf you need to use a generated image at another path, copy it and leave the original in place unless the user explicitly asks you to delete it.\nThe generated image is already displayed to the user. There is no need to render it in the final response as a Markdown image or file link.",
+    "generated_path": "C:\\Users\\10059\\.codex\\generated_images\\01a06fae-b281-7ca0-9405-7d3035d0915f\\exec-e5a9def5-dc9a-45d6-b817-5ca03b5a3e8a.png"
+  }
+]

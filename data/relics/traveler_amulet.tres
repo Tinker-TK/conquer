@@ -1,0 +1,15 @@
+[gd_resource type="Resource" script_class="RelicDefinition" format=3 uid="uid://cmuh0k0pgio3v"]
+
+[ext_resource type="Script" uid="uid://be4bple3628ic" path="res://data/relics/relic_definition.gd" id="1"]
+[ext_resource type="Texture2D" uid="uid://dfkcf7v43gy5c" path="res://assets/ui_redrawn/icons/heart.png" id="1_mefkx"]
+
+[resource]
+script = ExtResource("1")
+id = &"traveler_amulet"
+display_name = "旅人护符"
+description = "本局生命上限增加12，获得时回复12点生命。"
+icon = ExtResource("1_mefkx")
+kind = 1
+amount = 12
+rarity = 0
+tags = Array[StringName]([&"guard"])

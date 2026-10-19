@@ -1,0 +1,11 @@
+[gd_resource type="Resource" format=3 uid="uid://i8pyhakynel3"]
+
+[ext_resource type="Script" uid="uid://l5slg1wgnhew" path="res://scripts/skills/normal_attack.gd" id="1_dooa3"]
+
+[resource]
+script = ExtResource("1_dooa3")
+attack_rate = 1.2
+cooldown = 6.0
+priority = 1
+cast_animation = "attack_02"
+metadata/_data_table_id = 4

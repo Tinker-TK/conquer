@@ -1,0 +1,6 @@
+[gd_scene format=3 uid="uid://bx4w60s3ah7u0"]
+
+[ext_resource type="Script" uid="uid://en55ysugenpf" path="res://tests/dynamic_river_render_test.gd" id="1"]
+
+[node name="DynamicRiverRenderTest" type="Node" unique_id=2039652052]
+script = ExtResource("1")

@@ -1,0 +1,29 @@
+[gd_resource type="Resource" script_class="PotionDefinition" format=3]
+
+[ext_resource type="Script" path="res://data/potions/potion_definition.gd" id="1"]
+[ext_resource type="Script" path="res://data/potions/potion_effect.gd" id="2"]
+[ext_resource type="Texture2D" path="res://assets/ui/potions/life_fruit.svg" id="3"]
+
+[sub_resource type="Resource" id="Effect0"]
+script = ExtResource("2")
+kind = 22
+amount = 10.0
+
+[resource]
+script = ExtResource("1")
+id = &"life_fruit"
+display_name = "生命果实"
+description = "本局最大生命+10，并回复10点生命；每局最多2瓶。"
+icon = ExtResource("3")
+kind = 4
+rarity = 2
+target_mode = 7
+tags = Array[StringName]([&"资源"])
+min_act = 1
+price = 110
+prep_usable = true
+max_per_run = 2
+radius = 85.0
+tint = Color(0.9529, 0.5176, 0.5686, 1)
+impact_vfx = "HolyHealImpactVFX"
+effects = Array[ExtResource("2")]([SubResource("Effect0")])

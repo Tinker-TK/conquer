@@ -1,0 +1,92 @@
+{
+  "version": 1,
+  "note": "Suno 没有公开 API：这些条目输出成提示词清单，在网页端生成后把文件放进 assets/audio/ai/inbox/suno/ 再运行 ingest_suno.py。",
+  "items": [
+    {
+      "id": "bgm_battle_ember",
+      "category": "music",
+      "title": "战斗 · 余烬前线",
+      "loop_seconds": 32,
+      "prompt": "dark medieval battle theme, 112 BPM, taiko and war drums, low string ostinato, sparse brass stabs, tense and driving, seamless loop",
+      "suno_prompt": "dark medieval battle, 112 BPM, taiko war drums, low strings ostinato, brass stabs, instrumental, seamless loop, no vocals",
+      "tags": ["battle", "drums", "tense"],
+      "procedural": "bgm_battle_ember"
+    },
+    {
+      "id": "bgm_battle_boss",
+      "category": "music",
+      "title": "战斗 · 首领",
+      "loop_seconds": 32,
+      "prompt": "boss battle, 128 BPM, heavy percussive drums, dissonant low strings, ominous brass, relentless, seamless loop",
+      "suno_prompt": "boss battle, 128 BPM, heavy drums, dissonant strings, ominous brass, instrumental, seamless loop, no vocals",
+      "tags": ["battle", "boss", "heavy"]
+    },
+    {
+      "id": "bgm_camp_calm",
+      "category": "music",
+      "title": "营地 · 休整",
+      "loop_seconds": 32,
+      "prompt": "calm camp at night, 78 BPM, fingerpicked lute, soft harp, warm low strings, gentle and hopeful, seamless loop",
+      "suno_prompt": "calm medieval camp, 78 BPM, fingerpicked lute, harp, warm strings, instrumental, seamless loop, no vocals",
+      "tags": ["calm", "camp", "lute"],
+      "procedural": "bgm_camp_calm"
+    },
+    {
+      "id": "bgm_map_journey",
+      "category": "music",
+      "title": "地图 · 征途",
+      "loop_seconds": 32,
+      "prompt": "world map travel theme, 92 BPM, wooden flute melody, light strings, soft frame drum, adventurous and spacious, seamless loop",
+      "suno_prompt": "medieval travel theme, 92 BPM, wooden flute, light strings, frame drum, instrumental, seamless loop, no vocals",
+      "tags": ["map", "travel", "flute"]
+    },
+    {
+      "id": "bgm_victory",
+      "category": "music",
+      "title": "胜利",
+      "loop_seconds": 20,
+      "prompt": "short victory fanfare, 100 BPM, warm brass, strings, timpani, triumphant but restrained, tail settles for looping",
+      "suno_prompt": "short medieval victory fanfare, brass, strings, timpani, instrumental, no vocals",
+      "tags": ["victory", "fanfare"]
+    },
+    {
+      "id": "amb_campfire",
+      "category": "ambience",
+      "title": "篝火",
+      "loop_seconds": 24,
+      "prompt": "campfire at night, soft crackle and embers, low warm rumble, distant crickets, seamless loop",
+      "suno_prompt": "campfire ambience, crackling fire, soft embers, distant night crickets, seamless loop, no music",
+      "tags": ["ambience", "fire", "night"],
+      "procedural": "amb_campfire"
+    },
+    {
+      "id": "amb_forest_day",
+      "category": "ambience",
+      "title": "森林白昼",
+      "loop_seconds": 24,
+      "prompt": "daytime forest, leaves rustling in light wind, distant birds, no music, seamless loop",
+      "suno_prompt": "daytime forest ambience, leaves, light wind, distant birds, seamless loop, no music",
+      "tags": ["ambience", "forest", "birds"],
+      "procedural": "amb_forest_day"
+    },
+    {
+      "id": "amb_town_market",
+      "category": "ambience",
+      "title": "城镇集市",
+      "loop_seconds": 24,
+      "prompt": "medieval town market, distant crowd murmur, cart wheels, occasional hammer, no clear words, seamless loop",
+      "suno_prompt": "medieval town market ambience, distant crowd murmur, carts, hammer, seamless loop, no music, no clear speech",
+      "tags": ["ambience", "town", "crowd"]
+    },
+    {
+      "id": "amb_rain_stone",
+      "category": "ambience",
+      "title": "石庭雨声",
+      "loop_seconds": 24,
+      "prompt": "steady rain on stone courtyard, water dripping, close and even, seamless loop",
+      "suno_prompt": "rain on stone courtyard ambience, steady rain, dripping water, seamless loop, no music",
+      "tags": ["ambience", "rain", "weather"],
+      "procedural": "amb_rain_stone"
+    }
+  ]
+}

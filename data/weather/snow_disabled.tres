@@ -1,0 +1,9 @@
+[gd_resource type="Resource" script_class="SnowWeatherSettings" load_steps=2 format=3]
+
+[ext_resource type="Script" path="res://data/weather/snow_weather_settings.gd" id="1"]
+
+[resource]
+script = ExtResource("1")
+enabled = false
+intensity = 0.0
+initial_coverage = 0.0

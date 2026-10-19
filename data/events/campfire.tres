@@ -1,0 +1,13 @@
+[gd_resource type="Resource" script_class="EventDefinition" load_steps=3 format=3]
+[ext_resource type="Script" path="res://data/events/event_definition.gd" id="1"]
+[ext_resource type="Texture2D" path="res://assets/ui/events/illustrations/campfire.png" id="2"]
+[resource]
+script = ExtResource("1")
+id = "campfire"
+title = "篝火"
+description = "微弱的火光让士兵们暂时获得喘息。\n\n你可以休憩整备、训练兵种，或强化手中的战术卡。本次只能选择一项。"
+illustration = ExtResource("2")
+template = 3
+leave_text = "离开"
+result_text = "队伍休憩整备完毕，重新踏上征途。"
+rest_heal_percent = 30.0

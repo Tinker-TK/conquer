@@ -1,0 +1,43 @@
+{
+  "path": "res://assets/audio/ai/local_design/ai_combat/sfx_combat_thunder_strike_v01.ogg",
+  "asset": "sfx_combat_thunder_strike_v01",
+  "title": "雷云药水 · 短促落雷 · A 清脆",
+  "category": "ai_combat",
+  "domain": "SFX",
+  "batch": "audition_20261019",
+  "provider": "local_design",
+  "recipe": "lightning",
+  "variant": 1,
+  "seed": 2121108597,
+  "prompt": "One close magical lightning strike, instant electric crack followed by a compact rough low thunder decay and sparse sparks, dry 0.75 second game effect for repeated strikes. No storm ambience, music, voice or cinematic reverb.",
+  "author": "项目本地声音设计（CC0 分层素材＋原创程序合成）",
+  "source": "res://tools/audio/ai/produce_audition.py",
+  "license": "CC0-1.0",
+  "source_layers": [],
+  "changes": "分层混音、确定性变体、裁剪静音、44.1kHz 单声道、短淡入淡出、峰值控制、OGG；循环保留完整小节。",
+  "notes": "本批试听 · 本地制作；SFX；单次动作。",
+  "duration_seconds": 0.637,
+  "loop": false,
+  "features": {
+    "duration_seconds": 0.637,
+    "peak_dbfs": -2.17,
+    "rms_dbfs": -21.97,
+    "crest_db": 19.8,
+    "spectral_centroid_hz": 4250.5,
+    "zero_cross_rate": 0.0419,
+    "attack_ms": 2.9,
+    "tail_ms": 0.9
+  },
+  "channels": 1,
+  "sample_rate": 44100,
+  "seam_jump": null,
+  "sha256": "cf1aabf47952d509447e489e293002781d9e960d3e625a560ffa4ed9bed90a66",
+  "created_at": "2026-10-19T02:03:55+00:00",
+  "tags": [
+    "one-shot",
+    "percussive",
+    "bright",
+    "spiky"
+  ],
+  "problems": []
+}

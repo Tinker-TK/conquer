@@ -1,0 +1,18 @@
+[gd_resource type="Resource" script_class="EventDefinition" format=3]
+
+[ext_resource type="Script" path="res://data/events/event_definition.gd" id="1"]
+[ext_resource type="Texture2D" path="res://assets/ui/events/illustrations/twin-barracks.png" id="2"]
+
+[resource]
+script = ExtResource("1")
+id = "act1_twin_barracks"
+title = "双子兵营"
+description = "两顶军帐背靠背扎着，绳结、补丁、甚至门口泥地上的脚印都一模一样。\n\n一个士兵从左边帐篷出来，另一个士兵从右边出来。他们看见彼此，同时停住了。"
+template = 4
+min_floor = 5
+max_floor = 9
+rarity = "rare"
+illustration = ExtResource("2")
+tags = Array[String](["duplicate"])
+requires = Array[String]([])
+choices = Array[Dictionary]([{"gold": 0, "heal": 0, "effect": {"type": "duplicate_card", "filter": "recruit"}, "cost": {"max_hp": 8}, "text": "走进镜像军帐", "summary": "最大生命 -8 · 复制 1 张征召牌", "result_text": "你从帐中出来时，手里多了一件熟悉的东西。身后的另一个你，没有跟出来。"}, {"gold": 45, "heal": 0, "text": "搬走双份补给", "summary": "获得 45 金币", "result_text": "两份口粮、两捆箭、两瓶劣酒。士兵们决定不去想为什么。"}, {"gold": 0, "heal": 0, "effect": {"type": "train_unit"}, "cost": {"hp": 8}, "text": "让两个士兵互换装备", "summary": "失去 8 生命 · 训练 1 张兵种卡", "result_text": "两个士兵拆开对方的护甲，又照着原样装回去。等他们停手时，动作已经一模一样。"}, {"text": "离开", "leave": true, "heal": 0, "gold": 0}])

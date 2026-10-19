@@ -1,0 +1,25 @@
+[gd_scene load_steps=6 format=3]
+
+[ext_resource type="Script" path="res://scripts/effects/pixel_portal.gd" id="1"]
+[ext_resource type="Shader" path="res://shaders/pixel_portal.gdshader" id="2"]
+
+[sub_resource type="Gradient" id="Gradient_white"]
+colors = PackedColorArray(1, 1, 1, 1, 1, 1, 1, 1)
+
+[sub_resource type="GradientTexture2D" id="Texture_white"]
+gradient = SubResource("Gradient_white")
+width = 32
+height = 48
+
+[sub_resource type="ShaderMaterial" id="Material_portal"]
+resource_local_to_scene = true
+shader = ExtResource("2")
+
+[node name="PixelPortal" type="Node2D"]
+texture_filter = 1
+script = ExtResource("1")
+
+[node name="Portal" type="Sprite2D" parent="."]
+material = SubResource("Material_portal")
+position = Vector2(0, -18.5)
+texture = SubResource("Texture_white")

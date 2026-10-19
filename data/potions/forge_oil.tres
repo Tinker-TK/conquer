@@ -1,0 +1,29 @@
+[gd_resource type="Resource" script_class="PotionDefinition" format=3]
+
+[ext_resource type="Script" path="res://data/potions/potion_definition.gd" id="1"]
+[ext_resource type="Script" path="res://data/potions/potion_effect.gd" id="2"]
+[ext_resource type="Texture2D" path="res://assets/ui/potions/forge_oil.svg" id="3"]
+
+[sub_resource type="Resource" id="Effect0"]
+script = ExtResource("2")
+kind = 13
+amount = 1.0
+
+[resource]
+script = ExtResource("1")
+id = &"forge_oil"
+display_name = "锻造之油"
+description = "随机永久强化牌组中1张可强化的效果牌，等同篝火强化。"
+icon = ExtResource("3")
+kind = 4
+rarity = 1
+target_mode = 7
+tags = Array[StringName]([&"资源"])
+min_act = 2
+price = 80
+prep_usable = true
+max_per_run = 0
+radius = 85.0
+tint = Color(0.9490, 0.6784, 0.3765, 1)
+impact_vfx = ""
+effects = Array[ExtResource("2")]([SubResource("Effect0")])

@@ -1,0 +1,9 @@
+{
+  "scene": "res://scenes/levels/battles/battle_006.tscn",
+  "passages": [
+    {"path": "LayerChange/1-2/FloorTransition", "lower_start": [120,365], "upper_goal": [440,365]},
+    {"path": "LayerChange/1-2/FloorTransition2", "lower_start": [1165,564], "upper_goal": [845,564]},
+    {"path": "LayerChange/1-2/FloorTransition3", "lower_start": [1149.7434,362.9835], "upper_goal": [1460,314]},
+    {"path": "LayerChange/1-2/FloorTransition4", "lower_start": [2189,630], "upper_goal": [1869,630]}
+  ]
+}

@@ -1,0 +1,604 @@
+[
+  {
+    "id": "power_enhance",
+    "name": "力量强化",
+    "definition_path": "data/cards/power_enhance.tres",
+    "runtime_texture": "res://assets/cards/illustrations/power_enhance.png",
+    "background": {
+      "role": "攻击强化",
+      "label": "低饱和砖红",
+      "hex": "#B5847D"
+    }
+  },
+  {
+    "id": "defend",
+    "name": "护甲加固",
+    "definition_path": "data/cards/defend.tres",
+    "runtime_texture": "res://assets/cards/illustrations/defend.png",
+    "background": {
+      "role": "防御",
+      "label": "低饱和雾蓝",
+      "hex": "#8EA8BD"
+    }
+  },
+  {
+    "id": "heal",
+    "name": "战地治疗",
+    "definition_path": "data/cards/heal.tres",
+    "runtime_texture": "res://assets/cards/illustrations/heal.png",
+    "background": {
+      "role": "治疗",
+      "label": "鼠尾草绿",
+      "hex": "#98AC7D"
+    }
+  },
+  {
+    "id": "poison_on_hit",
+    "name": "淬毒武器",
+    "definition_path": "data/cards/poison_on_hit.tres",
+    "runtime_texture": "res://assets/cards/illustrations/poison_on_hit.png",
+    "background": {
+      "role": "淬毒",
+      "label": "灰紫",
+      "hex": "#A396AF"
+    }
+  },
+  {
+    "id": "death_explosion",
+    "name": "同生共死",
+    "definition_path": "data/cards/death_explosion.tres",
+    "runtime_texture": "res://assets/cards/illustrations/death_explosion.png",
+    "background": {
+      "role": "爆炸",
+      "label": "赭红",
+      "hex": "#B48070"
+    }
+  },
+  {
+    "id": "frenzy",
+    "name": "狂化",
+    "definition_path": "data/cards/frenzy.tres",
+    "runtime_texture": "res://assets/cards/illustrations/frenzy.png",
+    "background": {
+      "role": "狂化",
+      "label": "暗玫瑰红",
+      "hex": "#AC7980"
+    }
+  },
+  {
+    "id": "judger",
+    "name": "审判者",
+    "definition_path": "data/cards/judger.tres",
+    "runtime_texture": "res://assets/cards/illustrations/judger.png",
+    "background": {
+      "role": "审判强化",
+      "label": "米金",
+      "hex": "#B9A879"
+    }
+  },
+  {
+    "id": "weakness",
+    "name": "虚弱",
+    "definition_path": "data/cards/weakness.tres",
+    "runtime_texture": "res://assets/cards/illustrations/weakness.png",
+    "background": {
+      "role": "虚弱诅咒",
+      "label": "灰紫",
+      "hex": "#A19AB4"
+    }
+  },
+  {
+    "id": "vulnerability",
+    "name": "易伤",
+    "definition_path": "data/cards/vulnerability.tres",
+    "runtime_texture": "res://assets/cards/illustrations/vulnerability.png",
+    "background": {
+      "role": "攻击易伤",
+      "label": "灰玫瑰红",
+      "hex": "#B78C93"
+    }
+  },
+  {
+    "id": "intimidation",
+    "name": "恐吓",
+    "definition_path": "data/cards/intimidation.tres",
+    "runtime_texture": "res://assets/cards/illustrations/intimidation.png",
+    "background": {
+      "role": "恐惧诅咒",
+      "label": "烟紫",
+      "hex": "#A294B2"
+    }
+  },
+  {
+    "id": "paralysis",
+    "name": "麻痹",
+    "definition_path": "data/cards/paralysis.tres",
+    "runtime_texture": "res://assets/cards/illustrations/paralysis.png",
+    "background": {
+      "role": "雷电麻痹",
+      "label": "蓝紫",
+      "hex": "#999CB5"
+    }
+  },
+  {
+    "id": "copy_ally",
+    "name": "镜像",
+    "definition_path": "data/cards/copy_ally.tres",
+    "runtime_texture": "res://assets/cards/illustrations/copy_ally.png",
+    "background": {
+      "role": "镜像魔法",
+      "label": "浅青蓝",
+      "hex": "#8FAFB9"
+    }
+  },
+  {
+    "id": "draw_four",
+    "name": "孤注一掷",
+    "definition_path": "data/cards/draw_four.tres",
+    "runtime_texture": "res://assets/cards/illustrations/draw_four.png",
+    "background": {
+      "role": "抽牌",
+      "label": "米金",
+      "hex": "#C0B08C"
+    }
+  },
+  {
+    "id": "draw_hp",
+    "name": "血契补给",
+    "definition_path": "data/cards/draw_hp.tres",
+    "runtime_texture": "res://assets/cards/illustrations/draw_hp.png",
+    "background": {
+      "role": "血契能量",
+      "label": "灰酒红",
+      "hex": "#AC8496"
+    }
+  },
+  {
+    "id": "fire_zone",
+    "name": "烈焰灼烧",
+    "definition_path": "data/cards/fire_zone.tres",
+    "runtime_texture": "res://assets/cards/illustrations/fire_zone.png",
+    "background": {
+      "role": "火焰伤害",
+      "label": "暖赭橙",
+      "hex": "#BA9377"
+    }
+  },
+  {
+    "id": "mud_zone",
+    "name": "泥潭",
+    "definition_path": "data/cards/mud_zone.tres",
+    "runtime_texture": "res://assets/cards/illustrations/mud_zone.png",
+    "background": {
+      "role": "地形控制",
+      "label": "浅土褐",
+      "hex": "#B29D80"
+    }
+  },
+  {
+    "id": "random_play",
+    "name": "战术涌现",
+    "definition_path": "data/cards/random_play.tres",
+    "runtime_texture": "res://assets/cards/illustrations/random_play.png",
+    "background": {
+      "role": "战术抽牌",
+      "label": "米金",
+      "hex": "#BDAE8B"
+    }
+  },
+  {
+    "id": "recall_ally",
+    "name": "部队回撤",
+    "definition_path": "data/cards/recall_ally.tres",
+    "runtime_texture": "res://assets/cards/illustrations/recall_ally.png",
+    "background": {
+      "role": "回撤",
+      "label": "雾青蓝",
+      "hex": "#90ABB8"
+    }
+  },
+  {
+    "id": "retreat_draw",
+    "name": "鸣金收兵",
+    "definition_path": "data/cards/retreat_draw.tres",
+    "runtime_texture": "res://assets/cards/illustrations/retreat_draw.png",
+    "background": {
+      "role": "战术补给",
+      "label": "浅米金",
+      "hex": "#C0B38F"
+    }
+  },
+  {
+    "id": "undying_army",
+    "name": "不灭军势",
+    "definition_path": "data/cards/undying_army.tres",
+    "runtime_texture": "res://assets/cards/illustrations/undying_army.png",
+    "background": {
+      "role": "部队留场",
+      "label": "灰蓝",
+      "hex": "#8FA5B9"
+    }
+  },
+  {
+    "id": "diverse_army",
+    "name": "合理搭配",
+    "definition_path": "data/cards/diverse_army.tres",
+    "runtime_texture": "res://assets/cards/illustrations/diverse_army.png",
+    "background": {
+      "role": "兵种协同",
+      "label": "浅金褐",
+      "hex": "#B9AC87"
+    }
+  },
+  {
+    "id": "keep_distance",
+    "name": "保持距离",
+    "definition_path": "data/cards/keep_distance.tres",
+    "runtime_texture": "res://assets/cards/illustrations/keep_distance.png",
+    "background": {
+      "role": "远程攻击",
+      "label": "低饱和陶红",
+      "hex": "#B68D81"
+    }
+  },
+  {
+    "id": "death_attack",
+    "name": "悼亡战意",
+    "definition_path": "data/cards/death_attack.tres",
+    "runtime_texture": "res://assets/cards/illustrations/death_attack.png",
+    "background": {
+      "role": "悼亡强化",
+      "label": "蓝灰",
+      "hex": "#939FB0"
+    }
+  },
+  {
+    "id": "convert_enemy",
+    "name": "策反",
+    "definition_path": "data/cards/convert_enemy.tres",
+    "runtime_texture": "res://assets/cards/illustrations/convert_enemy.png",
+    "background": {
+      "role": "精神控制",
+      "label": "灰紫",
+      "hex": "#A395B2"
+    }
+  },
+  {
+    "id": "soldier",
+    "name": "战士召唤",
+    "definition_path": "data/units/soldier.tres",
+    "runtime_texture": "res://assets/cards/illustrations/soldier.png",
+    "background": {
+      "role": "近战攻击",
+      "label": "灰砖红",
+      "hex": "#B58A80"
+    }
+  },
+  {
+    "id": "archer",
+    "name": "弓箭手征召",
+    "definition_path": "data/units/archer.tres",
+    "runtime_texture": "res://assets/cards/illustrations/archer.png",
+    "background": {
+      "role": "远程攻击",
+      "label": "灰陶红",
+      "hex": "#B58A80"
+    }
+  },
+  {
+    "id": "swords_man",
+    "name": "剑士征召",
+    "definition_path": "data/units/swords_man.tres",
+    "runtime_texture": "res://assets/cards/illustrations/swords_man.png",
+    "background": {
+      "role": "连续攻击",
+      "label": "低饱和砖红",
+      "hex": "#B5867F"
+    }
+  },
+  {
+    "id": "armored_axeman",
+    "name": "装甲斧手召唤",
+    "definition_path": "data/units/armored_axeman.tres",
+    "runtime_texture": "res://assets/cards/illustrations/armored_axeman.png",
+    "background": {
+      "role": "重击",
+      "label": "赭红",
+      "hex": "#B18A79"
+    }
+  },
+  {
+    "id": "knight",
+    "name": "骑士召唤",
+    "definition_path": "data/units/knight.tres",
+    "runtime_texture": "res://assets/cards/illustrations/knight.png",
+    "background": {
+      "role": "防守反击",
+      "label": "灰蓝",
+      "hex": "#91A8BD"
+    }
+  },
+  {
+    "id": "knight_templar",
+    "name": "圣殿骑士征召",
+    "definition_path": "data/units/knight_templar.tres",
+    "runtime_texture": "res://assets/cards/illustrations/knight_templar.png",
+    "background": {
+      "role": "庇护",
+      "label": "浅灰蓝",
+      "hex": "#97ADBB"
+    }
+  },
+  {
+    "id": "lancer",
+    "name": "骑兵征召",
+    "definition_path": "data/units/lancer.tres",
+    "runtime_texture": "res://assets/cards/illustrations/lancer.png",
+    "background": {
+      "role": "冲锋",
+      "label": "陶红",
+      "hex": "#B58E7D"
+    }
+  },
+  {
+    "id": "priest",
+    "name": "牧师征召",
+    "definition_path": "data/units/priest.tres",
+    "runtime_texture": "res://assets/cards/illustrations/priest.png",
+    "background": {
+      "role": "治疗",
+      "label": "鼠尾草绿",
+      "hex": "#9EB28C"
+    }
+  },
+  {
+    "id": "wizard",
+    "name": "巫师征召",
+    "definition_path": "data/units/wizard.tres",
+    "runtime_texture": "res://assets/cards/illustrations/wizard.png",
+    "background": {
+      "role": "火球法术",
+      "label": "赭橙",
+      "hex": "#BC947A"
+    }
+  },
+  {
+    "id": "were_bear",
+    "name": "暗影熊召唤",
+    "definition_path": "data/units/were_bear.tres",
+    "runtime_texture": "res://assets/cards/illustrations/were_bear.png",
+    "background": {
+      "role": "爪击震地",
+      "label": "赭红",
+      "hex": "#B08D7A"
+    }
+  },
+  {
+    "id": "were_wolf",
+    "name": "召唤狼人",
+    "definition_path": "data/units/were_wolf.tres",
+    "runtime_texture": "res://assets/cards/illustrations/were_wolf.png",
+    "background": {
+      "role": "暗影潜行",
+      "label": "灰紫",
+      "hex": "#A093AC"
+    }
+  },
+  {
+    "id": "comrade",
+    "name": "战友",
+    "definition_path": "data/cards/comrade.tres",
+    "runtime_texture": "res://assets/cards/illustrations/comrade.png",
+    "background": {
+      "role": "部队支援",
+      "label": "灰蓝",
+      "hex": "#95AFC0"
+    }
+  },
+  {
+    "id": "evolution",
+    "name": "进化",
+    "definition_path": "data/cards/evolution.tres",
+    "runtime_texture": "res://assets/cards/illustrations/evolution.png",
+    "background": {
+      "role": "临时升阶",
+      "label": "浅灰紫",
+      "hex": "#A99BB7"
+    }
+  },
+  {
+    "id": "master_strategy",
+    "name": "运筹帷幄",
+    "definition_path": "data/cards/master_strategy.tres",
+    "runtime_texture": "res://assets/cards/illustrations/master_strategy.png",
+    "background": {
+      "role": "固有抽牌战术",
+      "label": "米金",
+      "hex": "#C0B08C"
+    }
+  },
+  {
+    "id": "rend",
+    "name": "割裂",
+    "definition_path": "data/cards/rend.tres",
+    "runtime_texture": "res://assets/cards/illustrations/rend.png",
+    "generator": "image_gen.imagegen",
+    "prompt_set": "outputs/new-cards-20261018/art-prompts.json"
+  },
+  {
+    "id": "healing_ban",
+    "name": "禁疗",
+    "definition_path": "data/cards/healing_ban.tres",
+    "runtime_texture": "res://assets/cards/illustrations/healing_ban.png",
+    "generator": "image_gen.imagegen",
+    "prompt_set": "outputs/new-cards-20261018/art-prompts.json"
+  },
+  {
+    "id": "armor_shred",
+    "name": "破甲",
+    "definition_path": "data/cards/armor_shred.tres",
+    "runtime_texture": "res://assets/cards/illustrations/armor_shred.png",
+    "generator": "image_gen.imagegen",
+    "prompt_set": "outputs/new-cards-20261018/art-prompts.json"
+  },
+  {
+    "id": "slumber",
+    "name": "沉睡",
+    "definition_path": "data/cards/slumber.tres",
+    "runtime_texture": "res://assets/cards/illustrations/slumber.png",
+    "generator": "image_gen.imagegen",
+    "prompt_set": "outputs/new-cards-20261018/art-prompts.json"
+  },
+  {
+    "id": "holy_bulwark",
+    "name": "圣光壁垒",
+    "definition_path": "data/cards/holy_bulwark.tres",
+    "runtime_texture": "res://assets/cards/illustrations/holy_bulwark.png",
+    "generator": "image_gen.imagegen",
+    "prompt_set": "outputs/new-cards-20261018/art-prompts.json"
+  },
+  {
+    "id": "overflow_prayer",
+    "name": "溢流祷言",
+    "definition_path": "data/cards/overflow_prayer.tres",
+    "runtime_texture": "res://assets/cards/illustrations/overflow_prayer.png",
+    "generator": "image_gen.imagegen",
+    "prompt_set": "outputs/new-cards-20261018/art-prompts.json"
+  },
+  {
+    "id": "last_stand",
+    "name": "背水",
+    "definition_path": "data/cards/last_stand.tres",
+    "runtime_texture": "res://assets/cards/illustrations/last_stand.png",
+    "generator": "image_gen.imagegen",
+    "prompt_set": "outputs/new-cards-20261018/art-prompts.json"
+  },
+  {
+    "id": "hold_ground",
+    "name": "坚守阵地",
+    "definition_path": "data/cards/hold_ground.tres",
+    "runtime_texture": "res://assets/cards/illustrations/hold_ground.png",
+    "generator": "image_gen.imagegen",
+    "prompt_set": "outputs/new-cards-20261018/art-prompts.json"
+  },
+  {
+    "id": "mobilization",
+    "name": "紧急动员",
+    "definition_path": "data/cards/mobilization.tres",
+    "runtime_texture": "res://assets/cards/illustrations/mobilization.png",
+    "generator": "image_gen.imagegen",
+    "prompt_set": "outputs/new-cards-20261018/art-prompts.json"
+  },
+  {
+    "id": "letting_go",
+    "name": "断舍离",
+    "definition_path": "data/cards/letting_go.tres",
+    "runtime_texture": "res://assets/cards/illustrations/letting_go.png",
+    "generator": "image_gen.imagegen",
+    "prompt_set": "outputs/new-cards-20261018/art-prompts.json"
+  },
+  {
+    "id": "sacrifice",
+    "name": "献祭",
+    "definition_path": "data/cards/sacrifice.tres",
+    "runtime_texture": "res://assets/cards/illustrations/sacrifice.png",
+    "generator": "image_gen.imagegen",
+    "prompt_set": "outputs/new-cards-20261018/art-prompts.json"
+  },
+  {
+    "id": "return_dead",
+    "name": "亡者归来",
+    "definition_path": "data/cards/return_dead.tres",
+    "runtime_texture": "res://assets/cards/illustrations/return_dead.png",
+    "generator": "image_gen.imagegen",
+    "prompt_set": "outputs/new-cards-20261018/art-prompts.json"
+  },
+  {
+    "id": "martyrdom",
+    "name": "殉道",
+    "definition_path": "data/cards/martyrdom.tres",
+    "runtime_texture": "res://assets/cards/illustrations/martyrdom.png",
+    "generator": "image_gen.imagegen",
+    "prompt_set": "outputs/new-cards-20261018/art-prompts.json"
+  },
+  {
+    "id": "war_cry",
+    "name": "战吼",
+    "definition_path": "data/cards/war_cry.tres",
+    "runtime_texture": "res://assets/cards/illustrations/war_cry.png",
+    "generator": "image_gen.imagegen",
+    "prompt_set": "outputs/new-cards-20261018/art-prompts.json"
+  },
+  {
+    "id": "fortify",
+    "name": "坚守",
+    "definition_path": "data/cards/fortify.tres",
+    "runtime_texture": "res://assets/cards/illustrations/fortify.png",
+    "generator": "image_gen.imagegen",
+    "prompt_set": "outputs/new-cards-20261018/art-prompts.json"
+  },
+  {
+    "id": "haste",
+    "name": "疾行",
+    "definition_path": "data/cards/haste.tres",
+    "runtime_texture": "res://assets/cards/illustrations/haste.png",
+    "generator": "image_gen.imagegen",
+    "prompt_set": "outputs/new-cards-20261018/art-prompts.json"
+  },
+  {
+    "id": "battle_standard",
+    "name": "战旗",
+    "definition_path": "data/cards/battle_standard.tres",
+    "runtime_texture": "res://assets/cards/illustrations/battle_standard.png",
+    "generator": "image_gen.imagegen",
+    "prompt_set": "outputs/new-cards-20261018/art-prompts.json"
+  },
+  {
+    "id": "spike_trap",
+    "name": "地刺",
+    "definition_path": "data/cards/spike_trap.tres",
+    "runtime_texture": "res://assets/cards/illustrations/spike_trap.png",
+    "generator": "image_gen.imagegen",
+    "prompt_set": "outputs/new-cards-20261018/art-prompts.json"
+  },
+  {
+    "id": "transcription",
+    "name": "誊抄",
+    "definition_path": "data/cards/transcription.tres",
+    "runtime_texture": "res://assets/cards/illustrations/transcription.png",
+    "generator": "image_gen.imagegen",
+    "prompt_set": "outputs/new-cards-20261018/art-prompts.json"
+  },
+  {
+    "id": "reformation",
+    "name": "变阵",
+    "definition_path": "data/cards/reformation.tres",
+    "runtime_texture": "res://assets/cards/illustrations/reformation.png",
+    "generator": "image_gen.imagegen",
+    "prompt_set": "outputs/new-cards-20261018/art-prompts.json"
+  },
+  {
+    "id": "stratagem",
+    "name": "运筹",
+    "definition_path": "data/cards/stratagem.tres",
+    "runtime_texture": "res://assets/cards/illustrations/stratagem.png",
+    "generator": "image_gen.imagegen",
+    "prompt_set": "outputs/new-cards-20261018/art-prompts.json"
+  },
+  {
+    "id": "overdraft",
+    "name": "透支",
+    "definition_path": "data/cards/overdraft.tres",
+    "runtime_texture": "res://assets/cards/illustrations/overdraft.png",
+    "generator": "image_gen.imagegen",
+    "prompt_set": "outputs/new-cards-20261018/art-prompts.json"
+  },
+  {
+    "id": "thrift",
+    "name": "节流",
+    "definition_path": "data/cards/thrift.tres",
+    "runtime_texture": "res://assets/cards/illustrations/thrift.png",
+    "generator": "image_gen.imagegen",
+    "prompt_set": "outputs/new-cards-20261018/art-prompts.json"
+  }
+]

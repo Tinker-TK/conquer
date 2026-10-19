@@ -1,0 +1,13 @@
+[gd_scene load_steps=4 format=3]
+
+[ext_resource type="Script" path="res://scripts/world/river_tilemap.gd" id="1"]
+[ext_resource type="TileSet" path="res://data/water/river_tileset.tres" id="2"]
+[ext_resource type="Resource" path="res://data/water/river_default.tres" id="3"]
+
+[node name="River" type="TileMapLayer"]
+z_index = -14
+texture_filter = 1
+tile_set = ExtResource("2")
+navigation_enabled = false
+script = ExtResource("1")
+settings = ExtResource("3")

@@ -1,0 +1,19 @@
+[remap]
+
+importer="csv_translation"
+type="Translation"
+uid="uid://dtypuvhlml8kr"
+
+[deps]
+
+files=["res://assets/effect/godot_vfx_library/demo/vfx_demo.en.translation", "res://assets/effect/godot_vfx_library/demo/vfx_demo.zh.translation"]
+
+source_file="res://assets/effect/godot_vfx_library/demo/vfx_demo.csv"
+dest_files=["res://assets/effect/godot_vfx_library/demo/vfx_demo.en.translation", "res://assets/effect/godot_vfx_library/demo/vfx_demo.zh.translation"]
+
+[params]
+
+compress=1
+delimiter=0
+unescape_keys=false
+unescape_translations=true

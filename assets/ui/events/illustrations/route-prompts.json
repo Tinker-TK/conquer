@@ -1,0 +1,130 @@
+{
+  "tool": "built-in image_gen",
+  "references": [
+    "crossroads-recruitment.png",
+    "forgotten-reliquary.png"
+  ],
+  "style": "Use case: illustration-story. Square full-bleed fantasy roguelike event painting. Match reference game art: hand-painted gouache, broad angular opaque brushstrokes, simplified painterly realism, warm ochre cream light, desaturated sage greens and blue-gray, matte texture, intimate narrative framing, one readable focal point. No text, letters, numbers, border, UI, watermark, 3D or anime. Reference artworks supply style only.",
+  "images": [
+    {
+      "event": "act1_broken_standard",
+      "file": "broken-standard.png",
+      "prompt": "Use case: illustration-story. Asset type: square full-bleed fantasy roguelike event illustration, no text. Create the event 'Broken Standard': on a grassy woodland roadside at dusk, an exhausted last standard bearer kneels, holding out a snapped wooden flagpole with a faded red griffin banner trailing in mud, a small silver griffin badge catches warm sunlight. A leather-gloved adventurer hand enters the lower foreground to receive it. Match the two reference game event artworks: hand-painted gouache, broad angular opaque brushstrokes, simplified painterly realism, warm ochre and cream sunlight, desaturated sage greens and blue-gray armor, lightly textured matte surface, intimate narrative composition, strong readable silhouette, one clear focal point. Muted melancholy, gentle heroic fantasy. Square 1024x1024. No text, letters, numbers, border, UI, watermark. References are style references only; do not reproduce their subjects.",
+      "source": "C:/Users/10059/.codex/generated_images/01a14edc-818a-7163-8de7-2224b0ebbd0c/exec-33da2c1e-253f-4b6e-8577-88806ce34bd7.png"
+    },
+    {
+      "event": "act1_retired_drillmaster",
+      "file": "retired-drillmaster.png",
+      "prompt": "Use case: illustration-story. Asset type: square full-bleed fantasy roguelike game event illustration. Scene: In the shade of a spreading oak, a grizzled one-armed old drillmaster sharpens a blunt sword beside a hacked wooden training dummy. A small clay wine jug and modest coin pouch lie on a stump. Quiet wry human warmth, late afternoon. Match both reference game artworks closely: hand-painted gouache, broad angular opaque brushstrokes and simplified painterly realism, warm ochre and cream sunlight, desaturated sage greens and blue-gray armor, matte textured brushwork, intimate narrative framing and a strong readable focal point. Square 1024x1024. No text, letters, numbers, UI, frame, border, watermark, photorealism, 3D render or anime. References supply style only, keep this new scene distinct.",
+      "source": "C:/Users/10059/.codex/generated_images/01a14edc-818a-7163-8de7-2224b0ebbd0c/exec-b27e31c0-a28a-4785-8705-e9b6ee9a9984.png"
+    },
+    {
+      "event": "act1_beast_den",
+      "file": "beast-den.png",
+      "prompt": "Use case: illustration-story. Asset type: square full-bleed fantasy roguelike game event illustration. Scene: A frightened small bear cub nestles among roots and thorn bushes at the mouth of a woodland den. An open rusty animal trap and torn bandage lie in the grass; a leather-gloved traveler hand carefully reaches toward the cub. No gore. Match both reference game artworks closely: hand-painted gouache, broad angular opaque brushstrokes and simplified painterly realism, warm ochre and cream sunlight, desaturated sage greens and blue-gray armor, matte textured brushwork, intimate narrative framing and a strong readable focal point. Square 1024x1024. No text, letters, numbers, UI, frame, border, watermark, photorealism, 3D render or anime. References supply style only, keep this new scene distinct.",
+      "source": "C:/Users/10059/.codex/generated_images/01a14edc-818a-7163-8de7-2224b0ebbd0c/exec-6adc7a3a-905d-4401-a2d4-f3d561990326.png"
+    },
+    {
+      "event": "act1_twin_barracks",
+      "file": "twin-barracks.png",
+      "prompt": "Use case: illustration-story. Asset type: square full-bleed fantasy roguelike game event illustration. Scene: Two identical ochre military tents stand back to back in a misty grassland camp. Two identical armored foot soldiers emerge from the tent doors and stare at each other in startled silence. Symmetrical composition with mismatched living faces, subtly uncanny. Match both reference game artworks closely: hand-painted gouache, broad angular opaque brushstrokes and simplified painterly realism, warm ochre and cream sunlight, desaturated sage greens and blue-gray armor, matte textured brushwork, intimate narrative framing and a strong readable focal point. Square 1024x1024. No text, letters, numbers, UI, frame, border, watermark, photorealism, 3D render or anime. References supply style only, keep this new scene distinct.",
+      "source": "C:/Users/10059/.codex/generated_images/01a14edc-818a-7163-8de7-2224b0ebbd0c/exec-a310c599-5e20-48de-bdbb-cf7ac5660459.png"
+    },
+    {
+      "event": "act1_last_forge",
+      "file": "last-forge.png",
+      "prompt": "Use case: illustration-story. Asset type: square full-bleed fantasy roguelike game event illustration. Scene: A weary one-armed blacksmith at the last glowing forge in a humble roadside workshop. His empty left sleeve is tied back; his right hand holds long tongs carrying a glowing ember between two parchment strategy cards on an anvil, one curling into ash. Warm firelight, no legible markings. Match both reference game artworks closely: hand-painted gouache, broad angular opaque brushstrokes and simplified painterly realism, warm ochre and cream sunlight, desaturated sage greens and blue-gray armor, matte textured brushwork, intimate narrative framing and a strong readable focal point. Square 1024x1024. No text, letters, numbers, UI, frame, border, watermark, photorealism, 3D render or anime. References supply style only, keep this new scene distinct.",
+      "source": "C:/Users/10059/.codex/generated_images/01a14edc-818a-7163-8de7-2224b0ebbd0c/exec-5df4c73e-48d5-49a9-834e-5bd9489c6528.png"
+    },
+    {
+      "event": "act1_silent_altar",
+      "file": "silent-altar.png",
+      "prompt": "Use case: illustration-story. Square full-bleed fantasy roguelike event painting. A weathered low stone altar without a statue at a forest crossroads. A narrow card-shaped recess, dark dried stains, one blank parchment card and coins on top. A leather-gloved hand hovers above it. Hushed sage-green forest. Match reference game art: hand-painted gouache, broad angular opaque brushstrokes, simplified painterly realism, warm ochre cream sunlight, desaturated sage greens and blue-gray, matte texture, intimate narrative composition and one readable focal point. Square 1024x1024. No text, letters, numbers, border, UI, watermark, 3D or anime. References are style only.",
+      "source": "C:\\Users\\10059\\.codex\\generated_images\\01a14edc-818a-7163-8de7-2224b0ebbd0c\\exec-4c18b3bb-6ac9-430b-8083-2b4d028ae267.png"
+    },
+    {
+      "event": "act1_mirror_lake",
+      "file": "mirror-lake.png",
+      "prompt": "Use case: illustration-story. Square full-bleed fantasy roguelike event painting. A traveler kneels at a still woodland lake, reaching toward a reflected hand that rises too early. A small company of soldiers appears only in the reflection. Quiet uncanny dawn. Match reference game art: hand-painted gouache, broad angular opaque brushstrokes, simplified painterly realism, warm ochre cream sunlight, desaturated sage greens and blue-gray, matte texture, intimate narrative composition and one readable focal point. Square 1024x1024. No text, letters, numbers, border, UI, watermark, 3D or anime. References are style only.",
+      "source": "C:\\Users\\10059\\.codex\\generated_images\\01a14edc-818a-7163-8de7-2224b0ebbd0c\\exec-b9c2bfb8-4f1a-40b7-b870-7dfbc2d1704d.png"
+    },
+    {
+      "event": "act1_war_games",
+      "file": "war-games.png",
+      "prompt": "Use case: illustration-story. Square full-bleed fantasy roguelike event painting. An abandoned ochre command tent with a sand-table battlefield, ivory soldier pieces, red pennants, trenches. A leather-gloved hand moves one piece by lamplight. No writing. Match reference game art: hand-painted gouache, broad angular opaque brushstrokes, simplified painterly realism, warm ochre cream sunlight, desaturated sage greens and blue-gray, matte texture, intimate narrative composition with one readable focal point. Square 1024x1024. No text, letters, numbers, border, UI, watermark, 3D or anime. References are style only.",
+      "source": "C:\\Users\\10059\\.codex\\generated_images\\01a14edc-818a-7163-8de7-2224b0ebbd0c\\exec-0f8ed2c6-7194-4d47-9cad-135c29c00a97.png"
+    },
+    {
+      "event": "act1_golden_idol",
+      "file": "golden-idol.png",
+      "prompt": "Use case: illustration-story. Square full-bleed fantasy roguelike event painting. A weathered human-sized gilded idol in a sunlit forest clearing. Coins, dried flowers, a silver badge and broken comb at its feet. A leather-gloved hand approaches the offerings. Quiet unease. Match reference game art: hand-painted gouache, broad angular opaque brushstrokes, simplified painterly realism, warm ochre cream sunlight, desaturated sage greens and blue-gray, matte texture, intimate narrative composition with one readable focal point. Square 1024x1024. No text, letters, numbers, border, UI, watermark, 3D or anime. References are style only.",
+      "source": "C:\\Users\\10059\\.codex\\generated_images\\01a14edc-818a-7163-8de7-2224b0ebbd0c\\exec-6c175975-49e6-4daa-8fe0-c155e8f83eba.png"
+    },
+    {
+      "event": "act1_caravan_wreck",
+      "file": "caravan-wreck.png",
+      "prompt": "Use case: illustration-story. Square full-bleed fantasy roguelike event painting. An overturned wooden cart in a grassy roadside ditch, raised wheel, broken crates, coin chest, scattered bandages. A tired young survivor peers from underneath. No gore. Match reference game art closely: hand-painted gouache with broad angular opaque brushstrokes, simplified painterly realism, warm ochre cream sunlight, desaturated sage green and blue-gray, matte texture, intimate narrative composition with one readable focal point. Square 1024x1024. No text, letters, numbers, border, UI, watermark, 3D or anime. References are style only.",
+      "source": "C:\\Users\\10059\\.codex\\generated_images\\01a14edc-818a-7163-8de7-2224b0ebbd0c\\exec-999ffbf3-cb63-447b-bf52-824c104ddf39.png"
+    },
+    {
+      "event": "act1_blood_pact",
+      "file": "blood-pact.png",
+      "prompt": "Use case: illustration-story. Square full-bleed fantasy roguelike event painting. A kneeling figure in a tattered muted crimson ritual robe, two dim red eyes under its hood, blank parchment contract and coin purse on a stone. A foreground leather-gloved hand reaches toward the parchment. Restrained eerie magic. Match reference game art closely: hand-painted gouache with broad angular opaque brushstrokes, simplified painterly realism, warm ochre cream sunlight, desaturated sage green and blue-gray, matte texture, intimate narrative composition with one readable focal point. Square 1024x1024. No text, letters, numbers, border, UI, watermark, 3D or anime. References are style only.",
+      "source": "C:\\Users\\10059\\.codex\\generated_images\\01a14edc-818a-7163-8de7-2224b0ebbd0c\\exec-f7178703-1fdb-4186-8d81-1e5e23d2a222.png"
+    },
+    {
+      "event": "act1_heart_of_grove",
+      "file": "heart-of-grove.png",
+      "prompt": "Use case: illustration-story. Square full-bleed fantasy roguelike event painting. A huge fallen ancient tree blocks a woodland path, split heartwood cradles a glowing amber heart-shaped knot. Sap glints in golden sunlight, abstract notches on bark, foreground leather-gloved hand reaching toward it. Match reference game art closely: hand-painted gouache, broad angular opaque brushstrokes, simplified painterly realism, warm ochre cream sunlight, desaturated sage green and blue-gray, matte texture, intimate narrative composition with one readable focal point. Square 1024x1024. No text, letters, numbers, border, UI, watermark, 3D or anime. References are style only.",
+      "source": "C:\\Users\\10059\\.codex\\generated_images\\01a14edc-818a-7163-8de7-2224b0ebbd0c\\exec-cf45a751-4b1a-4dc5-9099-04c3d11fbd63.png"
+    },
+    {
+      "event": "act1_bog_hand",
+      "file": "bog-hand.png",
+      "prompt": "Use case: illustration-story. Square full-bleed fantasy roguelike event painting. A petrified hand rising from a moss-green bog holds a rusty bronze badge. Bubbles and reeds around the wrist, a wooden pole reaches from foreground. Tense stillness, no gore. Match reference game art closely: hand-painted gouache, broad angular opaque brushstrokes, simplified painterly realism, warm ochre cream sunlight, desaturated sage green and blue-gray, matte texture, intimate narrative composition with one readable focal point. Square 1024x1024. No text, letters, numbers, border, UI, watermark, 3D or anime. References are style only.",
+      "source": "C:\\Users\\10059\\.codex\\generated_images\\01a14edc-818a-7163-8de7-2224b0ebbd0c\\exec-94af210f-5722-418d-8d22-c4a03095274f.png"
+    },
+    {
+      "event": "act1_gambler_dice",
+      "file": "gambler-dice.png",
+      "prompt": "Use case: illustration-story. Square full-bleed fantasy roguelike event painting. A sly hooded goblin lifts a wooden dice cup at a roadside table. Three bone dice and copper coins, crooked grin, warm dappled light. No writing. Match reference game art closely: hand-painted gouache, broad angular opaque brushstrokes, simplified painterly realism, warm ochre cream sunlight, desaturated sage green and blue-gray, matte texture, intimate narrative composition with one readable focal point. Square 1024x1024. No text, letters, numbers, border, UI, watermark, 3D or anime. References are style only.",
+      "source": "C:\\Users\\10059\\.codex\\generated_images\\01a14edc-818a-7163-8de7-2224b0ebbd0c\\exec-0155b2d0-a28c-43f7-a12d-df5d75027236.png"
+    },
+    {
+      "event": "act1_goblin_arena",
+      "file": "goblin-arena.png",
+      "prompt": "Use case: illustration-story. Square full-bleed fantasy roguelike event painting. A ring of excited goblins around a shallow muddy fighting pit. A goblin wearing a battered iron bucket helmet points at the pit, cloth-wrapped bronze relic hanging from a post. Two distant sparring goblin silhouettes, no gore. Match reference game art closely: hand-painted gouache, broad angular opaque brushstrokes, simplified painterly realism, warm ochre cream sunlight, desaturated sage green and blue-gray, matte texture, intimate narrative composition with one readable focal point. Square 1024x1024. No text, letters, numbers, border, UI, watermark, 3D or anime. References are style only.",
+      "source": "C:\\Users\\10059\\.codex\\generated_images\\01a14edc-818a-7163-8de7-2224b0ebbd0c\\exec-db71b92a-4b93-4be9-923a-df9ffd66f774.png"
+    },
+    {
+      "event": "act1_falling_star",
+      "file": "falling-star.png",
+      "prompt": "Use case: illustration-story. Square full-bleed fantasy roguelike event painting. A glowing fallen star stone in a blackened crater in a golden wheatfield at dawn. Nearby unburned wheat has translucent crystal seed heads, foreground leather-gloved hand reaches toward pale blue-white stone. Match reference game art closely: hand-painted gouache, broad angular opaque brushstrokes, simplified painterly realism, warm ochre cream sunlight, desaturated sage green and blue-gray, matte texture, intimate narrative composition with one readable focal point. Square 1024x1024. No text, letters, numbers, border, UI, watermark, 3D or anime. References are style only.",
+      "source": "C:\\Users\\10059\\.codex\\generated_images\\01a14edc-818a-7163-8de7-2224b0ebbd0c\\exec-4d702709-cbd5-4b09-8358-ddbba15303bf.png"
+    },
+    {
+      "event": "act1_refugees",
+      "file": "refugees.png",
+      "prompt": "Use case: illustration-story. Square full-bleed fantasy roguelike event painting. Weary refugees beside an overturned wagon. An elder offers a small amulet to a foreground leather-gloved hand; a child holds an empty cooking pot, a thoughtful young recruit nearby. Restrained tender expressions. Match reference game art closely: hand-painted gouache, broad angular opaque brushstrokes, simplified painterly realism, warm ochre cream sunlight, desaturated sage green and blue-gray, matte texture, intimate narrative composition with one readable focal point. Square 1024x1024. No text, letters, numbers, border, UI, watermark, 3D or anime. References are style only.",
+      "source": "C:\\Users\\10059\\.codex\\generated_images\\01a14edc-818a-7163-8de7-2224b0ebbd0c\\exec-1d8a2fdb-9388-48b0-ae70-9fe15c7a5d94.png"
+    },
+    {
+      "event": "act1_captured_knight",
+      "file": "captured-knight.png",
+      "prompt": "Use case: illustration-story. Square full-bleed fantasy roguelike event painting. A defiant silver-and-blue armored knight suspended upside down by a rope from a low bare branch. A cloaked bounty hunter sharpens a knife beneath him. Foreground leather-gloved hand approaches rope with a small knife. No gore. Match reference game art closely: hand-painted gouache, broad angular opaque brushstrokes, simplified painterly realism, warm ochre cream sunlight, desaturated sage green and blue-gray, matte texture, intimate narrative composition with one readable focal point. Square 1024x1024. No text, letters, numbers, border, UI, watermark, 3D or anime. References are style only.",
+      "source": "C:\\Users\\10059\\.codex\\generated_images\\01a14edc-818a-7163-8de7-2224b0ebbd0c\\exec-bc919b67-5a18-4c23-a631-47b7137cc5b5.png"
+    },
+    {
+      "event": "act1_undead_whisper",
+      "file": "undead-whisper.png",
+      "prompt": "Use case: illustration-story. Square full-bleed fantasy roguelike event painting. Woodland fog parts to reveal a quiet orderly company of moss-covered skeleton soldiers in blue-gray armor standing at attention. Foreground leather-gloved hand, pale amber dawn, melancholy, no gore. Match reference game art closely: hand-painted gouache, broad angular opaque brushstrokes, simplified painterly realism, warm ochre cream sunlight, desaturated sage green and blue-gray, matte texture, intimate narrative composition with one readable focal point. Square 1024x1024. No text, letters, numbers, border, UI, watermark, 3D or anime. References are style only.",
+      "source": "C:\\Users\\10059\\.codex\\generated_images\\01a14edc-818a-7163-8de7-2224b0ebbd0c\\exec-49ac9d66-c210-466a-aef0-d296bf454bad.png"
+    },
+    {
+      "event": "act1_veteran_grave",
+      "file": "veteran-grave.png",
+      "prompt": "Use case: illustration-story. Square full-bleed fantasy roguelike event painting. A vine-covered gravestone at a forest crossroads, fresh small flowers, old military boot containing a yellow parchment scroll in the vines. Foreground leather-gloved hand salutes. Warm respectful melancholy, no legible inscriptions. Match reference game art closely: hand-painted gouache, broad angular opaque brushstrokes, simplified painterly realism, warm ochre cream sunlight, desaturated sage green and blue-gray, matte texture, intimate narrative composition with one readable focal point. Square 1024x1024. No text, letters, numbers, border, UI, watermark, 3D or anime. References are style only.",
+      "source": "C:\\Users\\10059\\.codex\\generated_images\\01a14edc-818a-7163-8de7-2224b0ebbd0c\\exec-d1934550-dda7-4d7e-a508-2fd7362b17ec.png"
+    }
+  ]
+}

@@ -1,0 +1,25 @@
+[gd_resource type="Resource" script_class="CardDefinition" format=3 uid="uid://dr637dsxa3a36"]
+
+[ext_resource type="Texture2D" path="res://assets/cards/illustrations/mud_zone.png" id="1_pvf4c"]
+[ext_resource type="Script" uid="uid://dvqd45gj27252" path="res://data/card_effects/card_effect.gd" id="2_iw4vy"]
+[ext_resource type="Script" uid="uid://6l58cf1r7imd" path="res://data/cards/card_definition.gd" id="3_5vh03"]
+
+[sub_resource type="Resource" id="Resource_27uql"]
+script = ExtResource("2_iw4vy")
+lifetime = 1
+kind = 8
+amount = 100.0
+radius = 250.0
+affected_team = 2
+metadata/_custom_type_script = "uid://dvqd45gj27252"
+upgrade_lasting_rounds = 1
+
+[resource]
+script = ExtResource("3_5vh03")
+card_name = "泥潭"
+card_discription = "在指定位置生成半径250的泥潭，其中所有单位移动速度降低100%，持续2回合。\n消耗。"
+card_image = ExtResource("1_pvf4c")
+target = 4
+after_use = 1
+effects = Array[ExtResource("2_iw4vy")]([SubResource("Resource_27uql")])
+max_upgrade_count = 1

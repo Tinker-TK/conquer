@@ -1,0 +1,17 @@
+{
+  "mode": "built-in",
+  "assets": [
+	{
+	  "name": "heart",
+	  "source": "C:/Users/10059/Downloads/ChatGPT Image 2026年9月5日 11_47_48.png",
+	  "prompt": "Use case: background-extraction. Input image is reference for an isolated Godot UI icon asset. Reconstruct ONLY this one icon: red pixel heart with pink highlight, upper HUD health icon. Match original chunky crisp pixel-art silhouette, dark navy outline, vivid limited palette and pixel shading; enlarge faithfully not painterly. Complete standalone object, centered in square with 10% empty padding. No text, numbers, HUD panels, enclosing badge, other icons, watermark, blur or cast shadow. Actual transparent alpha background required; if actual alpha is impossible use perfectly uniform pure #FF00FF magenta background, never checkerboard. No magenta pixels in object.",
+	  "generated_path": "C:\\Users\\10059\\.codex\\generated_images\\01a06fb4-f672-78d3-9aeb-352f331e90d7\\exec-157d2374-ea4d-4dd5-9e45-17a388b85bba.png"
+	},
+	{
+	  "name": "gold_coin",
+	  "source": "C:/Users/10059/Downloads/ChatGPT Image 2026年9月5日 11_47_48.png",
+	  "prompt": "Use case: background-extraction. Input image is reference for an isolated Godot UI icon asset. Reconstruct ONLY this one icon: gold coin with embossed vertical coin mark, upper HUD currency icon. Match original chunky crisp pixel-art silhouette, dark navy outline, vivid limited palette and pixel shading; enlarge faithfully not painterly. Complete standalone object, centered in square with 10% empty padding. No text, numbers, HUD panels, enclosing badge, other icons, watermark, blur or cast shadow. Actual transparent alpha background required; if actual alpha is impossible use perfectly uniform pure #FF00FF magenta background, never checkerboard. No magenta pixels in object.",
+	  "generated_path": "C:\\Users\\10059\\.codex\\generated_images\\01a06fb4-f672-78d3-9aeb-352f331e90d7\\exec-79f4d171-aef4-40bb-8dc7-c648b544c77a.png"
+	}
+  ]
+}

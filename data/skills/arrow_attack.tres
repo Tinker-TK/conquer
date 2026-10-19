@@ -1,0 +1,10 @@
+[gd_resource type="Resource" format=3 uid="uid://dqbfoqdwu3ce4"]
+
+[ext_resource type="PackedScene" uid="uid://b4lyr2f232pvh" path="res://scenes/projectiles/projectile.tscn" id="1_xpxt4"]
+[ext_resource type="Script" uid="uid://ba6tubwqe13nv" path="res://scripts/skills/arrow_attack.gd" id="2_xpxt4"]
+
+[resource]
+script = ExtResource("2_xpxt4")
+skill_name = "普通射击"
+projectile_scene = ExtResource("1_xpxt4")
+metadata/_data_table_id = 10

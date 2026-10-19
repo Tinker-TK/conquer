@@ -1,0 +1,38 @@
+[gd_scene format=3 uid="uid://dlgudgtm1btm8"]
+
+[ext_resource type="Script" uid="uid://kpq8ia3fly1k" path="res://scripts/world/tree.gd" id="1_ppwe5"]
+[ext_resource type="Texture2D" uid="uid://dd6i76m1o484j" path="res://assets/tilemap/building/Blue Buildings/Barracks.png" id="2_ppwe5"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_avsvi"]
+size = Vector2(162, 148.625)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_e2a7l"]
+size = Vector2(160, 59)
+
+[node name="Tree" type="StaticBody2D" unique_id=34525680]
+y_sort_enabled = true
+scale = Vector2(2, 2)
+collision_layer = 4
+collision_mask = 3
+script = ExtResource("1_ppwe5")
+
+[node name="Sprite2D" type="Sprite2D" parent="." unique_id=600345752]
+texture = ExtResource("2_ppwe5")
+offset = Vector2(0, -80)
+
+[node name="TransparentCheck" type="Area2D" parent="." unique_id=1358125869]
+light_mask = 0
+visibility_layer = 0
+collision_layer = 0
+collision_mask = 3
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="TransparentCheck" unique_id=1336505211]
+position = Vector2(0, -74.6875)
+shape = SubResource("RectangleShape2D_avsvi")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=84547382]
+position = Vector2(-1, -1.5)
+shape = SubResource("RectangleShape2D_e2a7l")
+
+[connection signal="body_entered" from="TransparentCheck" to="." method="_on_transparent_check_body_entered"]
+[connection signal="body_exited" from="TransparentCheck" to="." method="_on_transparent_check_body_exited"]

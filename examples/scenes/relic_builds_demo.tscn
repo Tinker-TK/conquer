@@ -1,0 +1,7 @@
+[gd_scene load_steps=3 format=3]
+
+[ext_resource type="PackedScene" path="res://scenes/battle/battle_scene.tscn" id="1_battle"]
+[ext_resource type="Script" path="res://examples/scripts/relic_builds_demo.gd" id="2_demo"]
+
+[node name="RelicBuildsDemo" instance=ExtResource("1_battle")]
+script = ExtResource("2_demo")

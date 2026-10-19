@@ -1,0 +1,18 @@
+[gd_resource type="Resource" script_class="EventDefinition" format=3]
+
+[ext_resource type="Script" path="res://data/events/event_definition.gd" id="1"]
+[ext_resource type="Texture2D" path="res://assets/ui/events/illustrations/wandering-alchemist.png" id="2"]
+
+[resource]
+script = ExtResource("1")
+id = "wandering_alchemist"
+title = "旅人的药剂"
+description = "林间的炼金师背着药箱，玻璃瓶在斗篷下碰响。\n\n他递来一瓶药，又晃了晃另一只颜色不太对的瓶子，问你愿不愿意替他试试。"
+template = 4
+min_floor = 2
+max_floor = 7
+rarity = "common"
+illustration = ExtResource("2")
+tags = Array[String]([])
+requires = Array[String]([])
+choices = Array[Dictionary]([{"text": "收下药水", "effect": {"type": "random_potion"}, "heal": 0, "gold": 0}, {"text": "帮他试药", "cost": {"hp": 6}, "gold": 40, "effect": {"type": "random_potion"}, "result_text": "药汁苦得舌根发麻。炼金师认真记下你的表情，付清报酬。", "heal": 0}, {"text": "只问路", "heal": 10, "gold": 0}, {"text": "离开", "leave": true, "heal": 0, "gold": 0}])

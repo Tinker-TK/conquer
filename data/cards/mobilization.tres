@@ -1,0 +1,25 @@
+[gd_resource type="Resource" script_class="CardDefinition" format=3]
+
+[ext_resource type="Script" path="res://data/cards/card_definition.gd" id="1_card"]
+[ext_resource type="Script" path="res://data/card_effects/card_effect.gd" id="2_effect"]
+[ext_resource type="Texture2D" path="res://assets/cards/illustrations/mobilization.png" id="3_art"]
+
+[sub_resource type="Resource" id="Resource_effect"]
+script = ExtResource("2_effect")
+kind = 40
+amount = 1.0
+upgrade_amount = 1.0
+
+[resource]
+script = ExtResource("1_card")
+card_name = "紧急动员"
+card_discription = "从抽牌堆选择最多1张单位牌加入手牌，不算抽牌。"
+card_image = ExtResource("3_art")
+card_cost = 1
+rarity = 0
+category = 2
+target = 0
+after_use = 0
+max_upgrade_count = 1
+upgrade_cost_change = 0
+effects = Array[ExtResource("2_effect")]([SubResource("Resource_effect")])

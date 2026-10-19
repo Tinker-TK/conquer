@@ -1,0 +1,14 @@
+[gd_resource type="Resource" script_class="RelicDefinition" format=3 uid="uid://v65glwp7k8eg"]
+
+[ext_resource type="Script" uid="uid://be4bple3628ic" path="res://data/relics/relic_definition.gd" id="1"]
+[ext_resource type="Texture2D" uid="uid://der54r13ugbgp" path="res://assets/ui_redrawn/icons/relic_crystal.png" id="1_jp5gf"]
+
+[resource]
+script = ExtResource("1")
+id = &"reserve_crystal"
+display_name = "储能水晶"
+description = "本局每回合最大能量增加1。"
+icon = ExtResource("1_jp5gf")
+kind = 4
+rarity = 1
+tags = Array[StringName]([&"neutral"])

@@ -1,0 +1,162 @@
+{
+  "engine": "Godot 4.6.2",
+  "regressions": [
+    {
+      "name": "cards",
+      "passed": true,
+      "exit_code": 0,
+      "errors": []
+    },
+    {
+      "name": "summon",
+      "passed": true,
+      "exit_code": 0,
+      "errors": []
+    },
+    {
+      "name": "base",
+      "passed": true,
+      "exit_code": 0,
+      "errors": []
+    },
+    {
+      "name": "camera",
+      "passed": true,
+      "exit_code": 0,
+      "errors": []
+    },
+    {
+      "name": "pile-view",
+      "passed": true,
+      "exit_code": 0,
+      "errors": []
+    },
+    {
+      "name": "movement",
+      "passed": true,
+      "exit_code": 0,
+      "errors": []
+    },
+    {
+      "name": "items",
+      "passed": true,
+      "exit_code": 0,
+      "errors": []
+    },
+    {
+      "name": "items-ui",
+      "passed": true,
+      "exit_code": 0,
+      "errors": []
+    },
+    {
+      "name": "navigation-deploy",
+      "passed": true,
+      "exit_code": 0,
+      "errors": []
+    },
+    {
+      "name": "energy",
+      "passed": true,
+      "exit_code": 0,
+      "errors": []
+    },
+    {
+      "name": "random-draw",
+      "passed": true,
+      "exit_code": 0,
+      "errors": []
+    },
+    {
+      "name": "level",
+      "passed": true,
+      "exit_code": 0,
+      "errors": []
+    },
+    {
+      "name": "zone",
+      "passed": true,
+      "exit_code": 0,
+      "errors": []
+    },
+    {
+      "name": "buff",
+      "passed": true,
+      "exit_code": 0,
+      "errors": []
+    },
+    {
+      "name": "inspector",
+      "passed": true,
+      "exit_code": 0,
+      "errors": []
+    },
+    {
+      "name": "new-unit",
+      "passed": true,
+      "exit_code": 0,
+      "errors": []
+    },
+    {
+      "name": "round",
+      "passed": true,
+      "exit_code": 0,
+      "errors": []
+    },
+    {
+      "name": "game_session_smoke",
+      "passed": true,
+      "exit_code": 0,
+      "errors": []
+    },
+    {
+      "name": "navigation_bake_check",
+      "passed": true,
+      "exit_code": 0,
+      "errors": []
+    }
+  ],
+  "paths": {
+    "explicit_references": 641,
+    "dynamic_references": [
+      {
+        "file": "tests/run_items_test.gd",
+        "line": 17,
+        "path": "res://data/relics/%s.tres"
+      },
+      {
+        "file": "tests/run_items_test.gd",
+        "line": 60,
+        "path": "res://data/potions/%s.tres"
+      },
+      {
+        "file": "scripts/cards/card_battle_runtime.gd",
+        "line": 414,
+        "path": "res://scenes/units/%s.tscn"
+      }
+    ],
+    "unit_scene_checks": 13,
+    "missing": [],
+    "orphan_sidecars": []
+  },
+  "integrity": {
+    "retained_script_uids": 75,
+    "retained_resource_uids": 144,
+    "unchanged_media": 1029,
+    "errors": []
+  },
+  "resources_loaded": 238,
+  "data_table_schemas_checked": 8,
+  "html_checks": [
+    "desktop layout",
+    "mobile layout",
+    "no document overflow",
+    "configuration search",
+    "field table",
+    "migration search",
+    "file link",
+    "copy feedback",
+    "no JavaScript errors"
+  ],
+  "environment_warning": "Windows root certificate store unavailable; unrelated to local resources"
+}

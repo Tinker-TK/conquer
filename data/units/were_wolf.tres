@@ -1,0 +1,26 @@
+[gd_resource type="Resource" script_class="UnitData" format=3 uid="uid://d2sidjoc47nf2"]
+
+[ext_resource type="Texture2D" uid="uid://dk3px5tam3yi" path="res://assets/cards/illustrations/were_wolf.png" id="1_hyfrr"]
+[ext_resource type="Script" uid="uid://2m1qlskaxcox" path="res://data/units/unit_data.gd" id="1_ig33g"]
+[ext_resource type="Script" uid="uid://c4huhq7re2216" path="res://data/skills/skill_base.gd" id="2_xpctb"]
+[ext_resource type="Resource" uid="uid://0a3a40813qj5" path="res://data/skills/were_wolf_attack.tres" id="3_4whf1"]
+[ext_resource type="Resource" uid="uid://cuajdetg3wwab" path="res://data/skills/were_wolf_five_attack.tres" id="4_bo1ss"]
+[ext_resource type="Resource" path="res://data/skills/were_wolf_low_health_stealth.tres" id="5_stealth"]
+[ext_resource type="Resource" path="res://data/skills/were_wolf_five_attack_upgraded.tres" id="6_five"]
+
+[resource]
+script = ExtResource("1_ig33g")
+defence = 5
+attack = 15
+max_hp = 100
+unit_name = "狼人"
+unit_english_name = "were_wolf"
+unit_type = 11
+card_cost = 2
+card_name = "召唤狼人"
+card_image = ExtResource("1_hyfrr")
+card_discription = "征召1名狼人。
+月影潜行：生命低于50%时隐身5.0秒，每次部署只触发一次。"
+upgrade_ability_points = 2
+skills = Array[ExtResource("2_xpctb")]([ExtResource("3_4whf1"), ExtResource("4_bo1ss"), ExtResource("5_stealth"), ExtResource("6_five")])
+metadata/_data_table_id = 11

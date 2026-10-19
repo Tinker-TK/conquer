@@ -1,0 +1,20 @@
+[gd_resource type="Resource" script_class="RelicDefinition" format=3]
+
+[ext_resource type="Script" path="res://data/relics/relic_definition.gd" id="1"]
+[ext_resource type="Texture2D" path="res://assets/ui_redrawn/icons/relic_crystal.png" id="2"]
+
+[resource]
+script = ExtResource("1")
+id = &"scout_horn"
+display_name = "侦察号角"
+description = "第 1 轮全体己方 +1 攻 / +1 防。"
+icon = ExtResource("2")
+kind = 5
+rarity = 0
+tags = Array[StringName]([&"neutral"])
+trigger = 2
+handler = &"scout_horn"
+max_per_battle = 0
+max_per_round = 0
+cooldown_seconds = 0.0
+priority = 1

@@ -1,0 +1,22 @@
+[gd_resource type="Resource" script_class="CardDefinition" format=3 uid="uid://jjha2ts7ip6h"]
+
+[ext_resource type="Texture2D" path="res://assets/cards/illustrations/heal.png" id="1_3r2a7"]
+[ext_resource type="Script" uid="uid://dvqd45gj27252" path="res://data/card_effects/card_effect.gd" id="2_lg7hx"]
+[ext_resource type="Script" uid="uid://6l58cf1r7imd" path="res://data/cards/card_definition.gd" id="3_qv5o1"]
+
+[sub_resource type="Resource" id="Resource_3r2a7"]
+script = ExtResource("2_lg7hx")
+lasting_rounds = 1
+kind = 1
+amount = 30.0
+affected_team = 1
+metadata/_custom_type_script = "uid://dvqd45gj27252"
+upgrade_amount = 15.0
+
+[resource]
+script = ExtResource("3_qv5o1")
+card_name = "战地治疗"
+card_discription = "为1名己方单位回复最大生命值的30%。"
+card_image = ExtResource("1_3r2a7")
+effects = Array[ExtResource("2_lg7hx")]([SubResource("Resource_3r2a7")])
+max_upgrade_count = 1

@@ -1,0 +1,20 @@
+[gd_resource type="Resource" format=3]
+
+[ext_resource type="Script" path="res://scripts/skills/arrow_attack.gd" id="skill"]
+[ext_resource type="PackedScene" path="res://scenes/projectiles/bomb_fish_projectile.tscn" id="projectile"]
+[ext_resource type="PackedScene" path="res://assets/effect/pixel_vfx/packs/pvfx/元素魔法/warm_explosion.tscn" id="hit"]
+
+[resource]
+script = ExtResource("skill")
+skill_name = "远程攻击"
+is_basic_attack = true
+description = "向敌人发射投射物。"
+cooldown = 1.8
+cast_range = 420.0
+cast_animation = "attack_01"
+hit_frame = Array[int]([4])
+combat_sound_profile = "fire"
+projectile_scene = ExtResource("projectile")
+projectile_trajectory = 1
+projectile_pos = Vector2(10, 52)
+on_hit_effect = ExtResource("hit")

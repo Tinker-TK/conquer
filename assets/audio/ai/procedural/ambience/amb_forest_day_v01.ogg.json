@@ -1,0 +1,39 @@
+{
+  "id": "amb_forest_day",
+  "variant": 1,
+  "asset": "amb_forest_day_v01",
+  "provider": "procedural",
+  "category": "ambience",
+  "title": "森林白昼",
+  "prompt": "daytime forest, leaves rustling in light wind, distant birds, no music, seamless loop",
+  "source_prompt": "daytime forest, leaves rustling in light wind, distant birds, no music, seamless loop",
+  "duration_seconds": 24.0,
+  "output_format": "wav_48000",
+  "tags": [
+    "ambience",
+    "forest",
+    "birds"
+  ],
+  "license": "CC0-1.0",
+  "author": "项目程序合成（占位）",
+  "source": "res://tools/audio/ai/procedural.py",
+  "recipe": "amb_forest_day",
+  "created_at": "2026-10-18T17:03:32+00:00",
+  "sha256": "c82cacad868a81ed3d12c6c5b2757327b2f61fc15198649a5833464b65775b48",
+  "path": "res://assets/audio/ai/procedural/ambience/amb_forest_day_v01.ogg",
+  "loop": true,
+  "sample_rate": 44100,
+  "channels": 1,
+  "features": {
+    "duration_seconds": 12.8,
+    "peak_dbfs": -6.07,
+    "rms_dbfs": -22.0,
+    "crest_db": 15.93,
+    "spectral_centroid_hz": 1677.0,
+    "zero_cross_rate": 0.0722,
+    "attack_ms": 9526.5,
+    "tail_ms": 1.0
+  },
+  "seam_jump": 0.001228,
+  "bytes": 74245
+}

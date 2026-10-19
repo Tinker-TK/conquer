@@ -1,0 +1,14 @@
+[gd_resource type="Resource" script_class="SnowWeatherSettings" load_steps=2 format=3]
+
+[ext_resource type="Script" path="res://data/weather/snow_weather_settings.gd" id="1"]
+
+[resource]
+script = ExtResource("1")
+intensity = 0.3
+snow_amount = 280
+flake_scale = 1.8
+snow_opacity = 0.9
+wind = -12.0
+initial_coverage = 0.3
+accumulation_rate = 0.006
+scenery_coverage = 0.65

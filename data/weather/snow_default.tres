@@ -1,0 +1,6 @@
+[gd_resource type="Resource" script_class="SnowWeatherSettings" format=3 uid="uid://hachblhx30gd"]
+
+[ext_resource type="Script" uid="uid://c14ikm7m72yly" path="res://data/weather/snow_weather_settings.gd" id="1"]
+
+[resource]
+script = ExtResource("1")

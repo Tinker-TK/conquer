@@ -1,0 +1,18 @@
+[gd_resource type="Resource" script_class="PotionDefinition" format=3 uid="uid://bkvg7yhuu0usp"]
+
+[ext_resource type="Script" uid="uid://b452136fqvyor" path="res://data/potions/potion_definition.gd" id="1"]
+[ext_resource type="Texture2D" uid="uid://b7jviq8ht0ppl" path="res://assets/ui_redrawn/icons/equipment_potion.png" id="1_4wybx"]
+
+[resource]
+script = ExtResource("1")
+id = &"fire"
+display_name = "火焰药水"
+description = "选择落点，每0.5秒对范围内敌军造成6点伤害，持续到本轮结束。"
+icon = ExtResource("1_4wybx")
+kind = 2
+damage = 6
+radius = 85.0
+rarity = 0
+price = 45
+min_act = 1
+tags = Array[StringName]([&"爆发"])

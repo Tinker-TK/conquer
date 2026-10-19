@@ -1,0 +1,9 @@
+[gd_resource type="Resource" format=3 uid="uid://d1h0edune77o3"]
+
+[ext_resource type="Script" uid="uid://l5slg1wgnhew" path="res://scripts/skills/normal_attack.gd" id="1_wrrdm"]
+
+[resource]
+script = ExtResource("1_wrrdm")
+description = "普通攻击造成100%攻击力伤害。"
+is_basic_attack = true
+metadata/_data_table_id = 1

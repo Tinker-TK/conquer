@@ -1,0 +1,35 @@
+[gd_resource type="Resource" script_class="CardDefinition" format=3 uid="uid://rh1q812d8j8s"]
+
+[ext_resource type="Texture2D" path="res://assets/cards/illustrations/draw_hp.png" id="1_ymfja"]
+[ext_resource type="Script" uid="uid://dvqd45gj27252" path="res://data/card_effects/card_effect.gd" id="2_0jcoj"]
+[ext_resource type="Script" uid="uid://6l58cf1r7imd" path="res://data/cards/card_definition.gd" id="3_sxap5"]
+
+[sub_resource type="Resource" id="Resource_27uql"]
+script = ExtResource("2_0jcoj")
+lasting_rounds = 1
+kind = 11
+amount = 4.0
+radius = 250.0
+affected_team = 2
+metadata/_custom_type_script = "uid://dvqd45gj27252"
+upgrade_amount = -1.0
+
+[sub_resource type="Resource" id="Resource_3psm4"]
+script = ExtResource("2_0jcoj")
+lasting_rounds = 1
+kind = 17
+amount = 3.0
+affected_team = 2
+metadata/_custom_type_script = "uid://dvqd45gj27252"
+upgrade_amount = 1.0
+
+[resource]
+script = ExtResource("3_sxap5")
+card_name = "血契补给"
+card_discription = "消耗4点玩家生命。\n获得3点能量，可超过上限。"
+card_image = ExtResource("1_ymfja")
+category = 2
+target = 0
+effects = Array[ExtResource("2_0jcoj")]([SubResource("Resource_27uql"), SubResource("Resource_3psm4")])
+max_upgrade_count = 1
+card_cost = 0

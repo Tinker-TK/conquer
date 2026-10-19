@@ -1,0 +1,13 @@
+[gd_resource type="Resource" script_class="RelicDefinition" format=3 uid="uid://dtt3hsfwuw5a8"]
+
+[ext_resource type="Script" uid="uid://be4bple3628ic" path="res://data/relics/relic_definition.gd" id="1"]
+[ext_resource type="Texture2D" uid="uid://der54r13ugbgp" path="res://assets/ui_redrawn/icons/relic_crystal.png" id="1_3fj0q"]
+
+[resource]
+script = ExtResource("1")
+id = &"draw_engine"
+display_name = "十抽引擎"
+description = "每实际抽到10张牌获得1点能量，计数跨回合、跨战斗保留。"
+icon = ExtResource("1_3fj0q")
+rarity = 1
+tags = Array[StringName]([&"cycle"])

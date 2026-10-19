@@ -1,0 +1,51 @@
+{
+  "path": "res://assets/audio/ai/local_design/ai_combat/sfx_combat_blade_parry_v01.ogg",
+  "asset": "sfx_combat_blade_parry_v01",
+  "title": "铁器 · 刀剑格挡 · A 清脆",
+  "category": "ai_combat",
+  "domain": "SFX",
+  "batch": "audition_20261019",
+  "provider": "local_design",
+  "recipe": "parry",
+  "variant": 1,
+  "seed": 3724152727,
+  "prompt": "Single steel blade parry, clear iron contact clank with a short irregular metallic ring, forceful readable transient, dry close microphone, 0.45 seconds. No modern electronic ping, voices, music or room echo.",
+  "author": "项目本地声音设计（CC0 分层素材＋原创程序合成）",
+  "source": "res://tools/audio/ai/produce_audition.py",
+  "license": "CC0-1.0",
+  "source_layers": [
+    {
+      "path": "res://assets/audio/library/medieval-impacts/axe_katana_blade_on_blade_02.ogg",
+      "author": "Ben Jaszczak & Brian Nelson / Still North Media",
+      "source": "https://opengameart.org/content/medieval-sound-effects-weapon-impacts",
+      "license": "CC0-1.0",
+      "sha256": "575d832e70fbbf0bf6d8082252375b4a6c2191529196a46f3592127e00f96089"
+    }
+  ],
+  "changes": "分层混音、确定性变体、裁剪静音、44.1kHz 单声道、短淡入淡出、峰值控制、OGG；循环保留完整小节。",
+  "notes": "本批试听 · 本地制作；SFX；单次动作。",
+  "duration_seconds": 0.192,
+  "loop": false,
+  "features": {
+    "duration_seconds": 0.192,
+    "peak_dbfs": -3.39,
+    "rms_dbfs": -23.1,
+    "crest_db": 19.71,
+    "spectral_centroid_hz": 4024.6,
+    "zero_cross_rate": 0.1226,
+    "attack_ms": 4.0,
+    "tail_ms": 0.1
+  },
+  "channels": 1,
+  "sample_rate": 44100,
+  "seam_jump": null,
+  "sha256": "3d48ec2df348886d3fce31d3eaad5527d57ec4dc8785af725f5c2d2a4c34df5e",
+  "created_at": "2026-10-19T02:03:55+00:00",
+  "tags": [
+    "one-shot",
+    "percussive",
+    "bright",
+    "spiky"
+  ],
+  "problems": []
+}

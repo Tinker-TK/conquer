@@ -1,0 +1,20 @@
+[gd_resource type="Resource" script_class="RelicDefinition" format=3]
+
+[ext_resource type="Script" path="res://data/relics/relic_definition.gd" id="1"]
+[ext_resource type="Texture2D" path="res://assets/ui_redrawn/icons/relic_ring.png" id="2"]
+
+[resource]
+script = ExtResource("1")
+id = &"last_stand"
+display_name = "背水一战"
+description = "生命 <30% 的己方单位防御 +3、攻击 +2。"
+icon = ExtResource("2")
+kind = 5
+rarity = 0
+tags = Array[StringName]([&"guard"])
+trigger = 0
+handler = &"last_stand"
+max_per_battle = 0
+max_per_round = 0
+cooldown_seconds = 0.0
+priority = 1

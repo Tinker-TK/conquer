@@ -1,0 +1,50 @@
+[
+  {
+    "name": "relic_clover",
+    "src": "icons/relic_clover.png",
+    "desc": "A complete green four-leaf clover with short stem, identical colors to reference.",
+    "prompt": "Redraw and reconstruct one isolated high-definition pixel-art game UI icon from the input reference: A complete green four-leaf clover with short stem, identical colors to reference. Keep chunky dark navy outlines, crisp pixel clusters and reference palette. All parts visible, centered with 15% margin, do not crop. No letters, no numbers, no words, no watermarks. Flat solid #FF00FF magenta matte background for user-authorized local chroma key, no checkerboard. Do not use magenta in the icon.",
+    "hint": "Generated images are saved to C:\\Users\\10059\\.codex\\generated_images\\01a06fae-b281-7ca0-9405-7d3035d0915f as C:\\Users\\10059\\.codex\\generated_images\\01a06fae-b281-7ca0-9405-7d3035d0915f\\exec-c72061b8-d0d3-44a4-8296-5fb36608d296.png by default.\nIf you need to use a generated image at another path, copy it and leave the original in place unless the user explicitly asks you to delete it.\nThe generated image is already displayed to the user. There is no need to render it in the final response as a Markdown image or file link.",
+    "generated_path": "C:\\Users\\10059\\.codex\\generated_images\\01a06fae-b281-7ca0-9405-7d3035d0915f\\exec-c72061b8-d0d3-44a4-8296-5fb36608d296.png"
+  },
+  {
+    "name": "map",
+    "src": "hud/map_button.png",
+    "desc": "Only the complete folded parchment map icon with green landscape symbols, restore all edges, no lettering or labels and no UI button backing.",
+    "prompt": "Redraw and reconstruct one isolated high-definition pixel-art game UI icon from the input reference: Only the complete folded parchment map icon with green landscape symbols, restore all edges, no lettering or labels and no UI button backing. Keep chunky dark navy outlines, crisp pixel clusters and reference palette. All parts visible, centered with 15% margin, do not crop. No letters, no numbers, no words, no watermarks. Flat solid #FF00FF magenta matte background for user-authorized local chroma key, no checkerboard. Do not use magenta in the icon.",
+    "hint": "Generated images are saved to C:\\Users\\10059\\.codex\\generated_images\\01a06fae-b281-7ca0-9405-7d3035d0915f as C:\\Users\\10059\\.codex\\generated_images\\01a06fae-b281-7ca0-9405-7d3035d0915f\\exec-1e4c0917-3c88-4dfd-a9f1-8301b3ce5d50.png by default.\nIf you need to use a generated image at another path, copy it and leave the original in place unless the user explicitly asks you to delete it.\nThe generated image is already displayed to the user. There is no need to render it in the final response as a Markdown image or file link.",
+    "generated_path": "C:\\Users\\10059\\.codex\\generated_images\\01a06fae-b281-7ca0-9405-7d3035d0915f\\exec-1e4c0917-3c88-4dfd-a9f1-8301b3ce5d50.png"
+  },
+  {
+    "name": "deck_book",
+    "src": "hud/deck_button.png",
+    "desc": "Only the complete upright blue and red deck book icon with gold rim and a yellow abstract star ornament, no lettering or labels and no UI button backing.",
+    "prompt": "Redraw and reconstruct one isolated high-definition pixel-art game UI icon from the input reference: Only the complete upright blue and red deck book icon with gold rim and a yellow abstract star ornament, no lettering or labels and no UI button backing. Keep chunky dark navy outlines, crisp pixel clusters and reference palette. All parts visible, centered with 15% margin, do not crop. No letters, no numbers, no words, no watermarks. Flat solid #FF00FF magenta matte background for user-authorized local chroma key, no checkerboard. Do not use magenta in the icon.",
+    "hint": "Generated images are saved to C:\\Users\\10059\\.codex\\generated_images\\01a06fae-b281-7ca0-9405-7d3035d0915f as C:\\Users\\10059\\.codex\\generated_images\\01a06fae-b281-7ca0-9405-7d3035d0915f\\exec-306e669e-f344-419d-9a43-67a486fa47dc.png by default.\nIf you need to use a generated image at another path, copy it and leave the original in place unless the user explicitly asks you to delete it.\nThe generated image is already displayed to the user. There is no need to render it in the final response as a Markdown image or file link.",
+    "generated_path": "C:\\Users\\10059\\.codex\\generated_images\\01a06fae-b281-7ca0-9405-7d3035d0915f\\exec-306e669e-f344-419d-9a43-67a486fa47dc.png"
+  },
+  {
+    "name": "gear",
+    "src": "hud/settings_button.png",
+    "desc": "Only the complete silver-blue settings cogwheel with a circular hole at center, dark navy outline, no lettering or labels and no UI button backing.",
+    "prompt": "Redraw and reconstruct one isolated high-definition pixel-art game UI icon from the input reference: Only the complete silver-blue settings cogwheel with a circular hole at center, dark navy outline, no lettering or labels and no UI button backing. Keep chunky dark navy outlines, crisp pixel clusters and reference palette. All parts visible, centered with 15% margin, do not crop. No letters, no numbers, no words, no watermarks. Flat solid #FF00FF magenta matte background for user-authorized local chroma key, no checkerboard. Do not use magenta in the icon.",
+    "hint": "Generated images are saved to C:\\Users\\10059\\.codex\\generated_images\\01a06fae-b281-7ca0-9405-7d3035d0915f as C:\\Users\\10059\\.codex\\generated_images\\01a06fae-b281-7ca0-9405-7d3035d0915f\\exec-353d7ed9-a26e-4413-82ee-cda48664f3ad.png by default.\nIf you need to use a generated image at another path, copy it and leave the original in place unless the user explicitly asks you to delete it.\nThe generated image is already displayed to the user. There is no need to render it in the final response as a Markdown image or file link.",
+    "generated_path": "C:\\Users\\10059\\.codex\\generated_images\\01a06fae-b281-7ca0-9405-7d3035d0915f\\exec-353d7ed9-a26e-4413-82ee-cda48664f3ad.png"
+  },
+  {
+    "name": "crown",
+    "src": "hud/crown_badge.png",
+    "desc": "Only the golden crown emblem itself, complete three pointed crown with dark outline, white highlights. REMOVE blue hanging shield/banner backing entirely, no other object.",
+    "prompt": "Redraw and reconstruct one isolated high-definition pixel-art game UI icon from the input reference: Only the golden crown emblem itself, complete three pointed crown with dark outline, white highlights. REMOVE blue hanging shield/banner backing entirely, no other object. Keep chunky dark navy outlines, crisp pixel clusters and reference palette. All parts visible, centered with 15% margin, do not crop. No letters, no numbers, no words, no watermarks. Flat solid #FF00FF magenta matte background for user-authorized local chroma key, no checkerboard. Do not use magenta in the icon.",
+    "hint": "Generated images are saved to C:\\Users\\10059\\.codex\\generated_images\\01a06fae-b281-7ca0-9405-7d3035d0915f as C:\\Users\\10059\\.codex\\generated_images\\01a06fae-b281-7ca0-9405-7d3035d0915f\\exec-20b585c4-aa29-4b64-b572-73d730e479cf.png by default.\nIf you need to use a generated image at another path, copy it and leave the original in place unless the user explicitly asks you to delete it.\nThe generated image is already displayed to the user. There is no need to render it in the final response as a Markdown image or file link.",
+    "generated_path": "C:\\Users\\10059\\.codex\\generated_images\\01a06fae-b281-7ca0-9405-7d3035d0915f\\exec-20b585c4-aa29-4b64-b572-73d730e479cf.png"
+  },
+  {
+    "name": "crossed_swords",
+    "src": "hud/preparation_badge.png",
+    "desc": "Only the complete pair of crossed silver swords with gold handles as one emblem, restore every edge, no lettering or labels or UI panel backing.",
+    "prompt": "Redraw and reconstruct one isolated high-definition pixel-art game UI icon from the input reference: Only the complete pair of crossed silver swords with gold handles as one emblem, restore every edge, no lettering or labels or UI panel backing. Keep chunky dark navy outlines, crisp pixel clusters and reference palette. All parts visible, centered with 15% margin, do not crop. No letters, no numbers, no words, no watermarks. Flat solid #FF00FF magenta matte background for user-authorized local chroma key, no checkerboard. Do not use magenta in the icon.",
+    "hint": "Generated images are saved to C:\\Users\\10059\\.codex\\generated_images\\01a06fae-b281-7ca0-9405-7d3035d0915f as C:\\Users\\10059\\.codex\\generated_images\\01a06fae-b281-7ca0-9405-7d3035d0915f\\exec-ba0048e9-d7d9-4dee-89ac-eb3d3f991451.png by default.\nIf you need to use a generated image at another path, copy it and leave the original in place unless the user explicitly asks you to delete it.\nThe generated image is already displayed to the user. There is no need to render it in the final response as a Markdown image or file link.",
+    "generated_path": "C:\\Users\\10059\\.codex\\generated_images\\01a06fae-b281-7ca0-9405-7d3035d0915f\\exec-ba0048e9-d7d9-4dee-89ac-eb3d3f991451.png"
+  }
+]

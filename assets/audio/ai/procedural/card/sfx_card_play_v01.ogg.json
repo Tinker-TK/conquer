@@ -1,0 +1,39 @@
+{
+  "id": "card_play",
+  "variant": 1,
+  "asset": "sfx_card_play_v01",
+  "provider": "procedural",
+  "category": "card",
+  "title": "打出卡牌",
+  "prompt": "card slapped onto a wooden table, paper snap with a soft wood knock",
+  "source_prompt": "card slapped onto a wooden table, paper snap with a soft wood knock",
+  "duration_seconds": 0.35,
+  "output_format": "wav_48000",
+  "tags": [
+    "card",
+    "play",
+    "paper"
+  ],
+  "license": "CC0-1.0",
+  "author": "项目程序合成（占位）",
+  "source": "res://tools/audio/ai/procedural.py",
+  "recipe": "card_play",
+  "created_at": "2026-10-18T17:03:23+00:00",
+  "sha256": "691f7985e50a8bfb7d6c8ceb6caab5b5a8567fa282008e1a2bb1782b9c697322",
+  "path": "res://assets/audio/ai/procedural/card/sfx_card_play_v01.ogg",
+  "loop": false,
+  "sample_rate": 44100,
+  "channels": 1,
+  "features": {
+    "duration_seconds": 0.35,
+    "peak_dbfs": -1.5,
+    "rms_dbfs": -19.79,
+    "crest_db": 18.29,
+    "spectral_centroid_hz": 9415.3,
+    "zero_cross_rate": 0.5473,
+    "attack_ms": 5.7,
+    "tail_ms": 1.4
+  },
+  "seam_jump": null,
+  "bytes": 5318
+}

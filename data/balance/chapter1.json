@@ -1,0 +1,18 @@
+{
+  "version": "NUM-DESIGN-v1.0",
+  "act_multipliers": [1.0, 1.7, 2.89],
+  "levels": {
+    "level_102_1": "A", "level_102_2": "A", "level_102_3": "A",
+    "level_104_1": "B", "level_105_1": "C", "level_107_1": "D",
+    "level_107_2": "D", "level_108_1": "E", "level_108_2": "E", "level_110_1": "F",
+    "level_elite_mid": "D", "level_elite_late": "E"
+  },
+  "templates": {
+    "A": {"name": "原野初遇", "hp": 22, "waves": [["skeleton", "skeleton"], ["skeleton", "skeleton"], ["skeleton", "skeleton_archer"], [], ["skeleton", "skeleton"], ["skeleton"]]},
+    "B": {"name": "边境混编", "hp": 30, "waves": [["skeleton", "skeleton"], ["skeleton", "skeleton_archer"], ["skeleton", "skeleton", "skeleton_archer"], [], ["skeleton", "orc"], ["skeleton", "skeleton_archer"], ["skeleton"]]},
+    "C": {"name": "补给线阻击", "hp": 34, "waves": [["skeleton", "skeleton"], ["skeleton", "orc"], ["skeleton", "skeleton_archer", "skeleton_archer"], [], ["skeleton", "skeleton_archer", "orc"], ["skeleton", "skeleton_archer"], ["skeleton"]]},
+    "D": {"name": "原野守军", "hp": 38, "waves": [["skeleton", "orc"], ["skeleton_archer", "orc"], ["skeleton", "skeleton", "skeleton_archer", "skeleton_archer"], [], ["skeleton", "skeleton_archer", "orc"], ["skeleton", "skeleton_archer"], ["skeleton"]]},
+    "E": {"name": "督军前哨", "hp": 42, "waves": [["skeleton", "orc"], ["skeleton_archer", "armored_orc"], ["skeleton", "skeleton_archer", "skeleton_archer", "orc"], [], ["skeleton", "skeleton_archer", "armored_orc"], ["skeleton_archer", "orc"], ["skeleton"]]},
+    "F": {"name": "原野督军", "hp": 52, "waves": [["skeleton", "orc"], ["skeleton_archer", "skeleton_archer", "orc"], ["skeleton_archer", "armored_orc"], [], ["skeleton", "elite_orc"], ["skeleton_archer", "orc"], ["skeleton", "skeleton_archer", "armored_orc"], [], ["elite_orc", "armored_orc"], ["skeleton", "skeleton_archer"]]}
+  }
+}

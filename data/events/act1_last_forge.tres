@@ -1,0 +1,18 @@
+[gd_resource type="Resource" script_class="EventDefinition" format=3]
+
+[ext_resource type="Script" path="res://data/events/event_definition.gd" id="1"]
+[ext_resource type="Texture2D" path="res://assets/ui/events/illustrations/last-forge.png" id="2"]
+
+[resource]
+script = ExtResource("1")
+id = "act1_last_forge"
+title = "铁匠的最后一炉"
+description = "铁匠把最后一块炭推进炉膛，火光照亮他空荡荡的左袖。\n\n「这炉火只够做一件事，」他说，「熔一张牌，或者把它烧进另一张牌里。」"
+template = 4
+min_floor = 4
+max_floor = 8
+rarity = "rare"
+illustration = ExtResource("2")
+tags = Array[String](["remove"])
+requires = Array[String](["removable", "enhanceable"])
+choices = Array[Dictionary]([{"gold": 0, "heal": 0, "effects": [{"type": "remove_card"}, {"type": "enhance_card"}], "text": "熔掉一张牌，强化另一张", "summary": "移除 1 张牌，强化 1 张牌", "result_text": "旧牌在炉里卷曲、发黑。铁匠用钳子夹起它最后一点火星，按进另一张牌的纹路里。"}, {"gold": 0, "heal": 0, "effect": {"type": "enhance_card"}, "cost": {"gold": 50}, "text": "只强化一张牌", "summary": "支付 50 金币 · 强化 1 张牌", "result_text": "铁匠没有问你要熔什么。他只收下金币，把炉门关小了一点。"}, {"gold": 45, "heal": 0, "cost": {"hp": 8}, "text": "帮他拉风箱", "summary": "失去 8 生命 · 获得 45 金币", "result_text": "炉火烤得人睁不开眼。铁匠把一袋碎银扔过来：「工钱。别死在我门口。」"}, {"text": "离开", "leave": true, "heal": 0, "gold": 0}])

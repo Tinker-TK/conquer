@@ -1,0 +1,50 @@
+[gd_scene format=3 uid="uid://c7jo3p3y84cxf"]
+
+[ext_resource type="Texture2D" uid="uid://xhdnbdsbapn6" path="res://assets/ui/frame.png" id="1_6opq1"]
+[ext_resource type="Script" uid="uid://c7lyt03oh3fsk" path="res://scripts/ui/health_bar.gd" id="1_tujlf"]
+[ext_resource type="Texture2D" uid="uid://ddnr7c0fgmjfo" path="res://assets/ui/progress_bg.png" id="1_y3kqx"]
+[ext_resource type="Texture2D" uid="uid://w083fr8r3e2s" path="res://assets/ui/progress_main.png" id="2_6opq1"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_tujlf"]
+
+[node name="HealthBar" type="Control" unique_id=248249070]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+scale = Vector2(0.2, 0.2)
+script = ExtResource("1_tujlf")
+
+[node name="PanelContainer" type="PanelContainer" parent="." unique_id=1773788195]
+custom_minimum_size = Vector2(200, 0)
+layout_mode = 0
+offset_right = 300.0
+offset_bottom = 40.0
+theme_override_styles/panel = SubResource("StyleBoxEmpty_tujlf")
+
+[node name="NinePatchRect" type="NinePatchRect" parent="PanelContainer" unique_id=1907592137]
+layout_mode = 2
+texture = ExtResource("1_6opq1")
+patch_margin_left = 20
+patch_margin_top = 20
+patch_margin_right = 20
+patch_margin_bottom = 20
+
+[node name="MarginContainer" type="MarginContainer" parent="PanelContainer" unique_id=567055716]
+layout_mode = 2
+theme_override_constants/margin_left = 8
+theme_override_constants/margin_top = 4
+theme_override_constants/margin_right = 8
+theme_override_constants/margin_bottom = 4
+
+[node name="HpBar" type="TextureProgressBar" parent="PanelContainer/MarginContainer" unique_id=1809364423]
+custom_minimum_size = Vector2(0, 8)
+layout_mode = 2
+value = 50.0
+nine_patch_stretch = true
+texture_under = ExtResource("1_y3kqx")
+texture_progress = ExtResource("2_6opq1")
+
+[connection signal="value_changed" from="PanelContainer/MarginContainer/HpBar" to="." method="_on_hp_bar_value_changed"]

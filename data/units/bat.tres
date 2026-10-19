@@ -1,0 +1,20 @@
+[gd_resource type="Resource" script_class="UnitData" format=3 uid="uid://0yh5cotuc2e8"]
+
+[ext_resource type="Script" uid="uid://2m1qlskaxcox" path="res://data/units/unit_data.gd" id="1_krrwq"]
+[ext_resource type="Script" uid="uid://c4huhq7re2216" path="res://data/skills/skill_base.gd" id="2_t066e"]
+[ext_resource type="Resource" uid="uid://hffg0ag4fpo0" path="res://data/skills/bat_attack.tres" id="3_krrwq"]
+[ext_resource type="Resource" uid="uid://bsyl4e8lub3gd" path="res://data/skills/bat_power_attack.tres" id="4_t066e"]
+
+[resource]
+script = ExtResource("1_krrwq")
+unit_name = "蝙蝠"
+unit_english_name = "bat"
+unit_type = 14
+unit_team = "team_b"
+max_hp = 60
+defence = 3
+attack = 10
+speed = 250.0
+is_flying = true
+skills = Array[ExtResource("2_t066e")]([ExtResource("3_krrwq"), ExtResource("4_t066e")])
+metadata/_data_table_id = 6

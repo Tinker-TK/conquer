@@ -1,0 +1,52 @@
+[gd_resource type="SpriteFrames" load_steps=10 format=3]
+
+[ext_resource type="Texture2D" path="res://assets/effect/pixel_vfx/packs/craftpix_magic/元素魔法/magic_1.png" id="1"]
+
+[sub_resource type="AtlasTexture" id="Atlas_0"]
+atlas = ExtResource("1")
+region = Rect2(0, 0, 72, 72)
+
+[sub_resource type="AtlasTexture" id="Atlas_1"]
+atlas = ExtResource("1")
+region = Rect2(72, 0, 72, 72)
+
+[sub_resource type="AtlasTexture" id="Atlas_2"]
+atlas = ExtResource("1")
+region = Rect2(144, 0, 72, 72)
+
+[sub_resource type="AtlasTexture" id="Atlas_3"]
+atlas = ExtResource("1")
+region = Rect2(216, 0, 72, 72)
+
+[sub_resource type="AtlasTexture" id="Atlas_4"]
+atlas = ExtResource("1")
+region = Rect2(288, 0, 72, 72)
+
+[sub_resource type="AtlasTexture" id="Atlas_5"]
+atlas = ExtResource("1")
+region = Rect2(360, 0, 72, 72)
+
+[sub_resource type="AtlasTexture" id="Atlas_6"]
+atlas = ExtResource("1")
+region = Rect2(432, 0, 72, 72)
+
+[sub_resource type="AtlasTexture" id="Atlas_7"]
+atlas = ExtResource("1")
+region = Rect2(504, 0, 72, 72)
+
+[resource]
+animations = [{
+"frames": [
+{ "duration": 1.00000000, "texture": SubResource("Atlas_0") },
+{ "duration": 1.00000000, "texture": SubResource("Atlas_1") },
+{ "duration": 1.00000000, "texture": SubResource("Atlas_2") },
+{ "duration": 1.00000000, "texture": SubResource("Atlas_3") },
+{ "duration": 1.00000000, "texture": SubResource("Atlas_4") },
+{ "duration": 1.00000000, "texture": SubResource("Atlas_5") },
+{ "duration": 1.00000000, "texture": SubResource("Atlas_6") },
+{ "duration": 1.00000000, "texture": SubResource("Atlas_7") }
+],
+"loop": false,
+"name": &"default",
+"speed": 12.00000000
+}]

@@ -1,0 +1,19 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1920" height="1080" viewBox="0 0 1920 1080">
+ <defs>
+  <pattern id="dots" width="14" height="14" patternUnits="userSpaceOnUse" patternTransform="rotate(12)"><circle cx="4" cy="4" r="2.2" fill="#280c22" opacity=".17"/></pattern>
+  <pattern id="dark" width="20" height="20" patternUnits="userSpaceOnUse" patternTransform="rotate(35)"><path d="M0 0V20" stroke="#33303b" stroke-width="5" opacity=".18"/></pattern>
+  <clipPath id="left"><path d="M0 0H980L700 1080H0Z"/></clipPath>
+ </defs>
+ <path fill="#ff3854" d="M0 0H1920V1080H0Z"/>
+ <g fill="#b41e3e" opacity=".35">
+  <path d="M1460 660L1060 0H1260Z"/><path d="M1460 660L1520 0H1720Z"/><path d="M1460 660L1920 120V370Z"/>
+  <path d="M1460 660L1920 720V930Z"/><path d="M1460 660L1700 1080H1440Z"/><path d="M1460 660L880 1080H1100Z"/>
+ </g>
+ <path fill="url(#dots)" d="M0 0H1920V1080H0Z"/>
+ <path fill="#15151b" d="M0 0H980L700 1080H0Z"/>
+ <path fill="url(#dark)" d="M0 0H980L700 1080H0Z"/>
+ <g clip-path="url(#left)" fill="none" stroke="#2b2731" stroke-width="1" opacity=".6"><path d="M30 30H920L658 1050H30Z"/><path d="M50 0V1080"/></g>
+ <path d="M980 0L700 1080" stroke="#f4f0e6" stroke-width="9"/>
+ <path d="M996 0L716 1080" stroke="#15151b" stroke-width="10"/>
+ <g fill="#f8d84e"><path d="M1770 320l10 20 20 10-20 10-10 20-10-20-20-10 20-10Z"/><path d="M1040 760l6 12 12 6-12 6-6 12-6-12-12-6 12-6Z"/></g>
+</svg>

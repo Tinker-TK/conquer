@@ -1,0 +1,16 @@
+[gd_resource type="Resource" format=3 uid="uid://btgfbmu426tok"]
+
+[ext_resource type="Script" uid="uid://xmfmdw0v4pq1" path="res://scripts/skills/dash_attack.gd" id="1_6mvkl"]
+
+[resource]
+script = ExtResource("1_6mvkl")
+description = "冲锋一次，对沿途敌人造成伤害，使用Blazing冲刺尾迹火花及Flying Kick特效。"
+unlock_upgrade_levels = Array[int]([0])
+skill_name = "冲刺攻击"
+cooldown = 6.0
+priority = 2
+cast_range = 300.0
+manual_finish = true
+cast_animation = "attack_03"
+hit_frame = Array[int]([0])
+metadata/_data_table_id = 4

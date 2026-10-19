@@ -1,0 +1,29 @@
+[gd_resource type="Resource" script_class="PotionDefinition" format=3]
+
+[ext_resource type="Script" path="res://data/potions/potion_definition.gd" id="1"]
+[ext_resource type="Script" path="res://data/potions/potion_effect.gd" id="2"]
+[ext_resource type="Texture2D" path="res://assets/ui/potions/cleanse_water.svg" id="3"]
+
+[sub_resource type="Resource" id="Effect0"]
+script = ExtResource("2")
+kind = 12
+amount = 15.0
+
+[resource]
+script = ExtResource("1")
+id = &"cleanse_water"
+display_name = "净化圣水"
+description = "全体友军清除流血、虚弱、减速、破甲、中毒、混乱、睡眠，并回复15点生命。"
+icon = ExtResource("3")
+kind = 4
+rarity = 0
+target_mode = 3
+tags = Array[StringName]([&"增益"])
+min_act = 1
+price = 45
+prep_usable = true
+max_per_run = 0
+radius = 85.0
+tint = Color(0.9569, 0.9137, 0.6275, 1)
+impact_vfx = "HolyHealImpactVFX"
+effects = Array[ExtResource("2")]([SubResource("Effect0")])

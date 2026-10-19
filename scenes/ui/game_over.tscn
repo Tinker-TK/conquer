@@ -1,0 +1,52 @@
+[gd_scene format=3 uid="uid://ddh1p4pkgwky5"]
+
+[ext_resource type="Script" uid="uid://862ube20gs8w" path="res://scripts/ui/game_over.gd" id="1_wqhvx"]
+[ext_resource type="FontFile" uid="uid://41relkj5p65g" path="res://assets/front/PixelOperator-Bold.ttf" id="2_tbwuq"]
+
+[node name="GameOver" type="CanvasLayer" unique_id=2016166377]
+script = ExtResource("1_wqhvx")
+
+[node name="Control" type="Control" parent="." unique_id=1301766287]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="Label" type="Label" parent="Control" unique_id=1059503610]
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 0.5
+anchor_top = 0.25
+anchor_right = 0.5
+anchor_bottom = 0.5
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_fonts/font = ExtResource("2_tbwuq")
+theme_override_font_sizes/font_size = 200
+text = "Game Over!"
+
+[node name="VBoxContainer" type="VBoxContainer" parent="Control" unique_id=1893263765]
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 0.4
+anchor_top = 0.6
+anchor_right = 0.6
+anchor_bottom = 0.6
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="Button" type="Button" parent="Control/VBoxContainer" unique_id=160663481]
+layout_mode = 2
+theme_override_font_sizes/font_size = 50
+text = "返回主界面"
+
+[node name="Button2" type="Button" parent="Control/VBoxContainer" unique_id=846545454]
+layout_mode = 2
+theme_override_font_sizes/font_size = 50
+text = "游戏结束"
+
+[connection signal="visibility_changed" from="." to="." method="_on_visibility_changed"]
+[connection signal="pressed" from="Control/VBoxContainer/Button" to="." method="_on_button_pressed"]
+[connection signal="pressed" from="Control/VBoxContainer/Button2" to="." method="_on_button_2_pressed"]

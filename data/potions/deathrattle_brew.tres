@@ -1,0 +1,31 @@
+[gd_resource type="Resource" script_class="PotionDefinition" format=3]
+
+[ext_resource type="Script" path="res://data/potions/potion_definition.gd" id="1"]
+[ext_resource type="Script" path="res://data/potions/potion_effect.gd" id="2"]
+[ext_resource type="Texture2D" path="res://assets/ui/potions/deathrattle_brew.svg" id="3"]
+
+[sub_resource type="Resource" id="Effect0"]
+script = ExtResource("2")
+kind = 3
+amount = 40.0
+radius = 120.0
+buff_kind = 4
+
+[resource]
+script = ExtResource("1")
+id = &"deathrattle_brew"
+display_name = "亡语药剂"
+description = "全体当前友军获得死亡爆炸：死亡时半径120内敌人受到40点伤害，持续本场。"
+icon = ExtResource("3")
+kind = 4
+rarity = 1
+target_mode = 3
+tags = Array[StringName]([&"增益"])
+min_act = 2
+price = 85
+prep_usable = true
+max_per_run = 0
+radius = 120.0
+tint = Color(0.6510, 0.7333, 0.5608, 1)
+impact_vfx = ""
+effects = Array[ExtResource("2")]([SubResource("Effect0")])

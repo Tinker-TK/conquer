@@ -1,0 +1,11 @@
+[gd_resource type="Resource" script_class="UnitData" format=3]
+[ext_resource type="Script" path="res://data/units/unit_data.gd" id="1"]
+[resource]
+script = ExtResource("1")
+unit_name = "诱饵图腾"
+unit_english_name = "soldier"
+unit_team = "team_a"
+max_hp = 60
+defence = 0
+attack = 0
+speed = 0.0

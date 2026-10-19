@@ -1,0 +1,13 @@
+[gd_resource type="Resource" format=3 uid="uid://cc8j6ck6faq04"]
+
+[ext_resource type="Script" uid="uid://chwpv4tsyp4rm" path="res://scripts/skills/area_attack.gd" id="1_ixaas"]
+
+[resource]
+script = ExtResource("1_ixaas")
+skill_name = "强力攻击"
+attack_rate = 1.2
+cooldown = 4.0
+priority = 1
+cast_animation = "attack_03"
+hit_frame = Array[int]([6])
+metadata/_data_table_id = 4

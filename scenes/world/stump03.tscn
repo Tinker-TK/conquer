@@ -1,0 +1,37 @@
+[gd_scene format=3 uid="uid://hhis6h1m4mp5"]
+
+[ext_resource type="Script" uid="uid://kpq8ia3fly1k" path="res://scripts/world/tree.gd" id="1_sprqd"]
+[ext_resource type="Texture2D" uid="uid://da3h0ikr66trw" path="res://assets/tilemap/tree/Stump 3.png" id="2_sprqd"]
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_avsvi"]
+radius = 7.0
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_avsvi"]
+size = Vector2(10, 26)
+
+[node name="Tree" type="StaticBody2D" unique_id=1063778826]
+y_sort_enabled = true
+collision_layer = 4
+collision_mask = 11
+script = ExtResource("1_sprqd")
+
+[node name="Sprite2D" type="Sprite2D" parent="." unique_id=1686147670]
+texture = ExtResource("2_sprqd")
+offset = Vector2(0, -98)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=579077981]
+position = Vector2(0, -2)
+shape = SubResource("CircleShape2D_avsvi")
+
+[node name="TransparentCheck" type="Area2D" parent="." unique_id=1358125869]
+light_mask = 0
+visibility_layer = 0
+collision_layer = 0
+collision_mask = 3
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="TransparentCheck" unique_id=1336505211]
+position = Vector2(0, -14)
+shape = SubResource("RectangleShape2D_avsvi")
+
+[connection signal="body_entered" from="TransparentCheck" to="." method="_on_transparent_check_body_entered"]
+[connection signal="body_exited" from="TransparentCheck" to="." method="_on_transparent_check_body_exited"]

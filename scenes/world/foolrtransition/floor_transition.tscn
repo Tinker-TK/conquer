@@ -1,0 +1,19 @@
+[gd_scene format=3 uid="uid://d274h5f4lwfbl"]
+
+[ext_resource type="Script" uid="uid://b2njc2gy53k5p" path="res://scripts/world/floor_transition.gd" id="1"]
+
+[sub_resource type="RectangleShape2D" id="Shape"]
+size = Vector2(12, 64)
+
+[node name="FloorTransition" type="Area2D" unique_id=1222278288]
+collision_layer = 0
+collision_mask = 0
+monitoring = false
+script = ExtResource("1")
+
+[node name="From" type="Marker2D" parent="." unique_id=714903710]
+
+[node name="To" type="Marker2D" parent="." unique_id=168814605]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=2107175724]
+shape = SubResource("Shape")

@@ -1,0 +1,25 @@
+[gd_resource type="Resource" script_class="CardDefinition" format=3]
+
+[ext_resource type="Script" path="res://data/cards/card_definition.gd" id="1_card"]
+[ext_resource type="Script" path="res://data/card_effects/card_effect.gd" id="2_effect"]
+[ext_resource type="Texture2D" path="res://assets/cards/illustrations/haste.png" id="3_art"]
+
+[sub_resource type="Resource" id="Resource_effect"]
+script = ExtResource("2_effect")
+kind = 47
+amount = 30.0
+upgrade_amount = 15.0
+
+[resource]
+script = ExtResource("1_card")
+card_name = "疾行"
+card_discription = "常驻：本场全体己方单位移动速度+30%，包含之后入场的友军。"
+card_image = ExtResource("3_art")
+card_cost = 1
+rarity = 0
+category = 2
+target = 0
+after_use = 2
+max_upgrade_count = 1
+upgrade_cost_change = 0
+effects = Array[ExtResource("2_effect")]([SubResource("Resource_effect")])

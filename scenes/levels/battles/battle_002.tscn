@@ -1,0 +1,747 @@
+[gd_scene format=4 uid="uid://b54t2mh7b84th"]
+
+[ext_resource type="PackedScene" uid="uid://b7y4lrdc3lbdr" path="res://scenes/battle/battle_scene.tscn" id="1"]
+[ext_resource type="Texture2D" uid="uid://b6kyjaj22w4iw" path="res://assets/tilemap/Foam.png" id="2_rj7u6"]
+
+[sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_ij7kc"]
+texture = ExtResource("2_rj7u6")
+texture_region_size = Vector2i(64, 64)
+1:0/animation_separation = Vector2i(2, 2)
+1:0/animation_speed = 4.0
+1:0/animation_mode = 1
+1:0/animation_frame_0/duration = 1.0
+1:0/animation_frame_1/duration = 1.0
+1:0/animation_frame_2/duration = 1.0
+1:0/animation_frame_3/duration = 1.0
+1:0/animation_frame_4/duration = 1.0
+1:0/animation_frame_5/duration = 1.0
+1:0/animation_frame_6/duration = 1.0
+1:0/animation_frame_7/duration = 1.0
+1:0/0 = 0
+1:1/animation_separation = Vector2i(2, 2)
+1:1/animation_speed = 4.0
+1:1/animation_mode = 1
+1:1/animation_frame_0/duration = 1.0
+1:1/animation_frame_1/duration = 1.0
+1:1/animation_frame_2/duration = 1.0
+1:1/animation_frame_3/duration = 1.0
+1:1/animation_frame_4/duration = 1.0
+1:1/animation_frame_5/duration = 1.0
+1:1/animation_frame_6/duration = 1.0
+1:1/animation_frame_7/duration = 1.0
+1:1/0 = 0
+1:2/animation_separation = Vector2i(2, 2)
+1:2/animation_speed = 4.0
+1:2/animation_mode = 1
+1:2/animation_frame_0/duration = 1.0
+1:2/animation_frame_1/duration = 1.0
+1:2/animation_frame_2/duration = 1.0
+1:2/animation_frame_3/duration = 1.0
+1:2/animation_frame_4/duration = 1.0
+1:2/animation_frame_5/duration = 1.0
+1:2/animation_frame_6/duration = 1.0
+1:2/animation_frame_7/duration = 1.0
+1:2/0 = 0
+0:1/animation_separation = Vector2i(2, 2)
+0:1/animation_speed = 4.0
+0:1/animation_mode = 1
+0:1/animation_frame_0/duration = 1.0
+0:1/animation_frame_1/duration = 1.0
+0:1/animation_frame_2/duration = 1.0
+0:1/animation_frame_3/duration = 1.0
+0:1/animation_frame_4/duration = 1.0
+0:1/animation_frame_5/duration = 1.0
+0:1/animation_frame_6/duration = 1.0
+0:1/animation_frame_7/duration = 1.0
+0:1/0 = 0
+2:1/animation_separation = Vector2i(2, 2)
+2:1/animation_speed = 4.0
+2:1/animation_mode = 1
+2:1/animation_frame_0/duration = 1.0
+2:1/animation_frame_1/duration = 1.0
+2:1/animation_frame_2/duration = 1.0
+2:1/animation_frame_3/duration = 1.0
+2:1/animation_frame_4/duration = 1.0
+2:1/animation_frame_5/duration = 1.0
+2:1/animation_frame_6/duration = 1.0
+2:1/animation_frame_7/duration = 1.0
+2:1/0 = 0
+0:0/animation_separation = Vector2i(2, 2)
+0:0/animation_speed = 4.0
+0:0/animation_mode = 1
+0:0/animation_frame_0/duration = 1.0
+0:0/animation_frame_1/duration = 1.0
+0:0/animation_frame_2/duration = 1.0
+0:0/animation_frame_3/duration = 1.0
+0:0/animation_frame_4/duration = 1.0
+0:0/animation_frame_5/duration = 1.0
+0:0/animation_frame_6/duration = 1.0
+0:0/animation_frame_7/duration = 1.0
+0:0/0 = 0
+0:2/animation_separation = Vector2i(2, 2)
+0:2/animation_speed = 4.0
+0:2/animation_mode = 1
+0:2/animation_frame_0/duration = 1.0
+0:2/animation_frame_1/duration = 1.0
+0:2/animation_frame_2/duration = 1.0
+0:2/animation_frame_3/duration = 1.0
+0:2/animation_frame_4/duration = 1.0
+0:2/animation_frame_5/duration = 1.0
+0:2/animation_frame_6/duration = 1.0
+0:2/animation_frame_7/duration = 1.0
+0:2/0 = 0
+2:2/animation_separation = Vector2i(2, 2)
+2:2/animation_speed = 4.0
+2:2/animation_mode = 1
+2:2/animation_frame_0/duration = 1.0
+2:2/animation_frame_1/duration = 1.0
+2:2/animation_frame_2/duration = 1.0
+2:2/animation_frame_3/duration = 1.0
+2:2/animation_frame_4/duration = 1.0
+2:2/animation_frame_5/duration = 1.0
+2:2/animation_frame_6/duration = 1.0
+2:2/animation_frame_7/duration = 1.0
+2:2/0 = 0
+2:0/animation_separation = Vector2i(2, 2)
+2:0/animation_speed = 4.0
+2:0/animation_mode = 1
+2:0/animation_frame_0/duration = 1.0
+2:0/animation_frame_1/duration = 1.0
+2:0/animation_frame_2/duration = 1.0
+2:0/animation_frame_3/duration = 1.0
+2:0/animation_frame_4/duration = 1.0
+2:0/animation_frame_5/duration = 1.0
+2:0/animation_frame_6/duration = 1.0
+2:0/animation_frame_7/duration = 1.0
+2:0/0 = 0
+
+[sub_resource type="TileSet" id="TileSet_3pwmd"]
+tile_size = Vector2i(64, 64)
+sources/1 = SubResource("TileSetAtlasSource_ij7kc")
+
+[sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_giece"]
+texture = ExtResource("2_rj7u6")
+texture_region_size = Vector2i(64, 64)
+1:0/animation_separation = Vector2i(2, 2)
+1:0/animation_speed = 4.0
+1:0/animation_mode = 1
+1:0/animation_frame_0/duration = 1.0
+1:0/animation_frame_1/duration = 1.0
+1:0/animation_frame_2/duration = 1.0
+1:0/animation_frame_3/duration = 1.0
+1:0/animation_frame_4/duration = 1.0
+1:0/animation_frame_5/duration = 1.0
+1:0/animation_frame_6/duration = 1.0
+1:0/animation_frame_7/duration = 1.0
+1:0/0 = 0
+1:1/animation_separation = Vector2i(2, 2)
+1:1/animation_speed = 4.0
+1:1/animation_mode = 1
+1:1/animation_frame_0/duration = 1.0
+1:1/animation_frame_1/duration = 1.0
+1:1/animation_frame_2/duration = 1.0
+1:1/animation_frame_3/duration = 1.0
+1:1/animation_frame_4/duration = 1.0
+1:1/animation_frame_5/duration = 1.0
+1:1/animation_frame_6/duration = 1.0
+1:1/animation_frame_7/duration = 1.0
+1:1/0 = 0
+1:2/animation_separation = Vector2i(2, 2)
+1:2/animation_speed = 4.0
+1:2/animation_mode = 1
+1:2/animation_frame_0/duration = 1.0
+1:2/animation_frame_1/duration = 1.0
+1:2/animation_frame_2/duration = 1.0
+1:2/animation_frame_3/duration = 1.0
+1:2/animation_frame_4/duration = 1.0
+1:2/animation_frame_5/duration = 1.0
+1:2/animation_frame_6/duration = 1.0
+1:2/animation_frame_7/duration = 1.0
+1:2/0 = 0
+0:1/animation_separation = Vector2i(2, 2)
+0:1/animation_speed = 4.0
+0:1/animation_mode = 1
+0:1/animation_frame_0/duration = 1.0
+0:1/animation_frame_1/duration = 1.0
+0:1/animation_frame_2/duration = 1.0
+0:1/animation_frame_3/duration = 1.0
+0:1/animation_frame_4/duration = 1.0
+0:1/animation_frame_5/duration = 1.0
+0:1/animation_frame_6/duration = 1.0
+0:1/animation_frame_7/duration = 1.0
+0:1/0 = 0
+2:1/animation_separation = Vector2i(2, 2)
+2:1/animation_speed = 4.0
+2:1/animation_mode = 1
+2:1/animation_frame_0/duration = 1.0
+2:1/animation_frame_1/duration = 1.0
+2:1/animation_frame_2/duration = 1.0
+2:1/animation_frame_3/duration = 1.0
+2:1/animation_frame_4/duration = 1.0
+2:1/animation_frame_5/duration = 1.0
+2:1/animation_frame_6/duration = 1.0
+2:1/animation_frame_7/duration = 1.0
+2:1/0 = 0
+0:0/animation_separation = Vector2i(2, 2)
+0:0/animation_speed = 4.0
+0:0/animation_mode = 1
+0:0/animation_frame_0/duration = 1.0
+0:0/animation_frame_1/duration = 1.0
+0:0/animation_frame_2/duration = 1.0
+0:0/animation_frame_3/duration = 1.0
+0:0/animation_frame_4/duration = 1.0
+0:0/animation_frame_5/duration = 1.0
+0:0/animation_frame_6/duration = 1.0
+0:0/animation_frame_7/duration = 1.0
+0:0/0 = 0
+0:2/animation_separation = Vector2i(2, 2)
+0:2/animation_speed = 4.0
+0:2/animation_mode = 1
+0:2/animation_frame_0/duration = 1.0
+0:2/animation_frame_1/duration = 1.0
+0:2/animation_frame_2/duration = 1.0
+0:2/animation_frame_3/duration = 1.0
+0:2/animation_frame_4/duration = 1.0
+0:2/animation_frame_5/duration = 1.0
+0:2/animation_frame_6/duration = 1.0
+0:2/animation_frame_7/duration = 1.0
+0:2/0 = 0
+2:2/animation_separation = Vector2i(2, 2)
+2:2/animation_speed = 4.0
+2:2/animation_mode = 1
+2:2/animation_frame_0/duration = 1.0
+2:2/animation_frame_1/duration = 1.0
+2:2/animation_frame_2/duration = 1.0
+2:2/animation_frame_3/duration = 1.0
+2:2/animation_frame_4/duration = 1.0
+2:2/animation_frame_5/duration = 1.0
+2:2/animation_frame_6/duration = 1.0
+2:2/animation_frame_7/duration = 1.0
+2:2/0 = 0
+2:0/animation_separation = Vector2i(2, 2)
+2:0/animation_speed = 4.0
+2:0/animation_mode = 1
+2:0/animation_frame_0/duration = 1.0
+2:0/animation_frame_1/duration = 1.0
+2:0/animation_frame_2/duration = 1.0
+2:0/animation_frame_3/duration = 1.0
+2:0/animation_frame_4/duration = 1.0
+2:0/animation_frame_5/duration = 1.0
+2:0/animation_frame_6/duration = 1.0
+2:0/animation_frame_7/duration = 1.0
+2:0/0 = 0
+
+[sub_resource type="TileSet" id="TileSet_8kbx7"]
+tile_size = Vector2i(64, 64)
+sources/1 = SubResource("TileSetAtlasSource_giece")
+
+[sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_ssw8v"]
+texture = ExtResource("2_rj7u6")
+texture_region_size = Vector2i(64, 64)
+1:0/animation_separation = Vector2i(2, 2)
+1:0/animation_speed = 4.0
+1:0/animation_mode = 1
+1:0/animation_frame_0/duration = 1.0
+1:0/animation_frame_1/duration = 1.0
+1:0/animation_frame_2/duration = 1.0
+1:0/animation_frame_3/duration = 1.0
+1:0/animation_frame_4/duration = 1.0
+1:0/animation_frame_5/duration = 1.0
+1:0/animation_frame_6/duration = 1.0
+1:0/animation_frame_7/duration = 1.0
+1:0/0 = 0
+1:1/animation_separation = Vector2i(2, 2)
+1:1/animation_speed = 4.0
+1:1/animation_mode = 1
+1:1/animation_frame_0/duration = 1.0
+1:1/animation_frame_1/duration = 1.0
+1:1/animation_frame_2/duration = 1.0
+1:1/animation_frame_3/duration = 1.0
+1:1/animation_frame_4/duration = 1.0
+1:1/animation_frame_5/duration = 1.0
+1:1/animation_frame_6/duration = 1.0
+1:1/animation_frame_7/duration = 1.0
+1:1/0 = 0
+1:2/animation_separation = Vector2i(2, 2)
+1:2/animation_speed = 4.0
+1:2/animation_mode = 1
+1:2/animation_frame_0/duration = 1.0
+1:2/animation_frame_1/duration = 1.0
+1:2/animation_frame_2/duration = 1.0
+1:2/animation_frame_3/duration = 1.0
+1:2/animation_frame_4/duration = 1.0
+1:2/animation_frame_5/duration = 1.0
+1:2/animation_frame_6/duration = 1.0
+1:2/animation_frame_7/duration = 1.0
+1:2/0 = 0
+0:1/animation_separation = Vector2i(2, 2)
+0:1/animation_speed = 4.0
+0:1/animation_mode = 1
+0:1/animation_frame_0/duration = 1.0
+0:1/animation_frame_1/duration = 1.0
+0:1/animation_frame_2/duration = 1.0
+0:1/animation_frame_3/duration = 1.0
+0:1/animation_frame_4/duration = 1.0
+0:1/animation_frame_5/duration = 1.0
+0:1/animation_frame_6/duration = 1.0
+0:1/animation_frame_7/duration = 1.0
+0:1/0 = 0
+2:1/animation_separation = Vector2i(2, 2)
+2:1/animation_speed = 4.0
+2:1/animation_mode = 1
+2:1/animation_frame_0/duration = 1.0
+2:1/animation_frame_1/duration = 1.0
+2:1/animation_frame_2/duration = 1.0
+2:1/animation_frame_3/duration = 1.0
+2:1/animation_frame_4/duration = 1.0
+2:1/animation_frame_5/duration = 1.0
+2:1/animation_frame_6/duration = 1.0
+2:1/animation_frame_7/duration = 1.0
+2:1/0 = 0
+0:0/animation_separation = Vector2i(2, 2)
+0:0/animation_speed = 4.0
+0:0/animation_mode = 1
+0:0/animation_frame_0/duration = 1.0
+0:0/animation_frame_1/duration = 1.0
+0:0/animation_frame_2/duration = 1.0
+0:0/animation_frame_3/duration = 1.0
+0:0/animation_frame_4/duration = 1.0
+0:0/animation_frame_5/duration = 1.0
+0:0/animation_frame_6/duration = 1.0
+0:0/animation_frame_7/duration = 1.0
+0:0/0 = 0
+0:2/animation_separation = Vector2i(2, 2)
+0:2/animation_speed = 4.0
+0:2/animation_mode = 1
+0:2/animation_frame_0/duration = 1.0
+0:2/animation_frame_1/duration = 1.0
+0:2/animation_frame_2/duration = 1.0
+0:2/animation_frame_3/duration = 1.0
+0:2/animation_frame_4/duration = 1.0
+0:2/animation_frame_5/duration = 1.0
+0:2/animation_frame_6/duration = 1.0
+0:2/animation_frame_7/duration = 1.0
+0:2/0 = 0
+2:2/animation_separation = Vector2i(2, 2)
+2:2/animation_speed = 4.0
+2:2/animation_mode = 1
+2:2/animation_frame_0/duration = 1.0
+2:2/animation_frame_1/duration = 1.0
+2:2/animation_frame_2/duration = 1.0
+2:2/animation_frame_3/duration = 1.0
+2:2/animation_frame_4/duration = 1.0
+2:2/animation_frame_5/duration = 1.0
+2:2/animation_frame_6/duration = 1.0
+2:2/animation_frame_7/duration = 1.0
+2:2/0 = 0
+2:0/animation_separation = Vector2i(2, 2)
+2:0/animation_speed = 4.0
+2:0/animation_mode = 1
+2:0/animation_frame_0/duration = 1.0
+2:0/animation_frame_1/duration = 1.0
+2:0/animation_frame_2/duration = 1.0
+2:0/animation_frame_3/duration = 1.0
+2:0/animation_frame_4/duration = 1.0
+2:0/animation_frame_5/duration = 1.0
+2:0/animation_frame_6/duration = 1.0
+2:0/animation_frame_7/duration = 1.0
+2:0/0 = 0
+
+[sub_resource type="TileSet" id="TileSet_rif7p"]
+tile_size = Vector2i(64, 64)
+sources/1 = SubResource("TileSetAtlasSource_ssw8v")
+
+[sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_yag5k"]
+texture = ExtResource("2_rj7u6")
+texture_region_size = Vector2i(64, 64)
+1:0/animation_separation = Vector2i(2, 2)
+1:0/animation_speed = 4.0
+1:0/animation_mode = 1
+1:0/animation_frame_0/duration = 1.0
+1:0/animation_frame_1/duration = 1.0
+1:0/animation_frame_2/duration = 1.0
+1:0/animation_frame_3/duration = 1.0
+1:0/animation_frame_4/duration = 1.0
+1:0/animation_frame_5/duration = 1.0
+1:0/animation_frame_6/duration = 1.0
+1:0/animation_frame_7/duration = 1.0
+1:0/0 = 0
+1:1/animation_separation = Vector2i(2, 2)
+1:1/animation_speed = 4.0
+1:1/animation_mode = 1
+1:1/animation_frame_0/duration = 1.0
+1:1/animation_frame_1/duration = 1.0
+1:1/animation_frame_2/duration = 1.0
+1:1/animation_frame_3/duration = 1.0
+1:1/animation_frame_4/duration = 1.0
+1:1/animation_frame_5/duration = 1.0
+1:1/animation_frame_6/duration = 1.0
+1:1/animation_frame_7/duration = 1.0
+1:1/0 = 0
+1:2/animation_separation = Vector2i(2, 2)
+1:2/animation_speed = 4.0
+1:2/animation_mode = 1
+1:2/animation_frame_0/duration = 1.0
+1:2/animation_frame_1/duration = 1.0
+1:2/animation_frame_2/duration = 1.0
+1:2/animation_frame_3/duration = 1.0
+1:2/animation_frame_4/duration = 1.0
+1:2/animation_frame_5/duration = 1.0
+1:2/animation_frame_6/duration = 1.0
+1:2/animation_frame_7/duration = 1.0
+1:2/0 = 0
+0:1/animation_separation = Vector2i(2, 2)
+0:1/animation_speed = 4.0
+0:1/animation_mode = 1
+0:1/animation_frame_0/duration = 1.0
+0:1/animation_frame_1/duration = 1.0
+0:1/animation_frame_2/duration = 1.0
+0:1/animation_frame_3/duration = 1.0
+0:1/animation_frame_4/duration = 1.0
+0:1/animation_frame_5/duration = 1.0
+0:1/animation_frame_6/duration = 1.0
+0:1/animation_frame_7/duration = 1.0
+0:1/0 = 0
+2:1/animation_separation = Vector2i(2, 2)
+2:1/animation_speed = 4.0
+2:1/animation_mode = 1
+2:1/animation_frame_0/duration = 1.0
+2:1/animation_frame_1/duration = 1.0
+2:1/animation_frame_2/duration = 1.0
+2:1/animation_frame_3/duration = 1.0
+2:1/animation_frame_4/duration = 1.0
+2:1/animation_frame_5/duration = 1.0
+2:1/animation_frame_6/duration = 1.0
+2:1/animation_frame_7/duration = 1.0
+2:1/0 = 0
+0:0/animation_separation = Vector2i(2, 2)
+0:0/animation_speed = 4.0
+0:0/animation_mode = 1
+0:0/animation_frame_0/duration = 1.0
+0:0/animation_frame_1/duration = 1.0
+0:0/animation_frame_2/duration = 1.0
+0:0/animation_frame_3/duration = 1.0
+0:0/animation_frame_4/duration = 1.0
+0:0/animation_frame_5/duration = 1.0
+0:0/animation_frame_6/duration = 1.0
+0:0/animation_frame_7/duration = 1.0
+0:0/0 = 0
+0:2/animation_separation = Vector2i(2, 2)
+0:2/animation_speed = 4.0
+0:2/animation_mode = 1
+0:2/animation_frame_0/duration = 1.0
+0:2/animation_frame_1/duration = 1.0
+0:2/animation_frame_2/duration = 1.0
+0:2/animation_frame_3/duration = 1.0
+0:2/animation_frame_4/duration = 1.0
+0:2/animation_frame_5/duration = 1.0
+0:2/animation_frame_6/duration = 1.0
+0:2/animation_frame_7/duration = 1.0
+0:2/0 = 0
+2:2/animation_separation = Vector2i(2, 2)
+2:2/animation_speed = 4.0
+2:2/animation_mode = 1
+2:2/animation_frame_0/duration = 1.0
+2:2/animation_frame_1/duration = 1.0
+2:2/animation_frame_2/duration = 1.0
+2:2/animation_frame_3/duration = 1.0
+2:2/animation_frame_4/duration = 1.0
+2:2/animation_frame_5/duration = 1.0
+2:2/animation_frame_6/duration = 1.0
+2:2/animation_frame_7/duration = 1.0
+2:2/0 = 0
+2:0/animation_separation = Vector2i(2, 2)
+2:0/animation_speed = 4.0
+2:0/animation_mode = 1
+2:0/animation_frame_0/duration = 1.0
+2:0/animation_frame_1/duration = 1.0
+2:0/animation_frame_2/duration = 1.0
+2:0/animation_frame_3/duration = 1.0
+2:0/animation_frame_4/duration = 1.0
+2:0/animation_frame_5/duration = 1.0
+2:0/animation_frame_6/duration = 1.0
+2:0/animation_frame_7/duration = 1.0
+2:0/0 = 0
+
+[sub_resource type="TileSet" id="TileSet_vmfh3"]
+tile_size = Vector2i(64, 64)
+sources/1 = SubResource("TileSetAtlasSource_yag5k")
+
+[sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_g6exm"]
+texture = ExtResource("2_rj7u6")
+texture_region_size = Vector2i(64, 64)
+1:0/animation_separation = Vector2i(2, 2)
+1:0/animation_speed = 4.0
+1:0/animation_mode = 1
+1:0/animation_frame_0/duration = 1.0
+1:0/animation_frame_1/duration = 1.0
+1:0/animation_frame_2/duration = 1.0
+1:0/animation_frame_3/duration = 1.0
+1:0/animation_frame_4/duration = 1.0
+1:0/animation_frame_5/duration = 1.0
+1:0/animation_frame_6/duration = 1.0
+1:0/animation_frame_7/duration = 1.0
+1:0/0 = 0
+1:1/animation_separation = Vector2i(2, 2)
+1:1/animation_speed = 4.0
+1:1/animation_mode = 1
+1:1/animation_frame_0/duration = 1.0
+1:1/animation_frame_1/duration = 1.0
+1:1/animation_frame_2/duration = 1.0
+1:1/animation_frame_3/duration = 1.0
+1:1/animation_frame_4/duration = 1.0
+1:1/animation_frame_5/duration = 1.0
+1:1/animation_frame_6/duration = 1.0
+1:1/animation_frame_7/duration = 1.0
+1:1/0 = 0
+1:2/animation_separation = Vector2i(2, 2)
+1:2/animation_speed = 4.0
+1:2/animation_mode = 1
+1:2/animation_frame_0/duration = 1.0
+1:2/animation_frame_1/duration = 1.0
+1:2/animation_frame_2/duration = 1.0
+1:2/animation_frame_3/duration = 1.0
+1:2/animation_frame_4/duration = 1.0
+1:2/animation_frame_5/duration = 1.0
+1:2/animation_frame_6/duration = 1.0
+1:2/animation_frame_7/duration = 1.0
+1:2/0 = 0
+0:1/animation_separation = Vector2i(2, 2)
+0:1/animation_speed = 4.0
+0:1/animation_mode = 1
+0:1/animation_frame_0/duration = 1.0
+0:1/animation_frame_1/duration = 1.0
+0:1/animation_frame_2/duration = 1.0
+0:1/animation_frame_3/duration = 1.0
+0:1/animation_frame_4/duration = 1.0
+0:1/animation_frame_5/duration = 1.0
+0:1/animation_frame_6/duration = 1.0
+0:1/animation_frame_7/duration = 1.0
+0:1/0 = 0
+2:1/animation_separation = Vector2i(2, 2)
+2:1/animation_speed = 4.0
+2:1/animation_mode = 1
+2:1/animation_frame_0/duration = 1.0
+2:1/animation_frame_1/duration = 1.0
+2:1/animation_frame_2/duration = 1.0
+2:1/animation_frame_3/duration = 1.0
+2:1/animation_frame_4/duration = 1.0
+2:1/animation_frame_5/duration = 1.0
+2:1/animation_frame_6/duration = 1.0
+2:1/animation_frame_7/duration = 1.0
+2:1/0 = 0
+0:0/animation_separation = Vector2i(2, 2)
+0:0/animation_speed = 4.0
+0:0/animation_mode = 1
+0:0/animation_frame_0/duration = 1.0
+0:0/animation_frame_1/duration = 1.0
+0:0/animation_frame_2/duration = 1.0
+0:0/animation_frame_3/duration = 1.0
+0:0/animation_frame_4/duration = 1.0
+0:0/animation_frame_5/duration = 1.0
+0:0/animation_frame_6/duration = 1.0
+0:0/animation_frame_7/duration = 1.0
+0:0/0 = 0
+0:2/animation_separation = Vector2i(2, 2)
+0:2/animation_speed = 4.0
+0:2/animation_mode = 1
+0:2/animation_frame_0/duration = 1.0
+0:2/animation_frame_1/duration = 1.0
+0:2/animation_frame_2/duration = 1.0
+0:2/animation_frame_3/duration = 1.0
+0:2/animation_frame_4/duration = 1.0
+0:2/animation_frame_5/duration = 1.0
+0:2/animation_frame_6/duration = 1.0
+0:2/animation_frame_7/duration = 1.0
+0:2/0 = 0
+2:2/animation_separation = Vector2i(2, 2)
+2:2/animation_speed = 4.0
+2:2/animation_mode = 1
+2:2/animation_frame_0/duration = 1.0
+2:2/animation_frame_1/duration = 1.0
+2:2/animation_frame_2/duration = 1.0
+2:2/animation_frame_3/duration = 1.0
+2:2/animation_frame_4/duration = 1.0
+2:2/animation_frame_5/duration = 1.0
+2:2/animation_frame_6/duration = 1.0
+2:2/animation_frame_7/duration = 1.0
+2:2/0 = 0
+2:0/animation_separation = Vector2i(2, 2)
+2:0/animation_speed = 4.0
+2:0/animation_mode = 1
+2:0/animation_frame_0/duration = 1.0
+2:0/animation_frame_1/duration = 1.0
+2:0/animation_frame_2/duration = 1.0
+2:0/animation_frame_3/duration = 1.0
+2:0/animation_frame_4/duration = 1.0
+2:0/animation_frame_5/duration = 1.0
+2:0/animation_frame_6/duration = 1.0
+2:0/animation_frame_7/duration = 1.0
+2:0/0 = 0
+
+[sub_resource type="TileSet" id="TileSet_3ts42"]
+tile_size = Vector2i(64, 64)
+sources/1 = SubResource("TileSetAtlasSource_g6exm")
+
+[node name="BattleTemplate" unique_id=469592247 instance=ExtResource("1")]
+
+[node name="top" parent="Level/NavigationRegion2D/Foam" parent_id_path=PackedInt32Array(90631288) index="0" unique_id=340941703]
+tile_map_data = PackedByteArray("AAAEAAsAAQACAAIAAAD8//v/AQABAAAAAAD9//v/AQABAAAAAAD+//v/AQABAAAAAAD///v/AQABAAAAAAAAAPv/AQABAAAAAAABAPv/AQABAAAAAAACAPv/AQABAAAAAAADAPv/AQABAAAAAAAEAPv/AQABAAAAAAAFAPv/AQABAAAAAAAGAPv/AQABAAAAAAAHAPv/AQABAAAAAAAIAPv/AQABAAAAAAAJAPv/AQABAAAAAAAKAPv/AQABAAAAAAALAPv/AQABAAAAAAAMAPv/AQABAAAAAAANAPv/AQABAAAAAAAOAPv/AQABAAAAAAAPAPv/AQABAAAAAAAQAPv/AQABAAAAAAARAPv/AQABAAAAAAASAPv/AQABAAAAAAATAPv/AQABAAAAAAA=")
+tile_set = SubResource("TileSet_3pwmd")
+
+[node name="down" parent="Level/NavigationRegion2D/Foam" parent_id_path=PackedInt32Array(90631288) index="1" unique_id=1429652865]
+tile_map_data = PackedByteArray("AAAEAAkAAQACAAAAAAAEAAsAAQACAAIAAAD8/w0AAQABAAIAAAD9/w0AAQABAAIAAAD+/w0AAQABAAIAAAD//w0AAQABAAIAAAAAAA0AAQABAAIAAAABAA0AAQABAAIAAAACAA0AAQABAAIAAAADAA0AAQABAAIAAAAEAA0AAQABAAIAAAAFAA0AAQABAAIAAAAGAA0AAQABAAIAAAAHAA0AAQABAAIAAAAIAA0AAQABAAIAAAAJAA0AAQABAAIAAAAKAA0AAQABAAIAAAALAA0AAQABAAIAAAAMAA0AAQABAAIAAAANAA0AAQABAAIAAAAOAA0AAQABAAIAAAAPAA0AAQABAAIAAAAQAA0AAQABAAIAAAARAA0AAQABAAIAAAASAA0AAQABAAIAAAATAA0AAQABAAIAAAA=")
+tile_set = SubResource("TileSet_8kbx7")
+
+[node name="left" parent="Level/NavigationRegion2D/Foam" parent_id_path=PackedInt32Array(90631288) index="2" unique_id=1710406748]
+tile_map_data = PackedByteArray("AAAEAAsAAQACAAIAAAD7//z/AQAAAAEAAAD7//3/AQAAAAEAAAD7//7/AQAAAAEAAAD7////AQAAAAEAAAD7/wMAAQAAAAEAAAD7/wQAAQAAAAEAAAD7/wAAAQAAAAEAAAD7/wEAAQAAAAEAAAD7/wIAAQAAAAEAAAD7/wUAAQAAAAEAAAD7/wYAAQAAAAEAAAD7/wcAAQAAAAEAAAD7/wgAAQAAAAEAAAD7/wkAAQAAAAEAAAD7/woAAQAAAAEAAAD7/wsAAQAAAAEAAAD7/wwAAQAAAAEAAAA=")
+tile_set = SubResource("TileSet_rif7p")
+
+[node name="right" parent="Level/NavigationRegion2D/Foam" parent_id_path=PackedInt32Array(90631288) index="3" unique_id=105371579]
+tile_map_data = PackedByteArray("AAAEAAkAAQACAAAAAAAEAAsAAQACAAIAAAAUAPz/AQACAAEAAAAUAP3/AQACAAEAAAAUAP7/AQACAAEAAAAUAP//AQACAAEAAAAUAAAAAQACAAEAAAAUAAEAAQACAAEAAAAUAAIAAQACAAEAAAAUAAMAAQACAAEAAAAUAAQAAQACAAEAAAAUAAUAAQACAAEAAAAUAAYAAQACAAEAAAAUAAcAAQACAAEAAAAUAAgAAQACAAEAAAAUAAkAAQACAAEAAAAUAAoAAQACAAEAAAAUAAsAAQACAAEAAAAUAAwAAQACAAEAAAA=")
+tile_set = SubResource("TileSet_vmfh3")
+
+[node name="middle" parent="Level/NavigationRegion2D/Foam" parent_id_path=PackedInt32Array(90631288) index="4" unique_id=1827706375]
+tile_map_data = PackedByteArray("AAAEAAkAAQACAAAAAAAEAAsAAQACAAIAAAD8/wwAAQABAAEAAAD9/wwAAQABAAEAAAD+/wwAAQABAAEAAAD//wwAAQABAAEAAAAAAAwAAQABAAEAAAABAAwAAQABAAEAAAACAAwAAQABAAEAAAADAAwAAQABAAEAAAAEAAwAAQABAAEAAAAFAAwAAQABAAEAAAAGAAwAAQABAAEAAAAHAAwAAQABAAEAAAAIAAwAAQABAAEAAAAJAAwAAQABAAEAAAAKAAwAAQABAAEAAAALAAwAAQABAAEAAAAMAAwAAQABAAEAAAANAAwAAQABAAEAAAAOAAwAAQABAAEAAAAPAAwAAQABAAEAAAAQAAwAAQABAAEAAAARAAwAAQABAAEAAAASAAwAAQABAAEAAAATAAwAAQABAAEAAAATAAsAAQABAAEAAAATAAoAAQABAAEAAAATAAkAAQABAAEAAAATAAgAAQABAAEAAAATAAcAAQABAAEAAAATAAYAAQABAAEAAAATAAUAAQABAAEAAAATAAQAAQABAAEAAAATAAMAAQABAAEAAAATAAIAAQABAAEAAAATAAEAAQABAAEAAAATAAAAAQABAAEAAAATAP//AQABAAEAAAATAP7/AQABAAEAAAATAP3/AQABAAEAAAATAPz/AQABAAEAAAD8//z/AQABAAEAAAD9//z/AQABAAEAAAD+//z/AQABAAEAAAD///z/AQABAAEAAAAAAPz/AQABAAEAAAABAPz/AQABAAEAAAACAPz/AQABAAEAAAADAPz/AQABAAEAAAAEAPz/AQABAAEAAAAFAPz/AQABAAEAAAAGAPz/AQABAAEAAAAHAPz/AQABAAEAAAAIAPz/AQABAAEAAAAJAPz/AQABAAEAAAAKAPz/AQABAAEAAAALAPz/AQABAAEAAAAMAPz/AQABAAEAAAANAPz/AQABAAEAAAAOAPz/AQABAAEAAAAPAPz/AQABAAEAAAAQAPz/AQABAAEAAAARAPz/AQABAAEAAAASAPz/AQABAAEAAAD8//3/AQABAAEAAAD8//7/AQABAAEAAAD8////AQABAAEAAAD8/wAAAQABAAEAAAD8/wEAAQABAAEAAAD8/wIAAQABAAEAAAD8/wMAAQABAAEAAAD8/wQAAQABAAEAAAD8/wUAAQABAAEAAAD8/wYAAQABAAEAAAD8/wcAAQABAAEAAAD8/wgAAQABAAEAAAD8/wkAAQABAAEAAAD8/woAAQABAAEAAAD8/wsAAQABAAEAAAA=")
+tile_set = SubResource("TileSet_3ts42")
+
+[node name="Layer01" parent="Level/NavigationRegion2D" parent_id_path=PackedInt32Array(314802907) index="4" unique_id=18165850]
+tile_map_data = PackedByteArray("AAABAAYAAAABAAEAAAABAAUAAAABAAEAAAABAAQAAAABAAEAAAABAAMAAAABAAEAAAANAAYAAAABAAEAAAANAAUAAAABAAEAAAANAAQAAAABAAEAAAANAAMAAAABAAEAAAANAAIAAAABAAEAAAANAAEAAAABAAEAAAAMAAYAAAABAAEAAAAMAAUAAAABAAEAAAAMAAQAAAABAAEAAAAMAAMAAAABAAEAAAAMAAIAAAABAAEAAAAMAAEAAAABAAEAAAALAAYAAAABAAEAAAALAAUAAAABAAEAAAALAAQAAAABAAEAAAALAAMAAAABAAEAAAALAAIAAAABAAEAAAALAAEAAAABAAEAAAAKAAYAAAABAAEAAAAKAAUAAAABAAEAAAAKAAQAAAABAAEAAAAKAAMAAAABAAEAAAAKAAIAAAABAAEAAAAKAAEAAAABAAEAAAAJAAYAAAABAAEAAAAJAAUAAAABAAEAAAAJAAQAAAABAAEAAAAJAAMAAAABAAEAAAAJAAIAAAABAAEAAAAJAAEAAAABAAEAAAAIAAYAAAABAAEAAAAIAAUAAAABAAEAAAAIAAQAAAABAAEAAAAIAAMAAAABAAEAAAAIAAIAAAABAAEAAAAIAAEAAAABAAEAAAAHAAYAAAABAAEAAAAHAAUAAAABAAEAAAAHAAQAAAABAAEAAAAHAAMAAAABAAEAAAAHAAIAAAABAAEAAAAHAAEAAAABAAEAAAAGAAYAAAABAAEAAAAGAAUAAAABAAEAAAAGAAQAAAABAAEAAAAGAAMAAAABAAEAAAAGAAIAAAABAAEAAAAGAAEAAAABAAEAAAAFAAYAAAABAAEAAAAFAAUAAAABAAEAAAAFAAQAAAABAAEAAAAFAAMAAAABAAEAAAAFAAIAAAABAAEAAAAFAAEAAAABAAEAAAAEAAYAAAABAAEAAAAEAAUAAAABAAEAAAAEAAQAAAABAAEAAAAEAAMAAAABAAEAAAAEAAIAAAABAAEAAAAEAAEAAAABAAEAAAADAAYAAAABAAEAAAADAAUAAAABAAEAAAADAAQAAAABAAEAAAADAAMAAAABAAEAAAACAAYAAAABAAEAAAACAAUAAAABAAEAAAACAAQAAAABAAEAAAACAAMAAAABAAEAAAABAAEAAAABAAEAAAABAAIAAAABAAEAAAACAAEAAAABAAEAAAACAAIAAAABAAEAAAADAAEAAAABAAEAAAADAAIAAAABAAEAAAABAAcAAAABAAEAAAACAAcAAAABAAEAAAADAAcAAAABAAEAAAAEAAcAAAABAAEAAAAFAAcAAAABAAEAAAAGAAcAAAABAAEAAAAHAAcAAAABAAEAAAAIAAcAAAABAAEAAAAJAAcAAAABAAEAAAAKAAcAAAABAAEAAAALAAcAAAABAAEAAAAMAAcAAAABAAEAAAANAAcAAAABAAEAAAD8//7/AAAAAAEAAAD8////AAAAAAEAAAD8/wAAAAAAAAEAAAD8/wEAAAAAAAEAAAASAAwAAAABAAIAAAASAAsAAAABAAEAAAASAAoAAAABAAEAAAASAAkAAAABAAEAAAASAAgAAAABAAEAAAASAAcAAAABAAEAAAASAAYAAAABAAEAAAASAAUAAAABAAEAAAASAAQAAAABAAEAAAASAAMAAAABAAEAAAASAAIAAAABAAEAAAASAAEAAAABAAEAAAASAAAAAAABAAEAAAASAP//AAABAAEAAAASAP7/AAABAAEAAAASAP3/AAABAAEAAAASAPz/AAABAAAAAAARAAwAAAABAAIAAAARAAsAAAABAAEAAAARAAoAAAABAAEAAAARAAkAAAABAAEAAAARAAgAAAABAAEAAAARAAcAAAABAAEAAAARAAYAAAABAAEAAAARAAUAAAABAAEAAAARAAQAAAABAAEAAAARAAMAAAABAAEAAAARAAIAAAABAAEAAAARAAEAAAABAAEAAAARAAAAAAABAAEAAAARAP//AAABAAEAAAARAP7/AAABAAEAAAARAP3/AAABAAEAAAARAPz/AAABAAAAAAAQAAwAAAABAAIAAAAQAAsAAAABAAEAAAAQAAoAAAABAAEAAAAQAAkAAAABAAEAAAAQAAgAAAABAAEAAAAQAAcAAAABAAEAAAAQAAYAAAABAAEAAAAQAAUAAAABAAEAAAAQAAQAAAABAAEAAAAQAAMAAAABAAEAAAAQAAIAAAABAAEAAAAQAAEAAAABAAEAAAAQAAAAAAABAAEAAAAQAP//AAABAAEAAAAQAP7/AAABAAEAAAAQAP3/AAABAAEAAAAQAPz/AAABAAAAAAAPAAwAAAABAAIAAAAPAAsAAAABAAEAAAAPAAoAAAABAAEAAAAPAAkAAAABAAEAAAAPAAgAAAABAAEAAAAPAAcAAAABAAEAAAAPAAYAAAABAAEAAAAPAAUAAAABAAEAAAAPAAQAAAABAAEAAAAPAAMAAAABAAEAAAAPAAIAAAABAAEAAAAPAAEAAAABAAEAAAAPAAAAAAABAAEAAAAPAP//AAABAAEAAAAPAP7/AAABAAEAAAAPAP3/AAABAAEAAAAPAPz/AAABAAAAAAAOAAwAAAABAAIAAAAOAAsAAAABAAEAAAAOAAoAAAABAAEAAAAOAAkAAAABAAEAAAAOAAgAAAABAAEAAAAOAAcAAAABAAEAAAAOAAYAAAABAAEAAAAOAAUAAAABAAEAAAAOAAQAAAABAAEAAAAOAAMAAAABAAEAAAAOAAIAAAABAAEAAAAOAAEAAAABAAEAAAAOAAAAAAABAAEAAAAOAP//AAABAAEAAAAOAP7/AAABAAEAAAAOAP3/AAABAAEAAAAOAPz/AAABAAAAAAANAAwAAAABAAIAAAANAAsAAAABAAEAAAANAAoAAAABAAEAAAANAAkAAAABAAEAAAANAAgAAAABAAEAAAANAAAAAAABAAEAAAANAP//AAABAAEAAAANAP7/AAABAAEAAAANAP3/AAABAAEAAAANAPz/AAABAAAAAAAMAAwAAAABAAIAAAAMAAsAAAABAAEAAAAMAAoAAAABAAEAAAAMAAkAAAABAAEAAAAMAAgAAAABAAEAAAAMAAAAAAABAAEAAAAMAP//AAABAAEAAAAMAP7/AAABAAEAAAAMAP3/AAABAAEAAAAMAPz/AAABAAAAAAALAAwAAAABAAIAAAALAAsAAAABAAEAAAALAAoAAAABAAEAAAALAAkAAAABAAEAAAALAAgAAAABAAEAAAALAAAAAAABAAEAAAALAP//AAABAAEAAAALAP7/AAABAAEAAAALAP3/AAABAAEAAAALAPz/AAABAAAAAAAKAAwAAAABAAIAAAAKAAsAAAABAAEAAAAKAAoAAAABAAEAAAAKAAkAAAABAAEAAAAKAAgAAAABAAEAAAAKAAAAAAABAAEAAAAKAP//AAABAAEAAAAKAP7/AAABAAEAAAAKAP3/AAABAAEAAAAKAPz/AAABAAAAAAAJAAwAAAABAAIAAAAJAAsAAAABAAEAAAAJAAoAAAABAAEAAAAJAAkAAAABAAEAAAAJAAgAAAABAAEAAAAJAAAAAAABAAEAAAAJAP//AAABAAEAAAAJAP7/AAABAAEAAAAJAP3/AAABAAEAAAAJAPz/AAABAAAAAAAIAAwAAAABAAIAAAAIAAsAAAABAAEAAAAIAAoAAAABAAEAAAAIAAkAAAABAAEAAAAIAAgAAAABAAEAAAAIAAAAAAABAAEAAAAIAP//AAABAAEAAAAIAP7/AAABAAEAAAAIAP3/AAABAAEAAAAIAPz/AAABAAAAAAAHAAwAAAABAAIAAAAHAAsAAAABAAEAAAAHAAoAAAABAAEAAAAHAAkAAAABAAEAAAAHAAgAAAABAAEAAAAHAAAAAAABAAEAAAAHAP//AAABAAEAAAAHAP7/AAABAAEAAAAHAP3/AAABAAEAAAAHAPz/AAABAAAAAAAGAAwAAAABAAIAAAAGAAsAAAABAAEAAAAGAAoAAAABAAEAAAAGAAkAAAABAAEAAAAGAAgAAAABAAEAAAAGAAAAAAABAAEAAAAGAP//AAABAAEAAAAGAP7/AAABAAEAAAAGAP3/AAABAAEAAAAGAPz/AAABAAAAAAAFAAwAAAABAAIAAAAFAAsAAAABAAEAAAAFAAoAAAABAAEAAAAFAAkAAAABAAEAAAAFAAgAAAABAAEAAAAFAAAAAAABAAEAAAAFAP//AAABAAEAAAAFAP7/AAABAAEAAAAFAP3/AAABAAEAAAAFAPz/AAABAAAAAAAEAAwAAAABAAIAAAAEAAsAAAABAAEAAAAEAAoAAAABAAEAAAAEAAkAAAABAAEAAAAEAAgAAAABAAEAAAAEAAAAAAABAAEAAAAEAP//AAABAAEAAAAEAP7/AAABAAEAAAAEAP3/AAABAAEAAAAEAPz/AAABAAAAAAADAAwAAAABAAIAAAADAAsAAAABAAEAAAADAAoAAAABAAEAAAADAAkAAAABAAEAAAADAAgAAAABAAEAAAADAAAAAAABAAEAAAADAP//AAABAAEAAAADAP7/AAABAAEAAAADAP3/AAABAAEAAAADAPz/AAABAAAAAAACAAwAAAABAAIAAAACAAsAAAABAAEAAAACAAoAAAABAAEAAAACAAkAAAABAAEAAAACAAgAAAABAAEAAAACAAAAAAABAAEAAAACAP//AAABAAEAAAACAP7/AAABAAEAAAACAP3/AAABAAEAAAACAPz/AAABAAAAAAABAAwAAAABAAIAAAABAAsAAAABAAEAAAABAAoAAAABAAEAAAABAAkAAAABAAEAAAABAAgAAAABAAEAAAABAAAAAAABAAEAAAABAP//AAABAAEAAAABAP7/AAABAAEAAAABAP3/AAABAAEAAAABAPz/AAABAAAAAAAAAAwAAAABAAIAAAAAAAsAAAABAAEAAAAAAAoAAAABAAEAAAAAAAkAAAABAAEAAAAAAAgAAAABAAEAAAAAAAcAAAABAAEAAAAAAAYAAAABAAEAAAAAAAUAAAABAAEAAAAAAAQAAAABAAEAAAAAAAMAAAABAAEAAAAAAAIAAAABAAEAAAAAAAEAAAABAAEAAAAAAAAAAAABAAEAAAAAAP//AAABAAEAAAAAAP7/AAABAAEAAAAAAP3/AAABAAEAAAAAAPz/AAABAAAAAAD//wwAAAABAAIAAAD//wsAAAABAAEAAAD//woAAAABAAEAAAD//wkAAAABAAEAAAD//wgAAAABAAEAAAD//wcAAAABAAEAAAD//wYAAAABAAEAAAD//wUAAAABAAEAAAD//wQAAAABAAEAAAD//wMAAAABAAEAAAD//wIAAAABAAEAAAD//wEAAAABAAEAAAD//wAAAAABAAEAAAD/////AAABAAEAAAD///7/AAABAAEAAAD///3/AAABAAEAAAD///z/AAABAAAAAAD+/wwAAAABAAIAAAD+/wsAAAABAAEAAAD+/woAAAABAAEAAAD+/wkAAAABAAEAAAD+/wgAAAABAAEAAAD+/wcAAAABAAEAAAD+/wYAAAABAAEAAAD+/wUAAAABAAEAAAD+/wQAAAABAAEAAAD+/wMAAAABAAEAAAD+/wIAAAABAAEAAAD+/wEAAAABAAEAAAD+/wAAAAABAAEAAAD+////AAABAAEAAAD+//7/AAABAAEAAAD+//3/AAABAAEAAAD+//z/AAABAAAAAAD9/wwAAAABAAIAAAD9/wsAAAABAAEAAAD9/woAAAABAAEAAAD9/wkAAAABAAEAAAD9/wgAAAABAAEAAAD9/wcAAAABAAEAAAD9/wYAAAABAAEAAAD9/wUAAAABAAEAAAD9/wQAAAABAAEAAAD9/wMAAAABAAEAAAD9/wIAAAABAAEAAAD9/wEAAAABAAEAAAD9/wAAAAABAAEAAAD9////AAABAAEAAAD9//7/AAABAAEAAAD9//3/AAABAAEAAAD9//z/AAABAAAAAAD8/wwAAAAAAAIAAAD8/wsAAAAAAAEAAAD8/woAAAAAAAEAAAD8/wkAAAAAAAEAAAD8/wgAAAAAAAEAAAD8/wcAAAAAAAEAAAD8/wYAAAAAAAEAAAD8/wUAAAAAAAEAAAD8/wQAAAAAAAEAAAD8/wMAAAAAAAEAAAD8/wIAAAAAAAEAAAD8//3/AAAAAAEAAAD8//z/AAAAAAAAAAATAAwAAAACAAIAAAATAAsAAAACAAEAAAATAAoAAAACAAEAAAATAAkAAAACAAEAAAATAAgAAAACAAEAAAATAAcAAAACAAEAAAATAAYAAAACAAEAAAATAAUAAAACAAEAAAATAAQAAAACAAEAAAATAAMAAAACAAEAAAATAAIAAAACAAEAAAATAAEAAAACAAEAAAATAAAAAAACAAEAAAATAP//AAACAAEAAAATAP7/AAACAAEAAAATAP3/AAACAAEAAAATAPz/AAACAAAAAAA=")
+
+[node name="Clouds20" parent="Level/decrition" parent_id_path=PackedInt32Array(59523509) index="0" unique_id=932431995]
+position = Vector2(1488, -842)
+
+[node name="Clouds37" parent="Level/decrition" parent_id_path=PackedInt32Array(59523509) index="1" unique_id=529139558]
+position = Vector2(-630, -820)
+
+[node name="Clouds38" parent="Level/decrition" parent_id_path=PackedInt32Array(59523509) index="2" unique_id=2019700421]
+position = Vector2(-1071, -1068)
+
+[node name="Clouds39" parent="Level/decrition" parent_id_path=PackedInt32Array(59523509) index="3" unique_id=1115202278]
+position = Vector2(-1066, -84)
+
+[node name="Clouds06" parent="Level/decrition" parent_id_path=PackedInt32Array(59523509) index="4" unique_id=860252737]
+position = Vector2(474, 2525)
+
+[node name="Clouds23" parent="Level/decrition" parent_id_path=PackedInt32Array(59523509) index="5" unique_id=320685860]
+position = Vector2(-648, 2510)
+
+[node name="Clouds25" parent="Level/decrition" parent_id_path=PackedInt32Array(59523509) index="6" unique_id=1277073366]
+position = Vector2(1080, 2214)
+
+[node name="Clouds24" parent="Level/decrition" parent_id_path=PackedInt32Array(59523509) index="7" unique_id=157953012]
+position = Vector2(-2305, 1681)
+
+[node name="Clouds21" parent="Level/decrition" parent_id_path=PackedInt32Array(59523509) index="8" unique_id=265334954]
+position = Vector2(546, 3242)
+
+[node name="Clouds22" parent="Level/decrition" parent_id_path=PackedInt32Array(59523509) index="9" unique_id=947445872]
+position = Vector2(-1322, 643)
+
+[node name="Clouds01" parent="Level/decrition" parent_id_path=PackedInt32Array(59523509) index="10" unique_id=1352191078]
+position = Vector2(2974, -704)
+
+[node name="Clouds41" parent="Level/decrition" parent_id_path=PackedInt32Array(59523509) index="11" unique_id=1812746332]
+position = Vector2(2028, -1290)
+
+[node name="Clouds42" parent="Level/decrition" parent_id_path=PackedInt32Array(59523509) index="12" unique_id=600025706]
+position = Vector2(129, -1189)
+
+[node name="Clouds03" parent="Level/decrition" parent_id_path=PackedInt32Array(59523509) index="13" unique_id=1875350431]
+position = Vector2(3516, -3)
+
+[node name="Clouds09" parent="Level/decrition" parent_id_path=PackedInt32Array(59523509) index="14" unique_id=1496684214]
+position = Vector2(691, -819)
+
+[node name="Clouds36" parent="Level/decrition" parent_id_path=PackedInt32Array(59523509) index="15" unique_id=71998006]
+position = Vector2(-1167, -929)
+
+[node name="Clouds10" parent="Level/decrition" parent_id_path=PackedInt32Array(59523509) index="16" unique_id=406297425]
+position = Vector2(-1775, -283)
+
+[node name="Clouds40" parent="Level/decrition" parent_id_path=PackedInt32Array(59523509) index="17" unique_id=333500476]
+position = Vector2(-1859, -1217)
+
+[node name="Clouds11" parent="Level/decrition" parent_id_path=PackedInt32Array(59523509) index="18" unique_id=316600836]
+position = Vector2(-1265, 1310)
+
+[node name="Clouds12" parent="Level/decrition" parent_id_path=PackedInt32Array(59523509) index="19" unique_id=1926114877]
+position = Vector2(-1058, 1834)
+
+[node name="Clouds13" parent="Level/decrition" parent_id_path=PackedInt32Array(59523509) index="20" unique_id=1471084112]
+position = Vector2(-1858, 2815)
+
+[node name="Clouds14" parent="Level/decrition" parent_id_path=PackedInt32Array(59523509) index="21" unique_id=272552825]
+position = Vector2(-1723, 613)
+
+[node name="Clouds15" parent="Level/decrition" parent_id_path=PackedInt32Array(59523509) index="22" unique_id=1806275170]
+position = Vector2(-2530, 1769)
+
+[node name="Clouds16" parent="Level/decrition" parent_id_path=PackedInt32Array(59523509) index="23" unique_id=18014910]
+position = Vector2(1369, 2383)
+
+[node name="Clouds17" parent="Level/decrition" parent_id_path=PackedInt32Array(59523509) index="24" unique_id=3077498]
+position = Vector2(276, 3273)
+
+[node name="Clouds18" parent="Level/decrition" parent_id_path=PackedInt32Array(59523509) index="25" unique_id=1148782463]
+position = Vector2(2750, 3365)
+
+[node name="Clouds19" parent="Level/decrition" parent_id_path=PackedInt32Array(59523509) index="26" unique_id=481736431]
+position = Vector2(3518, 1023)
+
+[node name="Clouds04" parent="Level/decrition" parent_id_path=PackedInt32Array(59523509) index="28" unique_id=484546638]
+position = Vector2(3122, 1695)
+
+[node name="Clouds28" parent="Level/decrition" parent_id_path=PackedInt32Array(59523509) index="29" unique_id=846045335]
+position = Vector2(-831, -560)
+
+[node name="Clouds29" parent="Level/decrition" parent_id_path=PackedInt32Array(59523509) index="30" unique_id=1276467666]
+position = Vector2(2054, -714)
+
+[node name="Clouds30" parent="Level/decrition" parent_id_path=PackedInt32Array(59523509) index="31" unique_id=2039598848]
+position = Vector2(326, -905)
+
+[node name="Clouds31" parent="Level/decrition" parent_id_path=PackedInt32Array(59523509) index="32" unique_id=676050290]
+position = Vector2(538, 2192)
+
+[node name="Clouds27" parent="Level/decrition" parent_id_path=PackedInt32Array(59523509) index="33" unique_id=1209114170]
+position = Vector2(-396, 2536)
+
+[node name="Clouds26" parent="Level/decrition" parent_id_path=PackedInt32Array(59523509) index="34" unique_id=299680131]
+position = Vector2(897, 2167)
+
+[node name="Clouds05" parent="Level/decrition" parent_id_path=PackedInt32Array(59523509) index="35" unique_id=501579026]
+position = Vector2(4346, 1887)
+
+[node name="Clouds07" parent="Level/decrition" parent_id_path=PackedInt32Array(59523509) index="36" unique_id=1701391746]
+position = Vector2(827, 2709)
+
+[node name="Clouds32" parent="Level/decrition" parent_id_path=PackedInt32Array(59523509) index="37" unique_id=346165362]
+position = Vector2(-1554, 3273)
+
+[node name="Clouds33" parent="Level/decrition" parent_id_path=PackedInt32Array(59523509) index="38" unique_id=1550950725]
+position = Vector2(-637, 3019)
+
+[node name="Clouds34" parent="Level/decrition" parent_id_path=PackedInt32Array(59523509) index="39" unique_id=689553777]
+position = Vector2(-1402, 189)
+
+[node name="Clouds35" parent="Level/decrition" parent_id_path=PackedInt32Array(59523509) index="40" unique_id=2089271985]
+position = Vector2(2856, 2320)
+
+[node name="Clouds43" parent="Level/decrition" parent_id_path=PackedInt32Array(59523509) index="41" unique_id=1591256277]
+position = Vector2(2709, 2896)
+
+[node name="Clouds44" parent="Level/decrition" parent_id_path=PackedInt32Array(59523509) index="42" unique_id=979886000]
+position = Vector2(2178, -927)
+
+[node name="Clouds08" parent="Level/decrition" parent_id_path=PackedInt32Array(59523509) index="43" unique_id=1428106134]
+position = Vector2(-710, 2712)
+
+[node name="Label" parent="." index="10" unique_id=160230579]
+metadata/_edit_use_anchors_ = true
+
+[node name="ButtonPanel" parent="CardUI" parent_id_path=PackedInt32Array(1705366889) index="6" unique_id=276907494]
+metadata/_edit_use_anchors_ = true
+
+[node name="AutoBattle" parent="CardUI/ButtonPanel" index="0" unique_id=237619861]
+metadata/_edit_use_anchors_ = true

@@ -1,0 +1,21 @@
+[gd_resource type="Resource" script_class="UnitData" format=3 uid="uid://bm665riytrjct"]
+
+[ext_resource type="Script" uid="uid://2m1qlskaxcox" path="res://data/units/unit_data.gd" id="1_8uti7"]
+[ext_resource type="Resource" uid="uid://c16gv5qmt36f6" path="res://data/skills/orc_rider_dodge_attack.tres" id="1_yidy3"]
+[ext_resource type="Script" uid="uid://c4huhq7re2216" path="res://data/skills/skill_base.gd" id="2_yidy3"]
+[ext_resource type="Resource" uid="uid://dpsgxf2tqpbgc" path="res://data/skills/orc_rider_attack.tres" id="4_4rylu"]
+[ext_resource type="Resource" uid="uid://cc8j6ck6faq04" path="res://data/skills/orc_rider_power_attack.tres" id="5_l04up"]
+
+[resource]
+script = ExtResource("1_8uti7")
+monster_rank = 1
+unit_name = "哥布林骑手"
+unit_english_name = "orc_rider"
+unit_type = 17
+unit_team = "team_b"
+defence = 10
+dodge_rate = 0.2
+skills = Array[ExtResource("2_yidy3")]([ExtResource("4_4rylu"), ExtResource("5_l04up")])
+dodge_skill = ExtResource("1_yidy3")
+metadata/_data_table_id = 6
+hp_damage_value = 1

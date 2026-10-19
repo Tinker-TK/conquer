@@ -1,0 +1,42 @@
+{
+  "path": "res://assets/audio/ai/local_design/ai_combat/sfx_combat_priest_heal_v01.ogg",
+  "asset": "sfx_combat_priest_heal_v01",
+  "title": "牧师 · 治疗光辉 · A 清脆",
+  "category": "ai_combat",
+  "domain": "SFX",
+  "batch": "audition_20261019",
+  "provider": "local_design",
+  "recipe": "heal",
+  "variant": 1,
+  "seed": 901968028,
+  "prompt": "One gentle healing spell, soft rising glass and wood overtones with airy golden sparkle, reassuring major interval, clear quiet onset and smooth short decay, 1.15 seconds, intimate fantasy game effect. No choir, voice, music bed or large hall reverb.",
+  "author": "项目本地声音设计（CC0 分层素材＋原创程序合成）",
+  "source": "res://tools/audio/ai/produce_audition.py",
+  "license": "CC0-1.0",
+  "source_layers": [],
+  "changes": "分层混音、确定性变体、裁剪静音、44.1kHz 单声道、短淡入淡出、峰值控制、OGG；循环保留完整小节。",
+  "notes": "本批试听 · 本地制作；SFX；单次动作。",
+  "duration_seconds": 1.018,
+  "loop": false,
+  "features": {
+    "duration_seconds": 1.018,
+    "peak_dbfs": -3.05,
+    "rms_dbfs": -14.69,
+    "crest_db": 11.64,
+    "spectral_centroid_hz": 2582.0,
+    "zero_cross_rate": 0.0503,
+    "attack_ms": 239.1,
+    "tail_ms": 0.9
+  },
+  "channels": 1,
+  "sample_rate": 44100,
+  "seam_jump": null,
+  "sha256": "0eb6aab0bb5341df2c85c0d4ad87d5d53e867404fbf8a264625b42b009ceba7a",
+  "created_at": "2026-10-19T02:03:55+00:00",
+  "tags": [
+    "one-shot",
+    "soft-attack",
+    "balanced"
+  ],
+  "problems": []
+}

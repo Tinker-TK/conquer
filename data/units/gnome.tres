@@ -1,0 +1,19 @@
+[gd_resource type="Resource" script_class="UnitData" format=3 uid="uid://i65sq77pw35c"]
+
+[ext_resource type="Resource" path="res://data/skills/gnome_attack.tres" id="attack"]
+[ext_resource type="Script" uid="uid://2m1qlskaxcox" path="res://data/units/unit_data.gd" id="data"]
+[ext_resource type="Script" uid="uid://c4huhq7re2216" path="res://data/skills/skill_base.gd" id="skill_base"]
+
+[resource]
+script = ExtResource("data")
+unit_name = "地精"
+unit_english_name = "gnome"
+unit_type = 26
+unit_team = "team_b"
+max_hp = 70
+defence = 2
+attack = 10
+speed = 155.0
+max_upgrade_count = 0
+skills = Array[ExtResource("skill_base")]([ExtResource("attack")])
+combat_sound_profile = &"human"

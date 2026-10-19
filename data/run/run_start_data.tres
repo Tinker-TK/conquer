@@ -1,0 +1,14 @@
+[gd_resource type="Resource" script_class="RunStartData" format=3 uid="uid://8bahkj2ppy7i"]
+
+[ext_resource type="Script" uid="uid://c53uoxvxtxwo1" path="res://data/run/run_start_data.gd" id="1"]
+[ext_resource type="Resource" uid="uid://bfo1wndto12ls" path="res://data/units/soldier.tres" id="3"]
+[ext_resource type="Resource" uid="uid://bo4oy28cullfg" path="res://data/units/archer.tres" id="4"]
+[ext_resource type="Resource" uid="uid://c2vim02r61b6x" path="res://data/cards/power_enhance.tres" id="5_wff5f"]
+[ext_resource type="Resource" uid="uid://byrwrnq6q2rs0" path="res://data/cards/defend.tres" id="9_aa8ra"]
+[ext_resource type="Resource" path="res://data/cards/master_strategy.tres" id="strategy"]
+[ext_resource type="Script" uid="uid://b452136fqvyor" path="res://data/potions/potion_definition.gd" id="28_kn45g"]
+[ext_resource type="Script" uid="uid://be4bple3628ic" path="res://data/relics/relic_definition.gd" id="29_pscbg"]
+
+[resource]
+script = ExtResource("1")
+cards = Array[Resource]([ExtResource("strategy"), ExtResource("strategy"), ExtResource("3"), ExtResource("3"), ExtResource("3"), ExtResource("4"), ExtResource("4"), ExtResource("9_aa8ra"), ExtResource("9_aa8ra"), ExtResource("5_wff5f"), ExtResource("5_wff5f"), ExtResource("5_wff5f")])

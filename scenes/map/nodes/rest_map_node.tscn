@@ -1,0 +1,11 @@
+[gd_scene format=3 uid="uid://c0aq30y8c5hpo"]
+
+[ext_resource type="PackedScene" uid="uid://b2iqe6y8te6wt" path="res://scenes/map/nodes/map_node.tscn" id="1_2bwyu"]
+[ext_resource type="Texture2D" uid="uid://beiw0pumhrp1m" path="res://assets/tilemap/level_icon.png" id="2_lv8l2"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_kjb4c"]
+atlas = ExtResource("2_lv8l2")
+region = Rect2(1250, 190, 280, 260)
+
+[node name="RestMapNode" unique_id=460198952 instance=ExtResource("1_2bwyu")]
+icon_texture = SubResource("AtlasTexture_kjb4c")

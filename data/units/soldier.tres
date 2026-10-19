@@ -1,0 +1,21 @@
+[gd_resource type="Resource" script_class="UnitData" format=3 uid="uid://bfo1wndto12ls"]
+
+[ext_resource type="Texture2D" uid="uid://b03cl88t51sbk" path="res://assets/cards/illustrations/soldier.png" id="1_lpju0"]
+[ext_resource type="Script" uid="uid://2m1qlskaxcox" path="res://data/units/unit_data.gd" id="1_rw0ri"]
+[ext_resource type="Script" uid="uid://c4huhq7re2216" path="res://data/skills/skill_base.gd" id="2_2brpc"]
+[ext_resource type="Resource" uid="uid://d1h0edune77o3" path="res://data/skills/normal_attack.tres" id="3_eolb5"]
+[ext_resource type="Resource" uid="uid://5q4ecjo5o5i0" path="res://data/skills/soldier_power_attack.tres" id="4_eolb5"]
+[ext_resource type="Resource" path="res://data/skills/soldier_missile.tres" id="5_missile"]
+
+[resource]
+script = ExtResource("1_rw0ri")
+defence = 5
+max_hp = 100
+unit_name = "士兵"
+attack = 10
+card_name = "战士召唤"
+card_image = ExtResource("1_lpju0")
+card_discription = "征召1名士兵。普攻可在300范围内射箭，近身使用近战。"
+upgrade_ability_points = 2
+skills = Array[ExtResource("2_2brpc")]([ExtResource("3_eolb5"), ExtResource("4_eolb5"), ExtResource("5_missile")])
+metadata/_data_table_id = 8

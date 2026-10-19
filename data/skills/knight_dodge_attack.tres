@@ -1,0 +1,13 @@
+[gd_resource type="Resource" format=3 uid="uid://c6qk3ghsgbn8c"]
+
+[ext_resource type="Script" uid="uid://c7tpmtstjw8vh" path="res://scripts/skills/dodge_attack.gd" id="1_wdk83"]
+
+[resource]
+script = ExtResource("1_wdk83")
+skill_name = "防守反击"
+attack_rate = 1.2
+priority = 2
+cast_animation = "attack_02"
+hit_frame = Array[int]([3, 7])
+upgraded_stun_duration = 2.0
+metadata/_data_table_id = 4

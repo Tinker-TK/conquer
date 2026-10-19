@@ -1,0 +1,16 @@
+[gd_resource type="Resource" format=3 uid="uid://hdodgkcxkpyq"]
+
+[ext_resource type="Script" path="res://scripts/skills/bear_earth_shake.gd" id="1_h7xg5"]
+
+[resource]
+script = ExtResource("1_h7xg5")
+unlock_upgrade_levels = Array[int]([0])
+skill_name = "撼地"
+attack_rate = 0.8
+cooldown = 8.0
+priority = 0
+cast_range = 350.0
+manual_finish = true
+cast_animation = "attack_03"
+hit_frame = Array[int]([5])
+metadata/_data_table_id = 4

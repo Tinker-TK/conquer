@@ -1,0 +1,11 @@
+[gd_resource type="Resource" format=3 uid="uid://gwjtgf7nn6sm"]
+
+[ext_resource type="Script" uid="uid://l5slg1wgnhew" path="res://scripts/skills/normal_attack.gd" id="1_5lpol"]
+
+[resource]
+script = ExtResource("1_5lpol")
+skill_name = "强力攻击"
+attack_rate = 1.5
+cooldown = 4.0
+cast_animation = "attack_02"
+metadata/_data_table_id = 4

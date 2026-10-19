@@ -1,0 +1,39 @@
+{
+  "id": "ui_cancel",
+  "variant": 1,
+  "asset": "sfx_ui_cancel_v01",
+  "provider": "procedural",
+  "category": "ui",
+  "title": "取消",
+  "prompt": "low muted UI cancel thunk, short descending wooden note",
+  "source_prompt": "low muted UI cancel thunk, short descending wooden note",
+  "duration_seconds": 0.4,
+  "output_format": "wav_48000",
+  "tags": [
+    "ui",
+    "cancel",
+    "low"
+  ],
+  "license": "CC0-1.0",
+  "author": "项目程序合成（占位）",
+  "source": "res://tools/audio/ai/procedural.py",
+  "recipe": "ui_cancel",
+  "created_at": "2026-10-18T17:03:23+00:00",
+  "sha256": "b74fdb5616c8b344cdc63862e8271a48bc13f243bef4dd88a92465dac911185b",
+  "path": "res://assets/audio/ai/procedural/ui/sfx_ui_cancel_v01.ogg",
+  "loop": false,
+  "sample_rate": 44100,
+  "channels": 1,
+  "features": {
+    "duration_seconds": 0.45,
+    "peak_dbfs": -1.5,
+    "rms_dbfs": -12.84,
+    "crest_db": 11.34,
+    "spectral_centroid_hz": 561.5,
+    "zero_cross_rate": 0.0176,
+    "attack_ms": 108.7,
+    "tail_ms": 1.8
+  },
+  "seam_jump": null,
+  "bytes": 5093
+}

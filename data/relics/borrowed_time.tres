@@ -1,0 +1,20 @@
+[gd_resource type="Resource" script_class="RelicDefinition" format=3]
+
+[ext_resource type="Script" path="res://data/relics/relic_definition.gd" id="1"]
+[ext_resource type="Texture2D" path="res://assets/ui_redrawn/icons/relic_clover.png" id="2"]
+
+[resource]
+script = ExtResource("1")
+id = &"borrowed_time"
+display_name = "借来的时间"
+description = "手牌 ≥3 时，下回合能量 +1；每场 3 次。"
+icon = ExtResource("2")
+kind = 5
+rarity = 1
+tags = Array[StringName]([&"cycle"])
+trigger = 16
+handler = &"borrowed_time"
+max_per_battle = 3
+max_per_round = 0
+cooldown_seconds = 0.0
+priority = 0

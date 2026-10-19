@@ -1,0 +1,38 @@
+[gd_resource type="Resource" script_class="PotionDefinition" format=3]
+
+[ext_resource type="Script" path="res://data/potions/potion_definition.gd" id="1"]
+[ext_resource type="Script" path="res://data/potions/potion_effect.gd" id="2"]
+[ext_resource type="Texture2D" path="res://assets/ui/potions/frost_flask.svg" id="3"]
+
+[sub_resource type="Resource" id="Effect0"]
+script = ExtResource("2")
+kind = 0
+amount = 25.0
+radius = 90.0
+
+[sub_resource type="Resource" id="Effect1"]
+script = ExtResource("2")
+kind = 1
+amount = 60.0
+radius = 90.0
+duration = 3.0
+status_id = &"slow"
+
+[resource]
+script = ExtResource("1")
+id = &"frost_flask"
+display_name = "寒霜瓶"
+description = "对半径90内敌人造成25点伤害，移速-60，持续3秒。"
+icon = ExtResource("3")
+kind = 4
+rarity = 0
+target_mode = 0
+tags = Array[StringName]([&"控制"])
+min_act = 1
+price = 45
+prep_usable = false
+max_per_run = 0
+radius = 90.0
+tint = Color(0.4667, 0.8745, 0.9882, 1)
+impact_vfx = "IceBombImpactVFX"
+effects = Array[ExtResource("2")]([SubResource("Effect0"), SubResource("Effect1")])

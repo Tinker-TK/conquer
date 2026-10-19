@@ -1,0 +1,94 @@
+[gd_resource type="Resource" script_class="CombatSoundBank" format=3]
+
+[ext_resource type="Script" path="res://data/audio/combat_sound_bank.gd" id="1"]
+[ext_resource type="AudioStream" path="res://assets/audio/combat/kenney-rpg/knifeSlice.ogg" id="2"]
+[ext_resource type="AudioStream" path="res://assets/audio/combat/kenney-rpg/knifeSlice2.ogg" id="3"]
+[ext_resource type="AudioStream" path="res://assets/audio/combat/kenney-rpg/chop.ogg" id="4"]
+[ext_resource type="AudioStream" path="res://assets/audio/combat/kenney-rpg/dropLeather.ogg" id="5"]
+[ext_resource type="AudioStream" path="res://assets/audio/combat/kenney-impact/impactPunch_medium_000.ogg" id="6"]
+[ext_resource type="AudioStream" path="res://assets/audio/combat/kenney-impact/impactPunch_medium_001.ogg" id="7"]
+[ext_resource type="AudioStream" path="res://assets/audio/combat/kenney-impact/impactPunch_heavy_000.ogg" id="8"]
+[ext_resource type="AudioStream" path="res://assets/audio/combat/kenney-impact/impactMetal_light_000.ogg" id="9"]
+[ext_resource type="AudioStream" path="res://assets/audio/combat/kenney-impact/impactMetal_light_001.ogg" id="10"]
+[ext_resource type="AudioStream" path="res://assets/audio/combat/kenney-impact/impactGlass_light_000.ogg" id="11"]
+[ext_resource type="AudioStream" path="res://assets/audio/combat/kenney-impact/impactGlass_light_001.ogg" id="12"]
+[ext_resource type="AudioStream" path="res://assets/audio/combat/kenney-impact/impactWood_medium_000.ogg" id="13"]
+[ext_resource type="AudioStream" path="res://assets/audio/combat/kenney-impact/impactWood_medium_001.ogg" id="14"]
+[ext_resource type="AudioStream" path="res://assets/audio/combat/rubberduck-rpg/blade_01.ogg" id="15"]
+[ext_resource type="AudioStream" path="res://assets/audio/combat/rubberduck-rpg/wood_01.ogg" id="16"]
+[ext_resource type="AudioStream" path="res://assets/audio/combat/rubberduck-rpg/wood_02.ogg" id="17"]
+[ext_resource type="AudioStream" path="res://assets/audio/combat/rubberduck-rpg/creature_die_01.ogg" id="18"]
+[ext_resource type="AudioStream" path="res://assets/audio/combat/rubberduck-rpg/creature_hurt_01.ogg" id="19"]
+[ext_resource type="AudioStream" path="res://assets/audio/combat/rubberduck-rpg/creature_hurt_02.ogg" id="20"]
+[ext_resource type="AudioStream" path="res://assets/audio/combat/rubberduck-rpg/creature_monster_01.ogg" id="21"]
+[ext_resource type="AudioStream" path="res://assets/audio/combat/rubberduck-rpg/creature_monster_02.ogg" id="22"]
+[ext_resource type="AudioStream" path="res://assets/audio/combat/rubberduck-rpg/creature_slime_01.ogg" id="23"]
+[ext_resource type="AudioStream" path="res://assets/audio/combat/rubberduck-rpg/creature_slime_02.ogg" id="24"]
+[ext_resource type="AudioStream" path="res://assets/audio/combat/rubberduck-rpg/creature_slime_03.ogg" id="25"]
+[ext_resource type="AudioStream" path="res://assets/audio/combat/rubberduck-rpg/spell_01.ogg" id="26"]
+[ext_resource type="AudioStream" path="res://assets/audio/combat/rubberduck-rpg/spell_02.ogg" id="27"]
+[ext_resource type="AudioStream" path="res://assets/audio/combat/rubberduck-rpg/spell_fire_01.ogg" id="28"]
+[ext_resource type="AudioStream" path="res://assets/audio/combat/rubberduck-rpg/spell_fire_02.ogg" id="29"]
+[ext_resource type="AudioStream" path="res://assets/audio/combat/rubberduck-rpg/spell_fire_03.ogg" id="30"]
+[ext_resource type="AudioStream" path="res://assets/audio/combat/artisticdude-battle/Bow.wav" id="31"]
+[ext_resource type="AudioStream" path="res://assets/audio/ai/elevenlabs/ai_combat/sfx_combat_sword_tight_v01.ogg" id="32"]
+[ext_resource type="AudioStream" path="res://assets/audio/ai/local_design/ai_combat/sfx_combat_sword_cut_v01.ogg" id="33"]
+[ext_resource type="AudioStream" path="res://assets/audio/ai/local_design/ai_combat/sfx_combat_sword_cut_v02.ogg" id="34"]
+[ext_resource type="AudioStream" path="res://assets/audio/ai/local_design/ai_combat/sfx_combat_axe_cleave_v01.ogg" id="35"]
+[ext_resource type="AudioStream" path="res://assets/audio/ai/local_design/ai_combat/sfx_combat_axe_cleave_v02.ogg" id="36"]
+[ext_resource type="AudioStream" path="res://assets/audio/ai/local_design/ai_combat/sfx_combat_bow_release_v01.ogg" id="37"]
+[ext_resource type="AudioStream" path="res://assets/audio/ai/local_design/ai_combat/sfx_combat_bow_release_v02.ogg" id="38"]
+[ext_resource type="AudioStream" path="res://assets/audio/ai/local_design/ai_combat/sfx_combat_body_hit_v01.ogg" id="39"]
+[ext_resource type="AudioStream" path="res://assets/audio/ai/local_design/ai_combat/sfx_combat_body_hit_v02.ogg" id="40"]
+[ext_resource type="AudioStream" path="res://assets/audio/ai/local_design/ai_combat/sfx_combat_fireball_cast_v01.ogg" id="41"]
+[ext_resource type="AudioStream" path="res://assets/audio/ai/local_design/ai_combat/sfx_combat_fireball_cast_v02.ogg" id="42"]
+[ext_resource type="AudioStream" path="res://assets/audio/ai/local_design/ai_combat/sfx_combat_fireball_hit_v01.ogg" id="43"]
+[ext_resource type="AudioStream" path="res://assets/audio/ai/local_design/ai_combat/sfx_combat_fireball_hit_v02.ogg" id="44"]
+[ext_resource type="AudioStream" path="res://assets/audio/ai/local_design/ai_combat/sfx_combat_frost_break_v01.ogg" id="45"]
+[ext_resource type="AudioStream" path="res://assets/audio/ai/local_design/ai_combat/sfx_combat_frost_break_v02.ogg" id="46"]
+[ext_resource type="AudioStream" path="res://assets/audio/ai/local_design/ai_combat/sfx_combat_thunder_strike_v01.ogg" id="47"]
+[ext_resource type="AudioStream" path="res://assets/audio/ai/local_design/ai_combat/sfx_combat_thunder_strike_v02.ogg" id="48"]
+[ext_resource type="AudioStream" path="res://assets/audio/ai/local_design/ai_combat/sfx_combat_priest_heal_v01.ogg" id="49"]
+[ext_resource type="AudioStream" path="res://assets/audio/ai/local_design/ai_combat/sfx_combat_priest_heal_v02.ogg" id="50"]
+[ext_resource type="AudioStream" path="res://assets/audio/library/swishes/swish_5.ogg" id="51"]
+[ext_resource type="AudioStream" path="res://assets/audio/library/swishes/swish_6.ogg" id="52"]
+[ext_resource type="AudioStream" path="res://assets/audio/ai/local_design/ai_combat/sfx_combat_blade_parry_v01.ogg" id="53"]
+[ext_resource type="AudioStream" path="res://assets/audio/ai/local_design/ai_combat/sfx_combat_blade_parry_v02.ogg" id="54"]
+
+[resource]
+script = ExtResource("1")
+melee = Array[AudioStream]([ExtResource("32"), ExtResource("33"), ExtResource("34")])
+sword = Array[AudioStream]([ExtResource("32"), ExtResource("33"), ExtResource("34")])
+axe = Array[AudioStream]([ExtResource("35"), ExtResource("36")])
+spear = Array[AudioStream]([ExtResource("33"), ExtResource("34")])
+charge = Array[AudioStream]([ExtResource("51"), ExtResource("52")])
+staff = Array[AudioStream]([ExtResource("16"), ExtResource("17")])
+heavy = Array[AudioStream]([ExtResource("51"), ExtResource("52")])
+claw = Array[AudioStream]([ExtResource("2"), ExtResource("3"), ExtResource("15")])
+bite = Array[AudioStream]([ExtResource("19"), ExtResource("20")])
+stone = Array[AudioStream]([ExtResource("38")])
+lightning = Array[AudioStream]([ExtResource("47"), ExtResource("48")])
+bow = Array[AudioStream]([ExtResource("37"), ExtResource("38")])
+fire = Array[AudioStream]([ExtResource("41"), ExtResource("42")])
+ice = Array[AudioStream]([ExtResource("45"), ExtResource("46")])
+magic = Array[AudioStream]([ExtResource("26"), ExtResource("27")])
+beast = Array[AudioStream]([ExtResource("19"), ExtResource("20")])
+slime = Array[AudioStream]([ExtResource("23"), ExtResource("24")])
+heal = Array[AudioStream]([ExtResource("49"), ExtResource("50")])
+summon = Array[AudioStream]([ExtResource("26")])
+hit = Array[AudioStream]([ExtResource("39"), ExtResource("40")])
+hit_bow = Array[AudioStream]([ExtResource("13"), ExtResource("14")])
+hit_fire = Array[AudioStream]([ExtResource("43"), ExtResource("44")])
+hit_ice = Array[AudioStream]([ExtResource("45"), ExtResource("46")])
+hit_magic = Array[AudioStream]([ExtResource("8")])
+hit_armor = Array[AudioStream]([ExtResource("9"), ExtResource("10")])
+hit_heavy = Array[AudioStream]([ExtResource("8"), ExtResource("4")])
+hit_stone = Array[AudioStream]([ExtResource("13"), ExtResource("14")])
+hit_lightning = Array[AudioStream]([ExtResource("47"), ExtResource("48")])
+hit_undead = Array[AudioStream]([ExtResource("13"), ExtResource("14")])
+hit_slime = Array[AudioStream]([ExtResource("24"), ExtResource("25")])
+block = Array[AudioStream]([ExtResource("53"), ExtResource("54")])
+death_human = Array[AudioStream]([ExtResource("5")])
+death_monster = Array[AudioStream]([ExtResource("18"), ExtResource("21"), ExtResource("22")])
+death_undead = Array[AudioStream]([ExtResource("16"), ExtResource("17")])
+death_slime = Array[AudioStream]([ExtResource("25")])

@@ -1,0 +1,26 @@
+[gd_resource type="Resource" script_class="UnitData" format=3 uid="uid://dkd4gq4fves0q"]
+
+[ext_resource type="Texture2D" uid="uid://htunyteeydsb" path="res://assets/cards/illustrations/wizard.png" id="1_8tv2h"]
+[ext_resource type="Script" uid="uid://2m1qlskaxcox" path="res://data/units/unit_data.gd" id="1_ay5lv"]
+[ext_resource type="Script" uid="uid://c4huhq7re2216" path="res://data/skills/skill_base.gd" id="2_60ivx"]
+[ext_resource type="Resource" uid="uid://djwidcuq164ps" path="res://data/skills/wizard_fire_ball.tres" id="3_60ivx"]
+[ext_resource type="Resource" uid="uid://b1y1otd37u2c5" path="res://data/skills/wizard_ice_crash.tres" id="4_bg0sa"]
+[ext_resource type="Resource" path="res://data/skills/wizard_frost_storm_upgraded.tres" id="5_frost"]
+
+[resource]
+script = ExtResource("1_ay5lv")
+max_hp = 115
+unit_name = "巫师"
+unit_english_name = "wizard"
+unit_type = 9
+defence = 3
+attack = 23
+card_cost = 3
+card_name = "巫师征召"
+card_image = ExtResource("1_8tv2h")
+card_discription = "征召1名巫师。
+火球：远程攻击，造成120%攻击力伤害。
+霜暴：发射3+x颗冰晶，每颗固定10点伤害，冷却8秒；x为消耗牌堆张数。"
+upgrade_ability_points = 2
+skills = Array[ExtResource("2_60ivx")]([ExtResource("3_60ivx"), ExtResource("4_bg0sa"), ExtResource("5_frost")])
+metadata/_data_table_id = 12

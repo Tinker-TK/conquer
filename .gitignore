@@ -1,0 +1,20 @@
+# Godot 4+ specific ignores
+.godot/
+/android/
+.maintenance/
+__pycache__/
+*.py[cod]
+node_modules/
+builds/
+
+# AI 音频流水线：密钥、原始生成缓存、手动下载收件箱不入库
+tools/audio/ai/.elevenlabs_key
+assets/audio/ai/_raw/
+assets/audio/ai/inbox/
+
+# 本地/发布杂项
+*.bak
+.vscode/
+Thumbs.db
+desktop.ini
+screenshots/_shot*

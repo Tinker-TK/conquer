@@ -1,0 +1,372 @@
+{
+  "collected_on": "2026-10-10",
+  "files": [
+    {
+      "path": "kenney-rpg/knifeSlice.ogg",
+      "source_path": "Audio/knifeSlice.ogg",
+      "pack": "kenney-rpg",
+      "source": "https://kenney.nl/assets/rpg-audio",
+      "author": "Kenney",
+      "license": "CC0-1.0",
+      "sha256": "4cd96dc630bed9840c15f1dd2306da2cc56a4da26a5d3f1a03c5a7265ac5e54f",
+      "categories": [
+        "melee"
+      ]
+    },
+    {
+      "path": "kenney-rpg/knifeSlice2.ogg",
+      "source_path": "Audio/knifeSlice2.ogg",
+      "pack": "kenney-rpg",
+      "source": "https://kenney.nl/assets/rpg-audio",
+      "author": "Kenney",
+      "license": "CC0-1.0",
+      "sha256": "6c2064d0ef988d1ec3d56868e823ea8823a5cac00f2742560052633529407def",
+      "categories": [
+        "melee"
+      ]
+    },
+    {
+      "path": "kenney-rpg/chop.ogg",
+      "source_path": "Audio/chop.ogg",
+      "pack": "kenney-rpg",
+      "source": "https://kenney.nl/assets/rpg-audio",
+      "author": "Kenney",
+      "license": "CC0-1.0",
+      "sha256": "d00c2b3c9fff07e376145c8c8c45c90e5084ec192f6ce0387db233f7b86f1486",
+      "categories": [
+        "hit"
+      ]
+    },
+    {
+      "path": "kenney-rpg/dropLeather.ogg",
+      "source_path": "Audio/dropLeather.ogg",
+      "pack": "kenney-rpg",
+      "source": "https://kenney.nl/assets/rpg-audio",
+      "author": "Kenney",
+      "license": "CC0-1.0",
+      "sha256": "097e1d3b74949b0145fda0519d40b7e0773ab82ec4858727f95be830927e1a45",
+      "categories": [
+        "death_human"
+      ]
+    },
+    {
+      "path": "kenney-impact/impactPunch_medium_000.ogg",
+      "source_path": "Audio/impactPunch_medium_000.ogg",
+      "pack": "kenney-impact",
+      "source": "https://kenney.nl/assets/impact-sounds",
+      "author": "Kenney",
+      "license": "CC0-1.0",
+      "sha256": "486988aa2d6440ffc4c62a0e8ccf3c23673ba84424bd4723378d451b7255eb5c",
+      "categories": [
+        "hit"
+      ]
+    },
+    {
+      "path": "kenney-impact/impactPunch_medium_001.ogg",
+      "source_path": "Audio/impactPunch_medium_001.ogg",
+      "pack": "kenney-impact",
+      "source": "https://kenney.nl/assets/impact-sounds",
+      "author": "Kenney",
+      "license": "CC0-1.0",
+      "sha256": "e71d23abcc3f10d9d6bc9615b2a431fff70b12333a5fcdd9964457564ace4349",
+      "categories": [
+        "hit"
+      ]
+    },
+    {
+      "path": "kenney-impact/impactPunch_heavy_000.ogg",
+      "source_path": "Audio/impactPunch_heavy_000.ogg",
+      "pack": "kenney-impact",
+      "source": "https://kenney.nl/assets/impact-sounds",
+      "author": "Kenney",
+      "license": "CC0-1.0",
+      "sha256": "b33a8f14068aec24ec69ba85e5e87fdc41228975f6a1a3e44a6e7d6fc3d9f8d8",
+      "categories": [
+        "hit_magic"
+      ]
+    },
+    {
+      "path": "kenney-impact/impactMetal_light_000.ogg",
+      "source_path": "Audio/impactMetal_light_000.ogg",
+      "pack": "kenney-impact",
+      "source": "https://kenney.nl/assets/impact-sounds",
+      "author": "Kenney",
+      "license": "CC0-1.0",
+      "sha256": "33b5e6e37c6e9d54e07bf5a89b12c76e879f40c1ea83cdd82714df1d6f9fec6d",
+      "categories": [
+        "block"
+      ]
+    },
+    {
+      "path": "kenney-impact/impactMetal_light_001.ogg",
+      "source_path": "Audio/impactMetal_light_001.ogg",
+      "pack": "kenney-impact",
+      "source": "https://kenney.nl/assets/impact-sounds",
+      "author": "Kenney",
+      "license": "CC0-1.0",
+      "sha256": "fba69c467ddd85da7b1d82e259f936b876d9ba6a3d6f1b24bdd10468e46bfe08",
+      "categories": [
+        "block"
+      ]
+    },
+    {
+      "path": "kenney-impact/impactGlass_light_000.ogg",
+      "source_path": "Audio/impactGlass_light_000.ogg",
+      "pack": "kenney-impact",
+      "source": "https://kenney.nl/assets/impact-sounds",
+      "author": "Kenney",
+      "license": "CC0-1.0",
+      "sha256": "d750cf88097d0c3e69920e6e14496e1444e1a9da01aa4cca8f5ec8cb44c57b4f",
+      "categories": [
+        "hit_ice"
+      ]
+    },
+    {
+      "path": "kenney-impact/impactGlass_light_001.ogg",
+      "source_path": "Audio/impactGlass_light_001.ogg",
+      "pack": "kenney-impact",
+      "source": "https://kenney.nl/assets/impact-sounds",
+      "author": "Kenney",
+      "license": "CC0-1.0",
+      "sha256": "05e513fbd42829060eb37855f8c3866722ec5c39a8937c9bfde518cc609effa2",
+      "categories": [
+        "hit_ice"
+      ]
+    },
+    {
+      "path": "kenney-impact/impactWood_medium_000.ogg",
+      "source_path": "Audio/impactWood_medium_000.ogg",
+      "pack": "kenney-impact",
+      "source": "https://kenney.nl/assets/impact-sounds",
+      "author": "Kenney",
+      "license": "CC0-1.0",
+      "sha256": "1723a9fd25103ed41af06054814e84e65f4a772bac86ab2dc927da93d9592ff5",
+      "categories": [
+        "hit_bow",
+        "hit_undead"
+      ]
+    },
+    {
+      "path": "kenney-impact/impactWood_medium_001.ogg",
+      "source_path": "Audio/impactWood_medium_001.ogg",
+      "pack": "kenney-impact",
+      "source": "https://kenney.nl/assets/impact-sounds",
+      "author": "Kenney",
+      "license": "CC0-1.0",
+      "sha256": "15271dbe8e2872dbb0ff1aeb7b12b2d2b92b7c1951c88532b9ab9158c36dfc73",
+      "categories": [
+        "hit_bow",
+        "hit_undead"
+      ]
+    },
+    {
+      "path": "rubberduck-rpg/blade_01.ogg",
+      "source_path": "blade_01.ogg",
+      "pack": "rubberduck-rpg",
+      "source": "https://opengameart.org/content/80-cc0-rpg-sfx",
+      "author": "rubberduck",
+      "license": "CC0-1.0",
+      "sha256": "caf7a7cb9b25cda4bd487c1d12d18b74a34bb18c816fd67277cf3c8d7ef32a3a",
+      "categories": [
+        "melee"
+      ]
+    },
+    {
+      "path": "rubberduck-rpg/wood_01.ogg",
+      "source_path": "wood_01.ogg",
+      "pack": "rubberduck-rpg",
+      "source": "https://opengameart.org/content/80-cc0-rpg-sfx",
+      "author": "rubberduck",
+      "license": "CC0-1.0",
+      "sha256": "55d4527a1f7d8e158eff0921f7a533340ab6be69a7b9b52fdac7a19b9d8e1cb2",
+      "categories": [
+        "death_undead"
+      ]
+    },
+    {
+      "path": "rubberduck-rpg/wood_02.ogg",
+      "source_path": "wood_02.ogg",
+      "pack": "rubberduck-rpg",
+      "source": "https://opengameart.org/content/80-cc0-rpg-sfx",
+      "author": "rubberduck",
+      "license": "CC0-1.0",
+      "sha256": "e64b95a1ec7675f28f8837ee4e4e81aa8e5b28e272159a0b3ed124fed037fc4f",
+      "categories": [
+        "death_undead"
+      ]
+    },
+    {
+      "path": "rubberduck-rpg/creature_die_01.ogg",
+      "source_path": "creature_die_01.ogg",
+      "pack": "rubberduck-rpg",
+      "source": "https://opengameart.org/content/80-cc0-rpg-sfx",
+      "author": "rubberduck",
+      "license": "CC0-1.0",
+      "sha256": "b34a816a401c5d80c77a61dabbedef7d1918a01320bbb67286c70f22db4acd43",
+      "categories": [
+        "death_monster"
+      ]
+    },
+    {
+      "path": "rubberduck-rpg/creature_hurt_01.ogg",
+      "source_path": "creature_hurt_01.ogg",
+      "pack": "rubberduck-rpg",
+      "source": "https://opengameart.org/content/80-cc0-rpg-sfx",
+      "author": "rubberduck",
+      "license": "CC0-1.0",
+      "sha256": "9948f9ce067e1aae7bd780e974d51ceae03f2611a52afffb0e092ba47e9dc8e1",
+      "categories": [
+        "beast"
+      ]
+    },
+    {
+      "path": "rubberduck-rpg/creature_hurt_02.ogg",
+      "source_path": "creature_hurt_02.ogg",
+      "pack": "rubberduck-rpg",
+      "source": "https://opengameart.org/content/80-cc0-rpg-sfx",
+      "author": "rubberduck",
+      "license": "CC0-1.0",
+      "sha256": "a4ea983e62ace874754c51d78239bd8b6532227119bd511c38fa827b2ccbca70",
+      "categories": [
+        "beast"
+      ]
+    },
+    {
+      "path": "rubberduck-rpg/creature_monster_01.ogg",
+      "source_path": "creature_monster_01.ogg",
+      "pack": "rubberduck-rpg",
+      "source": "https://opengameart.org/content/80-cc0-rpg-sfx",
+      "author": "rubberduck",
+      "license": "CC0-1.0",
+      "sha256": "28d047e95058cecc3513eb831d14072318526fcb9207d8a50aad0f666e17893a",
+      "categories": [
+        "death_monster"
+      ]
+    },
+    {
+      "path": "rubberduck-rpg/creature_monster_02.ogg",
+      "source_path": "creature_monster_02.ogg",
+      "pack": "rubberduck-rpg",
+      "source": "https://opengameart.org/content/80-cc0-rpg-sfx",
+      "author": "rubberduck",
+      "license": "CC0-1.0",
+      "sha256": "2892a32ddfc8d0fc3896f6487adf5a2eb6f3f5766fa02151bddd55e18f218f2f",
+      "categories": [
+        "death_monster"
+      ]
+    },
+    {
+      "path": "rubberduck-rpg/creature_slime_01.ogg",
+      "source_path": "creature_slime_01.ogg",
+      "pack": "rubberduck-rpg",
+      "source": "https://opengameart.org/content/80-cc0-rpg-sfx",
+      "author": "rubberduck",
+      "license": "CC0-1.0",
+      "sha256": "746d6ef073abfadd43fe184c50c6a2528350d4f566f2c0f54cd51ff0eb665118",
+      "categories": [
+        "slime"
+      ]
+    },
+    {
+      "path": "rubberduck-rpg/creature_slime_02.ogg",
+      "source_path": "creature_slime_02.ogg",
+      "pack": "rubberduck-rpg",
+      "source": "https://opengameart.org/content/80-cc0-rpg-sfx",
+      "author": "rubberduck",
+      "license": "CC0-1.0",
+      "sha256": "8c26b66076752b712dad7be704a3e4e11d3a49847fbd804ba7f858024ff33c8d",
+      "categories": [
+        "slime",
+        "hit_slime"
+      ]
+    },
+    {
+      "path": "rubberduck-rpg/creature_slime_03.ogg",
+      "source_path": "creature_slime_03.ogg",
+      "pack": "rubberduck-rpg",
+      "source": "https://opengameart.org/content/80-cc0-rpg-sfx",
+      "author": "rubberduck",
+      "license": "CC0-1.0",
+      "sha256": "0edd014144dbce5ff0386647c25e0c206ae3b382a16683240ab188bd926da8eb",
+      "categories": [
+        "hit_slime",
+        "death_slime"
+      ]
+    },
+    {
+      "path": "rubberduck-rpg/spell_01.ogg",
+      "source_path": "spell_01.ogg",
+      "pack": "rubberduck-rpg",
+      "source": "https://opengameart.org/content/80-cc0-rpg-sfx",
+      "author": "rubberduck",
+      "license": "CC0-1.0",
+      "sha256": "09821a53c418c5eeeac4fa25bada9d245e822fed302eeeae9ae4151522a45ae5",
+      "categories": [
+        "magic",
+        "summon"
+      ]
+    },
+    {
+      "path": "rubberduck-rpg/spell_02.ogg",
+      "source_path": "spell_02.ogg",
+      "pack": "rubberduck-rpg",
+      "source": "https://opengameart.org/content/80-cc0-rpg-sfx",
+      "author": "rubberduck",
+      "license": "CC0-1.0",
+      "sha256": "bf9c48b76921e56aa266172d969a2c08215d6ce0ffae7c3584f23fa05d3f8bd4",
+      "categories": [
+        "ice",
+        "magic",
+        "heal"
+      ]
+    },
+    {
+      "path": "rubberduck-rpg/spell_fire_01.ogg",
+      "source_path": "spell_fire_01.ogg",
+      "pack": "rubberduck-rpg",
+      "source": "https://opengameart.org/content/80-cc0-rpg-sfx",
+      "author": "rubberduck",
+      "license": "CC0-1.0",
+      "sha256": "02fa3a2c6e79e868e546802f45127c5cdda69aba6d5a24ac997ea66f81a816cb",
+      "categories": [
+        "fire"
+      ]
+    },
+    {
+      "path": "rubberduck-rpg/spell_fire_02.ogg",
+      "source_path": "spell_fire_02.ogg",
+      "pack": "rubberduck-rpg",
+      "source": "https://opengameart.org/content/80-cc0-rpg-sfx",
+      "author": "rubberduck",
+      "license": "CC0-1.0",
+      "sha256": "bf1eef4993f0adb4bd3a1c1ec91f8f6e4ddeb32d922671a14561846d5b7cab98",
+      "categories": [
+        "fire"
+      ]
+    },
+    {
+      "path": "rubberduck-rpg/spell_fire_03.ogg",
+      "source_path": "spell_fire_03.ogg",
+      "pack": "rubberduck-rpg",
+      "source": "https://opengameart.org/content/80-cc0-rpg-sfx",
+      "author": "rubberduck",
+      "license": "CC0-1.0",
+      "sha256": "2e4edee4ff8d7898198f1ab5213e086965e14a665cb947d53759505e28ddd3e4",
+      "categories": [
+        "hit_fire"
+      ]
+    },
+    {
+      "path": "artisticdude-battle/Bow.wav",
+      "source_path": "battle_sound_effects/Bow.wav",
+      "pack": "artisticdude-battle",
+      "source": "https://opengameart.org/content/battle-sound-effects",
+      "author": "artisticdude (submitted by Ogrebane)",
+      "license": "CC0-1.0",
+      "sha256": "0dc8cf132cf583563936ac3a4d776e196210d5f6703b4ebdd7c68e8f35b9f3e3",
+      "categories": [
+        "bow"
+      ]
+    }
+  ]
+}

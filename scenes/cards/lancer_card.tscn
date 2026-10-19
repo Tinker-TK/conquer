@@ -1,0 +1,7 @@
+[gd_scene format=3 uid="uid://81upapd5eovj"]
+
+[ext_resource type="PackedScene" uid="uid://brwy2m2g1kqpo" path="res://scenes/cards/unit_card.tscn" id="1_462vg"]
+[ext_resource type="Resource" uid="uid://df4y80tcg6evu" path="res://data/units/lancer.tres" id="2_462vg"]
+
+[node name="LancerCard" unique_id=964477398 instance=ExtResource("1_462vg")]
+unit_data = ExtResource("2_462vg")

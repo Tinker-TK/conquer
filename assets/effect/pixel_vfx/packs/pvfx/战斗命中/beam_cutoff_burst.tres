@@ -1,0 +1,82 @@
+[gd_resource type="SpriteFrames" load_steps=16 format=3]
+
+[ext_resource type="Texture2D" path="res://assets/effect/pixel_vfx/packs/pvfx/战斗命中/beam_cutoff_burst.png" id="1"]
+
+[sub_resource type="AtlasTexture" id="Atlas_0"]
+atlas = ExtResource("1")
+region = Rect2(0, 0, 96, 96)
+
+[sub_resource type="AtlasTexture" id="Atlas_1"]
+atlas = ExtResource("1")
+region = Rect2(96, 0, 96, 96)
+
+[sub_resource type="AtlasTexture" id="Atlas_2"]
+atlas = ExtResource("1")
+region = Rect2(192, 0, 96, 96)
+
+[sub_resource type="AtlasTexture" id="Atlas_3"]
+atlas = ExtResource("1")
+region = Rect2(288, 0, 96, 96)
+
+[sub_resource type="AtlasTexture" id="Atlas_4"]
+atlas = ExtResource("1")
+region = Rect2(384, 0, 96, 96)
+
+[sub_resource type="AtlasTexture" id="Atlas_5"]
+atlas = ExtResource("1")
+region = Rect2(480, 0, 96, 96)
+
+[sub_resource type="AtlasTexture" id="Atlas_6"]
+atlas = ExtResource("1")
+region = Rect2(576, 0, 96, 96)
+
+[sub_resource type="AtlasTexture" id="Atlas_7"]
+atlas = ExtResource("1")
+region = Rect2(672, 0, 96, 96)
+
+[sub_resource type="AtlasTexture" id="Atlas_8"]
+atlas = ExtResource("1")
+region = Rect2(0, 96, 96, 96)
+
+[sub_resource type="AtlasTexture" id="Atlas_9"]
+atlas = ExtResource("1")
+region = Rect2(96, 96, 96, 96)
+
+[sub_resource type="AtlasTexture" id="Atlas_10"]
+atlas = ExtResource("1")
+region = Rect2(192, 96, 96, 96)
+
+[sub_resource type="AtlasTexture" id="Atlas_11"]
+atlas = ExtResource("1")
+region = Rect2(288, 96, 96, 96)
+
+[sub_resource type="AtlasTexture" id="Atlas_12"]
+atlas = ExtResource("1")
+region = Rect2(384, 96, 96, 96)
+
+[sub_resource type="AtlasTexture" id="Atlas_13"]
+atlas = ExtResource("1")
+region = Rect2(480, 96, 96, 96)
+
+[resource]
+animations = [{
+"frames": [
+{ "duration": 1.00000000, "texture": SubResource("Atlas_0") },
+{ "duration": 1.00000000, "texture": SubResource("Atlas_1") },
+{ "duration": 1.00000000, "texture": SubResource("Atlas_2") },
+{ "duration": 1.00000000, "texture": SubResource("Atlas_3") },
+{ "duration": 1.00000000, "texture": SubResource("Atlas_4") },
+{ "duration": 1.00000000, "texture": SubResource("Atlas_5") },
+{ "duration": 1.00000000, "texture": SubResource("Atlas_6") },
+{ "duration": 1.00000000, "texture": SubResource("Atlas_7") },
+{ "duration": 1.00000000, "texture": SubResource("Atlas_8") },
+{ "duration": 1.00000000, "texture": SubResource("Atlas_9") },
+{ "duration": 1.00000000, "texture": SubResource("Atlas_10") },
+{ "duration": 1.00000000, "texture": SubResource("Atlas_11") },
+{ "duration": 1.00000000, "texture": SubResource("Atlas_12") },
+{ "duration": 1.00000000, "texture": SubResource("Atlas_13") }
+],
+"loop": false,
+"name": &"default",
+"speed": 20.00000000
+}]

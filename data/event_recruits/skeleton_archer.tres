@@ -1,0 +1,24 @@
+[gd_resource type="Resource" script_class="UnitData" format=3]
+
+[ext_resource type="Script" uid="uid://2m1qlskaxcox" path="res://data/units/unit_data.gd" id="1_m102x"]
+[ext_resource type="Script" uid="uid://c4huhq7re2216" path="res://data/skills/skill_base.gd" id="2_54afe"]
+[ext_resource type="Resource" uid="uid://cobwg3jpiqh5h" path="res://data/skills/skeleton_archer_attack.tres" id="3_8h8d2"]
+
+[ext_resource type="Texture2D" path="res://assets/ui/events/illustrations/undead-whisper.png" id="event_card_art"]
+
+[resource]
+script = ExtResource("1_m102x")
+attack = 10
+defence = 1
+max_hp = 55
+unit_name = "骷髅弓箭手"
+unit_english_name = "skeleton_archer"
+unit_type = 19
+unit_team = "team_a"
+skills = Array[ExtResource("2_54afe")]([ExtResource("3_8h8d2")])
+hp_damage_value = 1
+
+card_name = "骷髅弓箭手征召"
+card_discription = "征召1名骷髅弓箭手。"
+card_image = ExtResource("event_card_art")
+card_cost = 2

@@ -1,0 +1,20 @@
+[gd_resource type="Resource" script_class="UnitData" format=3 uid="uid://cnnuqqkhgri8r"]
+
+[ext_resource type="Resource" path="res://data/skills/bumblebee_attack.tres" id="attack"]
+[ext_resource type="Script" uid="uid://2m1qlskaxcox" path="res://data/units/unit_data.gd" id="data"]
+[ext_resource type="Script" uid="uid://c4huhq7re2216" path="res://data/skills/skill_base.gd" id="skill_base"]
+
+[resource]
+script = ExtResource("data")
+unit_name = "大黄蜂"
+unit_english_name = "bumblebee"
+unit_type = 23
+unit_team = "team_b"
+max_hp = 60
+defence = 1
+attack = 10
+speed = 220.0
+is_flying = true
+max_upgrade_count = 0
+skills = Array[ExtResource("skill_base")]([ExtResource("attack")])
+combat_sound_profile = &"beast"

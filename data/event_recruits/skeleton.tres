@@ -1,0 +1,24 @@
+[gd_resource type="Resource" script_class="UnitData" format=3]
+
+[ext_resource type="Script" uid="uid://2m1qlskaxcox" path="res://data/units/unit_data.gd" id="1_ixclv"]
+[ext_resource type="Script" uid="uid://c4huhq7re2216" path="res://data/skills/skill_base.gd" id="2_aqewh"]
+[ext_resource type="Resource" uid="uid://dlx41hnqh55uv" path="res://data/skills/skeleton_attack.tres" id="3_ixclv"]
+[ext_resource type="Resource" uid="uid://i8pyhakynel3" path="res://data/skills/skeleton_power_attack.tres" id="4_aqewh"]
+
+[ext_resource type="Texture2D" path="res://assets/ui/events/illustrations/undead-whisper.png" id="event_card_art"]
+
+[resource]
+script = ExtResource("1_ixclv")
+unit_name = "骷髅兵"
+unit_english_name = "skeleton"
+unit_type = 18
+unit_team = "team_a"
+max_hp = 70
+defence = 2
+attack = 9
+skills = Array[ExtResource("2_aqewh")]([ExtResource("3_ixclv"), ExtResource("4_aqewh")])
+
+card_name = "骷髅兵征召"
+card_discription = "征召1名骷髅兵。"
+card_image = ExtResource("event_card_art")
+card_cost = 2

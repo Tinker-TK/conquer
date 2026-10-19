@@ -1,0 +1,32 @@
+[gd_scene format=3 uid="uid://b5eewwkpdp2md"]
+
+[ext_resource type="PackedScene" uid="uid://dykijntcgxma1" path="res://scenes/map/map.tscn" id="1_8mndh"]
+[ext_resource type="Script" uid="uid://b02kmsbn556ai" path="res://scripts/app/game_session.gd" id="2_session"]
+[ext_resource type="PackedScene" path="res://scenes/ui/run_hud.tscn" id="3_hud"]
+[ext_resource type="PackedScene" path="res://scenes/ui/deck_view.tscn" id="4_deck"]
+
+[node name="GameSession" type="Node" unique_id=1204339455]
+process_mode = 3
+script = ExtResource("2_session")
+
+[node name="ContentRoot" type="Node" parent="." unique_id=1109516562]
+process_mode = 1
+
+[node name="MapLayer" type="CanvasLayer" parent="." unique_id=94102637]
+layer = 20
+
+[node name="Map" parent="MapLayer" unique_id=1538013038 instance=ExtResource("1_8mndh")]
+
+[node name="HUDLayer" type="CanvasLayer" parent="." unique_id=2100642431]
+layer = 30
+
+[node name="RunHUD" parent="HUDLayer" unique_id=2101126373 instance=ExtResource("3_hud")]
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="DeckLayer" type="CanvasLayer" parent="." unique_id=188641578]
+layer = 25
+
+[node name="DeckView" parent="DeckLayer" unique_id=2102514379 instance=ExtResource("4_deck")]
+grow_horizontal = 2
+grow_vertical = 2

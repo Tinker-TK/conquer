@@ -1,0 +1,36 @@
+[gd_resource type="Resource" script_class="PotionDefinition" format=3]
+
+[ext_resource type="Script" path="res://data/potions/potion_definition.gd" id="1"]
+[ext_resource type="Script" path="res://data/potions/potion_effect.gd" id="2"]
+[ext_resource type="Texture2D" path="res://assets/ui/potions/poison_flask.svg" id="3"]
+
+[sub_resource type="Resource" id="Effect0"]
+script = ExtResource("2")
+kind = 0
+amount = 25.0
+radius = 90.0
+
+[sub_resource type="Resource" id="Effect1"]
+script = ExtResource("2")
+kind = 2
+amount = 10.0
+radius = 90.0
+
+[resource]
+script = ExtResource("1")
+id = &"poison_flask"
+display_name = "毒雾瓶"
+description = "对半径90内敌人造成25点伤害，附加10层中毒；本轮末按层数结算。"
+icon = ExtResource("3")
+kind = 4
+rarity = 0
+target_mode = 0
+tags = Array[StringName]([&"爆发"])
+min_act = 1
+price = 45
+prep_usable = false
+max_per_run = 0
+radius = 90.0
+tint = Color(0.5333, 0.8392, 0.2902, 1)
+impact_vfx = "PoisonImpactVFX"
+effects = Array[ExtResource("2")]([SubResource("Effect0"), SubResource("Effect1")])

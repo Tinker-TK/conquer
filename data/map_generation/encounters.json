@@ -1,0 +1,610 @@
+{
+	"schema_version": 1,
+	"config_version": 2,
+	"notes": "NUM-DESIGN-v1.0：六档波次；按幕使用独立资源，生命与攻击逐幕乘1.7；保留现有路线及难度规则。",
+	"rules": [
+		{
+			"acts": [
+				1
+			],
+			"phases": [
+				"early"
+			],
+			"kinds": [
+				"normal"
+			],
+			"difficulties": [
+				"hard"
+			],
+			"levels": [
+				{
+					"level": "level_104_1",
+					"weight": 1
+				},
+				{
+					"level": "level_105_1",
+					"weight": 1
+				}
+			]
+		},
+		{
+			"acts": [
+				2
+			],
+			"phases": [
+				"early"
+			],
+			"kinds": [
+				"normal"
+			],
+			"difficulties": [
+				"hard"
+			],
+			"levels": [
+				{
+					"level": "level_act2_104_1",
+					"weight": 1
+				},
+				{
+					"level": "level_act2_105_1",
+					"weight": 1
+				}
+			]
+		},
+		{
+			"acts": [
+				3
+			],
+			"phases": [
+				"early"
+			],
+			"kinds": [
+				"normal"
+			],
+			"difficulties": [
+				"hard"
+			],
+			"levels": [
+				{
+					"level": "level_act3_104_1",
+					"weight": 1
+				},
+				{
+					"level": "level_act3_105_1",
+					"weight": 1
+				}
+			]
+		},
+		{
+			"acts": [
+				1
+			],
+			"phases": [
+				"middle"
+			],
+			"kinds": [
+				"normal"
+			],
+			"difficulties": [
+				"hard"
+			],
+			"levels": [
+				{
+					"level": "level_107_1",
+					"weight": 1
+				},
+				{
+					"level": "level_107_2",
+					"weight": 1
+				}
+			]
+		},
+		{
+			"acts": [
+				2
+			],
+			"phases": [
+				"middle"
+			],
+			"kinds": [
+				"normal"
+			],
+			"difficulties": [
+				"hard"
+			],
+			"levels": [
+				{
+					"level": "level_act2_107_1",
+					"weight": 1
+				},
+				{
+					"level": "level_act2_107_2",
+					"weight": 1
+				}
+			]
+		},
+		{
+			"acts": [
+				3
+			],
+			"phases": [
+				"middle"
+			],
+			"kinds": [
+				"normal"
+			],
+			"difficulties": [
+				"hard"
+			],
+			"levels": [
+				{
+					"level": "level_act3_107_1",
+					"weight": 1
+				},
+				{
+					"level": "level_act3_107_2",
+					"weight": 1
+				}
+			]
+		},
+		{
+			"acts": [
+				1
+			],
+			"phases": [
+				"early"
+			],
+			"kinds": [
+				"normal"
+			],
+			"difficulties": [
+				"normal",
+				"hard"
+			],
+			"levels": [
+				{
+					"level": "level_102_1",
+					"weight": 1
+				},
+				{
+					"level": "level_102_2",
+					"weight": 1
+				},
+				{
+					"level": "level_102_3",
+					"weight": 1
+				}
+			]
+		},
+		{
+			"acts": [
+				2
+			],
+			"phases": [
+				"early"
+			],
+			"kinds": [
+				"normal"
+			],
+			"difficulties": [
+				"normal",
+				"hard"
+			],
+			"levels": [
+				{
+					"level": "level_act2_102_1",
+					"weight": 1
+				},
+				{
+					"level": "level_act2_102_2",
+					"weight": 1
+				},
+				{
+					"level": "level_act2_102_3",
+					"weight": 1
+				}
+			]
+		},
+		{
+			"acts": [
+				3
+			],
+			"phases": [
+				"early"
+			],
+			"kinds": [
+				"normal"
+			],
+			"difficulties": [
+				"normal",
+				"hard"
+			],
+			"levels": [
+				{
+					"level": "level_act3_102_1",
+					"weight": 1
+				},
+				{
+					"level": "level_act3_102_2",
+					"weight": 1
+				},
+				{
+					"level": "level_act3_102_3",
+					"weight": 1
+				}
+			]
+		},
+		{
+			"acts": [
+				1
+			],
+			"phases": [
+				"middle"
+			],
+			"kinds": [
+				"normal"
+			],
+			"difficulties": [
+				"normal",
+				"hard"
+			],
+			"levels": [
+				{
+					"level": "level_104_1",
+					"weight": 1
+				},
+				{
+					"level": "level_105_1",
+					"weight": 1
+				},
+				{
+					"level": "level_107_1",
+					"weight": 1
+				}
+			]
+		},
+		{
+			"acts": [
+				2
+			],
+			"phases": [
+				"middle"
+			],
+			"kinds": [
+				"normal"
+			],
+			"difficulties": [
+				"normal",
+				"hard"
+			],
+			"levels": [
+				{
+					"level": "level_act2_104_1",
+					"weight": 1
+				},
+				{
+					"level": "level_act2_105_1",
+					"weight": 1
+				},
+				{
+					"level": "level_act2_107_1",
+					"weight": 1
+				}
+			]
+		},
+		{
+			"acts": [
+				3
+			],
+			"phases": [
+				"middle"
+			],
+			"kinds": [
+				"normal"
+			],
+			"difficulties": [
+				"normal",
+				"hard"
+			],
+			"levels": [
+				{
+					"level": "level_act3_104_1",
+					"weight": 1
+				},
+				{
+					"level": "level_act3_105_1",
+					"weight": 1
+				},
+				{
+					"level": "level_act3_107_1",
+					"weight": 1
+				}
+			]
+		},
+		{
+			"acts": [
+				1
+			],
+			"phases": [
+				"late"
+			],
+			"kinds": [
+				"normal"
+			],
+			"difficulties": [
+				"normal",
+				"hard"
+			],
+			"levels": [
+				{
+					"level": "level_107_2",
+					"weight": 1
+				},
+				{
+					"level": "level_108_1",
+					"weight": 1
+				},
+				{
+					"level": "level_108_2",
+					"weight": 1
+				}
+			]
+		},
+		{
+			"acts": [
+				2
+			],
+			"phases": [
+				"late"
+			],
+			"kinds": [
+				"normal"
+			],
+			"difficulties": [
+				"normal",
+				"hard"
+			],
+			"levels": [
+				{
+					"level": "level_act2_107_2",
+					"weight": 1
+				},
+				{
+					"level": "level_act2_108_1",
+					"weight": 1
+				},
+				{
+					"level": "level_act2_108_2",
+					"weight": 1
+				}
+			]
+		},
+		{
+			"acts": [
+				3
+			],
+			"phases": [
+				"late"
+			],
+			"kinds": [
+				"normal"
+			],
+			"difficulties": [
+				"normal",
+				"hard"
+			],
+			"levels": [
+				{
+					"level": "level_act3_107_2",
+					"weight": 1
+				},
+				{
+					"level": "level_act3_108_1",
+					"weight": 1
+				},
+				{
+					"level": "level_act3_108_2",
+					"weight": 1
+				}
+			]
+		},
+		{
+			"acts": [
+				1
+			],
+			"phases": [
+				"early",
+				"middle"
+			],
+			"kinds": [
+				"elite"
+			],
+			"difficulties": [
+				"normal",
+				"hard"
+			],
+			"levels": [
+				{
+					"level": "level_elite_mid",
+					"weight": 1
+				}
+			],
+			"reward_config": "res://data/battle_rewards/elite.tres"
+		},
+		{
+			"acts": [
+				2
+			],
+			"phases": [
+				"early",
+				"middle"
+			],
+			"kinds": [
+				"elite"
+			],
+			"difficulties": [
+				"normal",
+				"hard"
+			],
+			"levels": [
+				{
+					"level": "level_act2_elite_mid",
+					"weight": 1
+				}
+			],
+			"reward_config": "res://data/battle_rewards/elite.tres"
+		},
+		{
+			"acts": [
+				3
+			],
+			"phases": [
+				"early",
+				"middle"
+			],
+			"kinds": [
+				"elite"
+			],
+			"difficulties": [
+				"normal",
+				"hard"
+			],
+			"levels": [
+				{
+					"level": "level_act3_elite_mid",
+					"weight": 1
+				}
+			],
+			"reward_config": "res://data/battle_rewards/elite.tres"
+		},
+		{
+			"acts": [
+				1
+			],
+			"phases": [
+				"late"
+			],
+			"kinds": [
+				"elite"
+			],
+			"difficulties": [
+				"normal",
+				"hard"
+			],
+			"levels": [
+				{
+					"level": "level_elite_late",
+					"weight": 1
+				}
+			],
+			"reward_config": "res://data/battle_rewards/elite.tres"
+		},
+		{
+			"acts": [
+				2
+			],
+			"phases": [
+				"late"
+			],
+			"kinds": [
+				"elite"
+			],
+			"difficulties": [
+				"normal",
+				"hard"
+			],
+			"levels": [
+				{
+					"level": "level_act2_elite_late",
+					"weight": 1
+				}
+			],
+			"reward_config": "res://data/battle_rewards/elite.tres"
+		},
+		{
+			"acts": [
+				3
+			],
+			"phases": [
+				"late"
+			],
+			"kinds": [
+				"elite"
+			],
+			"difficulties": [
+				"normal",
+				"hard"
+			],
+			"levels": [
+				{
+					"level": "level_act3_elite_late",
+					"weight": 1
+				}
+			],
+			"reward_config": "res://data/battle_rewards/elite.tres"
+		},
+		{
+			"acts": [
+				1
+			],
+			"phases": [
+				"boss"
+			],
+			"kinds": [
+				"boss"
+			],
+			"difficulties": [
+				"normal",
+				"hard"
+			],
+			"levels": [
+				{
+					"level": "level_110_1",
+					"weight": 1
+				}
+			]
+		},
+		{
+			"acts": [
+				2
+			],
+			"phases": [
+				"boss"
+			],
+			"kinds": [
+				"boss"
+			],
+			"difficulties": [
+				"normal",
+				"hard"
+			],
+			"levels": [
+				{
+					"level": "level_act2_110_1",
+					"weight": 1
+				}
+			]
+		},
+		{
+			"acts": [
+				3
+			],
+			"phases": [
+				"boss"
+			],
+			"kinds": [
+				"boss"
+			],
+			"difficulties": [
+				"normal",
+				"hard"
+			],
+			"levels": [
+				{
+					"level": "level_act3_110_1",
+					"weight": 1
+				}
+			]
+		}
+	]
+}

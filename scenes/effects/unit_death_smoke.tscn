@@ -1,0 +1,8 @@
+[gd_scene format=3]
+
+[ext_resource type="Script" path="res://scripts/effects/unit_death_smoke.gd" id="smoke"]
+
+[node name="DeathSmoke" type="Node2D"]
+z_index = 1
+texture_filter = 1
+script = ExtResource("smoke")

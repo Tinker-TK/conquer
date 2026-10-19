@@ -1,0 +1,15 @@
+[gd_resource type="Resource" format=3 uid="uid://bm57byh2s5ccs"]
+
+[ext_resource type="Script" path="res://scripts/skills/sword_wind_combo.gd" id="1_54ip5"]
+
+[resource]
+script = ExtResource("1_54ip5")
+skill_name = "三连击"
+unlock_upgrade_levels = Array[int]([0])
+manual_finish = true
+attack_rate = 0.7
+cooldown = 3.0
+priority = 1
+cast_animation = "attack_02"
+hit_frame = Array[int]([3, 6, 12])
+metadata/_data_table_id = 4

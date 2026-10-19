@@ -1,0 +1,31 @@
+[gd_resource type="Resource" script_class="PotionDefinition" format=3]
+
+[ext_resource type="Script" path="res://data/potions/potion_definition.gd" id="1"]
+[ext_resource type="Script" path="res://data/potions/potion_effect.gd" id="2"]
+[ext_resource type="Texture2D" path="res://assets/ui/potions/mud_flask.svg" id="3"]
+
+[sub_resource type="Resource" id="Effect0"]
+script = ExtResource("2")
+kind = 16
+amount = 50.0
+radius = 110.0
+rounds = 3
+
+[resource]
+script = ExtResource("1")
+id = &"mud_flask"
+display_name = "泥沼瓶"
+description = "生成半径110泥沼，范围内敌人移速-50%，持续3回合。"
+icon = ExtResource("3")
+kind = 4
+rarity = 0
+target_mode = 0
+tags = Array[StringName]([&"控制"])
+min_act = 1
+price = 45
+prep_usable = false
+max_per_run = 0
+radius = 110.0
+tint = Color(0.6667, 0.5098, 0.3529, 1)
+impact_vfx = ""
+effects = Array[ExtResource("2")]([SubResource("Effect0")])

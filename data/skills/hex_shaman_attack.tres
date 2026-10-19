@@ -1,0 +1,20 @@
+[gd_resource type="Resource" format=3]
+
+[ext_resource type="Script" path="res://scripts/skills/arrow_attack.gd" id="skill"]
+[ext_resource type="PackedScene" path="res://scenes/projectiles/hex_shaman_projectile.tscn" id="projectile"]
+[ext_resource type="PackedScene" path="res://scenes/effects/hex_shaman_hit.tscn" id="hit"]
+
+[resource]
+script = ExtResource("skill")
+skill_name = "远程攻击"
+is_basic_attack = true
+description = "向敌人发射投射物。"
+cooldown = 1.6
+cast_range = 380.0
+cast_animation = "attack_01"
+hit_frame = Array[int]([7])
+combat_sound_profile = "magic"
+projectile_scene = ExtResource("projectile")
+projectile_trajectory = 0
+projectile_pos = Vector2(40, 46)
+on_hit_effect = ExtResource("hit")

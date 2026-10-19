@@ -1,0 +1,32 @@
+[gd_resource type="Resource" script_class="RainWeatherSettings" format=3 uid="uid://cg0enruivm6oi"]
+
+[ext_resource type="Script" uid="uid://dbwy1s53x6kut" path="res://data/weather/rain_weather_settings.gd" id="1"]
+[ext_resource type="Texture2D" uid="uid://c51cklmmkmc2q" path="res://assets/tilemap/sky.png" id="2_muocq"]
+
+[resource]
+script = ExtResource("1")
+atmosphere_tint = Color(0.72, 0.79, 0.85, 1)
+rain_amount = 200
+fall_speed = 2400.0
+wind = 337.5
+streak_width = 2.0
+streak_length = 79.0
+puddle_coverage = 0.55
+puddle_scale = 260.0
+edge_softness = 0.01
+wetness = 0.98
+depth_opacity = 0.18
+water_tint = Color(0.19, 0.28, 0.27, 1)
+sky_strength = 0.65
+sky_cloud_strength = 0.65
+sky_use_scene_clouds = true
+distortion = 0.35
+edge_noise_speed = Vector2(6, -4)
+edge_width = 2.0
+edge_color = Color(0.72, 0.8, 0.76, 0.85)
+reflection_opacity = 0.94
+reflection_fade = 0.08
+reflection_resolution = 1.0
+reflection_height = 1.0
+reflection_gap = 0.0
+splash_rate = 90.0

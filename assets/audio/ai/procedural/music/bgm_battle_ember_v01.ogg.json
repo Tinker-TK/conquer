@@ -1,0 +1,39 @@
+{
+  "id": "bgm_battle_ember",
+  "variant": 1,
+  "asset": "bgm_battle_ember_v01",
+  "provider": "procedural",
+  "category": "music",
+  "title": "战斗 · 余烬前线",
+  "prompt": "dark medieval battle theme, 112 BPM, taiko and war drums, low string ostinato, sparse brass stabs, tense and driving, seamless loop",
+  "source_prompt": "dark medieval battle theme, 112 BPM, taiko and war drums, low string ostinato, sparse brass stabs, tense and driving, seamless loop",
+  "duration_seconds": 32.0,
+  "output_format": "wav_48000",
+  "tags": [
+    "battle",
+    "drums",
+    "tense"
+  ],
+  "license": "CC0-1.0",
+  "author": "项目程序合成（占位）",
+  "source": "res://tools/audio/ai/procedural.py",
+  "recipe": "bgm_battle_ember",
+  "created_at": "2026-10-18T17:08:59+00:00",
+  "sha256": "8d5e97ddd97c0a3cb96e297c2ecbb94ff05734b4e35519541d0361222d43669e",
+  "path": "res://assets/audio/ai/procedural/music/bgm_battle_ember_v01.ogg",
+  "loop": true,
+  "sample_rate": 44100,
+  "channels": 1,
+  "features": {
+    "duration_seconds": 15.143,
+    "peak_dbfs": -2.39,
+    "rms_dbfs": -20.0,
+    "crest_db": 17.61,
+    "spectral_centroid_hz": 1458.0,
+    "zero_cross_rate": 0.0057,
+    "attack_ms": 3217.3,
+    "tail_ms": 2.8
+  },
+  "seam_jump": 0.000917,
+  "bytes": 63174
+}

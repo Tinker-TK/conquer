@@ -1,0 +1,35 @@
+[gd_resource type="Resource" script_class="RunStartData" format=3 uid="uid://kawou4kbebr6"]
+
+[ext_resource type="Script" uid="uid://c53uoxvxtxwo1" path="res://data/run/run_start_data.gd" id="1"]
+[ext_resource type="Resource" uid="uid://bfo1wndto12ls" path="res://data/units/soldier.tres" id="3"]
+[ext_resource type="Resource" uid="uid://bo4oy28cullfg" path="res://data/units/archer.tres" id="4"]
+[ext_resource type="Resource" uid="uid://c6bryt3iwx1j7" path="res://data/units/priest.tres" id="5"]
+[ext_resource type="Resource" uid="uid://c2vim02r61b6x" path="res://data/cards/power_enhance.tres" id="5_wff5f"]
+[ext_resource type="Resource" uid="uid://i0l2kocqy5qt" path="res://data/cards/copy_ally.tres" id="6_o2qj8"]
+[ext_resource type="Resource" uid="uid://nra85goot627" path="res://data/cards/death_attack.tres" id="7_d1cw1"]
+[ext_resource type="Resource" uid="uid://bu476aauxiqr" path="res://data/cards/death_explosion.tres" id="8_lrl3i"]
+[ext_resource type="Resource" uid="uid://qw8iwmesnnia" path="res://data/units/armored_axeman.tres" id="9"]
+[ext_resource type="Resource" uid="uid://byrwrnq6q2rs0" path="res://data/cards/defend.tres" id="9_aa8ra"]
+[ext_resource type="Resource" uid="uid://dl215qs6t0xjy" path="res://data/cards/draw_four.tres" id="10_mrjcx"]
+[ext_resource type="Resource" uid="uid://rh1q812d8j8s" path="res://data/cards/draw_hp.tres" id="11_4iwr7"]
+[ext_resource type="Resource" uid="uid://c2ir1krhkdpmy" path="res://data/cards/fire_zone.tres" id="12_xjwyf"]
+[ext_resource type="Resource" uid="uid://jjha2ts7ip6h" path="res://data/cards/heal.tres" id="13_mn4dk"]
+[ext_resource type="Resource" uid="uid://dr637dsxa3a36" path="res://data/cards/mud_zone.tres" id="14_5n1km"]
+[ext_resource type="Resource" uid="uid://da31cugxq7nvt" path="res://data/cards/poison_on_hit.tres" id="15_ow26c"]
+[ext_resource type="Resource" uid="uid://dltiqaagmi6p5" path="res://data/cards/random_play.tres" id="16_v3yko"]
+[ext_resource type="Resource" uid="uid://g5gswq0i1f2o" path="res://data/cards/recall_ally.tres" id="17_ielx0"]
+[ext_resource type="Resource" uid="uid://byqkflbl67uqt" path="res://data/potions/tornado.tres" id="p1"]
+[ext_resource type="Resource" uid="uid://c8oo6u0nccl2n" path="res://data/potions/lightning.tres" id="p2"]
+[ext_resource type="Resource" uid="uid://bkvg7yhuu0usp" path="res://data/potions/fire.tres" id="p3"]
+[ext_resource type="Script" uid="uid://b452136fqvyor" path="res://data/potions/potion_definition.gd" id="ps"]
+[ext_resource type="Resource" uid="uid://dtt3hsfwuw5a8" path="res://data/relics/draw_engine.tres" id="r1"]
+[ext_resource type="Resource" uid="uid://t0crurqxvvfe" path="res://data/relics/base_heart.tres" id="r2"]
+[ext_resource type="Resource" path="res://data/relics/base_armour.tres" id="r3"]
+[ext_resource type="Resource" uid="uid://d0e2nalldjw87" path="res://data/relics/opening_armour.tres" id="r4"]
+[ext_resource type="Script" uid="uid://be4bple3628ic" path="res://data/relics/relic_definition.gd" id="rs"]
+
+[resource]
+script = ExtResource("1")
+cards = Array[Resource]([ExtResource("3"), ExtResource("3"), ExtResource("3"), ExtResource("4"), ExtResource("4"), ExtResource("5"), ExtResource("5"), ExtResource("9"), ExtResource("5_wff5f"), ExtResource("6_o2qj8"), ExtResource("7_d1cw1"), ExtResource("8_lrl3i"), ExtResource("9_aa8ra"), ExtResource("10_mrjcx"), ExtResource("11_4iwr7"), ExtResource("12_xjwyf"), ExtResource("13_mn4dk"), ExtResource("14_5n1km"), ExtResource("15_ow26c"), ExtResource("16_v3yko"), ExtResource("17_ielx0")])
+starting_relics = Array[ExtResource("rs")]([ExtResource("r1"), ExtResource("r2"), ExtResource("r3"), ExtResource("r4")])
+starting_potions = Array[ExtResource("ps")]([ExtResource("p1"), ExtResource("p2"), ExtResource("p3")])

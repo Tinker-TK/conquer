@@ -1,0 +1,22 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="640" height="560" viewBox="0 0 640 560">
+  <defs>
+    <linearGradient id="wood" x2="0" y2="1"><stop stop-color="#ad7241"/><stop offset="1" stop-color="#553522"/></linearGradient>
+    <linearGradient id="gold" x2="0" y2="1"><stop stop-color="#ffe3a0"/><stop offset="1" stop-color="#b37a35"/></linearGradient>
+    <radialGradient id="glow"><stop stop-color="#fff3bf" stop-opacity=".7"/><stop offset="1" stop-color="#e6c986" stop-opacity="0"/></radialGradient>
+  </defs>
+  <ellipse cx="322" cy="456" rx="229" ry="30" fill="#10151d" opacity=".5"/>
+  <ellipse cx="315" cy="257" rx="270" ry="230" fill="url(#glow)"/>
+  <g stroke="#30251f" stroke-width="10" stroke-linejoin="round">
+    <path d="M106 277 443 258 527 306 517 428 177 465 112 420Z" fill="url(#wood)"/>
+    <path d="m443 258 84 48-10 122-74-48Z" fill="#563522"/>
+    <path d="M106 277 119 107q2-34 37-35l267-18q39-2 54 29l50 223-84-48Z" fill="url(#wood)"/>
+    <path d="m155 111 251-17 39 161-295 19Z" fill="#3c3026" stroke="url(#gold)" stroke-width="19"/>
+    <path d="m106 277 71 47 350-18-84-48Z" fill="#231f21" stroke="url(#gold)" stroke-width="16"/>
+    <path d="m170 327 39-2-7 120-27 3Z" fill="url(#gold)"/>
+    <path d="m417 311 40-3-10 127-40 5Z" fill="url(#gold)"/>
+    <path d="m112 407 65 35 341-37-1 23-340 37-64-36Z" fill="url(#gold)"/>
+    <path d="m289 331 52-4-2 51-51 5Z" fill="url(#gold)"/>
+  </g>
+  <g fill="#fff1af" opacity=".75"><path d="m210 302-31-153 72 141Z"/><path d="m282 298 22-182 23 179Z"/><path d="m358 295 97-153-49 159Z"/></g>
+  <g fill="#fff1b0"><path d="m298 191 10 27 29 9-29 10-10 28-9-28-28-10 28-9Z"/><path d="m527 150 6 17 18 6-18 6-6 18-6-18-17-6 17-6Z"/><path d="m85 244 5 14 15 5-15 5-5 15-5-15-14-5 14-5Z"/></g>
+</svg>

@@ -1,0 +1,18 @@
+[gd_resource type="Resource" script_class="EventDefinition" format=3]
+
+[ext_resource type="Script" path="res://data/events/event_definition.gd" id="1"]
+[ext_resource type="Texture2D" path="res://assets/ui/events/illustrations/goblin-arena.png" id="2"]
+
+[resource]
+script = ExtResource("1")
+id = "act1_goblin_arena"
+title = "哥布林角斗场"
+description = "一圈哥布林围着泥坑尖叫，坑底两个影子正互相撕扯。坑边木桩上挂着一件用破布包着的东西，每次有人倒下，布就晃一下。\n\n一个戴铁桶的哥布林指着你，又指着坑底：「大个子，下场？」"
+template = 4
+min_floor = 6
+max_floor = 9
+rarity = "rare"
+illustration = ExtResource("2")
+tags = Array[String](["relic", "gamble"])
+requires = Array[String]([])
+choices = Array[Dictionary]([{"gold": 0, "heal": 0, "effect": {"type": "random_relic"}, "cost": {"hp": 15}, "text": "下场角斗", "summary": "失去 15 生命 · 获得 1 件随机遗物", "result_text": "你从坑里爬出来时，铁桶哥布林把布包扔到你脚下。坑底的两个影子，只剩一个还在动。"}, {"gold": 0, "heal": 0, "effect": {"type": "gamble", "chance": 0.5, "win": {"type": "gold", "amount": 75}, "lose": {"type": "gold", "amount": 0}, "win_text": "你押的那个瘦哥布林咬住了对手的耳朵。铁桶哥布林骂了一句，把钱袋踢给你。", "lose_text": "你押的那个一开场就滑倒了。铁桶哥布林笑得铁桶都在响。"}, "cost": {"gold": 25}, "text": "押 25 金币", "summary": "支付 25 金币 · 50% 返还 75，50% 不返还"}, {"gold": 0, "heal": 0, "effect": {"type": "choose_cards", "unit_offer": 3, "unit_picks": 1, "effect_offer": 0, "effect_picks": 0}, "cost": {"gold": 40}, "text": "买下坑底的失败者", "summary": "支付 40 金币 · 从 3 张征召牌中选 1 张", "result_text": "你把他从坑底拎起来。他吐掉嘴里的泥，问的第一句话是：「管饭吗？」"}, {"text": "离开", "leave": true, "heal": 0, "gold": 0}])

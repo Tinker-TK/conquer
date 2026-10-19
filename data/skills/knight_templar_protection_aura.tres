@@ -1,0 +1,17 @@
+[gd_resource type="Resource" format=3]
+
+[ext_resource type="Script" path="res://scripts/skills/protection_aura.gd" id="1"]
+[ext_resource type="PackedScene" path="res://assets/effect/godot_vfx_library/effects/magic/magic_aura.tscn" id="2"]
+
+[resource]
+script = ExtResource("1")
+skill_name = "庇护光环"
+unlock_upgrade_levels = Array[int]([1])
+description = "圣殿骑士存活时，持续庇护光环范围内的己方单位；离开光环或光环来源死亡、退场时解除。"
+target_type = 2
+hit_frame = Array[int]([])
+combat_sound_profile = "silent"
+aura_radius = 200.0
+aura_attack_bonus = 2
+aura_include_caster = true
+aura_effect = ExtResource("2")

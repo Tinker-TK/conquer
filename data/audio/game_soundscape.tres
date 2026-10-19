@@ -1,0 +1,14 @@
+[gd_resource type="Resource" script_class="GameSoundscape" load_steps=6 format=3]
+
+[ext_resource type="Script" path="res://data/audio/game_soundscape.gd" id="1"]
+[ext_resource type="AudioStream" path="res://assets/audio/soundscape/journey.wav" id="2"]
+[ext_resource type="AudioStream" path="res://assets/audio/soundscape/wind.wav" id="3"]
+[ext_resource type="AudioStream" path="res://assets/audio/soundscape/rain.wav" id="4"]
+[ext_resource type="AudioStream" path="res://assets/audio/library/kenney-rpg-full/Audio/handleCoins.ogg" id="5"]
+
+[resource]
+script = ExtResource("1")
+music = ExtResource("2")
+wind = ExtResource("3")
+rain = ExtResource("4")
+feedback = ExtResource("5")

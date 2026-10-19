@@ -1,0 +1,18 @@
+[gd_resource type="Resource" script_class="EventDefinition" format=3]
+
+[ext_resource type="Script" path="res://data/events/event_definition.gd" id="1"]
+[ext_resource type="Texture2D" path="res://assets/ui/events/illustrations/bog-hand.png" id="2"]
+
+[resource]
+script = ExtResource("1")
+id = "act1_bog_hand"
+title = "泥沼之手"
+description = "泥沼中央伸出一只石化的手，掌心托着一枚生锈的徽章。泥面下偶尔鼓起气泡，像有什么东西在呼吸。\n\n你靠近时，那只手的手指动了一下。"
+template = 4
+min_floor = 4
+max_floor = 8
+rarity = "gamble"
+illustration = ExtResource("2")
+tags = Array[String](["relic", "gamble"])
+requires = Array[String]([])
+choices = Array[Dictionary]([{"gold": 0, "heal": 0, "effect": {"type": "gamble", "chance": 0.6, "win": {"type": "random_relic"}, "lose": {"type": "gold", "amount": 35}, "win_text": "泥浆漫到手腕。你抓住徽章，泥里的东西也抓住了你——但它先松了手。", "lose_text": "你摸到一手碎骨和一枚旧硬币。泥里的东西笑了一声，沉了下去。"}, "cost": {"hp": 10}, "text": "伸手去够", "summary": "失去 10 生命 · 60% 获得 1 件随机遗物，40% 获得 35 金币"}, {"gold": 0, "heal": 0, "effect": {"type": "random_potion"}, "cost": {"gold": 25}, "text": "用长杆打捞", "summary": "支付 25 金币 · 获得 1 瓶随机药水", "result_text": "长杆够不到底。你只挑上来一只泡得发胀的药瓶，封口居然还是好的。"}, {"gold": 0, "heal": 12, "text": "在泥沼边采药", "summary": "回复 12 生命", "result_text": "你采了一把气味刺鼻的草。嚼碎敷在伤口上时，泥沼里一直很安静。"}, {"text": "离开", "leave": true, "heal": 0, "gold": 0}])

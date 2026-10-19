@@ -1,0 +1,7 @@
+[gd_scene format=3 uid="uid://cdo1h1cbcsxyy"]
+
+[ext_resource type="PackedScene" uid="uid://brwy2m2g1kqpo" path="res://scenes/cards/unit_card.tscn" id="1_b3kw3"]
+[ext_resource type="Resource" uid="uid://cq48e3ql61whe" path="res://data/units/knight.tres" id="2_b3kw3"]
+
+[node name="KnightCard" unique_id=964477398 instance=ExtResource("1_b3kw3")]
+unit_data = ExtResource("2_b3kw3")

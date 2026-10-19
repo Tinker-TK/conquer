@@ -1,0 +1,7 @@
+[gd_resource type="Resource" format=3 uid="uid://bj45lmx54sqou"]
+
+[ext_resource type="Script" uid="uid://l5slg1wgnhew" path="res://scripts/skills/normal_attack.gd" id="1_pikti"]
+
+[resource]
+script = ExtResource("1_pikti")
+metadata/_data_table_id = 4

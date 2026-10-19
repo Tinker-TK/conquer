@@ -1,0 +1,6 @@
+[gd_resource type="Resource" script_class="RiverSettings" format=3 uid="uid://dh5on0aa6lgli"]
+
+[ext_resource type="Script" uid="uid://m1wnf7ju2ahp" path="res://data/water/river_settings.gd" id="1"]
+
+[resource]
+script = ExtResource("1")

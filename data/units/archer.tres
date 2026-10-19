@@ -1,0 +1,25 @@
+[gd_resource type="Resource" script_class="UnitData" format=3 uid="uid://bo4oy28cullfg"]
+
+[ext_resource type="Script" uid="uid://2m1qlskaxcox" path="res://data/units/unit_data.gd" id="1_juola"]
+[ext_resource type="Texture2D" uid="uid://de66boan31oc1" path="res://assets/cards/illustrations/archer.png" id="1_sdcdb"]
+[ext_resource type="Script" uid="uid://c4huhq7re2216" path="res://data/skills/skill_base.gd" id="3_k535b"]
+[ext_resource type="Resource" uid="uid://cxphlimvq5twl" path="res://data/skills/archer_arrow_attack.tres" id="3_t2c5g"]
+[ext_resource type="Resource" uid="uid://b516x5g463mef" path="res://data/skills/archer_power_shoot.tres" id="4_sdcdb"]
+[ext_resource type="Resource" path="res://data/skills/archer_power_shoot_upgraded.tres" id="5_pierce"]
+
+[resource]
+script = ExtResource("1_juola")
+unit_name = "弓箭手"
+unit_english_name = "archer"
+unit_type = 1
+max_hp = 75
+defence = 2
+attack = 9
+card_name = "弓箭手征召"
+card_image = ExtResource("1_sdcdb")
+card_discription = "征召1名弓箭手。
+射击：远程攻击，造成100%攻击力伤害。
+穿刺射击：穿透最多2名敌人，造成100%攻击力伤害。"
+upgrade_ability_points = 2
+skills = Array[ExtResource("3_k535b")]([ExtResource("3_t2c5g"), ExtResource("4_sdcdb"), ExtResource("5_pierce")])
+metadata/_data_table_id = 1

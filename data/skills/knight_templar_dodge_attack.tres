@@ -1,0 +1,13 @@
+[gd_resource type="Resource" format=3 uid="uid://di82ukr6gwys4"]
+
+[ext_resource type="Script" uid="uid://c7tpmtstjw8vh" path="res://scripts/skills/dodge_attack.gd" id="1_irvyy"]
+
+[resource]
+script = ExtResource("1_irvyy")
+unlock_upgrade_levels = Array[int]([1])
+skill_name = "防守反击"
+attack_rate = 1.5
+counter_armor_break = 1
+cast_animation = "attack_02"
+hit_frame = Array[int]([5])
+metadata/_data_table_id = 4

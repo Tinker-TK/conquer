@@ -1,0 +1,50 @@
+{
+  "path": "res://assets/audio/ai/local_design/ui/sfx_ui_wood_click_v02.ogg",
+  "asset": "sfx_ui_wood_click_v02",
+  "title": "界面 · 木质轻点 · B 厚重",
+  "category": "ui",
+  "domain": "SFX",
+  "batch": "audition_20261019",
+  "provider": "local_design",
+  "recipe": "click",
+  "variant": 2,
+  "seed": 2133153865,
+  "prompt": "Single soft wooden button click, tiny tactile fingertip tick with warm wood body, immediate and subtle for repeated medieval game UI input, dry 0.11 seconds. No electronic beep, ringing, music, voice or reverb.",
+  "author": "项目本地声音设计（CC0 分层素材＋原创程序合成）",
+  "source": "res://tools/audio/ai/produce_audition.py",
+  "license": "CC0-1.0",
+  "source_layers": [
+    {
+      "path": "res://assets/audio/combat/kenney-impact/impactWood_medium_000.ogg",
+      "author": "Kenney",
+      "source": "https://kenney.nl/assets/impact-sounds",
+      "license": "CC0-1.0",
+      "sha256": "1723a9fd25103ed41af06054814e84e65f4a772bac86ab2dc927da93d9592ff5"
+    }
+  ],
+  "changes": "分层混音、确定性变体、裁剪静音、44.1kHz 单声道、短淡入淡出、峰值控制、OGG；循环保留完整小节。",
+  "notes": "本批试听 · 本地制作；SFX；单次动作。",
+  "duration_seconds": 0.084,
+  "loop": false,
+  "features": {
+    "duration_seconds": 0.084,
+    "peak_dbfs": -3.35,
+    "rms_dbfs": -20.88,
+    "crest_db": 17.54,
+    "spectral_centroid_hz": 2010.8,
+    "zero_cross_rate": 0.0356,
+    "attack_ms": 0.9,
+    "tail_ms": 1.7
+  },
+  "channels": 1,
+  "sample_rate": 44100,
+  "seam_jump": null,
+  "sha256": "6159ff06a6d8407c093b71bce6c260de9fac7a0030af499512a208e7d7ace5fe",
+  "created_at": "2026-10-19T02:03:55+00:00",
+  "tags": [
+    "one-shot",
+    "percussive",
+    "balanced"
+  ],
+  "problems": []
+}

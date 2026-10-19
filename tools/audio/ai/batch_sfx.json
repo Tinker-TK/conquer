@@ -1,0 +1,171 @@
+{
+  "version": 1,
+  "defaults": {
+    "variants": 1,
+    "prompt_influence": 0.55
+  },
+  "items": [
+    {
+      "id": "ui_click_primary",
+      "category": "ui",
+      "title": "主按钮点击",
+      "duration": 0.18,
+      "prompt": "single soft wooden UI button click, tiny tick, clean and dry",
+      "tags": ["ui", "click", "short"],
+      "procedural": "ui_click"
+    },
+    {
+      "id": "ui_hover",
+      "category": "ui",
+      "title": "悬停轻响",
+      "duration": 0.12,
+      "prompt": "very quiet UI hover tick, subtle and soft, barely there",
+      "tags": ["ui", "hover", "quiet"],
+      "procedural": "ui_hover"
+    },
+    {
+      "id": "ui_confirm",
+      "category": "ui",
+      "title": "确认",
+      "duration": 0.55,
+      "prompt": "warm two-note UI confirmation chime, wooden marimba and soft bell",
+      "tags": ["ui", "confirm", "chime"],
+      "procedural": "ui_confirm"
+    },
+    {
+      "id": "ui_cancel",
+      "category": "ui",
+      "title": "取消",
+      "duration": 0.4,
+      "prompt": "low muted UI cancel thunk, short descending wooden note",
+      "tags": ["ui", "cancel", "low"],
+      "procedural": "ui_cancel"
+    },
+    {
+      "id": "ui_error",
+      "category": "ui",
+      "title": "报错",
+      "duration": 0.3,
+      "prompt": "short muted error buzz, low and dry, not harsh",
+      "tags": ["ui", "error", "buzz"],
+      "procedural": "ui_error"
+    },
+    {
+      "id": "ui_coin",
+      "category": "ui",
+      "title": "金币",
+      "duration": 0.5,
+      "prompt": "small handful of gold coins clinking, bright metal, quick",
+      "tags": ["ui", "coin", "metal"],
+      "procedural": "ui_coin"
+    },
+    {
+      "id": "card_draw",
+      "category": "card",
+      "title": "抽牌",
+      "duration": 0.45,
+      "prompt": "single card sliding out of a paper deck, crisp paper friction, short",
+      "tags": ["card", "draw", "paper"],
+      "procedural": "card_draw"
+    },
+    {
+      "id": "card_play",
+      "category": "card",
+      "title": "打出卡牌",
+      "duration": 0.35,
+      "prompt": "card slapped onto a wooden table, paper snap with a soft wood knock",
+      "tags": ["card", "play", "paper"],
+      "procedural": "card_play"
+    },
+    {
+      "id": "card_shuffle",
+      "category": "card",
+      "title": "洗牌",
+      "duration": 0.9,
+      "prompt": "deck of cards riffle shuffle, papery flutter, close and dry",
+      "tags": ["card", "shuffle", "loop-ish"],
+      "procedural": "card_shuffle"
+    },
+    {
+      "id": "card_upgrade",
+      "category": "card",
+      "title": "卡牌升级",
+      "duration": 0.9,
+      "prompt": "magical card upgrade shimmer, soft ascending chime with paper flutter",
+      "tags": ["card", "upgrade", "magic"],
+      "procedural": "card_upgrade"
+    },
+    {
+      "id": "combat_sword_swing",
+      "category": "ai_combat",
+      "title": "挥剑破风",
+      "duration": 0.7,
+      "prompt": "fast sword swing through air, sharp whoosh, light cloth movement",
+      "tags": ["attack", "swing", "whoosh"],
+      "procedural": "sword_swing"
+    },
+    {
+      "id": "combat_blade_clash",
+      "category": "ai_combat",
+      "title": "刀剑相击",
+      "duration": 0.7,
+      "prompt": "two steel blades clashing, bright metallic ring, short decay",
+      "tags": ["attack", "clash", "metal"],
+      "procedural": "blade_clash"
+    },
+    {
+      "id": "combat_flesh_hit",
+      "category": "ai_combat",
+      "title": "命中皮甲",
+      "duration": 0.5,
+      "prompt": "sword striking leather armor, dull impact with cloth",
+      "tags": ["hit", "leather", "dull"],
+      "procedural": "flesh_hit"
+    },
+    {
+      "id": "combat_heavy_impact",
+      "category": "ai_combat",
+      "title": "重击盾牌",
+      "duration": 0.9,
+      "prompt": "heavy warhammer crushing a wooden shield, deep thud and splintering",
+      "tags": ["hit", "heavy", "wood"],
+      "procedural": "heavy_impact"
+    },
+    {
+      "id": "combat_bow_release",
+      "category": "ai_combat",
+      "title": "放箭",
+      "duration": 0.5,
+      "prompt": "wooden bowstring release, arrow flying away, tight thwip",
+      "tags": ["attack", "bow", "ranged"],
+      "procedural": "bow_release"
+    },
+    {
+      "id": "combat_fire_cast",
+      "category": "ai_combat",
+      "title": "火球蓄发",
+      "duration": 1.1,
+      "prompt": "fireball ignition, whoosh of flame, magical crackle",
+      "tags": ["spell", "fire", "cast"],
+      "procedural": "fire_cast"
+    },
+    {
+      "id": "combat_ice_cast",
+      "category": "ai_combat",
+      "title": "冰晶凝结",
+      "duration": 0.9,
+      "prompt": "ice shard forming, crystalline shimmer, frosty air",
+      "tags": ["spell", "ice", "cast"],
+      "procedural": "ice_cast"
+    },
+    {
+      "id": "combat_explosion",
+      "category": "ai_combat",
+      "title": "爆炸",
+      "duration": 1.4,
+      "prompt": "small medieval gunpowder explosion, blast with debris, deep boom",
+      "tags": ["hit", "explosion", "boom"],
+      "procedural": "explosion"
+    }
+  ]
+}

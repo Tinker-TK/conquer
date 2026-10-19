@@ -1,0 +1,11 @@
+[gd_scene format=3 uid="uid://bhe72ew600ssf"]
+
+[ext_resource type="PackedScene" uid="uid://b2iqe6y8te6wt" path="res://scenes/map/nodes/map_node.tscn" id="1_6hffq"]
+[ext_resource type="Texture2D" uid="uid://beiw0pumhrp1m" path="res://assets/tilemap/level_icon.png" id="2_8ic8e"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_frodt"]
+atlas = ExtResource("2_8ic8e")
+region = Rect2(310, 250, 190, 180)
+
+[node name="BattleMapNode" unique_id=460198952 instance=ExtResource("1_6hffq")]
+icon_texture = SubResource("AtlasTexture_frodt")

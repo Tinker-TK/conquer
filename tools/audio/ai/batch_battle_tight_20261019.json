@@ -1,0 +1,16 @@
+{
+  "batch": "battle_tight_20261019",
+  "request": "战斗要紧凑一点",
+  "items": [
+    {
+      "id": "bgm_battle_urgent",
+      "title": "战斗 · 紧凑推进 144 BPM",
+      "category": "music",
+      "domain": "BGM",
+      "provider": "suno",
+      "target_bpm": 144,
+      "prompt": "Instrumental medieval fantasy tactical battle loop, 144 BPM, D minor. Immediate combat pulse from the first beat. Relentless sixteenth-note low string ostinato, tight frame drums and war drums, crisp wooden percussion, syncopated accents, brief low brass stabs. Focused urgent momentum, short two-bar motif, compact dry mix with space for weapon SFX. No vocals, choir, flute solo, gentle lute arpeggios, slow ambient intro, long pads, breakdown or grand ending.",
+      "notes": "按用户反馈重写：提高节奏密度与推进感，减少舒缓旋律和长音；平台指定 BPM 是生成目标，导出后需检查实际节拍。"
+    }
+  ]
+}

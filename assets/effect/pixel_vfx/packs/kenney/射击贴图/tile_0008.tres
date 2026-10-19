@@ -1,0 +1,17 @@
+[gd_resource type="SpriteFrames" load_steps=3 format=3]
+
+[ext_resource type="Texture2D" path="res://assets/effect/pixel_vfx/packs/kenney/射击贴图/tile_0008.png" id="1"]
+
+[sub_resource type="AtlasTexture" id="Atlas_0"]
+atlas = ExtResource("1")
+region = Rect2(0, 0, 16, 16)
+
+[resource]
+animations = [{
+"frames": [
+{ "duration": 1.00000000, "texture": SubResource("Atlas_0") }
+],
+"loop": true,
+"name": &"default",
+"speed": 1.00000000
+}]

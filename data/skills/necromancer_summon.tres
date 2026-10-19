@@ -1,0 +1,17 @@
+[gd_resource type="Resource" format=3 uid="uid://71iifag028pm"]
+
+[ext_resource type="Script" uid="uid://vwaaugba1ipd" path="res://scripts/skills/summon_unit.gd" id="1"]
+[ext_resource type="PackedScene" uid="uid://c4bs25smpngfc" path="res://scenes/effects/creat_effect.tscn" id="2"]
+[ext_resource type="PackedScene" uid="uid://byd5sb7f2cviw" path="res://scenes/units/bat.tscn" id="3_3aoph"]
+
+[resource]
+script = ExtResource("1")
+summon_scene = ExtResource("3_3aoph")
+skill_name = "蝙蝠召唤"
+description = "在召唤点展开魔法阵，特效结束后生成一只蝙蝠。召唤师死亡或战斗回合结束时取消尚未完成的召唤。"
+cooldown = 8.0
+priority = 2
+cast_animation = "summon"
+hit_frame = Array[int]([5])
+target_type = 2
+on_hit_effect = ExtResource("2")

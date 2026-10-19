@@ -1,0 +1,7 @@
+[gd_resource type="Resource" format=3 uid="uid://dlx41hnqh55uv"]
+
+[ext_resource type="Script" uid="uid://l5slg1wgnhew" path="res://scripts/skills/normal_attack.gd" id="1_fyb4m"]
+
+[resource]
+script = ExtResource("1_fyb4m")
+metadata/_data_table_id = 4

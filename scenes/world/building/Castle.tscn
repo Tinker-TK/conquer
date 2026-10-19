@@ -1,0 +1,40 @@
+[gd_scene format=3 uid="uid://ccv275abx026s"]
+
+[ext_resource type="Script" uid="uid://kpq8ia3fly1k" path="res://scripts/world/tree.gd" id="1_ms0bl"]
+[ext_resource type="Texture2D" uid="uid://7vydkw7bf7n2" path="res://assets/tilemap/building/Blue Buildings/Castle.png" id="2_ms0bl"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_avsvi"]
+size = Vector2(264, 157.625)
+
+[sub_resource type="CapsuleShape2D" id="CapsuleShape2D_ms0bl"]
+radius = 46.5
+height = 282.0
+
+[node name="Tree" type="StaticBody2D" unique_id=34525680]
+y_sort_enabled = true
+scale = Vector2(2, 2)
+collision_layer = 4
+collision_mask = 3
+script = ExtResource("1_ms0bl")
+
+[node name="Sprite2D" type="Sprite2D" parent="." unique_id=600345752]
+texture = ExtResource("2_ms0bl")
+offset = Vector2(0, -80)
+
+[node name="TransparentCheck" type="Area2D" parent="." unique_id=1358125869]
+light_mask = 0
+visibility_layer = 0
+collision_layer = 0
+collision_mask = 3
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="TransparentCheck" unique_id=1336505211]
+position = Vector2(0, -79.1875)
+shape = SubResource("RectangleShape2D_avsvi")
+
+[node name="CollisionShape2D2" type="CollisionShape2D" parent="." unique_id=84547382]
+position = Vector2(-1, -25)
+rotation = 1.5707964
+shape = SubResource("CapsuleShape2D_ms0bl")
+
+[connection signal="body_entered" from="TransparentCheck" to="." method="_on_transparent_check_body_entered"]
+[connection signal="body_exited" from="TransparentCheck" to="." method="_on_transparent_check_body_exited"]

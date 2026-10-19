@@ -1,0 +1,18 @@
+[gd_resource type="Resource" script_class="EventDefinition" format=3]
+
+[ext_resource type="Script" path="res://data/events/event_definition.gd" id="1"]
+[ext_resource type="Texture2D" path="res://assets/ui/events/illustrations/silent-altar.png" id="2"]
+
+[resource]
+script = ExtResource("1")
+id = "act1_silent_altar"
+title = "沉默的祭坛"
+description = "一座没有神像的石坛立在路中央，坛面只有一道凹槽和干涸的暗色痕迹。\n\n你靠近时，耳边的风声忽然停了。凹槽的形状，刚好能放下一张牌。"
+template = 4
+min_floor = 3
+max_floor = 8
+rarity = "common"
+illustration = ExtResource("2")
+tags = Array[String](["remove"])
+requires = Array[String](["removable"])
+choices = Array[Dictionary]([{"gold": 0, "heal": 0, "effect": {"type": "remove_card"}, "cost": {"max_hp": 6}, "text": "献上一段记忆", "summary": "最大生命 -6 · 移除 1 张牌", "result_text": "牌在凹槽里化成灰。你忘了自己为什么要带它上路，只记得它曾经很重要。"}, {"gold": 0, "heal": 0, "effect": {"type": "remove_card"}, "cost": {"gold": 70}, "text": "献上金币", "summary": "支付 70 金币 · 移除 1 张牌", "result_text": "金币一枚枚沉进石缝。祭坛没有回应，但你手里的牌少了一张。"}, {"gold": 0, "heal": 12, "text": "在坛前祈祷", "summary": "回复 12 生命", "result_text": "没有神像，也没有回应。风重新吹起来时，你身上的伤口已经不那么疼了。"}, {"text": "离开", "leave": true, "heal": 0, "gold": 0}])

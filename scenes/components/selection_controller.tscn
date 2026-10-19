@@ -1,0 +1,33 @@
+[gd_scene format=3 uid="uid://bh453yof4i0n2"]
+
+[ext_resource type="Script" uid="uid://cgrj66kfiossc" path="res://scripts/units/selection_controller.gd" id="1_rk5j8"]
+[ext_resource type="Texture2D" path="res://assets/ui/Pointers/02.png" id="2_frame"]
+
+[node name="MouseSlectionController" type="Node2D" unique_id=1051256013]
+script = ExtResource("1_rk5j8")
+
+[node name="CanvasLayer" type="CanvasLayer" parent="." unique_id=1574837537]
+layer = 4
+
+[node name="Control" type="Control" parent="CanvasLayer" unique_id=34923657]
+visible = false
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_right = -1920.0
+offset_bottom = -1080.0
+grow_horizontal = 2
+grow_vertical = 2
+mouse_filter = 2
+
+[node name="SelectionFrame" type="NinePatchRect" parent="CanvasLayer/Control"]
+texture_filter = 1
+layout_mode = 0
+mouse_filter = 2
+texture = ExtResource("2_frame")
+draw_center = false
+patch_margin_left = 24
+patch_margin_top = 24
+patch_margin_right = 24
+patch_margin_bottom = 24

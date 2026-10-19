@@ -1,0 +1,19 @@
+[gd_scene format=4]
+
+[ext_resource type="Script" path="res://scripts/world/river_tiles_demo.gd" id="1_ymsds"]
+[ext_resource type="PackedScene" path="res://scenes/effects/river_tilemap.tscn" id="2_2y7ti"]
+[ext_resource type="TileSet" path="res://data/water/river_tileset.tres" id="3_8kfar"]
+[ext_resource type="Script" path="res://scripts/world/river_tilemap.gd" id="4_8vjve"]
+
+[node name="RiverTilesDemo" type="Node2D" unique_id=1907612741]
+script = ExtResource("1_ymsds")
+
+[node name="River" type="TileMapLayer" parent="." unique_id=1007752002 instance=ExtResource("2_2y7ti")]
+z_index = -14
+texture_filter = 1
+position = Vector2(64, 64)
+tile_map_data = PackedByteArray("AAABAAQAAAABAAAAAAADAAEAAAAAAAEAAAADAAIAAAABAAMAAAACAAIAAAACAAEAAAAEAAMAAAAAAAIAAAADAAMAAAADAAIAAAACAAMAAAADAAIAAAABAAMAAAACAAMAAAAAAAMAAAACAAAAAAAIAAQAAQAGAAEAAAAHAAQAAQAHAAEAAAAGAAQAAQADAAAAAAAIAAMAAQAGAAAAAAAGAAMAAQAGAAAAAAAIAAIAAQACAAIAAAAHAAIAAQAHAAEAAAAGAAIAAQAHAAAAAAA=")
+tile_set = ExtResource("3_8kfar")
+navigation_enabled = false
+script = ExtResource("4_8vjve")
+weather_path = NodePath("../RainWeather")

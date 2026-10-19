@@ -1,0 +1,18 @@
+[gd_resource type="Resource" script_class="EventDefinition" format=3]
+
+[ext_resource type="Script" path="res://data/events/event_definition.gd" id="1"]
+[ext_resource type="Texture2D" path="res://assets/ui/events/illustrations/gambler-dice.png" id="2"]
+
+[resource]
+script = ExtResource("1")
+id = "act1_gambler_dice"
+title = "骰子赌局"
+description = "戴兜帽的哥布林在路边摆着骰盅，骰子是用兽骨磨的。他咧嘴一笑：「押多少，翻多少。」\n\n骰盅底下压着一张皱巴巴的纸，上面画着三个正字。"
+template = 4
+min_floor = 3
+max_floor = 8
+rarity = "common"
+illustration = ExtResource("2")
+tags = Array[String](["gamble"])
+requires = Array[String]([])
+choices = Array[Dictionary]([{"gold": 0, "heal": 0, "effect": {"type": "gamble", "chance": 0.5, "win": {"type": "gold", "amount": 90}, "lose": {"type": "gold", "amount": 0}, "win_text": "兽骨骰子停在三个六上。哥布林的笑容僵了一瞬，然后更大了。", "lose_text": "骰子停在三个一上。哥布林把金币拢进袖子，说下一把一定翻。"}, "cost": {"gold": 30}, "text": "押 30 金币", "summary": "支付 30 金币 · 50% 返还 90，50% 不返还"}, {"gold": 0, "heal": 0, "effect": {"type": "gamble", "chance": 0.5, "win": {"type": "gold", "amount": 150}, "lose": {"type": "gold", "amount": 0}, "win_text": "你押上了半袋钱。骰盅揭开时，哥布林开始认真地打量你的脸。", "lose_text": "骰子滚进泥里。哥布林说这是天意，你说是他的手在抖。"}, "cost": {"gold": 60}, "text": "押 60 金币", "summary": "支付 60 金币 · 50% 返还 150，50% 不返还"}, {"gold": 25, "heal": 0, "text": "拆穿他的骰子", "summary": "获得 25 金币", "result_text": "你从骰盅底下摸出一枚灌铅的骰子。哥布林骂了一句，卷起摊子跑了。"}, {"text": "离开", "leave": true, "heal": 0, "gold": 0}])

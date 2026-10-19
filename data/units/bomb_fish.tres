@@ -1,0 +1,19 @@
+[gd_resource type="Resource" script_class="UnitData" format=3 uid="uid://bjl4b6lmms1iw"]
+
+[ext_resource type="Resource" path="res://data/skills/bomb_fish_attack.tres" id="attack"]
+[ext_resource type="Script" uid="uid://2m1qlskaxcox" path="res://data/units/unit_data.gd" id="data"]
+[ext_resource type="Script" uid="uid://c4huhq7re2216" path="res://data/skills/skill_base.gd" id="skill_base"]
+
+[resource]
+script = ExtResource("data")
+unit_name = "炸弹鱼"
+unit_english_name = "bomb_fish"
+unit_type = 22
+unit_team = "team_b"
+max_hp = 75
+defence = 2
+attack = 14
+speed = 140.0
+max_upgrade_count = 0
+skills = Array[ExtResource("skill_base")]([ExtResource("attack")])
+combat_sound_profile = &"monster"

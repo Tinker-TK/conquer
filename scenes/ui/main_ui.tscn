@@ -1,0 +1,19 @@
+[gd_scene format=3 uid="uid://8nb0dyydub0t"]
+
+[ext_resource type="Script" path="res://scripts/ui/main_ui.gd" id="1_menu"]
+
+[node name="MainUI" type="CanvasLayer"]
+script = ExtResource("1_menu")
+
+[node name="Control" type="Control" parent="."]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+mouse_filter = 2
+
+[node name="RouteError" type="AcceptDialog" parent="."]
+title = "操作未完成"
+dialog_autowrap = true

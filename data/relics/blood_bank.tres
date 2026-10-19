@@ -1,0 +1,20 @@
+[gd_resource type="Resource" script_class="RelicDefinition" format=3]
+
+[ext_resource type="Script" path="res://data/relics/relic_definition.gd" id="1"]
+[ext_resource type="Texture2D" path="res://assets/ui_redrawn/icons/relic_ring.png" id="2"]
+
+[resource]
+script = ExtResource("1")
+id = &"blood_bank"
+display_name = "血库"
+description = "己方治疗量 +25%；满血治疗的溢出量按 1:1 转护盾（已有溢出转盾时取较高值，不叠加）。"
+icon = ExtResource("2")
+kind = 5
+rarity = 1
+tags = Array[StringName]([&"guard"])
+trigger = 13
+handler = &"blood_bank"
+max_per_battle = 0
+max_per_round = 0
+cooldown_seconds = 0.0
+priority = 1

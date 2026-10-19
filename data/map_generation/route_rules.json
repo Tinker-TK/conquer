@@ -1,0 +1,48 @@
+{
+	"schema_version": 1,
+	"config_version": 1,
+	"enabled": true,
+	"rooms": 15,
+	"columns": 7,
+	"paths": 7,
+	"shops": 3,
+	"rest_quota": [
+		6,
+		7
+	],
+	"unknown_quota": [
+		10,
+		14
+	],
+	"max_prune_iterations": 50,
+	"seed": "",
+	"difficulty": "normal",
+	"difficulties": {
+		"normal": {
+			"label": "普通",
+			"elites": 5
+		},
+		"hard": {
+			"label": "困难",
+			"elites": 8
+		}
+	},
+	"act_names": [
+		"翠绿原野",
+		"第二幕",
+		"第三幕"
+	],
+	"event_pools": [
+		"res://data/events/pools/act1.json",
+		"res://data/events/pools/act1.json",
+		"res://data/events/pools/act1.json"
+	],
+	"shop_catalog": "res://data/shops/caravan.json",
+	"encounter_catalog": "res://data/map_generation/encounters.json",
+	"unknown_base_odds": {
+		"battle": 0.1,
+		"shop": 0.03,
+		"treasure": 0.02,
+		"elite": 0.0
+	}
+}

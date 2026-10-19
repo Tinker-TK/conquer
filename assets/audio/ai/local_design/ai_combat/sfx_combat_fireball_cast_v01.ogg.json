@@ -1,0 +1,50 @@
+{
+  "path": "res://assets/audio/ai/local_design/ai_combat/sfx_combat_fireball_cast_v01.ogg",
+  "asset": "sfx_combat_fireball_cast_v01",
+  "title": "法师 · 火球出手 · A 清脆",
+  "category": "ai_combat",
+  "domain": "SFX",
+  "batch": "audition_20261019",
+  "provider": "local_design",
+  "recipe": "fire_cast",
+  "variant": 1,
+  "seed": 1120930201,
+  "prompt": "Small magical fireball launched immediately, brief hot air push and glowing ember crackle accelerating away, warm midrange texture, dry fantasy game effect, 0.62 seconds. No explosion at the end, music, vocals or cavern echo.",
+  "author": "项目本地声音设计（CC0 分层素材＋原创程序合成）",
+  "source": "res://tools/audio/ai/produce_audition.py",
+  "license": "CC0-1.0",
+  "source_layers": [
+    {
+      "path": "res://assets/audio/library/swishes/swish_5.ogg",
+      "author": "artisticdude",
+      "source": "https://opengameart.org/content/swishes-sound-pack",
+      "license": "CC0-1.0",
+      "sha256": "4b586f01b9cd1eaa5078585c52da659c8ddf3f4eedbd1112147c34a87e9a7422"
+    }
+  ],
+  "changes": "分层混音、确定性变体、裁剪静音、44.1kHz 单声道、短淡入淡出、峰值控制、OGG；循环保留完整小节。",
+  "notes": "本批试听 · 本地制作；SFX；单次动作。",
+  "duration_seconds": 0.62,
+  "loop": false,
+  "features": {
+    "duration_seconds": 0.62,
+    "peak_dbfs": -3.03,
+    "rms_dbfs": -16.64,
+    "crest_db": 13.61,
+    "spectral_centroid_hz": 3721.8,
+    "zero_cross_rate": 0.0831,
+    "attack_ms": 22.8,
+    "tail_ms": 2.4
+  },
+  "channels": 1,
+  "sample_rate": 44100,
+  "seam_jump": null,
+  "sha256": "937b73dc44bd60fb67edfad36b1d802bce121474df1292f76ab40351c54f04d5",
+  "created_at": "2026-10-19T02:03:55+00:00",
+  "tags": [
+    "one-shot",
+    "soft-attack",
+    "bright"
+  ],
+  "problems": []
+}

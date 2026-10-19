@@ -1,0 +1,13 @@
+[gd_scene format=3 uid="uid://b4lyr2f232pvh"]
+
+[ext_resource type="Script" uid="uid://kjkuj358hhhi" path="res://scripts/combat/projectile.gd" id="1_arrow"]
+[ext_resource type="Texture2D" uid="uid://5d2nn1kaskel" path="res://assets/characters/Soldier/Arrow(projectile)/Arrow01(100x100).png" id="2_ytqi7"]
+
+[node name="Projectile" type="Node2D" unique_id=1877191077]
+z_index = 10
+script = ExtResource("1_arrow")
+trajectory = 1
+
+[node name="Sprite2D" type="Sprite2D" parent="." unique_id=861216337]
+scale = Vector2(2, 2)
+texture = ExtResource("2_ytqi7")

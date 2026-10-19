@@ -1,0 +1,14 @@
+[gd_resource type="Resource" format=3 uid="uid://cf6anhbbq4vka"]
+
+[ext_resource type="Script" uid="uid://chwpv4tsyp4rm" path="res://scripts/skills/area_attack.gd" id="1_tn7mu"]
+
+[resource]
+script = ExtResource("1_tn7mu")
+skill_name = "撼地"
+description = "武装哥布林举起盾牌砸地，对两边的敌方单位造成伤害"
+attack_rate = 1.2
+cooldown = 8.0
+priority = 1
+cast_animation = "attack_03"
+hit_frame = Array[int]([4])
+metadata/_data_table_id = 4

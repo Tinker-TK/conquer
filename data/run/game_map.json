@@ -1,0 +1,420 @@
+{
+	"floors": 10,
+	"locations": [
+		{
+			"event_id": "",
+			"event_source": "catalog",
+			"floor": 3,
+			"id": "floor_03_01",
+			"map_pos": {
+				"x": 0.2256446991404011,
+				"y": 0.7388888888888889
+			},
+			"next": [
+				"floor_04_01"
+			],
+			"title": "旅途奇遇",
+			"type": 1,
+			"event_pool": "res://data/events/pools/act1.json"
+		},
+		{
+			"event_id": "",
+			"floor": 3,
+			"id": "floor_03_02",
+			"map_pos": {
+				"x": 0.32951289398280803,
+				"y": 0.7388888888888889
+			},
+			"next": [
+				"floor_04_01"
+			],
+			"title": "商店",
+			"type": 5,
+			"shop_catalog": "res://data/shops/caravan.json"
+		},
+		{
+			"event_id": "",
+			"event_source": "catalog",
+			"floor": 3,
+			"id": "floor_03_03",
+			"map_pos": {
+				"x": 0.4663323782234957,
+				"y": 0.7388888888888889
+			},
+			"next": [
+				"floor_04_02"
+			],
+			"title": "旅途奇遇",
+			"type": 1,
+			"event_pool": "res://data/events/pools/act1.json"
+		},
+		{
+			"event_id": "level_104_1",
+			"floor": 4,
+			"id": "floor_04_01",
+			"map_pos": {
+				"x": 0.31805157593123207,
+				"y": 0.6433333333333334
+			},
+			"next": [
+				"floor_05_01"
+			],
+			"title": "战斗",
+			"type": 0
+		},
+		{
+			"event_id": "campfire",
+			"event_source": "catalog",
+			"floor": 4,
+			"id": "floor_04_02",
+			"map_pos": {
+				"x": 0.4656160458452722,
+				"y": 0.6433333333333334
+			},
+			"next": [
+				"floor_05_03",
+				"floor_05_02"
+			],
+			"title": "篝火",
+			"type": 2
+		},
+		{
+			"event_id": "",
+			"event_source": "catalog",
+			"floor": 5,
+			"id": "floor_05_01",
+			"map_pos": {
+				"x": 0.25,
+				"y": 0.5477777777777779
+			},
+			"next": [
+				"floor_06_04"
+			],
+			"title": "旅途奇遇",
+			"type": 1,
+			"event_pool": "res://data/events/pools/act1.json"
+		},
+		{
+			"event_id": "level_105_1",
+			"floor": 5,
+			"id": "floor_05_02",
+			"map_pos": {
+				"x": 0.4169054441260745,
+				"y": 0.5477777777777779
+			},
+			"next": [
+				"floor_06_04"
+			],
+			"title": "战斗",
+			"type": 0
+		},
+		{
+			"event_id": "level_105_1",
+			"floor": 5,
+			"id": "floor_05_03",
+			"map_pos": {
+				"x": 0.5,
+				"y": 0.5477777777777779
+			},
+			"next": [
+				"floor_06_03",
+				"floor_06_02"
+			],
+			"title": "战斗",
+			"type": 0
+		},
+		{
+			"event_id": "",
+			"event_source": "catalog",
+			"floor": 6,
+			"id": "floor_06_02",
+			"map_pos": {
+				"x": 0.4853090172239109,
+				"y": 0.45222222222222225
+			},
+			"next": [
+				"floor_07_03"
+			],
+			"title": "旅途奇遇",
+			"type": 1,
+			"event_pool": "res://data/events/pools/act1.json"
+		},
+		{
+			"event_id": "",
+			"event_source": "catalog",
+			"floor": 7,
+			"id": "floor_07_01",
+			"map_pos": {
+				"x": 0.25,
+				"y": 0.3566666666666668
+			},
+			"next": [
+				"floor_08_01"
+			],
+			"title": "旅途奇遇",
+			"type": 1,
+			"event_pool": "res://data/events/pools/act1.json"
+		},
+		{
+			"event_id": "",
+			"floor": 7,
+			"id": "floor_07_02",
+			"map_pos": {
+				"x": 0.40186246418338106,
+				"y": 0.3566666666666668
+			},
+			"next": [
+				"floor_08_01"
+			],
+			"title": "旅途奇遇",
+			"type": 1,
+			"event_source": "catalog",
+			"event_pool": "res://data/events/pools/act1.json"
+		},
+		{
+			"event_id": "level_107_2",
+			"floor": 7,
+			"id": "floor_07_03",
+			"map_pos": {
+				"x": 0.5235521235521235,
+				"y": 0.3566666666666668
+			},
+			"next": [
+				"floor_08_02",
+				"floor_08_03"
+			],
+			"title": "战斗",
+			"type": 0
+		},
+		{
+			"event_id": "level_108_1",
+			"floor": 8,
+			"id": "floor_08_01",
+			"map_pos": {
+				"x": 0.32593123209169056,
+				"y": 0.2611111111111112
+			},
+			"next": [
+				"floor_09_01"
+			],
+			"title": "战斗",
+			"type": 0
+		},
+		{
+			"event_id": "",
+			"event_source": "catalog",
+			"floor": 8,
+			"id": "floor_08_02",
+			"map_pos": {
+				"x": 0.4277992277992278,
+				"y": 0.2611111111111112
+			},
+			"next": [
+				"floor_09_02"
+			],
+			"title": "旅途奇遇",
+			"type": 1,
+			"event_pool": "res://data/events/pools/act1.json"
+		},
+		{
+			"event_id": "campfire",
+			"event_source": "catalog",
+			"floor": 9,
+			"id": "floor_09_01",
+			"map_pos": {
+				"x": 0.3333333333333333,
+				"y": 0.16555555555555568
+			},
+			"next": [
+				"floor_10_01"
+			],
+			"title": "篝火",
+			"type": 2
+		},
+		{
+			"event_id": "campfire",
+			"event_source": "catalog",
+			"floor": 9,
+			"id": "floor_09_02",
+			"map_pos": {
+				"x": 0.5666189111747851,
+				"y": 0.16555555555555568
+			},
+			"next": [
+				"floor_10_01"
+			],
+			"title": "篝火",
+			"type": 2
+		},
+		{
+			"event_id": "level_110_1",
+			"floor": 10,
+			"id": "floor_10_01",
+			"map_pos": {
+				"x": 0.42120343839541546,
+				"y": 0.07000000000000006
+			},
+			"next": [],
+			"title": "Boss",
+			"type": 3
+		},
+		{
+			"event_id": "crossroads_recruitment",
+			"event_source": "catalog",
+			"floor": 1,
+			"id": "floor_01_01",
+			"map_pos": {
+				"x": 0.4032951289398281,
+				"y": 0.93
+			},
+			"next": [
+				"floor_02_02",
+				"floor_02_03",
+				"floor_02_01"
+			],
+			"title": "旅途奇遇",
+			"type": 1
+		},
+		{
+			"event_id": "level_102_3",
+			"floor": 2,
+			"id": "floor_02_03",
+			"map_pos": {
+				"x": 0.5429799426934098,
+				"y": 0.8344444444444445
+			},
+			"next": [
+				"floor_03_04"
+			],
+			"title": "战斗",
+			"type": 0
+		},
+		{
+			"event_id": "level_102_2",
+			"floor": 2,
+			"id": "floor_02_02",
+			"map_pos": {
+				"x": 0.3861031518624642,
+				"y": 0.8344444444444445
+			},
+			"next": [
+				"floor_03_02",
+				"floor_03_03"
+			],
+			"title": "战斗",
+			"type": 0
+		},
+		{
+			"event_id": "level_102_1",
+			"floor": 2,
+			"id": "floor_02_01",
+			"map_pos": {
+				"x": 0.2693409742120344,
+				"y": 0.8344444444444445
+			},
+			"next": [
+				"floor_03_01"
+			],
+			"title": "战斗",
+			"type": 0
+		},
+		{
+			"event_id": "",
+			"event_source": "catalog",
+			"floor": 3,
+			"id": "floor_03_04",
+			"map_pos": {
+				"x": 0.6489971346704871,
+				"y": 0.7388888888888889
+			},
+			"next": [
+				"floor_04_03"
+			],
+			"title": "旅途奇遇",
+			"type": 1,
+			"event_pool": "res://data/events/pools/act1.json"
+		},
+		{
+			"event_id": "",
+			"floor": 4,
+			"id": "floor_04_03",
+			"map_pos": {
+				"x": 0.5522922636103151,
+				"y": 0.6433333333333334
+			},
+			"next": [
+				"floor_05_03"
+			],
+			"title": "商店",
+			"type": 5,
+			"shop_catalog": "res://data/shops/caravan.json"
+		},
+		{
+			"event_id": "level_108_2",
+			"floor": 8,
+			"id": "floor_08_03",
+			"map_pos": {
+				"x": 0.5621621621621622,
+				"y": 0.2611111111111112
+			},
+			"next": [
+				"floor_09_02"
+			],
+			"title": "战斗",
+			"type": 0
+		},
+		{
+			"event_id": "",
+			"event_source": "catalog",
+			"floor": 6,
+			"id": "floor_06_03",
+			"map_pos": {
+				"x": 0.6134453781512605,
+				"y": 0.45222222222222225
+			},
+			"next": [
+				"floor_07_03",
+				"floor_07_04"
+			],
+			"title": "旅途奇遇",
+			"type": 1,
+			"event_pool": "res://data/events/pools/act1.json"
+		},
+		{
+			"event_id": "",
+			"floor": 7,
+			"id": "floor_07_04",
+			"map_pos": {
+				"x": 0.661003861003861,
+				"y": 0.3566666666666668
+			},
+			"next": [
+				"floor_08_03"
+			],
+			"title": "商店",
+			"type": 5,
+			"shop_catalog": "res://data/shops/caravan.json"
+		},
+		{
+			"event_id": "",
+			"floor": 6,
+			"id": "floor_06_04",
+			"map_pos": {
+				"x": 0.3411764705882353,
+				"y": 0.45222222222222225
+			},
+			"next": [
+				"floor_07_01",
+				"floor_07_02"
+			],
+			"title": "宝箱",
+			"type": 4
+		}
+	],
+	"mode": "fixed",
+	"name": "翠绿原野",
+	"schema_version": 1,
+	"starting_ids": [
+		"floor_01_01"
+	]
+}

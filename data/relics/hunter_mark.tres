@@ -1,0 +1,20 @@
+[gd_resource type="Resource" script_class="RelicDefinition" format=3]
+
+[ext_resource type="Script" path="res://data/relics/relic_definition.gd" id="1"]
+[ext_resource type="Texture2D" path="res://assets/ui_redrawn/icons/relic_boot.png" id="2"]
+
+[resource]
+script = ExtResource("1")
+id = &"hunter_mark"
+display_name = "猎手标记"
+description = "同一敌人被远程命中 3 次后，其受到伤害 +15%（本场）。"
+icon = ExtResource("2")
+kind = 5
+rarity = 1
+tags = Array[StringName]([&"ranged"])
+trigger = 11
+handler = &"hunter_mark"
+max_per_battle = 0
+max_per_round = 0
+cooldown_seconds = 0.0
+priority = 2

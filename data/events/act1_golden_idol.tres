@@ -1,0 +1,18 @@
+[gd_resource type="Resource" script_class="EventDefinition" format=3]
+
+[ext_resource type="Script" path="res://data/events/event_definition.gd" id="1"]
+[ext_resource type="Texture2D" path="res://assets/ui/events/illustrations/golden-idol.png" id="2"]
+
+[resource]
+script = ExtResource("1")
+id = "act1_golden_idol"
+title = "镀金神像"
+description = "林间空地立着一尊与真人等高的镀金神像，脚下堆满供品。神像的眼睛似乎随着你的脚步转动。\n\n供品里有金币、干枯的花，还有几件被刻意摆正的小东西：一枚徽章、一把断齿的梳子、一颗孩子的乳牙。"
+template = 4
+min_floor = 3
+max_floor = 7
+rarity = "common"
+illustration = ExtResource("2")
+tags = Array[String](["relic"])
+requires = Array[String]([])
+choices = Array[Dictionary]([{"gold": 0, "heal": 0, "effect": {"type": "random_relic"}, "cost": {"max_hp": 8}, "text": "搬走神像", "summary": "最大生命 -8 · 获得 1 件随机遗物", "result_text": "神像比看起来轻。你走出空地时，身后的供品一件件倒了下去。"}, {"gold": 65, "heal": 0, "text": "只取供品", "summary": "获得 65 金币", "result_text": "你尽量不碰那些小东西。金币很沉，神像没有动。"}, {"gold": 0, "heal": 12, "text": "合十行礼", "summary": "回复 12 生命", "result_text": "你站了一会儿，什么也没求。离开时，胸口那股闷痛轻了一些。"}, {"text": "离开", "leave": true, "heal": 0, "gold": 0}])

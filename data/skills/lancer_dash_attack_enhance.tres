@@ -1,0 +1,17 @@
+[gd_resource type="Resource" format=3]
+
+[ext_resource type="Script" uid="uid://xmfmdw0v4pq1" path="res://scripts/skills/dash_attack.gd" id="1_6mvkl"]
+
+[resource]
+script = ExtResource("1_6mvkl")
+description = "连续冲锋两次，每段重新朝有效敌人转向，速度提高为600像素/秒。"
+unlock_upgrade_levels = Array[int]([1])
+skill_name = "冲刺攻击"
+dash_count = 2
+dash_speed = 600.0
+cooldown = 5.0
+priority = 2
+cast_range = 450.0
+manual_finish = true
+cast_animation = "attack_03"
+hit_frame = Array[int]([0])

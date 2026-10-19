@@ -1,0 +1,22 @@
+[gd_resource type="Resource" script_class="UnitData" format=3 uid="uid://dsxe3cl2h2fvv"]
+
+[ext_resource type="Resource" uid="uid://faw8frcx0lko" path="res://data/skills/armored_orc_dodge_attack.tres" id="1_iifhh"]
+[ext_resource type="Script" uid="uid://2m1qlskaxcox" path="res://data/units/unit_data.gd" id="1_vf26f"]
+[ext_resource type="Script" uid="uid://c4huhq7re2216" path="res://data/skills/skill_base.gd" id="2_iifhh"]
+[ext_resource type="Resource" uid="uid://b53bep4tknch1" path="res://data/skills/armored_orc_attack.tres" id="4_xavo4"]
+[ext_resource type="Resource" uid="uid://cf6anhbbq4vka" path="res://data/skills/armored_orc_power_attack.tres" id="5_8c305"]
+
+[resource]
+script = ExtResource("1_vf26f")
+unit_name = "武装哥布林"
+unit_english_name = "armored_orc"
+unit_type = 13
+unit_team = "team_b"
+max_hp = 145
+defence = 4
+attack = 10
+hp_damage_value = 2
+dodge_rate = 0.2
+skills = Array[ExtResource("2_iifhh")]([ExtResource("4_xavo4"), ExtResource("5_8c305")])
+dodge_skill = ExtResource("1_iifhh")
+metadata/_data_table_id = 6

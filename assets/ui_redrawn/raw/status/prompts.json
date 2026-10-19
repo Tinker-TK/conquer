@@ -1,0 +1,38 @@
+[
+  {
+	"name": "shield",
+	"source": "C:/Users/10059/Downloads/ChatGPT Image 2026年9月5日 11_47_48.png",
+	"prompt": "Use case: background-extraction. Input image is reference for a Godot pixel-art game asset. Redraw ONLY the specified single asset as a complete standalone highly polished pixel-art sprite, preserve original design/color palette, crisp square pixel clusters and dark navy outline. Centered, whole silhouette with 12% empty margin, 1024 square. Background must be exact uniform solid #FF00FF chroma-key magenta, no checkerboard, no transparency simulation, no magenta in subject. No text, numbers, UI, ground, shadow, scenery, extra items or characters. Only the small cyan-blue shield defensive-status icon below knight health bar. Symmetric compact kite shield, bright icy blue face, silver cyan border, simple vertical highlight, bold navy pixel outline. NO knight or weapon, only shield.",
+	"generated_path": "C:\\Users\\10059\\.codex\\generated_images\\01a06fb5-6bb1-7b92-bed5-59d8d6fbcced\\exec-c47d7d17-bf4e-43dd-aded-4b46cae87a4f.png",
+	"saved_path": "assets/ui_redrawn/raw/status/shield.png",
+	"mode": "built-in image_gen",
+	"background": "magenta chroma-key, requires processing"
+  },
+  {
+	"name": "tree",
+	"source": "C:/Users/10059/Downloads/ChatGPT Image 2026年9月5日 11_47_48.png",
+	"prompt": "Use case: background-extraction. Input image is reference for a Godot pixel-art game asset. Redraw ONLY the specified single asset as a complete standalone highly polished pixel-art sprite, preserve original design/color palette, crisp square pixel clusters and dark navy outline. Centered, whole silhouette with 12% empty margin, 1024 square. Background must be exact uniform solid #FF00FF chroma-key magenta, no checkerboard, no transparency simulation, no magenta in subject. No text, numbers, UI, ground, shadow, scenery, extra items or characters. Only the bright green small tree status icon below archer health bar. Compact bright lime-green leafy round conical tree crown and short green trunk, dark navy thick pixel outline. Not a battlefield scenery tree, small flat symbolic UI icon.",
+	"generated_path": "C:\\Users\\10059\\.codex\\generated_images\\01a06fb5-6bb1-7b92-bed5-59d8d6fbcced\\exec-06a0cde0-c50f-4a06-a4a6-5e1a0ca890ef.png",
+	"saved_path": "assets/ui_redrawn/raw/status/tree.png",
+	"mode": "built-in image_gen",
+	"background": "magenta chroma-key, requires processing"
+  },
+  {
+	"name": "healing",
+	"source": "C:/Users/10059/Downloads/ChatGPT Image 2026年9月5日 11_47_48.png",
+	"prompt": "Use case: background-extraction. Input image is reference for a Godot pixel-art game asset. Redraw ONLY the specified single asset as a complete standalone highly polished pixel-art sprite, preserve original design/color palette, crisp square pixel clusters and dark navy outline. Centered, whole silhouette with 12% empty margin, 1024 square. Background must be exact uniform solid #FF00FF chroma-key magenta, no checkerboard, no transparency simulation, no magenta in subject. No text, numbers, UI, ground, shadow, scenery, extra items or characters. Only the lime-green plus sign healing status icon below priest health bar. Symmetric chunky bright green plus sign with dark navy thick stepped pixel outline, small lime highlight, flat compact game symbol.",
+	"generated_path": "C:\\Users\\10059\\.codex\\generated_images\\01a06fb5-6bb1-7b92-bed5-59d8d6fbcced\\exec-a4e1565a-0a43-4b93-ba1a-71e6989cc922.png",
+	"saved_path": "assets/ui_redrawn/raw/status/healing.png",
+	"mode": "built-in image_gen",
+	"background": "magenta chroma-key, requires processing"
+  },
+  {
+	"name": "skull",
+	"source": "C:/Users/10059/Downloads/ChatGPT Image 2026年9月5日 11_47_48.png",
+	"prompt": "Use case: background-extraction. Input image is reference for a Godot pixel-art game asset. Redraw ONLY the specified single asset as a complete standalone highly polished pixel-art sprite, preserve original design/color palette, crisp square pixel clusters and dark navy outline. Centered, whole silhouette with 12% empty margin, 1024 square. Background must be exact uniform solid #FF00FF chroma-key magenta, no checkerboard, no transparency simulation, no magenta in subject. No text, numbers, UI, ground, shadow, scenery, extra items or characters. Only the red-orange skull status icon below goblin health bar. Small stylized non-scary orange red skull with squared forehead, black navy eye sockets, dark navy outline, small teeth/chin, compact square icon.",
+	"generated_path": "C:\\Users\\10059\\.codex\\generated_images\\01a06fb5-6bb1-7b92-bed5-59d8d6fbcced\\exec-194b04ab-daa6-48df-89bc-2692c2ed9dc7.png",
+	"saved_path": "assets/ui_redrawn/raw/status/skull.png",
+	"mode": "built-in image_gen",
+	"background": "magenta chroma-key, requires processing"
+  }
+]

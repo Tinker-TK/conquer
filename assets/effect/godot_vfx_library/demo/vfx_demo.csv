@@ -1,0 +1,77 @@
+keys,en,zh
+VFX_TEST_SCENE,VFX Test Scene Started,VFX 测试场景已启动
+CHECK_AUTOLOADS,Checking Preview Managers,检查预览管理器
+AUTOLOAD_ENVVFX_LOADED,EnvVFX Loaded,EnvVFX 已配置
+AUTOLOAD_ENVVFX_FAILED,EnvVFX not configured,EnvVFX 未配置
+AUTOLOAD_ENVVFX_ERROR,EnvVFX not configured! Please add Autoload in project settings,EnvVFX 未配置！请在项目设置中添加 Autoload
+AUTOLOAD_VFX_LOADED,VFX Loaded,VFX 已配置
+AUTOLOAD_VFX_FAILED,VFX not configured,VFX 未配置
+AUTOLOAD_VFX_ERROR,VFX not configured! Please add Autoload in project settings,VFX 未配置！请在项目设置中添加 Autoload
+EFFECTS_LOADED,Effects loaded: %d,已加载 %d 个特效
+EFFECT_SELECTED,Effect selected: %s,选择特效: %s
+CLEARING_EFFECTS,Clearing all effects,清除所有特效
+EFFECTS_CLEARED,Effects cleared: %d,已清除 %d 个特效
+SPAWNING_EFFECT,Spawning effect: %s at position %v,生成特效: %s 于位置 %v
+ENVVFX_ERROR,EnvVFX not configured,EnvVFX 未配置
+VFX_ERROR,VFX not configured,VFX 未配置
+METHOD_NOT_FOUND,Method not found: EnvVFX.%s,方法不存在: EnvVFX.%s
+SHADER_LIST_LOADED,Shader list initialized with %d shaders,Shader列表初始化完成，共 %d 个shader
+SHADER_SELECTED,Shader selected: %s,选择shader: %s
+SELECT_SHADER,Please select a shader first,请先选择一个shader
+SHADER_LOAD_FAILED,Unable to load shader: %s,无法加载shader: %s
+SHADER_APPLIED,Shader applied: %s,已应用shader: %s
+SHADER_REMOVED,Shader removed,已移除shader
+EFFECT_TORCH_FIRE,🔥 Torch Fire,🔥 火焰
+EFFECT_WATER_SPLASH,💧 Water Splash,💧 水花
+EFFECT_DUST_CLOUD,💨 Dust Cloud,💨 尘土
+EFFECT_SPARKS,✨ Sparks,✨ 火花
+EFFECT_STEAM,☁️ Steam,☁️ 蒸汽
+EFFECT_FIREFLIES,🌟 Fireflies,🌟 萤火虫
+EFFECT_MAGIC_AURA,🔮 Magic Aura,🔮 魔法光环
+EFFECT_POISON_CLOUD,☠️ Poison Cloud,☠️ 毒雾
+EFFECT_FALLING_LEAVES,🍂 Falling Leaves,🍂 落叶
+EFFECT_WOOD_DEBRIS,🪵 Wood Debris,🪵 木屑
+EFFECT_FIRE_PARTICLE,🔴 Fire Particle,🔴 火粒子
+EFFECT_ICE_PARTICLE,🔵 Ice Particle,🔵 冰粒子
+EFFECT_POISON_PARTICLE,🟢 Poison Particle,🟢 毒粒子
+EFFECT_LIGHTNING_PARTICLE,🟡 Lightning Particle,🟡 雷粒子
+EFFECT_SHADOW_PARTICLE,🟣 Shadow Particle,🟣 暗影粒子
+EFFECT_BLOOD_SPLASH,🩸 Blood Splash,🩸 血液飞溅
+EFFECT_ENERGY_BURST,💥 Energy Burst,💥 能量爆发
+EFFECT_HEAL,💚 Heal Effect,💚 治疗效果
+EFFECT_SHIELD_BREAK,🛡️ Shield Break,🛡️ 护盾破碎
+EFFECT_COMBO_RING,🌀 Combo Ring,🌀 连击特效
+EFFECT_JUMP_DUST,💨 Jump Dust,💨 跳跃尘土
+EFFECT_DASH_TRAIL,👻 Dash Trail,👻 冲刺残影
+EFFECT_WALL_SPARK,⚡ Wall Slide Spark,⚡ 墙壁火花
+EFFECT_PORTAL,🌀 Portal Vortex,🌀 传送门漩涡
+EFFECT_LIGHTNING,⚡ Electric Burst,⚡ 电流迸发
+EFFECT_ICE_FROST,❄️ Ice Frost,❄️ 冰霜
+EFFECT_FIREBALL,🔥 Fireball Trail,🔥 火球拖尾
+EFFECT_SUMMON,🔯 Summon Circle,🔯 召唤阵
+EFFECT_RAIN,🌧️ Rain,🌧️ 雨滴
+EFFECT_SNOW,❄️ Snow,❄️ 雪花
+EFFECT_WATERFALL,💦 Waterfall Mist,💦 瀑布水雾
+EFFECT_CAMPFIRE,🔥 Campfire Smoke,🔥 篝火烟雾
+EFFECT_CANDLE,🕯️ Candle Flame,🕯️ 蜡烛火焰
+EFFECT_ASH,🌫️ Ash Particles,🌫️ 灰烬飘散
+SHADER_BURNING,🔥 Burning,🔥 燃烧
+SHADER_FROZEN,❄️ Frozen,❄️ 冰冻
+SHADER_POISON,☠️ Poison,☠️ 中毒
+SHADER_PETRIFY,🗿 Petrify,🗿 石化
+SHADER_INVISIBILITY,👻 Invisibility,👻 隐身
+SHADER_DISSOLVE,💥 Dissolve,💥 溶解
+SHADER_BLINK,⚡ Blink,⚡ 闪烁
+SHADER_WATER_SURFACE,🌊 Water Surface,🌊 水面
+SHADER_FLASH_WHITE,🔆 Flash White,🔆 闪白
+SHADER_COLOR_CHANGE,🎨 Color Change,🎨 变色
+SHADER_FOG,🌫️ Fog,🌫️ 雾气
+SHADER_HEAT_DISTORTION,🔥 Heat Distortion,🔥 热扭曲
+SHADER_RADIAL_BLUR,🌀 Radial Blur,🌀 径向模糊
+SHADER_GRAYSCALE,🎭 Grayscale,🎭 灰度
+SHADER_CHROMATIC,🌈 Chromatic Aberration,🌈 色差
+SHADER_VIGNETTE,🔲 Vignette,🔲 晕影
+SHADER_OUTLINE_GLOW,✨ Outline Glow,✨ 轮廓发光
+PARTICLES,✨ Particles,✨ 粒子
+SHADERS,🎭 Shaders,🎭 着色
+HELP_INSTRUCTIONS, 📌 Select → Right-click to generate | Esc to exit,📌 选择 → 右键生成 | Esc 退出

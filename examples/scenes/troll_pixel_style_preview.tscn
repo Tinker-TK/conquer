@@ -1,0 +1,6 @@
+[gd_scene format=3]
+
+[ext_resource type="Script" path="res://examples/scripts/troll_pixel_style_preview.gd" id="preview"]
+
+[node name="TrollPixelStylePreview" type="Node2D"]
+script = ExtResource("preview")

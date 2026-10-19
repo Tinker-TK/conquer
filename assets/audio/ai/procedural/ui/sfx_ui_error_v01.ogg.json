@@ -1,0 +1,39 @@
+{
+  "id": "ui_error",
+  "variant": 1,
+  "asset": "sfx_ui_error_v01",
+  "provider": "procedural",
+  "category": "ui",
+  "title": "报错",
+  "prompt": "short muted error buzz, low and dry, not harsh",
+  "source_prompt": "short muted error buzz, low and dry, not harsh",
+  "duration_seconds": 0.3,
+  "output_format": "wav_48000",
+  "tags": [
+    "ui",
+    "error",
+    "buzz"
+  ],
+  "license": "CC0-1.0",
+  "author": "项目程序合成（占位）",
+  "source": "res://tools/audio/ai/procedural.py",
+  "recipe": "ui_error",
+  "created_at": "2026-10-18T17:03:23+00:00",
+  "sha256": "3a2acb04c030dc85d7b8c2f5dc4c6bec5a592150178aa0d5a89cc8eb66f7c607",
+  "path": "res://assets/audio/ai/procedural/ui/sfx_ui_error_v01.ogg",
+  "loop": false,
+  "sample_rate": 44100,
+  "channels": 1,
+  "features": {
+    "duration_seconds": 0.3,
+    "peak_dbfs": -1.5,
+    "rms_dbfs": -14.16,
+    "crest_db": 12.66,
+    "spectral_centroid_hz": 286.5,
+    "zero_cross_rate": 0.0054,
+    "attack_ms": 16.8,
+    "tail_ms": 1.8
+  },
+  "seam_jump": null,
+  "bytes": 4805
+}

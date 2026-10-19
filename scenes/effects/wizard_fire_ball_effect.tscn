@@ -1,0 +1,39 @@
+[gd_scene format=3 uid="uid://dyw7yocmod8py"]
+
+[ext_resource type="Texture2D" uid="uid://bqmksj1d2jcsx" path="res://assets/characters/Wizard/Magic(projectile)/Wizard_Attack02_Effect.png" id="1_kry6w"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_qiwfo"]
+atlas = ExtResource("1_kry6w")
+region = Rect2(400, 0, 100, 100)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_mowm1"]
+atlas = ExtResource("1_kry6w")
+region = Rect2(500, 0, 100, 100)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_ix083"]
+atlas = ExtResource("1_kry6w")
+region = Rect2(600, 0, 100, 100)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_0u1bf"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_qiwfo")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_mowm1")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_ix083")
+}],
+"loop": false,
+"name": &"effect",
+"speed": 5.0
+}]
+
+[node name="WizardFireBallEffect" type="AnimatedSprite2D" unique_id=129410301]
+scale = Vector2(4, 4)
+sprite_frames = SubResource("SpriteFrames_0u1bf")
+animation = &"effect"
+frame = 2
+frame_progress = 1.0

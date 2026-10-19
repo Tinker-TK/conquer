@@ -1,0 +1,354 @@
+[gd_scene format=3]
+
+[ext_resource type="Texture2D" uid="uid://cpsmdm3vulvtd" path="res://assets/ui_redrawn/UI/regenerate/dark_panel.png" id="1_fbbsm"]
+[ext_resource type="Texture2D" uid="uid://bqavnowt0cagp" path="res://assets/ui_redrawn/UI/regenerate/crown_backplate.png" id="4_5rjcn"]
+[ext_resource type="Texture2D" uid="uid://n70og0f6bkhe" path="res://assets/ui_redrawn/UI/regenerate/crown.png" id="5_fke5x"]
+[ext_resource type="Texture2D" uid="uid://sq3oxuxywpgl" path="res://assets/ui_redrawn/UI/regenerate/energy_orb.png" id="6_2u763"]
+[ext_resource type="Texture2D" uid="uid://cvqm8rc1lmnan" path="res://assets/ui_redrawn/UI/regenerate/draw_book.png" id="7_i2e1o"]
+[ext_resource type="Texture2D" uid="uid://c77nikrxaciyw" path="res://assets/ui_redrawn/UI/regenerate/battle_control_panel.png" id="7_pvsb8"]
+[ext_resource type="Texture2D" uid="uid://dnvsygttonfvq" path="res://assets/ui_redrawn/UI/regenerate/discard_book.png" id="8_pvsb8"]
+[ext_resource type="Texture2D" uid="uid://ciavl4xrlxw5u" path="res://assets/ui_redrawn/UI/regenerate/chapter_banner.png" id="9_bubx5"]
+[ext_resource type="Texture2D" uid="uid://cuxseipteef7a" path="res://assets/ui_redrawn/UI/regenerate/gold_coin.png" id="10_rn6lq"]
+[ext_resource type="Texture2D" uid="uid://dr6m1gpywi21d" path="res://assets/ui_redrawn/UI/regenerate/heart.png" id="11_lvjyv"]
+[ext_resource type="Texture2D" uid="uid://b0msdy3brbpjl" path="res://assets/ui_redrawn/UI/regenerate/map.png" id="12_j3ir1"]
+[ext_resource type="Texture2D" uid="uid://1c2c030nx5m3" path="res://assets/ui_redrawn/UI/regenerate/deck_book.png" id="13_04hgy"]
+[ext_resource type="Texture2D" uid="uid://putf36xgd3p7" path="res://assets/ui_redrawn/UI/regenerate/gear.png" id="14_g0fjx"]
+[ext_resource type="StyleBox" uid="uid://cu14n2nu3og7n" path="res://themes/button_hover_style.tres" id="15_bubx5"]
+[ext_resource type="StyleBox" uid="uid://ca8s2ut47ju2x" path="res://themes/button_normal_style.tres" id="15_pvsb8"]
+[ext_resource type="StyleBox" uid="uid://ib626yfegyp3" path="res://themes/button_pressed_style.tres" id="17_rn6lq"]
+[ext_resource type="Shader" uid="uid://rcctioq4484d" path="res://shaders/red_tint_black_outline.gdshader" id="18_j3ir1"]
+[ext_resource type="Texture2D" uid="uid://xhdnbdsbapn6" path="res://assets/ui/frame.png" id="19_04hgy"]
+[ext_resource type="PackedScene" path="res://scenes/ui/run_items_hud.tscn" id="20_items"]
+[ext_resource type="Script" path="res://scripts/ui/battle_speed_controls.gd" id="21_speed"]
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_2u763"]
+bg_color = Color(0, 0, 0, 0.43529412)
+corner_radius_top_left = 25
+corner_radius_top_right = 25
+corner_radius_bottom_right = 25
+corner_radius_bottom_left = 25
+corner_detail = 20
+expand_margin_right = 1.0
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_bubx5"]
+
+[sub_resource type="Theme" id="Theme_bubx5"]
+Button/constants/h_separation = 4
+Button/font_sizes/font_size = 30
+Button/styles/focus = SubResource("StyleBoxEmpty_bubx5")
+Button/styles/hover = ExtResource("15_bubx5")
+Button/styles/normal = ExtResource("15_pvsb8")
+Button/styles/pressed = ExtResource("17_rn6lq")
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_rn6lq"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_lvjyv"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_j3ir1"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_04hgy"]
+
+[sub_resource type="LabelSettings" id="LabelSettings_g0fjx"]
+font_size = 20
+shadow_size = 20
+shadow_color = Color(0, 0, 0, 1)
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_ljvi0"]
+shader = ExtResource("18_j3ir1")
+shader_parameter/tint_color = Color(1, 0, 0, 1)
+shader_parameter/tint_strength = 0.80999998189488
+shader_parameter/outline_color = Color(0, 0, 0, 1)
+shader_parameter/outline_width = 1.0000000149012
+
+[node name="RunHUD" type="Control"]
+mouse_filter = 2
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+
+[node name="BisicUI" type="Control" parent="." unique_id=1015187892]
+mouse_filter = 2
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="TopMessage" type="NinePatchRect" parent="BisicUI" unique_id=995864074]
+mouse_filter = 0
+layout_mode = 1
+anchors_preset = 5
+anchor_left = 0.5
+anchor_top = 0.0
+anchor_right = 0.5
+anchor_bottom = 0.0
+offset_left = -1004.0
+offset_top = -106.0
+offset_right = 995.0
+offset_bottom = 127.0
+grow_horizontal = 2
+grow_vertical = 2
+texture = ExtResource("1_fbbsm")
+patch_margin_left = 95
+patch_margin_top = 109
+patch_margin_right = 94
+patch_margin_bottom = 104
+
+[node name="TextureRect" type="TextureRect" parent="BisicUI" unique_id=624937537]
+mouse_filter = 2
+layout_mode = 0
+offset_left = 5.0
+offset_top = -41.0
+offset_right = 389.0
+offset_bottom = 471.0
+scale = Vector2(0.3, 0.3)
+texture = ExtResource("4_5rjcn")
+
+[node name="TextureRect2" type="TextureRect" parent="BisicUI" unique_id=795860491]
+mouse_filter = 2
+layout_mode = 0
+offset_left = 28.0
+offset_top = 7.0
+offset_right = 477.99994
+offset_bottom = 444.0
+scale = Vector2(0.15, 0.15)
+texture = ExtResource("5_fke5x")
+
+[node name="ChapterBanner" type="TextureRect" parent="BisicUI" unique_id=1324630957]
+mouse_filter = 2
+layout_mode = 1
+anchors_preset = 5
+anchor_left = 0.5
+anchor_right = 0.5
+offset_left = -160.0
+offset_right = 1120.0
+offset_bottom = 580.0
+grow_horizontal = 2
+scale = Vector2(0.25, 0.25)
+texture = ExtResource("9_bubx5")
+stretch_mode = 2
+
+[node name="Charpter" type="Label" parent="BisicUI/ChapterBanner" unique_id=1062068038]
+mouse_filter = 2
+layout_mode = 0
+offset_left = 260.0
+offset_top = 76.0
+offset_right = 1028.0
+offset_bottom = 210.0
+theme_override_colors/font_color = Color(1, 1, 1, 1)
+theme_override_colors/font_shadow_color = Color(0, 0, 0, 1)
+theme_override_colors/font_outline_color = Color(0, 0, 0, 1)
+theme_override_constants/shadow_outline_size = 40
+theme_override_font_sizes/font_size = 100
+text = "第1幕-翠绿原野"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="GlodCoin" type="Panel" parent="BisicUI" unique_id=745986275]
+mouse_filter = 2
+layout_mode = 0
+offset_left = 334.0
+offset_top = 11.0
+offset_right = 504.0
+offset_bottom = 70.0
+theme_override_styles/panel = SubResource("StyleBoxFlat_2u763")
+
+[node name="GoldCoinIcon" type="TextureRect" parent="BisicUI/GlodCoin" unique_id=1465977832]
+mouse_filter = 2
+layout_mode = 1
+anchors_preset = 5
+anchor_left = 0.5
+anchor_right = 0.5
+offset_left = -85.0
+offset_top = -2.0
+offset_right = 215.0
+offset_bottom = 262.0
+grow_horizontal = 2
+scale = Vector2(0.25, 0.25)
+texture = ExtResource("10_rn6lq")
+stretch_mode = 2
+
+[node name="GlodCoinNumber" type="Label" parent="BisicUI/GlodCoin" unique_id=2102339313]
+mouse_filter = 2
+layout_mode = 0
+offset_left = 61.0
+offset_top = 9.0
+offset_right = 161.0
+offset_bottom = 50.0
+theme_override_colors/font_color = Color(0.9843137, 0.89411765, 0.078431375, 1)
+theme_override_font_sizes/font_size = 40
+text = "99"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="Hp" type="Panel" parent="BisicUI" unique_id=1499366596]
+mouse_filter = 2
+layout_mode = 0
+offset_left = 120.0
+offset_top = 11.0
+offset_right = 320.0
+offset_bottom = 70.0
+theme_override_styles/panel = SubResource("StyleBoxFlat_2u763")
+
+[node name="Heart" type="TextureRect" parent="BisicUI/Hp" unique_id=499675758]
+mouse_filter = 2
+layout_mode = 1
+anchors_preset = 5
+anchor_left = 0.5
+anchor_right = 0.5
+offset_left = -104.0
+offset_top = -2.0
+offset_right = 196.0
+offset_bottom = 262.0
+grow_horizontal = 2
+scale = Vector2(0.25, 0.25)
+texture = ExtResource("11_lvjyv")
+stretch_mode = 2
+
+[node name="Hp" type="Label" parent="BisicUI/Hp" unique_id=1366886097]
+mouse_filter = 2
+layout_mode = 0
+offset_left = 55.0
+offset_top = 10.0
+offset_right = 190.0
+offset_bottom = 51.0
+theme_override_colors/font_color = Color(0.9843137, 0.3882353, 0.4392157, 1)
+theme_override_font_sizes/font_size = 40
+text = "80/80"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="Panel3" type="Panel" parent="BisicUI" unique_id=35754018]
+mouse_filter = 2
+layout_mode = 0
+offset_left = 536.0
+offset_top = 11.0
+offset_right = 760.0
+offset_bottom = 70.0
+theme_override_styles/panel = SubResource("StyleBoxFlat_2u763")
+
+[node name="TopButtons" type="Control" parent="." unique_id=1621399109]
+mouse_filter = 2
+layout_mode = 3
+anchors_preset = 0
+offset_right = 40.0
+offset_bottom = 40.0
+theme = SubResource("Theme_bubx5")
+
+[node name="SpeedControls" type="HBoxContainer" parent="TopButtons"]
+layout_mode = 0
+offset_left = 1128.0
+offset_top = 18.0
+offset_right = 1320.0
+offset_bottom = 63.0
+theme_override_constants/separation = 4
+script = ExtResource("21_speed")
+
+[node name="NormalSpeed" type="Button" parent="TopButtons/SpeedControls"]
+layout_mode = 2
+size_flags_horizontal = 3
+text = "原速"
+
+[node name="DoubleSpeed" type="Button" parent="TopButtons/SpeedControls"]
+layout_mode = 2
+size_flags_horizontal = 3
+text = "2倍"
+
+[node name="TripleSpeed" type="Button" parent="TopButtons/SpeedControls"]
+layout_mode = 2
+size_flags_horizontal = 3
+text = "3倍"
+
+[node name="MapButton" type="Button" parent="TopButtons" unique_id=249531147]
+layout_mode = 0
+offset_left = 1332.0
+offset_top = 18.0
+offset_right = 1499.0
+offset_bottom = 63.0
+text = "地图"
+
+[node name="Map" type="TextureRect" parent="TopButtons/MapButton" unique_id=1089571323]
+mouse_filter = 2
+layout_mode = 1
+anchors_preset = 5
+anchor_left = 0.5
+anchor_right = 0.5
+offset_left = -80.5
+offset_top = -18.0
+offset_right = 219.5
+offset_bottom = 246.0
+grow_horizontal = 2
+scale = Vector2(0.25, 0.25)
+texture = ExtResource("12_j3ir1")
+stretch_mode = 2
+
+[node name="CardButton" type="Button" parent="TopButtons" unique_id=59630921]
+layout_mode = 0
+offset_left = 1530.0
+offset_top = 18.0
+offset_right = 1681.0
+offset_bottom = 64.0
+text = "卡组"
+
+[node name="DeckBook" type="TextureRect" parent="TopButtons/CardButton" unique_id=88079815]
+mouse_filter = 2
+layout_mode = 1
+anchors_preset = 5
+anchor_left = 0.5
+anchor_right = 0.5
+offset_left = -74.5
+offset_top = -15.0
+offset_right = 225.5
+offset_bottom = 249.0
+grow_horizontal = 2
+scale = Vector2(0.25, 0.25)
+texture = ExtResource("13_04hgy")
+stretch_mode = 2
+
+[node name="Setting" type="Button" parent="TopButtons" unique_id=991809789]
+layout_mode = 0
+offset_left = 1708.0
+offset_top = 19.0
+offset_right = 1860.0
+offset_bottom = 64.0
+text = "设置"
+
+[node name="Gear" type="TextureRect" parent="TopButtons/Setting" unique_id=1387750985]
+mouse_filter = 2
+layout_mode = 1
+anchors_preset = 5
+anchor_left = 0.5
+anchor_right = 0.5
+offset_left = -82.0
+offset_top = -15.0
+offset_right = 218.0
+offset_bottom = 241.0
+grow_horizontal = 2
+scale = Vector2(0.25, 0.25)
+texture = ExtResource("14_g0fjx")
+stretch_mode = 2
+
+[node name="SkillButtons" type="HBoxContainer" parent="." unique_id=281417327]
+visible = false
+mouse_filter = 2
+offset_left = 554.0
+offset_top = 22.0
+offset_right = 714.0
+offset_bottom = 62.0
+theme_override_constants/separation = 20
+
+[node name="TextureButton" type="TextureButton" parent="SkillButtons" unique_id=1034284938]
+custom_minimum_size = Vector2(40, 0)
+layout_mode = 2
+
+[node name="TextureButton2" type="TextureButton" parent="SkillButtons" unique_id=1170801592]
+custom_minimum_size = Vector2(40, 0)
+layout_mode = 2
+
+[node name="TextureButton3" type="TextureButton" parent="SkillButtons" unique_id=1983785930]
+custom_minimum_size = Vector2(40, 0)
+layout_mode = 2
+
+[node name="RunItemsHUD" parent="." instance=ExtResource("20_items")]

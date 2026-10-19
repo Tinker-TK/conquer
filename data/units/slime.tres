@@ -1,0 +1,16 @@
+[gd_resource type="Resource" script_class="UnitData" format=3 uid="uid://dqcvb4v847tqs"]
+
+[ext_resource type="Script" uid="uid://2m1qlskaxcox" path="res://data/units/unit_data.gd" id="1_xen4c"]
+[ext_resource type="Script" uid="uid://c4huhq7re2216" path="res://data/skills/skill_base.gd" id="2_mdm02"]
+[ext_resource type="Resource" uid="uid://bj45lmx54sqou" path="res://data/skills/slime_attack.tres" id="3_xen4c"]
+[ext_resource type="Resource" uid="uid://d1sds6upnwi4u" path="res://data/skills/slime_power_attack.tres" id="4_mdm02"]
+
+[resource]
+script = ExtResource("1_xen4c")
+unit_name = "史莱姆"
+unit_english_name = "slime"
+unit_type = 20
+unit_team = "team_b"
+skills = Array[ExtResource("2_mdm02")]([ExtResource("3_xen4c"), ExtResource("4_mdm02")])
+metadata/_data_table_id = 6
+hp_damage_value = 1

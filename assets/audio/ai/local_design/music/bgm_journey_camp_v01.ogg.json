@@ -1,0 +1,41 @@
+{
+  "path": "res://assets/audio/ai/local_design/music/bgm_journey_camp_v01.ogg",
+  "asset": "bgm_journey_camp_v01",
+  "title": "征途主题 · 营地",
+  "category": "music",
+  "domain": "BGM",
+  "batch": "audition_20261019",
+  "provider": "local_design",
+  "recipe": "music_camp",
+  "variant": 1,
+  "seed": 3086780810,
+  "prompt": "Instrumental medieval fantasy card tactics camp loop. 96 BPM, D minor with warm Dorian colors. Intimate lute, soft wooden flute, restrained bowed string drone, memorable four-note motif D F A G, calm and hopeful. Eight bars, stable meter, no vocals, choir, modern synth, intro, ending or large percussion. Loop-ready.",
+  "author": "项目本地声音设计（CC0 分层素材＋原创程序合成）",
+  "source": "res://tools/audio/ai/produce_audition.py",
+  "license": "CC0-1.0",
+  "source_layers": [],
+  "changes": "分层混音、确定性变体、裁剪静音、44.1kHz 单声道、短淡入淡出、峰值控制、OGG；循环保留完整小节。",
+  "notes": "本批试听 · 本地制作；BGM；可循环。",
+  "duration_seconds": 20.0,
+  "loop": true,
+  "features": {
+    "duration_seconds": 20.0,
+    "peak_dbfs": -8.93,
+    "rms_dbfs": -20.97,
+    "crest_db": 12.05,
+    "spectral_centroid_hz": 520.8,
+    "zero_cross_rate": 0.0198,
+    "attack_ms": 15037.5,
+    "tail_ms": 1.5
+  },
+  "channels": 1,
+  "sample_rate": 44100,
+  "seam_jump": 0.002972986549139023,
+  "sha256": "a29b61b01a06e853f3ba824b07ace5e95a7feec9b1fb2ae7979f98a0c2b1514a",
+  "created_at": "2026-10-19T02:03:56+00:00",
+  "tags": [
+    "loop",
+    "dark"
+  ],
+  "problems": []
+}

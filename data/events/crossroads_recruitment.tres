@@ -1,0 +1,18 @@
+[gd_resource type="Resource" script_class="EventDefinition" format=3]
+
+[ext_resource type="Script" path="res://data/events/event_definition.gd" id="1"]
+[ext_resource type="Texture2D" path="res://assets/ui/events/illustrations/crossroads-recruitment.png" id="2"]
+
+[resource]
+script = ExtResource("1")
+id = "crossroads_recruitment"
+title = "岔路的援军"
+description = "一队远行的士兵在旧营地歇脚，桌上摊着战术卷轴。\n\n队长把名册推到你面前：兵员和卷轴，只能带走一份。"
+template = 4
+min_floor = 1
+max_floor = 9
+rarity = "common"
+illustration = ExtResource("2")
+tags = Array[String]([])
+requires = Array[String]([])
+choices = Array[Dictionary]([{"text": "挑选一名新兵", "effect": {"type": "choose_cards", "unit_offer": 3, "unit_picks": 1, "effect_offer": 0, "effect_picks": 0}, "result_text": "新兵背起行囊，在你的旗帜下站定。", "heal": 0, "gold": 0}, {"text": "抄录一份战术", "effect": {"type": "choose_cards", "unit_offer": 0, "unit_picks": 0, "effect_offer": 3, "effect_picks": 1}, "result_text": "你记下最后一行，收好这份行军的底气。", "heal": 0, "gold": 0}, {"text": "只要一碗水", "heal": 12, "result_text": "清水洗去尘土。队伍稍作休整，继续向前。", "gold": 0}, {"text": "离开", "leave": true, "heal": 0, "gold": 0}])

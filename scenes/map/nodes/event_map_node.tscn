@@ -1,0 +1,11 @@
+[gd_scene format=3 uid="uid://duy1ta447bh8y"]
+
+[ext_resource type="PackedScene" uid="uid://b2iqe6y8te6wt" path="res://scenes/map/nodes/map_node.tscn" id="1_eabq4"]
+[ext_resource type="Texture2D" uid="uid://beiw0pumhrp1m" path="res://assets/tilemap/level_icon.png" id="2_ashm6"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_gob6s"]
+atlas = ExtResource("2_ashm6")
+region = Rect2(770, 220, 210, 210)
+
+[node name="EventMapNode" unique_id=460198952 instance=ExtResource("1_eabq4")]
+icon_texture = SubResource("AtlasTexture_gob6s")

@@ -1,0 +1,14 @@
+[gd_resource type="Resource" format=3 uid="uid://dtli5ks6tp7b1"]
+
+[ext_resource type="Script" uid="uid://l5slg1wgnhew" path="res://scripts/skills/normal_attack.gd" id="1_6ir6h"]
+[ext_resource type="PackedScene" uid="uid://bfc7hft36g2go" path="res://scenes/effects/green_boom.tscn" id="1_7yvn5"]
+
+[resource]
+script = ExtResource("1_6ir6h")
+skill_name = "远程攻击"
+cooldown = 4.0
+priority = 1
+cast_range = 1000.0
+cast_animation = "attack_02"
+on_hit_effect = ExtResource("1_7yvn5")
+metadata/_data_table_id = 4

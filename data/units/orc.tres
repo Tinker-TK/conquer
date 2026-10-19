@@ -1,0 +1,18 @@
+[gd_resource type="Resource" script_class="UnitData" format=3 uid="uid://eogbqxtfw0k1"]
+
+[ext_resource type="Script" uid="uid://2m1qlskaxcox" path="res://data/units/unit_data.gd" id="2_1dtop"]
+[ext_resource type="Script" uid="uid://c4huhq7re2216" path="res://data/skills/skill_base.gd" id="2_ol75t"]
+[ext_resource type="Resource" uid="uid://dsismy1gl6714" path="res://data/skills/orc_attack.tres" id="3_ol75t"]
+[ext_resource type="Resource" uid="uid://gwjtgf7nn6sm" path="res://data/skills/orc_power_attack.tres" id="4_mwtkl"]
+
+[resource]
+script = ExtResource("2_1dtop")
+attack = 11
+defence = 3
+unit_name = "哥布林"
+unit_english_name = "orc"
+unit_type = 2
+unit_team = "team_b"
+skills = Array[ExtResource("2_ol75t")]([ExtResource("3_ol75t"), ExtResource("4_mwtkl")])
+metadata/_data_table_id = 6
+hp_damage_value = 1

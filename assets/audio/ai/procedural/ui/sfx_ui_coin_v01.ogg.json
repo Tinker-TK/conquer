@@ -1,0 +1,39 @@
+{
+  "id": "ui_coin",
+  "variant": 1,
+  "asset": "sfx_ui_coin_v01",
+  "provider": "procedural",
+  "category": "ui",
+  "title": "金币",
+  "prompt": "small handful of gold coins clinking, bright metal, quick",
+  "source_prompt": "small handful of gold coins clinking, bright metal, quick",
+  "duration_seconds": 0.5,
+  "output_format": "wav_48000",
+  "tags": [
+    "ui",
+    "coin",
+    "metal"
+  ],
+  "license": "CC0-1.0",
+  "author": "项目程序合成（占位）",
+  "source": "res://tools/audio/ai/procedural.py",
+  "recipe": "ui_coin",
+  "created_at": "2026-10-18T17:03:23+00:00",
+  "sha256": "6f40ab0d464d441d219353084cdd93ba6706d203621bea4b70dec5ec472b1f40",
+  "path": "res://assets/audio/ai/procedural/ui/sfx_ui_coin_v01.ogg",
+  "loop": false,
+  "sample_rate": 44100,
+  "channels": 1,
+  "features": {
+    "duration_seconds": 0.55,
+    "peak_dbfs": -1.5,
+    "rms_dbfs": -15.49,
+    "crest_db": 13.99,
+    "spectral_centroid_hz": 6725.1,
+    "zero_cross_rate": 0.142,
+    "attack_ms": 142.8,
+    "tail_ms": 1.2
+  },
+  "seam_jump": null,
+  "bytes": 6444
+}

@@ -1,0 +1,39 @@
+{
+  "id": "combat_bow_release",
+  "variant": 1,
+  "asset": "sfx_combat_bow_release_v01",
+  "provider": "procedural",
+  "category": "ai_combat",
+  "title": "放箭",
+  "prompt": "wooden bowstring release, arrow flying away, tight thwip",
+  "source_prompt": "wooden bowstring release, arrow flying away, tight thwip",
+  "duration_seconds": 0.5,
+  "output_format": "wav_48000",
+  "tags": [
+    "attack",
+    "bow",
+    "ranged"
+  ],
+  "license": "CC0-1.0",
+  "author": "项目程序合成（占位）",
+  "source": "res://tools/audio/ai/procedural.py",
+  "recipe": "bow_release",
+  "created_at": "2026-10-18T17:03:23+00:00",
+  "sha256": "7ddbe4db19bf66d5937cca86237047f59e68597c67a612c5e64f9f5c6477beb4",
+  "path": "res://assets/audio/ai/procedural/ai_combat/sfx_combat_bow_release_v01.ogg",
+  "loop": false,
+  "sample_rate": 44100,
+  "channels": 1,
+  "features": {
+    "duration_seconds": 0.264,
+    "peak_dbfs": -1.0,
+    "rms_dbfs": -19.05,
+    "crest_db": 18.05,
+    "spectral_centroid_hz": 2564.1,
+    "zero_cross_rate": 0.0876,
+    "attack_ms": 8.9,
+    "tail_ms": 2.2
+  },
+  "seam_jump": null,
+  "bytes": 5792
+}

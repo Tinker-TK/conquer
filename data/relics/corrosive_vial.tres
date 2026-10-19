@@ -1,0 +1,20 @@
+[gd_resource type="Resource" script_class="RelicDefinition" format=3]
+
+[ext_resource type="Script" path="res://data/relics/relic_definition.gd" id="1"]
+[ext_resource type="Texture2D" path="res://assets/ui_redrawn/icons/relic_mushroom.png" id="2"]
+
+[resource]
+script = ExtResource("1")
+id = &"corrosive_vial"
+display_name = "腐蚀之瓶"
+description = "己方攻击命中附加 1 层中毒；同一单位每秒最多 1 层。"
+icon = ExtResource("2")
+kind = 5
+rarity = 0
+tags = Array[StringName]([&"dot"])
+trigger = 11
+handler = &"corrosive_vial"
+max_per_battle = 0
+max_per_round = 0
+cooldown_seconds = 1.0
+priority = 2

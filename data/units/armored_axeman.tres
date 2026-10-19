@@ -1,0 +1,28 @@
+[gd_resource type="Resource" script_class="UnitData" format=3 uid="uid://qw8iwmesnnia"]
+
+[ext_resource type="Texture2D" uid="uid://ccydd51lr5uul" path="res://assets/cards/illustrations/armored_axeman.png" id="1_o82ux"]
+[ext_resource type="Script" uid="uid://2m1qlskaxcox" path="res://data/units/unit_data.gd" id="1_qxf5a"]
+[ext_resource type="Script" uid="uid://c4huhq7re2216" path="res://data/skills/skill_base.gd" id="2_k7p0m"]
+[ext_resource type="Resource" uid="uid://br8b2npnu2gvl" path="res://data/skills/armored_examan_attack.tres" id="3_q2or6"]
+[ext_resource type="Resource" uid="uid://sjwtbx68w8sj" path="res://data/skills/armored_examan_round_attack.tres" id="4_iwext"]
+[ext_resource type="Resource" uid="uid://c2xhkm5qvv6nj" path="res://data/skills/armored_examan_chop_attack.tres" id="5_o82ux"]
+[ext_resource type="Resource" path="res://data/skills/armored_examan_round_attack_upgraded.tres" id="6_spin"]
+[ext_resource type="Resource" path="res://data/skills/armored_examan_chop_attack_upgraded.tres" id="7_chop"]
+
+[resource]
+script = ExtResource("1_qxf5a")
+unit_name = "装甲斧手"
+unit_english_name = "armored_axeman"
+unit_type = 3
+max_hp = 160
+defence = 7
+attack = 8
+speed = 120.0
+card_name = "装甲斧手召唤"
+card_image = ExtResource("1_o82ux")
+card_discription = "征召1名装甲斧手。
+劈砍：两刀各120%伤害。
+旋转：周围敌人受到80%伤害并击退200像素。"
+upgrade_ability_points = 2
+skills = Array[ExtResource("2_k7p0m")]([ExtResource("3_q2or6"), ExtResource("4_iwext"), ExtResource("5_o82ux"), ExtResource("6_spin"), ExtResource("7_chop")])
+metadata/_data_table_id = 2

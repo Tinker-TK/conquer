@@ -1,0 +1,20 @@
+[gd_resource type="Resource" script_class="RelicDefinition" format=3]
+
+[ext_resource type="Script" path="res://data/relics/relic_definition.gd" id="1"]
+[ext_resource type="Texture2D" path="res://assets/ui_redrawn/icons/relic_boot.png" id="2"]
+
+[resource]
+script = ExtResource("1")
+id = &"volley_horn"
+display_name = "齐射号角"
+description = "己方远程 ≥2 时，对随机敌人造成 6 点无视防御伤害。"
+icon = ExtResource("2")
+kind = 5
+rarity = 2
+tags = Array[StringName]([&"ranged"])
+trigger = 3
+handler = &"volley_horn"
+max_per_battle = 0
+max_per_round = 0
+cooldown_seconds = 0.0
+priority = 3

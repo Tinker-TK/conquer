@@ -1,0 +1,36 @@
+{
+  "date": "2026-10-09",
+  "godot_version": "4.6.2",
+  "entries": 180,
+  "animated": 164,
+  "static": 12,
+  "shaders": 4,
+  "original_archives_sha256_and_zip_integrity": 10,
+  "original_source_frames_pixel_compared": 5250,
+  "unchanged_upstream_shaders": 5,
+  "previous_godot_vfx_library_unchanged": true,
+  "isolated_godot_import": {
+    "exit_code": 0,
+    "errors": []
+  },
+  "isolated_runtime": {
+    "entries_loaded": 180,
+    "frames_dimensions_durations_loop_flags_checked": 5250,
+    "all_demo_entries_instantiated": true,
+    "errors": []
+  },
+  "offline_html": {
+    "entries": 180,
+    "cc0_filter_entries": 107,
+    "thumbnails_loaded": 176,
+    "animation_pause_replay": true,
+    "path_copy": true,
+    "filters": true,
+    "mobile_no_horizontal_overflow": true,
+    "errors": []
+  },
+  "project_import": {
+    "exit_code": 0,
+    "errors": []
+  }
+}

@@ -1,0 +1,17 @@
+[gd_resource type="Resource" script_class="PotionDefinition" format=3 uid="uid://byqkflbl67uqt"]
+
+[ext_resource type="Script" uid="uid://b452136fqvyor" path="res://data/potions/potion_definition.gd" id="1"]
+[ext_resource type="PackedScene" uid="uid://c8gogayj6navq" path="res://scenes/effects/potion_effect/fx_purple_tonardo.tscn" id="1_rkfcs"]
+[ext_resource type="Texture2D" uid="uid://b7jviq8ht0ppl" path="res://assets/ui_redrawn/icons/equipment_potion.png" id="1_yvwnq"]
+
+[resource]
+script = ExtResource("1")
+id = &"tornado"
+display_name = "龙卷风药水"
+description = "选择落点，龙卷风背离基地移动6秒，每0.5秒对范围内敌军造成8点伤害。"
+icon = ExtResource("1_yvwnq")
+effect_scene = ExtResource("1_rkfcs")
+rarity = 1
+price = 75
+min_act = 1
+tags = Array[StringName]([&"爆发"])

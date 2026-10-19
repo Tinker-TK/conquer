@@ -1,0 +1,18 @@
+[gd_resource type="Resource" script_class="EventDefinition" format=3]
+
+[ext_resource type="Script" path="res://data/events/event_definition.gd" id="1"]
+[ext_resource type="Texture2D" path="res://assets/ui/events/illustrations/veteran-grave.png" id="2"]
+
+[resource]
+script = ExtResource("1")
+id = "act1_veteran_grave"
+title = "老兵之墓"
+description = "一座被藤蔓覆盖的墓碑，碑文只剩半行：「……他最后守住了路口。」\n\n墓前放着新鲜的花，却看不到脚印。你走近时，一只旧军靴从藤蔓里露出来，里面塞着一卷发黄的纸。"
+template = 4
+min_floor = 5
+max_floor = 9
+rarity = "rare"
+illustration = ExtResource("2")
+tags = Array[String](["enhance", "max_hp"])
+requires = Array[String]([])
+choices = Array[Dictionary]([{"gold": 0, "heal": 12, "effect": {"type": "enhance_card"}, "cost": {"gold": 10}, "text": "敬礼", "summary": "支付 10 金币 · 回复 12 生命，强化 1 张牌", "result_text": "你把几枚硬币放进墓前的石罐，站直，抬手。风穿过藤蔓，像有人在你耳边回了一声礼。"}, {"gold": 85, "heal": 0, "cost": {"hp": 8}, "text": "挖开坟墓", "summary": "获得 85 金币，失去 8 生命", "result_text": "墓里没有尸体，只有一只上锁的铁箱。你撬开它时，箱底的机关在你手背上划了一道。"}, {"gold": 0, "heal": 0, "effect": {"type": "max_hp", "amount": 3}, "cost": {"gold": 25}, "text": "修缮墓碑", "summary": "支付 25 金币 · 最大生命 +3", "result_text": "你把藤蔓清干净，重新描了碑文。做完之后，墓碑看起来终于像一座墓碑了。"}, {"text": "离开", "leave": true, "heal": 0, "gold": 0}])

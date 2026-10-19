@@ -1,0 +1,58 @@
+[gd_resource type="Resource" script_class="BattleLevelConfig" format=3 uid="uid://bur7vaw472yva"]
+
+[ext_resource type="PackedScene" uid="uid://b54t2mh7b84th" path="res://scenes/levels/battles/battle_002.tscn" id="1_dgxnp"]
+[ext_resource type="Script" uid="uid://bpx0xb25eyf4" path="res://data/levels/battle_level_config.gd" id="2_lpwqo"]
+[ext_resource type="PackedScene" uid="uid://dir2dbi0guvkr" path="res://scenes/units/skeleton.tscn" id="3_t0yld"]
+[ext_resource type="Shader" uid="uid://c1j0sj3fpkkym" path="res://shaders/hurt_flash.gdshader" id="4_r5ovj"]
+[ext_resource type="Script" uid="uid://bqa67hnf8j37r" path="res://scripts/units/unit_base.gd" id="5_shuvx"]
+[ext_resource type="Resource" uid="uid://bdfc2hlk871" path="res://data/units/skeleton.tres" id="6_72apx"]
+[ext_resource type="PackedScene" uid="uid://becmkmclqgrbh" path="res://scenes/units/skeleton_archer.tscn" id="7_2lgst"]
+[ext_resource type="Resource" uid="uid://bci4ynlhy7imj" path="res://data/units/skeleton_archer.tres" id="8_6yhf2"]
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_md484"]
+shader = ExtResource("4_r5ovj")
+shader_parameter/flash_intensity = 0.0
+shader_parameter/flash_color = Color(1, 0, 0, 1)
+
+[sub_resource type="PackedScene" id="PackedScene_wpoj0"]
+_bundled = {
+"conn_count": 0,
+"conns": PackedInt32Array(),
+"editable_instances": [],
+"id_paths": [],
+"names": PackedStringArray("", "Node2D", "Skeleton", "y_sort_enabled", "material", "collision_layer", "collision_mask", "motion_mode", "script", "unit_data", "team_b", "CharacterBody2D", "Skeleton2", "position", "Skeleton3", "Skeleton4", "Skeleton5"),
+"node_count": 6,
+"node_ids": PackedInt32Array(228669555, 699531576, 662279306, 141505890, 1564128163, 50788168),
+"node_paths": [],
+"nodes": PackedInt32Array(-1, -1, 1, 0, -1, 0, 0, 0, 0, 11, 2, 0, 7, 3, 1, 4, 2, 5, 3, 6, 4, 7, 5, 8, 6, 9, 7, 1, 10, 0, 0, 11, 12, 0, 8, 3, 1, 4, 2, 13, 8, 5, 3, 6, 4, 7, 5, 8, 6, 9, 7, 1, 10, 0, 0, 11, 14, 0, 8, 3, 1, 4, 2, 13, 9, 5, 3, 6, 4, 7, 5, 8, 6, 9, 7, 1, 10, 0, 0, 11, 15, 0, 8, 3, 1, 4, 2, 13, 10, 5, 3, 6, 4, 7, 5, 8, 6, 9, 7, 1, 10, 0, 0, 11, 16, 0, 8, 3, 1, 4, 2, 13, 11, 5, 3, 6, 4, 7, 5, 8, 6, 9, 7, 1, 10),
+"variants": [ExtResource("3_t0yld"), true, SubResource("ShaderMaterial_md484"), 2, 15, 1, ExtResource("5_shuvx"), ExtResource("6_72apx"), Vector2(-60, 0), Vector2(-120, 0), Vector2(-180, 0), Vector2(-240, 0)],
+"version": 3
+}
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_jn2ij"]
+shader = ExtResource("4_r5ovj")
+shader_parameter/flash_intensity = 0.0
+shader_parameter/flash_color = Color(1, 0, 0, 1)
+
+[sub_resource type="PackedScene" id="PackedScene_gscvt"]
+_bundled = {
+"conn_count": 0,
+"conns": PackedInt32Array(),
+"editable_instances": [],
+"id_paths": [],
+"names": PackedStringArray("", "Node2D", "SkeletonArcher", "y_sort_enabled", "material", "collision_layer", "collision_mask", "motion_mode", "script", "unit_data", "team_b", "CharacterBody2D", "SkeletonArcher2", "position", "SkeletonArcher3", "SkeletonArcher4", "SkeletonArcher5"),
+"node_count": 6,
+"node_ids": PackedInt32Array(820715403, 699531576, 426529907, 1335015811, 318437523, 604172098),
+"node_paths": [],
+"nodes": PackedInt32Array(-1, -1, 1, 0, -1, 0, 0, 0, 0, 11, 2, 0, 7, 3, 1, 4, 2, 5, 3, 6, 4, 7, 5, 8, 6, 9, 7, 1, 10, 0, 0, 11, 12, 0, 8, 3, 1, 4, 2, 13, 8, 5, 3, 6, 4, 7, 5, 8, 6, 9, 7, 1, 10, 0, 0, 11, 14, 0, 8, 3, 1, 4, 2, 13, 9, 5, 3, 6, 4, 7, 5, 8, 6, 9, 7, 1, 10, 0, 0, 11, 15, 0, 8, 3, 1, 4, 2, 13, 10, 5, 3, 6, 4, 7, 5, 8, 6, 9, 7, 1, 10, 0, 0, 11, 16, 0, 8, 3, 1, 4, 2, 13, 11, 5, 3, 6, 4, 7, 5, 8, 6, 9, 7, 1, 10),
+"variants": [ExtResource("7_2lgst"), true, SubResource("ShaderMaterial_jn2ij"), 2, 15, 1, ExtResource("5_shuvx"), ExtResource("8_6yhf2"), Vector2(-60, 0), Vector2(-120, 0), Vector2(-180, 0), Vector2(-240, 0)],
+"version": 3
+}
+
+[resource]
+script = ExtResource("2_lpwqo")
+level_name = "关卡模板：双兽人"
+notes = "复制此资源后配置自己的波次和地形。"
+battle_scene = ExtResource("1_dgxnp")
+waves = Array[PackedScene]([SubResource("PackedScene_wpoj0"), SubResource("PackedScene_gscvt"), null])
+repeat_waves = true

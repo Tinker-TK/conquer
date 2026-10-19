@@ -1,0 +1,18 @@
+{
+  "date": "2026-10-09",
+  "nodes": 26,
+  "paths": 14,
+  "source_hashes_verified": 22,
+  "sheets": [
+    "关卡总览",
+    "路线生命",
+    "波次与结算",
+    "敌兵与开局"
+  ],
+  "saved_formula_count": 936,
+  "saved_formula_errors": [],
+  "key_cached_values_verified": 29,
+  "visuals_reviewed": true,
+  "game_resources_modified": false,
+  "combat_results_measured": false
+}

@@ -1,0 +1,21 @@
+[gd_resource type="Resource" script_class="CardDefinition" format=3 uid="uid://da31cugxq7nvt"]
+
+[ext_resource type="Texture2D" path="res://assets/cards/illustrations/poison_on_hit.png" id="1_s046k"]
+[ext_resource type="Script" uid="uid://dvqd45gj27252" path="res://data/card_effects/card_effect.gd" id="2_4hbl0"]
+[ext_resource type="Script" uid="uid://6l58cf1r7imd" path="res://data/cards/card_definition.gd" id="3_75t0j"]
+
+[sub_resource type="Resource" id="Resource_27uql"]
+script = ExtResource("2_4hbl0")
+kind = 3
+amount = 2.0
+affected_team = 1
+metadata/_custom_type_script = "uid://dvqd45gj27252"
+upgrade_amount = 1.0
+
+[resource]
+script = ExtResource("3_75t0j")
+card_name = "淬毒武器"
+card_discription = "使1名己方单位每次攻击命中附加2层中毒，持续本场战斗。"
+card_image = ExtResource("1_s046k")
+effects = Array[ExtResource("2_4hbl0")]([SubResource("Resource_27uql")])
+max_upgrade_count = 1

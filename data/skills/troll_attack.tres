@@ -1,0 +1,12 @@
+[gd_resource type="Resource" format=3 uid="uid://bdq50t0s76d5r"]
+
+[ext_resource type="Script" uid="uid://l5slg1wgnhew" path="res://scripts/skills/normal_attack.gd" id="skill"]
+
+[resource]
+script = ExtResource("skill")
+is_basic_attack = true
+description = "蓄力后连续挥棒六次，再喘息收招；整套连击只发动一次，共用一次冷却。"
+cooldown = 4.8
+cast_range = 150.0
+hit_frame = Array[int]([7, 10, 13, 16, 19, 22])
+combat_sound_profile = "melee"

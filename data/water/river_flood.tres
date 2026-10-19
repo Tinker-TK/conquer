@@ -1,0 +1,10 @@
+[gd_resource type="Resource" script_class="RiverSettings" load_steps=2 format=3]
+
+[ext_resource type="Script" path="res://data/water/river_settings.gd" id="1"]
+
+[resource]
+script = ExtResource("1")
+water_level = 0.9
+flow_velocity = Vector2(32, 7)
+deep_opacity = 0.82
+refraction = 2.2

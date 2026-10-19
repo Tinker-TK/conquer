@@ -1,0 +1,624 @@
+[
+  {
+    "name": "crown_badge",
+    "canvas": [
+      384,
+      512
+    ],
+    "origin": [
+      0,
+      0
+    ],
+    "layers": [
+      {
+        "file": "ui_layers/crown_badge/00_crown_backplate.png",
+        "source": "components/crown_backplate.png",
+        "rect": [
+          0,
+          0,
+          384,
+          512
+        ],
+        "order": 0
+      },
+      {
+        "file": "ui_layers/crown_badge/01_crown.png",
+        "source": "icons/crown.png",
+        "rect": [
+          72,
+          118,
+          240,
+          240
+        ],
+        "order": 1
+      }
+    ]
+  },
+  {
+    "name": "health_panel",
+    "canvas": [
+      768,
+      224
+    ],
+    "origin": [
+      0,
+      0
+    ],
+    "layers": [
+      {
+        "file": "ui_layers/health_panel/00_stat_panel.png",
+        "source": "panels/stat_panel.png",
+        "rect": [
+          0,
+          0,
+          768,
+          224
+        ],
+        "order": 0
+      },
+      {
+        "file": "ui_layers/health_panel/01_heart.png",
+        "source": "icons/heart.png",
+        "rect": [
+          16,
+          0,
+          224,
+          224
+        ],
+        "order": 1
+      }
+    ]
+  },
+  {
+    "name": "gold_panel",
+    "canvas": [
+      768,
+      224
+    ],
+    "origin": [
+      0,
+      0
+    ],
+    "layers": [
+      {
+        "file": "ui_layers/gold_panel/00_stat_panel.png",
+        "source": "panels/stat_panel.png",
+        "rect": [
+          0,
+          0,
+          768,
+          224
+        ],
+        "order": 0
+      },
+      {
+        "file": "ui_layers/gold_panel/01_gold_coin.png",
+        "source": "icons/gold_coin.png",
+        "rect": [
+          16,
+          0,
+          224,
+          224
+        ],
+        "order": 1
+      }
+    ]
+  },
+  {
+    "name": "equipment_panel",
+    "canvas": [
+      768,
+      224
+    ],
+    "origin": [
+      0,
+      0
+    ],
+    "layers": [
+      {
+        "file": "ui_layers/equipment_panel/00_stat_panel.png",
+        "source": "panels/stat_panel.png",
+        "rect": [
+          0,
+          0,
+          768,
+          224
+        ],
+        "order": 0
+      },
+      {
+        "file": "ui_layers/equipment_panel/01_equipment_sword.png",
+        "source": "icons/equipment_sword.png",
+        "rect": [
+          24,
+          0,
+          224,
+          224
+        ],
+        "order": 1
+      },
+      {
+        "file": "ui_layers/equipment_panel/02_equipment_armor.png",
+        "source": "icons/equipment_armor.png",
+        "rect": [
+          272,
+          0,
+          224,
+          224
+        ],
+        "order": 2
+      },
+      {
+        "file": "ui_layers/equipment_panel/03_equipment_potion.png",
+        "source": "icons/equipment_potion.png",
+        "rect": [
+          520,
+          0,
+          224,
+          224
+        ],
+        "order": 3
+      }
+    ]
+  },
+  {
+    "name": "phase_panel",
+    "canvas": [
+      768,
+      224
+    ],
+    "origin": [
+      0,
+      0
+    ],
+    "layers": [
+      {
+        "file": "ui_layers/phase_panel/00_phase_panel.png",
+        "source": "panels/phase_panel.png",
+        "rect": [
+          0,
+          0,
+          768,
+          224
+        ],
+        "order": 0
+      },
+      {
+        "file": "ui_layers/phase_panel/01_crossed_swords.png",
+        "source": "icons/crossed_swords.png",
+        "rect": [
+          18,
+          10,
+          204,
+          204
+        ],
+        "order": 1
+      }
+    ]
+  },
+  {
+    "name": "start_button",
+    "canvas": [
+      1024,
+      360
+    ],
+    "origin": [
+      0,
+      0
+    ],
+    "layers": [
+      {
+        "file": "ui_layers/start_button/00_gold_button.png",
+        "source": "components/gold_button.png",
+        "rect": [
+          0,
+          0,
+          1024,
+          360
+        ],
+        "order": 0
+      },
+      {
+        "file": "ui_layers/start_button/01_crossed_swords.png",
+        "source": "icons/crossed_swords.png",
+        "rect": [
+          70,
+          68,
+          224,
+          224
+        ],
+        "order": 1
+      }
+    ]
+  },
+  {
+    "name": "battle_control",
+    "canvas": [
+      1000,
+      440
+    ],
+    "origin": [
+      0,
+      0
+    ],
+    "layers": [
+      {
+        "file": "ui_layers/battle_control/00_battle_control_panel.png",
+        "source": "panels/battle_control_panel.png",
+        "rect": [
+          0,
+          0,
+          1000,
+          440
+        ],
+        "order": 0
+      },
+      {
+        "file": "ui_layers/battle_control/01_speed_button_blank.png",
+        "source": "panels/speed_button_blank.png",
+        "rect": [
+          48,
+          35,
+          275,
+          190
+        ],
+        "order": 1
+      },
+      {
+        "file": "ui_layers/battle_control/02_speed_button_blank.png",
+        "source": "panels/speed_button_blank.png",
+        "rect": [
+          362,
+          35,
+          275,
+          190
+        ],
+        "order": 2
+      },
+      {
+        "file": "ui_layers/battle_control/03_speed_button_blank.png",
+        "source": "panels/speed_button_blank.png",
+        "rect": [
+          676,
+          35,
+          275,
+          190
+        ],
+        "order": 3
+      },
+      {
+        "file": "ui_layers/battle_control/04_pause_symbol.png",
+        "source": "controls/pause_symbol.png",
+        "rect": [
+          103,
+          62,
+          144,
+          144
+        ],
+        "order": 4
+      },
+      {
+        "file": "ui_layers/battle_control/05_selected_border.png",
+        "source": "controls/selected_border.png",
+        "rect": [
+          362,
+          35,
+          275,
+          190
+        ],
+        "order": 5
+      },
+      {
+        "file": "ui_layers/battle_control/06_auto_row_blank.png",
+        "source": "panels/auto_row_blank.png",
+        "rect": [
+          120,
+          270,
+          760,
+          140
+        ],
+        "order": 6
+      },
+      {
+        "file": "ui_layers/battle_control/07_toggle_track.png",
+        "source": "controls/toggle_track.png",
+        "rect": [
+          640,
+          290,
+          220,
+          110
+        ],
+        "order": 7
+      },
+      {
+        "file": "ui_layers/battle_control/08_toggle_knob.png",
+        "source": "controls/toggle_knob.png",
+        "rect": [
+          650,
+          296,
+          98,
+          98
+        ],
+        "order": 8
+      }
+    ]
+  },
+  {
+    "name": "energy",
+    "canvas": [
+      512,
+      512
+    ],
+    "origin": [
+      0,
+      0
+    ],
+    "layers": [
+      {
+        "file": "ui_layers/energy/00_00_core.png",
+        "source": "energy/00_core.png",
+        "rect": [
+          0,
+          0,
+          512,
+          512
+        ],
+        "order": 0
+      },
+      {
+        "file": "ui_layers/energy/01_10_rim.png",
+        "source": "energy/10_rim.png",
+        "rect": [
+          0,
+          0,
+          512,
+          512
+        ],
+        "order": 1
+      }
+    ]
+  },
+  {
+    "name": "health_bar",
+    "canvas": [
+      768,
+      128
+    ],
+    "origin": [
+      0,
+      0
+    ],
+    "layers": [
+      {
+        "file": "ui_layers/health_bar/00_00_empty_bar.png",
+        "source": "health/00_empty_bar.png",
+        "rect": [
+          0,
+          0,
+          768,
+          128
+        ],
+        "order": 0
+      },
+      {
+        "file": "ui_layers/health_bar/01_10_fill.png",
+        "source": "health/10_fill.png",
+        "rect": [
+          0,
+          0,
+          768,
+          128
+        ],
+        "order": 1
+      },
+      {
+        "file": "ui_layers/health_bar/02_20_border.png",
+        "source": "health/20_border.png",
+        "rect": [
+          0,
+          0,
+          768,
+          128
+        ],
+        "order": 2
+      }
+    ]
+  },
+  {
+    "name": "map_button",
+    "canvas": [
+      512,
+      224
+    ],
+    "origin": [
+      0,
+      0
+    ],
+    "layers": [
+      {
+        "file": "ui_layers/map_button/00_navigation_button.png",
+        "source": "panels/navigation_button.png",
+        "rect": [
+          0,
+          0,
+          512,
+          224
+        ],
+        "order": 0
+      },
+      {
+        "file": "ui_layers/map_button/01_map.png",
+        "source": "icons/map.png",
+        "rect": [
+          8,
+          12,
+          200,
+          200
+        ],
+        "order": 1
+      }
+    ]
+  },
+  {
+    "name": "deck_button",
+    "canvas": [
+      512,
+      224
+    ],
+    "origin": [
+      0,
+      0
+    ],
+    "layers": [
+      {
+        "file": "ui_layers/deck_button/00_navigation_button.png",
+        "source": "panels/navigation_button.png",
+        "rect": [
+          0,
+          0,
+          512,
+          224
+        ],
+        "order": 0
+      },
+      {
+        "file": "ui_layers/deck_button/01_deck_book.png",
+        "source": "icons/deck_book.png",
+        "rect": [
+          8,
+          12,
+          200,
+          200
+        ],
+        "order": 1
+      }
+    ]
+  },
+  {
+    "name": "settings_button",
+    "canvas": [
+      512,
+      224
+    ],
+    "origin": [
+      0,
+      0
+    ],
+    "layers": [
+      {
+        "file": "ui_layers/settings_button/00_navigation_button.png",
+        "source": "panels/navigation_button.png",
+        "rect": [
+          0,
+          0,
+          512,
+          224
+        ],
+        "order": 0
+      },
+      {
+        "file": "ui_layers/settings_button/01_gear.png",
+        "source": "icons/gear.png",
+        "rect": [
+          8,
+          12,
+          200,
+          200
+        ],
+        "order": 1
+      }
+    ]
+  },
+  {
+    "name": "draw_pile",
+    "canvas": [
+      512,
+      512
+    ],
+    "origin": [
+      0,
+      0
+    ],
+    "layers": [
+      {
+        "file": "ui_layers/draw_pile/00_pile_backplate.png",
+        "source": "panels/pile_backplate.png",
+        "rect": [
+          0,
+          244,
+          512,
+          268
+        ],
+        "order": 0
+      },
+      {
+        "file": "ui_layers/draw_pile/01_draw_book.png",
+        "source": "components/draw_book.png",
+        "rect": [
+          56,
+          0,
+          384,
+          384
+        ],
+        "order": 1
+      },
+      {
+        "file": "ui_layers/draw_pile/02_counter_red.png",
+        "source": "badges/counter_red.png",
+        "rect": [
+          300,
+          274,
+          128,
+          128
+        ],
+        "order": 2
+      }
+    ]
+  },
+  {
+    "name": "discard_pile",
+    "canvas": [
+      512,
+      512
+    ],
+    "origin": [
+      0,
+      0
+    ],
+    "layers": [
+      {
+        "file": "ui_layers/discard_pile/00_pile_backplate.png",
+        "source": "panels/pile_backplate.png",
+        "rect": [
+          0,
+          244,
+          512,
+          268
+        ],
+        "order": 0
+      },
+      {
+        "file": "ui_layers/discard_pile/01_discard_book.png",
+        "source": "components/discard_book.png",
+        "rect": [
+          56,
+          0,
+          384,
+          384
+        ],
+        "order": 1
+      },
+      {
+        "file": "ui_layers/discard_pile/02_counter_red.png",
+        "source": "badges/counter_red.png",
+        "rect": [
+          300,
+          274,
+          128,
+          128
+        ],
+        "order": 2
+      }
+    ]
+  }
+]

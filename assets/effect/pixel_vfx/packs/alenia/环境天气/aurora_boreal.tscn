@@ -1,0 +1,9 @@
+[gd_scene load_steps=2 format=3]
+
+[ext_resource type="SpriteFrames" path="res://assets/effect/pixel_vfx/packs/alenia/环境天气/aurora_boreal.tres" id="1"]
+
+[node name="aurora_boreal" type="AnimatedSprite2D"]
+texture_filter = 1
+sprite_frames = ExtResource("1")
+autoplay = "default"
+offset = Vector2(0, 0)

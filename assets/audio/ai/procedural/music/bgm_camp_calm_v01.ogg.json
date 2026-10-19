@@ -1,0 +1,39 @@
+{
+  "id": "bgm_camp_calm",
+  "variant": 1,
+  "asset": "bgm_camp_calm_v01",
+  "provider": "procedural",
+  "category": "music",
+  "title": "营地 · 休整",
+  "prompt": "calm camp at night, 78 BPM, fingerpicked lute, soft harp, warm low strings, gentle and hopeful, seamless loop",
+  "source_prompt": "calm camp at night, 78 BPM, fingerpicked lute, soft harp, warm low strings, gentle and hopeful, seamless loop",
+  "duration_seconds": 32.0,
+  "output_format": "wav_48000",
+  "tags": [
+    "calm",
+    "camp",
+    "lute"
+  ],
+  "license": "CC0-1.0",
+  "author": "项目程序合成（占位）",
+  "source": "res://tools/audio/ai/procedural.py",
+  "recipe": "bgm_camp_calm",
+  "created_at": "2026-10-18T17:03:32+00:00",
+  "sha256": "7dabc037724385e5f612d0d3eefdad80d7f9977fb864cb33bd41220bacd8caf7",
+  "path": "res://assets/audio/ai/procedural/music/bgm_camp_calm_v01.ogg",
+  "loop": true,
+  "sample_rate": 44100,
+  "channels": 1,
+  "features": {
+    "duration_seconds": 10.308,
+    "peak_dbfs": -9.15,
+    "rms_dbfs": -20.0,
+    "crest_db": 10.85,
+    "spectral_centroid_hz": 509.4,
+    "zero_cross_rate": 0.0134,
+    "attack_ms": 10021.0,
+    "tail_ms": 2.1
+  },
+  "seam_jump": 0.002297,
+  "bytes": 37333
+}

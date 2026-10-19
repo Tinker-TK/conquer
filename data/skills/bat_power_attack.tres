@@ -1,0 +1,15 @@
+[gd_resource type="Resource" format=3 uid="uid://bsyl4e8lub3gd"]
+
+[ext_resource type="Script" uid="uid://swk5jnpukdcp" path="res://scripts/skills/bloodthirst_attack.gd" id="1_trywh"]
+
+[resource]
+script = ExtResource("1_trywh")
+skill_name = "嗜血攻击"
+description = "蝙蝠对当前单位发动一次嗜血攻击，并回复攻击造成伤害的血量"
+attack_rate = 1.2
+cooldown = 6.0
+priority = 1
+cast_animation = "attack_02"
+hit_frame = Array[int]([4])
+target_type = 3
+metadata/_data_table_id = 4

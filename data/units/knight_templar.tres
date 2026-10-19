@@ -1,0 +1,28 @@
+[gd_resource type="Resource" script_class="UnitData" format=3 uid="uid://df32bsu0riumn"]
+
+[ext_resource type="Script" uid="uid://2m1qlskaxcox" path="res://data/units/unit_data.gd" id="1_7twsj"]
+[ext_resource type="Texture2D" uid="uid://crrwtagdfs3bb" path="res://assets/cards/illustrations/knight_templar.png" id="1_h1gih"]
+[ext_resource type="Resource" uid="uid://di82ukr6gwys4" path="res://data/skills/knight_templar_dodge_attack.tres" id="1_xnyg1"]
+[ext_resource type="Script" uid="uid://c4huhq7re2216" path="res://data/skills/skill_base.gd" id="2_bim8c"]
+[ext_resource type="Resource" uid="uid://bfy3dcjo5i0w1" path="res://data/skills/knight_templar_attack.tres" id="4_71the"]
+[ext_resource type="Resource" uid="uid://blph8i7duxvnu" path="res://data/skills/knight_templar_power_attack.tres" id="5_h1gih"]
+[ext_resource type="Resource" path="res://data/skills/knight_templar_taunt_upgraded.tres" id="6_taunt"]
+
+[resource]
+script = ExtResource("1_7twsj")
+defence = 6
+unit_name = "圣殿骑士"
+unit_english_name = "knight_templar"
+unit_type = 5
+max_hp = 160
+attack = 14
+dodge_rate = 0.2
+card_cost = 2
+card_name = "圣殿骑士征召"
+card_image = ExtResource("1_h1gih")
+card_discription = "征召1名圣殿骑士。
+嘲讽攻击：半径200内敌人攻击自身，持续3秒，冷却10秒。"
+upgrade_ability_points = 2
+skills = Array[ExtResource("2_bim8c")]([ExtResource("4_71the"), ExtResource("5_h1gih"), ExtResource("6_taunt")])
+dodge_skill = ExtResource("1_xnyg1")
+metadata/_data_table_id = 4

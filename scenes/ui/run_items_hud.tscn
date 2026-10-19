@@ -1,0 +1,155 @@
+[gd_scene format=3]
+
+[ext_resource type="Script" path="res://scripts/ui/run_items_hud.gd" id="1"]
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_item_tooltip"]
+bg_color = Color(0.075, 0.135, 0.16, 0.98)
+border_width_left = 4
+border_width_top = 4
+border_width_right = 4
+border_width_bottom = 4
+border_color = Color(0.29, 0.43, 0.48, 1)
+corner_radius_top_left = 5
+corner_radius_top_right = 5
+corner_radius_bottom_right = 5
+corner_radius_bottom_left = 5
+shadow_color = Color(0, 0, 0, 0.55)
+shadow_size = 6
+shadow_offset = Vector2(0, 4)
+content_margin_left = 18.0
+content_margin_top = 14.0
+content_margin_right = 18.0
+content_margin_bottom = 14.0
+
+[sub_resource type="SystemFont" id="SystemFont_item_tooltip"]
+font_names = PackedStringArray("Microsoft YaHei", "Noto Sans CJK SC", "PingFang SC")
+
+[sub_resource type="SystemFont" id="SystemFont_item_title"]
+font_names = PackedStringArray("Microsoft YaHei", "Noto Sans CJK SC", "PingFang SC")
+font_weight = 600
+
+[sub_resource type="Theme" id="Theme_item_tooltip"]
+default_font = SubResource("SystemFont_item_tooltip")
+Label/fonts/font = SubResource("SystemFont_item_title")
+Label/colors/font_color = Color(0.969, 0.827, 0.396, 1)
+Label/colors/font_shadow_color = Color(0, 0, 0, 0.8)
+Label/constants/shadow_offset_x = 1
+Label/constants/shadow_offset_y = 1
+Label/font_sizes/font_size = 24
+PanelContainer/styles/panel = SubResource("StyleBoxFlat_item_tooltip")
+RichTextLabel/colors/default_color = Color(0.957, 0.945, 0.89, 1)
+RichTextLabel/font_sizes/normal_font_size = 22
+RichTextLabel/constants/line_separation = 4
+
+[node name="RunItemsHUD" type="Control"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+mouse_filter = 2
+script = ExtResource("1")
+
+[node name="Relics" type="ScrollContainer" parent="."]
+offset_left = 24.0
+offset_top = 103.0
+offset_right = 512.0
+offset_bottom = 174.0
+horizontal_scroll_mode = 1
+vertical_scroll_mode = 0
+mouse_filter = 1
+
+[node name="Row" type="HBoxContainer" parent="Relics"]
+layout_mode = 2
+theme_override_constants/separation = 8
+mouse_filter = 2
+
+[node name="Potions" type="ScrollContainer" parent="."]
+offset_left = 544.0
+offset_top = 16.0
+offset_right = 760.0
+offset_bottom = 79.0
+horizontal_scroll_mode = 1
+vertical_scroll_mode = 0
+
+[node name="Row" type="HBoxContainer" parent="Potions"]
+layout_mode = 2
+theme_override_constants/separation = 10
+mouse_filter = 2
+
+[node name="RelicEmpty" type="Label" parent="."]
+offset_left = 28.0
+offset_top = 110.0
+offset_right = 190.0
+offset_bottom = 145.0
+mouse_filter = 2
+text = "遗物：暂无"
+theme_override_font_sizes/font_size = 18
+
+[node name="PotionEmpty" type="Label" parent="."]
+offset_left = 560.0
+offset_top = 27.0
+offset_right = 750.0
+offset_bottom = 57.0
+mouse_filter = 2
+text = "药水：暂无"
+theme_override_font_sizes/font_size = 18
+
+[node name="ItemTooltip" type="VBoxContainer" parent="."]
+visible = false
+z_index = 100
+layout_mode = 0
+offset_right = 420.0
+mouse_filter = 2
+theme = SubResource("Theme_item_tooltip")
+theme_override_constants/separation = 10
+
+[node name="MainPanel" type="PanelContainer" parent="ItemTooltip"]
+layout_mode = 2
+mouse_filter = 2
+
+[node name="Content" type="VBoxContainer" parent="ItemTooltip/MainPanel"]
+layout_mode = 2
+mouse_filter = 2
+theme_override_constants/separation = 8
+
+[node name="Title" type="Label" parent="ItemTooltip/MainPanel/Content"]
+layout_mode = 2
+mouse_filter = 2
+autowrap_mode = 3
+
+[node name="Effect" type="RichTextLabel" parent="ItemTooltip/MainPanel/Content"]
+layout_mode = 2
+mouse_filter = 2
+bbcode_enabled = true
+fit_content = true
+scroll_active = false
+
+[node name="Status" type="RichTextLabel" parent="ItemTooltip/MainPanel/Content"]
+layout_mode = 2
+mouse_filter = 2
+theme_override_colors/default_color = Color(0.66, 0.77, 0.79, 1)
+theme_override_font_sizes/normal_font_size = 18
+bbcode_enabled = true
+fit_content = true
+scroll_active = false
+
+[node name="ContextPanel" type="PanelContainer" parent="ItemTooltip"]
+layout_mode = 2
+mouse_filter = 2
+
+[node name="Content" type="VBoxContainer" parent="ItemTooltip/ContextPanel"]
+layout_mode = 2
+mouse_filter = 2
+theme_override_constants/separation = 8
+
+[node name="Title" type="Label" parent="ItemTooltip/ContextPanel/Content"]
+layout_mode = 2
+mouse_filter = 2
+autowrap_mode = 3
+
+[node name="Effect" type="RichTextLabel" parent="ItemTooltip/ContextPanel/Content"]
+layout_mode = 2
+mouse_filter = 2
+bbcode_enabled = true
+fit_content = true
+scroll_active = false

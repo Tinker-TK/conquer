@@ -1,0 +1,18 @@
+[gd_resource type="Resource" script_class="EventDefinition" format=3]
+
+[ext_resource type="Script" path="res://data/events/event_definition.gd" id="1"]
+[ext_resource type="Texture2D" path="res://assets/ui/events/illustrations/forgotten-reliquary.png" id="2"]
+
+[resource]
+script = ExtResource("1")
+id = "forgotten_reliquary"
+title = "遗忘的圣匣"
+description = "残破的石柱间，封存已久的圣匣透出微光。\n\n锋利的石棱封住了匣盖，供台旁还留着一小袋零钱。"
+template = 4
+min_floor = 1
+max_floor = 9
+rarity = "common"
+illustration = ExtResource("2")
+tags = Array[String](["relic"])
+requires = Array[String]([])
+choices = Array[Dictionary]([{"text": "撬开圣匣", "cost": {"hp": 12}, "effect": {"type": "random_relic"}, "result_text": "石棱划开手背，圣匣终于松动。你握住遗物，感到古老的力量醒来。", "heal": 0, "gold": 0}, {"text": "取走零钱", "gold": 55, "heal": 0}, {"text": "在供台前歇脚", "heal": 10, "gold": 0}, {"text": "离开", "leave": true, "heal": 0, "gold": 0}])

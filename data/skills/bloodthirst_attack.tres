@@ -1,0 +1,9 @@
+[gd_resource type="Resource" format=3]
+
+[ext_resource type="Script" path="res://scripts/skills/bloodthirst_attack.gd" id="1"]
+
+[resource]
+script = ExtResource("1")
+skill_name = "嗜血攻击"
+description = "攻击命中后，按目标实际损失的生命值等量回复自身生命。闪避不回复，溢出伤害不计入，回复不超过生命上限。"
+priority = 1

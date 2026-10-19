@@ -1,0 +1,20 @@
+[gd_resource type="Resource" script_class="UnitData" format=3 uid="uid://bqogd2spp712x"]
+
+[ext_resource type="Script" uid="uid://2m1qlskaxcox" path="res://data/units/unit_data.gd" id="1_jo3gn"]
+[ext_resource type="Script" uid="uid://c4huhq7re2216" path="res://data/skills/skill_base.gd" id="2_2mqx2"]
+[ext_resource type="Resource" uid="uid://dxljhrs2helwh" path="res://data/skills/greatswords_skeleton_attack.tres" id="3_2mqx2"]
+[ext_resource type="Resource" uid="uid://byltm2kosakyw" path="res://data/skills/greatswords_skeleton_power_attack.tres" id="4_qddja"]
+[ext_resource type="Resource" uid="uid://cdfvdndonuk12" path="res://data/skills/greatswords_skeleton_stick_attack.tres" id="5_rosty"]
+
+[resource]
+script = ExtResource("1_jo3gn")
+unit_name = "骷髅剑士"
+unit_english_name = "greatsword_skeleton"
+unit_type = 16
+unit_team = "team_b"
+max_hp = 80
+defence = 4
+attack = 13
+skills = Array[ExtResource("2_2mqx2")]([ExtResource("3_2mqx2"), ExtResource("4_qddja"), ExtResource("5_rosty")])
+metadata/_data_table_id = 6
+hp_damage_value = 1

@@ -1,0 +1,20 @@
+[gd_resource type="Resource" script_class="RelicDefinition" format=3]
+
+[ext_resource type="Script" path="res://data/relics/relic_definition.gd" id="1"]
+[ext_resource type="Texture2D" path="res://assets/ui_redrawn/icons/relic_clover.png" id="2"]
+
+[resource]
+script = ExtResource("1")
+id = &"steady_hands"
+display_name = "沉稳之手"
+description = "随机保留 1 张手牌（固有之外）。"
+icon = ExtResource("2")
+kind = 5
+rarity = 0
+tags = Array[StringName]([&"cycle"])
+trigger = 16
+handler = &"steady_hands"
+max_per_battle = 0
+max_per_round = 1
+cooldown_seconds = 0.0
+priority = 4

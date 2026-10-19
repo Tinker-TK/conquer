@@ -1,0 +1,125 @@
+[gd_resource type="Resource" script_class="BattleLevelConfig" format=3 uid="uid://dreuer2ytavud"]
+
+[ext_resource type="PackedScene" uid="uid://b54t2mh7b84th" path="res://scenes/levels/battles/battle_002.tscn" id="1_skwk8"]
+[ext_resource type="Script" uid="uid://bpx0xb25eyf4" path="res://data/levels/battle_level_config.gd" id="2_3twvh"]
+[ext_resource type="PackedScene" uid="uid://dir2dbi0guvkr" path="res://scenes/units/skeleton.tscn" id="3_dmqkl"]
+[ext_resource type="Shader" uid="uid://c1j0sj3fpkkym" path="res://shaders/hurt_flash.gdshader" id="4_oc2st"]
+[ext_resource type="Script" uid="uid://bqa67hnf8j37r" path="res://scripts/units/unit_base.gd" id="5_hq6lb"]
+[ext_resource type="Resource" uid="uid://bdfc2hlk871" path="res://data/units/skeleton.tres" id="6_kv5d7"]
+[ext_resource type="PackedScene" uid="uid://becmkmclqgrbh" path="res://scenes/units/skeleton_archer.tscn" id="7_m1vt2"]
+[ext_resource type="Resource" uid="uid://bci4ynlhy7imj" path="res://data/units/skeleton_archer.tres" id="8_ulsve"]
+[ext_resource type="Shader" uid="uid://c1j0sj3fpkkym" path="res://shaders/hurt_flash.gdshader" id="9_ynk46"]
+[ext_resource type="Resource" uid="uid://bdfc2hlk871" path="res://data/units/skeleton.tres" id="10_6ucm0"]
+[ext_resource type="Resource" uid="uid://bci4ynlhy7imj" path="res://data/units/skeleton_archer.tres" id="11_aampv"]
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_md484"]
+shader = ExtResource("4_oc2st")
+shader_parameter/flash_intensity = 0.0
+shader_parameter/flash_color = Color(1, 0, 0, 1)
+
+[sub_resource type="PackedScene" id="PackedScene_4odkq"]
+_bundled = {
+"conn_count": 0,
+"conns": PackedInt32Array(),
+"editable_instances": [],
+"id_paths": [],
+"names": PackedStringArray("Wave", "Node2D", "Skeleton5", "y_sort_enabled", "material", "position", "collision_layer", "collision_mask", "motion_mode", "script", "unit_data", "team_b", "CharacterBody2D"),
+"node_count": 2,
+"node_ids": PackedInt32Array(228669555, 50788168),
+"node_paths": [],
+"nodes": PackedInt32Array(-1, -1, 1, 0, -1, 0, 0, 0, 0, 12, 2, 0, 8, 3, 1, 4, 2, 5, 3, 6, 4, 7, 5, 8, 6, 9, 7, 10, 8, 1, 11),
+"variants": [ExtResource("3_dmqkl"), true, SubResource("ShaderMaterial_md484"), Vector2(-342, -9), 2, 15, 1, ExtResource("5_hq6lb"), ExtResource("6_kv5d7")],
+"version": 3
+}
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_jn2ij"]
+shader = ExtResource("4_oc2st")
+shader_parameter/flash_intensity = 0.0
+shader_parameter/flash_color = Color(1, 0, 0, 1)
+
+[sub_resource type="PackedScene" id="PackedScene_qhrub"]
+_bundled = {
+"conn_count": 0,
+"conns": PackedInt32Array(),
+"editable_instances": [],
+"id_paths": [],
+"names": PackedStringArray("Wave", "Node2D", "SkeletonArcher5", "y_sort_enabled", "material", "position", "collision_layer", "collision_mask", "motion_mode", "script", "unit_data", "metadata/wave_cycle_effects", "team_b", "CharacterBody2D"),
+"node_count": 2,
+"node_ids": PackedInt32Array(820715403, 604172098),
+"node_paths": [],
+"nodes": PackedInt32Array(-1, -1, 1, 0, -1, 0, 0, 0, 0, 13, 2, 0, 9, 3, 1, 4, 2, 5, 3, 6, 4, 7, 5, 8, 6, 9, 7, 10, 8, 11, 9, 1, 12),
+"variants": [ExtResource("7_m1vt2"), true, SubResource("ShaderMaterial_jn2ij"), Vector2(-240, 0), 2, 15, 1, ExtResource("5_hq6lb"), ExtResource("8_ulsve"), {
+"attack": 2
+}],
+"version": 3
+}
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_ohfxl"]
+shader = ExtResource("9_ynk46")
+shader_parameter/flash_intensity = 0.0
+shader_parameter/flash_color = Color(1, 0, 0, 1)
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_nqcd4"]
+shader = ExtResource("9_ynk46")
+shader_parameter/flash_intensity = 0.0
+shader_parameter/flash_color = Color(1, 0, 0, 1)
+
+[sub_resource type="PackedScene" id="PackedScene_s3blm"]
+_bundled = {
+"conn_count": 0,
+"conns": PackedInt32Array(),
+"editable_instances": [],
+"id_paths": [],
+"names": PackedStringArray("Wave", "Node2D", "Skeleton", "y_sort_enabled", "material", "position", "collision_layer", "collision_mask", "motion_mode", "script", "unit_data", "metadata/wave_cycle_effects", "team_b", "CharacterBody2D", "SkeletonArcher"),
+"node_count": 3,
+"node_ids": PackedInt32Array(1206338017, 1031189061, 699531576),
+"node_paths": [],
+"nodes": PackedInt32Array(-1, -1, 1, 0, -1, 0, 0, 0, 0, 13, 2, 0, 9, 3, 1, 4, 2, 5, 3, 6, 4, 7, 5, 8, 6, 9, 7, 10, 8, 11, 9, 1, 12, 0, 0, 13, 14, 10, 9, 3, 1, 4, 11, 5, 12, 6, 4, 7, 5, 8, 6, 9, 7, 10, 13, 11, 9, 1, 12),
+"variants": [ExtResource("3_dmqkl"), true, SubResource("ShaderMaterial_ohfxl"), Vector2(-324, 9), 2, 15, 1, ExtResource("5_hq6lb"), ExtResource("10_6ucm0"), {
+"attack": 2
+}, ExtResource("7_m1vt2"), SubResource("ShaderMaterial_nqcd4"), Vector2(-96, 10), ExtResource("11_aampv")],
+"version": 3
+}
+
+[sub_resource type="PackedScene" id="PackedScene_n5y70"]
+_bundled = {
+"conn_count": 0,
+"conns": PackedInt32Array(),
+"editable_instances": [],
+"id_paths": [],
+"names": PackedStringArray("Wave", "Node2D", "Skeleton", "y_sort_enabled", "material", "position", "collision_layer", "collision_mask", "motion_mode", "script", "unit_data", "metadata/wave_cycle_effects", "team_b", "CharacterBody2D", "Skeleton2"),
+"node_count": 3,
+"node_ids": PackedInt32Array(2052301795, 699531576, 260580161),
+"node_paths": [],
+"nodes": PackedInt32Array(-1, -1, 1, 0, -1, 0, 0, 0, 0, 13, 2, 0, 9, 3, 1, 4, 2, 5, 3, 6, 4, 7, 5, 8, 6, 9, 7, 10, 8, 11, 9, 1, 12, 0, 0, 13, 14, 0, 9, 3, 1, 4, 2, 5, 10, 6, 4, 7, 5, 8, 6, 9, 7, 10, 8, 11, 9, 1, 12),
+"variants": [ExtResource("3_dmqkl"), true, SubResource("ShaderMaterial_ohfxl"), Vector2(-292, 66), 2, 15, 1, ExtResource("5_hq6lb"), ExtResource("10_6ucm0"), {
+"attack": 2
+}, Vector2(-293, -92)],
+"version": 3
+}
+
+[sub_resource type="PackedScene" id="PackedScene_gr6xw"]
+_bundled = {
+"conn_count": 0,
+"conns": PackedInt32Array(),
+"editable_instances": [],
+"id_paths": [],
+"names": PackedStringArray("Wave", "Node2D", "Skeleton", "y_sort_enabled", "material", "position", "collision_layer", "collision_mask", "motion_mode", "script", "unit_data", "metadata/wave_cycle_effects", "team_b", "CharacterBody2D", "Skeleton2", "SkeletonArcher"),
+"node_count": 4,
+"node_ids": PackedInt32Array(1727707518, 699531576, 1066830267, 66023828),
+"node_paths": [],
+"nodes": PackedInt32Array(-1, -1, 1, 0, -1, 0, 0, 0, 0, 13, 2, 0, 9, 3, 1, 4, 2, 5, 3, 6, 4, 7, 5, 8, 6, 9, 7, 10, 8, 11, 9, 1, 12, 0, 0, 13, 14, 0, 9, 3, 1, 4, 2, 5, 10, 6, 4, 7, 5, 8, 6, 9, 7, 10, 8, 11, 9, 1, 12, 0, 0, 13, 15, 11, 9, 3, 1, 4, 12, 5, 13, 6, 4, 7, 5, 8, 6, 9, 7, 10, 14, 11, 9, 1, 12),
+"variants": [ExtResource("3_dmqkl"), true, SubResource("ShaderMaterial_ohfxl"), Vector2(-367, -98), 2, 15, 1, ExtResource("5_hq6lb"), ExtResource("10_6ucm0"), {
+"attack": 2
+}, Vector2(-357, 37), ExtResource("7_m1vt2"), SubResource("ShaderMaterial_nqcd4"), Vector2(-227, -29), ExtResource("11_aampv")],
+"version": 3
+}
+
+[resource]
+script = ExtResource("2_3twvh")
+level_name = "关卡模板：双兽人"
+notes = "复制此资源后配置自己的波次和地形。"
+battle_scene = ExtResource("1_skwk8")
+waves = Array[PackedScene]([SubResource("PackedScene_4odkq"), SubResource("PackedScene_qhrub"), SubResource("PackedScene_s3blm"), SubResource("PackedScene_n5y70"), SubResource("PackedScene_gr6xw")])
+repeat_waves = true
+repeat_start = 3

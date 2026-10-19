@@ -1,0 +1,132 @@
+{
+  "date": "2026-10-09",
+  "archived_files": 6592,
+  "archived_bytes": 868093263,
+  "removed_project_junction": "docs/数值设计/support/node_modules",
+  "shared_runtime_deleted": false,
+  "source_archive": "C:\\Users\\10059\\.codex\\visualizations\\2026\\10\\09\\01a120c1-8a5c-7450-b0dc-d1fc51b9b9ff\\project-cleanup-20261009\\source-before.zip",
+  "artifacts_archive": "C:\\Users\\10059\\.codex\\visualizations\\2026\\10\\09\\01a120c1-8a5c-7450-b0dc-d1fc51b9b9ff\\project-cleanup-20261009\\retired-artifacts.zip",
+  "artifacts_archive_sha256": "fa742371c453e7517513c70d76fb632019b0f439502370329c1175c71279ad58",
+  "protected_files_unchanged": 2695,
+  "removed_test_scripts": [
+    "tests/campfire_test.gd",
+    "tests/event_preview.gd",
+    "tests/game_config_editor_preview.gd",
+    "tests/node_layout_preview.gd",
+    "tests/player_base_test.gd",
+    "tests/shop_preview.gd",
+    "tests/shop_test_runner.gd"
+  ],
+  "moves": {
+    "tests/config_catalog_export.gd": "addons/game_config_editor/config_catalog_export.gd",
+    "tests/config_catalog_export.gd.uid": "addons/game_config_editor/config_catalog_export.gd.uid",
+    "tests/navigation_bake_check.gd": "tools/maintenance/navigation_bake.gd",
+    "tests/navigation_bake_check.gd.uid": "tools/maintenance/navigation_bake.gd.uid"
+  },
+  "checks": {
+    "behavior_and_resources_passed": 47,
+    "loaded_resources": 839,
+    "explicit_paths": 1601,
+    "dynamic_unit_scenes": 21,
+    "missing_paths": 0,
+    "orphan_sidecars": 0,
+    "config_catalog_tests_passed": 16,
+    "shared_spreadsheet_runtime": "passed",
+    "exported_pack_flow": "passed"
+  },
+  "project_files_after": 8520,
+  "project_bytes_after": 284827267,
+  "folder_stats_after": {
+    ".editorconfig": [
+      1,
+      33
+    ],
+    ".gitattributes": [
+      1,
+      80
+    ],
+    ".gitignore": [
+      1,
+      97
+    ],
+    "export_presets.cfg": [
+      1,
+      2617
+    ],
+    "icon.svg": [
+      1,
+      995
+    ],
+    "icon.svg.import": [
+      1,
+      1013
+    ],
+    "project.godot": [
+      1,
+      3167
+    ],
+    "README.md": [
+      1,
+      7101
+    ],
+    ".godot": [
+      4521,
+      91894849
+    ],
+    ".maintenance": [
+      74,
+      48344
+    ],
+    "addons": [
+      71,
+      341731
+    ],
+    "assets": [
+      3246,
+      184164711
+    ],
+    "autoload": [
+      10,
+      208662
+    ],
+    "data": [
+      160,
+      207380
+    ],
+    "docs": [
+      61,
+      5756366
+    ],
+    "examples": [
+      10,
+      15854
+    ],
+    "scenes": [
+      88,
+      1083518
+    ],
+    "scripts": [
+      124,
+      481502
+    ],
+    "shaders": [
+      26,
+      21069
+    ],
+    "tests": [
+      95,
+      373322
+    ],
+    "themes": [
+      5,
+      1485
+    ],
+    "tools": [
+      21,
+      213371
+    ]
+  },
+  "known_existing_tool_issue": "Optional navigation baking logs TileSet atlas coordinates (0, 13) absent; present before cleanup. Maps and TileSets retained byte-for-byte.",
+  "clean_source_archive": "C:\\Users\\10059\\.codex\\visualizations\\2026\\10\\09\\01a120c1-8a5c-7450-b0dc-d1fc51b9b9ff\\project-cleanup-20261009\\source-clean.zip",
+  "note": "Protected original files were retained. Additional asset files written during the audit were also retained; use the final clean snapshot for a complete restore."
+}

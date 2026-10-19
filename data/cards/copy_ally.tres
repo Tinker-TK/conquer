@@ -1,0 +1,23 @@
+[gd_resource type="Resource" script_class="CardDefinition" format=3 uid="uid://i0l2kocqy5qt"]
+
+[ext_resource type="Texture2D" path="res://assets/cards/illustrations/copy_ally.png" id="1_i4mrh"]
+[ext_resource type="Script" uid="uid://dvqd45gj27252" path="res://data/card_effects/card_effect.gd" id="2_sk2jv"]
+[ext_resource type="Script" uid="uid://6l58cf1r7imd" path="res://data/cards/card_definition.gd" id="3_7d6x7"]
+
+[sub_resource type="Resource" id="Resource_27uql"]
+script = ExtResource("2_sk2jv")
+lasting_rounds = 1
+kind = 6
+affected_team = 1
+metadata/_custom_type_script = "uid://dvqd45gj27252"
+
+[resource]
+script = ExtResource("3_7d6x7")
+card_name = "镜像"
+card_discription = "复制1名己方单位，保留当前生命。\n消耗。"
+card_image = ExtResource("1_i4mrh")
+card_cost = 2
+after_use = 1
+effects = Array[ExtResource("2_sk2jv")]([SubResource("Resource_27uql")])
+max_upgrade_count = 1
+upgrade_cost_change = -1

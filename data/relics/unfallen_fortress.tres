@@ -1,0 +1,20 @@
+[gd_resource type="Resource" script_class="RelicDefinition" format=3]
+
+[ext_resource type="Script" path="res://data/relics/relic_definition.gd" id="1"]
+[ext_resource type="Texture2D" path="res://assets/ui_redrawn/icons/relic_ring.png" id="2"]
+
+[resource]
+script = ExtResource("1")
+id = &"unfallen_fortress"
+display_name = "不落堡垒"
+description = "本回合无己方单位死亡：玩家 +2 生命，敌方 HP −2。"
+icon = ExtResource("2")
+kind = 5
+rarity = 2
+tags = Array[StringName]([&"guard"])
+trigger = 17
+handler = &"unfallen_fortress"
+max_per_battle = 0
+max_per_round = 0
+cooldown_seconds = 0.0
+priority = 1

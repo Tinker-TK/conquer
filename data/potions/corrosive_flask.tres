@@ -1,0 +1,45 @@
+[gd_resource type="Resource" script_class="PotionDefinition" format=3]
+
+[ext_resource type="Script" path="res://data/potions/potion_definition.gd" id="1"]
+[ext_resource type="Script" path="res://data/potions/potion_effect.gd" id="2"]
+[ext_resource type="Texture2D" path="res://assets/ui/potions/corrosive_flask.svg" id="3"]
+
+[sub_resource type="Resource" id="Effect0"]
+script = ExtResource("2")
+kind = 0
+amount = 30.0
+radius = 100.0
+
+[sub_resource type="Resource" id="Effect1"]
+script = ExtResource("2")
+kind = 1
+amount = 4.0
+radius = 100.0
+duration = 8.0
+status_id = &"armor_break"
+stack_cap = 8
+
+[sub_resource type="Resource" id="Effect2"]
+script = ExtResource("2")
+kind = 2
+amount = 8.0
+radius = 100.0
+
+[resource]
+script = ExtResource("1")
+id = &"corrosive_flask"
+display_name = "腐蚀酸瓶"
+description = "半径100内敌人受到30伤害，破甲4点持续8秒，并附加8层中毒。"
+icon = ExtResource("3")
+kind = 4
+rarity = 1
+target_mode = 0
+tags = Array[StringName]([&"控制"])
+min_act = 2
+price = 70
+prep_usable = false
+max_per_run = 0
+radius = 100.0
+tint = Color(0.6510, 0.8745, 0.2627, 1)
+impact_vfx = "PoisonImpactVFX"
+effects = Array[ExtResource("2")]([SubResource("Effect0"), SubResource("Effect1"), SubResource("Effect2")])

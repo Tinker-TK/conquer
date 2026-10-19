@@ -1,0 +1,29 @@
+[gd_resource type="Resource" script_class="PotionDefinition" format=3]
+
+[ext_resource type="Script" path="res://data/potions/potion_definition.gd" id="1"]
+[ext_resource type="Script" path="res://data/potions/potion_effect.gd" id="2"]
+[ext_resource type="Texture2D" path="res://assets/ui/potions/revive_potion.svg" id="3"]
+
+[sub_resource type="Resource" id="Effect0"]
+script = ExtResource("2")
+kind = 11
+amount = 50.0
+
+[resource]
+script = ExtResource("1")
+id = &"revive_potion"
+display_name = "复活药剂"
+description = "以50%生命复活本轮一名阵亡友军；优先原征召单位。复活物本轮结束消失，不返还原牌。"
+icon = ExtResource("3")
+kind = 4
+rarity = 2
+target_mode = 5
+tags = Array[StringName]([&"召唤"])
+min_act = 3
+price = 120
+prep_usable = true
+max_per_run = 0
+radius = 85.0
+tint = Color(0.9647, 0.8745, 0.6196, 1)
+impact_vfx = "HolyWarpVFX"
+effects = Array[ExtResource("2")]([SubResource("Effect0")])

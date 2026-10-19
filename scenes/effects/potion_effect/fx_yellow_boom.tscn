@@ -1,0 +1,114 @@
+[gd_scene format=3 uid="uid://cur5kb0272ng4"]
+
+[ext_resource type="Texture2D" uid="uid://d1okdiixdw0b5" path="res://assets/effect/potion_effect/Fire-bomb.png" id="1_0y1py"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_nw26c"]
+atlas = ExtResource("1_0y1py")
+region = Rect2(0, 0, 64, 64)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_ycmtj"]
+atlas = ExtResource("1_0y1py")
+region = Rect2(64, 0, 64, 64)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_x0r4k"]
+atlas = ExtResource("1_0y1py")
+region = Rect2(128, 0, 64, 64)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_jds8k"]
+atlas = ExtResource("1_0y1py")
+region = Rect2(192, 0, 64, 64)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_xwfd6"]
+atlas = ExtResource("1_0y1py")
+region = Rect2(256, 0, 64, 64)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_5cgpx"]
+atlas = ExtResource("1_0y1py")
+region = Rect2(320, 0, 64, 64)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_ppbnb"]
+atlas = ExtResource("1_0y1py")
+region = Rect2(384, 0, 64, 64)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_h2lxb"]
+atlas = ExtResource("1_0y1py")
+region = Rect2(448, 0, 64, 64)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_gny6n"]
+atlas = ExtResource("1_0y1py")
+region = Rect2(512, 0, 64, 64)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_5l7uu"]
+atlas = ExtResource("1_0y1py")
+region = Rect2(576, 0, 64, 64)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_mddvj"]
+atlas = ExtResource("1_0y1py")
+region = Rect2(640, 0, 64, 64)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_35h7q"]
+atlas = ExtResource("1_0y1py")
+region = Rect2(704, 0, 64, 64)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_hfjek"]
+atlas = ExtResource("1_0y1py")
+region = Rect2(768, 0, 64, 64)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_xod7k"]
+atlas = ExtResource("1_0y1py")
+region = Rect2(832, 0, 64, 64)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_g8mj3"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_nw26c")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_ycmtj")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_x0r4k")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_jds8k")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_xwfd6")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_5cgpx")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_ppbnb")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_h2lxb")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_gny6n")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_5l7uu")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_mddvj")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_35h7q")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_hfjek")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_xod7k")
+}],
+"loop": false,
+"name": &"bomb",
+"speed": 10.0
+}]
+
+[node name="PotionEffect" type="AnimatedSprite2D" unique_id=1061785420]
+sprite_frames = SubResource("SpriteFrames_g8mj3")
+animation = &"bomb"
+offset = Vector2(0, -60)

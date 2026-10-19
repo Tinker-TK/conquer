@@ -1,0 +1,67 @@
+[gd_scene format=3 uid="uid://c4bs25smpngfc"]
+
+[ext_resource type="Texture2D" uid="uid://bwybw4il6kre8" path="res://assets/characters/Necromancer/Magic(projectile)/Necromancer_Sumon_Effect.png" id="1_nnwbk"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_6fj1s"]
+atlas = ExtResource("1_nnwbk")
+region = Rect2(0, 0, 100, 100)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_mje0g"]
+atlas = ExtResource("1_nnwbk")
+region = Rect2(100, 0, 100, 100)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_86sp7"]
+atlas = ExtResource("1_nnwbk")
+region = Rect2(200, 0, 100, 100)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_xs482"]
+atlas = ExtResource("1_nnwbk")
+region = Rect2(300, 0, 100, 100)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_qn4u3"]
+atlas = ExtResource("1_nnwbk")
+region = Rect2(400, 0, 100, 100)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_sis87"]
+atlas = ExtResource("1_nnwbk")
+region = Rect2(500, 0, 100, 100)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_axpwi"]
+atlas = ExtResource("1_nnwbk")
+region = Rect2(600, 0, 100, 100)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_gw0p6"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_6fj1s")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_mje0g")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_86sp7")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_xs482")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_qn4u3")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_sis87")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_axpwi")
+}],
+"loop": false,
+"name": &"green_magic_circle",
+"speed": 10.0
+}]
+
+[node name="CreatEffect" type="AnimatedSprite2D" unique_id=2061345145]
+scale = Vector2(4, 4)
+sprite_frames = SubResource("SpriteFrames_gw0p6")
+animation = &"green_magic_circle"
+frame = 6
+frame_progress = 1.0

@@ -1,0 +1,42 @@
+{
+  "path": "res://assets/audio/ai/local_design/ambience/amb_campfire_embers_v01.ogg",
+  "asset": "amb_campfire_embers_v01",
+  "title": "营地 · 篝火余烬",
+  "category": "ambience",
+  "domain": "Ambience",
+  "batch": "audition_20261019",
+  "provider": "local_design",
+  "recipe": "campfire",
+  "variant": 1,
+  "seed": 2211457477,
+  "prompt": "Continuous intimate medieval campfire ambience, low steady flame flutter, irregular tiny wood crackles and occasional warm ember pops, gentle sparse background suitable for card choices. Seamless 16 second texture, no people, birds, music, voices or dramatic events.",
+  "author": "项目本地声音设计（CC0 分层素材＋原创程序合成）",
+  "source": "res://tools/audio/ai/produce_audition.py",
+  "license": "CC0-1.0",
+  "source_layers": [],
+  "changes": "分层混音、确定性变体、裁剪静音、44.1kHz 单声道、短淡入淡出、峰值控制、OGG；循环保留完整小节。",
+  "notes": "本批试听 · 本地制作；Ambience；可循环。",
+  "duration_seconds": 16.0,
+  "loop": true,
+  "features": {
+    "duration_seconds": 16.0,
+    "peak_dbfs": -3.97,
+    "rms_dbfs": -23.14,
+    "crest_db": 19.17,
+    "spectral_centroid_hz": 2685.2,
+    "zero_cross_rate": 0.0601,
+    "attack_ms": 13826.7,
+    "tail_ms": 0.2
+  },
+  "channels": 1,
+  "sample_rate": 44100,
+  "seam_jump": 0.004326924681663513,
+  "sha256": "101548f21254c17aebe9f845e44e0400c51c1178cd28aa7c6796947a3022d137",
+  "created_at": "2026-10-19T02:03:55+00:00",
+  "tags": [
+    "loop",
+    "balanced",
+    "spiky"
+  ],
+  "problems": []
+}

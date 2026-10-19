@@ -1,0 +1,10 @@
+[gd_resource type="Resource" script_class="BattleRewardConfig" format=3]
+
+[ext_resource type="Script" path="res://data/battle_rewards/battle_reward_config.gd" id="1_config"]
+
+[resource]
+script = ExtResource("1_config")
+display_name = "Boss 战斗奖励"
+gold = 120
+potion_chance = 100.0
+relic_chance = 100.0

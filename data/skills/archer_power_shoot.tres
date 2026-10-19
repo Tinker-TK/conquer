@@ -1,0 +1,20 @@
+[gd_resource type="Resource" format=3 uid="uid://b516x5g463mef"]
+
+[ext_resource type="PackedScene" uid="uid://ccjab1ic6mqq6" path="res://scenes/projectiles/power_arrow.tscn" id="1_noufv"]
+[ext_resource type="Script" uid="uid://ba6tubwqe13nv" path="res://scripts/skills/arrow_attack.gd" id="2_noufv"]
+
+[resource]
+script = ExtResource("2_noufv")
+projectile_trajectory = 0
+pierce_count = 2
+projectile_scene = ExtResource("1_noufv")
+skill_name = "穿刺射击"
+unlock_upgrade_levels = Array[int]([0])
+description = "沿射击路线最多命中2名敌人，每名造成100%攻击力伤害。"
+attack_rate = 1.0
+cooldown = 4.0
+priority = 1
+cast_range = 600.0
+cast_animation = "attack_02"
+hit_frame = Array[int]([9])
+metadata/_data_table_id = 3

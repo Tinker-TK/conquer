@@ -1,0 +1,88 @@
+[gd_scene format=3 uid="uid://d3xtrcbbby1al"]
+
+[ext_resource type="Texture2D" uid="uid://4f0hhsuakrjj" path="res://assets/characters/Wizard/Magic(projectile)/Wizard_Attack01_Effect.png" id="1_7ou1g"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_mtjts"]
+atlas = ExtResource("1_7ou1g")
+region = Rect2(0, 0, 100, 100)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_wgg4l"]
+atlas = ExtResource("1_7ou1g")
+region = Rect2(100, 0, 100, 100)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_ibcbk"]
+atlas = ExtResource("1_7ou1g")
+region = Rect2(200, 0, 100, 100)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_vnvqf"]
+atlas = ExtResource("1_7ou1g")
+region = Rect2(300, 0, 100, 100)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_677et"]
+atlas = ExtResource("1_7ou1g")
+region = Rect2(400, 0, 100, 100)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_1he0v"]
+atlas = ExtResource("1_7ou1g")
+region = Rect2(500, 0, 100, 100)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_6akwo"]
+atlas = ExtResource("1_7ou1g")
+region = Rect2(600, 0, 100, 100)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_hwkds"]
+atlas = ExtResource("1_7ou1g")
+region = Rect2(700, 0, 100, 100)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_knuox"]
+atlas = ExtResource("1_7ou1g")
+region = Rect2(800, 0, 100, 100)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_55rd5"]
+atlas = ExtResource("1_7ou1g")
+region = Rect2(900, 0, 100, 100)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_0u1bf"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_mtjts")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_wgg4l")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_ibcbk")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_vnvqf")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_677et")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_1he0v")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_6akwo")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_hwkds")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_knuox")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_55rd5")
+}],
+"loop": false,
+"name": &"effect",
+"speed": 10.0
+}]
+
+[node name="WizardIceCrashEffect" type="AnimatedSprite2D" unique_id=129410301]
+scale = Vector2(4, 4)
+sprite_frames = SubResource("SpriteFrames_0u1bf")
+animation = &"effect"
+frame = 9
+frame_progress = 1.0

@@ -1,0 +1,52 @@
+[gd_scene format=3 uid="uid://c8gogayj6navq"]
+
+[ext_resource type="Texture2D" uid="uid://2cwy2idkmpg6" path="res://assets/effect/tonado.png" id="1_fvmot"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_ukixr"]
+atlas = ExtResource("1_fvmot")
+region = Rect2(384, 192, 192, 192)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_3fkyb"]
+atlas = ExtResource("1_fvmot")
+region = Rect2(576, 192, 192, 192)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_t5hq5"]
+atlas = ExtResource("1_fvmot")
+region = Rect2(768, 192, 192, 192)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_i5bbu"]
+atlas = ExtResource("1_fvmot")
+region = Rect2(0, 384, 192, 192)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_th82w"]
+atlas = ExtResource("1_fvmot")
+region = Rect2(192, 384, 192, 192)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_g8mj3"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_ukixr")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_3fkyb")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_t5hq5")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_i5bbu")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_th82w")
+}],
+"loop": true,
+"name": &"effect",
+"speed": 10.0
+}]
+
+[node name="PotionEffect" type="AnimatedSprite2D" unique_id=1061785420]
+sprite_frames = SubResource("SpriteFrames_g8mj3")
+animation = &"effect"
+frame_progress = 0.69725764
+offset = Vector2(0, -30)

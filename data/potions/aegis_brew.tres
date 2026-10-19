@@ -1,0 +1,29 @@
+[gd_resource type="Resource" script_class="PotionDefinition" format=3]
+
+[ext_resource type="Script" path="res://data/potions/potion_definition.gd" id="1"]
+[ext_resource type="Script" path="res://data/potions/potion_effect.gd" id="2"]
+[ext_resource type="Texture2D" path="res://assets/ui/potions/aegis_brew.svg" id="3"]
+
+[sub_resource type="Resource" id="Effect0"]
+script = ExtResource("2")
+kind = 4
+amount = 50.0
+
+[resource]
+script = ExtResource("1")
+id = &"aegis_brew"
+display_name = "圣盾药剂"
+description = "全体当前友军获得50护盾，先于生命抵扣伤害，离开交锋时清除。"
+icon = ExtResource("3")
+kind = 4
+rarity = 1
+target_mode = 3
+tags = Array[StringName]([&"增益"])
+min_act = 1
+price = 80
+prep_usable = false
+max_per_run = 0
+radius = 85.0
+tint = Color(0.9490, 0.8549, 0.4784, 1)
+impact_vfx = ""
+effects = Array[ExtResource("2")]([SubResource("Effect0")])

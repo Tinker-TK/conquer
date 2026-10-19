@@ -1,0 +1,20 @@
+[gd_resource type="Resource" script_class="RelicDefinition" format=3]
+
+[ext_resource type="Script" path="res://data/relics/relic_definition.gd" id="1"]
+[ext_resource type="Texture2D" path="res://assets/ui_redrawn/icons/relic_clover.png" id="2"]
+
+[resource]
+script = ExtResource("1")
+id = &"echo_crystal"
+display_name = "回响水晶"
+description = "每场第 1 张消耗牌额外结算 1 次；区域 / 召唤不重复。"
+icon = ExtResource("2")
+kind = 5
+rarity = 1
+tags = Array[StringName]([&"cycle"])
+trigger = 6
+handler = &"echo_crystal"
+max_per_battle = 1
+max_per_round = 0
+cooldown_seconds = 0.0
+priority = 4

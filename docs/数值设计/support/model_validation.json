@@ -1,0 +1,17 @@
+{
+  "date": "2026-10-08",
+  "units": 21,
+  "skills": 48,
+  "levels": 5,
+  "formulaErrorScan": "{\"kind\":\"notice\",\"message\":\"Cell search matched 0 entries.\"}",
+  "hpSensitivity": {
+    "before": 3.8039826810497046,
+    "doubled": 5.379643898572859
+  },
+  "deckChance": {
+    "noUnits": 0.003968253968253968,
+    "noFront": 0.08333333333333333
+  },
+  "routeHp": 32.250000000000014,
+  "trialRowsEmpty": 0
+}

@@ -1,0 +1,23 @@
+{
+  "scene": "res://scenes/levels/battles/battle_007.tscn",
+  "unit_scene": "res://scenes/units/orc.tscn",
+  "require_all_passages": true,
+  "passages": [
+    {"path": "LayerChange/1-2/FloorTransition", "lower_start": [96, 375], "upper_goal": [320, 320]},
+    {"path": "LayerChange/1-2/FloorTransition2", "lower_start": [1824, 438], "upper_goal": [1600, 438]},
+    {"path": "LayerChange/1-2/FloorTransition3", "lower_start": [1824, 955], "upper_goal": [1600, 896]},
+    {"path": "LayerChange/1-2/FloorTransition4", "lower_start": [96, 887], "upper_goal": [320, 832]}
+  ],
+  "journeys": [
+    {"name": "upper-bridge-east", "from_floor": 2, "start": [704, 320], "to_floor": 2, "goal": [1216, 320]},
+    {"name": "upper-bridge-west", "from_floor": 2, "start": [1216, 320], "to_floor": 2, "goal": [704, 320]},
+    {"name": "lower-bridge-east", "from_floor": 2, "start": [704, 832], "to_floor": 2, "goal": [1216, 832]},
+    {"name": "lower-bridge-west", "from_floor": 2, "start": [1216, 832], "to_floor": 2, "goal": [704, 832]},
+    {"name": "west-bridge-south", "from_floor": 2, "start": [576, 320], "to_floor": 2, "goal": [576, 700]},
+    {"name": "west-bridge-north", "from_floor": 2, "start": [576, 700], "to_floor": 2, "goal": [576, 320]},
+    {"name": "east-bridge-south", "from_floor": 2, "start": [1344, 448], "to_floor": 2, "goal": [1344, 832]},
+    {"name": "east-bridge-north", "from_floor": 2, "start": [1344, 832], "to_floor": 2, "goal": [1344, 448]},
+    {"name": "north-west-to-south-east", "from_floor": 2, "start": [400, 280], "to_floor": 2, "goal": [1500, 900]},
+    {"name": "south-east-to-north-west", "from_floor": 2, "start": [1500, 900], "to_floor": 2, "goal": [400, 280]}
+  ]
+}

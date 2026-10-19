@@ -1,0 +1,20 @@
+[gd_resource type="Resource" script_class="RelicDefinition" format=3]
+
+[ext_resource type="Script" path="res://data/relics/relic_definition.gd" id="1"]
+[ext_resource type="Texture2D" path="res://assets/ui_redrawn/icons/relic_leaf.png" id="2"]
+
+[resource]
+script = ExtResource("1")
+id = &"beacon"
+display_name = "集结烽火"
+description = "本场第 3 名单位部署时，全体己方 +2 攻、技能冷却 −15%，持续本场；每场 1 次。"
+icon = ExtResource("2")
+kind = 5
+rarity = 1
+tags = Array[StringName]([&"wide"])
+trigger = 8
+handler = &"beacon"
+max_per_battle = 1
+max_per_round = 0
+cooldown_seconds = 0.0
+priority = 1

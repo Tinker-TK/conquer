@@ -1,0 +1,14 @@
+[gd_resource type="Resource" format=3 uid="uid://ckwfm8evdo0ki"]
+
+[ext_resource type="Script" uid="uid://l5slg1wgnhew" path="res://scripts/skills/normal_attack.gd" id="1_aexva"]
+
+[resource]
+script = ExtResource("1_aexva")
+skill_name = "强力攻击"
+description = "精英哥布林发动强力攻击"
+attack_rate = 2.0
+cooldown = 10.0
+priority = 1
+cast_animation = "attack_03"
+hit_frame = Array[int]([4])
+metadata/_data_table_id = 4

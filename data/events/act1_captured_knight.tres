@@ -1,0 +1,18 @@
+[gd_resource type="Resource" script_class="EventDefinition" format=3]
+
+[ext_resource type="Script" path="res://data/events/event_definition.gd" id="1"]
+[ext_resource type="Texture2D" path="res://assets/ui/events/illustrations/captured-knight.png" id="2"]
+
+[resource]
+script = ExtResource("1")
+id = "act1_captured_knight"
+title = "被俘的骑士"
+description = "一名骑士被倒吊在枯树上，盔甲上刻着敌国的纹章。他看到你，先吐出一口血沫，然后笑了。\n\n树下的赏金猎人正在磨刀，头也不抬地说：「活的八十，死的五十。」"
+template = 4
+min_floor = 4
+max_floor = 8
+rarity = "rare"
+illustration = ExtResource("2")
+tags = Array[String](["recruit"])
+requires = Array[String]([])
+choices = Array[Dictionary]([{"gold": 0, "heal": 0, "effect": {"type": "choose_cards", "unit_offer": 3, "unit_picks": 1, "effect_offer": 0, "effect_picks": 0, "unit_pool": ["res://data/units/knight.tres", "res://data/units/knight_templar.tres", "res://data/units/lancer.tres"]}, "cost": {"hp": 12}, "text": "放他下来", "summary": "失去 12 生命 · 从 3 张骑士系征召牌中选 1 张", "result_text": "你割断绳子，他落地后的第一件事是给你一拳，第二件事是替你挡开赏金猎人的刀。"}, {"gold": 80, "heal": 0, "text": "交给赏金猎人", "summary": "获得 80 金币", "result_text": "赏金猎人把钱数了两遍。骑士被拖走时一直看着你，没有骂，也没有求。"}, {"gold": 0, "heal": 10, "effect": {"type": "random_potion"}, "text": "问出情报", "summary": "获得 1 瓶随机药水，回复 10 生命", "result_text": "骑士用下巴指了指北边的山隘，又用眼神示意你搜他的靴子。里面藏着一瓶没摔碎的药。"}, {"text": "离开", "leave": true, "heal": 0, "gold": 0}])

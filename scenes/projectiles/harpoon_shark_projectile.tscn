@@ -1,0 +1,47 @@
+[gd_scene format=3]
+
+[ext_resource type="Script" path="res://scripts/combat/projectile.gd" id="projectile"]
+[ext_resource type="Texture2D" path="res://assets/characters/Enemy Pack/Harpoon Shark/Harpoon.png" id="sheet"]
+
+[ext_resource type="Script" path="res://scripts/units/enemy_pixel_style.gd" id="pixel_style"]
+[ext_resource type="Resource" path="res://data/visuals/enemy_pack/harpoon_shark.tres" id="pixel_palette"]
+
+[ext_resource type="Shader" path="res://shaders/unit_pixel_style.gdshader" id="pixel_shader"]
+
+[sub_resource type="ShaderMaterial" id="pixel_material"]
+resource_local_to_scene = true
+shader = ExtResource("pixel_shader")
+shader_parameter/pixel_step = 2.0
+shader_parameter/match_palette = true
+
+[sub_resource type="AtlasTexture" id="fly_0"]
+atlas = ExtResource("sheet")
+region = Rect2(0, 0, 64, 64)
+
+[sub_resource type="SpriteFrames" id="frames"]
+animations = [{
+"frames": [{"duration": 1.0, "texture": SubResource("fly_0")}],
+"loop": true,
+"name": &"fly",
+"speed": 10.0
+}]
+
+[node name="HarpoonSharkProjectile" type="Node2D"]
+z_index = 10
+script = ExtResource("projectile")
+trajectory = 0
+speed = 550.0
+max_height = 0.0
+hit_radius = 24.0
+sprite_angle_offset = 0.7853982
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
+texture_filter = 1
+material = SubResource("pixel_material")
+sprite_frames = SubResource("frames")
+animation = &"fly"
+autoplay = "fly"
+
+[node name="PixelStyle" type="Node" parent="AnimatedSprite2D"]
+script = ExtResource("pixel_style")
+palette = ExtResource("pixel_palette")

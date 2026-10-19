@@ -1,0 +1,222 @@
+[
+  {
+	"name": "summon_guard",
+	"canvas": [
+	  768,
+	  1024
+	],
+	"origin": [
+	  0,
+	  0
+	],
+	"layers": [
+	  "cards/summon_guard/00_backplate.png",
+	  "cards/summon_guard/10_art_background.png",
+	  "cards/summon_guard/20_art_subject.png",
+	  "cards/summon_guard/30_art_border.png",
+	  "cards/summon_guard/40_outer_frame.png",
+	  "cards/summon_guard/50_title_plate.png",
+	  "cards/summon_guard/60_description_plate.png",
+      "cards/summon_guard/70_cost_badge.png"
+	],
+	"art_rect": [
+	  100,
+	  208,
+	  568,
+	  448
+	],
+	"title_rect": [
+	  160,
+	  110,
+	  460,
+	  65
+	],
+	"description_rect": [
+	  125,
+	  728,
+	  518,
+	  150
+	],
+	"cost_center": [
+	  84,
+	  84
+	],
+	"verified_reassembly": true
+  },
+  {
+	"name": "hold_position",
+	"canvas": [
+	  768,
+	  1024
+	],
+	"origin": [
+	  0,
+	  0
+	],
+	"layers": [
+	  "cards/hold_position/00_backplate.png",
+	  "cards/hold_position/10_art_background.png",
+	  "cards/hold_position/20_art_subject.png",
+	  "cards/hold_position/30_art_border.png",
+	  "cards/hold_position/40_outer_frame.png",
+	  "cards/hold_position/50_title_plate.png",
+	  "cards/hold_position/60_description_plate.png",
+      "cards/hold_position/70_cost_badge.png"
+	],
+	"art_rect": [
+	  100,
+	  208,
+	  568,
+	  448
+	],
+	"title_rect": [
+	  160,
+	  110,
+	  460,
+	  65
+	],
+	"description_rect": [
+	  125,
+	  728,
+	  518,
+	  150
+	],
+	"cost_center": [
+	  84,
+	  84
+	],
+	"verified_reassembly": true
+  },
+  {
+	"name": "fireball",
+	"canvas": [
+	  768,
+	  1024
+	],
+	"origin": [
+	  0,
+	  0
+	],
+	"layers": [
+	  "cards/fireball/00_backplate.png",
+	  "cards/fireball/10_art_background.png",
+	  "cards/fireball/20_art_subject.png",
+	  "cards/fireball/30_art_border.png",
+	  "cards/fireball/40_outer_frame.png",
+	  "cards/fireball/50_title_plate.png",
+	  "cards/fireball/60_description_plate.png",
+      "cards/fireball/70_cost_badge.png"
+	],
+	"art_rect": [
+	  100,
+	  208,
+	  568,
+	  448
+	],
+	"title_rect": [
+	  160,
+	  110,
+	  460,
+	  65
+	],
+	"description_rect": [
+	  125,
+	  728,
+	  518,
+	  150
+	],
+	"cost_center": [
+	  84,
+	  84
+	],
+	"verified_reassembly": true
+  },
+  {
+	"name": "battlefield_heal",
+	"canvas": [
+	  768,
+	  1024
+	],
+	"origin": [
+	  0,
+	  0
+	],
+	"layers": [
+	  "cards/battlefield_heal/00_backplate.png",
+	  "cards/battlefield_heal/10_art_background.png",
+	  "cards/battlefield_heal/20_art_subject.png",
+	  "cards/battlefield_heal/30_art_border.png",
+	  "cards/battlefield_heal/40_outer_frame.png",
+	  "cards/battlefield_heal/50_title_plate.png",
+	  "cards/battlefield_heal/60_description_plate.png",
+      "cards/battlefield_heal/70_cost_badge.png"
+	],
+	"art_rect": [
+	  100,
+	  208,
+	  568,
+	  448
+	],
+	"title_rect": [
+	  160,
+	  110,
+	  460,
+	  65
+	],
+	"description_rect": [
+	  125,
+	  728,
+	  518,
+	  150
+	],
+	"cost_center": [
+	  84,
+	  84
+	],
+	"verified_reassembly": true
+  },
+  {
+	"name": "battle_inspiration",
+	"canvas": [
+	  768,
+	  1024
+	],
+	"origin": [
+	  0,
+	  0
+	],
+	"layers": [
+	  "cards/battle_inspiration/00_backplate.png",
+	  "cards/battle_inspiration/10_art_background.png",
+	  "cards/battle_inspiration/20_art_subject.png",
+	  "cards/battle_inspiration/30_art_border.png",
+	  "cards/battle_inspiration/40_outer_frame.png",
+	  "cards/battle_inspiration/50_title_plate.png",
+	  "cards/battle_inspiration/60_description_plate.png",
+      "cards/battle_inspiration/70_cost_badge.png"
+	],
+	"art_rect": [
+	  100,
+	  208,
+	  568,
+	  448
+	],
+	"title_rect": [
+	  160,
+	  110,
+	  460,
+	  65
+	],
+	"description_rect": [
+	  125,
+	  728,
+	  518,
+	  150
+	],
+	"cost_center": [
+	  84,
+	  84
+	],
+	"verified_reassembly": true
+  }
+]

@@ -1,0 +1,29 @@
+[gd_resource type="Resource" script_class="PotionDefinition" format=3]
+
+[ext_resource type="Script" path="res://data/potions/potion_definition.gd" id="1"]
+[ext_resource type="Script" path="res://data/potions/potion_effect.gd" id="2"]
+[ext_resource type="Texture2D" path="res://assets/ui/potions/gambler_brew.svg" id="3"]
+
+[sub_resource type="Resource" id="Effect0"]
+script = ExtResource("2")
+kind = 20
+amount = 2.0
+
+[resource]
+script = ExtResource("1")
+id = &"gambler_brew"
+display_name = "赌徒之酿"
+description = "弃掉全部手牌，抽取原手牌数量+2张；受禁抽限制。"
+icon = ExtResource("3")
+kind = 4
+rarity = 0
+target_mode = 7
+tags = Array[StringName]([&"资源"])
+min_act = 1
+price = 40
+prep_usable = true
+max_per_run = 0
+radius = 85.0
+tint = Color(0.7765, 0.6078, 0.9216, 1)
+impact_vfx = ""
+effects = Array[ExtResource("2")]([SubResource("Effect0")])

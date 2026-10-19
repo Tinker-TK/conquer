@@ -1,0 +1,836 @@
+[
+  {
+    "kind": "粒子场景",
+    "category": "combat",
+    "category_name": "战斗",
+    "name": "blood_splash",
+    "label": "血液飞溅",
+    "path": "effects/combat/blood_splash.tscn",
+    "godot_path": "res://assets/effect/godot_vfx_library/effects/combat/blood_splash.tscn",
+    "node_type": "CPUParticles2D",
+    "mode": "单次",
+    "dependencies": []
+  },
+  {
+    "kind": "粒子场景",
+    "category": "combat",
+    "category_name": "战斗",
+    "name": "combat_particle",
+    "label": "通用元素战斗粒子",
+    "path": "effects/combat/combat_particle.tscn",
+    "godot_path": "res://assets/effect/godot_vfx_library/effects/combat/combat_particle.tscn",
+    "node_type": "CPUParticles2D",
+    "mode": "单次",
+    "dependencies": []
+  },
+  {
+    "kind": "粒子场景",
+    "category": "combat",
+    "category_name": "战斗",
+    "name": "combo_ring",
+    "label": "连击光环",
+    "path": "effects/combat/combo_ring.tscn",
+    "godot_path": "res://assets/effect/godot_vfx_library/effects/combat/combo_ring.tscn",
+    "node_type": "CPUParticles2D",
+    "mode": "单次",
+    "dependencies": []
+  },
+  {
+    "kind": "粒子场景",
+    "category": "combat",
+    "category_name": "战斗",
+    "name": "energy_burst",
+    "label": "能量爆发",
+    "path": "effects/combat/energy_burst.tscn",
+    "godot_path": "res://assets/effect/godot_vfx_library/effects/combat/energy_burst.tscn",
+    "node_type": "CPUParticles2D",
+    "mode": "单次",
+    "dependencies": []
+  },
+  {
+    "kind": "粒子场景",
+    "category": "combat",
+    "category_name": "战斗",
+    "name": "heal_particles",
+    "label": "治疗粒子",
+    "path": "effects/combat/heal_particles.tscn",
+    "godot_path": "res://assets/effect/godot_vfx_library/effects/combat/heal_particles.tscn",
+    "node_type": "CPUParticles2D",
+    "mode": "持续",
+    "dependencies": []
+  },
+  {
+    "kind": "粒子场景",
+    "category": "combat",
+    "category_name": "战斗",
+    "name": "shield_break",
+    "label": "护盾破碎",
+    "path": "effects/combat/shield_break.tscn",
+    "godot_path": "res://assets/effect/godot_vfx_library/effects/combat/shield_break.tscn",
+    "node_type": "CPUParticles2D",
+    "mode": "单次",
+    "dependencies": []
+  },
+  {
+    "kind": "粒子场景",
+    "category": "movement",
+    "category_name": "移动",
+    "name": "dash_trail",
+    "label": "冲刺拖尾",
+    "path": "effects/movement/dash_trail.tscn",
+    "godot_path": "res://assets/effect/godot_vfx_library/effects/movement/dash_trail.tscn",
+    "node_type": "CPUParticles2D",
+    "mode": "持续",
+    "dependencies": []
+  },
+  {
+    "kind": "粒子场景",
+    "category": "movement",
+    "category_name": "移动",
+    "name": "jump_dust",
+    "label": "跳跃扬尘",
+    "path": "effects/movement/jump_dust.tscn",
+    "godot_path": "res://assets/effect/godot_vfx_library/effects/movement/jump_dust.tscn",
+    "node_type": "CPUParticles2D",
+    "mode": "单次",
+    "dependencies": []
+  },
+  {
+    "kind": "粒子场景",
+    "category": "movement",
+    "category_name": "移动",
+    "name": "wall_slide_spark",
+    "label": "滑墙火花",
+    "path": "effects/movement/wall_slide_spark.tscn",
+    "godot_path": "res://assets/effect/godot_vfx_library/effects/movement/wall_slide_spark.tscn",
+    "node_type": "CPUParticles2D",
+    "mode": "持续",
+    "dependencies": []
+  },
+  {
+    "kind": "粒子场景",
+    "category": "magic",
+    "category_name": "魔法与技能",
+    "name": "fireball_trail",
+    "label": "火球拖尾",
+    "path": "effects/magic/fireball_trail.tscn",
+    "godot_path": "res://assets/effect/godot_vfx_library/effects/magic/fireball_trail.tscn",
+    "node_type": "CPUParticles2D",
+    "mode": "持续",
+    "dependencies": []
+  },
+  {
+    "kind": "粒子场景",
+    "category": "magic",
+    "category_name": "魔法与技能",
+    "name": "ice_frost",
+    "label": "冰霜爆发",
+    "path": "effects/magic/ice_frost.tscn",
+    "godot_path": "res://assets/effect/godot_vfx_library/effects/magic/ice_frost.tscn",
+    "node_type": "CPUParticles2D",
+    "mode": "单次",
+    "dependencies": []
+  },
+  {
+    "kind": "粒子场景",
+    "category": "magic",
+    "category_name": "魔法与技能",
+    "name": "lightning_chain",
+    "label": "闪电链",
+    "path": "effects/magic/lightning_chain.tscn",
+    "godot_path": "res://assets/effect/godot_vfx_library/effects/magic/lightning_chain.tscn",
+    "node_type": "Node2D",
+    "mode": "单次",
+    "dependencies": []
+  },
+  {
+    "kind": "粒子场景",
+    "category": "magic",
+    "category_name": "魔法与技能",
+    "name": "magic_aura",
+    "label": "魔法光环",
+    "path": "effects/magic/magic_aura.tscn",
+    "godot_path": "res://assets/effect/godot_vfx_library/effects/magic/magic_aura.tscn",
+    "node_type": "GPUParticles2D",
+    "mode": "持续",
+    "dependencies": []
+  },
+  {
+    "kind": "粒子场景",
+    "category": "magic",
+    "category_name": "魔法与技能",
+    "name": "poison_cloud",
+    "label": "毒雾",
+    "path": "effects/magic/poison_cloud.tscn",
+    "godot_path": "res://assets/effect/godot_vfx_library/effects/magic/poison_cloud.tscn",
+    "node_type": "CPUParticles2D",
+    "mode": "持续",
+    "dependencies": []
+  },
+  {
+    "kind": "粒子场景",
+    "category": "magic",
+    "category_name": "魔法与技能",
+    "name": "portal_vortex",
+    "label": "传送门漩涡",
+    "path": "effects/magic/portal_vortex.tscn",
+    "godot_path": "res://assets/effect/godot_vfx_library/effects/magic/portal_vortex.tscn",
+    "node_type": "CPUParticles2D",
+    "mode": "持续",
+    "dependencies": []
+  },
+  {
+    "kind": "粒子场景",
+    "category": "magic",
+    "category_name": "魔法与技能",
+    "name": "summon_circle",
+    "label": "召唤法阵",
+    "path": "effects/magic/summon_circle.tscn",
+    "godot_path": "res://assets/effect/godot_vfx_library/effects/magic/summon_circle.tscn",
+    "node_type": "CPUParticles2D",
+    "mode": "持续",
+    "dependencies": []
+  },
+  {
+    "kind": "粒子场景",
+    "category": "environment",
+    "category_name": "环境",
+    "name": "ash_particles",
+    "label": "灰烬飘落",
+    "path": "effects/environment/ash_particles.tscn",
+    "godot_path": "res://assets/effect/godot_vfx_library/effects/environment/ash_particles.tscn",
+    "node_type": "CPUParticles2D",
+    "mode": "持续",
+    "dependencies": []
+  },
+  {
+    "kind": "粒子场景",
+    "category": "environment",
+    "category_name": "环境",
+    "name": "campfire_smoke",
+    "label": "篝火烟雾",
+    "path": "effects/environment/campfire_smoke.tscn",
+    "godot_path": "res://assets/effect/godot_vfx_library/effects/environment/campfire_smoke.tscn",
+    "node_type": "CPUParticles2D",
+    "mode": "持续",
+    "dependencies": []
+  },
+  {
+    "kind": "粒子场景",
+    "category": "environment",
+    "category_name": "环境",
+    "name": "candle_flame",
+    "label": "蜡烛火焰",
+    "path": "effects/environment/candle_flame.tscn",
+    "godot_path": "res://assets/effect/godot_vfx_library/effects/environment/candle_flame.tscn",
+    "node_type": "CPUParticles2D",
+    "mode": "持续",
+    "dependencies": []
+  },
+  {
+    "kind": "粒子场景",
+    "category": "environment",
+    "category_name": "环境",
+    "name": "dust_cloud",
+    "label": "尘土爆发",
+    "path": "effects/environment/dust_cloud.tscn",
+    "godot_path": "res://assets/effect/godot_vfx_library/effects/environment/dust_cloud.tscn",
+    "node_type": "CPUParticles2D",
+    "mode": "单次",
+    "dependencies": []
+  },
+  {
+    "kind": "粒子场景",
+    "category": "environment",
+    "category_name": "环境",
+    "name": "falling_leaves",
+    "label": "落叶",
+    "path": "effects/environment/falling_leaves.tscn",
+    "godot_path": "res://assets/effect/godot_vfx_library/effects/environment/falling_leaves.tscn",
+    "node_type": "CPUParticles2D",
+    "mode": "持续",
+    "dependencies": [
+      "res://assets/effect/godot_vfx_library/textures/leaf.png"
+    ]
+  },
+  {
+    "kind": "粒子场景",
+    "category": "environment",
+    "category_name": "环境",
+    "name": "fireflies",
+    "label": "萤火虫",
+    "path": "effects/environment/fireflies.tscn",
+    "godot_path": "res://assets/effect/godot_vfx_library/effects/environment/fireflies.tscn",
+    "node_type": "CPUParticles2D",
+    "mode": "持续",
+    "dependencies": [
+      "res://assets/effect/godot_vfx_library/textures/firefly.png"
+    ]
+  },
+  {
+    "kind": "粒子场景",
+    "category": "environment",
+    "category_name": "环境",
+    "name": "sparks",
+    "label": "火花",
+    "path": "effects/environment/sparks.tscn",
+    "godot_path": "res://assets/effect/godot_vfx_library/effects/environment/sparks.tscn",
+    "node_type": "CPUParticles2D",
+    "mode": "单次",
+    "dependencies": [
+      "res://assets/effect/godot_vfx_library/textures/spark_particle2.png"
+    ]
+  },
+  {
+    "kind": "粒子场景",
+    "category": "environment",
+    "category_name": "环境",
+    "name": "steam",
+    "label": "蒸汽",
+    "path": "effects/environment/steam.tscn",
+    "godot_path": "res://assets/effect/godot_vfx_library/effects/environment/steam.tscn",
+    "node_type": "CPUParticles2D",
+    "mode": "单次",
+    "dependencies": []
+  },
+  {
+    "kind": "粒子场景",
+    "category": "environment",
+    "category_name": "环境",
+    "name": "torch_fire",
+    "label": "火把火焰",
+    "path": "effects/environment/torch_fire.tscn",
+    "godot_path": "res://assets/effect/godot_vfx_library/effects/environment/torch_fire.tscn",
+    "node_type": "CPUParticles2D",
+    "mode": "持续",
+    "dependencies": [
+      "res://assets/effect/godot_vfx_library/textures/fire_particle.png"
+    ]
+  },
+  {
+    "kind": "粒子场景",
+    "category": "environment",
+    "category_name": "环境",
+    "name": "water_splash",
+    "label": "水花飞溅",
+    "path": "effects/environment/water_splash.tscn",
+    "godot_path": "res://assets/effect/godot_vfx_library/effects/environment/water_splash.tscn",
+    "node_type": "CPUParticles2D",
+    "mode": "单次",
+    "dependencies": []
+  },
+  {
+    "kind": "粒子场景",
+    "category": "environment",
+    "category_name": "环境",
+    "name": "wood_debris",
+    "label": "木屑飞溅",
+    "path": "effects/environment/wood_debris.tscn",
+    "godot_path": "res://assets/effect/godot_vfx_library/effects/environment/wood_debris.tscn",
+    "node_type": "CPUParticles2D",
+    "mode": "单次",
+    "dependencies": []
+  },
+  {
+    "kind": "粒子场景",
+    "category": "weather",
+    "category_name": "天气",
+    "name": "rain_drops",
+    "label": "雨滴",
+    "path": "effects/weather/rain_drops.tscn",
+    "godot_path": "res://assets/effect/godot_vfx_library/effects/weather/rain_drops.tscn",
+    "node_type": "CPUParticles2D",
+    "mode": "持续",
+    "dependencies": []
+  },
+  {
+    "kind": "粒子场景",
+    "category": "weather",
+    "category_name": "天气",
+    "name": "snow_flakes",
+    "label": "雪花",
+    "path": "effects/weather/snow_flakes.tscn",
+    "godot_path": "res://assets/effect/godot_vfx_library/effects/weather/snow_flakes.tscn",
+    "node_type": "CPUParticles2D",
+    "mode": "持续",
+    "dependencies": []
+  },
+  {
+    "kind": "粒子场景",
+    "category": "weather",
+    "category_name": "天气",
+    "name": "waterfall_mist",
+    "label": "瀑布水雾",
+    "path": "effects/weather/waterfall_mist.tscn",
+    "godot_path": "res://assets/effect/godot_vfx_library/effects/weather/waterfall_mist.tscn",
+    "node_type": "CPUParticles2D",
+    "mode": "持续",
+    "dependencies": []
+  },
+  {
+    "kind": "着色器",
+    "category": "status",
+    "category_name": "角色状态",
+    "name": "blink",
+    "label": "闪烁",
+    "path": "shaders/status/blink.gdshader",
+    "godot_path": "res://assets/effect/godot_vfx_library/shaders/status/blink.gdshader",
+    "uniforms": [
+      "blink_speed",
+      "min_alpha"
+    ],
+    "texture_parameters": [],
+    "note": "在 ShaderMaterial 中调整参数"
+  },
+  {
+    "kind": "着色器",
+    "category": "status",
+    "category_name": "角色状态",
+    "name": "burning",
+    "label": "燃烧",
+    "path": "shaders/status/burning.gdshader",
+    "godot_path": "res://assets/effect/godot_vfx_library/shaders/status/burning.gdshader",
+    "uniforms": [
+      "burn_amount",
+      "fire_color1",
+      "fire_color2",
+      "distortion_texture",
+      "distortion_strength"
+    ],
+    "texture_parameters": [
+      "distortion_texture"
+    ],
+    "note": "纹理参数：distortion_texture"
+  },
+  {
+    "kind": "着色器",
+    "category": "status",
+    "category_name": "角色状态",
+    "name": "color_change",
+    "label": "颜色替换",
+    "path": "shaders/status/color_change.gdshader",
+    "godot_path": "res://assets/effect/godot_vfx_library/shaders/status/color_change.gdshader",
+    "uniforms": [
+      "target_color",
+      "mix_amount",
+      "preserve_luminance"
+    ],
+    "texture_parameters": [],
+    "note": "在 ShaderMaterial 中调整参数"
+  },
+  {
+    "kind": "着色器",
+    "category": "status",
+    "category_name": "角色状态",
+    "name": "dissolve",
+    "label": "溶解消失",
+    "path": "shaders/status/dissolve.gdshader",
+    "godot_path": "res://assets/effect/godot_vfx_library/shaders/status/dissolve.gdshader",
+    "uniforms": [
+      "dissolve_amount",
+      "dissolve_texture",
+      "edge_color",
+      "edge_width"
+    ],
+    "texture_parameters": [
+      "dissolve_texture"
+    ],
+    "note": "纹理参数：dissolve_texture"
+  },
+  {
+    "kind": "着色器",
+    "category": "status",
+    "category_name": "角色状态",
+    "name": "enemy",
+    "label": "敌人受击组合效果",
+    "path": "shaders/status/enemy.gdshader",
+    "godot_path": "res://assets/effect/godot_vfx_library/shaders/status/enemy.gdshader",
+    "uniforms": [
+      "blur_amount",
+      "shake_intensity",
+      "white_intensity",
+      "time"
+    ],
+    "texture_parameters": [],
+    "note": "在 ShaderMaterial 中调整参数"
+  },
+  {
+    "kind": "着色器",
+    "category": "status",
+    "category_name": "角色状态",
+    "name": "flash_white",
+    "label": "受击闪白",
+    "path": "shaders/status/flash_white.gdshader",
+    "godot_path": "res://assets/effect/godot_vfx_library/shaders/status/flash_white.gdshader",
+    "uniforms": [
+      "flash_amount",
+      "flash_color"
+    ],
+    "texture_parameters": [],
+    "note": "在 ShaderMaterial 中调整参数"
+  },
+  {
+    "kind": "着色器",
+    "category": "status",
+    "category_name": "角色状态",
+    "name": "frozen",
+    "label": "冻结",
+    "path": "shaders/status/frozen.gdshader",
+    "godot_path": "res://assets/effect/godot_vfx_library/shaders/status/frozen.gdshader",
+    "uniforms": [
+      "freeze_amount",
+      "ice_color",
+      "ice_texture",
+      "crystal_intensity"
+    ],
+    "texture_parameters": [
+      "ice_texture"
+    ],
+    "note": "纹理参数：ice_texture"
+  },
+  {
+    "kind": "着色器",
+    "category": "status",
+    "category_name": "角色状态",
+    "name": "invisibility",
+    "label": "隐身",
+    "path": "shaders/status/invisibility.gdshader",
+    "godot_path": "res://assets/effect/godot_vfx_library/shaders/status/invisibility.gdshader",
+    "uniforms": [
+      "invisibility_amount",
+      "distortion_amount",
+      "distortion_texture"
+    ],
+    "texture_parameters": [
+      "distortion_texture"
+    ],
+    "note": "纹理参数：distortion_texture"
+  },
+  {
+    "kind": "着色器",
+    "category": "status",
+    "category_name": "角色状态",
+    "name": "outline_glow",
+    "label": "轮廓发光",
+    "path": "shaders/status/outline_glow.gdshader",
+    "godot_path": "res://assets/effect/godot_vfx_library/shaders/status/outline_glow.gdshader",
+    "uniforms": [
+      "outline_color",
+      "outline_width",
+      "glow_intensity"
+    ],
+    "texture_parameters": [],
+    "note": "在 ShaderMaterial 中调整参数"
+  },
+  {
+    "kind": "着色器",
+    "category": "status",
+    "category_name": "角色状态",
+    "name": "petrify",
+    "label": "石化",
+    "path": "shaders/status/petrify.gdshader",
+    "godot_path": "res://assets/effect/godot_vfx_library/shaders/status/petrify.gdshader",
+    "uniforms": [
+      "petrify_amount",
+      "stone_color",
+      "crack_texture",
+      "crack_intensity"
+    ],
+    "texture_parameters": [
+      "crack_texture"
+    ],
+    "note": "纹理参数：crack_texture"
+  },
+  {
+    "kind": "着色器",
+    "category": "status",
+    "category_name": "角色状态",
+    "name": "poison",
+    "label": "中毒",
+    "path": "shaders/status/poison.gdshader",
+    "godot_path": "res://assets/effect/godot_vfx_library/shaders/status/poison.gdshader",
+    "uniforms": [
+      "poison_amount",
+      "poison_color",
+      "pulse_speed"
+    ],
+    "texture_parameters": [],
+    "note": "在 ShaderMaterial 中调整参数"
+  },
+  {
+    "kind": "着色器",
+    "category": "screen",
+    "category_name": "屏幕效果",
+    "name": "blur_amount",
+    "label": "模糊",
+    "path": "shaders/screen/blur_amount.gdshader",
+    "godot_path": "res://assets/effect/godot_vfx_library/shaders/screen/blur_amount.gdshader",
+    "uniforms": [
+      "blur_amount"
+    ],
+    "texture_parameters": [],
+    "note": "在 ShaderMaterial 中调整参数"
+  },
+  {
+    "kind": "着色器",
+    "category": "screen",
+    "category_name": "屏幕效果",
+    "name": "chromatic_aberration",
+    "label": "色差",
+    "path": "shaders/screen/chromatic_aberration.gdshader",
+    "godot_path": "res://assets/effect/godot_vfx_library/shaders/screen/chromatic_aberration.gdshader",
+    "uniforms": [
+      "aberration_amount",
+      "aberration_direction"
+    ],
+    "texture_parameters": [],
+    "note": "在 ShaderMaterial 中调整参数"
+  },
+  {
+    "kind": "着色器",
+    "category": "screen",
+    "category_name": "屏幕效果",
+    "name": "fog",
+    "label": "雾气",
+    "path": "shaders/screen/fog.gdshader",
+    "godot_path": "res://assets/effect/godot_vfx_library/shaders/screen/fog.gdshader",
+    "uniforms": [
+      "noise_texture",
+      "density",
+      "speed"
+    ],
+    "texture_parameters": [
+      "noise_texture"
+    ],
+    "note": "纹理参数：noise_texture"
+  },
+  {
+    "kind": "着色器",
+    "category": "screen",
+    "category_name": "屏幕效果",
+    "name": "grayscale",
+    "label": "灰度",
+    "path": "shaders/screen/grayscale.gdshader",
+    "godot_path": "res://assets/effect/godot_vfx_library/shaders/screen/grayscale.gdshader",
+    "uniforms": [
+      "grayscale_amount",
+      "luminance_weights"
+    ],
+    "texture_parameters": [],
+    "note": "在 ShaderMaterial 中调整参数"
+  },
+  {
+    "kind": "着色器",
+    "category": "screen",
+    "category_name": "屏幕效果",
+    "name": "radial_blur",
+    "label": "径向模糊",
+    "path": "shaders/screen/radial_blur.gdshader",
+    "godot_path": "res://assets/effect/godot_vfx_library/shaders/screen/radial_blur.gdshader",
+    "uniforms": [
+      "blur_strength",
+      "blur_center",
+      "samples"
+    ],
+    "texture_parameters": [],
+    "note": "在 ShaderMaterial 中调整参数"
+  },
+  {
+    "kind": "着色器",
+    "category": "screen",
+    "category_name": "屏幕效果",
+    "name": "shake_intensity",
+    "label": "抖动",
+    "path": "shaders/screen/shake_intensity.gdshader",
+    "godot_path": "res://assets/effect/godot_vfx_library/shaders/screen/shake_intensity.gdshader",
+    "uniforms": [
+      "time",
+      "shake_intensity"
+    ],
+    "texture_parameters": [],
+    "note": "在 ShaderMaterial 中调整参数"
+  },
+  {
+    "kind": "着色器",
+    "category": "screen",
+    "category_name": "屏幕效果",
+    "name": "vignette",
+    "label": "暗角",
+    "path": "shaders/screen/vignette.gdshader",
+    "godot_path": "res://assets/effect/godot_vfx_library/shaders/screen/vignette.gdshader",
+    "uniforms": [
+      "vignette_strength",
+      "vignette_size",
+      "vignette_color"
+    ],
+    "texture_parameters": [],
+    "note": "在 ShaderMaterial 中调整参数"
+  },
+  {
+    "kind": "着色器",
+    "category": "environment",
+    "category_name": "环境",
+    "name": "heat_distortion",
+    "label": "热浪扭曲",
+    "path": "shaders/environment/heat_distortion.gdshader",
+    "godot_path": "res://assets/effect/godot_vfx_library/shaders/environment/heat_distortion.gdshader",
+    "uniforms": [
+      "distortion_speed",
+      "distortion_amount",
+      "noise_texture"
+    ],
+    "texture_parameters": [
+      "noise_texture"
+    ],
+    "note": "纹理参数：noise_texture"
+  },
+  {
+    "kind": "着色器",
+    "category": "environment",
+    "category_name": "环境",
+    "name": "starSky",
+    "label": "星空",
+    "path": "shaders/environment/starSky.gdshader",
+    "godot_path": "res://assets/effect/godot_vfx_library/shaders/environment/starSky.gdshader",
+    "uniforms": [
+      "dimensions",
+      "small_stars",
+      "small_stars_far_size",
+      "small_stars_near_size",
+      "large_stars",
+      "large_stars_far_size",
+      "large_stars_near_size",
+      "far_stars_color",
+      "near_stars_color",
+      "small_stars_texture",
+      "large_stars_texture",
+      "base_scroll_speed",
+      "additional_scroll_speed"
+    ],
+    "texture_parameters": [
+      "small_stars_texture",
+      "large_stars_texture"
+    ],
+    "note": "纹理参数：small_stars_texture, large_stars_texture；保留 Brian Smith 的 MIT 署名；适用于 ColorRect"
+  },
+  {
+    "kind": "着色器",
+    "category": "environment",
+    "category_name": "环境",
+    "name": "water",
+    "label": "像素水面与倒影",
+    "path": "shaders/environment/water.gdshader",
+    "godot_path": "res://assets/effect/godot_vfx_library/shaders/environment/water.gdshader",
+    "uniforms": [
+      "level",
+      "water_albedo",
+      "water_opacity",
+      "water_speed",
+      "wave_distortion",
+      "wave_multiplyer",
+      "water_texture_on",
+      "reflection_X_offset",
+      "reflection_Y_offset",
+      "noise_texture",
+      "noise_texture2",
+      "SCREEN_TEXTURE",
+      "pixel_resolution_x",
+      "pixel_resolution_y",
+      "edge_fade_width"
+    ],
+    "texture_parameters": [
+      "noise_texture",
+      "noise_texture2",
+      "SCREEN_TEXTURE"
+    ],
+    "note": "纹理参数：noise_texture, noise_texture2, SCREEN_TEXTURE"
+  },
+  {
+    "kind": "着色器",
+    "category": "environment",
+    "category_name": "环境",
+    "name": "water_surface",
+    "label": "波动水面",
+    "path": "shaders/environment/water_surface.gdshader",
+    "godot_path": "res://assets/effect/godot_vfx_library/shaders/environment/water_surface.gdshader",
+    "uniforms": [
+      "wave_direction",
+      "wave_speed",
+      "wave_frequency",
+      "wave_amplitude",
+      "water_tint"
+    ],
+    "texture_parameters": [],
+    "note": "在 ShaderMaterial 中调整参数"
+  },
+  {
+    "kind": "着色器",
+    "category": "magic",
+    "category_name": "魔法与技能",
+    "name": "energy_barrier",
+    "label": "能量屏障",
+    "path": "shaders/magic/energy_barrier.gdshader",
+    "godot_path": "res://assets/effect/godot_vfx_library/shaders/magic/energy_barrier.gdshader",
+    "uniforms": [
+      "hex_scale",
+      "barrier_color",
+      "pulse_speed",
+      "edge_brightness"
+    ],
+    "texture_parameters": [],
+    "note": "在 ShaderMaterial 中调整参数"
+  },
+  {
+    "kind": "着色器",
+    "category": "magic",
+    "category_name": "魔法与技能",
+    "name": "portal_vortex",
+    "label": "传送门扭曲",
+    "path": "shaders/magic/portal_vortex.gdshader",
+    "godot_path": "res://assets/effect/godot_vfx_library/shaders/magic/portal_vortex.gdshader",
+    "uniforms": [
+      "vortex_speed",
+      "vortex_strength",
+      "portal_color1",
+      "portal_color2"
+    ],
+    "texture_parameters": [],
+    "note": "在 ShaderMaterial 中调整参数"
+  },
+  {
+    "kind": "贴图",
+    "category": "textures",
+    "category_name": "粒子贴图",
+    "name": "fire_particle",
+    "label": "火焰粒子贴图",
+    "path": "textures/fire_particle.png",
+    "godot_path": "res://assets/effect/godot_vfx_library/textures/fire_particle.png"
+  },
+  {
+    "kind": "贴图",
+    "category": "textures",
+    "category_name": "粒子贴图",
+    "name": "firefly",
+    "label": "萤火虫贴图",
+    "path": "textures/firefly.png",
+    "godot_path": "res://assets/effect/godot_vfx_library/textures/firefly.png"
+  },
+  {
+    "kind": "贴图",
+    "category": "textures",
+    "category_name": "粒子贴图",
+    "name": "leaf",
+    "label": "树叶贴图",
+    "path": "textures/leaf.png",
+    "godot_path": "res://assets/effect/godot_vfx_library/textures/leaf.png"
+  },
+  {
+    "kind": "贴图",
+    "category": "textures",
+    "category_name": "粒子贴图",
+    "name": "spark_particle2",
+    "label": "火花粒子贴图",
+    "path": "textures/spark_particle2.png",
+    "godot_path": "res://assets/effect/godot_vfx_library/textures/spark_particle2.png"
+  }
+]

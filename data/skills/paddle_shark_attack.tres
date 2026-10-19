@@ -1,0 +1,14 @@
+[gd_resource type="Resource" format=3]
+
+[ext_resource type="Script" path="res://scripts/skills/normal_attack.gd" id="skill"]
+
+[resource]
+script = ExtResource("skill")
+skill_name = "普通攻击"
+is_basic_attack = true
+description = "使用近战攻击命中敌人。"
+cooldown = 1.1
+cast_range = 95.0
+cast_animation = "attack_01"
+hit_frame = Array[int]([3])
+combat_sound_profile = "melee"

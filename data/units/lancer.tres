@@ -1,0 +1,26 @@
+[gd_resource type="Resource" script_class="UnitData" format=3 uid="uid://df4y80tcg6evu"]
+
+[ext_resource type="Script" uid="uid://2m1qlskaxcox" path="res://data/units/unit_data.gd" id="1_nyoa4"]
+[ext_resource type="Texture2D" uid="uid://dfs3r0fbicuev" path="res://assets/cards/illustrations/lancer.png" id="1_y6yor"]
+[ext_resource type="Script" uid="uid://c4huhq7re2216" path="res://data/skills/skill_base.gd" id="2_rdlct"]
+[ext_resource type="Resource" uid="uid://cf8bfngam0mtc" path="res://data/skills/lancer_attack.tres" id="3_7wmnx"]
+[ext_resource type="Resource" uid="uid://btgfbmu426tok" path="res://data/skills/lancer_dash_attack.tres" id="4_h7dwb"]
+[ext_resource type="Resource" uid="uid://cy083ritwki0u" path="res://data/skills/lancer_power_attack.tres" id="5_y6yor"]
+[ext_resource type="Resource" path="res://data/skills/lancer_dash_attack_enhance.tres" id="8_pys7n"]
+
+[resource]
+script = ExtResource("1_nyoa4")
+unit_name = "骑兵"
+unit_english_name = "lancer"
+unit_type = 6
+max_hp = 160
+defence = 6
+attack = 17
+card_cost = 3
+card_name = "骑兵征召"
+card_image = ExtResource("1_y6yor")
+card_discription = "征召1名骑兵。
+冲刺攻击：冲锋1次，对沿途敌人造成100%攻击力伤害，速度300像素/秒。"
+upgrade_ability_points = 2
+skills = Array[ExtResource("2_rdlct")]([ExtResource("3_7wmnx"), ExtResource("4_h7dwb"), ExtResource("5_y6yor"), ExtResource("8_pys7n")])
+metadata/_data_table_id = 5

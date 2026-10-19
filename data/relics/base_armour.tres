@@ -1,0 +1,11 @@
+[gd_resource type="Resource" format=3]
+
+[ext_resource type="Script" path="res://data/relics/relic_definition.gd" id="1"]
+
+[resource]
+script = ExtResource("1")
+id = &"base_armour"
+display_name = "城防铁壁"
+description = "已停用：主堡移除后不再提供基地防御，无法获得此旧版遗物。"
+kind = 2
+amount = 2

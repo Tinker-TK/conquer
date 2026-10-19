@@ -1,0 +1,19 @@
+[gd_resource type="Resource" script_class="UnitData" format=3 uid="uid://ctvtvg1vw8er"]
+
+[ext_resource type="Resource" path="res://data/skills/pig_rider_attack.tres" id="attack"]
+[ext_resource type="Script" uid="uid://2m1qlskaxcox" path="res://data/units/unit_data.gd" id="data"]
+[ext_resource type="Script" uid="uid://c4huhq7re2216" path="res://data/skills/skill_base.gd" id="skill_base"]
+
+[resource]
+script = ExtResource("data")
+unit_name = "骑猪哥布林"
+unit_english_name = "pig_rider"
+unit_type = 43
+unit_team = "team_b"
+max_hp = 140
+defence = 4
+attack = 14
+speed = 195.0
+max_upgrade_count = 0
+skills = Array[ExtResource("skill_base")]([ExtResource("attack")])
+combat_sound_profile = &"monster"

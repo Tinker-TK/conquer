@@ -1,0 +1,27 @@
+[gd_resource type="Resource" script_class="UISoundBank" format=3]
+
+[ext_resource type="Script" path="res://data/audio/ui_sound_bank.gd" id="1"]
+[ext_resource type="AudioStream" path="res://assets/audio/ai/local_design/ui/sfx_ui_wood_click_v01.ogg" id="2"]
+[ext_resource type="AudioStream" path="res://assets/audio/ai/local_design/ui/sfx_ui_wood_click_v02.ogg" id="3"]
+[ext_resource type="AudioStream" path="res://assets/audio/ai/procedural/ui/sfx_ui_hover_v01.ogg" id="4"]
+[ext_resource type="AudioStream" path="res://assets/audio/ai/procedural/ui/sfx_ui_confirm_v01.ogg" id="5"]
+[ext_resource type="AudioStream" path="res://assets/audio/ai/procedural/ui/sfx_ui_cancel_v01.ogg" id="6"]
+[ext_resource type="AudioStream" path="res://assets/audio/ai/procedural/ui/sfx_ui_error_v01.ogg" id="7"]
+[ext_resource type="AudioStream" path="res://assets/audio/ai/local_design/card/sfx_card_parchment_draw_v01.ogg" id="8"]
+[ext_resource type="AudioStream" path="res://assets/audio/ai/local_design/card/sfx_card_parchment_draw_v02.ogg" id="9"]
+[ext_resource type="AudioStream" path="res://assets/audio/ai/local_design/card/sfx_card_table_play_v01.ogg" id="10"]
+[ext_resource type="AudioStream" path="res://assets/audio/ai/local_design/card/sfx_card_table_play_v02.ogg" id="11"]
+[ext_resource type="AudioStream" path="res://assets/audio/ai/procedural/card/sfx_card_shuffle_v01.ogg" id="12"]
+[ext_resource type="AudioStream" path="res://assets/audio/ai/procedural/card/sfx_card_upgrade_v01.ogg" id="13"]
+
+[resource]
+script = ExtResource("1")
+click = Array[AudioStream]([ExtResource("2"), ExtResource("3")])
+hover = Array[AudioStream]([ExtResource("4")])
+confirm = Array[AudioStream]([ExtResource("5")])
+cancel = Array[AudioStream]([ExtResource("6")])
+error = Array[AudioStream]([ExtResource("7")])
+card_draw = Array[AudioStream]([ExtResource("8"), ExtResource("9")])
+card_play = Array[AudioStream]([ExtResource("10"), ExtResource("11")])
+card_shuffle = Array[AudioStream]([ExtResource("12")])
+upgrade = Array[AudioStream]([ExtResource("13")])

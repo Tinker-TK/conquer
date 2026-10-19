@@ -1,0 +1,15 @@
+[gd_resource type="Resource" script_class="RelicDefinition" format=3 uid="uid://d0e2nalldjw87"]
+
+[ext_resource type="Script" uid="uid://be4bple3628ic" path="res://data/relics/relic_definition.gd" id="1"]
+[ext_resource type="Texture2D" uid="uid://cq70ddy5wotqc" path="res://assets/ui_redrawn/icons/relic_leaf.png" id="1_se5ut"]
+
+[resource]
+script = ExtResource("1")
+id = &"opening_armour"
+display_name = "出征护甲"
+description = "每场首次开启自动战斗时，己方士兵防御增加2，持续3个战斗回合。"
+icon = ExtResource("1_se5ut")
+kind = 3
+amount = 2
+rarity = 0
+tags = Array[StringName]([&"wide", &"guard"])

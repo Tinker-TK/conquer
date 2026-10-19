@@ -1,0 +1,20 @@
+[gd_resource type="Resource" script_class="RelicDefinition" format=3]
+
+[ext_resource type="Script" path="res://data/relics/relic_definition.gd" id="1"]
+[ext_resource type="Texture2D" path="res://assets/ui_redrawn/icons/relic_mushroom.png" id="2"]
+
+[resource]
+script = ExtResource("1")
+id = &"sacrificial_dagger"
+display_name = "献祭匕首"
+description = "支付生命 −2（最低 1），获得 1 能量。"
+icon = ExtResource("2")
+kind = 5
+rarity = 0
+tags = Array[StringName]([&"death"])
+trigger = 6
+handler = &"sacrificial_dagger"
+max_per_battle = 0
+max_per_round = 0
+cooldown_seconds = 0.0
+priority = 0

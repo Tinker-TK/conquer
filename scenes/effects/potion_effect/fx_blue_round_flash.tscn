@@ -1,0 +1,65 @@
+[gd_scene format=3 uid="uid://bropahkki7rnb"]
+
+[ext_resource type="Texture2D" uid="uid://3kyrbmwjbbsd" path="res://assets/effect/potion_effect/spark.png" id="6_ery0b"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_7p40a"]
+atlas = ExtResource("6_ery0b")
+region = Rect2(0, 0, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_to4c0"]
+atlas = ExtResource("6_ery0b")
+region = Rect2(32, 0, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_v6pgo"]
+atlas = ExtResource("6_ery0b")
+region = Rect2(64, 0, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_e52lj"]
+atlas = ExtResource("6_ery0b")
+region = Rect2(96, 0, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_02yic"]
+atlas = ExtResource("6_ery0b")
+region = Rect2(128, 0, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_d4sfe"]
+atlas = ExtResource("6_ery0b")
+region = Rect2(160, 0, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_q5nyv"]
+atlas = ExtResource("6_ery0b")
+region = Rect2(192, 0, 32, 32)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_g8mj3"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_7p40a")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_to4c0")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_v6pgo")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_e52lj")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_02yic")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_d4sfe")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_q5nyv")
+}],
+"loop": false,
+"name": &"round_circle",
+"speed": 10.0
+}]
+
+[node name="PotionEffect" type="AnimatedSprite2D" unique_id=1061785420]
+sprite_frames = SubResource("SpriteFrames_g8mj3")
+animation = &"round_circle"
+offset = Vector2(0, -60)

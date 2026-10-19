@@ -1,0 +1,11 @@
+[gd_resource type="Resource" format=3 uid="uid://faw8frcx0lko"]
+
+[ext_resource type="Script" uid="uid://l5slg1wgnhew" path="res://scripts/skills/normal_attack.gd" id="1_dfw8j"]
+
+[resource]
+script = ExtResource("1_dfw8j")
+skill_name = "防守反击"
+description = "武装哥布林成功防守，并对攻击的敌人发动一次强力反击"
+cast_animation = "attack_02"
+hit_frame = Array[int]([5])
+metadata/_data_table_id = 4

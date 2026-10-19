@@ -1,0 +1,18 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1920" height="1080" viewBox="0 0 1920 1080">
+ <defs>
+  <linearGradient id="velvet" x2=".4" y2="1"><stop stop-color="#b3654d"/><stop offset=".5" stop-color="#9f523f"/><stop offset="1" stop-color="#793c34"/></linearGradient>
+  <linearGradient id="gold" x2="0" y2="1"><stop stop-color="#ead7a3"/><stop offset=".5" stop-color="#a58349"/><stop offset="1" stop-color="#ceaf72"/></linearGradient>
+  <linearGradient id="vellum" x2="1" y2="1"><stop stop-color="#fff4d9"/><stop offset="1" stop-color="#eadab2"/></linearGradient>
+ </defs>
+ <path d="m150 172 696-18-38 166-694 14Z" fill="#9b8051" transform="translate(5 7)"/>
+ <path d="m150 172 696-18-38 166-694 14Z" fill="url(#velvet)" stroke="url(#gold)" stroke-width="2"/>
+ <path d="m158 181 675-17-33 148-675 13Z" fill="none" stroke="#c4a26b" stroke-opacity=".45"/>
+ <path d="m165 186 16 6-21 13m630 92-19-5 23-13" fill="none" stroke="#cfb57a" stroke-width="2"/>
+ <path d="M773 113h63v56q-10 24-32 35-23-11-31-35Z" fill="#f2e6c8" stroke="url(#gold)" stroke-width="2"/>
+ <path d="M780 119h49v48q-8 20-25 29-17-9-24-29Z" fill="url(#velvet)" stroke="#9c8050"/>
+ <path d="m788 137 5 17h24l5-17-11 7-7-14-7 14Z" fill="url(#gold)"/><path d="M793 159h24" stroke="#dbc28a" stroke-width="2"/>
+ <path d="m1090 220 300-10 34 38-14 44-320 12-23-39Z" fill="#8c774b" stroke="#a48b59" stroke-width="6"/>
+ <path d="m1090 220 300-10 34 38-14 44-320 12-23-39Z" fill="url(#vellum)" stroke="#c5a86e" stroke-width="2"/>
+ <path d="m1101 228 280-10 30 33-11 32-162 13-139-1-20-30Z" fill="none" stroke="#6a5331" stroke-opacity=".6"/>
+ <path d="m1100 233 7 8-8 8m290-26-7 8 9 8" fill="none" stroke="#715b36"/>
+</svg>

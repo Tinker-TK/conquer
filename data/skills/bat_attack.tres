@@ -1,0 +1,9 @@
+[gd_resource type="Resource" format=3 uid="uid://hffg0ag4fpo0"]
+
+[ext_resource type="Script" uid="uid://l5slg1wgnhew" path="res://scripts/skills/normal_attack.gd" id="1_k8iii"]
+
+[resource]
+script = ExtResource("1_k8iii")
+description = "蝙蝠会追踪敌方当前血量最少的单位发动一次普通攻击"
+target_type = 3
+metadata/_data_table_id = 4

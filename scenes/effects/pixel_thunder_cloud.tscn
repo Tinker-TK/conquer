@@ -1,0 +1,31 @@
+[gd_scene load_steps=7 format=3]
+
+[ext_resource type="Script" path="res://scripts/effects/pixel_thunder_cloud.gd" id="1"]
+[ext_resource type="Shader" path="res://shaders/pixel_thunder_cloud.gdshader" id="2"]
+[ext_resource type="PackedScene" path="res://scenes/effects/pixel_lightning.tscn" id="3"]
+
+[sub_resource type="Gradient" id="Gradient_white"]
+colors = PackedColorArray(1, 1, 1, 1, 1, 1, 1, 1)
+
+[sub_resource type="GradientTexture2D" id="Texture_cloud"]
+gradient = SubResource("Gradient_white")
+width = 136
+height = 80
+
+[sub_resource type="ShaderMaterial" id="Material_cloud"]
+resource_local_to_scene = true
+shader = ExtResource("2")
+
+[node name="PixelThunderCloud" type="Node2D"]
+texture_filter = 1
+script = ExtResource("1")
+
+[node name="Lightning" parent="." instance=ExtResource("3")]
+auto_start = false
+playing = false
+lightning_type = 0
+
+[node name="Cloud" type="Sprite2D" parent="."]
+material = SubResource("Material_cloud")
+position = Vector2(0, -156)
+texture = SubResource("Texture_cloud")

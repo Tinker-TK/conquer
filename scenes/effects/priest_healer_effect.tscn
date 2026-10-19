@@ -1,0 +1,44 @@
+[gd_scene format=3 uid="uid://buj8whrveh6i8"]
+
+[ext_resource type="Texture2D" uid="uid://d1ndsprlpl6bk" path="res://assets/characters/Priest/Magic(projectile)/Priest_Heal_effect.png" id="1_6thip"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_dwi1b"]
+atlas = ExtResource("1_6thip")
+region = Rect2(0, 0, 100, 100)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_boply"]
+atlas = ExtResource("1_6thip")
+region = Rect2(100, 0, 100, 100)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_1cbb3"]
+atlas = ExtResource("1_6thip")
+region = Rect2(200, 0, 100, 100)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_8usqf"]
+atlas = ExtResource("1_6thip")
+region = Rect2(300, 0, 100, 100)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_0u1bf"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_dwi1b")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_boply")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_1cbb3")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_8usqf")
+}],
+"loop": false,
+"name": &"effect",
+"speed": 8.0
+}]
+
+[node name="PriestHealerEffect" type="AnimatedSprite2D" unique_id=129410301]
+scale = Vector2(4, 4)
+sprite_frames = SubResource("SpriteFrames_0u1bf")
+animation = &"effect"

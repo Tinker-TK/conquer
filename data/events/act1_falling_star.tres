@@ -1,0 +1,18 @@
+[gd_resource type="Resource" script_class="EventDefinition" format=3]
+
+[ext_resource type="Script" path="res://data/events/event_definition.gd" id="1"]
+[ext_resource type="Texture2D" path="res://assets/ui/events/illustrations/falling-star.png" id="2"]
+
+[resource]
+script = ExtResource("1")
+id = "act1_falling_star"
+title = "坠星"
+description = "一颗星坠在麦田里，砸出焦黑的坑。坑底的石头还在发光，靠近时，手背上的汗毛根根竖起。\n\n坑边的麦子没有烧焦，反而结出了透明的穗。"
+template = 4
+min_floor = 7
+max_floor = 9
+rarity = "rare"
+illustration = ExtResource("2")
+tags = Array[String](["enhance"])
+requires = Array[String]([])
+choices = Array[Dictionary]([{"gold": 0, "heal": 0, "effect": {"type": "enhance_random", "count": 2}, "cost": {"hp": 12}, "text": "握住星核", "summary": "失去 12 生命 · 随机强化 2 张牌", "result_text": "星核在你掌心冷下去。你松开手时，指尖的皮肤已经变成了半透明的颜色。"}, {"gold": 70, "heal": 0, "text": "收集星尘", "summary": "获得 70 金币", "result_text": "星尘装进布袋后还在发烫。你知道这东西在城里能卖个好价钱，也知道它为什么值这个价。"}, {"gold": 0, "heal": 18, "text": "在坑边过夜", "summary": "回复 18 生命", "result_text": "你枕着焦土睡了一夜。梦里有一片没有声音的星空，醒来时伤口已经结痂。"}, {"text": "离开", "leave": true, "heal": 0, "gold": 0}])

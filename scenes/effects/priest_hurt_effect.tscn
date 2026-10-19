@@ -1,0 +1,54 @@
+[gd_scene format=3 uid="uid://qhywq42rjtbe"]
+
+[ext_resource type="Texture2D" uid="uid://vlkg58ua0l4t" path="res://assets/characters/Priest/Magic(projectile)/Priest_Attack_effect.png" id="1_2uhus"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_2uhus"]
+atlas = ExtResource("1_2uhus")
+region = Rect2(0, 0, 100, 100)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_ln4fj"]
+atlas = ExtResource("1_2uhus")
+region = Rect2(100, 0, 100, 100)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_dty37"]
+atlas = ExtResource("1_2uhus")
+region = Rect2(200, 0, 100, 100)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_ebnjb"]
+atlas = ExtResource("1_2uhus")
+region = Rect2(300, 0, 100, 100)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_n11kl"]
+atlas = ExtResource("1_2uhus")
+region = Rect2(400, 0, 100, 100)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_0u1bf"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_2uhus")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_ln4fj")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_dty37")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_ebnjb")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_n11kl")
+}],
+"loop": false,
+"name": &"effect",
+"speed": 10.0
+}]
+
+[node name="PriestHurtEffect" type="AnimatedSprite2D" unique_id=129410301]
+position = Vector2(-8, -32)
+scale = Vector2(4, 4)
+sprite_frames = SubResource("SpriteFrames_0u1bf")
+animation = &"effect"
+frame = 4
+frame_progress = 1.0

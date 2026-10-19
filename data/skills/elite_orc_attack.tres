@@ -1,0 +1,8 @@
+[gd_resource type="Resource" format=3 uid="uid://pcqb62jkedlx"]
+
+[ext_resource type="Script" uid="uid://l5slg1wgnhew" path="res://scripts/skills/normal_attack.gd" id="1_nxqb4"]
+
+[resource]
+script = ExtResource("1_nxqb4")
+description = "精英哥布林发动普通攻击"
+metadata/_data_table_id = 4

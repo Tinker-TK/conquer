@@ -1,0 +1,19 @@
+[gd_resource type="Resource" script_class="UnitData" format=3 uid="uid://dbkaqersrr3tb"]
+
+[ext_resource type="Resource" uid="uid://bdq50t0s76d5r" path="res://data/skills/troll_attack.tres" id="attack"]
+[ext_resource type="Script" uid="uid://2m1qlskaxcox" path="res://data/units/unit_data.gd" id="data"]
+[ext_resource type="Script" uid="uid://c4huhq7re2216" path="res://data/skills/skill_base.gd" id="skill_base"]
+
+[resource]
+script = ExtResource("data")
+unit_name = "巨魔"
+unit_english_name = "troll"
+unit_type = 41
+unit_team = "team_b"
+max_hp = 360
+defence = 7
+attack = 26
+speed = 85.0
+max_upgrade_count = 0
+skills = Array[ExtResource("skill_base")]([ExtResource("attack")])
+combat_sound_profile = &"monster"

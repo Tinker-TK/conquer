@@ -1,0 +1,39 @@
+{
+  "id": "ui_hover",
+  "variant": 1,
+  "asset": "sfx_ui_hover_v01",
+  "provider": "procedural",
+  "category": "ui",
+  "title": "悬停轻响",
+  "prompt": "very quiet UI hover tick, subtle and soft, barely there",
+  "source_prompt": "very quiet UI hover tick, subtle and soft, barely there",
+  "duration_seconds": 0.12,
+  "output_format": "wav_48000",
+  "tags": [
+    "ui",
+    "hover",
+    "quiet"
+  ],
+  "license": "CC0-1.0",
+  "author": "项目程序合成（占位）",
+  "source": "res://tools/audio/ai/procedural.py",
+  "recipe": "ui_hover",
+  "created_at": "2026-10-18T17:03:23+00:00",
+  "sha256": "9e481479dc6987a0ea8825e448fa69d9c62b546222e0004bce9489d0b9ac0de8",
+  "path": "res://assets/audio/ai/procedural/ui/sfx_ui_hover_v01.ogg",
+  "loop": false,
+  "sample_rate": 44100,
+  "channels": 1,
+  "features": {
+    "duration_seconds": 0.059,
+    "peak_dbfs": -1.5,
+    "rms_dbfs": -16.37,
+    "crest_db": 14.87,
+    "spectral_centroid_hz": 3565.2,
+    "zero_cross_rate": 0.1081,
+    "attack_ms": 2.7,
+    "tail_ms": 1.1
+  },
+  "seam_jump": null,
+  "bytes": 4368
+}

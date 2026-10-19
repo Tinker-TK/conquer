@@ -1,0 +1,56 @@
+// 无浏览器依赖的数据与编辑行为回归检查；不替代浏览器交互验收。
+const fs = require('node:fs');
+const vm = require('node:vm');
+const assert = require('node:assert/strict');
+const html = fs.readFileSync(__dirname + '/index.html', 'utf8');
+const script = html.match(/<script>([\s\S]*?)<\/script>/)[1];
+new Function(script);
+const elements = new Map();
+function el() { return { value:'', style:{}, dataset:{}, classList:{toggle(){}}, append(){}, replaceChildren(){}, setAttribute(){}, addEventListener(){}, scrollHeight:1000 }; }
+const document = {getElementById(id){if(!elements.has(id))elements.set(id,el());return elements.get(id)},createElement:el,createElementNS:el,querySelectorAll(){return []},addEventListener(){}};
+const context = vm.createContext({ document, window:{addEventListener(){}}, localStorage:{getItem(){return null},setItem(){}}, console, setTimeout(){},clearTimeout(){},assert });
+vm.runInContext(script, context);
+vm.runInContext(`
+assert.equal(issues().length,0,'示例应全部可达');
+const serialized=JSON.stringify(model);
+assert.equal(JSON.stringify(parseConfig(serialized)),serialized,'配置应无损回读');
+const treasure=model.locations.find(n=>n.type===4);
+assert(treasure,'示例第五层应有宝箱');
+assert.equal(treasure.event,undefined,'宝箱无需事件字段');
+selected=treasure.id;renderInspector();
+assert.equal(document.getElementById('eventFields').hidden,true,'宝箱不显示事件选项');
+assert.equal(document.getElementById('treasureHelp').hidden,false,'宝箱显示随机遗物规则');
+assert.equal(parseConfig(serialized).locations.find(n=>n.id===treasure.id).type,4,'宝箱类型可回读');
+selected=null;
+const bad=JSON.parse(serialized);bad.locations[0].next.push('missing');
+assert.throws(()=>parseConfig(JSON.stringify(bad)),/不存在/);
+const dup=JSON.parse(serialized);dup.locations[1].id=dup.locations[0].id;
+assert.throws(()=>parseConfig(JSON.stringify(dup)),/重复/);
+const eventNode=model.locations.find(n=>n.type===1);
+eventNode.event.description='自定义事件描述';eventNode.event.choices[0]={text:'领取补给',heal:12,gold:7};
+const restored=parseConfig(JSON.stringify(model)).locations.find(n=>n.id===eventNode.id);
+assert.equal(JSON.stringify(restored.event),JSON.stringify(eventNode.event),'事件配置应无损保存');
+const draft=JSON.parse(JSON.stringify(model));draft.locations.find(n=>n.id===eventNode.id).event.description='';
+assert.doesNotThrow(()=>parseConfig(JSON.stringify(draft)),'未完成草稿也应恢复');
+const invalid=JSON.parse(JSON.stringify(model));invalid.locations.find(n=>n.id===eventNode.id).event.choices[0].heal=-1;
+assert.throws(()=>parseConfig(JSON.stringify(invalid)),/整数/);
+const old=model.locations[0].next.length;
+mode='connect';source=model.locations[0].id;
+connect(model.locations.find(n=>n.floor===3));
+assert.equal(model.locations[0].next.length,old+1);
+undo();assert.equal(model.locations[0].next.length,old);
+undo(true);assert.equal(model.locations[0].next.length,old+1);
+const count=model.locations.length;mode='select';selected=model.locations[0].id;
+const removed=selected;removeSelected();
+assert.equal(model.locations.length,count-1);
+assert(!model.starting_ids.includes(removed));
+assert(model.locations.every(n=>!n.next.includes(removed)));
+undo();assert.equal(model.locations.length,count);
+model.locations[0].next.push(model.locations[0].id);
+assert(issues().some(s=>s.includes('更高层')),'应报告反向/自循环路线');
+model=example();journey=[];
+let steps=0;while(available().length&&steps<40){journey.push(available()[0]);steps++}
+assert.equal(steps,10,'示例可从起点走到第十层');
+assert.equal(model.locations.find(n=>n.id===journey.at(-1)).type,3);
+console.log('PASS: syntax, sample reachability, JSON round-trip, malformed imports, connect, undo/redo, deletion cleanup, invalid routes, preview traversal');
+`, context);

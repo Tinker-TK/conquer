@@ -1,0 +1,50 @@
+{
+  "path": "res://assets/audio/ai/local_design/card/sfx_card_table_play_v02.ogg",
+  "asset": "sfx_card_table_play_v02",
+  "title": "卡牌 · 落桌确认 · B 厚重",
+  "category": "card",
+  "domain": "SFX",
+  "batch": "audition_20261019",
+  "provider": "local_design",
+  "recipe": "play",
+  "variant": 2,
+  "seed": 2418379017,
+  "prompt": "One thick parchment card placed firmly onto a wooden tabletop, crisp paper slap followed by a soft small wood knock, tactile precise immediate feedback, dry 0.26 seconds. No magic, music, voices or reverb.",
+  "author": "项目本地声音设计（CC0 分层素材＋原创程序合成）",
+  "source": "res://tools/audio/ai/produce_audition.py",
+  "license": "CC0-1.0",
+  "source_layers": [
+    {
+      "path": "res://assets/audio/combat/kenney-impact/impactWood_medium_000.ogg",
+      "author": "Kenney",
+      "source": "https://kenney.nl/assets/impact-sounds",
+      "license": "CC0-1.0",
+      "sha256": "1723a9fd25103ed41af06054814e84e65f4a772bac86ab2dc927da93d9592ff5"
+    }
+  ],
+  "changes": "分层混音、确定性变体、裁剪静音、44.1kHz 单声道、短淡入淡出、峰值控制、OGG；循环保留完整小节。",
+  "notes": "本批试听 · 本地制作；SFX；单次动作。",
+  "duration_seconds": 0.2,
+  "loop": false,
+  "features": {
+    "duration_seconds": 0.2,
+    "peak_dbfs": -3.6,
+    "rms_dbfs": -18.83,
+    "crest_db": 15.23,
+    "spectral_centroid_hz": 8064.4,
+    "zero_cross_rate": 0.0269,
+    "attack_ms": 5.8,
+    "tail_ms": 2.1
+  },
+  "channels": 1,
+  "sample_rate": 44100,
+  "seam_jump": null,
+  "sha256": "5b4319660b730705b7b0ea9c6fa46aab1d48c6d4f92ff793b94ba2ccdbe40d69",
+  "created_at": "2026-10-19T02:03:55+00:00",
+  "tags": [
+    "one-shot",
+    "percussive",
+    "bright"
+  ],
+  "problems": []
+}

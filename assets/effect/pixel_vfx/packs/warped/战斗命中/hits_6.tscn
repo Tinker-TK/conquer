@@ -1,0 +1,9 @@
+[gd_scene load_steps=2 format=3]
+
+[ext_resource type="SpriteFrames" path="res://assets/effect/pixel_vfx/packs/warped/战斗命中/hits_6.tres" id="1"]
+
+[node name="hits_6" type="AnimatedSprite2D"]
+texture_filter = 1
+sprite_frames = ExtResource("1")
+autoplay = "default"
+offset = Vector2(0, 0)

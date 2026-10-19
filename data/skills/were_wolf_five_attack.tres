@@ -1,0 +1,16 @@
+[gd_resource type="Resource" format=3 uid="uid://cuajdetg3wwab"]
+
+[ext_resource type="Script" path="res://scripts/skills/wolf_pounce_combo.gd" id="1_air0h"]
+
+[resource]
+script = ExtResource("1_air0h")
+skill_name = "五连斩击"
+unlock_upgrade_levels = Array[int]([0])
+attack_rate = 0.8
+cooldown = 7.0
+priority = 1
+cast_animation = "attack_02"
+hit_frame = Array[int]([7, 8, 9, 10, 11])
+cast_range = 350.0
+manual_finish = true
+metadata/_data_table_id = 4

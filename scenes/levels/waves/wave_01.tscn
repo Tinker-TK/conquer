@@ -1,0 +1,20 @@
+[gd_scene format=3 uid="uid://bset1rsra4bup"]
+
+[ext_resource type="PackedScene" uid="uid://dv8wd86n8oihw" path="res://scenes/units/orc.tscn" id="2_fchv5"]
+
+[node name="Wave01" type="Marker2D" unique_id=306371393]
+
+[node name="Enemy" parent="." unique_id=699531576 instance=ExtResource("2_fchv5")]
+position = Vector2(-21, -125)
+
+[node name="Enemy2" parent="." unique_id=819472728 instance=ExtResource("2_fchv5")]
+position = Vector2(85, -3)
+
+[node name="Enemy3" parent="." unique_id=2088372935 instance=ExtResource("2_fchv5")]
+position = Vector2(-92, 101)
+
+[node name="Enemy4" parent="." unique_id=2064641296 instance=ExtResource("2_fchv5")]
+position = Vector2(-48, -3)
+
+[node name="Enemy5" parent="." unique_id=1462386581 instance=ExtResource("2_fchv5")]
+position = Vector2(30, 157)

@@ -1,0 +1,25 @@
+[gd_resource type="Resource" script_class="RainWeatherSettings" format=3 uid="uid://drjvyhlby38ru"]
+
+[ext_resource type="Script" uid="uid://dbwy1s53x6kut" path="res://data/weather/rain_weather_settings.gd" id="1"]
+[ext_resource type="Texture2D" uid="uid://c51cklmmkmc2q" path="res://assets/tilemap/sky.png" id="2_tsbbj"]
+
+[resource]
+script = ExtResource("1")
+intensity = 0.9
+rain_amount = 700
+rain_opacity = 0.5800000000000001
+streak_length = 30.0
+puddle_coverage = 0.83
+puddle_scale = 418.0
+edge_softness = 0.03499999999999999
+wetness = 0.95
+depth_opacity = 0.2
+sky_strength = 0.5
+sky_cloud_strength = 0.65
+sky_use_scene_clouds = true
+distortion = 0.4
+reflection_opacity = 0.9
+reflection_fade = 0.1
+reflection_resolution = 1.0
+reflection_height = 1.0
+reflection_gap = 0.0

@@ -1,0 +1,188 @@
+{
+  "version": "UNIT-POWER-CALC-v2",
+  "date": "2026-10-11",
+  "checks": [
+    "report and calculator contain the same current 21-unit resource snapshot",
+    "soldier 100 and independently checked 12-second damage",
+    "untrained archer only fires its enabled normal shot: 12 hits of 7 damage",
+    "passives do not take casting time; self aura and exact level swaps affect output",
+    "consecutive attack applies from the next hit and clears on target death",
+    "stealth and deployment draw are disclosed instead of invented numerical bonuses",
+    "doubling HP gives sqrt(2), with fixed reference and other units unchanged",
+    "training applies allocated points; sword-arrow proximity windows are explicit",
+    "0-stage ignores growth and buffs; 1-stage buffs apply once",
+    "custom growth uses compounded percent plus linear growth",
+    "cost changes efficiency only; zero fee and extra card energy are handled",
+    "summon dependency follows child current stats, not its planned upgrades",
+    "skill unlocks and counter unlocks honor base and planned training count",
+    "skills use exact level arrays including replacement, gaps and empty arrays",
+    "all 21 curves share one stage range and forecast classification",
+    "schedules respect nonoverlap and cooldowns",
+    "invalid and degenerate inputs fail with a useful message",
+    "all recorded gameplay sources remain byte-identical",
+    "desktop renders all 21 rows, both charts and fixed baseline",
+    "live edits, multiple pending invalid fields and recovery work",
+    "training allocation auto-balances and extra strengthening updates results",
+    "live array editing excludes expired skills and invalid arrays recover without page errors",
+    "local saved state survives reload",
+    "downloaded standalone copy preserves all inputs and recalculates offline",
+    "JSON plan import validates and refreshes all units",
+    "JSON export is valid and malformed import preserves existing inputs",
+    "all-series visibility and bulk comparison-stage controls work",
+    "all 21 unit editors including summon and sword-arrow fields render valid values",
+    "comparison environment changes recalculate all units on a fixed soldier scale",
+    "390-pixel mobile layout contains overflow in the data table"
+  ],
+  "count": 30,
+  "browser": "Microsoft Edge headless / Playwright",
+  "actualCombatMeasured": false,
+  "units": [
+    {
+      "id": "archer",
+      "current": 79.20440841375728,
+      "upgraded": 95.25720850919839,
+      "perCost": 95.25720850919839,
+      "forecast": false
+    },
+    {
+      "id": "armored_axeman",
+      "current": 94.50946426126569,
+      "upgraded": 110.6029371614419,
+      "perCost": 110.6029371614419,
+      "forecast": false
+    },
+    {
+      "id": "armored_orc",
+      "current": 106.3473363435665,
+      "upgraded": 106.3473363435665,
+      "perCost": 106.3473363435665,
+      "forecast": false
+    },
+    {
+      "id": "bat",
+      "current": 59.324678471342395,
+      "upgraded": 59.324678471342395,
+      "perCost": 59.324678471342395,
+      "forecast": false
+    },
+    {
+      "id": "elite_orc",
+      "current": 168.37314086013478,
+      "upgraded": 168.37314086013478,
+      "perCost": 168.37314086013478,
+      "forecast": false
+    },
+    {
+      "id": "greatsword_skeleton",
+      "current": 88.92810746079,
+      "upgraded": 88.92810746079,
+      "perCost": 88.92810746079,
+      "forecast": false
+    },
+    {
+      "id": "knight",
+      "current": 97.38045626606753,
+      "upgraded": 120.67769800636943,
+      "perCost": 60.33884900318471,
+      "forecast": false
+    },
+    {
+      "id": "knight_templar",
+      "current": 93.47654292746337,
+      "upgraded": 135.23517560422084,
+      "perCost": 67.61758780211042,
+      "forecast": false
+    },
+    {
+      "id": "lancer",
+      "current": 99.8380565738991,
+      "upgraded": 120.94557335930223,
+      "perCost": 40.31519111976741,
+      "forecast": false
+    },
+    {
+      "id": "necromancer",
+      "current": 160.589139010449,
+      "upgraded": 160.589139010449,
+      "perCost": 160.589139010449,
+      "forecast": false
+    },
+    {
+      "id": "orc",
+      "current": 92.16911430120159,
+      "upgraded": 92.16911430120159,
+      "perCost": 92.16911430120159,
+      "forecast": false
+    },
+    {
+      "id": "orc_rider",
+      "current": 183.1092933777297,
+      "upgraded": 183.1092933777297,
+      "perCost": 183.1092933777297,
+      "forecast": false
+    },
+    {
+      "id": "priest",
+      "current": 58.638820987984076,
+      "upgraded": 75.25576669406787,
+      "perCost": 75.25576669406787,
+      "forecast": false
+    },
+    {
+      "id": "skeleton",
+      "current": 53.131932399245265,
+      "upgraded": 53.131932399245265,
+      "perCost": 53.131932399245265,
+      "forecast": false
+    },
+    {
+      "id": "skeleton_archer",
+      "current": 53.48467316458879,
+      "upgraded": 53.48467316458879,
+      "perCost": 53.48467316458879,
+      "forecast": false
+    },
+    {
+      "id": "slime",
+      "current": 113.20571531765755,
+      "upgraded": 113.20571531765755,
+      "perCost": 113.20571531765755,
+      "forecast": false
+    },
+    {
+      "id": "soldier",
+      "current": 100,
+      "upgraded": 108.38622059807224,
+      "perCost": 108.38622059807224,
+      "forecast": false
+    },
+    {
+      "id": "swords_man",
+      "current": 97.2102781999016,
+      "upgraded": 108.83317598129145,
+      "perCost": 36.27772532709715,
+      "forecast": false
+    },
+    {
+      "id": "were_bear",
+      "current": 110.6029371614419,
+      "upgraded": 119.8704802644711,
+      "perCost": 59.93524013223555,
+      "forecast": false
+    },
+    {
+      "id": "were_wolf",
+      "current": 107.93741444417317,
+      "upgraded": 135.10154397513753,
+      "perCost": 67.55077198756877,
+      "forecast": false
+    },
+    {
+      "id": "wizard",
+      "current": 98.01839203942048,
+      "upgraded": 136.04146997661434,
+      "perCost": 45.34715665887145,
+      "forecast": false
+    }
+  ]
+}

@@ -1,0 +1,33 @@
+[gd_resource type="Resource" script_class="PotionDefinition" format=3]
+
+[ext_resource type="Script" path="res://data/potions/potion_definition.gd" id="1"]
+[ext_resource type="Script" path="res://data/potions/potion_effect.gd" id="2"]
+[ext_resource type="Texture2D" path="res://assets/ui/potions/decoy_totem.svg" id="3"]
+[ext_resource type="Resource" path="res://data/potions/units/decoy.tres" id="unit0"]
+
+[sub_resource type="Resource" id="Effect0"]
+script = ExtResource("2")
+kind = 8
+amount = 60.0
+count = 1
+rounds = 2
+unit_data = ExtResource("unit0")
+
+[resource]
+script = ExtResource("1")
+id = &"decoy_totem"
+display_name = "诱饵图腾"
+description = "召唤60生命的固定诱饵，嘲讽260范围同层敌人，持续2回合。"
+icon = ExtResource("3")
+kind = 4
+rarity = 0
+target_mode = 0
+tags = Array[StringName]([&"召唤"])
+min_act = 1
+price = 50
+prep_usable = true
+max_per_run = 0
+radius = 85.0
+tint = Color(0.8510, 0.7098, 0.4549, 1)
+impact_vfx = "PolymorphCastVFX"
+effects = Array[ExtResource("2")]([SubResource("Effect0")])

@@ -1,0 +1,382 @@
+[gd_scene format=3 uid="uid://d3m0bjde8muuw"]
+
+[ext_resource type="Theme" path="res://themes/pixel_ui_theme.tres" id="100_pixel_ui"]
+
+[ext_resource type="Script" uid="uid://c65wr7c5qj04l" path="res://scripts/cards/player_deploy_drop_zone.gd" id="1_1kpl7"]
+[ext_resource type="Script" uid="uid://ciu5k0dftvm3w" path="res://scripts/ui/card_ui.gd" id="1_04hgy"]
+[ext_resource type="Script" uid="uid://b3dpsx7xsjce5" path="res://scripts/ui/hand_presenter.gd" id="2_hand_motion"]
+[ext_resource type="Texture2D" uid="uid://sq3oxuxywpgl" path="res://assets/ui_redrawn/UI/regenerate/energy_orb.png" id="6_2u763"]
+[ext_resource type="Texture2D" uid="uid://cvqm8rc1lmnan" path="res://assets/ui_redrawn/UI/regenerate/draw_book.png" id="7_i2e1o"]
+[ext_resource type="Texture2D" uid="uid://c77nikrxaciyw" path="res://assets/ui_redrawn/UI/regenerate/battle_control_panel.png" id="7_pvsb8"]
+[ext_resource type="Texture2D" uid="uid://dnvsygttonfvq" path="res://assets/ui_redrawn/UI/regenerate/discard_book.png" id="8_pvsb8"]
+[ext_resource type="Shader" uid="uid://rcctioq4484d" path="res://shaders/red_tint_black_outline.gdshader" id="18_j3ir1"]
+[ext_resource type="Texture2D" uid="uid://xhdnbdsbapn6" path="res://assets/ui/frame.png" id="19_04hgy"]
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_battle_name"]
+content_margin_left = 10.0
+content_margin_right = 10.0
+bg_color = Color(0.055, 0.16, 0.2, 0.95)
+border_width_left = 2
+border_width_top = 2
+border_width_right = 2
+border_width_bottom = 2
+border_color = Color(0.85, 0.67, 0.3, 1)
+shadow_color = Color(0.02, 0.06, 0.08, 0.6)
+shadow_size = 2
+shadow_offset = Vector2(0, 3)
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_enemy_health_background"]
+content_margin_left = 4.0
+content_margin_top = 4.0
+content_margin_right = 4.0
+content_margin_bottom = 4.0
+bg_color = Color(0.19, 0.035, 0.055, 1)
+border_width_left = 3
+border_width_top = 3
+border_width_right = 3
+border_width_bottom = 3
+border_color = Color(0.85, 0.67, 0.3, 1)
+shadow_color = Color(0.02, 0.06, 0.08, 0.6)
+shadow_size = 2
+shadow_offset = Vector2(0, 3)
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_enemy_health_fill"]
+bg_color = Color(0.82, 0.12, 0.19, 1)
+border_width_top = 3
+border_width_bottom = 4
+border_color = Color(0.55, 0.065, 0.12, 1)
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_enemy_health_frame"]
+draw_center = false
+border_width_left = 3
+border_width_top = 3
+border_width_right = 3
+border_width_bottom = 3
+border_color = Color(0.85, 0.67, 0.3, 1)
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_rn6lq"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_lvjyv"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_j3ir1"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_04hgy"]
+
+[sub_resource type="LabelSettings" id="LabelSettings_g0fjx"]
+font_size = 20
+shadow_size = 20
+shadow_color = Color(0, 0, 0, 1)
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_ljvi0"]
+shader = ExtResource("18_j3ir1")
+shader_parameter/tint_color = Color(1, 0, 0, 1)
+shader_parameter/tint_strength = 0.80999998189488
+shader_parameter/outline_color = Color(0, 0, 0, 1)
+shader_parameter/outline_width = 1.0000000149012
+
+[node name="CardUI" type="CanvasLayer" unique_id=1705366889]
+script = ExtResource("1_04hgy")
+
+[node name="PlayerDeployDropZone" type="Control" parent="." unique_id=1054657831]
+layout_mode = 3
+anchors_preset = 0
+offset_left = 199.0
+offset_top = 189.0
+offset_right = 1726.0
+offset_bottom = 884.0
+mouse_filter = 1
+script = ExtResource("1_1kpl7")
+
+[node name="Hand" type="Control" parent="." unique_id=783106174]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+mouse_filter = 2
+script = ExtResource("2_hand_motion")
+draw_duration = 0.7
+draw_stagger = 0.12
+discard_duration = 0.6
+discard_stagger = 0.08
+play_duration = 0.4
+
+[node name="CardAnimations" type="Control" parent="." unique_id=1598342631]
+z_index = 100
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+mouse_filter = 2
+
+[node name="CardFeedback" type="Label" parent="." unique_id=1114154977]
+offset_left = 460.0
+offset_top = 255.0
+offset_right = 1450.0
+offset_bottom = 295.0
+theme_override_colors/font_color = Color(1, 0.4, 0.3, 1)
+theme_override_font_sizes/font_size = 28
+horizontal_alignment = 1
+
+[node name="BisicUI" type="Control" parent="." unique_id=1015187892]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+mouse_filter = 2
+
+[node name="Cost" type="TextureRect" parent="BisicUI" unique_id=1037172209]
+layout_mode = 0
+offset_left = 50.999996
+offset_top = 671.00006
+offset_right = 568.1428
+offset_bottom = 1188.1428
+scale = Vector2(0.35, 0.35)
+texture = ExtResource("6_2u763")
+stretch_mode = 2
+
+[node name="CostNumber" type="Label" parent="BisicUI/Cost" unique_id=1369393802]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_font_sizes/font_size = 180
+text = "3"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="BattleTimeLeft" type="Label" parent="BisicUI" unique_id=1675465802]
+layout_mode = 1
+anchors_preset = 5
+anchor_left = 0.5
+anchor_right = 0.5
+offset_left = -175.0
+offset_top = 100.0
+offset_right = 175.0
+offset_bottom = 143.0
+grow_horizontal = 2
+theme_override_colors/font_outline_color = Color(0.02, 0.06, 0.08, 0.9)
+theme_override_constants/outline_size = 3
+theme_override_font_sizes/font_size = 32
+text = "Round 1"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="EnemyHealth" type="Control" parent="BisicUI" unique_id=208794582]
+layout_mode = 1
+anchors_preset = 5
+anchor_left = 0.5
+anchor_right = 0.5
+offset_left = -320.0
+offset_top = 155.0
+offset_right = 320.0
+offset_bottom = 195.0
+grow_horizontal = 2
+mouse_filter = 2
+
+[node name="BattleName" type="Label" parent="BisicUI/EnemyHealth" unique_id=1903475348]
+layout_mode = 0
+offset_right = 224.0
+offset_bottom = 40.0
+theme_override_colors/font_color = Color(1, 0.91, 0.69, 1)
+theme_override_colors/font_outline_color = Color(0.02, 0.06, 0.08, 1)
+theme_override_constants/outline_size = 2
+theme_override_font_sizes/font_size = 22
+theme_override_styles/normal = SubResource("StyleBoxFlat_battle_name")
+text = "战斗"
+horizontal_alignment = 1
+vertical_alignment = 1
+text_overrun_behavior = 3
+
+[node name="HealthBar" type="ProgressBar" parent="BisicUI/EnemyHealth" unique_id=274054071]
+layout_mode = 0
+offset_left = 236.0
+offset_right = 640.0
+offset_bottom = 40.0
+mouse_filter = 2
+theme_override_styles/background = SubResource("StyleBoxFlat_enemy_health_background")
+theme_override_styles/fill = SubResource("StyleBoxFlat_enemy_health_fill")
+max_value = 45.0
+value = 45.0
+show_percentage = false
+
+[node name="Frame" type="Panel" parent="BisicUI/EnemyHealth/HealthBar" unique_id=2103726958]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+mouse_filter = 2
+theme_override_styles/panel = SubResource("StyleBoxFlat_enemy_health_frame")
+
+[node name="HealthValue" type="Label" parent="BisicUI/EnemyHealth/HealthBar" unique_id=1520996172]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_colors/font_color = Color(1, 0.97, 0.9, 1)
+theme_override_colors/font_outline_color = Color(0.16, 0.025, 0.04, 1)
+theme_override_constants/outline_size = 4
+theme_override_font_sizes/font_size = 26
+text = "45 / 45"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="CardButtons" type="Control" parent="." unique_id=2063705883]
+theme = ExtResource("100_pixel_ui")
+layout_mode = 3
+anchors_preset = 0
+offset_right = 40.0
+offset_bottom = 40.0
+
+[node name="DrawButton" type="Button" parent="CardButtons" unique_id=584882856]
+layout_mode = 0
+offset_left = 13.0
+offset_top = 933.0
+offset_right = 161.0
+offset_bottom = 1073.0
+theme_override_styles/normal = SubResource("StyleBoxEmpty_rn6lq")
+theme_override_styles/pressed = SubResource("StyleBoxEmpty_lvjyv")
+theme_override_styles/hover = SubResource("StyleBoxEmpty_j3ir1")
+theme_override_styles/focus = SubResource("StyleBoxEmpty_04hgy")
+
+[node name="TextureRect3" type="TextureRect" parent="CardButtons/DrawButton" unique_id=814614874]
+layout_mode = 0
+offset_left = -19.0
+offset_top = 58.0
+offset_right = 981.0
+offset_bottom = 498.0
+scale = Vector2(0.2, 0.2)
+texture = ExtResource("7_pvsb8")
+stretch_mode = 2
+
+[node name="DrawBook" type="TextureRect" parent="CardButtons/DrawButton" unique_id=308476285]
+layout_mode = 0
+offset_left = 3.0
+offset_top = -2.0
+offset_right = 582.99994
+offset_bottom = 578.0
+scale = Vector2(0.25, 0.25)
+texture = ExtResource("7_i2e1o")
+stretch_mode = 2
+
+[node name="Label" type="Label" parent="CardButtons/DrawButton" unique_id=1481918555]
+layout_mode = 0
+offset_left = 47.0
+offset_top = 99.0
+offset_right = 107.0
+offset_bottom = 122.0
+text = "抽牌堆"
+label_settings = SubResource("LabelSettings_g0fjx")
+
+[node name="TextureRect" type="TextureRect" parent="CardButtons/DrawButton" unique_id=448032419]
+material = SubResource("ShaderMaterial_ljvi0")
+layout_mode = 0
+offset_left = 114.0
+offset_top = 79.0
+offset_right = 162.0
+offset_bottom = 127.0
+scale = Vector2(0.7, 0.7)
+texture = ExtResource("19_04hgy")
+
+[node name="CardNumber" type="Label" parent="CardButtons/DrawButton" unique_id=1150045068]
+layout_mode = 0
+offset_left = 110.0
+offset_top = 77.0
+offset_right = 150.0
+offset_bottom = 108.0
+theme_override_font_sizes/font_size = 30
+text = "12"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="DiscardButton" type="Button" parent="CardButtons" unique_id=1657788225]
+layout_mode = 0
+offset_left = 1741.0
+offset_top = 933.0
+offset_right = 1889.0
+offset_bottom = 1073.0
+theme_override_styles/normal = SubResource("StyleBoxEmpty_rn6lq")
+theme_override_styles/pressed = SubResource("StyleBoxEmpty_lvjyv")
+theme_override_styles/hover = SubResource("StyleBoxEmpty_j3ir1")
+theme_override_styles/focus = SubResource("StyleBoxEmpty_04hgy")
+
+[node name="TextureRect3" type="TextureRect" parent="CardButtons/DiscardButton" unique_id=342028070]
+layout_mode = 0
+offset_left = -19.0
+offset_top = 58.0
+offset_right = 981.0
+offset_bottom = 498.0
+scale = Vector2(0.2, 0.2)
+texture = ExtResource("7_pvsb8")
+stretch_mode = 2
+
+[node name="DiscardBook" type="TextureRect" parent="CardButtons/DiscardButton" unique_id=1045574117]
+layout_mode = 0
+offset_left = 32.0
+offset_top = -1.0
+offset_right = 612.0
+offset_bottom = 579.0
+scale = Vector2(0.25, 0.25)
+texture = ExtResource("8_pvsb8")
+stretch_mode = 2
+
+[node name="Label" type="Label" parent="CardButtons/DiscardButton" unique_id=425082219]
+layout_mode = 0
+offset_left = 47.0
+offset_top = 99.0
+offset_right = 107.0
+offset_bottom = 122.0
+text = "弃牌堆"
+label_settings = SubResource("LabelSettings_g0fjx")
+
+[node name="TextureRect" type="TextureRect" parent="CardButtons/DiscardButton" unique_id=1938686174]
+material = SubResource("ShaderMaterial_ljvi0")
+layout_mode = 0
+offset_left = 9.000008
+offset_top = 79.0
+offset_right = 57.000008
+offset_bottom = 127.0
+scale = Vector2(0.7, 0.7)
+texture = ExtResource("19_04hgy")
+
+[node name="CardNumber" type="Label" parent="CardButtons/DiscardButton" unique_id=573291192]
+layout_mode = 0
+offset_left = 5.0
+offset_top = 77.0
+offset_right = 45.0
+offset_bottom = 108.0
+theme_override_font_sizes/font_size = 30
+text = "12"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="ExhaustButton" type="Button" parent="CardButtons" unique_id=273234260]
+layout_mode = 0
+offset_left = 1715.0
+offset_top = 855.0
+offset_right = 1905.0
+offset_bottom = 913.0
+tooltip_text = "查看本场战斗已消耗的牌"
+theme_override_font_sizes/font_size = 24
+text = "消耗牌堆 · 0"
+
+[node name="ActiveButton" type="Button" parent="CardButtons"]
+layout_mode = 0
+offset_left = 1715.0
+offset_top = 785.0
+offset_right = 1905.0
+offset_bottom = 843.0
+tooltip_text = "查看持续生效至战斗结束的常驻卡牌"
+theme_override_font_sizes/font_size = 24
+text = "常驻卡牌 · 0"

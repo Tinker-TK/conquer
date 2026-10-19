@@ -1,0 +1,64 @@
+[gd_scene format=3 uid="uid://bfc7hft36g2go"]
+
+[ext_resource type="Texture2D" uid="uid://derylgnvs4blr" path="res://assets/characters/Necromancer/Magic(projectile)/Necromancer_Attack02_Effect.png" id="1_vojn0"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_2rigc"]
+atlas = ExtResource("1_vojn0")
+region = Rect2(0, 0, 100, 100)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_ayfet"]
+atlas = ExtResource("1_vojn0")
+region = Rect2(100, 0, 100, 100)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_t0726"]
+atlas = ExtResource("1_vojn0")
+region = Rect2(200, 0, 100, 100)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_2aiit"]
+atlas = ExtResource("1_vojn0")
+region = Rect2(300, 0, 100, 100)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_m0h1x"]
+atlas = ExtResource("1_vojn0")
+region = Rect2(400, 0, 100, 100)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_fpl3b"]
+atlas = ExtResource("1_vojn0")
+region = Rect2(500, 0, 100, 100)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_gw0p6"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_2rigc")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_ayfet")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_t0726")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_2aiit")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_m0h1x")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_fpl3b")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_m0h1x")
+}],
+"loop": false,
+"name": &"green_bombing",
+"speed": 6.0
+}]
+
+[node name="HurtEffect" type="AnimatedSprite2D" unique_id=2061345145]
+position = Vector2(-10, 0)
+scale = Vector2(3, 3)
+sprite_frames = SubResource("SpriteFrames_gw0p6")
+animation = &"green_bombing"
+frame = 6
+frame_progress = 1.0

@@ -1,0 +1,189 @@
+[gd_scene format=3]
+
+[ext_resource type="Script" path="res://scripts/units/unit_base.gd" id="unit"]
+[ext_resource type="Resource" path="res://data/units/bear.tres" id="data"]
+[ext_resource type="Shader" path="res://shaders/unit_pixel_style.gdshader" id="flash"]
+[ext_resource type="Script" path="res://scripts/units/navigation_agent_2d.gd" id="navigation"]
+[ext_resource type="PackedScene" path="res://scenes/ui/health_bar.tscn" id="health"]
+[ext_resource type="PackedScene" path="res://scenes/components/skill_manager.tscn" id="skills"]
+[ext_resource type="Texture2D" path="res://assets/characters/Enemy Pack/Bear/Bear_Idle.png" id="idle_sheet_0"]
+[ext_resource type="Texture2D" path="res://assets/characters/Enemy Pack/Bear/Bear_Run.png" id="walk_sheet_0"]
+[ext_resource type="Texture2D" path="res://assets/characters/Enemy Pack/Bear/Bear_Attack.png" id="attack_01_sheet_0"]
+
+[ext_resource type="Script" path="res://scripts/units/enemy_pixel_style.gd" id="pixel_style"]
+[ext_resource type="Resource" path="res://data/visuals/enemy_pack/bear.tres" id="pixel_palette"]
+
+[sub_resource type="ShaderMaterial" id="flash_material"]
+resource_local_to_scene = true
+shader = ExtResource("flash")
+shader_parameter/pixel_step = 2.0
+shader_parameter/match_palette = true
+shader_parameter/flash_intensity = 0.0
+shader_parameter/flash_color = Color(1, 0, 0, 1)
+
+[sub_resource type="AtlasTexture" id="idle_0"]
+atlas = ExtResource("idle_sheet_0")
+region = Rect2(0, 0, 256, 256)
+
+[sub_resource type="AtlasTexture" id="idle_1"]
+atlas = ExtResource("idle_sheet_0")
+region = Rect2(256, 0, 256, 256)
+
+[sub_resource type="AtlasTexture" id="idle_2"]
+atlas = ExtResource("idle_sheet_0")
+region = Rect2(512, 0, 256, 256)
+
+[sub_resource type="AtlasTexture" id="idle_3"]
+atlas = ExtResource("idle_sheet_0")
+region = Rect2(768, 0, 256, 256)
+
+[sub_resource type="AtlasTexture" id="idle_4"]
+atlas = ExtResource("idle_sheet_0")
+region = Rect2(1024, 0, 256, 256)
+
+[sub_resource type="AtlasTexture" id="idle_5"]
+atlas = ExtResource("idle_sheet_0")
+region = Rect2(1280, 0, 256, 256)
+
+[sub_resource type="AtlasTexture" id="idle_6"]
+atlas = ExtResource("idle_sheet_0")
+region = Rect2(1536, 0, 256, 256)
+
+[sub_resource type="AtlasTexture" id="idle_7"]
+atlas = ExtResource("idle_sheet_0")
+region = Rect2(1792, 0, 256, 256)
+
+[sub_resource type="AtlasTexture" id="walk_0"]
+atlas = ExtResource("walk_sheet_0")
+region = Rect2(0, 0, 256, 256)
+
+[sub_resource type="AtlasTexture" id="walk_1"]
+atlas = ExtResource("walk_sheet_0")
+region = Rect2(256, 0, 256, 256)
+
+[sub_resource type="AtlasTexture" id="walk_2"]
+atlas = ExtResource("walk_sheet_0")
+region = Rect2(512, 0, 256, 256)
+
+[sub_resource type="AtlasTexture" id="walk_3"]
+atlas = ExtResource("walk_sheet_0")
+region = Rect2(768, 0, 256, 256)
+
+[sub_resource type="AtlasTexture" id="walk_4"]
+atlas = ExtResource("walk_sheet_0")
+region = Rect2(1024, 0, 256, 256)
+
+[sub_resource type="AtlasTexture" id="attack_01_0"]
+atlas = ExtResource("attack_01_sheet_0")
+region = Rect2(0, 0, 256, 256)
+
+[sub_resource type="AtlasTexture" id="attack_01_1"]
+atlas = ExtResource("attack_01_sheet_0")
+region = Rect2(256, 0, 256, 256)
+
+[sub_resource type="AtlasTexture" id="attack_01_2"]
+atlas = ExtResource("attack_01_sheet_0")
+region = Rect2(512, 0, 256, 256)
+
+[sub_resource type="AtlasTexture" id="attack_01_3"]
+atlas = ExtResource("attack_01_sheet_0")
+region = Rect2(768, 0, 256, 256)
+
+[sub_resource type="AtlasTexture" id="attack_01_4"]
+atlas = ExtResource("attack_01_sheet_0")
+region = Rect2(1024, 0, 256, 256)
+
+[sub_resource type="AtlasTexture" id="attack_01_5"]
+atlas = ExtResource("attack_01_sheet_0")
+region = Rect2(1280, 0, 256, 256)
+
+[sub_resource type="AtlasTexture" id="attack_01_6"]
+atlas = ExtResource("attack_01_sheet_0")
+region = Rect2(1536, 0, 256, 256)
+
+[sub_resource type="AtlasTexture" id="attack_01_7"]
+atlas = ExtResource("attack_01_sheet_0")
+region = Rect2(1792, 0, 256, 256)
+
+[sub_resource type="AtlasTexture" id="attack_01_8"]
+atlas = ExtResource("attack_01_sheet_0")
+region = Rect2(2048, 0, 256, 256)
+
+[sub_resource type="SpriteFrames" id="frames"]
+animations = [{
+"frames": [{"duration": 1.0, "texture": SubResource("idle_0")},
+{"duration": 1.0, "texture": SubResource("idle_1")},
+{"duration": 1.0, "texture": SubResource("idle_2")},
+{"duration": 1.0, "texture": SubResource("idle_3")},
+{"duration": 1.0, "texture": SubResource("idle_4")},
+{"duration": 1.0, "texture": SubResource("idle_5")},
+{"duration": 1.0, "texture": SubResource("idle_6")},
+{"duration": 1.0, "texture": SubResource("idle_7")}],
+"loop": true,
+"name": &"idle",
+"speed": 10.0
+},
+{
+"frames": [{"duration": 1.0, "texture": SubResource("walk_0")},
+{"duration": 1.0, "texture": SubResource("walk_1")},
+{"duration": 1.0, "texture": SubResource("walk_2")},
+{"duration": 1.0, "texture": SubResource("walk_3")},
+{"duration": 1.0, "texture": SubResource("walk_4")}],
+"loop": true,
+"name": &"walk",
+"speed": 10.0
+},
+{
+"frames": [{"duration": 1.0, "texture": SubResource("attack_01_0")},
+{"duration": 1.0, "texture": SubResource("attack_01_1")},
+{"duration": 1.0, "texture": SubResource("attack_01_2")},
+{"duration": 1.0, "texture": SubResource("attack_01_3")},
+{"duration": 1.0, "texture": SubResource("attack_01_4")},
+{"duration": 1.0, "texture": SubResource("attack_01_5")},
+{"duration": 1.0, "texture": SubResource("attack_01_6")},
+{"duration": 1.0, "texture": SubResource("attack_01_7")},
+{"duration": 1.0, "texture": SubResource("attack_01_8")}],
+"loop": false,
+"name": &"attack_01",
+"speed": 10.0
+}]
+
+[sub_resource type="CircleShape2D" id="body"]
+radius = 24.0
+
+[node name="Bear" type="CharacterBody2D" groups=["team_b"]]
+collision_layer = 2
+collision_mask = 15
+motion_mode = 1
+script = ExtResource("unit")
+unit_data = ExtResource("data")
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
+texture_filter = 1
+material = SubResource("flash_material")
+position = Vector2(0, -45)
+sprite_frames = SubResource("frames")
+animation = &"idle"
+autoplay = "idle"
+flip_h = true
+
+[node name="PixelStyle" type="Node" parent="AnimatedSprite2D"]
+script = ExtResource("pixel_style")
+palette = ExtResource("pixel_palette")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+shape = SubResource("body")
+
+[node name="NavigationAgent2D" type="NavigationAgent2D" parent="."]
+script = ExtResource("navigation")
+
+[node name="HealthBar" parent="." instance=ExtResource("health")]
+offset_left = -28.0
+offset_top = 30.0
+offset_right = -28.0
+offset_bottom = 30.0
+
+[node name="SkillManager" parent="." instance=ExtResource("skills")]
+position = Vector2(0, -45)
+
+[connection signal="frame_changed" from="AnimatedSprite2D" to="SkillManager" method="_on_animated_sprite_2d_frame_changed"]

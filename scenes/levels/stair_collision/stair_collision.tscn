@@ -1,0 +1,20 @@
+[gd_scene format=3 uid="uid://4j0dt088d6ki"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_6m3kp"]
+size = Vector2(17.286926, 156.31471)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_xclhr"]
+size = Vector2(17.286926, 156.31471)
+
+[node name="StaticBody2D5" type="StaticBody2D" unique_id=383867038]
+rotation = -2.3828456
+collision_layer = 16
+collision_mask = 7
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=521091855]
+position = Vector2(55.955193, 50.299362)
+shape = SubResource("RectangleShape2D_6m3kp")
+
+[node name="CollisionShape2D2" type="CollisionShape2D" parent="." unique_id=695064350]
+position = Vector2(-312.80994, -312.50262)
+shape = SubResource("RectangleShape2D_xclhr")

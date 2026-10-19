@@ -1,0 +1,1184 @@
+{
+  "output_png_count": 167,
+  "mapped_original_slices": 59,
+  "card_count": 5,
+  "ui_group_count": 14,
+  "ui_reassemblies_verified": true,
+  "layers_per_card": 8,
+  "card_canvas": [
+    768,
+    1024
+  ],
+  "all_reassemblies_verified": true,
+  "checks": [
+    {
+      "file": "icons/crossed_swords.png",
+      "rgba": true,
+      "transparent_pixels": 42374,
+      "visible_magenta_pixels": 0,
+      "sha256": "f2796e741e06b55abb82a471f0a04f8d047575461f9e1980a1363e92ebc20390"
+    },
+    {
+      "file": "icons/crown.png",
+      "rgba": true,
+      "transparent_pixels": 35043,
+      "visible_magenta_pixels": 0,
+      "sha256": "ac0589e0e1a0ac12a0978ccb738ae5c326ce28731f8c9618e47f252794f9ce67"
+    },
+    {
+      "file": "icons/deck_book.png",
+      "rgba": true,
+      "transparent_pixels": 28710,
+      "visible_magenta_pixels": 0,
+      "sha256": "df7fabcec1b8efc30a122121442c8353dc3580ee5b21512c39e92f3b56197f45"
+    },
+    {
+      "file": "icons/equipment_armor.png",
+      "rgba": true,
+      "transparent_pixels": 26671,
+      "visible_magenta_pixels": 0,
+      "sha256": "cc272858ad419a85d6727055066d197244b40e93cd70875f138214ba3890bc8b"
+    },
+    {
+      "file": "icons/equipment_potion.png",
+      "rgba": true,
+      "transparent_pixels": 51446,
+      "visible_magenta_pixels": 0,
+      "sha256": "9718e8cb66bdec31c38f77b4c38f2a5417f9acaec6112cf91a3e174c01332f3e"
+    },
+    {
+      "file": "icons/equipment_sword.png",
+      "rgba": true,
+      "transparent_pixels": 46674,
+      "visible_magenta_pixels": 0,
+      "sha256": "a11a459d0365a653abada5516de5b00f985ed3d08b0ec578d90a7380cb523d50"
+    },
+    {
+      "file": "icons/gear.png",
+      "rgba": true,
+      "transparent_pixels": 39993,
+      "visible_magenta_pixels": 0,
+      "sha256": "513bfbbc92ba5ddc93428b8d3a22ba9f0a40c137c2189a258645e1601f36c27d"
+    },
+    {
+      "file": "icons/gold_coin.png",
+      "rgba": true,
+      "transparent_pixels": 29222,
+      "visible_magenta_pixels": 0,
+      "sha256": "9a9e99e5c698926e959a26f742dc2502a112448dd92468847151e08abce044ff"
+    },
+    {
+      "file": "icons/heart.png",
+      "rgba": true,
+      "transparent_pixels": 36743,
+      "visible_magenta_pixels": 0,
+      "sha256": "4711d7e7a740ad71166a2ec03f7365b02d210fc0e75bcd1117a3f929c29c8eec"
+    },
+    {
+      "file": "icons/map.png",
+      "rgba": true,
+      "transparent_pixels": 29278,
+      "visible_magenta_pixels": 0,
+      "sha256": "c057ad3fab20fc564397c48ad9fcefdfc97e13d8cd535c2e2384ec6ef65b1f3d"
+    },
+    {
+      "file": "icons/relic_boot.png",
+      "rgba": true,
+      "transparent_pixels": 31069,
+      "visible_magenta_pixels": 0,
+      "sha256": "7deae88913d4766478d3506302c6a736448f72561762951ed9a6cc6db3631a27"
+    },
+    {
+      "file": "icons/relic_clover.png",
+      "rgba": true,
+      "transparent_pixels": 41541,
+      "visible_magenta_pixels": 0,
+      "sha256": "95d4c57edb641d559c1ee38dcc06e7d2ed51bdc876fda1a6984e6392f4524592"
+    },
+    {
+      "file": "icons/relic_crystal.png",
+      "rgba": true,
+      "transparent_pixels": 40831,
+      "visible_magenta_pixels": 0,
+      "sha256": "203a963aa609697ca7d771632285e7244ead2f0a3a38679d4a3ac48c5cd09512"
+    },
+    {
+      "file": "icons/relic_leaf.png",
+      "rgba": true,
+      "transparent_pixels": 36081,
+      "visible_magenta_pixels": 0,
+      "sha256": "50a08150af38790bb567f408a9e31f67bdcd7545704274a9067c0012485f3df1"
+    },
+    {
+      "file": "icons/relic_mushroom.png",
+      "rgba": true,
+      "transparent_pixels": 30194,
+      "visible_magenta_pixels": 0,
+      "sha256": "465db6b4b4116021b3cec39a60d0a2422b383e1316ef686668eccc5b9d756d8c"
+    },
+    {
+      "file": "icons/relic_ring.png",
+      "rgba": true,
+      "transparent_pixels": 39131,
+      "visible_magenta_pixels": 0,
+      "sha256": "48d507681fc303ff247b9ce1c236ea92f6c6bff10cca3748bbb895780c2a2008"
+    },
+    {
+      "file": "status/healing.png",
+      "rgba": true,
+      "transparent_pixels": 30411,
+      "visible_magenta_pixels": 0,
+      "sha256": "883c106741d65a89c6be7f94c45b29b439cdf4ff8bec73e2af4d72fa16b70f30"
+    },
+    {
+      "file": "status/shield.png",
+      "rgba": true,
+      "transparent_pixels": 35161,
+      "visible_magenta_pixels": 0,
+      "sha256": "9d32f3b6b31b8d04804f73188f460a926b65529abf6729fc91758c8ab5b553c4"
+    },
+    {
+      "file": "status/skull.png",
+      "rgba": true,
+      "transparent_pixels": 26075,
+      "visible_magenta_pixels": 0,
+      "sha256": "15dd1e7ec004b777d5bd4081eda5fe98ca474a13e61f6e2317f8840b2c5ddf33"
+    },
+    {
+      "file": "status/tree.png",
+      "rgba": true,
+      "transparent_pixels": 37840,
+      "visible_magenta_pixels": 0,
+      "sha256": "72ffec4e21781e896f80128174c9008bbb72a457cedf3d4a2484d5bfaad01d37"
+    },
+    {
+      "file": "units/archer.png",
+      "rgba": true,
+      "transparent_pixels": 143837,
+      "visible_magenta_pixels": 0,
+      "sha256": "7cf08dc3fa92541eb6ac740e643c701c6dba007913ee6f7aec4c045ba5cbf151"
+    },
+    {
+      "file": "units/goblin.png",
+      "rgba": true,
+      "transparent_pixels": 151369,
+      "visible_magenta_pixels": 0,
+      "sha256": "40cd91a5c1ea375b1a6b35d698e793e661f1c7ca436736390b533f8772246876"
+    },
+    {
+      "file": "units/knight.png",
+      "rgba": true,
+      "transparent_pixels": 128821,
+      "visible_magenta_pixels": 0,
+      "sha256": "8d63a120f8c6aa5b3a04b0dd20c7c156ecd0e1507506d55b9f68853063795579"
+    },
+    {
+      "file": "units/priest.png",
+      "rgba": true,
+      "transparent_pixels": 124890,
+      "visible_magenta_pixels": 0,
+      "sha256": "32602a37c1fdc6d192b9ef62b12ef6c0810b7b996ecd8fd0c3ad22cc7ec45b7b"
+    },
+    {
+      "file": "components/gold_button.png",
+      "rgba": true,
+      "transparent_pixels": 93090,
+      "visible_magenta_pixels": 0,
+      "sha256": "c8d526ee85a0834290068a748f3fa68ec8ef26c614c14147e9938af02a9d1ab1"
+    },
+    {
+      "file": "components/chapter_banner.png",
+      "rgba": true,
+      "transparent_pixels": 103428,
+      "visible_magenta_pixels": 0,
+      "sha256": "692077ccd0dd160e3d42e16df907fb2e2a106947fdc876bcd6acf26d97a0c5d9"
+    },
+    {
+      "file": "components/dark_panel.png",
+      "rgba": true,
+      "transparent_pixels": 74685,
+      "visible_magenta_pixels": 0,
+      "sha256": "988a06e783f3b2b5823afcabb038fd2dc2fb7f99faabe7c56f222a1d92ec6b5c"
+    },
+    {
+      "file": "components/energy_orb.png",
+      "rgba": true,
+      "transparent_pixels": 119728,
+      "visible_magenta_pixels": 0,
+      "sha256": "ab0116475c2f5923305787f60e2b0487207bc02223763b388b08fbb99f3b8ae1"
+    },
+    {
+      "file": "components/parchment_card.png",
+      "rgba": true,
+      "transparent_pixels": 65480,
+      "visible_magenta_pixels": 0,
+      "sha256": "0485cbe2019f1b522ae224e96c372a5dae182e35185cc6d35290cad84f591d8e"
+    },
+    {
+      "file": "components/cost_badge.png",
+      "rgba": true,
+      "transparent_pixels": 32564,
+      "visible_magenta_pixels": 0,
+      "sha256": "897feb09e1373185550e14455b61c8d2df2cb8db9b83ff286ed548e43cf46463"
+    },
+    {
+      "file": "components/draw_book.png",
+      "rgba": true,
+      "transparent_pixels": 91572,
+      "visible_magenta_pixels": 0,
+      "sha256": "c0fa532a0d03374001b7c104f53122b8a591587b98d891f60fd9e4ef1e55e31a"
+    },
+    {
+      "file": "components/discard_book.png",
+      "rgba": true,
+      "transparent_pixels": 94081,
+      "visible_magenta_pixels": 0,
+      "sha256": "c8243a41faac323339c8f9da1bf73bbc397217413e0d70a2f4af455138d9c5e0"
+    },
+    {
+      "file": "components/health_bar.png",
+      "rgba": true,
+      "transparent_pixels": 83554,
+      "visible_magenta_pixels": 0,
+      "sha256": "ad2d3de7c44eb55e5166aee693554536574fd2635c15c80289287f0a91712b30"
+    },
+    {
+      "file": "components/toggle.png",
+      "rgba": true,
+      "transparent_pixels": 40541,
+      "visible_magenta_pixels": 0,
+      "sha256": "9af7d2edd13c396244bd907e94d79cab928a95b476b9c598fc21b93888404ed3"
+    },
+    {
+      "file": "components/crown_backplate.png",
+      "rgba": true,
+      "transparent_pixels": 50347,
+      "visible_magenta_pixels": 0,
+      "sha256": "58c6536bc4c3ec030aecd4c26ea786da1aae40be5c1a79ef79b01aa47d5386b4"
+    },
+    {
+      "file": "components/card_frame_red.png",
+      "rgba": true,
+      "transparent_pixels": 558719,
+      "visible_magenta_pixels": 0,
+      "sha256": "b0f1e1a0feb5b9ae533885be4d2de2dcc1fa891fc83529fbf25d37ccd83ca6f1"
+    },
+    {
+      "file": "panels/top_bar.png",
+      "rgba": true,
+      "transparent_pixels": 72805,
+      "visible_magenta_pixels": 0,
+      "sha256": "0f876eaffda883d3b5257879e66438a6eb90b96b60b5fa40d98fd020a7496e0e"
+    },
+    {
+      "file": "panels/stat_panel.png",
+      "rgba": true,
+      "transparent_pixels": 41861,
+      "visible_magenta_pixels": 0,
+      "sha256": "cc2d454bbcbe6c7d385d16b562be3270f57ae4261cdc636f1235313824d9a57c"
+    },
+    {
+      "file": "panels/navigation_button.png",
+      "rgba": true,
+      "transparent_pixels": 28855,
+      "visible_magenta_pixels": 0,
+      "sha256": "c5bb02dd6bb8bafcca0250c16a24b3a85ef7c983a0e29197e38aeeba447458c8"
+    },
+    {
+      "file": "panels/phase_panel.png",
+      "rgba": true,
+      "transparent_pixels": 41861,
+      "visible_magenta_pixels": 0,
+      "sha256": "cc2d454bbcbe6c7d385d16b562be3270f57ae4261cdc636f1235313824d9a57c"
+    },
+    {
+      "file": "panels/speed_button_blank.png",
+      "rgba": true,
+      "transparent_pixels": 19079,
+      "visible_magenta_pixels": 0,
+      "sha256": "5f06d3e5b1b7416d34cb801d35377067e1124057b0cbead992025a1be2d396e3"
+    },
+    {
+      "file": "panels/auto_row_blank.png",
+      "rgba": true,
+      "transparent_pixels": 27633,
+      "visible_magenta_pixels": 0,
+      "sha256": "7e6e62aea6e4f1d5bf18c9e8e48bcc270e9147a599b4f1555549a4082b710d44"
+    },
+    {
+      "file": "panels/battle_control_panel.png",
+      "rgba": true,
+      "transparent_pixels": 93776,
+      "visible_magenta_pixels": 0,
+      "sha256": "37af351ed9126afa677410bb7d9f153322f23d1cac012cb8dfaa11b16157ca73"
+    },
+    {
+      "file": "panels/pile_backplate.png",
+      "rgba": true,
+      "transparent_pixels": 38387,
+      "visible_magenta_pixels": 0,
+      "sha256": "fd2379b9cce7868d3244001bc52fe1b85a4e09a04e8ef4159811bb709e2a2e40"
+    },
+    {
+      "file": "components/card_frame_blue.png",
+      "rgba": true,
+      "transparent_pixels": 558719,
+      "visible_magenta_pixels": 0,
+      "sha256": "aecf95f2d949b2528bc2d6d1fd303a392ae28c63fbaa31c695325a4cc544e1b9"
+    },
+    {
+      "file": "components/card_frame_green.png",
+      "rgba": true,
+      "transparent_pixels": 558719,
+      "visible_magenta_pixels": 0,
+      "sha256": "2d3f5f8efb918b162731712c71273f889342f6dfc98365feb365ce767eb88df5"
+    },
+    {
+      "file": "components/card_frame_gold.png",
+      "rgba": true,
+      "transparent_pixels": 558719,
+      "visible_magenta_pixels": 0,
+      "sha256": "29922c5545a3d92a4412c24b5e19949609a840e1c0f58e77f4664ea17e687fef"
+    },
+    {
+      "file": "health/10_fill.png",
+      "rgba": true,
+      "transparent_pixels": 90769,
+      "visible_magenta_pixels": 0,
+      "sha256": "eec1092bf5269893d16fe07b3fee8acabcb2ab8af463c9ff7619c65921056509"
+    },
+    {
+      "file": "health/20_border.png",
+      "rgba": true,
+      "transparent_pixels": 91089,
+      "visible_magenta_pixels": 0,
+      "sha256": "7cbf0c1af47768ff178ca246bae38bb5b2c68d260743133d2413566786a094d8"
+    },
+    {
+      "file": "health/00_empty_bar.png",
+      "rgba": true,
+      "transparent_pixels": 83554,
+      "visible_magenta_pixels": 0,
+      "sha256": "9ce82eba0943509fe8197f7215c9897c877d7a6a69535bf07ba7151604c88ddb"
+    },
+    {
+      "file": "energy/00_core.png",
+      "rgba": true,
+      "transparent_pixels": 150531,
+      "visible_magenta_pixels": 0,
+      "sha256": "602f5215e92651f2147d05f452c8070ae0c9d3a8d5f583f558a2e60fecd24fb2"
+    },
+    {
+      "file": "energy/10_rim.png",
+      "rgba": true,
+      "transparent_pixels": 192021,
+      "visible_magenta_pixels": 0,
+      "sha256": "3abe6ec8b98dac4048f6e2f618b494656c34e1a0a7de051b20618a01c0a7cb1b"
+    },
+    {
+      "file": "badges/counter_red.png",
+      "rgba": true,
+      "transparent_pixels": 32564,
+      "visible_magenta_pixels": 0,
+      "sha256": "c4f467752ba48558b3e453f71430b62aaaea4973f10da6f3e80d6a353b2b24f5"
+    },
+    {
+      "file": "badges/badge_navy.png",
+      "rgba": true,
+      "transparent_pixels": 32564,
+      "visible_magenta_pixels": 0,
+      "sha256": "7b37b5e8c8757601451b1deba84d5aa2acbf9dba8835edcfb6d70e959b999129"
+    },
+    {
+      "file": "controls/selected_border.png",
+      "rgba": true,
+      "transparent_pixels": 52610,
+      "visible_magenta_pixels": 0,
+      "sha256": "1b11a879a4f51787356e600fbd932b88b23c1edbbacd2aed8124b5d18227b707"
+    },
+    {
+      "file": "controls/pause_symbol.png",
+      "rgba": true,
+      "transparent_pixels": 52486,
+      "visible_magenta_pixels": 0,
+      "sha256": "a441a207094e3a9e607599003f581a4beaabd01959eb4cf1812063a872fbef89"
+    },
+    {
+      "file": "controls/toggle_track.png",
+      "rgba": true,
+      "transparent_pixels": 40538,
+      "visible_magenta_pixels": 0,
+      "sha256": "183a0320991b288b884dbcc80cf203b2b3e57e935b84b577f85a69fcb08b7708"
+    },
+    {
+      "file": "controls/toggle_knob.png",
+      "rgba": true,
+      "transparent_pixels": 18115,
+      "visible_magenta_pixels": 0,
+      "sha256": "55fcae11125d1fa2a9765a79a660d6a6872cfec07674cfaee41348ca3b6cb6ac"
+    },
+    {
+      "file": "card_art/summon_guard_subject.png",
+      "rgba": true,
+      "transparent_pixels": 384252,
+      "visible_magenta_pixels": 0,
+      "sha256": "a80218000df5252aca6f5c2ce5d0894978e0e60cf6ce186d3f8365304a5709f5"
+    },
+    {
+      "file": "card_art/summon_guard_background.png",
+      "rgba": true,
+      "transparent_pixels": 0,
+      "visible_magenta_pixels": 0,
+      "sha256": "16f4eb7b48d7c10b38e1277f5aef06892f7ea96acf67411c3168ad329bee5776"
+    },
+    {
+      "file": "cards/summon_guard/00_backplate.png",
+      "rgba": true,
+      "transparent_pixels": 192016,
+      "visible_magenta_pixels": 0,
+      "sha256": "8a731fb2d220d04033214023e1c61875bf5a31d92ab9ef76b03e5a50ac2adbd0"
+    },
+    {
+      "file": "cards/summon_guard/10_art_background.png",
+      "rgba": true,
+      "transparent_pixels": 531968,
+      "visible_magenta_pixels": 0,
+      "sha256": "b92668594ae78f62219b16b5e5b9f05f209dd7a8b926dde2b1c3defd40bd3263"
+    },
+    {
+      "file": "cards/summon_guard/20_art_subject.png",
+      "rgba": true,
+      "transparent_pixels": 712144,
+      "visible_magenta_pixels": 0,
+      "sha256": "882f10c09a7139a21a9496920cdab0d8280aeca06991d1e8fdf7dd49bf0993cd"
+    },
+    {
+      "file": "cards/summon_guard/30_art_border.png",
+      "rgba": true,
+      "transparent_pixels": 703001,
+      "visible_magenta_pixels": 0,
+      "sha256": "7ce9fd82547514f11c430f888a26b38ef7541b386ec6e5ab71ac2594d55da362"
+    },
+    {
+      "file": "cards/summon_guard/40_outer_frame.png",
+      "rgba": true,
+      "transparent_pixels": 558719,
+      "visible_magenta_pixels": 0,
+      "sha256": "aecf95f2d949b2528bc2d6d1fd303a392ae28c63fbaa31c695325a4cc544e1b9"
+    },
+    {
+      "file": "cards/summon_guard/50_title_plate.png",
+      "rgba": true,
+      "transparent_pixels": 731076,
+      "visible_magenta_pixels": 0,
+      "sha256": "41696fdb9b0a5e9c2715119bf74af22b6c4abb95040b0f0843028cbf30d63e32"
+    },
+    {
+      "file": "cards/summon_guard/60_description_plate.png",
+      "rgba": true,
+      "transparent_pixels": 661732,
+      "visible_magenta_pixels": 0,
+      "sha256": "973f3e4fc074256b6a0a127b6b1f3d07ef20d1c931b8e4a4f8c42cc8dd667d4d"
+    },
+    {
+      "file": "cards/summon_guard/70_cost_badge.png",
+      "rgba": true,
+      "transparent_pixels": 772126,
+      "visible_magenta_pixels": 0,
+      "sha256": "239b7e7166f90c12c37563d414192f458a082591fb18bf6e53751f1a74ccf3bc"
+    },
+    {
+      "file": "cards/summon_guard/preview.png",
+      "rgba": true,
+      "transparent_pixels": 59434,
+      "visible_magenta_pixels": 0,
+      "sha256": "2e35e304fea40347fb30c6bc1175f9b2119118f6359411f114b031e6fc2cf152"
+    },
+    {
+      "file": "card_art/hold_position_subject.png",
+      "rgba": true,
+      "transparent_pixels": 343913,
+      "visible_magenta_pixels": 0,
+      "sha256": "487d66804070216ba712f3113318afd6fec1622eaece7b89be58988957764377"
+    },
+    {
+      "file": "card_art/hold_position_background.png",
+      "rgba": true,
+      "transparent_pixels": 0,
+      "visible_magenta_pixels": 0,
+      "sha256": "66d48afb4d00a3750e58e7a90ace99b226c1f018cbb80498a5b8772771ca739f"
+    },
+    {
+      "file": "cards/hold_position/00_backplate.png",
+      "rgba": true,
+      "transparent_pixels": 192016,
+      "visible_magenta_pixels": 0,
+      "sha256": "8a731fb2d220d04033214023e1c61875bf5a31d92ab9ef76b03e5a50ac2adbd0"
+    },
+    {
+      "file": "cards/hold_position/10_art_background.png",
+      "rgba": true,
+      "transparent_pixels": 531968,
+      "visible_magenta_pixels": 0,
+      "sha256": "48ec5a18913476999a3a3afeacd61f76dfb4288cdba7b8d8db46a335c886a60b"
+    },
+    {
+      "file": "cards/hold_position/20_art_subject.png",
+      "rgba": true,
+      "transparent_pixels": 690072,
+      "visible_magenta_pixels": 0,
+      "sha256": "c9b928778b4da58652c7c261b2a328245bef30663b845387483977534db81ff4"
+    },
+    {
+      "file": "cards/hold_position/30_art_border.png",
+      "rgba": true,
+      "transparent_pixels": 703001,
+      "visible_magenta_pixels": 0,
+      "sha256": "7ce9fd82547514f11c430f888a26b38ef7541b386ec6e5ab71ac2594d55da362"
+    },
+    {
+      "file": "cards/hold_position/40_outer_frame.png",
+      "rgba": true,
+      "transparent_pixels": 558719,
+      "visible_magenta_pixels": 0,
+      "sha256": "aecf95f2d949b2528bc2d6d1fd303a392ae28c63fbaa31c695325a4cc544e1b9"
+    },
+    {
+      "file": "cards/hold_position/50_title_plate.png",
+      "rgba": true,
+      "transparent_pixels": 731076,
+      "visible_magenta_pixels": 0,
+      "sha256": "41696fdb9b0a5e9c2715119bf74af22b6c4abb95040b0f0843028cbf30d63e32"
+    },
+    {
+      "file": "cards/hold_position/60_description_plate.png",
+      "rgba": true,
+      "transparent_pixels": 661732,
+      "visible_magenta_pixels": 0,
+      "sha256": "973f3e4fc074256b6a0a127b6b1f3d07ef20d1c931b8e4a4f8c42cc8dd667d4d"
+    },
+    {
+      "file": "cards/hold_position/70_cost_badge.png",
+      "rgba": true,
+      "transparent_pixels": 772126,
+      "visible_magenta_pixels": 0,
+      "sha256": "239b7e7166f90c12c37563d414192f458a082591fb18bf6e53751f1a74ccf3bc"
+    },
+    {
+      "file": "cards/hold_position/preview.png",
+      "rgba": true,
+      "transparent_pixels": 59434,
+      "visible_magenta_pixels": 0,
+      "sha256": "892ec0ef86a7711f4955c247389435bba179d0bfb09907bfbe43fd78a9aa2d99"
+    },
+    {
+      "file": "card_art/fireball_subject.png",
+      "rgba": true,
+      "transparent_pixels": 370089,
+      "visible_magenta_pixels": 0,
+      "sha256": "78daf651c87ef19e912933f4792bc6b4c5fe4d9438fdd1987275fd1944e58903"
+    },
+    {
+      "file": "card_art/fireball_background.png",
+      "rgba": true,
+      "transparent_pixels": 0,
+      "visible_magenta_pixels": 0,
+      "sha256": "79bb033d796c2f44951008fa4e1c9e58950c64304f4eecbd78f5a91459f8b337"
+    },
+    {
+      "file": "cards/fireball/00_backplate.png",
+      "rgba": true,
+      "transparent_pixels": 192016,
+      "visible_magenta_pixels": 0,
+      "sha256": "8a731fb2d220d04033214023e1c61875bf5a31d92ab9ef76b03e5a50ac2adbd0"
+    },
+    {
+      "file": "cards/fireball/10_art_background.png",
+      "rgba": true,
+      "transparent_pixels": 531968,
+      "visible_magenta_pixels": 0,
+      "sha256": "e005be44ee2c2b322e697705dbc9881c862a55b9e1ab9b42603d067b28bb9677"
+    },
+    {
+      "file": "cards/fireball/20_art_subject.png",
+      "rgba": true,
+      "transparent_pixels": 707266,
+      "visible_magenta_pixels": 0,
+      "sha256": "e273266df60dd1d8e3c422a7a082a67db15c93901fef361ef997df5738bcbf41"
+    },
+    {
+      "file": "cards/fireball/30_art_border.png",
+      "rgba": true,
+      "transparent_pixels": 703001,
+      "visible_magenta_pixels": 0,
+      "sha256": "7ce9fd82547514f11c430f888a26b38ef7541b386ec6e5ab71ac2594d55da362"
+    },
+    {
+      "file": "cards/fireball/40_outer_frame.png",
+      "rgba": true,
+      "transparent_pixels": 558719,
+      "visible_magenta_pixels": 0,
+      "sha256": "b0f1e1a0feb5b9ae533885be4d2de2dcc1fa891fc83529fbf25d37ccd83ca6f1"
+    },
+    {
+      "file": "cards/fireball/50_title_plate.png",
+      "rgba": true,
+      "transparent_pixels": 731076,
+      "visible_magenta_pixels": 0,
+      "sha256": "41696fdb9b0a5e9c2715119bf74af22b6c4abb95040b0f0843028cbf30d63e32"
+    },
+    {
+      "file": "cards/fireball/60_description_plate.png",
+      "rgba": true,
+      "transparent_pixels": 661732,
+      "visible_magenta_pixels": 0,
+      "sha256": "973f3e4fc074256b6a0a127b6b1f3d07ef20d1c931b8e4a4f8c42cc8dd667d4d"
+    },
+    {
+      "file": "cards/fireball/70_cost_badge.png",
+      "rgba": true,
+      "transparent_pixels": 772126,
+      "visible_magenta_pixels": 0,
+      "sha256": "239b7e7166f90c12c37563d414192f458a082591fb18bf6e53751f1a74ccf3bc"
+    },
+    {
+      "file": "cards/fireball/preview.png",
+      "rgba": true,
+      "transparent_pixels": 59434,
+      "visible_magenta_pixels": 0,
+      "sha256": "6c795786df4201479bce1fb728336ff28fc294c9ab858abc2f534057ea456efc"
+    },
+    {
+      "file": "card_art/battlefield_heal_subject.png",
+      "rgba": true,
+      "transparent_pixels": 326257,
+      "visible_magenta_pixels": 0,
+      "sha256": "c99686a96de7371b7ca3c03a99204258285fb984fe6667c4ab48a448c95dd009"
+    },
+    {
+      "file": "card_art/battlefield_heal_background.png",
+      "rgba": true,
+      "transparent_pixels": 0,
+      "visible_magenta_pixels": 0,
+      "sha256": "e98b6c25289a2df4aacb1587820c4b21bfe10d54cf351a09e9b57888fccd0321"
+    },
+    {
+      "file": "cards/battlefield_heal/00_backplate.png",
+      "rgba": true,
+      "transparent_pixels": 192016,
+      "visible_magenta_pixels": 0,
+      "sha256": "8a731fb2d220d04033214023e1c61875bf5a31d92ab9ef76b03e5a50ac2adbd0"
+    },
+    {
+      "file": "cards/battlefield_heal/10_art_background.png",
+      "rgba": true,
+      "transparent_pixels": 531968,
+      "visible_magenta_pixels": 0,
+      "sha256": "2f3dc026fea8bcb4278f5f58e96e6f1efb729b89c9297d2dd3065137f47223fc"
+    },
+    {
+      "file": "cards/battlefield_heal/20_art_subject.png",
+      "rgba": true,
+      "transparent_pixels": 689184,
+      "visible_magenta_pixels": 0,
+      "sha256": "829a0c8c93cbf4c022d971667a7dad8f4db6527d6ff8ca4562cac6c76a561a1a"
+    },
+    {
+      "file": "cards/battlefield_heal/30_art_border.png",
+      "rgba": true,
+      "transparent_pixels": 703001,
+      "visible_magenta_pixels": 0,
+      "sha256": "7ce9fd82547514f11c430f888a26b38ef7541b386ec6e5ab71ac2594d55da362"
+    },
+    {
+      "file": "cards/battlefield_heal/40_outer_frame.png",
+      "rgba": true,
+      "transparent_pixels": 558719,
+      "visible_magenta_pixels": 0,
+      "sha256": "2d3f5f8efb918b162731712c71273f889342f6dfc98365feb365ce767eb88df5"
+    },
+    {
+      "file": "cards/battlefield_heal/50_title_plate.png",
+      "rgba": true,
+      "transparent_pixels": 731076,
+      "visible_magenta_pixels": 0,
+      "sha256": "41696fdb9b0a5e9c2715119bf74af22b6c4abb95040b0f0843028cbf30d63e32"
+    },
+    {
+      "file": "cards/battlefield_heal/60_description_plate.png",
+      "rgba": true,
+      "transparent_pixels": 661732,
+      "visible_magenta_pixels": 0,
+      "sha256": "973f3e4fc074256b6a0a127b6b1f3d07ef20d1c931b8e4a4f8c42cc8dd667d4d"
+    },
+    {
+      "file": "cards/battlefield_heal/70_cost_badge.png",
+      "rgba": true,
+      "transparent_pixels": 772126,
+      "visible_magenta_pixels": 0,
+      "sha256": "239b7e7166f90c12c37563d414192f458a082591fb18bf6e53751f1a74ccf3bc"
+    },
+    {
+      "file": "cards/battlefield_heal/preview.png",
+      "rgba": true,
+      "transparent_pixels": 59434,
+      "visible_magenta_pixels": 0,
+      "sha256": "0c198a8930f0f7dfe72758f5131be0dbebb83cffc4d8cd0341c472d2a39ab9b7"
+    },
+    {
+      "file": "card_art/battle_inspiration_subject.png",
+      "rgba": true,
+      "transparent_pixels": 343836,
+      "visible_magenta_pixels": 0,
+      "sha256": "156662843975a15d0fc55121eb8ca2efd495d0256b4e5df3a958a4b858866828"
+    },
+    {
+      "file": "card_art/battle_inspiration_background.png",
+      "rgba": true,
+      "transparent_pixels": 0,
+      "visible_magenta_pixels": 0,
+      "sha256": "9fe20edce90a0cda1fecc9571c71c19479b16b4cbdca200a5ef48045afd864c2"
+    },
+    {
+      "file": "cards/battle_inspiration/00_backplate.png",
+      "rgba": true,
+      "transparent_pixels": 192016,
+      "visible_magenta_pixels": 0,
+      "sha256": "8a731fb2d220d04033214023e1c61875bf5a31d92ab9ef76b03e5a50ac2adbd0"
+    },
+    {
+      "file": "cards/battle_inspiration/10_art_background.png",
+      "rgba": true,
+      "transparent_pixels": 531968,
+      "visible_magenta_pixels": 0,
+      "sha256": "c2bb7dfc0e7e8d736fa65ae88490a57ed6f9ca6d2c5540cbbb272170e5937003"
+    },
+    {
+      "file": "cards/battle_inspiration/20_art_subject.png",
+      "rgba": true,
+      "transparent_pixels": 697701,
+      "visible_magenta_pixels": 0,
+      "sha256": "3ca5c9d60b5e0dc1a52dfa207fbbdc8f3928166894c40d5c15d402ec329d8a34"
+    },
+    {
+      "file": "cards/battle_inspiration/30_art_border.png",
+      "rgba": true,
+      "transparent_pixels": 703001,
+      "visible_magenta_pixels": 0,
+      "sha256": "7ce9fd82547514f11c430f888a26b38ef7541b386ec6e5ab71ac2594d55da362"
+    },
+    {
+      "file": "cards/battle_inspiration/40_outer_frame.png",
+      "rgba": true,
+      "transparent_pixels": 558719,
+      "visible_magenta_pixels": 0,
+      "sha256": "aecf95f2d949b2528bc2d6d1fd303a392ae28c63fbaa31c695325a4cc544e1b9"
+    },
+    {
+      "file": "cards/battle_inspiration/50_title_plate.png",
+      "rgba": true,
+      "transparent_pixels": 731076,
+      "visible_magenta_pixels": 0,
+      "sha256": "41696fdb9b0a5e9c2715119bf74af22b6c4abb95040b0f0843028cbf30d63e32"
+    },
+    {
+      "file": "cards/battle_inspiration/60_description_plate.png",
+      "rgba": true,
+      "transparent_pixels": 661732,
+      "visible_magenta_pixels": 0,
+      "sha256": "973f3e4fc074256b6a0a127b6b1f3d07ef20d1c931b8e4a4f8c42cc8dd667d4d"
+    },
+    {
+      "file": "cards/battle_inspiration/70_cost_badge.png",
+      "rgba": true,
+      "transparent_pixels": 772126,
+      "visible_magenta_pixels": 0,
+      "sha256": "239b7e7166f90c12c37563d414192f458a082591fb18bf6e53751f1a74ccf3bc"
+    },
+    {
+      "file": "cards/battle_inspiration/preview.png",
+      "rgba": true,
+      "transparent_pixels": 59434,
+      "visible_magenta_pixels": 0,
+      "sha256": "6ddeafd6724244980c2bdf49be0dcc3857e0964d2d37f8d65fa857aa47010070"
+    },
+    {
+      "file": "ui_layers/crown_badge/00_crown_backplate.png",
+      "rgba": true,
+      "transparent_pixels": 50347,
+      "visible_magenta_pixels": 0,
+      "sha256": "58c6536bc4c3ec030aecd4c26ea786da1aae40be5c1a79ef79b01aa47d5386b4"
+    },
+    {
+      "file": "ui_layers/crown_badge/01_crown.png",
+      "rgba": true,
+      "transparent_pixels": 169816,
+      "visible_magenta_pixels": 0,
+      "sha256": "5647eb97d7c9bb86d22a8a589a19ac34b70056bcbf1a1b93babdb0a8321a82d3"
+    },
+    {
+      "file": "ui_layers/crown_badge/preview.png",
+      "rgba": true,
+      "transparent_pixels": 50347,
+      "visible_magenta_pixels": 0,
+      "sha256": "66f07cb415eb87cd29dd16e7824957f53fe413eb06563234625db53d394d23a0"
+    },
+    {
+      "file": "ui_layers/health_panel/00_stat_panel.png",
+      "rgba": true,
+      "transparent_pixels": 41861,
+      "visible_magenta_pixels": 0,
+      "sha256": "cc2d454bbcbe6c7d385d16b562be3270f57ae4261cdc636f1235313824d9a57c"
+    },
+    {
+      "file": "ui_layers/health_panel/01_heart.png",
+      "rgba": true,
+      "transparent_pixels": 149971,
+      "visible_magenta_pixels": 0,
+      "sha256": "3b6efb9ae9f45df1515621789624ea3bb80995b94f715ad136a0675ab14b03dd"
+    },
+    {
+      "file": "ui_layers/health_panel/preview.png",
+      "rgba": true,
+      "transparent_pixels": 41861,
+      "visible_magenta_pixels": 0,
+      "sha256": "7f5185a6ca26bc0ae92932c398cb68a927249e6daead960c31bd8ffe6c732c82"
+    },
+    {
+      "file": "ui_layers/gold_panel/00_stat_panel.png",
+      "rgba": true,
+      "transparent_pixels": 41861,
+      "visible_magenta_pixels": 0,
+      "sha256": "cc2d454bbcbe6c7d385d16b562be3270f57ae4261cdc636f1235313824d9a57c"
+    },
+    {
+      "file": "ui_layers/gold_panel/01_gold_coin.png",
+      "rgba": true,
+      "transparent_pixels": 144268,
+      "visible_magenta_pixels": 0,
+      "sha256": "e2135aed4493ac29dcc7c1a2b90bc044f2e048fe40de2caaf433dcaa3224cd44"
+    },
+    {
+      "file": "ui_layers/gold_panel/preview.png",
+      "rgba": true,
+      "transparent_pixels": 41581,
+      "visible_magenta_pixels": 0,
+      "sha256": "65b8bade5e448d44b27b6481f096f9f7113152b561dcc436a29ef8bb46647f7b"
+    },
+    {
+      "file": "ui_layers/equipment_panel/00_stat_panel.png",
+      "rgba": true,
+      "transparent_pixels": 41861,
+      "visible_magenta_pixels": 0,
+      "sha256": "cc2d454bbcbe6c7d385d16b562be3270f57ae4261cdc636f1235313824d9a57c"
+    },
+    {
+      "file": "ui_layers/equipment_panel/01_equipment_sword.png",
+      "rgba": true,
+      "transparent_pixels": 157588,
+      "visible_magenta_pixels": 0,
+      "sha256": "e1474839ec295c50b01182d672ccf46115893b335ba6356160ad7e4f575e3691"
+    },
+    {
+      "file": "ui_layers/equipment_panel/02_equipment_armor.png",
+      "rgba": true,
+      "transparent_pixels": 142180,
+      "visible_magenta_pixels": 0,
+      "sha256": "cf093063c9704afb7d70d8391b00c412311e2d09254b4465da381475d1a70e96"
+    },
+    {
+      "file": "ui_layers/equipment_panel/03_equipment_potion.png",
+      "rgba": true,
+      "transparent_pixels": 161257,
+      "visible_magenta_pixels": 0,
+      "sha256": "81c99e428b48ff1a6d7f6df438a5436bc81b75e9c66396865509ff96d2d3bb4d"
+    },
+    {
+      "file": "ui_layers/equipment_panel/preview.png",
+      "rgba": true,
+      "transparent_pixels": 40156,
+      "visible_magenta_pixels": 0,
+      "sha256": "c8b18df7c3d112f82c53ce60928cb4e4bb5604ba370335b3222c2ed351ecd957"
+    },
+    {
+      "file": "ui_layers/phase_panel/00_phase_panel.png",
+      "rgba": true,
+      "transparent_pixels": 41861,
+      "visible_magenta_pixels": 0,
+      "sha256": "cc2d454bbcbe6c7d385d16b562be3270f57ae4261cdc636f1235313824d9a57c"
+    },
+    {
+      "file": "ui_layers/phase_panel/01_crossed_swords.png",
+      "rgba": true,
+      "transparent_pixels": 157295,
+      "visible_magenta_pixels": 0,
+      "sha256": "d69eb62eb8b380d1a91287343b34600bdead8f0b8fc36741ffd4d98a958041e0"
+    },
+    {
+      "file": "ui_layers/phase_panel/preview.png",
+      "rgba": true,
+      "transparent_pixels": 41861,
+      "visible_magenta_pixels": 0,
+      "sha256": "5feaceca3195761a627b69f915b61926e5d2d6ea791b6241880daede9605304e"
+    },
+    {
+      "file": "ui_layers/start_button/00_gold_button.png",
+      "rgba": true,
+      "transparent_pixels": 93090,
+      "visible_magenta_pixels": 0,
+      "sha256": "c8d526ee85a0834290068a748f3fa68ec8ef26c614c14147e9938af02a9d1ab1"
+    },
+    {
+      "file": "ui_layers/start_button/01_crossed_swords.png",
+      "rgba": true,
+      "transparent_pixels": 350865,
+      "visible_magenta_pixels": 0,
+      "sha256": "9552155f4fbbbdaf1e9209136fe9ee3a518f6048ddd0a3d62eab79c9a9b3e060"
+    },
+    {
+      "file": "ui_layers/start_button/preview.png",
+      "rgba": true,
+      "transparent_pixels": 93090,
+      "visible_magenta_pixels": 0,
+      "sha256": "bf0616c37ae20538037dd3a400ea7174335f317460402d9f761521e7f00b9069"
+    },
+    {
+      "file": "ui_layers/battle_control/00_battle_control_panel.png",
+      "rgba": true,
+      "transparent_pixels": 93776,
+      "visible_magenta_pixels": 0,
+      "sha256": "37af351ed9126afa677410bb7d9f153322f23d1cac012cb8dfaa11b16157ca73"
+    },
+    {
+      "file": "ui_layers/battle_control/01_speed_button_blank.png",
+      "rgba": true,
+      "transparent_pixels": 401711,
+      "visible_magenta_pixels": 0,
+      "sha256": "8df455bb7db1dce6a23960050b8555e6018060e9f28dcc33ba5bb5ff24fc5d1f"
+    },
+    {
+      "file": "ui_layers/battle_control/02_speed_button_blank.png",
+      "rgba": true,
+      "transparent_pixels": 401711,
+      "visible_magenta_pixels": 0,
+      "sha256": "1603df5f97800812f3094cdd212ed723352bfe8aa6f3b2294742d26e84bd1538"
+    },
+    {
+      "file": "ui_layers/battle_control/03_speed_button_blank.png",
+      "rgba": true,
+      "transparent_pixels": 401711,
+      "visible_magenta_pixels": 0,
+      "sha256": "4cb5537daceebf462ff905b3d2fc72737d13848b325dcd3645aab7a657551855"
+    },
+    {
+      "file": "ui_layers/battle_control/04_pause_symbol.png",
+      "rgba": true,
+      "transparent_pixels": 435900,
+      "visible_magenta_pixels": 0,
+      "sha256": "882943e8ed0c31f70ccc3625011ea152f77b2119d3195f54a0d63e65be1d2f1b"
+    },
+    {
+      "file": "ui_layers/battle_control/05_selected_border.png",
+      "rgba": true,
+      "transparent_pixels": 425999,
+      "visible_magenta_pixels": 0,
+      "sha256": "b3a4c8ad466464136e9a828383cc4037e794ec7bc5ebd373f29b0a02c85ac9f5"
+    },
+    {
+      "file": "ui_layers/battle_control/06_auto_row_blank.png",
+      "rgba": true,
+      "transparent_pixels": 362420,
+      "visible_magenta_pixels": 0,
+      "sha256": "7e77172c8ffbb20e95ed37e0e15b64130d913e21826e0d530089a885b5eff5d4"
+    },
+    {
+      "file": "ui_layers/battle_control/07_toggle_track.png",
+      "rgba": true,
+      "transparent_pixels": 423266,
+      "visible_magenta_pixels": 0,
+      "sha256": "4cecd4b14ce17805f3b526d736987e89825627b3eefe4a35dad4adf5d5701d2c"
+    },
+    {
+      "file": "ui_layers/battle_control/08_toggle_knob.png",
+      "rgba": true,
+      "transparent_pixels": 433848,
+      "visible_magenta_pixels": 0,
+      "sha256": "830be5700b9184086631644c93ca74ea41dca3d632bdd812fdd071eedeef3993"
+    },
+    {
+      "file": "ui_layers/battle_control/preview.png",
+      "rgba": true,
+      "transparent_pixels": 93776,
+      "visible_magenta_pixels": 0,
+      "sha256": "4c76ad667f48da68b82d40e7c7f809e09865e08480939800cc6bafa46c237662"
+    },
+    {
+      "file": "ui_layers/energy/00_00_core.png",
+      "rgba": true,
+      "transparent_pixels": 150531,
+      "visible_magenta_pixels": 0,
+      "sha256": "602f5215e92651f2147d05f452c8070ae0c9d3a8d5f583f558a2e60fecd24fb2"
+    },
+    {
+      "file": "ui_layers/energy/01_10_rim.png",
+      "rgba": true,
+      "transparent_pixels": 192021,
+      "visible_magenta_pixels": 0,
+      "sha256": "92bf24346ba4914e0b56c202a3dbe8dafbab91e1a47011ffd788be6cc79b3ddd"
+    },
+    {
+      "file": "ui_layers/energy/preview.png",
+      "rgba": true,
+      "transparent_pixels": 119728,
+      "visible_magenta_pixels": 0,
+      "sha256": "08e8ad89ff8211ac81f29317c3da8e732c556db045c65f88eaf0d5dc38650e6f"
+    },
+    {
+      "file": "ui_layers/health_bar/00_00_empty_bar.png",
+      "rgba": true,
+      "transparent_pixels": 83554,
+      "visible_magenta_pixels": 0,
+      "sha256": "9ce82eba0943509fe8197f7215c9897c877d7a6a69535bf07ba7151604c88ddb"
+    },
+    {
+      "file": "ui_layers/health_bar/01_10_fill.png",
+      "rgba": true,
+      "transparent_pixels": 90769,
+      "visible_magenta_pixels": 0,
+      "sha256": "1f31237c0b1d93b8448ffea8635233611cc11aa3cd6429d6095df07127ef8e7e"
+    },
+    {
+      "file": "ui_layers/health_bar/02_20_border.png",
+      "rgba": true,
+      "transparent_pixels": 91089,
+      "visible_magenta_pixels": 0,
+      "sha256": "c6f914fe130e06ce1c2e924cfc82800ddab5b4c72f075b26b2ac41963bf3008b"
+    },
+    {
+      "file": "ui_layers/health_bar/preview.png",
+      "rgba": true,
+      "transparent_pixels": 83554,
+      "visible_magenta_pixels": 0,
+      "sha256": "4afd2b5a198b458f563a82a008ea5ca9862afaf99aa82ce9a9827f5424a1334a"
+    },
+    {
+      "file": "ui_layers/map_button/00_navigation_button.png",
+      "rgba": true,
+      "transparent_pixels": 28855,
+      "visible_magenta_pixels": 0,
+      "sha256": "c5bb02dd6bb8bafcca0250c16a24b3a85ef7c983a0e29197e38aeeba447458c8"
+    },
+    {
+      "file": "ui_layers/map_button/01_map.png",
+      "rgba": true,
+      "transparent_pixels": 92659,
+      "visible_magenta_pixels": 0,
+      "sha256": "94925b6c56b26af2b62eb657adc3ce1b74843ad0de00c298d520947865649b90"
+    },
+    {
+      "file": "ui_layers/map_button/preview.png",
+      "rgba": true,
+      "transparent_pixels": 28843,
+      "visible_magenta_pixels": 0,
+      "sha256": "a1363f504e05ab92f71f0afdda223993ee6b18819707677b2a2ba9671c8ffe1f"
+    },
+    {
+      "file": "ui_layers/deck_button/00_navigation_button.png",
+      "rgba": true,
+      "transparent_pixels": 28855,
+      "visible_magenta_pixels": 0,
+      "sha256": "c5bb02dd6bb8bafcca0250c16a24b3a85ef7c983a0e29197e38aeeba447458c8"
+    },
+    {
+      "file": "ui_layers/deck_button/01_deck_book.png",
+      "rgba": true,
+      "transparent_pixels": 92310,
+      "visible_magenta_pixels": 0,
+      "sha256": "49693568ed835262e5113ead228668c77b7b1d619a900decac4ac5698c22a89d"
+    },
+    {
+      "file": "ui_layers/deck_button/preview.png",
+      "rgba": true,
+      "transparent_pixels": 28855,
+      "visible_magenta_pixels": 0,
+      "sha256": "9ea0c5a3782fb0164b5b3df3ea30b47ca895019b8b0a94b08e67cb1bddcd8775"
+    },
+    {
+      "file": "ui_layers/settings_button/00_navigation_button.png",
+      "rgba": true,
+      "transparent_pixels": 28855,
+      "visible_magenta_pixels": 0,
+      "sha256": "c5bb02dd6bb8bafcca0250c16a24b3a85ef7c983a0e29197e38aeeba447458c8"
+    },
+    {
+      "file": "ui_layers/settings_button/01_gear.png",
+      "rgba": true,
+      "transparent_pixels": 99086,
+      "visible_magenta_pixels": 0,
+      "sha256": "fe7dd114740e69fabdf5f1a14a93ccc4bef6de40790ca67580cb0803f211cd63"
+    },
+    {
+      "file": "ui_layers/settings_button/preview.png",
+      "rgba": true,
+      "transparent_pixels": 28855,
+      "visible_magenta_pixels": 0,
+      "sha256": "1721743200227da90c8ded8470982b1b834438fafa0ac62220e59b9929b0bafe"
+    },
+    {
+      "file": "ui_layers/draw_pile/00_pile_backplate.png",
+      "rgba": true,
+      "transparent_pixels": 157409,
+      "visible_magenta_pixels": 0,
+      "sha256": "b7fb73e2840b42c1d1710ceb17810f80df785f9144a6c6874a7edec75bd51422"
+    },
+    {
+      "file": "ui_layers/draw_pile/01_draw_book.png",
+      "rgba": true,
+      "transparent_pixels": 166191,
+      "visible_magenta_pixels": 0,
+      "sha256": "660242d5c5ec754db6b09014b8d6f4b67aeecc46d3fc2fc3935384427784fad0"
+    },
+    {
+      "file": "ui_layers/draw_pile/02_counter_red.png",
+      "rgba": true,
+      "transparent_pixels": 253903,
+      "visible_magenta_pixels": 0,
+      "sha256": "e23cf692b1b1a02537c33f6cdf4f558195501ebacecf4951fb8dd3c2613052cb"
+    },
+    {
+      "file": "ui_layers/draw_pile/preview.png",
+      "rgba": true,
+      "transparent_pixels": 86674,
+      "visible_magenta_pixels": 0,
+      "sha256": "babf4fd083ca8291cb40d0c2602e481f03ac166f2e3e6121026b10054e6d54f0"
+    },
+    {
+      "file": "ui_layers/discard_pile/00_pile_backplate.png",
+      "rgba": true,
+      "transparent_pixels": 157409,
+      "visible_magenta_pixels": 0,
+      "sha256": "b7fb73e2840b42c1d1710ceb17810f80df785f9144a6c6874a7edec75bd51422"
+    },
+    {
+      "file": "ui_layers/discard_pile/01_discard_book.png",
+      "rgba": true,
+      "transparent_pixels": 167628,
+      "visible_magenta_pixels": 0,
+      "sha256": "f268931eaa64b22e0152028db4be5b599ec2dfd8db6555071231d8ce72a88bda"
+    },
+    {
+      "file": "ui_layers/discard_pile/02_counter_red.png",
+      "rgba": true,
+      "transparent_pixels": 253903,
+      "visible_magenta_pixels": 0,
+      "sha256": "e23cf692b1b1a02537c33f6cdf4f558195501ebacecf4951fb8dd3c2613052cb"
+    },
+    {
+      "file": "ui_layers/discard_pile/preview.png",
+      "rgba": true,
+      "transparent_pixels": 87293,
+      "visible_magenta_pixels": 0,
+      "sha256": "f384f28d3ccc38158a91cf0f7a3c70f33e901a94287c6e36ff946218c1ce0e96"
+    }
+  ]
+}

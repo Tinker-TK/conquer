@@ -1,0 +1,12 @@
+[gd_resource type="Resource" format=3 uid="uid://b1u2shp86uuvj"]
+
+[ext_resource type="Script" uid="uid://l5slg1wgnhew" path="res://scripts/skills/normal_attack.gd" id="skill"]
+
+[resource]
+script = ExtResource("skill")
+is_basic_attack = true
+description = "挥舞火把旋转两次，分别在前后两段挥击命中；整套动作共用一次冷却。"
+cooldown = 1.1
+cast_range = 90.0
+hit_frame = Array[int]([2, 5])
+combat_sound_profile = "fire"

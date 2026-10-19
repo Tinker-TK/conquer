@@ -1,0 +1,22 @@
+[gd_resource type="Resource" script_class="PotionDefinition" load_steps=4 format=3]
+
+[ext_resource type="Script" path="res://data/potions/potion_definition.gd" id="1"]
+[ext_resource type="Texture2D" path="res://assets/ui/potions/thunder_cloud.svg" id="2"]
+[ext_resource type="PackedScene" path="res://scenes/effects/pixel_thunder_cloud.tscn" id="3"]
+
+[resource]
+script = ExtResource("1")
+description = "在场上制造一个雷云，雷云会持续攻击场上的敌人，持续3回合"
+id = &"thunder_cloud"
+display_name = "雷云药水"
+kind = 3
+damage = 6
+radius = 85.0
+interval = 0.4
+rounds = 3
+icon = ExtResource("2")
+effect_scene = ExtResource("3")
+rarity = 2
+price = 110
+min_act = 2
+tags = Array[StringName]([&"爆发"])

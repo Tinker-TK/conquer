@@ -1,0 +1,474 @@
+[
+  {
+    "file": "hud/top_status_bar.png",
+    "x": 0,
+    "y": 0,
+    "width": 1672,
+    "height": 80,
+    "note": "原图矩形切片，保留背景及烘焙文字"
+  },
+  {
+    "file": "hud/crown_badge.png",
+    "x": 20,
+    "y": 0,
+    "width": 99,
+    "height": 82,
+    "note": "原图矩形切片，保留背景及烘焙文字"
+  },
+  {
+    "file": "hud/health_panel.png",
+    "x": 127,
+    "y": 7,
+    "width": 195,
+    "height": 61,
+    "note": "原图矩形切片，保留背景及烘焙文字"
+  },
+  {
+    "file": "hud/gold_panel.png",
+    "x": 332,
+    "y": 10,
+    "width": 123,
+    "height": 57,
+    "note": "原图矩形切片，保留背景及烘焙文字"
+  },
+  {
+    "file": "hud/equipment_panel.png",
+    "x": 468,
+    "y": 8,
+    "width": 211,
+    "height": 59,
+    "note": "原图矩形切片，保留背景及烘焙文字"
+  },
+  {
+    "file": "hud/chapter_banner.png",
+    "x": 689,
+    "y": 6,
+    "width": 308,
+    "height": 64,
+    "note": "原图矩形切片，保留背景及烘焙文字"
+  },
+  {
+    "file": "hud/map_button.png",
+    "x": 1294,
+    "y": 7,
+    "width": 133,
+    "height": 55,
+    "note": "原图矩形切片，保留背景及烘焙文字"
+  },
+  {
+    "file": "hud/deck_button.png",
+    "x": 1426,
+    "y": 8,
+    "width": 119,
+    "height": 55,
+    "note": "原图矩形切片，保留背景及烘焙文字"
+  },
+  {
+    "file": "hud/settings_button.png",
+    "x": 1547,
+    "y": 9,
+    "width": 118,
+    "height": 55,
+    "note": "原图矩形切片，保留背景及烘焙文字"
+  },
+  {
+    "file": "hud/preparation_badge.png",
+    "x": 730,
+    "y": 79,
+    "width": 214,
+    "height": 55,
+    "note": "原图矩形切片，保留背景及烘焙文字"
+  },
+  {
+    "file": "icons/heart.png",
+    "x": 137,
+    "y": 15,
+    "width": 56,
+    "height": 45,
+    "note": "原图矩形切片，保留背景及烘焙文字"
+  },
+  {
+    "file": "icons/gold_coin.png",
+    "x": 338,
+    "y": 15,
+    "width": 44,
+    "height": 46,
+    "note": "原图矩形切片，保留背景及烘焙文字"
+  },
+  {
+    "file": "icons/equipment_sword.png",
+    "x": 482,
+    "y": 13,
+    "width": 49,
+    "height": 48,
+    "note": "原图矩形切片，保留背景及烘焙文字"
+  },
+  {
+    "file": "icons/equipment_armor.png",
+    "x": 548,
+    "y": 15,
+    "width": 47,
+    "height": 47,
+    "note": "原图矩形切片，保留背景及烘焙文字"
+  },
+  {
+    "file": "icons/equipment_potion.png",
+    "x": 620,
+    "y": 14,
+    "width": 36,
+    "height": 48,
+    "note": "原图矩形切片，保留背景及烘焙文字"
+  },
+  {
+    "file": "icons/relic_leaf.png",
+    "x": 69,
+    "y": 80,
+    "width": 54,
+    "height": 53,
+    "note": "原图矩形切片，保留背景及烘焙文字"
+  },
+  {
+    "file": "icons/relic_boot.png",
+    "x": 133,
+    "y": 81,
+    "width": 49,
+    "height": 51,
+    "note": "原图矩形切片，保留背景及烘焙文字"
+  },
+  {
+    "file": "icons/relic_crystal.png",
+    "x": 200,
+    "y": 80,
+    "width": 45,
+    "height": 54,
+    "note": "原图矩形切片，保留背景及烘焙文字"
+  },
+  {
+    "file": "icons/relic_mushroom.png",
+    "x": 258,
+    "y": 81,
+    "width": 52,
+    "height": 54,
+    "note": "原图矩形切片，保留背景及烘焙文字"
+  },
+  {
+    "file": "icons/relic_ring.png",
+    "x": 324,
+    "y": 81,
+    "width": 47,
+    "height": 55,
+    "note": "原图矩形切片，保留背景及烘焙文字"
+  },
+  {
+    "file": "icons/relic_clover.png",
+    "x": 383,
+    "y": 81,
+    "width": 49,
+    "height": 54,
+    "note": "原图矩形切片，保留背景及烘焙文字"
+  },
+  {
+    "file": "controls/battle_control_panel.png",
+    "x": 1384,
+    "y": 617,
+    "width": 250,
+    "height": 112,
+    "note": "原图矩形切片，保留背景及烘焙文字"
+  },
+  {
+    "file": "controls/pause_button.png",
+    "x": 1402,
+    "y": 635,
+    "width": 64,
+    "height": 47,
+    "note": "原图矩形切片，保留背景及烘焙文字"
+  },
+  {
+    "file": "controls/speed_1x_selected.png",
+    "x": 1468,
+    "y": 632,
+    "width": 88,
+    "height": 54,
+    "note": "原图矩形切片，保留背景及烘焙文字"
+  },
+  {
+    "file": "controls/speed_2x_button.png",
+    "x": 1558,
+    "y": 636,
+    "width": 60,
+    "height": 45,
+    "note": "原图矩形切片，保留背景及烘焙文字"
+  },
+  {
+    "file": "controls/auto_battle_row.png",
+    "x": 1423,
+    "y": 686,
+    "width": 174,
+    "height": 32,
+    "note": "原图矩形切片，保留背景及烘焙文字"
+  },
+  {
+    "file": "controls/auto_battle_toggle.png",
+    "x": 1537,
+    "y": 688,
+    "width": 44,
+    "height": 28,
+    "note": "原图矩形切片，保留背景及烘焙文字"
+  },
+  {
+    "file": "controls/start_battle_button.png",
+    "x": 1386,
+    "y": 730,
+    "width": 248,
+    "height": 90,
+    "note": "原图矩形切片，保留背景及烘焙文字"
+  },
+  {
+    "file": "units/knight.png",
+    "x": 315,
+    "y": 269,
+    "width": 119,
+    "height": 102,
+    "note": "原图矩形切片，保留背景及烘焙文字"
+  },
+  {
+    "file": "units/archer.png",
+    "x": 539,
+    "y": 337,
+    "width": 97,
+    "height": 88,
+    "note": "原图矩形切片，保留背景及烘焙文字"
+  },
+  {
+    "file": "units/priest.png",
+    "x": 397,
+    "y": 455,
+    "width": 108,
+    "height": 104,
+    "note": "原图矩形切片，保留背景及烘焙文字"
+  },
+  {
+    "file": "units/goblin_left.png",
+    "x": 1183,
+    "y": 329,
+    "width": 88,
+    "height": 70,
+    "note": "原图矩形切片，保留背景及烘焙文字"
+  },
+  {
+    "file": "units/goblin_right.png",
+    "x": 1353,
+    "y": 329,
+    "width": 85,
+    "height": 70,
+    "note": "原图矩形切片，保留背景及烘焙文字"
+  },
+  {
+    "file": "units/goblin_bottom_left.png",
+    "x": 1201,
+    "y": 481,
+    "width": 87,
+    "height": 69,
+    "note": "原图矩形切片，保留背景及烘焙文字"
+  },
+  {
+    "file": "units/goblin_bottom_right.png",
+    "x": 1357,
+    "y": 481,
+    "width": 86,
+    "height": 69,
+    "note": "原图矩形切片，保留背景及烘焙文字"
+  },
+  {
+    "file": "unit_hud/knight_health_bar.png",
+    "x": 302,
+    "y": 373,
+    "width": 122,
+    "height": 19,
+    "note": "原图矩形切片，保留背景及烘焙文字"
+  },
+  {
+    "file": "unit_hud/archer_health_bar.png",
+    "x": 523,
+    "y": 428,
+    "width": 116,
+    "height": 22,
+    "note": "原图矩形切片，保留背景及烘焙文字"
+  },
+  {
+    "file": "unit_hud/priest_health_bar.png",
+    "x": 383,
+    "y": 565,
+    "width": 116,
+    "height": 20,
+    "note": "原图矩形切片，保留背景及烘焙文字"
+  },
+  {
+    "file": "unit_hud/goblin_health_bar.png",
+    "x": 1183,
+    "y": 402,
+    "width": 114,
+    "height": 20,
+    "note": "原图矩形切片，保留背景及烘焙文字"
+  },
+  {
+    "file": "unit_hud/attack_icon.png",
+    "x": 304,
+    "y": 396,
+    "width": 33,
+    "height": 31,
+    "note": "原图矩形切片，保留背景及烘焙文字"
+  },
+  {
+    "file": "unit_hud/shield_icon.png",
+    "x": 374,
+    "y": 396,
+    "width": 29,
+    "height": 30,
+    "note": "原图矩形切片，保留背景及烘焙文字"
+  },
+  {
+    "file": "unit_hud/tree_status_icon.png",
+    "x": 592,
+    "y": 451,
+    "width": 31,
+    "height": 33,
+    "note": "原图矩形切片，保留背景及烘焙文字"
+  },
+  {
+    "file": "unit_hud/healing_status_icon.png",
+    "x": 451,
+    "y": 588,
+    "width": 33,
+    "height": 32,
+    "note": "原图矩形切片，保留背景及烘焙文字"
+  },
+  {
+    "file": "unit_hud/skull_status_icon.png",
+    "x": 1266,
+    "y": 573,
+    "width": 33,
+    "height": 31,
+    "note": "原图矩形切片，保留背景及烘焙文字"
+  },
+  {
+    "file": "unit_hud/knight_stats_row.png",
+    "x": 303,
+    "y": 395,
+    "width": 118,
+    "height": 33,
+    "note": "原图矩形切片，保留背景及烘焙文字"
+  },
+  {
+    "file": "unit_hud/enemy_stats_row.png",
+    "x": 1351,
+    "y": 425,
+    "width": 116,
+    "height": 31,
+    "note": "原图矩形切片，保留背景及烘焙文字"
+  },
+  {
+    "file": "cards/card_summon_guard.png",
+    "x": 360,
+    "y": 703,
+    "width": 222,
+    "height": 238,
+    "note": "原图切片；旋转、重叠及画面边缘截断未修复"
+  },
+  {
+    "file": "cards/card_hold_position.png",
+    "x": 552,
+    "y": 693,
+    "width": 194,
+    "height": 248,
+    "note": "原图切片；旋转、重叠及画面边缘截断未修复"
+  },
+  {
+    "file": "cards/card_fireball.png",
+    "x": 730,
+    "y": 676,
+    "width": 210,
+    "height": 265,
+    "note": "原图切片；旋转、重叠及画面边缘截断未修复"
+  },
+  {
+    "file": "cards/card_battlefield_heal.png",
+    "x": 913,
+    "y": 690,
+    "width": 208,
+    "height": 251,
+    "note": "原图切片；旋转、重叠及画面边缘截断未修复"
+  },
+  {
+    "file": "cards/card_battle_inspiration.png",
+    "x": 1096,
+    "y": 704,
+    "width": 211,
+    "height": 237,
+    "note": "原图切片；旋转、重叠及画面边缘截断未修复"
+  },
+  {
+    "file": "card_art/art_summon_guard.png",
+    "x": 393,
+    "y": 748,
+    "width": 163,
+    "height": 134,
+    "note": "倾斜卡画的外接矩形，含边框或卡底"
+  },
+  {
+    "file": "card_art/art_hold_position.png",
+    "x": 578,
+    "y": 737,
+    "width": 153,
+    "height": 129,
+    "note": "倾斜卡画的外接矩形，含边框或卡底"
+  },
+  {
+    "file": "card_art/art_fireball.png",
+    "x": 752,
+    "y": 730,
+    "width": 165,
+    "height": 123,
+    "note": "倾斜卡画的外接矩形，含边框或卡底"
+  },
+  {
+    "file": "card_art/art_battlefield_heal.png",
+    "x": 936,
+    "y": 744,
+    "width": 160,
+    "height": 132,
+    "note": "倾斜卡画的外接矩形，含边框或卡底"
+  },
+  {
+    "file": "card_art/art_battle_inspiration.png",
+    "x": 1125,
+    "y": 758,
+    "width": 159,
+    "height": 132,
+    "note": "倾斜卡画的外接矩形，含边框或卡底"
+  },
+  {
+    "file": "energy/energy_orb_3_of_3.png",
+    "x": 41,
+    "y": 688,
+    "width": 150,
+    "height": 142,
+    "note": "原图矩形切片，保留背景及烘焙文字"
+  },
+  {
+    "file": "piles/draw_pile_with_count.png",
+    "x": 0,
+    "y": 830,
+    "width": 160,
+    "height": 111,
+    "note": "原图矩形切片，保留背景及烘焙文字"
+  },
+  {
+    "file": "piles/discard_pile_with_count.png",
+    "x": 1507,
+    "y": 829,
+    "width": 165,
+    "height": 112,
+    "note": "原图矩形切片，保留背景及烘焙文字"
+  }
+]

@@ -1,0 +1,34 @@
+[gd_scene format=3 uid="uid://dw0gb5mgdr6np"]
+
+[ext_resource type="Script" uid="uid://kpq8ia3fly1k" path="res://scripts/world/tree.gd" id="1_ydu6b"]
+[ext_resource type="Texture2D" uid="uid://drq4ipn6bn1hj" path="res://assets/tilemap/building/Blue Buildings/Archery.png" id="2_3cbts"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_avsvi"]
+size = Vector2(162, 103.25)
+
+[node name="Tree" type="StaticBody2D" unique_id=34525680]
+y_sort_enabled = true
+scale = Vector2(2, 2)
+collision_layer = 4
+collision_mask = 3
+script = ExtResource("1_ydu6b")
+
+[node name="Sprite2D" type="Sprite2D" parent="." unique_id=600345752]
+texture = ExtResource("2_3cbts")
+offset = Vector2(0, -80)
+
+[node name="TransparentCheck" type="Area2D" parent="." unique_id=1358125869]
+light_mask = 0
+visibility_layer = 0
+collision_layer = 0
+collision_mask = 3
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="TransparentCheck" unique_id=1336505211]
+position = Vector2(1, -95.375)
+shape = SubResource("RectangleShape2D_avsvi")
+
+[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="." unique_id=1788546258]
+polygon = PackedVector2Array(-80, 16, -49, 17, -49, 24, -89, 24, -79, -55, -61, -95, 59, -100, 72, 21, -14, 24, -14, 16, 17, 17, 11, -48, -73, -45)
+
+[connection signal="body_entered" from="TransparentCheck" to="." method="_on_transparent_check_body_entered"]
+[connection signal="body_exited" from="TransparentCheck" to="." method="_on_transparent_check_body_exited"]

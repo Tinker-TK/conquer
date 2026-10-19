@@ -1,0 +1,20 @@
+[gd_resource type="Resource" script_class="RelicDefinition" format=3]
+
+[ext_resource type="Script" path="res://data/relics/relic_definition.gd" id="1"]
+[ext_resource type="Texture2D" path="res://assets/ui_redrawn/icons/relic_clover.png" id="2"]
+
+[resource]
+script = ExtResource("1")
+id = &"coin_purse"
+display_name = "旅者钱袋"
+description = "+10 金币。"
+icon = ExtResource("2")
+kind = 5
+rarity = 0
+tags = Array[StringName]([&"economy"])
+trigger = 18
+handler = &"coin_purse"
+max_per_battle = 1
+max_per_round = 0
+cooldown_seconds = 0.0
+priority = 0

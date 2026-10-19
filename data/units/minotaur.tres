@@ -1,0 +1,19 @@
+[gd_resource type="Resource" script_class="UnitData" format=3 uid="uid://bendx5a13otih"]
+
+[ext_resource type="Resource" path="res://data/skills/minotaur_attack.tres" id="attack"]
+[ext_resource type="Script" uid="uid://2m1qlskaxcox" path="res://data/units/unit_data.gd" id="data"]
+[ext_resource type="Script" uid="uid://c4huhq7re2216" path="res://data/skills/skill_base.gd" id="skill_base"]
+
+[resource]
+script = ExtResource("data")
+unit_name = "牛头人"
+unit_english_name = "minotaur"
+unit_type = 31
+unit_team = "team_b"
+max_hp = 260
+defence = 6
+attack = 22
+speed = 100.0
+max_upgrade_count = 0
+skills = Array[ExtResource("skill_base")]([ExtResource("attack")])
+combat_sound_profile = &"monster"

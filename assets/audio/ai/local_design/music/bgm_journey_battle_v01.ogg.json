@@ -1,0 +1,41 @@
+{
+  "path": "res://assets/audio/ai/local_design/music/bgm_journey_battle_v01.ogg",
+  "asset": "bgm_journey_battle_v01",
+  "title": "征途主题 · 战斗",
+  "category": "music",
+  "domain": "BGM",
+  "batch": "audition_20261019",
+  "provider": "local_design",
+  "recipe": "music_battle",
+  "variant": 1,
+  "seed": 2262302689,
+  "prompt": "Instrumental medieval fantasy card tactics combat loop. 96 BPM, D minor, same D F A G four-note motif as the camp theme. Lute ostinato, low frame drum, muted wood percussion, restrained strings. Focused tactical tension, compact clear mix leaving room for weapon effects. Eight bars, no vocals, choir, modern synth, intro or final cadence. Loop-ready.",
+  "author": "项目本地声音设计（CC0 分层素材＋原创程序合成）",
+  "source": "res://tools/audio/ai/produce_audition.py",
+  "license": "CC0-1.0",
+  "source_layers": [],
+  "changes": "分层混音、确定性变体、裁剪静音、44.1kHz 单声道、短淡入淡出、峰值控制、OGG；循环保留完整小节。",
+  "notes": "本批试听 · 本地制作；BGM；可循环。",
+  "duration_seconds": 20.0,
+  "loop": true,
+  "features": {
+    "duration_seconds": 20.0,
+    "peak_dbfs": -7.53,
+    "rms_dbfs": -21.0,
+    "crest_db": 13.47,
+    "spectral_centroid_hz": 1041.4,
+    "zero_cross_rate": 0.0147,
+    "attack_ms": 10024.5,
+    "tail_ms": 3.7
+  },
+  "channels": 1,
+  "sample_rate": 44100,
+  "seam_jump": 0.0022607464343309402,
+  "sha256": "49d302b56843f863794ee31ebe7ed33b151dec759734d5a6937c7b161425967b",
+  "created_at": "2026-10-19T02:03:57+00:00",
+  "tags": [
+    "loop",
+    "dark"
+  ],
+  "problems": []
+}

@@ -1,0 +1,15 @@
+[gd_resource type="Resource" script_class="RelicDefinition" format=3 uid="uid://t0crurqxvvfe"]
+
+[ext_resource type="Script" uid="uid://be4bple3628ic" path="res://data/relics/relic_definition.gd" id="1"]
+[ext_resource type="Texture2D" uid="uid://cifgs8dnxorwi" path="res://assets/ui_redrawn/icons/relic_ring.png" id="1_yq6bm"]
+
+[resource]
+script = ExtResource("1")
+id = &"base_heart"
+display_name = "坚城之心"
+description = "本局玩家生命上限增加20，获得时回复20点生命，剩余生命跨节点保留。"
+icon = ExtResource("1_yq6bm")
+kind = 1
+amount = 20
+rarity = 0
+tags = Array[StringName]([&"neutral"])

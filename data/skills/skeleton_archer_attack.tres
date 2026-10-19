@@ -1,0 +1,11 @@
+[gd_resource type="Resource" format=3 uid="uid://cobwg3jpiqh5h"]
+
+[ext_resource type="PackedScene" uid="uid://b4lyr2f232pvh" path="res://scenes/projectiles/projectile.tscn" id="1_jjame"]
+[ext_resource type="Script" uid="uid://ba6tubwqe13nv" path="res://scripts/skills/arrow_attack.gd" id="2_vufbn"]
+
+[resource]
+script = ExtResource("2_vufbn")
+projectile_scene = ExtResource("1_jjame")
+cast_range = 600.0
+hit_frame = Array[int]([6])
+metadata/_data_table_id = 4

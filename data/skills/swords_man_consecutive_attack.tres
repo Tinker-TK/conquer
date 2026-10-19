@@ -1,0 +1,12 @@
+[gd_resource type="Resource" format=3]
+
+[ext_resource type="Script" path="res://scripts/skills/consecutive_attack.gd" id="1_passive"]
+
+[resource]
+script = ExtResource("1_passive")
+skill_name = "愈战愈勇"
+unlock_upgrade_levels = Array[int]([0, 1])
+hit_frame = Array[int]([])
+target_type = 2
+combat_sound_profile = "silent"
+attack_bonus_per_hit = 1

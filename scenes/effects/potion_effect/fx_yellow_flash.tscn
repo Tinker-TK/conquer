@@ -1,0 +1,81 @@
+[gd_scene format=3 uid="uid://c3tbobrbtk12m"]
+
+[ext_resource type="Texture2D" uid="uid://cv4gesl6mob8m" path="res://assets/effect/potion_effect/Lightning.png" id="1_fvmot"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_lai8x"]
+atlas = ExtResource("1_fvmot")
+region = Rect2(0, 0, 64, 128)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_obqtw"]
+atlas = ExtResource("1_fvmot")
+region = Rect2(64, 0, 64, 128)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_o3mm5"]
+atlas = ExtResource("1_fvmot")
+region = Rect2(192, 0, 64, 128)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_hihns"]
+atlas = ExtResource("1_fvmot")
+region = Rect2(256, 0, 64, 128)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_8021t"]
+atlas = ExtResource("1_fvmot")
+region = Rect2(320, 0, 64, 128)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_x630k"]
+atlas = ExtResource("1_fvmot")
+region = Rect2(384, 0, 64, 128)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_kuf4g"]
+atlas = ExtResource("1_fvmot")
+region = Rect2(448, 0, 64, 128)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_qgtbh"]
+atlas = ExtResource("1_fvmot")
+region = Rect2(512, 0, 64, 128)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_rwsi5"]
+atlas = ExtResource("1_fvmot")
+region = Rect2(576, 0, 64, 128)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_g8mj3"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_lai8x")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_obqtw")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_o3mm5")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_hihns")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_8021t")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_x630k")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_kuf4g")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_qgtbh")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_rwsi5")
+}],
+"loop": false,
+"name": &"vertical_flash",
+"speed": 10.0
+}]
+
+[node name="PotionEffect" type="AnimatedSprite2D" unique_id=1061785420]
+scale = Vector2(4, 4)
+sprite_frames = SubResource("SpriteFrames_g8mj3")
+animation = &"vertical_flash"
+frame_progress = 0.967588
+offset = Vector2(0, -60)

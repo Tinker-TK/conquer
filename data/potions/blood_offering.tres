@@ -1,0 +1,39 @@
+[gd_resource type="Resource" script_class="PotionDefinition" format=3]
+
+[ext_resource type="Script" path="res://data/potions/potion_definition.gd" id="1"]
+[ext_resource type="Script" path="res://data/potions/potion_effect.gd" id="2"]
+[ext_resource type="Texture2D" path="res://assets/ui/potions/blood_offering.svg" id="3"]
+
+[sub_resource type="Resource" id="Effect0"]
+script = ExtResource("2")
+kind = 23
+amount = 15.0
+
+[sub_resource type="Resource" id="Effect1"]
+script = ExtResource("2")
+kind = 7
+amount = 3.0
+
+[sub_resource type="Resource" id="Effect2"]
+script = ExtResource("2")
+kind = 6
+amount = 3.0
+
+[resource]
+script = ExtResource("1")
+id = &"blood_offering"
+display_name = "血契药剂"
+description = "支付15%最大生命（至少5点且不能致死），获得3能量并抽3张牌。"
+icon = ExtResource("3")
+kind = 4
+rarity = 2
+target_mode = 7
+tags = Array[StringName]([&"资源"])
+min_act = 2
+price = 100
+prep_usable = true
+max_per_run = 0
+radius = 85.0
+tint = Color(0.7882, 0.2941, 0.4078, 1)
+impact_vfx = ""
+effects = Array[ExtResource("2")]([SubResource("Effect0"), SubResource("Effect1"), SubResource("Effect2")])

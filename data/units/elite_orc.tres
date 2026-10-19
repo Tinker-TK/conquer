@@ -1,0 +1,22 @@
+[gd_resource type="Resource" script_class="UnitData" format=3 uid="uid://c1q5n0b0ydpin"]
+
+[ext_resource type="Script" uid="uid://2m1qlskaxcox" path="res://data/units/unit_data.gd" id="1_7jyr2"]
+[ext_resource type="Script" uid="uid://c4huhq7re2216" path="res://data/skills/skill_base.gd" id="2_h625y"]
+[ext_resource type="Resource" uid="uid://pcqb62jkedlx" path="res://data/skills/elite_orc_attack.tres" id="3_h625y"]
+[ext_resource type="Resource" uid="uid://ckwfm8evdo0ki" path="res://data/skills/elite_orc_power_attack.tres" id="4_noqft"]
+[ext_resource type="Resource" uid="uid://bcj1xv5e04wty" path="res://data/skills/elite_orc_round_attack.tres" id="5_ywrj6"]
+
+[resource]
+script = ExtResource("1_7jyr2")
+unit_name = "精英哥布林"
+unit_english_name = "elite_orc"
+unit_type = 15
+unit_team = "team_b"
+monster_rank = 1
+max_hp = 220
+defence = 4
+attack = 13
+speed = 120.0
+skills = Array[ExtResource("2_h625y")]([ExtResource("3_h625y"), ExtResource("4_noqft"), ExtResource("5_ywrj6")])
+metadata/_data_table_id = 6
+hp_damage_value = 3

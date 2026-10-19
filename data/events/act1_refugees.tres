@@ -1,0 +1,18 @@
+[gd_resource type="Resource" script_class="EventDefinition" format=3]
+
+[ext_resource type="Script" path="res://data/events/event_definition.gd" id="1"]
+[ext_resource type="Texture2D" path="res://assets/ui/events/illustrations/refugees.png" id="2"]
+
+[resource]
+script = ExtResource("1")
+id = "act1_refugees"
+title = "难民队伍"
+description = "一群难民挤在翻倒的马车旁，孩子抱着空锅。领头的老人说，他们只求一口吃的，愿意用祖传的东西交换。\n\n他身后，一个年轻人一直盯着你腰间的钱袋。"
+template = 4
+min_floor = 2
+max_floor = 6
+rarity = "common"
+illustration = ExtResource("2")
+tags = Array[String](["max_hp", "recruit"])
+requires = Array[String]([])
+choices = Array[Dictionary]([{"gold": 0, "heal": 10, "effect": {"type": "max_hp", "amount": 5}, "cost": {"gold": 40}, "text": "分出补给", "summary": "支付 40 金币 · 最大生命 +5，回复 10 生命", "result_text": "老人把一枚温热的护身符按进你手里。你推回去，他又按回来：「拿着，路上用得上。」"}, {"gold": 0, "heal": 0, "effect": {"type": "choose_cards", "unit_offer": 3, "unit_picks": 1, "effect_offer": 0, "effect_picks": 0}, "cost": {"gold": 20}, "text": "招募青壮", "summary": "支付 20 金币 · 从 3 张征召牌中选 1 张", "result_text": "年轻人把破外套一脱，露出底下还算结实的肩膀。他说他不要工钱，只要管饭。"}, {"gold": 40, "heal": 0, "text": "拿走他们遗落的钱袋", "summary": "获得 40 金币", "result_text": "钱袋很轻，里面大多是铜币。没有人拦你。走出很远后，你还能听见那个孩子在哭。"}, {"text": "离开", "leave": true, "heal": 0, "gold": 0}])

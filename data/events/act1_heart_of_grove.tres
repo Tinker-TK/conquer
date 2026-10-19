@@ -1,0 +1,18 @@
+[gd_resource type="Resource" script_class="EventDefinition" format=3]
+
+[ext_resource type="Script" path="res://data/events/event_definition.gd" id="1"]
+[ext_resource type="Texture2D" path="res://assets/ui/events/illustrations/heart-of-grove.png" id="2"]
+
+[resource]
+script = ExtResource("1")
+id = "act1_heart_of_grove"
+title = "古树之心"
+description = "一株倒下的古树横在路上，树心裂开，里面跳动着琥珀色的光。树皮上刻满了祈求与警告。\n\n最新的一道刻痕还没被树汁盖住：「别让它再睡回去。」"
+template = 4
+min_floor = 6
+max_floor = 9
+rarity = "rare"
+illustration = ExtResource("2")
+tags = Array[String](["relic"])
+requires = Array[String]([])
+choices = Array[Dictionary]([{"gold": 0, "heal": 0, "effect": {"type": "random_relic"}, "cost": {"max_hp": 8}, "text": "取走树心", "summary": "最大生命 -8 · 获得 1 件随机遗物", "result_text": "树心在你手里继续跳动。古树的裂缝里传来一声很长的叹息，然后风停了。"}, {"gold": 0, "heal": 22, "text": "在树荫下休息", "summary": "回复 22 生命", "result_text": "你靠在树干上睡了一觉。醒来时，树皮上的刻痕似乎少了几道。"}, {"gold": 0, "heal": 0, "effect": {"type": "max_hp", "amount": 4}, "cost": {"gold": 30}, "text": "刻下自己的名字", "summary": "支付 30 金币 · 最大生命 +4", "result_text": "你刻得很浅，怕弄疼它。树汁渗出来，把名字慢慢包了进去。"}, {"text": "离开", "leave": true, "heal": 0, "gold": 0}])

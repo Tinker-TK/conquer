@@ -1,0 +1,19 @@
+[gd_resource type="Resource" format=3 uid="uid://b33l17d6a2h2a"]
+
+[ext_resource type="PackedScene" uid="uid://buj8whrveh6i8" path="res://scenes/effects/priest_healer_effect.tscn" id="1_tcwi0"]
+[ext_resource type="Script" uid="uid://5qley510ttgk" path="res://scripts/skills/ally_heal.gd" id="2_tcwi0"]
+
+[resource]
+script = ExtResource("2_tcwi0")
+unlock_upgrade_levels = Array[int]([0])
+chant_duration = 0.7
+skill_name = "治疗"
+attack_rate = 0.6
+cooldown = 3.0
+priority = 1
+cast_range = 400.0
+cast_animation = "heal_01"
+hit_frame = Array[int]([2])
+target_type = 1
+on_hit_effect = ExtResource("1_tcwi0")
+metadata/_data_table_id = 4

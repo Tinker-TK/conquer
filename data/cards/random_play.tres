@@ -1,0 +1,24 @@
+[gd_resource type="Resource" script_class="CardDefinition" format=3 uid="uid://dltiqaagmi6p5"]
+
+[ext_resource type="Texture2D" path="res://assets/cards/illustrations/random_play.png" id="1_y2fjk"]
+[ext_resource type="Script" uid="uid://dvqd45gj27252" path="res://data/card_effects/card_effect.gd" id="2_m38s0"]
+[ext_resource type="Script" uid="uid://6l58cf1r7imd" path="res://data/cards/card_definition.gd" id="3_stgjt"]
+
+[sub_resource type="Resource" id="Resource_27uql"]
+script = ExtResource("2_m38s0")
+kind = 14
+amount = 2.0
+radius = 250.0
+affected_team = 2
+metadata/_custom_type_script = "uid://dvqd45gj27252"
+upgrade_amount = 1.0
+
+[resource]
+script = ExtResource("3_stgjt")
+card_name = "战术涌现"
+card_discription = "从抽牌堆随机打出2张牌，不消耗能量。"
+card_image = ExtResource("1_y2fjk")
+category = 2
+target = 0
+effects = Array[ExtResource("2_m38s0")]([SubResource("Resource_27uql")])
+max_upgrade_count = 1

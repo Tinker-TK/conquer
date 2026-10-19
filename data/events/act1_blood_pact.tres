@@ -1,0 +1,54 @@
+[gd_resource type="Resource" script_class="EventDefinition" format=3 uid="uid://chwmksfmtsqva"]
+
+[ext_resource type="Texture2D" uid="uid://c0xcm1l10v0jp" path="res://assets/ui/events/illustrations/blood-pact.png" id="1_603k8"]
+[ext_resource type="Script" uid="uid://olxpk541mot3" path="res://data/events/event_definition.gd" id="2_bdnkh"]
+
+[resource]
+script = ExtResource("2_bdnkh")
+id = "act1_blood_pact"
+title = "血契"
+description = "披着破祭袍的人跪在路边，面前摊着一卷没有字的羊皮纸。他抬起头，眼眶里只有两团暗红的光。
+
+「名字，或者血。」他说，「总得给一样。」"
+illustration = ExtResource("1_603k8")
+template = 4
+choices = Array[Dictionary]([{
+"cost": {
+"max_hp": 12.0
+},
+"effect": {
+"effect_offer": 3.0,
+"effect_picks": 1.0,
+"type": "choose_cards",
+"unit_offer": 3.0,
+"unit_picks": 1.0
+},
+"gold": 0.0,
+"heal": 0.0,
+"result_text": "羊皮纸吞掉了你的名字。你记得自己是谁，但队伍里有人开始叫你「那个谁」。",
+"summary": "最大生命 -12 · 从征召牌与战术牌中各选 1 张",
+"text": "签下名字"
+}, {
+"cost": {
+"hp": 8.0
+},
+"gold": 55.0,
+"heal": 0.0,
+"result_text": "血滴在纸上，变成一行你看不懂的字。祭袍人把一袋钱推过来，没有抬头。",
+"summary": "失去 8 生命 · 获得 55 金币",
+"text": "割破手掌"
+}, {
+"gold": 0.0,
+"heal": 8.0,
+"result_text": "羊皮纸在你手里碎成灰。祭袍人笑了一声，像松了口气，又像在可惜。",
+"summary": "回复 8 生命",
+"text": "撕毁契约"
+}, {
+"gold": 0.0,
+"heal": 0.0,
+"leave": true,
+"text": "离开"
+}])
+min_floor = 6
+rarity = "rare"
+tags = Array[String](["recruit"])

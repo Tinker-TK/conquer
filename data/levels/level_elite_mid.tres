@@ -1,0 +1,298 @@
+[gd_resource type="Resource" script_class="BattleLevelConfig" format=3]
+
+[ext_resource type="PackedScene" path="res://scenes/levels/battles/battle_005.tscn" id="1_oqyl1"]
+[ext_resource type="Script" path="res://data/levels/battle_level_config.gd" id="2_2553o"]
+[ext_resource type="Resource" path="res://data/battle_rewards/elite.tres" id="3_hpna3"]
+[ext_resource type="PackedScene" path="res://scenes/units/skeleton.tscn" id="4_s0o38"]
+[ext_resource type="Shader" path="res://shaders/hurt_flash.gdshader" id="5_vuxdp"]
+[ext_resource type="Script" path="res://scripts/units/unit_base.gd" id="6_c3p21"]
+[ext_resource type="Script" path="res://data/units/unit_data.gd" id="7_t788j"]
+[ext_resource type="Script" path="res://data/skills/skill_base.gd" id="8_7wii5"]
+[ext_resource type="PackedScene" path="res://scenes/units/orc.tscn" id="8_oujo7"]
+[ext_resource type="Resource" path="res://data/skills/skeleton_attack.tres" id="9_lsnrf"]
+[ext_resource type="Resource" path="res://data/skills/skeleton_power_attack.tres" id="10_evk8s"]
+[ext_resource type="PackedScene" path="res://scenes/units/skeleton_archer.tscn" id="10_u7sm3"]
+[ext_resource type="Resource" path="res://data/skills/orc_attack.tres" id="12_xk1dy"]
+[ext_resource type="Resource" path="res://data/skills/orc_power_attack.tres" id="13_015yp"]
+[ext_resource type="Resource" path="res://data/skills/skeleton_archer_attack.tres" id="15_bq3kl"]
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_md484"]
+shader = ExtResource("5_vuxdp")
+shader_parameter/flash_intensity = 0.0
+shader_parameter/flash_color = Color(1, 0, 0, 1)
+
+[sub_resource type="Resource" id="Resource_3mdwd"]
+script = ExtResource("7_t788j")
+unit_name = "骷髅兵"
+unit_english_name = "skeleton"
+unit_type = 18
+unit_team = "team_b"
+max_hp = 70
+defence = 2
+attack = 9
+skills = Array[ExtResource("8_7wii5")]([ExtResource("9_lsnrf"), ExtResource("10_evk8s")])
+metadata/_data_table_id = 6
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_mryyj"]
+shader = ExtResource("5_vuxdp")
+shader_parameter/flash_intensity = 0.0
+shader_parameter/flash_color = Color(1, 0, 0, 1)
+
+[sub_resource type="Resource" id="Resource_6il8q"]
+script = ExtResource("7_t788j")
+unit_name = "哥布林"
+unit_english_name = "orc"
+unit_type = 2
+unit_team = "team_b"
+defence = 3
+attack = 11
+skills = Array[ExtResource("8_7wii5")]([ExtResource("12_xk1dy"), ExtResource("13_015yp")])
+metadata/_data_table_id = 6
+
+[sub_resource type="PackedScene" id="PackedScene_bmubc"]
+_bundled = {
+"conn_count": 0,
+"conns": PackedInt32Array(),
+"editable_instances": [],
+"id_paths": [],
+"names": PackedStringArray("Wave", "Node2D", "Skeleton", "y_sort_enabled", "material", "position", "collision_layer", "collision_mask", "motion_mode", "script", "unit_data", "metadata/wave_cycle_effects", "team_b", "CharacterBody2D", "Orc"),
+"node_count": 3,
+"node_ids": PackedInt32Array(537109279, 699531576, 1708222406),
+"node_paths": [],
+"nodes": PackedInt32Array(-1, -1, 1, 0, -1, 0, 0, 0, 0, 13, 2, 0, 9, 3, 1, 4, 2, 5, 3, 6, 4, 7, 5, 8, 6, 9, 7, 10, 8, 11, 9, 1, 12, 0, 0, 13, 14, 10, 9, 3, 1, 4, 11, 5, 12, 6, 4, 7, 5, 8, 6, 9, 7, 10, 13, 11, 9, 1, 12),
+"variants": [ExtResource("4_s0o38"), true, SubResource("ShaderMaterial_md484"), Vector2(-127, 448), 2, 15, 1, ExtResource("6_c3p21"), SubResource("Resource_3mdwd"), {}, ExtResource("8_oujo7"), SubResource("ShaderMaterial_mryyj"), Vector2(109, 47), SubResource("Resource_6il8q")],
+"version": 3
+}
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_iiym8"]
+shader = ExtResource("5_vuxdp")
+shader_parameter/flash_intensity = 0.0
+shader_parameter/flash_color = Color(1, 0, 0, 1)
+
+[sub_resource type="Resource" id="Resource_u8d5m"]
+script = ExtResource("7_t788j")
+unit_name = "骷髅弓箭手"
+unit_english_name = "skeleton_archer"
+unit_type = 19
+unit_team = "team_b"
+max_hp = 55
+defence = 1
+attack = 10
+skills = Array[ExtResource("8_7wii5")]([ExtResource("15_bq3kl")])
+metadata/_data_table_id = 6
+
+[sub_resource type="Resource" id="Resource_m7dm2"]
+script = ExtResource("7_t788j")
+unit_name = "哥布林"
+unit_english_name = "orc"
+unit_type = 2
+unit_team = "team_b"
+defence = 3
+attack = 11
+skills = Array[ExtResource("8_7wii5")]([ExtResource("12_xk1dy"), ExtResource("13_015yp")])
+metadata/_data_table_id = 6
+
+[sub_resource type="PackedScene" id="PackedScene_5ynsp"]
+_bundled = {
+"conn_count": 0,
+"conns": PackedInt32Array(),
+"editable_instances": [],
+"id_paths": [],
+"names": PackedStringArray("Wave", "Node2D", "SkeletonArcher", "y_sort_enabled", "material", "position", "collision_layer", "collision_mask", "motion_mode", "script", "unit_data", "metadata/wave_cycle_effects", "team_b", "CharacterBody2D", "Orc"),
+"node_count": 3,
+"node_ids": PackedInt32Array(2050492077, 699531576, 40787932),
+"node_paths": [],
+"nodes": PackedInt32Array(-1, -1, 1, 0, -1, 0, 0, 0, 0, 13, 2, 0, 9, 3, 1, 4, 2, 5, 3, 6, 4, 7, 5, 8, 6, 9, 7, 10, 8, 11, 9, 1, 12, 0, 0, 13, 14, 10, 9, 3, 1, 4, 11, 5, 12, 6, 4, 7, 5, 8, 6, 9, 7, 10, 13, 11, 9, 1, 12),
+"variants": [ExtResource("10_u7sm3"), true, SubResource("ShaderMaterial_iiym8"), Vector2(-137, 525), 2, 15, 1, ExtResource("6_c3p21"), SubResource("Resource_u8d5m"), {}, ExtResource("8_oujo7"), SubResource("ShaderMaterial_mryyj"), Vector2(-121.148315, 412.2953), SubResource("Resource_m7dm2")],
+"version": 3
+}
+
+[sub_resource type="Resource" id="Resource_dquug"]
+script = ExtResource("7_t788j")
+unit_name = "骷髅兵"
+unit_english_name = "skeleton"
+unit_type = 18
+unit_team = "team_b"
+max_hp = 70
+defence = 2
+attack = 9
+skills = Array[ExtResource("8_7wii5")]([ExtResource("9_lsnrf"), ExtResource("10_evk8s")])
+metadata/_data_table_id = 6
+
+[sub_resource type="Resource" id="Resource_jk0a5"]
+script = ExtResource("7_t788j")
+unit_name = "骷髅兵"
+unit_english_name = "skeleton"
+unit_type = 18
+unit_team = "team_b"
+max_hp = 70
+defence = 2
+attack = 9
+skills = Array[ExtResource("8_7wii5")]([ExtResource("9_lsnrf"), ExtResource("10_evk8s")])
+metadata/_data_table_id = 6
+
+[sub_resource type="Resource" id="Resource_c7fyc"]
+script = ExtResource("7_t788j")
+unit_name = "骷髅弓箭手"
+unit_english_name = "skeleton_archer"
+unit_type = 19
+unit_team = "team_b"
+max_hp = 55
+defence = 1
+attack = 10
+skills = Array[ExtResource("8_7wii5")]([ExtResource("15_bq3kl")])
+metadata/_data_table_id = 6
+
+[sub_resource type="Resource" id="Resource_3x6bn"]
+script = ExtResource("7_t788j")
+unit_name = "骷髅弓箭手"
+unit_english_name = "skeleton_archer"
+unit_type = 19
+unit_team = "team_b"
+max_hp = 55
+defence = 1
+attack = 10
+skills = Array[ExtResource("8_7wii5")]([ExtResource("15_bq3kl")])
+metadata/_data_table_id = 6
+
+[sub_resource type="PackedScene" id="PackedScene_awwdn"]
+_bundled = {
+"conn_count": 0,
+"conns": PackedInt32Array(),
+"editable_instances": [],
+"id_paths": [],
+"names": PackedStringArray("Wave", "Node2D", "Skeleton", "y_sort_enabled", "material", "position", "collision_layer", "collision_mask", "motion_mode", "script", "unit_data", "floor_id", "metadata/wave_cycle_effects", "team_b", "CharacterBody2D", "@CharacterBody2D@68", "SkeletonArcher", "@CharacterBody2D@69"),
+"node_count": 5,
+"node_ids": PackedInt32Array(972840342, 699531576, 1606116109, 1511743779, 1213678773),
+"node_paths": [],
+"nodes": PackedInt32Array(-1, -1, 1, 0, -1, 0, 0, 0, 0, 14, 2, 0, 10, 3, 1, 4, 2, 5, 3, 6, 4, 7, 5, 8, 6, 9, 7, 10, 8, 11, 4, 12, 9, 1, 13, 0, 0, 14, 15, 0, 10, 3, 1, 4, 2, 5, 10, 6, 4, 7, 5, 8, 6, 9, 7, 10, 11, 11, 4, 12, 9, 1, 13, 0, 0, 14, 16, 12, 10, 3, 1, 4, 13, 5, 14, 6, 4, 7, 5, 8, 6, 9, 7, 10, 15, 11, 4, 12, 9, 1, 13, 0, 0, 14, 17, 12, 10, 3, 1, 4, 13, 5, 16, 6, 4, 7, 5, 8, 6, 9, 7, 10, 17, 11, 4, 12, 9, 1, 13),
+"variants": [ExtResource("4_s0o38"), true, SubResource("ShaderMaterial_md484"), Vector2(-435, 103), 2, 15, 1, ExtResource("6_c3p21"), SubResource("Resource_dquug"), {}, Vector2(-461, 301), SubResource("Resource_jk0a5"), ExtResource("10_u7sm3"), SubResource("ShaderMaterial_iiym8"), Vector2(-522, 303), SubResource("Resource_c7fyc"), Vector2(-309, 104), SubResource("Resource_3x6bn")],
+"version": 3
+}
+
+[sub_resource type="Resource" id="Resource_y7s8w"]
+script = ExtResource("7_t788j")
+unit_name = "骷髅兵"
+unit_english_name = "skeleton"
+unit_type = 18
+unit_team = "team_b"
+max_hp = 70
+defence = 2
+attack = 9
+skills = Array[ExtResource("8_7wii5")]([ExtResource("9_lsnrf"), ExtResource("10_evk8s")])
+metadata/_data_table_id = 6
+
+[sub_resource type="Resource" id="Resource_yrrp6"]
+script = ExtResource("7_t788j")
+unit_name = "骷髅弓箭手"
+unit_english_name = "skeleton_archer"
+unit_type = 19
+unit_team = "team_b"
+max_hp = 55
+defence = 1
+attack = 10
+skills = Array[ExtResource("8_7wii5")]([ExtResource("15_bq3kl")])
+metadata/_data_table_id = 6
+
+[sub_resource type="Resource" id="Resource_h74w2"]
+script = ExtResource("7_t788j")
+unit_name = "哥布林"
+unit_english_name = "orc"
+unit_type = 2
+unit_team = "team_b"
+defence = 3
+attack = 11
+skills = Array[ExtResource("8_7wii5")]([ExtResource("12_xk1dy"), ExtResource("13_015yp")])
+metadata/_data_table_id = 6
+
+[sub_resource type="PackedScene" id="PackedScene_1i8wd"]
+_bundled = {
+"conn_count": 0,
+"conns": PackedInt32Array(),
+"editable_instances": [],
+"id_paths": [],
+"names": PackedStringArray("Wave", "Node2D", "Skeleton", "y_sort_enabled", "material", "position", "collision_layer", "collision_mask", "motion_mode", "script", "unit_data", "floor_id", "metadata/wave_cycle_effects", "team_b", "CharacterBody2D", "SkeletonArcher", "Orc"),
+"node_count": 4,
+"node_ids": PackedInt32Array(1957565662, 699531576, 1718762585, 1011166706),
+"node_paths": [],
+"nodes": PackedInt32Array(-1, -1, 1, 0, -1, 0, 0, 0, 0, 14, 2, 0, 10, 3, 1, 4, 2, 5, 3, 6, 4, 7, 5, 8, 6, 9, 7, 10, 8, 11, 4, 12, 9, 1, 13, 0, 0, 14, 15, 10, 10, 3, 1, 4, 11, 5, 12, 6, 4, 7, 5, 8, 6, 9, 7, 10, 13, 11, 4, 12, 9, 1, 13, 0, 0, 14, 16, 14, 10, 3, 1, 4, 15, 5, 16, 6, 4, 7, 5, 8, 6, 9, 7, 10, 17, 11, 4, 12, 9, 1, 13),
+"variants": [ExtResource("4_s0o38"), true, SubResource("ShaderMaterial_md484"), Vector2(-424, -109), 2, 15, 1, ExtResource("6_c3p21"), SubResource("Resource_y7s8w"), {}, ExtResource("10_u7sm3"), SubResource("ShaderMaterial_iiym8"), Vector2(-603, 19), SubResource("Resource_yrrp6"), ExtResource("8_oujo7"), SubResource("ShaderMaterial_mryyj"), Vector2(-610, 58), SubResource("Resource_h74w2")],
+"version": 3
+}
+
+[sub_resource type="Resource" id="Resource_etvu4"]
+script = ExtResource("7_t788j")
+unit_name = "骷髅兵"
+unit_english_name = "skeleton"
+unit_type = 18
+unit_team = "team_b"
+max_hp = 70
+defence = 2
+attack = 9
+skills = Array[ExtResource("8_7wii5")]([ExtResource("9_lsnrf"), ExtResource("10_evk8s")])
+metadata/_data_table_id = 6
+
+[sub_resource type="Resource" id="Resource_m2v1f"]
+script = ExtResource("7_t788j")
+unit_name = "骷髅弓箭手"
+unit_english_name = "skeleton_archer"
+unit_type = 19
+unit_team = "team_b"
+max_hp = 55
+defence = 1
+attack = 10
+skills = Array[ExtResource("8_7wii5")]([ExtResource("15_bq3kl")])
+metadata/_data_table_id = 6
+
+[sub_resource type="PackedScene" id="PackedScene_s1l1i"]
+_bundled = {
+"conn_count": 0,
+"conns": PackedInt32Array(),
+"editable_instances": [],
+"id_paths": [],
+"names": PackedStringArray("Wave", "Node2D", "Skeleton", "y_sort_enabled", "material", "position", "collision_layer", "collision_mask", "motion_mode", "script", "unit_data", "metadata/wave_cycle_effects", "team_b", "CharacterBody2D", "SkeletonArcher"),
+"node_count": 3,
+"node_ids": PackedInt32Array(990730648, 699531576, 754236265),
+"node_paths": [],
+"nodes": PackedInt32Array(-1, -1, 1, 0, -1, 0, 0, 0, 0, 13, 2, 0, 9, 3, 1, 4, 2, 5, 3, 6, 4, 7, 5, 8, 6, 9, 7, 10, 8, 11, 9, 1, 12, 0, 0, 13, 14, 10, 9, 3, 1, 4, 11, 5, 12, 6, 4, 7, 5, 8, 6, 9, 7, 10, 13, 11, 9, 1, 12),
+"variants": [ExtResource("4_s0o38"), true, SubResource("ShaderMaterial_md484"), Vector2(-127, 448), 2, 15, 1, ExtResource("6_c3p21"), SubResource("Resource_etvu4"), {}, ExtResource("10_u7sm3"), SubResource("ShaderMaterial_iiym8"), Vector2(109, 47), SubResource("Resource_m2v1f")],
+"version": 3
+}
+
+[sub_resource type="Resource" id="Resource_ehek4"]
+script = ExtResource("7_t788j")
+unit_name = "骷髅兵"
+unit_english_name = "skeleton"
+unit_type = 18
+unit_team = "team_b"
+max_hp = 70
+defence = 2
+attack = 9
+skills = Array[ExtResource("8_7wii5")]([ExtResource("9_lsnrf"), ExtResource("10_evk8s")])
+metadata/_data_table_id = 6
+
+[sub_resource type="PackedScene" id="PackedScene_uf8cd"]
+_bundled = {
+"conn_count": 0,
+"conns": PackedInt32Array(),
+"editable_instances": [],
+"id_paths": [],
+"names": PackedStringArray("Wave", "Node2D", "Skeleton", "y_sort_enabled", "material", "position", "collision_layer", "collision_mask", "motion_mode", "script", "unit_data", "metadata/wave_cycle_effects", "team_b", "CharacterBody2D"),
+"node_count": 2,
+"node_ids": PackedInt32Array(1609266277, 699531576),
+"node_paths": [],
+"nodes": PackedInt32Array(-1, -1, 1, 0, -1, 0, 0, 0, 0, 13, 2, 0, 9, 3, 1, 4, 2, 5, 3, 6, 4, 7, 5, 8, 6, 9, 7, 10, 8, 11, 9, 1, 12),
+"variants": [ExtResource("4_s0o38"), true, SubResource("ShaderMaterial_md484"), Vector2(-137, 525), 2, 15, 1, ExtResource("6_c3p21"), SubResource("Resource_ehek4"), {}],
+"version": 3
+}
+
+[resource]
+script = ExtResource("2_2553o")
+level_name = "第1幕 · 原野守军"
+notes = "NUM-DESIGN-v1.0 / 模板D；攻击和生命×1.00；循环不额外成长。"
+battle_scene = ExtResource("1_oqyl1")
+waves = Array[PackedScene]([SubResource("PackedScene_bmubc"), SubResource("PackedScene_5ynsp"), SubResource("PackedScene_awwdn"), null, SubResource("PackedScene_1i8wd"), SubResource("PackedScene_s1l1i"), SubResource("PackedScene_uf8cd")])
+repeat_waves = true
+repeat_end = 7
+enemy_max_hp = 38
+victory_rewards = ExtResource("3_hpna3")

@@ -1,0 +1,10 @@
+[gd_scene load_steps=3 format=3]
+
+[ext_resource type="Script" path="res://scripts/world/dynamic_river.gd" id="1"]
+[ext_resource type="Resource" path="res://data/water/river_default.tres" id="2"]
+
+[node name="DynamicRiver" type="Polygon2D"]
+z_index = -14
+script = ExtResource("1")
+settings = ExtResource("2")
+polygon = PackedVector2Array(0, 20, 100, 0, 240, 50, 400, 15, 560, 50, 560, 150, 400, 115, 240, 150, 100, 100, 0, 120)

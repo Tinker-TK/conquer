@@ -1,0 +1,39 @@
+{
+  "id": "card_upgrade",
+  "variant": 1,
+  "asset": "sfx_card_upgrade_v01",
+  "provider": "procedural",
+  "category": "card",
+  "title": "卡牌升级",
+  "prompt": "magical card upgrade shimmer, soft ascending chime with paper flutter",
+  "source_prompt": "magical card upgrade shimmer, soft ascending chime with paper flutter",
+  "duration_seconds": 0.9,
+  "output_format": "wav_48000",
+  "tags": [
+    "card",
+    "upgrade",
+    "magic"
+  ],
+  "license": "CC0-1.0",
+  "author": "项目程序合成（占位）",
+  "source": "res://tools/audio/ai/procedural.py",
+  "recipe": "card_upgrade",
+  "created_at": "2026-10-18T17:03:23+00:00",
+  "sha256": "bef7265d693e23e35b06338b6c00f0827723df123269b73b600755374e04659e",
+  "path": "res://assets/audio/ai/procedural/card/sfx_card_upgrade_v01.ogg",
+  "loop": false,
+  "sample_rate": 44100,
+  "channels": 1,
+  "features": {
+    "duration_seconds": 0.95,
+    "peak_dbfs": -1.5,
+    "rms_dbfs": -14.05,
+    "crest_db": 12.55,
+    "spectral_centroid_hz": 3018.8,
+    "zero_cross_rate": 0.0488,
+    "attack_ms": 384.9,
+    "tail_ms": 3.1
+  },
+  "seam_jump": null,
+  "bytes": 13129
+}

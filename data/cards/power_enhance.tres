@@ -1,0 +1,20 @@
+[gd_resource type="Resource" script_class="CardDefinition" format=3 uid="uid://c2vim02r61b6x"]
+
+[ext_resource type="Texture2D" path="res://assets/cards/illustrations/power_enhance.png" id="1_iv1i1"]
+[ext_resource type="Script" uid="uid://dvqd45gj27252" path="res://data/card_effects/card_effect.gd" id="2_g61en"]
+[ext_resource type="Script" uid="uid://6l58cf1r7imd" path="res://data/cards/card_definition.gd" id="3_fdrwt"]
+
+[sub_resource type="Resource" id="Resource_iv1i1"]
+script = ExtResource("2_g61en")
+affected_team = 1
+metadata/_custom_type_script = "uid://dvqd45gj27252"
+amount = 3.0
+upgrade_amount = 2.0
+
+[resource]
+script = ExtResource("3_fdrwt")
+card_name = "力量强化"
+card_discription = "使1名己方单位攻击力+3，持续本场战斗。"
+card_image = ExtResource("1_iv1i1")
+effects = Array[ExtResource("2_g61en")]([SubResource("Resource_iv1i1")])
+max_upgrade_count = 1

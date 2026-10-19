@@ -1,0 +1,18 @@
+[gd_resource type="Resource" script_class="UnitData" format=3 uid="uid://bci4ynlhy7imj"]
+
+[ext_resource type="Script" uid="uid://2m1qlskaxcox" path="res://data/units/unit_data.gd" id="1_m102x"]
+[ext_resource type="Script" uid="uid://c4huhq7re2216" path="res://data/skills/skill_base.gd" id="2_54afe"]
+[ext_resource type="Resource" uid="uid://cobwg3jpiqh5h" path="res://data/skills/skeleton_archer_attack.tres" id="3_8h8d2"]
+
+[resource]
+script = ExtResource("1_m102x")
+attack = 10
+defence = 1
+max_hp = 55
+unit_name = "骷髅弓箭手"
+unit_english_name = "skeleton_archer"
+unit_type = 19
+unit_team = "team_b"
+skills = Array[ExtResource("2_54afe")]([ExtResource("3_8h8d2")])
+metadata/_data_table_id = 6
+hp_damage_value = 1

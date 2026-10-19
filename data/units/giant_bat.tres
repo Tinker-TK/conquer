@@ -1,0 +1,20 @@
+[gd_resource type="Resource" script_class="UnitData" format=3 uid="uid://gilhj3ugthqb"]
+
+[ext_resource type="Resource" path="res://data/skills/giant_bat_attack.tres" id="attack"]
+[ext_resource type="Script" uid="uid://2m1qlskaxcox" path="res://data/units/unit_data.gd" id="data"]
+[ext_resource type="Script" uid="uid://c4huhq7re2216" path="res://data/skills/skill_base.gd" id="skill_base"]
+
+[resource]
+script = ExtResource("data")
+unit_name = "巨型蝙蝠"
+unit_english_name = "giant_bat"
+unit_type = 24
+unit_team = "team_b"
+max_hp = 90
+defence = 2
+attack = 12
+speed = 210.0
+is_flying = true
+max_upgrade_count = 0
+skills = Array[ExtResource("skill_base")]([ExtResource("attack")])
+combat_sound_profile = &"beast"
