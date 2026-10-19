@@ -18,3 +18,5 @@ assets/audio/ai/inbox/
 Thumbs.db
 desktop.ini
 screenshots/_shot*
+
+screenshots/*.import
