@@ -20,3 +20,7 @@ desktop.ini
 screenshots/_shot*
 
 screenshots/*.import
+
+# 本地上传工具
+更新作品.cmd
+_update.ps1

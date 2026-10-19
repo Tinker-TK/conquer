@@ -70,7 +70,7 @@
 ## 怎么运行
 
 **方式一：直接玩**
-到 [Releases](../../releases) 下载 Windows 包，解压后运行 `Conquer.exe`。
+到 [Releases](https://github.com/Tinker-TK/conquer/releases) 下载 Windows 包，解压后运行 `Conquer.exe`。
 
 **方式二：用 Godot 打开**
 1. 安装 Godot **4.6**（标准版，非 .NET）
